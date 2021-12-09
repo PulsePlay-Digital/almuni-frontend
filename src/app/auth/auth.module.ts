@@ -5,20 +5,22 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent,
     RegisterComponent
   ],
-  entryComponents: [RegisterComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthRoutingModule   
+    AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class AuthModule { }

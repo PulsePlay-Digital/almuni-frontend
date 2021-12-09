@@ -1,102 +1,101 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            <form >
+            <form [formGroup]="form">
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">First name:</label>
-                        <input type="text" class="form-control" placeholder="Enter First name">
+                        <label class="form-label">First name</label>
+                        <input type="text" class="form-control" formControlName="fname" placeholder="Enter First name">
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Last name:</label>
-                        <input type="text" class="form-control" placeholder="Enter Last name">
+                        <label class="form-label">Last name</label>
+                        <input type="text" class="form-control" formControlName="lname" placeholder="Enter Last name">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Institute:</label>
-                        <select class="form-select">
-                            <option selected>Choose Your Institute</option>
-                            <option value="1">BIMM</option>
-                            <option value="2">BITM</option>
-                          </select>
+                        <label class="form-label">Institute</label>
+                        <select class="form-select" formControlName="institute" placeholder="Select Batch Year">
+                            <option value="" selected>Choose your institute</option> 
+                            <option [value]="institute.id" *ngFor="let institute of getInstitutes">{{institute.institute_name}}</option>
+                        </select>
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Batch Year:</label>
-                        <select class="form-select">
-                            <option selected>Choose Your Batch</option>
-                            <option value="1">2020</option>
-                            <option value="2">2021</option>
-                          </select>
+                        <label class="form-label">Batch Year</label>
+                        <select placeholder="Select Batch Year" class="form-select" formControlName="bYear" >
+                            <option value="" selected>Choose your batch</option> 
+                            <option [value]="batch.id" *ngFor="let batch of getBatch">{{batch.batch}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">City:</label>
-                        <input type="text" class="form-control" placeholder="Enter City">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Country:</label>
-                        <input type="text" class="form-control" placeholder="Enter Country">
+                        <label class="form-label">Country</label>
+                        <input type="text" class="form-control" formControlName="country" placeholder="Enter Country">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Current Region:</label>
-                        <select class="form-select">
-                            <option selected>Select Country/Region</option>
-                            <option value="1">India</option>
-                            <option value="2">Africa</option>
-                          </select>
+                        <label class="form-label">Current Region</label>
+                        <select class="form-select" formControlName="countryregion" (change)="changeCountry($event)">
+                            <ng-container *ngFor="let row of countries">
+                                <option [value]="row.code">{{row.name}}</option>
+                            </ng-container>
+                        </select>
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Mobile Number:</label>
+                        <label class="form-label">Mobile Number</label>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="text" class="form-control px-1" placeholder="Code">
+                                <input type="text" 
+                                 value="{{form?.value?.code}}" class="form-control px-2" formControlName="code" placeholder="Code">
                             </div>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" placeholder="Enter Number">
+                                <input type="text" class="form-control" formControlName="mobile"
+                                    placeholder="Enter Number">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Birthdate:</label>
-                        <input type="text"
-                        placeholder="Datepicker"
-                        class="form-control"
-                        bsDatepicker>
-             
-                        <!-- <input type="text" class="form-control" placeholder="Enter Birth Date"> -->
+                        <label class="form-label">Birthdate</label>
+                        <input type="text" placeholder="DD/MM/YYYY" class="form-control" formControlName="date"
+                            bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Personal email Id:</label>
-                        <input type="email" class="form-control" placeholder="Enter Email Id">
+                        <label class="form-label">Personal email Id</label>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter Email Id">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Current Company:</label>
-                        <input type="text" class="form-control" placeholder="Enter Current Company">
+                        <label class="form-label">Current Company</label>
+                        <input type="text" class="form-control" formControlName="cmpny"
+                            placeholder="Enter Current Company">
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Current Designation:</label>
-                        <input type="email" class="form-control" placeholder="Enter Current Designation">
+                        <label class="form-label">Current Designation</label>
+                        <input type="email" class="form-control" formControlName="designation"
+                            placeholder="Enter Current Designation">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Security Questions:</label>
-                        <select class="form-select">
+                        <label class="form-label">Security Questions</label>
+                        <select class="form-select" formControlName="questions">
                             <option value="1">First Car</option>
                             <option value="2">First Movie</option>
-                          </select>
+                        </select>
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Security Answer:</label>
-                        <input type="email" class="form-control" placeholder="Enter Security Answer">
+                        <label class="form-label">Security Answer</label>
+                        <input type="email" class="form-control" formControlName="ans"
+                            placeholder="Enter Security Answer">
                     </div>
                 </div>
                 <div class="row">
@@ -104,10 +103,11 @@
                         <button type="submit" class="btn btn-danger my-2">SIGNUP</button>
                     </div>
                     <div class="col-md-6  align-self-center my-2">
-                        <button type="submit" [routerLink]="['/auth/login']" class="btn btn-success my-2">ALREADY ACCOUNT</button>
+                        <button type="submit" [routerLink]="['/auth/login']" class="btn btn-success my-2">ALREADY
+                            ACCOUNT</button>
                     </div>
                 </div>
-                
+
             </form>
         </div>
     </div>

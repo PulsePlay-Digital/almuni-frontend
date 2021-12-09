@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,20 +9,23 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
+    AuthModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule,
-    AuthModule,
-    BsDatepickerModule.forRoot()
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
