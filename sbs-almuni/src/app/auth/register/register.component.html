@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <form >
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">First name:</label>
+                        <input type="text" class="form-control" placeholder="Enter First name">
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Last name:</label>
+                        <input type="text" class="form-control" placeholder="Enter Last name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Institute:</label>
+                        <select class="form-select">
+                            <option selected>Choose Your Institute</option>
+                            <option value="1">BIMM</option>
+                            <option value="2">BITM</option>
+                          </select>
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Batch Year:</label>
+                        <select class="form-select">
+                            <option selected>Choose Your Batch</option>
+                            <option value="1">2020</option>
+                            <option value="2">2021</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">City:</label>
+                        <input type="text" class="form-control" placeholder="Enter City">
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Country:</label>
+                        <input type="text" class="form-control" placeholder="Enter Country">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Current Region:</label>
+                        <select class="form-select">
+                            <option selected>Select Country/Region</option>
+                            <option value="1">India</option>
+                            <option value="2">Africa</option>
+                          </select>
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Mobile Number:</label>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="text" class="form-control px-1" placeholder="Code">
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" placeholder="Enter Number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Birthdate:</label>
+                        <input type="text"
+                        placeholder="Datepicker"
+                        class="form-control"
+                        bsDatepicker>
+             
+                        <!-- <input type="text" class="form-control" placeholder="Enter Birth Date"> -->
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Personal email Id:</label>
+                        <input type="email" class="form-control" placeholder="Enter Email Id">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Current Company:</label>
+                        <input type="text" class="form-control" placeholder="Enter Current Company">
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Current Designation:</label>
+                        <input type="email" class="form-control" placeholder="Enter Current Designation">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Security Questions:</label>
+                        <select class="form-select">
+                            <option value="1">First Car</option>
+                            <option value="2">First Movie</option>
+                          </select>
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label">Security Answer:</label>
+                        <input type="email" class="form-control" placeholder="Enter Security Answer">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6  align-self-center my-2">
+                        <button type="submit" class="btn btn-danger my-2">SIGNUP</button>
+                    </div>
+                    <div class="col-md-6  align-self-center my-2">
+                        <button type="submit" [routerLink]="['/auth/login']" class="btn btn-success my-2">ALREADY ACCOUNT</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
