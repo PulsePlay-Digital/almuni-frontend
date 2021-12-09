@@ -16,14 +16,15 @@
                     <div class="col-md-6 my-2">
                         <label class="form-label">Institute</label>
                         <select class="form-select" formControlName="institute" placeholder="Select Batch Year">
-                            <option value="" selected>Choose your institute</option> 
-                            <option [value]="institute.id" *ngFor="let institute of getInstitutes">{{institute.institute_name}}</option>
+                            <option value="" selected>Choose your institute</option>
+                            <option [value]="institute.id" *ngFor="let institute of getInstitutes">
+                                {{institute.institute_name}}</option>
                         </select>
                     </div>
                     <div class="col-md-6 my-2">
                         <label class="form-label">Batch Year</label>
-                        <select placeholder="Select Batch Year" class="form-select" formControlName="bYear" >
-                            <option value="" selected>Choose your batch</option> 
+                        <select placeholder="Select Batch Year" class="form-select" formControlName="bYear">
+                            <option value="" selected>Choose your batch</option>
                             <option [value]="batch.id" *ngFor="let batch of getBatch">{{batch.batch}}</option>
                         </select>
                     </div>
@@ -51,8 +52,8 @@
                         <label class="form-label">Mobile Number</label>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="text" 
-                                 value="{{form?.value?.code}}" class="form-control px-2" formControlName="code" placeholder="Code">
+                                <input type="text" value="{{form?.value?.code}}" class="form-control px-2"
+                                    formControlName="code" placeholder="Code">
                             </div>
                             <div class="col-md-9">
                                 <input type="text" class="form-control" formControlName="mobile"
@@ -96,6 +97,12 @@
                         <label class="form-label">Security Answer</label>
                         <input type="email" class="form-control" formControlName="ans"
                             placeholder="Enter Security Answer">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <ngx-recaptcha2 #captchaElem [siteKey]="''">
+                        </ngx-recaptcha2> -->
                     </div>
                 </div>
                 <div class="row">

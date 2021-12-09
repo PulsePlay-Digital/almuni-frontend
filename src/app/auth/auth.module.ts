@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
     BsDatepickerModule.forRoot()
   ]
 })
