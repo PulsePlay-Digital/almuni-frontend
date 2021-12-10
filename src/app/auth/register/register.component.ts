@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CountryService } from 'src/app/services/country.service';
+import { CountryService } from './../../services/country.service';
 import { DataService } from './../../services/data.service';
 
 @Component({
@@ -9,10 +9,12 @@ import { DataService } from './../../services/data.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  form: FormGroup | any;
+  registerForm: FormGroup | any;
   countries: any;
   getBatch: any;
   getInstitutes: any;
+  submitted: boolean = false;
+  siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt"
 
   constructor(
     public fb: FormBuilder,
@@ -28,28 +30,35 @@ export class RegisterComponent implements OnInit {
   }
 
   buildForm() {
-    this.form = this.fb.group({
-      fname: ['', Validators.required],
-      lname: ['', Validators.required],
-      institute: ['', Validators.required],
-      bYear: ['', Validators.required],
+    this.registerForm = this.fb.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      institute_id: ['', Validators.required],
+      batchYear_id: ['', Validators.required],
       city: ['', Validators.required],
+      current_region: ['', Validators.required],
       country: ['', Validators.required],
-      countryregion: ['', Validators.required],
       code: ['', Validators.required],
-      mobile: ['', Validators.required],
-      date: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      cmpny: ['', Validators.required],
-      designation: ['', Validators.required],
-      questions: ['', Validators.required],
-      ans: ['', Validators.required]
-      // recaptcha: ['', Validators.required]
+      mobile_number: ['', Validators.required],
+      birth_date: ['', Validators.required],
+      personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      current_company: ['', Validators.required],
+      current_designation: ['', Validators.required],
+      password: ['', Validators.required, Validators.minLength(6)],
+      password_confirmation: ['', Validators.required, Validators.minLength(6)],
+      securityQuestions_id: ['', Validators.required],
+      security_answers: ['', Validators.required],
+      recaptcha: ['', Validators.required]
     });
   }
-/**
- * Function to get all Countries
- */
+
+  get registerFormControl() {
+    return this.registerForm.controls;
+  }
+
+  /**
+   * Function to get all Countries
+   */
   public loadCountries() {
     this.countryService.getCountries().subscribe(data => {
       this.countries = data;
@@ -59,7 +68,7 @@ export class RegisterComponent implements OnInit {
 
   public changeCountry(event: any) {
     console.log(event.target.value);
-    this.form.controls['code'].setValue(event.target.value);
+    this.registerForm.controls['code'].setValue(event.target.value);
   }
 
   /**
@@ -81,5 +90,21 @@ export class RegisterComponent implements OnInit {
     }, error => {
       console.log(error)
     });
+  }
+
+  /**
+   * Function to register user
+   */
+  async submitForm() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    if (this.registerForm.valid) {
+      let params = this.registerForm.value;
+      let data = await this.dataService.register(params).toPromise();
+      console.log(data, 'register Form')
+    }
   }
 }

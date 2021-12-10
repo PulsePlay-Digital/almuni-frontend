@@ -16,8 +16,6 @@ import { NgxCaptchaModule } from 'ngx-captcha';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
