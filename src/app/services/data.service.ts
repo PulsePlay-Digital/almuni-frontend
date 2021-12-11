@@ -7,9 +7,6 @@ import { environment } from './../../environments/environment';
 })
 export class DataService {
   url:any;
-  headers=new HttpHeaders({
-    'Content-Type': 'application/json'
-  });
 
   constructor(public http:HttpClient) { 
     this.url =  environment.apiUrl;
@@ -28,9 +25,5 @@ export class DataService {
    */
    public getAllBatches() {
     return this.http.get(`${this.url}/all-batch`);
-   }
-
-   public register(data: any) {
-    return this.http.post(`${this.url}/create-register`, data,{headers:this.headers});
    }
 }

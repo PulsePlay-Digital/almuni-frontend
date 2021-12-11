@@ -7,12 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NumbersOnlyDirective } from './../../core/directives/numbers-only.directive';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgotPasswordComponent,
+    NumbersOnlyDirective
   ],
   imports: [
     CommonModule,

@@ -5,10 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './shared/shared.module';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './core/token.interceptor';
+import { AuthGuard } from './modules/auth/auth.guard';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     SharedModule
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

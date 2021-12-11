@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CountryService } from './../../services/country.service';
-import { DataService } from './../../services/data.service';
+import { NumbersOnlyDirective } from 'src/app/core/directives/numbers-only.directive';
+import { AuthService } from './../../../services/auth.service';
+import { CountryService } from './../../../services/country.service';
+import { DataService } from './../../../services/data.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  providers: [NumbersOnlyDirective]
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup | any;
@@ -18,8 +21,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
+    public countryService: CountryService,
     public dataService: DataService,
-    public countryService: CountryService
+    public authService: AuthService
   ) { }
 
   async ngOnInit() {
@@ -39,7 +43,7 @@ export class RegisterComponent implements OnInit {
       current_region: ['', Validators.required],
       country: ['', Validators.required],
       code: ['', Validators.required],
-      mobile_number: ['', Validators.required],
+      mobile_number: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       birth_date: ['', Validators.required],
       personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       current_company: ['', Validators.required],
@@ -71,6 +75,16 @@ export class RegisterComponent implements OnInit {
     this.registerForm.controls['code'].setValue(event.target.value);
   }
 
+  // keyPressNumbers(event: any) {
+  //   let charCode = (event.which) ? event.which : event.keyCode;
+  //   // Only Numbers 0-9
+  //   if ((charCode < 48 || charCode > 57)) {
+  //     event.preventDefault();
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
   /**
    * Function to get all Batches 
    */
@@ -103,7 +117,7 @@ export class RegisterComponent implements OnInit {
 
     if (this.registerForm.valid) {
       let params = this.registerForm.value;
-      let data = await this.dataService.register(params).toPromise();
+      let data = await this.authService.register(params).toPromise();
       console.log(data, 'register Form')
     }
   }

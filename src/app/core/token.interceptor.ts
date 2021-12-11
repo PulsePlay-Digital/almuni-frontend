@@ -3,16 +3,27 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(request);
+    console.log('Http Request method');
+    return next.handle(request)
+      .pipe(
+        map((event: HttpEvent<any>) => {
+          if (event instanceof HttpResponse) {
+            console.log('event--->>>', event);
+          }
+          return event;
+        }));
   }
 }
