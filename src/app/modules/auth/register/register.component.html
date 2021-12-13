@@ -5,7 +5,8 @@
                 <div class="row">
                     <div class="col-md-6 my-2">
                         <label class="form-label">First name <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="first_name" placeholder="Enter First name">
+                        <input type="text" class="form-control" formControlName="first_name"
+                            placeholder="Enter First name">
                         <div class="text-danger mt-2"
                             *ngIf="(registerFormControl.first_name.touched || submitted) && registerFormControl.first_name.errors?.required">
                             First name is required.
@@ -13,7 +14,8 @@
                     </div>
                     <div class="col-md-6 my-2">
                         <label class="form-label">Last name <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="last_name" placeholder="Enter Last name">
+                        <input type="text" class="form-control" formControlName="last_name"
+                            placeholder="Enter Last name">
                         <div class="text-danger mt-2"
                             *ngIf="(registerFormControl.last_name.touched || submitted) && registerFormControl.last_name.errors?.required">
                             Last name is required.
@@ -57,9 +59,7 @@
                     <div class="col-md-6 my-2">
                         <label class="form-label">Country <span class="label-danger">*</span></label>
                         <select class="form-select" formControlName="country" (change)="changeCountry($event)">
-                            <ng-container *ngFor="let row of countries">
-                                <option [value]="row.code">{{row.name}}</option>
-                            </ng-container>
+                            <option *ngFor="let row of countries" [value]="row.code">{{row.name}}</option>
                         </select>
                         <div class="text-danger mt-2"
                             *ngIf="(registerFormControl.country.touched || submitted) && registerFormControl.country.errors?.required">
@@ -107,7 +107,8 @@
                     </div>
                     <div class="col-md-6 my-2">
                         <label class="form-label">Personal email Id <span class="label-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="personal_email" placeholder="Enter Email Id">
+                        <input type="email" class="form-control" formControlName="personal_email"
+                            placeholder="Enter Email Id">
                         <div class="text-danger mt-2"
                             *ngIf="(registerFormControl.personal_email.touched || submitted) && registerFormControl.personal_email.errors?.required">
                             Email is required.
@@ -147,12 +148,20 @@
                             *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
                             Password is required.
                         </div>
+                        <div class="text-danger mt-2"
+                            *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.minlength">
+                            Password must be at least 5 characters long.
+                        </div>
+                        <div class="text-danger mt-2"
+                            *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.maxlength">
+                            Password can be max 10 characters long.
+                        </div>
                     </div>
                     <div class="col-md-6 my-2">
-                        <label class="form-label">Confirm Password<span class="label-danger">*</span></label>
+                        <label class="form-label">Confirm Password <span class="label-danger">*</span></label>
                         <input type="password" class="form-control" formControlName="password_confirmation"
                             placeholder="Enter Confirm Password">
-                            <!-- <div class="text-danger mt-2" *ngIf="registerForm.controls['password_confirmation'].hasError('required') && registerForm.controls['password_confirmation'].hasError('passwordNotMatch')">
+                        <!-- <div class="text-danger mt-2" *ngIf="registerForm.controls['password_confirmation'].hasError('required') && registerForm.controls['password_confirmation'].hasError('passwordNotMatch')">
                                 Password not matched with confirm password.
                             </div> -->
                         <!-- <div class="text-danger mt-2"
@@ -192,17 +201,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <ngx-recaptcha2 #captchaElem
-                        [siteKey]="siteKey"
-                        formControlName="recaptcha">
-                      </ngx-recaptcha2>
-                       
+                        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+                        </ngx-recaptcha2>
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6  align-self-center my-2">
-                        <button type="submit" (click)="submitForm()"
-                            class="btn btn-danger my-2">SIGNUP</button>
+                        <button type="submit" (click)="submitForm()" class="btn btn-danger my-2">SIGNUP</button>
                     </div>
                     <div class="col-md-6  align-self-center my-2">
                         <button type="submit" [routerLink]="['/auth/login']" class="btn btn-success my-2">ALREADY

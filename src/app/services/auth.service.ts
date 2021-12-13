@@ -8,9 +8,9 @@ import { environment } from './../../environments/environment';
 export class AuthService {
   url: any;
   validLogin: any;
-  headers = new HttpHeaders({
-    'Content-Type': 'application/json'
-  });
+  // headers = new HttpHeaders({
+  //   'Content-Type': 'application/json'
+  // });
 
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
@@ -22,7 +22,7 @@ export class AuthService {
    * @returns 
    */
   public register(data: any) {
-    return this.http.post(`${this.url}/create-register`, data, { headers: this.headers });
+    return this.http.post(`${this.url}/create-register`, data);
   }
 
   /**
@@ -31,17 +31,30 @@ export class AuthService {
    * @returns 
    */
   public login(data: any) {
-    return this.http.post(`${this.url}/login`, data, { headers: this.headers });
+    return this.http.post(`${this.url}/login`, data);
   }
 
+  /**
+   * Function to get with token
+   * @returns 
+   */
   public isAuthenticated() {
-      const valid: boolean = Boolean(localStorage.getItem('token')) || false;
-      console.log(valid);
-      if (valid !== undefined || valid !== null) {
-        this.validLogin = valid;
-      } else {
-        this.validLogin = null;
-      }
-      return this.validLogin;
+    const valid: boolean = Boolean(localStorage.getItem('token')) || false;
+    console.log(valid);
+    if (valid !== undefined || valid !== null) {
+      this.validLogin = valid;
+    } else {
+      this.validLogin = null;
+    }
+    return this.validLogin;
+  }
+
+  /**
+  * Api to forgot password
+  * @param data 
+  * @returns 
+  */
+  public forgotPassword(data: any) {
+    return this.http.post(`${this.url}/forgot-password`, data);
   }
 }

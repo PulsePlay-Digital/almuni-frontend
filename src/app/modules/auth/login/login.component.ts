@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup | any;
   validLogin: any;
+  submitted: boolean = false;
 
   constructor(
     public authService: AuthService,
@@ -21,21 +22,30 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
+  get f() {
+    return this.loginForm.controls;
+  }
+
   buildForm() {
     this.loginForm = this.fb.group({
       personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]]
     })
   }
 
-  login() {
-    let params = this.loginForm.value;
-    console.log(params);
-    this.authService.login(params).subscribe((res: any) => {
-      console.log(res, 'res');
-      localStorage.setItem('token', JSON.stringify(res.access_token));
-    }, error => {
-      console.log(error);
-    });
+  async login() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    } else {
+      let params = this.loginForm.value;
+      console.log(params);
+      await this.authService.login(params).subscribe((res: any) => {
+        console.log(res, 'res');
+        localStorage.setItem('token', JSON.stringify(res.access_token));
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 }

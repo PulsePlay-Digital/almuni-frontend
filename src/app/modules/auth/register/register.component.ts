@@ -48,11 +48,12 @@ export class RegisterComponent implements OnInit {
       personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       current_company: ['', Validators.required],
       current_designation: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(6)],
-      password_confirmation: ['', Validators.required, Validators.minLength(6)],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      password_confirmation: ['', [Validators.required, Validators.minLength(6)]],
       securityQuestions_id: ['', Validators.required],
       security_answers: ['', Validators.required],
-      recaptcha: ['', Validators.required]
+      recaptcha: ['', Validators.required],
+      role: [0]
     });
   }
 

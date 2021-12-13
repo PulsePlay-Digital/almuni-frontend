@@ -16,8 +16,10 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Http Request method');
-    return next.handle(request)
+    const req = request.clone({ 
+      headers: request.headers.set('Content-Type', 'application/json'),
+    });
+    return next.handle(req)
       .pipe(
         map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
