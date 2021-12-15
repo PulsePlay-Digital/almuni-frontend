@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup | any;
   countries: any;
   getBatch: any;
+  questions: any;
   getInstitutes: any;
   submitted: boolean = false;
   siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt"
@@ -31,6 +32,7 @@ export class RegisterComponent implements OnInit {
     this.loadCountries();
     this.getAllBatches();
     this.getAllInstitutes();
+    this.getAllQuestions();
   }
 
   buildForm() {
@@ -48,16 +50,18 @@ export class RegisterComponent implements OnInit {
       personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       current_company: ['', Validators.required],
       current_designation: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      password_confirmation: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
+      password_confirmation: ['', [Validators.required]],
       securityQuestions_id: ['', Validators.required],
       security_answers: ['', Validators.required],
       recaptcha: ['', Validators.required],
       role: [0]
+    }, {
+      validators: this.passwordMatch('password', 'password_confirmation')
     });
   }
 
-  get registerFormControl() {
+  get f() {
     return this.registerForm.controls;
   }
 
@@ -76,16 +80,33 @@ export class RegisterComponent implements OnInit {
     this.registerForm.controls['code'].setValue(event.target.value);
   }
 
-  // keyPressNumbers(event: any) {
-  //   let charCode = (event.which) ? event.which : event.keyCode;
-  //   // Only Numbers 0-9
-  //   if ((charCode < 48 || charCode > 57)) {
-  //     event.preventDefault();
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
+  passwordMatch(passwordKey: string, confirmPasswordKey: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[passwordKey];
+      const matchingControl = formGroup.controls[confirmPasswordKey];
+      if (matchingControl.errors && !matchingControl.errors.MustMatch) {
+        return
+      }
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ MustMatch: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    }
+  }
+  /**
+    * Function to allow only Value
+    */
+  public keyPressNumbers(event: any) {
+    let charCode = (event.which) ? event.which : event.keyCode;
+    if ((charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   /**
    * Function to get all Batches 
    */
@@ -107,6 +128,13 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  async getAllQuestions() {
+    await this.dataService.getAllQuestions().subscribe((res: any) => {
+      console.log(res, 'res');
+      this.questions = res.data;
+    });
+  }
+
   /**
    * Function to register user
    */
@@ -119,7 +147,6 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       let params = this.registerForm.value;
       let data = await this.authService.register(params).toPromise();
-      console.log(data, 'register Form')
     }
   }
 }

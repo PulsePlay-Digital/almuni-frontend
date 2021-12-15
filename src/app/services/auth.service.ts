@@ -40,7 +40,6 @@ export class AuthService {
    */
   public isAuthenticated() {
     const valid: boolean = Boolean(localStorage.getItem('token')) || false;
-    console.log(valid);
     if (valid !== undefined || valid !== null) {
       this.validLogin = valid;
     } else {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NotificationService } from './../../../services/notification.service';
 import { AuthService } from './../../../services/auth.service';
 
 @Component({
@@ -15,20 +17,20 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public fb: FormBuilder
+    public notification: NotificationService,
+    public fb: FormBuilder,
+    public router: Router
   ) { }
 
   ngOnInit() {
     this.buildForm();
   }
 
-  get f() {
-    return this.loginForm.controls;
-  }
+  get f() { return this.loginForm.controls; }
 
   buildForm() {
     this.loginForm = this.fb.group({
-      personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]]
     })
   }
@@ -38,11 +40,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     } else {
-      let params = this.loginForm.value;
-      console.log(params);
-      await this.authService.login(params).subscribe((res: any) => {
-        console.log(res, 'res');
-        localStorage.setItem('token', JSON.stringify(res.access_token));
+      await this.authService.login(this.loginForm.value).subscribe((res: any) => {
+        if (res.status === 200) {
+          console.log(res, 'res');
+          localStorage.setItem('token', JSON.stringify(res.access_token));
+          this.router.navigate(['/home']);
+        }
       }, error => {
         console.log(error);
       });

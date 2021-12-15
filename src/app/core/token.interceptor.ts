@@ -8,15 +8,18 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import { NotificationService } from '../services/notification.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() { }
+  constructor(
+    public notificationService : NotificationService
+  ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const req = request.clone({ 
+    const req = request.clone({
       headers: request.headers.set('Content-Type', 'application/json'),
     });
     return next.handle(req)
@@ -24,8 +27,22 @@ export class TokenInterceptor implements HttpInterceptor {
         map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
             console.log('event--->>>', event);
+            switch (event.body.status) {
+              case 200:
+                this.notificationService.openSuccessSnackBar(event.body.message);
+                break;
+              case 422:
+                this.notificationService.openFailureSnackBar(event.body.message);
+                break;
+              case 500:
+                this.notificationService.openFailureSnackBar(event.body.message);
+                break;
+            }
           }
           return event;
+        }), catchError((error) => {
+          console.error(error);
+          return throwError(error.message);
         }));
   }
 }

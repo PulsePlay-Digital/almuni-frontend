@@ -11,7 +11,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './core/token.interceptor';
 import { AuthGuard } from './modules/auth/auth.guard';
-
+import { DataService } from './services/data.service';
+import { CountryService } from './services/country.service';
+import { AuthService } from './services/auth.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -26,11 +31,17 @@ import { AuthGuard } from './modules/auth/auth.guard';
     AuthModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    DashboardModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    DataService,
+    CountryService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

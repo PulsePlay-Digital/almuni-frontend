@@ -3,3 +3,24 @@
 .invalid-feedback {
     display: block !important;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-snack-bar-container {
+  background: #4e73df;
+}
+.mat-simple-snackbar-action {
+  color: #fff;
+}
+.green-snackbar {
+  background: rgb(2, 192, 72);
+  color: #fff;
+}
+.red-snackbar {
+  background: #dc3545;
+  color: #fff;
+}
+.warning-snackbar {
+  background: #ffc107;
+  color: #fff;
+}

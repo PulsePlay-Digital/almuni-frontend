@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NotificationService } from './../../../services/notification.service';
 import { AuthService } from './../../../services/auth.service';
 
 @Component({
@@ -12,8 +14,10 @@ export class ForgotPasswordComponent implements OnInit {
   submitted: boolean = false;
 
   constructor(
-    private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    public notificationService: NotificationService,
+    public fb: FormBuilder,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -22,13 +26,12 @@ export class ForgotPasswordComponent implements OnInit {
 
   buildForm() {
     this.forgotPassForm = this.fb.group({
-      personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
     });
   }
 
-  get f() {
-    return this.forgotPassForm.controls;
-  }
+  get f() {return this.forgotPassForm.controls;}
+  
   /**
    * Function to submit email
    * @returns 
@@ -39,7 +42,10 @@ export class ForgotPasswordComponent implements OnInit {
       return;
     } else {
       console.log(this.forgotPassForm.value);
-      let data = await this.authService.forgotPassword(this.forgotPassForm.value).toPromise();
+      let data: any = await this.authService.forgotPassword(this.forgotPassForm.value).toPromise();
+      if (data?.status === 200) {
+        this.router.navigate(['/auth/login']);
+      }
       console.log(data);
     }
   }

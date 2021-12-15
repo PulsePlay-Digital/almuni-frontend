@@ -6,10 +6,10 @@ import { environment } from './../../environments/environment';
   providedIn: 'root'
 })
 export class DataService {
-  url:any;
+  url: any;
 
-  constructor(public http:HttpClient) { 
-    this.url =  environment.apiUrl;
+  constructor(public http: HttpClient) {
+    this.url = environment.apiUrl;
   }
 
   /**
@@ -23,7 +23,15 @@ export class DataService {
   /**
    * Api to get all Batch year
    */
-   public getAllBatches() {
+  public getAllBatches() {
     return this.http.get(`${this.url}/all-batch`);
-   }
+  }
+
+  /**
+   * Api to get all security questions
+   * @returns 
+   */
+  public getAllQuestions() {
+    return this.http.get(`${this.url}/all-questions`);
+  }
 }
