@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
 
 @Injectable({
@@ -12,7 +13,10 @@ export class AuthService {
   //   'Content-Type': 'application/json'
   // });
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public router: Router
+  ) {
     this.url = environment.apiUrl;
   }
 
@@ -55,5 +59,21 @@ export class AuthService {
   */
   public forgotPassword(data: any) {
     return this.http.post(`${this.url}/forgot-password`, data);
+  }
+
+  /**
+   * Function to get token from Login user
+   * @returns 
+   */
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  /**
+   * Function to logout user
+   */
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login']);
   }
 }
