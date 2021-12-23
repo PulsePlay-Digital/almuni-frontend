@@ -10,16 +10,16 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="row">
-                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">a@gmail.com</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">9846123456</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current Company: <span class="ms-2 fw-normal">Yahoo</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current Designation:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current country:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current region:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current state:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current city:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Email:</div>
-                        <div class="col-lg-6 mb-2 fw-bold">Mobile</div>
+                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.email }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.mobile_number }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current Company: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current Designation: <span class="ms-2 fw-normal">{{ user?.current_designation }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current country: <span class="ms-2 fw-normal">{{ user?.current_country }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current region: <span class="ms-2 fw-normal">{{ user?.current_Region }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current state: <span class="ms-2 fw-normal">{{ user?.current_state }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current city: <span class="ms-2 fw-normal">{{ user?.current_city }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
 
                     </div>
                 </mat-expansion-panel>
@@ -53,8 +53,9 @@
             <div class="card">
                 <img src="./../../../../assets/dummy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text fw-bold">Name:<span class="ms-2 fw-normal">Sushil</span> </p>
-                    <p class="card-text fw-bold">Birth date: <span class="ms-2 fw-normal">21-12-2004</span></p>
+                    <p class="card-text fw-bold">Name:<span class="ms-2 fw-normal">{{ user?.first_name }}</span> </p>
+                    <p class="card-text fw-bold">Birth date: <span class="ms-2 fw-normal">{{ user?.birth_date }}</span></p>
+                    <p class="card-text fw-bold">Anniversary: <span class="ms-2 fw-normal">{{ user?.anniversary_date }}</span></p>
                 </div>
             </div>
         </div>

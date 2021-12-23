@@ -15,12 +15,13 @@ import { NotificationService } from '../services/notification.service';
 export class TokenInterceptor implements HttpInterceptor {
 
   constructor(
-    public notificationService : NotificationService
+    public notificationService: NotificationService
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token: string | any = localStorage.getItem('token');
-
+    const getToken: string | any = localStorage.getItem('token');
+    let token = JSON.parse(getToken);
+    
     if (token) {
       request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
     }
@@ -30,7 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
     }
 
     request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
-    
+
     return next.handle(request)
       .pipe(
         map((event: HttpEvent<any>) => {

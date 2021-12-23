@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       await this.authService.login(this.loginForm.value).subscribe((res: any) => {
-        if (res.status === 200) {
+        if (res.access_token) {
           console.log(res, 'res');
           localStorage.setItem('token', JSON.stringify(res.access_token));
           this.router.navigate(['/home']);

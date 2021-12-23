@@ -2,8 +2,8 @@
     <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -32,10 +32,11 @@
                                 <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenu2">
-                                <li><button class="dropdown-item" [routerLink]="['/view-profile']">View Profile</button></li>
-                                <li><button class="dropdown-item" type="button">Edit Profile</button></li>
+                                <li><button class="dropdown-item" [routerLink]="['/view-profile']">View Profile</button>
+                                </li>
+                                <li><button class="dropdown-item" [routerLink]="['/edit-profile']">Edit Profile</button></li>
                                 <li><button class="dropdown-item" [routerLink]='["/auth/forgot-password"]' type="button">Reset
-                    Password</button></li>
+                                        Password</button></li>
                                 <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
                             </ul>
                         </div>

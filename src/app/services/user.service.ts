@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
 
@@ -7,6 +7,7 @@ import { environment } from './../../environments/environment';
 })
 export class UserService {
   url: any;
+  token: any;
 
   constructor(
     public http: HttpClient
@@ -20,6 +21,6 @@ export class UserService {
    * @returns 
    */
   public getUsersById(id: any) {
-    return this.http.get(`${this.url}/find-user/${id}`);
+    return this.http.get(`${this.url}/user`);
   }
 }

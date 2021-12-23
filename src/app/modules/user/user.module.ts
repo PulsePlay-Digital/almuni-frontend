@@ -5,6 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
+import { EditProfileModule } from './edit-profile/edit-profile.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     UserRoutingModule,
     RouterModule,
+    EditProfileModule,
     MatExpansionModule
   ]
 })

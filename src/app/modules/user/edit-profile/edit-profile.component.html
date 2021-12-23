@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col-lg-9">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <!---- Basic Information Tab ---->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" [routerLink]="['/edit-profile/basic-info']" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Basic Information</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" [routerLink]="['/edit-profile/employment-info']" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Employment/Business Information</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" [routerLink]="['/edit-profile/mentorship']" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Mentorship and Skill</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!---- Basic Information Form ---->
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <router-outlet></router-outlet>
+                </div>
+                <!---- Basic Information Form Close ---->
+                <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> -->
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="./../../../../assets/dummy.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <div class="choose_file">
+                        <button type="button" class="btn">Upload profile picture</button>
+                        <input name="img" type="file" (change)="onChange($event)" accept="image/*" />
+                    </div>
+                    <div class="progress mt-3">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

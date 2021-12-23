@@ -38,10 +38,10 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
   ],
   providers: [
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     DataService,
     CountryService,
-    AuthService
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
