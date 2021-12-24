@@ -4,7 +4,7 @@
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <!---- Basic Information Tab ---->
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" [routerLink]="['/edit-profile/basic-info']" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Basic Information</button>
+                    <button class="nav-link " id="home-tab" [routerLink]="['/edit-profile/basic-info']" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Basic Information</button>
                 </li>
 
                 <li class="nav-item" role="presentation">
@@ -16,7 +16,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <!---- Basic Information Form ---->
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <router-outlet></router-outlet>
                 </div>
                 <!---- Basic Information Form Close ---->

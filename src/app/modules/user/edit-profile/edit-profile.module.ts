@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { EmploymentBusinessInfoComponent } from './employment-business-info/employment-business-info.component';
 import { MentroshipComponent } from './mentroship/mentroship.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { ExperienceComponent } from './experience/experience.component';
   imports: [
     CommonModule,
     EditProfileRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class EditProfileModule { }

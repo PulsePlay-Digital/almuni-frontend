@@ -4,6 +4,7 @@ import { NumbersOnlyDirective } from 'src/app/core/directives/numbers-only.direc
 import { AuthService } from './../../../services/auth.service';
 import { CountryService } from './../../../services/country.service';
 import { DataService } from './../../../services/data.service';
+import { Config } from './../../../services/config';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
     public fb: FormBuilder,
     public countryService: CountryService,
     public dataService: DataService,
-    public authService: AuthService
+    public authService: AuthService,
+    private config: Config
   ) { }
 
   async ngOnInit() {
@@ -45,7 +47,7 @@ export class RegisterComponent implements OnInit {
       current_region: ['', Validators.required],
       country: ['', Validators.required],
       code: ['', Validators.required],
-      mobile_number: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      mobile_number: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
       birth_date: ['', Validators.required],
       personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       current_company: ['', Validators.required],
@@ -98,13 +100,7 @@ export class RegisterComponent implements OnInit {
     * Function to allow only Value
     */
   public keyPressNumbers(event: any) {
-    let charCode = (event.which) ? event.which : event.keyCode;
-    if ((charCode < 48 || charCode > 57)) {
-      event.preventDefault();
-      return false;
-    } else {
-      return true;
-    }
+    this.config.onlyNumber(event);
   }
 
   /**
