@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BasicInfoComponent } from './basic-info/basic-info.component';
 import { EditProfileComponent } from './edit-profile.component';
+import { EducationComponent } from './education/education.component';
 import { EmploymentBusinessInfoComponent } from './employment-business-info/employment-business-info.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { MentroshipComponent } from './mentroship/mentroship.component';
+import { OthersComponent } from './others/others.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
         path: 'experience',
         component: ExperienceComponent
       },
+      {
+        path: 'education',
+        component: EducationComponent
+      },
+      {
+        path: 'others',
+        component: OthersComponent
+      }
     ]
   }
 ];

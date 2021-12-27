@@ -11,6 +11,8 @@ import { ExperienceComponent } from './experience/experience.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { OthersComponent } from './others/others.component';
+import { EducationComponent } from './education/education.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BasicInfoComponent,
     EmploymentBusinessInfoComponent,
     MentroshipComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    OthersComponent,
+    EducationComponent
   ],
   imports: [
     CommonModule,
