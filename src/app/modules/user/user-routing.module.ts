@@ -7,7 +7,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
 const routes: Routes = [
   {
     path: 'view-profile',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     component: ViewProfileComponent 
   },
   {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NumbersOnlyDirective } from 'src/app/core/directives/numbers-only.directive';
 import { AuthService } from './../../../services/auth.service';
 import { CountryService } from './../../../services/country.service';
 import { DataService } from './../../../services/data.service';
@@ -9,8 +8,7 @@ import { Config } from './../../../services/config';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
-  providers: [NumbersOnlyDirective]
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup | any;

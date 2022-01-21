@@ -8,7 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { NumbersOnlyDirective } from './../../core/directives/numbers-only.directive';
+import { NumbersOnlyDirective } from '../../shared/directives/numbers-only.directive';
+import { SharedModule } from './../../shared/shared.module';
 
 
 @NgModule({
@@ -16,13 +17,14 @@ import { NumbersOnlyDirective } from './../../core/directives/numbers-only.direc
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    NumbersOnlyDirective
+    // NumbersOnlyDirective
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     NgxCaptchaModule,
     BsDatepickerModule.forRoot()
   ]

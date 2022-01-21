@@ -72,9 +72,13 @@
                             <div class="col-lg-3 col-md-4 col-sm-3 pb-2">
                                 <input type="text" class="form-control px-2" formControlName="code" placeholder="Code">
                             </div>
-                            <div class="col-lg-9 col-md-8 col-sm-9">
+                            <!-- <div class="col-lg-9 col-md-8 col-sm-9">
                                 <input type="text" class="form-control" (keypress)="keyPressNumbers($event)" formControlName="mobile_number" placeholder="Enter Number">
+                            </div> -->
+                            <div class="col-lg-9 col-md-8 col-sm-9">
+                                <input type="text" class="form-control"  appNumbersOnly formControlName="mobile_number" placeholder="Enter Number">
                             </div>
+                           
                             <div class="text-danger mt-2" *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
                                 Mobile number is required.
                             </div>
