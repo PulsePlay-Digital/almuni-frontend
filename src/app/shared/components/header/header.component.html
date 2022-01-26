@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="./../../../../assets/logo.png">
+            <img src="./assets/logo.png">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +33,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">contact</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" onclick="openNav()">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </a>
-                </li> -->
                 <li class="nav-item otherNav">
                     <a class="nav-link" href="#">community</a>
                 </li>
@@ -54,37 +49,6 @@
                     <a class="nav-link" href="#">contact</a>
                 </li>
             </ul>
-            <!-- <ul class="navbar-nav ml-auto align-items-center">
-                <li>
-                    <a class="btn btn-outline-success me-1" [routerLink]="['/auth/register']">Register</a>
-                </li>
-                <li>
-                    <ng-container *ngIf="!isLogin">
-                        <a class="btn btn-outline-success" [routerLink]="['/auth/login']">Login</a>
-                    </ng-container>
-                    <ng-container *ngIf="isLogin">
-                        <a class="btn btn-outline-success" (click)="logout()">Logout</a>
-                    </ng-container>
-                </li>
-                <ng-container *ngIf="isLogin">
-                    <li>
-                        <div class="dropdown btn-group">
-                            <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenu2">
-                                <li><button class="dropdown-item" [routerLink]="['/view-profile']">View Profile</button>
-                                </li>
-                                <li><button class="dropdown-item" [routerLink]="['/edit-profile']">Edit Profile</button></li>
-                                <li><button class="dropdown-item" [routerLink]='["/auth/forgot-password"]' type="button">Reset
-                                        Password</button></li>
-                                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ng-container>
-            </ul>  -->
-
             <ul class="navbar-nav navSideBar ml-auto align-items-center">
                 <li>
                     <a class="" onclick="openNav()">
@@ -103,37 +67,3 @@
     <a href="#">Clients</a>
     <a href="#">Contact</a>
 </div>
-
-
-
-<script>
-
-</script>
-
-
-<!-- <div class="navBar">
-    <div class="container">
-        <mat-toolbar>
-            <a class="logo">
-                <span>Site name</span>
-            </a>
-            <span class="spacer"></span>
-            <div fxShow="true" fxHide.lt-md="true">
-                <a mat-button>Home</a>
-                <a mat-button>Know us</a>
-                <a mat-button>common purpose & culture</a>
-                <a mat-button>community</a>
-                <a mat-button>connect</a>
-                <a mat-button>collaborate & contribute</a>
-                <a mat-button>celebrate</a>
-                <a mat-button>contact</a>
-            </div>
-            <span class="spacer"></span>
-            <button mat-button mat-icon-button>
-                <mat-icon>menu</mat-icon>
-            </button>
-        </mat-toolbar>
-
-        
-    </div>
-</div> -->

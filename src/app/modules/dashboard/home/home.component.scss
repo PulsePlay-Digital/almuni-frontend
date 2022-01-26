@@ -10,10 +10,14 @@
 
 /* Home Banner Section */
 .homeBanner {
-    background       : url('./../../../../assets/Banner.jpg');
-    background-repeat: no-repeat;
-    background-size  : cover;
-    padding          : 105px 0;
+    background         : url('./../../../../assets/Banner.jpg');
+    background-repeat  : no-repeat;
+    background-size    : 100%;
+    display            : flex;
+    min-height         : 580px;
+    max-height         : 100%;
+    align-items        : center;
+    background-position: 100%;
 
     .bannerContent {
         color         : #fff;
@@ -536,11 +540,24 @@
 
 
 @media screen and (max-width: 564px) and (min-width: 300px) {
+    .homeBanner {
+        min-height     : 320px;
+        background-size: 100% 100%;
+
+        .bannerContent {
+            h4 {
+                font-size  : 32px;
+                line-height: 1.2;
+            }
+        }
+    }
+
     .innovate {
         padding: 20px 0;
 
         .image {
             margin-bottom: 20px;
+            min-height: 320px;
         }
     }
 
@@ -582,11 +599,29 @@
 
         .gallaryImg {
             padding-bottom: 18px;
+
+            img {
+                height    : 220px;
+                min-height: 220px;
+            }
         }
     }
 }
 
 @media screen and (max-width: 767px) and (min-width: 564px) {
+    .homeBanner {
+        min-height         : 450px;
+        background-size    : 100% 100%;
+        background-position: top;
+
+        .bannerContent {
+            h4 {
+                font-size  : 44px;
+                line-height: 1.2;
+            }
+        }
+    }
+
     .innovate {
         padding: 25px 0;
 
@@ -633,6 +668,12 @@
 }
 
 @media screen and (max-width: 991px) and (min-width: 767px) {
+    .homeBanner {
+        min-height         : 500px;
+        background-size    : 100% 100%;
+        background-position: top;
+    }
+
     .meetSection {
         .meet-content {
             padding-left: 0px;
@@ -683,5 +724,12 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 991px) {
+    .homeBanner {
+        min-height         : 460px;
+        background-position: top;
     }
 }
