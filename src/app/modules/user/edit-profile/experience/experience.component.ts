@@ -17,6 +17,9 @@ experienceForm :FormGroup | any;
     this.buildform();
   }
 
+  /**
+   * Function to build form data
+   */
   buildform() {
     this.experienceForm = this.fb.group({
       company_name: [''],

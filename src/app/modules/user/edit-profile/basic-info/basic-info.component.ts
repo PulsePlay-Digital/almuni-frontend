@@ -36,9 +36,11 @@ export class BasicInfoComponent implements OnInit {
     this.buildForm();
     this.getAllBatches();
     this.getAllInstitutes();
-    // console.log(Gender);
   }
 
+  /**
+   * Build form data
+   */
   buildForm() {
     this.basicInfoForm = this.fb.group({
       first_name: ['', Validators.required],
@@ -81,6 +83,9 @@ export class BasicInfoComponent implements OnInit {
     });
   }
 
+  /**
+   * Get form controls
+   */
   get f() {
     return this.basicInfoForm.controls;
   }
@@ -94,9 +99,12 @@ export class BasicInfoComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to change country
+   * @param event 
+   */
   public changeCountry(event: any) {
     console.log(event.target.value);
-    // this.registerForm.controls['code'].setValue(event.target.value);
   }
 
   /**
@@ -125,11 +133,14 @@ export class BasicInfoComponent implements OnInit {
     this.submitted = true;
     if (this.basicInfoForm.invalid) {
       return;
-    } else if (this.basicInfoForm.valid){
+    } else if (this.basicInfoForm.valid) {
       console.log(this.basicInfoForm.value);
     }
   }
-
+  /**
+   * Function to allow only numbers on input fields
+   * @param event 
+   */
   keyPressNumbers(event: any) {
     this.config.onlyNumber(event);
   }

@@ -15,7 +15,8 @@ export class ViewProfileComponent implements OnInit {
   constructor(
     private authService: AuthService,
     public userService: UserService
-  ) { 
+  ) {
+    // Get token 
     this.token = this.authService.getToken();
   }
 
@@ -28,7 +29,6 @@ export class ViewProfileComponent implements OnInit {
    */
   async getUserById() {
     await this.userService.getUsersById(this.token).subscribe((res: any) => {
-      console.log(res, 'res');
       res.birth_date = moment(new Date()).format('DD-MM-YYYY ');
       this.user = res;
     })

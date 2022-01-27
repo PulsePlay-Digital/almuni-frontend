@@ -24,12 +24,18 @@ export class ForgotPasswordComponent implements OnInit {
     this.buildForm();
   }
 
+  /**
+   * Function to build form Data
+   */
   buildForm() {
     this.forgotPassForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]]
     });
   }
 
+  /**
+   * Function to get form controls
+   */
   get f() {return this.forgotPassForm.controls;}
   
   /**
@@ -41,12 +47,10 @@ export class ForgotPasswordComponent implements OnInit {
     if (this.forgotPassForm.invalid) {
       return;
     } else {
-      console.log(this.forgotPassForm.value);
       let data: any = await this.authService.forgotPassword(this.forgotPassForm.value).toPromise();
       if (data?.status === 200) {
         this.router.navigate(['/auth/login']);
       }
-      console.log(data);
     }
   }
 }

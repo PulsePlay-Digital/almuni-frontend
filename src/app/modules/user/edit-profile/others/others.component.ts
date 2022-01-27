@@ -7,8 +7,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./others.component.scss']
 })
 export class OthersComponent implements OnInit {
+
   othersForm: FormGroup | any;
   submitted: boolean = false;
+  
   constructor(
     public fb: FormBuilder
   ) { }
@@ -16,6 +18,9 @@ export class OthersComponent implements OnInit {
   ngOnInit(): void {
     this.buildForm();
   }
+  /**
+   * Build form Data
+   */
   buildForm() {
     this.othersForm = this.fb.group({
       family_relative: [''],
@@ -26,13 +31,14 @@ export class OthersComponent implements OnInit {
       security_answer: ['']
     });
   }
-
+  /**
+   * Get form's controls
+   */
   get f() {
     return this.othersForm.controls;
   }
 
   edit() {
     this.submitted = true;
-    console.log(this.othersForm.value);
   }
 }

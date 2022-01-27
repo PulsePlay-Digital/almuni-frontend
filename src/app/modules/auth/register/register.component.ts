@@ -75,11 +75,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to change country code on click
+   * @param event 
+   */
   public changeCountry(event: any) {
-    console.log(event.target.value);
     this.registerForm.controls['code'].setValue(event.target.value);
   }
 
+  /**
+   * Function to match password and confirm password
+   * @param passwordKey 
+   * @param confirmPasswordKey 
+   * @returns 
+   */
   passwordMatch(passwordKey: string, confirmPasswordKey: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[passwordKey];
@@ -122,9 +131,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  /**
+   * Get all questions
+   */
   async getAllQuestions() {
     await this.dataService.getAllQuestions().subscribe((res: any) => {
-      console.log(res, 'res');
       this.questions = res.data;
     });
   }

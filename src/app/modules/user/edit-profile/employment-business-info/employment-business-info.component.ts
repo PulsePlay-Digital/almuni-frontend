@@ -17,7 +17,9 @@ export class EmploymentBusinessInfoComponent implements OnInit {
     this.buildForm();
   }
 
-
+/**
+ * Function to build form data
+ */
   buildForm() {
     this.empBuisnessForm = this.fb.group({
       professional_title: [''],

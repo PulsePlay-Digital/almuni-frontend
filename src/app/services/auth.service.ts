@@ -9,9 +9,6 @@ import { environment } from './../../environments/environment';
 export class AuthService {
   url: any;
   validLogin: any;
-  // headers = new HttpHeaders({
-  //   'Content-Type': 'application/json'
-  // });
 
   constructor(
     public http: HttpClient,

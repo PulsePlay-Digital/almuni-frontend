@@ -6,19 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
+
   profilePic: any;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onChange(event: any) {
-    console.log(event.target.files[0]);
     this.profilePic = event.target.files[0];
     if (this.profilePic) {
       let formData = new FormData();
       formData.append('profilePic', (this.profilePic) ? this.profilePic : '');
-      console.log(formData);
     }
   }
 }

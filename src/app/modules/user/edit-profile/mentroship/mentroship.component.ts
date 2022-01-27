@@ -18,6 +18,9 @@ export class MentroshipComponent implements OnInit {
     this.buildform();
   }
 
+  /**
+   * Function to build form data
+   */
   buildform() {
     this.mentorForm = this.fb.group({
       willing_provide: ['', Validators.required],
@@ -31,12 +34,14 @@ export class MentroshipComponent implements OnInit {
     })
   }
 
+  /**
+   * Get all form controls
+   */
   get f() {
     return this.mentorForm.controls;
   }
   
   edit() {
     this.submitted = true;
-    console.log(this.mentorForm.value);
   }
 }

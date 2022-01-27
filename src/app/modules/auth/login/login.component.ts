@@ -26,8 +26,14 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
+  /**
+   * Function to get form Control
+   */
   get f() { return this.loginForm.controls; }
 
+  /**
+   * Function to build form
+   */
   buildForm() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
@@ -35,6 +41,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  /**
+   * Function to login user
+   * @returns 
+   */
   async login() {
     this.submitted = true;
     if (this.loginForm.invalid) {
@@ -42,7 +52,6 @@ export class LoginComponent implements OnInit {
     } else {
       await this.authService.login(this.loginForm.value).subscribe((res: any) => {
         if (res.access_token) {
-          console.log(res, 'res');
           localStorage.setItem('token', JSON.stringify(res.access_token));
           this.router.navigate(['/home']);
         }
