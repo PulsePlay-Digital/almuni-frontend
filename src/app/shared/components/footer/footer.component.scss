@@ -62,6 +62,11 @@ footer {
                         color          : #fff;
                         text-decoration: none;
                     }
+
+                    .ref:hover {
+                        color     : #fc7809;
+                        transition: all 0.3s ease-in-out;
+                    }
                 }
             }
 
@@ -72,14 +77,48 @@ footer {
                 margin-top : 10px;
 
                 li {
-                    padding: 2px 5px 2px 0;
+                    padding    : 2px 5px 2px 0;
+                    display    : flex;
+                    align-items: center;
 
                     a {
+                        line-height: 0;
+
                         i {
                             font-size: 22px;
                         }
+
+                        .blog {
+                            height: 22px;
+                            width : 22px;
+                        }
                     }
                 }
+
+                // .insta a:hover {
+                //     color     : #c33223 !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
+                // .youtube a:hover {
+                //     color     : #c33223 !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
+                // .mail a:hover {
+                //     color     :  #2478ba !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
+                // .linkdin a:hover {
+                //     color     : #2478ba !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
+                // .facebook a:hover {
+                //     color     : #3a589d !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
+                // .twitter a:hover {
+                //     color     : #2478ba !important;
+                //     transition: all 0.3s ease-in-out;
+                // }
             }
         }
     }
@@ -101,20 +140,35 @@ footer {
         .webCounter {
             text-align: center;
         }
+
+        .siteText {
+            text-align: center;
+
+            a {
+                color: #fff;
+            }
+        }
     }
 }
 
 @media screen and (max-width: 564px) and (min-width: 300px) {
     footer {
-        .footer{
+        .footer {
             padding: 34px 0 10px;
         }
+
         .copyright-section {
             padding: 20px 0px 8px;
+
             p {
                 margin-bottom: 10px;
             }
+
             .webCounter {
+                text-align: left;
+            }
+
+            .siteText {
                 text-align: left;
             }
         }
@@ -125,10 +179,16 @@ footer {
     footer {
         .copyright-section {
             padding: 20px 0px 8px;
+
             p {
-                margin-bottom: 5px;
+                margin-bottom: 6px;
             }
+
             .webCounter {
+                text-align: left;
+            }
+
+            .siteText {
                 text-align: left;
             }
         }
