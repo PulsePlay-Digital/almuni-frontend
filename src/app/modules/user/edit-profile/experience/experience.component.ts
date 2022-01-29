@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-experience',
@@ -26,9 +26,32 @@ experienceForm :FormGroup | any;
       job_title: [''],
       start_date: [''],
       end_date: [''],
-      high_summary: ['']
+      high_summary: [''],
+      addItems: this.fb.array([])
     })
   }
+  addItems() : FormArray {  
+    return this.experienceForm.get("addItems") as FormArray  
+  }  
+
+  newItems(): FormGroup {  
+    return this.fb.group({  
+      company_name: [''],
+      job_title: [''],
+      start_date: [''],
+      end_date: [''],
+      high_summary: [''],  
+    })  
+  }  
+     
+  addQuantity() {  
+    this.addItems().push(this.newItems());  
+  }
+
+  removeItems(i:number) {  
+    console.log(i)
+    this.addItems().removeAt(i);  
+  }  
 
   edit() {
     console.log(this.experienceForm.value);

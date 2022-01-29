@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from './../../../../services/data.service';
 import { Config } from './../../../../services/config';
 import { CountryService } from './../../../../services/country.service';
@@ -31,9 +31,9 @@ export class BasicInfoComponent implements OnInit {
     this.bloodGroup = this.config.bloodGroup();
   }
 
-  ngOnInit(): void {
-    this.loadCountries();
+  ngOnInit() {
     this.buildForm();
+    this.loadCountries();
     this.getAllBatches();
     this.getAllInstitutes();
   }

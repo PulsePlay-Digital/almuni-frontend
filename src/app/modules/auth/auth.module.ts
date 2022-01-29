@@ -8,16 +8,13 @@ import { RegisterComponent } from './register/register.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { NumbersOnlyDirective } from '../../shared/directives/numbers-only.directive';
 import { SharedModule } from './../../shared/shared.module';
-
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ForgotPasswordComponent,
-    // NumbersOnlyDirective
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
