@@ -1,0 +1,27 @@
+<!-- Main Content -->
+<div id="content">
+  <div class="container">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+      <h1 class="h3 mb-0 text-gray-800 text-center">Users Control Panel</h1>
+    </div>
+    <!-- Page Heading Close -->
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- <ng-container *ngIf="usersData?.length > 0"> -->
+        <!-- Ag grid table -->
+        <app-table-view
+          [rowsList]="usersData"
+          [columns]="columnList"
+          [defaultColDef]="defaultColDef"
+        >
+        </app-table-view>
+        <!-- Ag grid table Close -->
+        <!-- </ng-container> -->
+      </div>
+    </div>
+  </div>
+  <!-- Content Row Close -->
+</div>

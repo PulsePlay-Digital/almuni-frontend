@@ -1,0 +1,41 @@
+<!-- Main Content -->
+<div id="content">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between my-4">
+            <h1 class="h3 mb-0 text-gray-800">User Details</h1>
+
+        </div>
+        <a type="button" class="btn btn-primary mb-3" (click)="navigateBack()">Back</a>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Email</th>
+                            <th>Phone number</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="detail?.length != 0">
+                        <tr *ngFor="let user of detail">
+                            <td>{{ user?.id }}</td>
+                            <td>{{ user?.first_name }}</td>
+                            <td>{{ user?.last_name }}</td>
+                            <td>{{ user?.email }}</td>
+                            <td>{{ user?.phone }}</td>
+                            <td>{{ user?.country}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

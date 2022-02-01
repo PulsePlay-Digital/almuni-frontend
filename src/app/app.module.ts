@@ -5,18 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './modules/auth/auth.module';
-import { SharedModule } from './shared/shared.module';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './core/token.interceptor';
-import { AuthGuard } from './modules/auth/auth.guard';
-import { DataService } from './services/data.service';
-import { CountryService } from './services/country.service';
-import { AuthService } from './services/auth.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { AdminModule } from './admin/admin.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { FrontendModule } from './frontend/frontend.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,24 +20,21 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    AuthModule,
     FormsModule,
     ReactiveFormsModule,
+    AdminModule,
     SharedModule,
-    DashboardModule,
+    FrontendModule,
     MatFormFieldModule,
     MatSnackBarModule
   ],
   providers: [
-    AuthGuard,
-    DataService,
-    CountryService,
-    AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    
   ],
   bootstrap: [AppComponent]
 })
