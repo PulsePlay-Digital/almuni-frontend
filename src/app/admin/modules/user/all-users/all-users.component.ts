@@ -81,11 +81,6 @@ export class AllUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers();
-    // this.dtOptions = {
-    //   pagingType: 'full_numbers',
-    //   pageLength: 4,
-    //   processing: false,
-    // };
   }
 
 

@@ -9,7 +9,7 @@ import { Config } from "./../../../../frontend/services/config";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  gallary: any;
+  gallery: any;
   alumniStories: any;
 
   customOptions: OwlOptions = {
@@ -20,6 +20,22 @@ export class HomeComponent implements OnInit {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
+    // autoplay: true,
+    // autoplayTimeout: 3000,
+    navText: [
+      '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+      '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+    ],
+    nav: true,
+  };
+
+  galleryOptions: OwlOptions = {
+    loop: true,
+    items: 1,
+    mouseDrag: true,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
     autoplay: true,
     autoplayTimeout: 2500,
     navText: [
@@ -27,42 +43,30 @@ export class HomeComponent implements OnInit {
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
     ],
     nav: true,
-  };
-
-  gallaryOptions: OwlOptions = {
-    loop: true,
-    items: 1,
-    mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots: true,
-    navSpeed: 700,
-    autoplay: true,
-    autoplayTimeout: 2000,
-    navText: [
-      '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-      '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-    ],
-    nav: true,
     center: true,
+    stagePadding: 300,
     responsive: {
       0: {
         items: 1,
-        stagePadding: 0,
+        stagePadding: 0
       },
       400: {
         items: 1,
-        stagePadding: 0,
+        stagePadding: 0
       },
       768: {
         items: 1,
-        stagePadding: 300,
+        stagePadding: 250
       },
-    },
+      1191: {
+        items: 1,
+        stagePadding: 350
+      }
+    }
   };
 
   constructor(public router: Router, public config: Config) {
-    this.gallary = this.config.gallary();
+    this.gallery = this.config.gallary();
     this.alumniStories = this.config.alumniStories();
   }
 

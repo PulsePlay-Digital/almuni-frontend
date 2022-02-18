@@ -111,24 +111,33 @@ body {
     }
 
     owl-carousel-o {
-        owl-stage {
-            .owl-stage {
-                .owl-item {
-                    .gallaryImg {
-                        img {
-                            opacity: .5
+        .owl-carousel {
+            .owl-stage-outer{
+                padding-top: 40px;
+                owl-stage {
+                    .owl-stage {
+                        .owl-item {
+                            .gallaryImg {
+                                img {
+                                    opacity: .5
+                                }
+                            }
                         }
-                    }
-                }
-                .owl-item.center {
-                    .gallaryImg {
-                        img {
-                            opacity: 1
+                        .owl-item.center {
+                            .gallaryImg {
+                                img {
+                                    opacity: 1;
+                                    height: 340px !important;
+                                    margin-top: -38px;
+                                    border-radius: 5px;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+   
     }
 }
 
@@ -201,6 +210,35 @@ body {
             top     : 15px;
             bottom  : unset;
             left    : unset;
+        }
+    }
+    .gallary {
+        owl-carousel-o {
+            .owl-carousel {
+                .owl-stage-outer{
+                    padding-top: 40px;
+                    owl-stage {
+                        .owl-stage {
+                            .owl-item {
+                                .gallaryImg {
+                                    img {
+                                        opacity: .5
+                                    }
+                                }
+                            }
+                            .owl-item.center {
+                                .gallaryImg {
+                                    img {
+                                        opacity: 1;
+                                        height: 320px !important;
+                                        margin-top: -29px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

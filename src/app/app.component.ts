@@ -12,7 +12,6 @@ import {
 })
 export class AppComponent {
   title = "sbs-almuni";
-
   constructor(public router: Router, public aroute: ActivatedRoute) {
    
   }
@@ -21,6 +20,7 @@ export class AppComponent {
       if(res instanceof NavigationEnd) {
         if (res?.url) {
           res = res.url.split('/');
+            console.log(res, 'response')
           if (res.includes('admin')) {
             this.router.navigate(['/admin/dashboard']);
           }
