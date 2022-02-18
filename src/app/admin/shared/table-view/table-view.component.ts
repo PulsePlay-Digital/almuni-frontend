@@ -7,10 +7,6 @@ import { GridOptions } from 'ag-grid-community';
   styleUrls: ['./table-view.component.scss']
 })
 export class TableViewComponent implements OnInit {
-  @Input() columns: any;
-  @Input() rowsList: any;
-  @Input() defaultColDef: any;
-
   @Input() ColumnDefs: any;  
   @Input() RowData: any;  
   @Input() IsColumnsToFit: boolean | undefined;  
@@ -24,8 +20,6 @@ export class TableViewComponent implements OnInit {
   }
 
   onGridReady(params: any) { 
-    debugger;
-    console.log(params.api);
     this.gridApi = params.api;  
     this.gridColumnApi = params.columnApi;  
     params.api.setRowData(this.RowData);  

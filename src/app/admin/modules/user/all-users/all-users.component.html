@@ -10,16 +10,7 @@
     <!-- Content Row -->
     <div class="row">
       <div class="col-lg-12">
-        <!-- <ng-container *ngIf="usersData?.length > 0"> -->
         <!-- Ag grid table -->
-        <!-- <app-table-view
-          [rowsList]="usersData"
-          [columns]="columnList"
-          [defaultColDef]="defaultColDef"
-        >
-        </app-table-view> -->
-
-
         <div class="ag-theme-balham" style="height:350px;">    
           <app-table-view  *ngIf="AgLoad" [ColumnDefs]="columnList" [RowData]="RowData"    
             [IsColumnsToFit]="true">    
