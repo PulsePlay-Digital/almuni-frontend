@@ -30,4 +30,8 @@ export class DataService {
   public getAllQuestions() {
     return this.http.get(`${this.url}/all-questions`);
   }
+
+  // public dummyData() {
+  //   return this.http.get(`${this.url}/users`);
+  // }
 }
