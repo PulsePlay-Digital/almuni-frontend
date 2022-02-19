@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from './../../../services/auth.service';
 
 @Component({
@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
    */
   logout() {
     this.authService.logout();
-    // Navigate to login page
-    this.router.navigate(['/admin/login']);
+    this.router.navigate(['admin/login']);
   }
 }
