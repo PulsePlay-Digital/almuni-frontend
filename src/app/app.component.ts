@@ -21,7 +21,7 @@ export class AppComponent {
         if (res?.url) {
           res = res.url.split('/');
           if (res.includes('admin')) {
-            this.router.navigate(['/admin/dashboard']);
+            // this.router.navigate(['/admin/dashboard']);
           }
         }
       }

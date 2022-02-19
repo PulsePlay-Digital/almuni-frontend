@@ -1,6 +1,6 @@
 <!-- Main Content -->
 <div id="content">
-  <div class="container">
+  <div class="">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between my-4">
       <h1 class="h3 mb-0 text-gray-800 text-center">Users Control Panel</h1>
@@ -13,7 +13,7 @@
         <!-- Ag grid table -->
         <div class="ag-theme-balham" style="height:350px;">    
           <app-table-view  *ngIf="AgLoad"  [columnDefs]="columnList" [RowData]="rowData"    
-            [IsColumnsToFit]="true" [config]="tableConfig" (onRowEdit)="onEditRow($event)"
+            [IsColumnsToFit]="true" [config]="tableConfig" (onRowEdit)="onViewUser($event)"
             >    
           </app-table-view>    
         </div>    
