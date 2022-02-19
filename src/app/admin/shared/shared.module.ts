@@ -1,35 +1,51 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { TableViewComponent } from './table-view/table-view.component';
 import { AgGridModule } from 'ag-grid-angular';
-import { LoaderComponent } from './loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ToolsRendererComponent } from './components/table-view/tools-renderer/tools-renderer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { DialogMaterialComponent } from './components/dialog-material/dialog-material.component';
+ 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
     TableViewComponent,
-    LoaderComponent
+    LoaderComponent,
+    ToolsRendererComponent,
+    DialogMaterialComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatProgressSpinnerModule,
-    AgGridModule.withComponents([])
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    AgGridModule.withComponents([
+      ToolsRendererComponent
+    ])
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
     TableViewComponent,
-    LoaderComponent
+    LoaderComponent,
+    ToolsRendererComponent,
+    DialogMaterialComponent
+  ],
+  entryComponents: [
+    DialogMaterialComponent
   ]
 })
 export class SharedModule { }

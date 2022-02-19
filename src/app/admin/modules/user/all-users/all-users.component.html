@@ -12,12 +12,12 @@
       <div class="col-lg-12">
         <!-- Ag grid table -->
         <div class="ag-theme-balham" style="height:350px;">    
-          <app-table-view  *ngIf="AgLoad" [ColumnDefs]="columnList" [RowData]="RowData"    
-            [IsColumnsToFit]="true">    
+          <app-table-view  *ngIf="AgLoad"  [columnDefs]="columnList" [RowData]="rowData"    
+            [IsColumnsToFit]="true" [config]="tableConfig" (onRowEdit)="onEditRow($event)"
+            >    
           </app-table-view>    
         </div>    
         <!-- Ag grid table Close -->
-        <!-- </ng-container> -->
       </div>
     </div>
   </div>
