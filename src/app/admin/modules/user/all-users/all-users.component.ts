@@ -23,6 +23,98 @@ export class AllUsersComponent implements OnInit {
       field: 'id',
     },
     {
+      headerName: "Full Name",
+      field: 'fulllname',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Email Id",
+      field: 'email',
+      valueGetter: (params: any) => {
+        return `${params.data.email}`;
+      },
+    },
+    {
+      headerName: "Mobile Number",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Current City",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Current Designation",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Current Company",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Status",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Institute Name",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Batch Id",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Reg. Date",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Apv. By",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Apv. Date",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+    {
+      headerName: "Reset pwd",
+      field: '',
+      valueGetter: (params: any) => {
+        // return `${params.data.id}`;
+      },
+    },
+  
+    {
       headerName: "Id",
       field: 'id',
       valueGetter: (params: any) => {
@@ -34,13 +126,6 @@ export class AllUsersComponent implements OnInit {
       field: 'name',
       valueGetter: (params: any) => {
         return `${params.data.name}`;
-      },
-    },
-    {
-      headerName: "Email",
-      field: 'email',
-      valueGetter: (params: any) => {
-        return `${params.data.email}`;
       },
     },
     {
