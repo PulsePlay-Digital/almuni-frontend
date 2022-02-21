@@ -32,11 +32,13 @@ export class AppComponent {
       .subscribe((event: any) => {
         console.log(event);
         console.log(this.currentUser);
-        if (event.url == "/admin" || event.url == "/admin/login") {
-          if (this.currentUser == null) {
+        if (event.url == "/admin" || event.url == "/admin/login" || event.url == "/admin/dashboard") {
+          console.log('2')
+          if (JSON.stringify(this.currentUser == '{}')) {
+            console.log('hh')
             this.router.navigate(['/admin/login']);
           }
-          else if (this.currentUser){
+          else{
             this.router.navigate(['/admin/dashboard']);
           }
         }

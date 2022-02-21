@@ -36,9 +36,9 @@ export class AuthService {
    * @returns 
    */
   public isAuthenticated(): boolean {
-    const currentUser: boolean = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     console.log(currentUser);
-    if (currentUser == true) {
+    if (currentUser != '{}') {
       this.validLogin = currentUser;
     } else {
       this.validLogin = null;
