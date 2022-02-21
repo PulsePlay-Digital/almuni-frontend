@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
             //   res.message
             // );
             this.router.navigate(["/admin/dashboard"]);
-            // location.reload();
+            location.reload();
           } else {
             this.interceptor.notificationService.openFailureSnackBar(
               res.message

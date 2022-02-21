@@ -24,23 +24,21 @@ export class AppComponent {
   ngOnInit() {
     this.href = this.router.url;
     console.log(this.router.url);
-    if (this.currentUser && this.currentUser?.user?.role == 0) {
-      this.router.navigate(['/admin/dashboard']);
-    } else {
-      this.router.navigate(['/admin/login']);
-    }
+
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         console.log(event);
 
-        if (event.url == "/admin/dashboard") {
-          if (JSON.stringify(this.currentUser) === '{}') {
-            this.router.navigate(['/admin/login']);
-          }
-          else {
-            this.router.navigate(['/admin/dashboard']);
-          }
-        }
+        // if (event.url == "/admin/dashboard" || event.url == "/admin" || event.url == '/admin/login') {
+        //   if (this.currentUser == '{}' && this.currentUser?.user?.role == 0) {
+        //     this.router.navigate(['/admin/login']);
+        //   }
+        //   else {
+        //     this.router.navigate(['/admin/dashboard']);
+        //   }
+        // }else {
+        //   this.router.navigate(['/home']);
+        // }
       });
   }
 }
