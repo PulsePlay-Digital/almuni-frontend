@@ -71,15 +71,15 @@ export class AllUsersComponent implements OnInit {
     this.getDummyData();
   }
 
-   getDummyData() {
+  getDummyData() {
     this.AgLoad = true;
-    this.http.get<any[]>(' https://gorest.co.in/public/v2/users').subscribe((res)=> {
+    this.http.get<any[]>('https://gorest.co.in/public/v2/users').subscribe((res)=> {
       this.rowData = res;
     });     
   }
 
-  onEditRow(e:any) {
-    console.log(e)
+  onViewUser(e:any) {
+    this.router.navigate(['/admin/view-user'],{ queryParams: { id: e.id }});
   }
 
   /**

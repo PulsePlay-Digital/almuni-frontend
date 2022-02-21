@@ -1,14 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AdminComponent } from "./admin.component";
-import { AuthGuard } from "./modules/auth/auth.guard";
 
 const routes: Routes = [
-  {
-    path: "",
-    redirectTo: "/admin/dashboard",
-    pathMatch: "full",
-  },
   {
     path: "",
     component: AdminComponent,
@@ -24,7 +18,12 @@ const routes: Routes = [
         loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
       }
     ]
-  }
+  },
+  {
+    path: "",
+    redirectTo: "/admin/dashboard",
+    pathMatch: "full",
+  },
 ];
 
 @NgModule({
