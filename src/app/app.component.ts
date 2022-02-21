@@ -4,6 +4,7 @@ import {
   NavigationEnd,
   Router,
 } from "@angular/router";
+import { filter } from "rxjs/internal/operators/filter";
 
 @Component({
   selector: "app-root",
@@ -12,28 +13,34 @@ import {
 })
 export class AppComponent {
   title = "sbs-almuni";
+  currentUser: any;
+  public href: string = "";
   constructor(public router: Router, public aroute: ActivatedRoute) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    console.log(this.currentUser);
+
 
   }
   ngOnInit() {
-    this.router.events.subscribe((res: any) => {
-      console.log(res)
-      if (res.routerEvent && res.routerEvent.url != "/admin/dashboard") {
-        if (res instanceof NavigationEnd) {
-          if (res?.url) {
-            res = res.url.split('/');
-            if (res.includes('admin')) {
-              this.router.navigate(['/admin/dashboard']);
-            }
+    this.href = this.router.url;
+    console.log(this.router.url);
+    if (this.currentUser && this.currentUser?.user?.role == 0) {
+      this.router.navigate(['/admin/dashboard']);
+    } else {
+      this.router.navigate(['/admin/login']);
+    }
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        console.log(event);
+
+        if (event.url == "/admin/dashboard") {
+          if (JSON.stringify(this.currentUser) === '{}') {
+            this.router.navigate(['/admin/login']);
+          }
+          else {
+            this.router.navigate(['/admin/dashboard']);
           }
         }
-      }
-      else if (res && res.routerEvent.url == "/admin/dashboard" || res.url == "/admin/dashboard") {
-        this.router.navigate(['/admin/login']);
-      }
-      else if (res && res.url == "/admin/login" || res.routerEvent.url == "/admin/login") {
-        this.router.navigate(['/admin/dashboard']);
-      }
-    });
+      });
   }
 }

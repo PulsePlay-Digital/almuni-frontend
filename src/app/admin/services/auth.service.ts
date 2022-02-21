@@ -35,14 +35,16 @@ export class AuthService {
    * @returns 
    */
   public isAuthenticated() {
-    const valid: boolean = Boolean(localStorage.getItem('token')) || false;
-    console.log(valid);
-    if (valid !== undefined || valid !== null) {
-      this.validLogin = valid;
-    } else {
-      this.validLogin = null;
-    }
-    return this.validLogin;
+    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    return (user !== null) ? true : false;
+    // const valid: boolean = Boolean(localStorage.getItem('currentUser')) || false;
+    // console.log(valid);
+    // if (valid !== undefined || valid !== null) {
+    //   this.validLogin = valid;
+    // } else {
+    //   this.validLogin = null;
+    // }
+    // return this.validLogin;
   }
 
   /**
@@ -58,7 +60,7 @@ export class AuthService {
    * Function to remove token from localstorage
    */
   public logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
     localStorage.clear();
   }
 }
