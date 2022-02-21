@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './../admin/modules/user/user.module';
 import { TokenInterceptor } from './../admin/core/token.interceptor';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TokenInterceptor } from './../admin/core/token.interceptor';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    AuthModule,
     UserModule,
     MatFormFieldModule,
     MatSnackBarModule,

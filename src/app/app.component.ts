@@ -5,6 +5,7 @@ import {
   Router,
 } from "@angular/router";
 import { filter } from "rxjs/internal/operators/filter";
+import { AuthService } from "./admin/services/auth.service";
 
 @Component({
   selector: "app-root",
@@ -15,29 +16,27 @@ export class AppComponent {
   title = "sbs-almuni";
   currentUser: any;
   public href: string = "";
-  constructor(public router: Router, public aroute: ActivatedRoute) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  constructor(public router: Router, public aroute: ActivatedRoute, public authService: AuthService) {
+    this.currentUser = this.authService.isAuthenticated();
     console.log(this.currentUser);
-
-
   }
+
   ngOnInit() {
     this.href = this.router.url;
-    console.log(this.router.url);
-    if (this.currentUser && this.currentUser?.user?.role == 0) {
-      this.router.navigate(['/admin/dashboard']);
-    } else {
-      this.router.navigate(['/admin/login']);
-    }
+    // if (this.currentUser !== null && this.currentUser?.user?.role == 0) {
+    //   this.router.navigate(['/admin/dashboard']);
+    // } else {
+    //   this.router.navigate(['/admin/login']);
+    // }
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         console.log(event);
-
-        if (event.url == "/admin/dashboard") {
-          if (JSON.stringify(this.currentUser) === '{}') {
+        console.log(this.currentUser);
+        if (event.url == "/admin" || event.url == "/admin/login") {
+          if (this.currentUser == null) {
             this.router.navigate(['/admin/login']);
           }
-          else {
+          else if (this.currentUser){
             this.router.navigate(['/admin/dashboard']);
           }
         }

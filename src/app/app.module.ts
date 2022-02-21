@@ -34,7 +34,6 @@ import { SharedModule } from './shared/shared.module';
     MatSnackBarModule
   ],
   providers: [
-    
   ],
   bootstrap: [AppComponent]
 })

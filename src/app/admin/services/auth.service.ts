@@ -30,21 +30,20 @@ export class AuthService {
   public login(data: any) {
     return this.http.post(`${this.url}/login`, data);
   }
+
   /**
    * Function to get with token
    * @returns 
    */
-  public isAuthenticated() {
-    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    return (user !== null) ? true : false;
-    // const valid: boolean = Boolean(localStorage.getItem('currentUser')) || false;
-    // console.log(valid);
-    // if (valid !== undefined || valid !== null) {
-    //   this.validLogin = valid;
-    // } else {
-    //   this.validLogin = null;
-    // }
-    // return this.validLogin;
+  public isAuthenticated(): boolean {
+    const currentUser: boolean = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    console.log(currentUser);
+    if (currentUser == true) {
+      this.validLogin = currentUser;
+    } else {
+      this.validLogin = null;
+    }
+    return this.validLogin;
   }
 
   /**

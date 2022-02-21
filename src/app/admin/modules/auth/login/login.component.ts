@@ -62,13 +62,8 @@ export class LoginComponent implements OnInit {
       await this.authService.login(params).subscribe(
         (res: any) => {
           if (res.status === 200) {
-            console.log(res)
             localStorage.setItem("currentUser", JSON.stringify(res));
-            // this.interceptor.notificationService.openSuccessSnackBar(
-            //   res.message
-            // );
             this.router.navigate(["/admin/dashboard"]);
-            // location.reload();
           } else {
             this.interceptor.notificationService.openFailureSnackBar(
               res.message
