@@ -15,6 +15,7 @@ import { TableViewComponent } from './components/table-view/table-view.component
 import { LoaderComponent } from './components/loader/loader.component';
 import { DialogMaterialComponent } from './components/dialog-material/dialog-material.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { SearchFilterComponent } from './components/search-filter/search-filter.component';
  
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     TableViewComponent,
     LoaderComponent,
     ToolsRendererComponent,
-    DialogMaterialComponent
+    DialogMaterialComponent,
+    SearchFilterComponent
   ],
   imports: [
     CommonModule,
@@ -46,10 +48,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
     TableViewComponent,
     LoaderComponent,
     ToolsRendererComponent,
-    DialogMaterialComponent
+    DialogMaterialComponent,
+    SearchFilterComponent
   ],
   entryComponents: [
-    DialogMaterialComponent
+    DialogMaterialComponent,
+    SearchFilterComponent
   ]
 })
 export class SharedModule { }

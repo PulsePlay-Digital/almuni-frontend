@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ViewUserComponent } from './view-user/view-user.component';;
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 @NgModule({

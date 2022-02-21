@@ -1,0 +1,15 @@
+.search-filter {
+    .section-heading {
+        height: 45px;
+        background-color: blue;
+        padding: 10px;
+        color: #fff;
+        .text-left-listing {
+            float: left;
+        }
+        .text-right-download {
+            float: right;
+            cursor: pointer;
+        }
+    }
+}
