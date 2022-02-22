@@ -9,6 +9,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserModule } from './../frontend/modules/user/user.module';
 import { TokenInterceptor } from './../frontend/core/token.interceptor';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { NotificationService } from './services/notification.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -22,10 +27,15 @@ import { TokenInterceptor } from './../frontend/core/token.interceptor';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    UserModule
+    UserModule,
+    MatSnackBarModule,
+    MatFormFieldModule
   ],
   providers: [
-    TokenInterceptor
+    AuthService,
+    NotificationService,
+    TokenInterceptor,
+    UserService
   ]
 })
 export class FrontendModule { }
