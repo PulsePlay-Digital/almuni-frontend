@@ -10,9 +10,10 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { NumbersOnlyDirective } from "./../shared/directives/numbers-only.directive";
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective],
+  declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent],
   imports: [
     RouterModule,
     HttpClientModule,
@@ -22,6 +23,6 @@ import { NumbersOnlyDirective } from "./../shared/directives/numbers-only.direct
     MatButtonModule,
     MatMenuModule,
   ],
-  exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective],
+  exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent]
 })
 export class SharedModule {}

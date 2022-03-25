@@ -12,6 +12,7 @@ import { EmploymentBusinessInfoComponent } from './employment-business-info/empl
 import { ExperienceComponent } from './experience/experience.component';
 import { OthersComponent } from './others/others.component';
 import { MentorshipComponent } from './mentorship/mentorship.component';
+import { SharedModule } from 'src/app/frontend/shared/shared.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MentorshipComponent } from './mentorship/mentorship.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     BsDatepickerModule.forRoot()
   ]
 })

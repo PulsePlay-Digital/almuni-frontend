@@ -35,18 +35,18 @@ export class TokenInterceptor implements HttpInterceptor {
       .pipe(
         map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            console.log('event--->>>', event);
-            switch (event.body.status) {
-              case 200:
-                this.notificationService.openSuccessSnackBar(event.body.message);
-                break;
-              case 422:
-                this.notificationService.openFailureSnackBar(event.body.message);
-                break;
-              case 500:
-                this.notificationService.openFailureSnackBar(event.body.message);
-                break;
-            }
+            // console.log('event--->>>', event);
+            // switch (event.body.status) {
+            //   case 200:
+            //     this.notificationService.openSuccessSnackBar(event.body.message);
+            //     break;
+            //   case 422:
+            //     this.notificationService.openFailureSnackBar(event.body.message);
+            //     break;
+            //   case 500:
+            //     this.notificationService.openFailureSnackBar(event.body.message);
+            //     break;
+            // }
           }
           return event;
         }), catchError((error) => {

@@ -23,4 +23,10 @@ export class UserService {
   public getUsersById(id: any) {
     return this.http.get(`${this.url}/user`);
   }
+
+  public postData(action?: any, data?: any) {
+    console.log(action)
+    console.log(data)
+    return this.http.post<any>(`${this.url}/${action?.action}` + '/' + action?.id, data);
+  }
 }

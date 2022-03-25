@@ -101,3 +101,19 @@ nav {
         }
     }
 }
+
+.userImg {
+    .userDrop {
+        font-size: 14px;
+    }
+    .dropdown-menu {
+        li {
+            .dropdown-item {
+                color: #525252;
+                text-transform: capitalize;
+                font-size: 12px;
+                line-height: 1.4;
+            }
+        }
+    }
+}

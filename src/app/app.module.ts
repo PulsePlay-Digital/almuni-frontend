@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FrontendModule } from './frontend/frontend.module';
+import { UserService } from './frontend/services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FrontendModule } from './frontend/frontend.module';
     FrontendModule
   ],
   providers: [
+    UserService
   ],
   bootstrap: [AppComponent]
 })
