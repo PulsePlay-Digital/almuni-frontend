@@ -5,6 +5,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import { CelebrateComponent } from './celebrate/celebrate.component';
 import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
+import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
 import { CommunityComponent } from './community/community.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'careers',
     component: CareersComponent
+  },
+  {
+    path: 'common-purpose-culture',
+    component: CommonPurposeCultureComponent
   }
 ];
 
