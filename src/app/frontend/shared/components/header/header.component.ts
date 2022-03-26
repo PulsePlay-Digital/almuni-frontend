@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
     public router: Router,
     private authService: AuthService
   ) {
-    let data : any =  localStorage?.getItem("currentUser")
-    this.currentUser = JSON.parse(data);
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      console.log(this.currentUser);
   }
 
   ngOnInit(): void {
