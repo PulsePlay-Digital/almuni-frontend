@@ -6,11 +6,29 @@ import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from './../../../frontend/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
+import { NewsComponent } from './news/news.component';
+import { CelebrateComponent } from './celebrate/celebrate.component';
+import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
+import { EventComponent } from './event/event.component';
+import { CommunityComponent } from './community/community.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { CareersComponent } from './careers/careers.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
+    NewsComponent,
+    CelebrateComponent,
+    CollaborateContributeComponent,
+    EventComponent,
+    CommunityComponent,
+    SitemapComponent,
+    AboutUsComponent,
+    CareersComponent
   ],
   imports: [
     CommonModule,
