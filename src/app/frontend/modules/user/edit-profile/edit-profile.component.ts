@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { environment } from "./../../../../../environments/environment";
 import { UserService } from "./../../../services/user.service";
 
 @Component({
@@ -11,8 +12,17 @@ export class EditProfileComponent implements OnInit {
   uploadImgForm: FormGroup | any;
   profilePic: any;
   image: any;
+  currentUser: any;
+  imgUrl: any;
 
-  constructor(public formBuilder: FormBuilder, public userService: UserService) {}
+  constructor(
+    public formBuilder: FormBuilder, 
+    public userService: UserService
+    ) {
+      let data : any =  localStorage?.getItem("currentUser")
+      this.currentUser = JSON.parse(data);
+      this.imgUrl = environment.imgUrl;
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -20,7 +30,7 @@ export class EditProfileComponent implements OnInit {
 
   buildForm () {
     this.uploadImgForm = this.formBuilder.group({
-      id: [4],
+      id: [''],
       profile_pic: ['']
     })
   }
@@ -38,15 +48,21 @@ export class EditProfileComponent implements OnInit {
       reader.onload = (_event) => {
         this.image = _event.target?.result;
       }
+      setTimeout(() => {
+        this.submit()
+      }, 500);
     }
   }
 
   async submit() {
     // console.log(this.uploadImgForm.value)
-    let action = 'profile-pic';
+    let action = {
+      id: this.currentUser.id,
+      action: 'profile-pic'
+    };
     let formData = new FormData;
 
-    formData.append('id', this.uploadImgForm.value.id);
+    formData.append('id', this.currentUser.id);
     formData.append('profile_pic', (this.profilePic) ? this.profilePic : '');
 
     await this.userService.postData(action, formData).subscribe((res: any) => {

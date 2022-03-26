@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   validLogin: any;
   submitted: boolean = false;
+
   constructor(
     public authService: AuthService,
     public notification: NotificationService,
@@ -51,7 +52,8 @@ export class LoginComponent implements OnInit {
       } else {
         await this.authService.login(this.loginForm.value).subscribe((res: any) => {
           if (res.access_token) {
-            localStorage.setItem('token', JSON.stringify(res.access_token));
+            localStorage.setItem("currentUser", JSON.stringify(res.user));
+            localStorage.setItem("token", JSON.stringify(res.access_token));
             this.router.navigate(['/home']);
           }
         }, error => {

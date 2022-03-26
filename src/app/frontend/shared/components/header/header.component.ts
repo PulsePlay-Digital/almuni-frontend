@@ -9,16 +9,18 @@ import { AuthService } from './../../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isLogin: Boolean;
+  currentUser: any;
 
   constructor(
     public router: Router,
     private authService: AuthService
   ) {
-    this.isLogin = this.authService.isAuthenticated();
+    let data : any =  localStorage?.getItem("currentUser")
+    this.currentUser = JSON.parse(data);
   }
 
   ngOnInit(): void {
+    console.log(this.currentUser)
   }
 
   /**
@@ -26,5 +28,6 @@ export class HeaderComponent implements OnInit {
    */
   logout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

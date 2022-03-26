@@ -11,10 +11,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { NumbersOnlyDirective } from "./../shared/directives/numbers-only.directive";
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent],
   imports: [
+    CommonModule,
     RouterModule,
     HttpClientModule,
     MatProgressSpinnerModule,
@@ -22,6 +25,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent]
 })

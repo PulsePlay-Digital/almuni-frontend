@@ -23,7 +23,7 @@ export class AuthService {
    * @returns 
    */
   public register(data: any) {
-    return this.http.post(`${this.url}/create-register`, data);
+    return this.http.post(`${this.url}/register`, data);
   }
 
   /**
@@ -66,11 +66,16 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  public resetPassword(data: any) {
+    return this.http.post(`${this.url}/reset-password/${data.id}`, data);
+  }
+
   /**
    * Function to logout user
    */
-  logout() {
+  public logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/auth/login']);
+    localStorage.removeItem('currentUser');
+    localStorage.clear();
   }
 }

@@ -46,38 +46,17 @@ export class RegisterComponent implements OnInit {
         current_region: ["", Validators.required],
         country: ["", Validators.required],
         code: ["", Validators.required],
-        mobile_number: [
-          "",
-          [
-            Validators.required,
-            Validators.pattern("^[0-9]*$"),
-            Validators.minLength(10),
-            Validators.maxLength(10),
-          ],
-        ],
+        mobile_number: ["",[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10),Validators.maxLength(10)]],
         birth_date: ["", Validators.required],
-        personal_email: [
-          "",
-          [
-            Validators.required,
-            Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
-          ],
-        ],
+        email: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
         current_company: ["", Validators.required],
         current_designation: ["", Validators.required],
-        password: [
-          "",
-          [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(10),
-          ],
-        ],
-        password_confirmation: ["", [Validators.required]],
+        password: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
+        password_confirmation: ["", Validators.required],
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
-        recaptcha: ["", Validators.required],
-        role: [0],
+        recaptcha: [""],
+        role: [0]
       },
       {
         validators: this.passwordMatch("password", "password_confirmation"),
@@ -85,6 +64,9 @@ export class RegisterComponent implements OnInit {
     );
   }
 
+  /**
+   * Get all form controls
+   */
   get f() {
     return this.registerForm.controls;
   }
@@ -104,7 +86,11 @@ export class RegisterComponent implements OnInit {
    * @param event
    */
   public changeCountry(event: any) {
-    this.registerForm.controls["code"].setValue(event.target.value);
+    this.countries.filter((res: any) => { 
+      if (res.name == event.target.value) {
+        this.registerForm.controls["code"].setValue(res.code);
+      }
+    }); 
   }
 
   /**
@@ -127,12 +113,6 @@ export class RegisterComponent implements OnInit {
       }
     };
   }
-  /**
-   * Function to allow only Value
-   */
-  public keyPressNumbers(event: any) {
-    this.config.onlyNumber(event);
-  }
 
   /**
    * Function to get all Batches
@@ -147,6 +127,7 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
   /**
    * Function to get all Institutes
    */
@@ -177,11 +158,9 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
-    }
-
-    if (this.registerForm.valid) {
+    } else {
       let params = this.registerForm.value;
-      let data = await this.authService.register(params).toPromise();
+      await this.authService.register(params).toPromise();
     }
   }
 }

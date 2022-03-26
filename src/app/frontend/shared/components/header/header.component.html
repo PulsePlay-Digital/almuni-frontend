@@ -48,21 +48,27 @@
                 <li class="nav-item otherNav">
                     <a class="nav-link" [routerLink]="['/contact']">contact</a>
                 </li>
-                <li class="nav-item dropdown userImg">
-                    <a class="nav-link dropdown-toggle userDrop" href="#" id="userDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false" data-toggle="dropdown">
-                        <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
-                    </a>
-                    <!-- Dropdown - User Information -->
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" [routerLink] = "['/view-profile']">View Profile</a></li>
-                        <li><a class="dropdown-item" [routerLink] = "['/edit-profile']">Edit Profile</a></li>
-                        <li><a class="dropdown-item" [routerLink] = "['/reset-password']" >Reset Password</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" (click)="logout()">Log out</a></li>
-                      </ul>
-                </li>
+          
+                <ng-container *ngIf="currentUser !== null">
+                    <li class="nav-item dropdown userImg">
+                        <a class="nav-link dropdown-toggle userDrop" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-toggle="dropdown">
+                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink] = "['/view-profile']"><i class="fa fa-eye" aria-hidden="true"></i>
+                                &nbsp; View Profile</a></li>
+                            <li><a class="dropdown-item" [routerLink] = "['/edit-profile']"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                &nbsp; Edit Profile</a></li>
+                            <li><a class="dropdown-item" [routerLink] = "['/reset-password']"><i class="fa fa-key" aria-hidden="true"></i>
+                                &nbsp; Reset Password</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Log out</a></li>
+                        </ul>
+                    </li>
+                </ng-container>
             </ul>
             <ul class="navbar-nav navSideBar ml-auto align-items-center">
                 <li>
