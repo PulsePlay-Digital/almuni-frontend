@@ -25,8 +25,7 @@ export class UserService {
   }
 
   public postData(action?: any, data?: any) {
-    console.log(action)
-    console.log(data)
     return this.http.post<any>(`${this.url}/${action?.action}` + '/' + action?.id, data);
   }
+
 }

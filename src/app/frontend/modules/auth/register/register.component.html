@@ -57,7 +57,7 @@
                         <label class="form-label">Country <span class="label-danger">*</span></label>
                         <select class="form-select" formControlName="country" (change)="changeCountry($event)">
                             <option value="" selected>Select Country</option>
-                            <option *ngFor="let row of countries" [value]="row.code">{{row.name}}</option>
+                            <option *ngFor="let row of countries" [value]="row.name">{{row.name}}</option>
                         </select>
                         <div class="text-danger mt-2"
                             *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
@@ -113,14 +113,14 @@
                 <div class="row">
                     <div class="col-md-4 my-2">
                         <label class="form-label">Personal email Id <span class="label-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="personal_email"
+                        <input type="email" class="form-control" formControlName="email"
                             placeholder="Enter Email Id">
                         <div class="text-danger mt-2"
-                            *ngIf="(f.personal_email.touched || submitted) && f.personal_email.errors?.required">
+                            *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                             Email is required.
                         </div>
                         <div class="text-danger mt-2"
-                            *ngIf="f.personal_email.dirty && f.personal_email.errors?.pattern">
+                            *ngIf="f.email.dirty && f.email.errors?.pattern">
                             Email format is incorrect.
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center my-2">
-                        <button type="submit" (click)="submitForm()" class="btn btn-danger my-2 me-2">SIGNUP</button>
+                        <button type="submit" (click)="submitForm()" class="btn btn-primary registerbtn my-2 me-2">SIGNUP</button>
                         <button type="submit" [routerLink]="['/login']" class="btn btn-success my-2">ALREADY
                             ACCOUNT</button>
                     </div>
