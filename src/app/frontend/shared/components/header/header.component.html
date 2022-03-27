@@ -34,8 +34,8 @@
                     <a class="nav-link" [routerLink]="['/contact']">contact</a>
                 </li>
             </ul>
-            <button *ngIf="(currentUser | json) == '{}'" [routerLink]="['/login']">Login</button>
-            <ng-container *ngIf="(currentUser | json) != '{}'">
+            <button *ngIf="currentUser == '{}'" [routerLink]="['/login']">Login</button>
+            <ng-container *ngIf="currentUser != '{}'">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown userImg">
                         <a class="nav-link dropdown-toggle userDrop" id="userDropdown" role="button"
