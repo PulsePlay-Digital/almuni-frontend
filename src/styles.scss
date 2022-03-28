@@ -67,7 +67,13 @@ body {
         }
     }
 }
-
+h4.font-italic.mb-4 {
+    text-align: center;
+    margin: auto;
+    background: #3D4097;
+    color: #fff;
+    padding: 12px;
+}
 .gallary {
     .owl-nav {
         .owl-prev {
