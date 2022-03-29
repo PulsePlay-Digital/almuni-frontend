@@ -34,4 +34,8 @@ export class DataService {
   public getAllQuestions() {
     return this.http.get(`${this.url}/all-questions`);
   }
+
+  public getData(action?: string) {
+    return this.http.get(`${this.url}/${action}`);
+  }
 }

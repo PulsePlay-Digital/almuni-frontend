@@ -373,16 +373,35 @@
                         Chairman Campus Placement, President, Sri Balaji Society, Pune.
                     </p>
                 </div>
-                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-team" role="tabpanel"
+                <div class="tab-pane fade shadow rounded bg-white p-3" id="v-pills-team" role="tabpanel"
                     aria-labelledby="v-pills-team-tab">
                     <img src="../../../../../assets/know-us/managementteam.png"><br><br>
                     <h4 class="font-italic mb-4">TOP BRASS OF SRI BALAJI SOCIETY</h4>
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="col">
                             <img src="../../../../../assets/know-us/bala.png">
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 my-2" *ngFor="let team of teamData">
+                            <div class="card">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <img [src]="imgPath + team?.image" class="img-fluid rounded-start" alt="Team-Pic">
+                                  </div>
+                                  <div class="col-md-8 text-center">
+                                    <div class="card-body">
+                                      <h4 class="card-title">{{team?.name}}</h4>
+                                      <p class="card-text">{{team?.designation}}</p>
+                                      <p class="card-text">{{team?.institute_name}}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  
+                <!-- <div class="row">
                         <div class="col">
                             <img src="../../../../../assets/know-us/team3.png">
                         </div>
@@ -393,7 +412,7 @@
                             <img src="../../../../../assets/know-us/team4.jpg">
                         </div>
                     </div>
-                    <div class="row">
+                     <div class="row">
                         <div class="col">
                             <img src="../../../../../assets/know-us/team5.png">
                         </div>
@@ -425,7 +444,7 @@
                         <div class="col">
                             <img src="../../../../../assets/know-us/team13.png">
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-blessings" role="tabpanel"
