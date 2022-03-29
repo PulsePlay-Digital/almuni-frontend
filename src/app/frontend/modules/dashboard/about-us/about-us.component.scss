@@ -4,24 +4,8 @@
 * CUSTOM UTIL CLASSES
 * ==========================================
 */
-.nav-pills-custom .nav-link {
-    color: #aaa;
-    background: #fff;
-    position: relative;
-}
-
-.nav-pills-custom .nav-link.active {
-    color: #45b649;
-    background: #fff;
-}
-.aboutBanner {
-    background: url("./../../../../../assets/about.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: flex;
-    min-height: 580px;
-    max-height: 100%;
-    align-items: center;
+.cust-spac {
+    padding: 12px;
 }
 
 /* Add indicator arrow for the active tab */

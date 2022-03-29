@@ -67,7 +67,33 @@ body {
         }
     }
 }
+//Custom css common for sidebar vertical tabs
+.know-us {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.nav-pills-custom .nav-link {
+    color: #0d205f;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
+}
 
+.nav-pills-custom .nav-link.active {
+    background: #3a96da !important;
+    color: #fff !important;
+}
+h4.font-italic.mb-4 {
+    text-align: center;
+    margin: auto;
+    background: #3D4097;
+    color: #fff;
+    padding: 12px;
+    text-transform: uppercase;
+}
 .gallary {
     .owl-nav {
         .owl-prev {

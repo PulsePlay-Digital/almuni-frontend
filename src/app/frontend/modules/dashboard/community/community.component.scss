@@ -4,18 +4,8 @@
 * CUSTOM UTIL CLASSES
 * ==========================================
 */
-.nav-pills-custom .nav-link {
-    color: #aaa;
-    background: #fff;
-    position: relative;
-}
-
-.nav-pills-custom .nav-link.active {
-    color: #45b649;
-    background: #fff;
-}
 .aboutBanner {
-    background: url("./../../../../../assets/about.jpg");
+    background: url("./../../../../../assets/know-us/about.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
