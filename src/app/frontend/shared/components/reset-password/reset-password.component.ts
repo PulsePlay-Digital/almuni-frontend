@@ -19,7 +19,7 @@ export class ResetPasswordComponent implements OnInit {
     public router: Router,
     public interceptor: TokenInterceptor) { 
     // get current user
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    // this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
   }
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class ResetPasswordComponent implements OnInit {
    */
   buildForm() {
     this.resetPasswordForm = this.fb.group({
-      id: [this.currentUser.id],
+      id: [this.currentUser?.id],
       current_password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
       new_password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
       new_password_confirmation: ['', [Validators.required]],
@@ -44,7 +44,7 @@ export class ResetPasswordComponent implements OnInit {
   /**
    * Function to get resetpassword form controls
    */
-  get f() { return this.resetPasswordForm.controls; }
+  get f() { return this.resetPasswordForm?.controls; }
 
   /**
    * Function to match password 
@@ -69,15 +69,15 @@ export class ResetPasswordComponent implements OnInit {
 
   async reset() {
     this.submitted = true;
-    if (this.resetPasswordForm.invalid) {
+    if (this.resetPasswordForm?.invalid) {
       return;
     } else {
-      await this.authService.resetPassword(this.resetPasswordForm.value).subscribe(
+      await this.authService.resetPassword(this.resetPasswordForm?.value).subscribe(
         (res: any) => {
-          if (res.status === 200) {
+          if (res?.status === 200) {
             this.router.navigate(["/login"]);
           } else {
-            this.interceptor.notificationService.openFailureSnackBar(res.message);
+            this.interceptor.notificationService.openFailureSnackBar(res?.message);
           }
         },
         (error) => {

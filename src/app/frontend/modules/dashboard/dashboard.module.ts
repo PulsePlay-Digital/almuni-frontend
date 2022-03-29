@@ -15,6 +15,7 @@ import { CommunityComponent } from './community/community.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
+import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CareersComponent } from './careers/careers.component';
     CommunityComponent,
     SitemapComponent,
     AboutUsComponent,
-    CareersComponent
+    CareersComponent,
+    CommonPurposeCultureComponent
   ],
   imports: [
     CommonModule,

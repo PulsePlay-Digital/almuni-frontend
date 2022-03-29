@@ -1,0 +1,21 @@
+.contactBanner {
+    background       : url('./../../../../../assets/contact.jpg');
+    background-repeat: no-repeat;
+    background-size  : 100%;
+    display          : flex;
+    min-height       : 580px;
+    max-height       : 100%;
+    align-items      : center;
+
+    .bannerContent {
+        color         : #fff;
+        padding-bottom: 15px;
+
+        h4 {
+            font-size  : 64px;
+            line-height: 78.02px;
+            margin     : 0;
+        }
+    }
+    
+}
