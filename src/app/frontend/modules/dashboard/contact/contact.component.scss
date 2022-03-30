@@ -9,15 +9,21 @@
     .bannerContent {
         color         : #fff;
         padding-bottom: 15px;
-
         h4 {
             font-size  : 64px;
             line-height: 78.02px;
             margin     : 0;
         }
-    }
-    
+    }    
 }
-.col-lg-5 {
+.col-lg-4 {
     border: 1px solid #ddd;
+}
+.nav {
+    li {
+        a {
+
+        }
+    }
+
 }
