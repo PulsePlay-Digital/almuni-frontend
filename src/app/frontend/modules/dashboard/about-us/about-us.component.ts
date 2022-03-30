@@ -23,12 +23,14 @@ export class AboutUsComponent implements OnInit {
     this.getAllTeam();
   }
 
+  /**
+   * Get all Team Data
+   */
   async getAllTeam() {
     let action:string = 'all-team';
     await this.dataService.getData(action).subscribe((res: any) => {
       if(res?.status == 200) {
         this.teamData = res.data;
-        console.log(this.teamData);
       }
     },error => {
       this.notify.notificationService.openFailureSnackBar(error);
