@@ -16,6 +16,7 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
+import { ConnectComponent } from './connect/connect.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CommonPurposeCultureComponent } from './common-purpose-culture/common-p
     SitemapComponent,
     AboutUsComponent,
     CareersComponent,
-    CommonPurposeCultureComponent
+    CommonPurposeCultureComponent,
+    ConnectComponent
   ],
   imports: [
     CommonModule,
