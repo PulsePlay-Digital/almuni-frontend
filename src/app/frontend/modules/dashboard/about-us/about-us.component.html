@@ -373,6 +373,7 @@
                         Chairman Campus Placement, President, Sri Balaji Society, Pune.
                     </p>
                 </div>
+                <!-- Team section -->
                 <div class="tab-pane fade shadow rounded bg-white p-3" id="v-pills-team" role="tabpanel"
                     aria-labelledby="v-pills-team-tab">
                     <img src="../../../../../assets/know-us/managementteam.png"><br><br>
@@ -384,69 +385,25 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 my-2" *ngFor="let team of teamData">
-                            <div class="card">
+                            <div class="card p-2">
                                 <div class="row">
-                                  <div class="col-md-4">
-                                    <img [src]="imgPath + team?.image" class="img-fluid rounded-start" alt="Team-Pic">
+                                  <div class="col-md-4 align-self-center">
+                                    <img [src]="imgPath + team?.image" class="teamImg" alt="Team-Pic">
                                   </div>
                                   <div class="col-md-8 text-center">
-                                    <div class="card-body">
-                                      <h4 class="card-title">{{team?.name}}</h4>
-                                      <p class="card-text">{{team?.designation}}</p>
-                                      <p class="card-text">{{team?.institute_name}}</p>
+                                    <div class="card-body p-0">
+                                      <h4 class="card-title fw-bold mb-1">{{team?.name}}</h4>
+                                      <p class="card-text mb-1">{{team?.designation}}</p>
+                                      <img [src]="imgPath + team?.institute_logo" class="imgLogo my-2" alt="Team-Pic">
+                                      <p class="card-text institute-name">{{team?.institute_name}}</p>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                         </div>
                     </div>
-                  
-                <!-- <div class="row">
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team3.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/parandhaman.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team4.jpg">
-                        </div>
-                    </div>
-                     <div class="row">
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team5.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team6.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team7.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team8.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team9.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team10.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team11.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team12.png">
-                        </div>
-                        <div class="col">
-                            <img src="../../../../../assets/know-us/team13.png">
-                        </div>
-                    </div> -->
-
                 </div>
+                <!-- Team section End -->
                 <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-blessings" role="tabpanel"
                     aria-labelledby="v-pills-blessings-tab">
                     <img src="../../../../../assets/know-us/blessign.png"><br><br>

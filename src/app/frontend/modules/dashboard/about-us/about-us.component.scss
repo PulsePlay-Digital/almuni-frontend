@@ -27,3 +27,23 @@
 .nav-pills-custom .nav-link.active::before {
     opacity: 1;
 }
+
+.card {
+    border-color: #3a96da;
+    letter-spacing: 1px;
+    .teamImg {
+        max-height: 130px;
+        min-height: 130px;
+    }
+    .imgLogo {
+        height: 62px;
+        width: 62px;
+        min-height: 62px;
+    }
+    .institute-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: blue;
+        text-shadow: 1px 1px red;
+    }
+}
