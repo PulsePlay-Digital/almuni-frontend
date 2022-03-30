@@ -10,28 +10,28 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/about-us']">Know us</a>
+                    <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active-link">Know us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/common-purpose-culture']">common purpose & culture</a>
+                    <a class="nav-link" [routerLink]="['/common-purpose-culture']" routerLinkActive="active-link">common purpose & culture</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/community']">community</a>
+                    <a class="nav-link" [routerLink]="['/community']" routerLinkActive="active-link">community</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">connect</a>
+                    <a class="nav-link" [routerLink]="['/connect']" routerLinkActive="active-link">connect</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/collaborate-contribute']">collaborate & contribute</a>
+                    <a class="nav-link" [routerLink]="['/collaborate-contribute']" routerLinkActive="active-link">collaborate & contribute</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/celebrate']">celebrate</a>
+                    <a class="nav-link" [routerLink]="['/celebrate']" routerLinkActive="active-link">celebrate</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/contact']">contact</a>
+                    <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active-link">contact</a>
                 </li>
             </ul>
             <button *ngIf="currentUser == '{}'" [routerLink]="['/login']">Login</button>

@@ -18,6 +18,8 @@ import { CareersComponent } from './careers/careers.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
+import { ConnectComponent } from './connect/connect.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {MatCardModule} from '@angular/material/card';
     SitemapComponent,
     AboutUsComponent,
     CareersComponent,
-    CommonPurposeCultureComponent
+    CommonPurposeCultureComponent,
+    ConnectComponent
   ],
   imports: [
     CommonModule,
