@@ -16,9 +16,9 @@
         }
     }    
 }
-.col-lg-4 {
-    border: 1px solid #ddd;
-}
+// .col-lg-4 {
+//     border: 1px solid #ddd;
+// }
 .nav {
     li {
         a {
@@ -26,4 +26,13 @@
         }
     }
 
+}
+.keyContact {
+    .card {
+        .card-body {
+            max-height: 160px;
+            min-height: 160px;
+            overflow: hidden;
+        }
+    }
 }
