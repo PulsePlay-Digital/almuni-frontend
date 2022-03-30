@@ -13,9 +13,10 @@ import { NumbersOnlyDirective } from "./../shared/directives/numbers-only.direct
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { SearchFilterComponent } from "./components/search-filter/search-filter.component";
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent],
+  declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent,SearchFilterComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -28,6 +29,6 @@ import { CommonModule } from "@angular/common";
     ReactiveFormsModule,
     FormsModule
   ],
-  exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent]
+  exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent, SearchFilterComponent]
 })
 export class SharedModule {}
