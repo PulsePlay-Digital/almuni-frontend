@@ -387,19 +387,20 @@
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 my-2" *ngFor="let team of teamData">
                             <div class="card teamData p-2">
                                 <div class="row">
-                                  <div class="col-md-4 align-self-center">
-                                    <img [src]="imgPath + team?.image" class="teamImg" alt="Team-Pic">
-                                  </div>
-                                  <div class="col-md-8 text-center">
-                                    <div class="card-body p-0">
-                                      <h4 class="card-title fw-bold mb-1">{{team?.name}}</h4>
-                                      <p class="card-text mb-1">{{team?.designation}}</p>
-                                      <img [src]="imgPath + team?.institute_logo" class="imgLogo my-2" alt="Team-Pic">
-                                      <p class="card-text institute-name">{{team?.institute_name}}</p>
+                                    <div class="col-md-4 align-self-center">
+                                        <img [src]="imgPath + team?.image" class="teamImg" alt="Team-Pic">
                                     </div>
-                                  </div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="card-body p-0">
+                                            <h4 class="card-title fw-bold mb-1">{{team?.name}}</h4>
+                                            <p class="card-text mb-1">{{team?.designation}}</p>
+                                            <img [src]="imgPath + team?.institute_logo" class="imgLogo my-2"
+                                                alt="Team-Pic">
+                                            <p class="card-text institute-name">{{team?.institute_name}}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -452,7 +453,8 @@
                             <img src="../../../../../assets/know-us/blessing1.png">
                         </div>
                     </div>
-                    <br>  <hr>
+                    <br>
+                    <hr>
                     <div class="row">
                         <div class="col text-center">
                             <img src="../../../../../assets/know-us/blessing3.png"><br>
