@@ -6,7 +6,7 @@
         class="col-xl-5 col-lg-5 col-md-9 col-sm-7 col-7 my-3 align-self-center"
       >
         <div class="bannerContent">
-          <div class="col-lg-12 test">phfdjhf</div>
+          <!-- <div class="col-lg-12 test">phfdjhf</div> -->
         </div>
       </div>
       <div class="col-xl-7 col-lg-5 col-md-3 col-sm-5"></div>
@@ -16,11 +16,12 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-lg-9 my-4">
-      <mat-tab-group mat-align-tabs="center">
+    <div class="col-xl-10 col-lg-12 col-md-12 my-4">
+      <app-loader *ngIf="loading"></app-loader>
+      <mat-tab-group mat-align-tabs="center" *ngIf="!loading">
         <mat-tab label="Key Contacts">
           <div class="row justify-content-center m-0 pt-4 keyContact">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-2">
               <div class="card">
                 <div class="card-body">
                   <p>
@@ -31,7 +32,7 @@
                     />
                   </p>
                   <strong>
-                    <p style="color: red">Alumni Connect</p>
+                    <p class="text-danger">Alumni Connect</p>
                   </strong>
                   <p>
                     <a href="mailto:sribalajisocietyalumniglobal@gmail.com">
@@ -42,8 +43,8 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-center mb-3 m-0 keyContact">
-            <div class="col-lg-4 my-3" *ngFor="let key of keyData">
+          <div class="row mb-3 m-0 keyContact">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let key of keyData">
               <div class="card">
                 <div class="card-body">
                   <h3 class="text-danger text-capitalize mb-2">
@@ -72,17 +73,17 @@
         <mat-tab label="Sri Balaji Society Alumni Clubs – Social Channels">
           <div class="col-lg-12 my-3">
             <div class="row justify-content-center m-0">
-              <div class="col-lg-7 mb-3">
+              <div class="col-lg-10 mb-3">
                 <div class="card">
-                  <ul class="p-3 m-0" style="list-style-type: none">
-                    <li class="mb-2" *ngFor="let social of socialData">
-                      <a
-                        class="text-decoration-none"
-                        href="{{ social?.link }}"
-                        >{{ social?.title }}</a
-                      >
+                  <ul class="p-3 m-0" style="list-style-type: none" *ngIf="socialData">
+                    <li class="mb-3" *ngFor="let social of socialData">
+                      <a class="text-decoration-none"
+                        href="{{ social?.link }}">{{ social?.title }}</a>
                     </li>
                   </ul>
+                  <div class="p-4" *ngIf="!socialData">
+                    <h3 class="m-0 text-center">No Data Found</h3>
+                  </div>
                 </div>
               </div>
             </div>

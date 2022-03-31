@@ -16,20 +16,24 @@
         }
     }    
 }
-.nav {
-    li {
-        a {
-
-        }
-    }
-
-}
 .keyContact {
     .card {
         .card-body {
-            max-height: 160px;
-            min-height: 160px;
+            max-height: 170px;
+            min-height: 170px;
             overflow: hidden;
         }
     }
+}
+
+@media screen and (max-width: 767px) and (min-width: 574px) { 
+    .keyContact {
+        .card {
+            .card-body {
+                max-height: 200px;
+                min-height: 200px;
+            }
+        }
+    }
+    
 }

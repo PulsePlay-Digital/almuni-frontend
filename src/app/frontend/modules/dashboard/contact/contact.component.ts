@@ -10,11 +10,14 @@ import { map } from 'rxjs/operators';
 export class ContactComponent implements OnInit {
   keyData: any;
   socialData: any;
+  loading: boolean = false;
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllKeyContacts();
     this.getAllSocialLinks();
+    this.loading = false;
   }
 /**
  * Get All Key Contacts
@@ -46,6 +49,7 @@ export class ContactComponent implements OnInit {
        })
     ).subscribe((data: any) => {
       this.socialData = data;
+      console.log(this.socialData, 'social data');
     })
   }
 }

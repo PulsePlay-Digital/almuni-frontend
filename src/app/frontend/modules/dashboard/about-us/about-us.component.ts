@@ -11,6 +11,7 @@ import { DataService } from './../../../services/data.service';
 export class AboutUsComponent implements OnInit {
   teamData: any;
   imgPath: any;
+  loading: boolean = true;
 
   constructor(
     public dataService: DataService,
@@ -20,7 +21,9 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllTeam();
+    this.loading = false;
   }
 
   /**

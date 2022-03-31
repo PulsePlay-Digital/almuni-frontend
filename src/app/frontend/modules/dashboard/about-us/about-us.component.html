@@ -1,4 +1,4 @@
-<div class="container know-us">
+<div class="container-fluid know-us">
     <div class="row">
         <div class="col-md-3">
             <!-- Tabs nav -->
@@ -383,7 +383,8 @@
                             <img src="../../../../../assets/know-us/bala.png">
                         </div>
                     </div>
-                    <div class="row">
+                    <app-loader *ngIf="loading"></app-loader>
+                    <div class="row" *ngIf="!loading">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 my-2" *ngFor="let team of teamData">
                             <div class="card teamData p-2">
                                 <div class="row">
@@ -394,8 +395,8 @@
                                     <div class="card-body p-0">
                                       <h4 class="card-title fw-bold mb-1">{{team?.name}}</h4>
                                       <p class="card-text mb-1">{{team?.designation}}</p>
-                                      <img [src]="imgPath + team?.institute_logo" class="imgLogo my-2" alt="Team-Pic">
-                                      <p class="card-text institute-name">{{team?.institute_name}}</p>
+                                      <img [src]="imgPath + team?.institute_logo" class="imgLogo my-1 mx-1" alt="Team-Pic">
+                                      <p class="card-text institute-name text-capitalize">{{team?.institute_name}}</p>
                                     </div>
                                   </div>
                                 </div>
