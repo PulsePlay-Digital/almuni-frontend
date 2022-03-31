@@ -9,15 +9,27 @@
     .bannerContent {
         color         : #fff;
         padding-bottom: 15px;
-
         h4 {
             font-size  : 64px;
             line-height: 78.02px;
             margin     : 0;
         }
-    }
-    
+    }    
 }
-.col-lg-5 {
-    border: 1px solid #ddd;
+.nav {
+    li {
+        a {
+
+        }
+    }
+
+}
+.keyContact {
+    .card {
+        .card-body {
+            max-height: 160px;
+            min-height: 160px;
+            overflow: hidden;
+        }
+    }
 }

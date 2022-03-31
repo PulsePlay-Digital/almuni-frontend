@@ -16,6 +16,8 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 import { ConnectComponent } from './connect/connect.component';
 
 
@@ -39,7 +41,9 @@ import { ConnectComponent } from './connect/connect.component';
     DashboardRoutingModule,
     RouterModule,
     SharedModule,
-    CarouselModule
+    CarouselModule,
+    MatTabsModule,
+    MatCardModule
   ]
 })
 export class DashboardModule { }
