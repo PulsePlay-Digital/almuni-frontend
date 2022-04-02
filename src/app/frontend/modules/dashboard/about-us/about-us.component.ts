@@ -23,7 +23,10 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.getAllTeam();
-    this.loading = false;
+    setTimeout(() => {
+      this.loading = false;
+    }, 500);
+  
   }
 
   /**

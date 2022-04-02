@@ -14,9 +14,18 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { SearchFilterComponent } from "./components/search-filter/search-filter.component";
+import { StripHtmlPipe } from './pipes/strip-html.pipe';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent,SearchFilterComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    LoaderComponent,
+    NumbersOnlyDirective,
+    ResetPasswordComponent,
+    SearchFilterComponent,
+    StripHtmlPipe
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -29,6 +38,14 @@ import { SearchFilterComponent } from "./components/search-filter/search-filter.
     ReactiveFormsModule,
     FormsModule
   ],
-  exports: [HeaderComponent, FooterComponent, LoaderComponent, NumbersOnlyDirective, ResetPasswordComponent, SearchFilterComponent]
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    LoaderComponent,
+    NumbersOnlyDirective,
+    ResetPasswordComponent,
+    SearchFilterComponent,
+    StripHtmlPipe
+  ]
 })
 export class SharedModule {}

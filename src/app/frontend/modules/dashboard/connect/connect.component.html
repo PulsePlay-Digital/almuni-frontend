@@ -41,7 +41,53 @@
                 <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-glance" role="tabpanel"
                     aria-labelledby="v-pills-glance-tab">
                     <h4 class="font-italic mb-4">WELCOME TO SRI BALAJI SOCIETY</h4>
-                    <ul class="nav justify-content-center mb-3 my-3" id="pills-tab" role="tablist">
+                    <mat-tab-group mat-align-tabs="center">
+                        <mat-tab label="Past Events">
+                            <div class="row m-0 py-2">
+                                <div class="col-lg-6 col-lg-6 my-2" *ngFor="let item of pastEvent">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="eventDate">
+                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="event pic">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-lg-8">
+                                                    <p><strong>Alumni Club Name:</strong>&nbsp;{{ item?.title }} </p>
+                                                    <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description | stripHtml }}</p>
+                                                    <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;More Info & Registration</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Upcomming Events">
+                            <div class="row m-0 py-2">
+                                <div class="col-lg-6 my-2" *ngFor="let item of upcomingEvent">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="eventDate">
+                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <p><strong>Alumni Club Name:</strong>{{ item?.title }} </p>
+                                                    <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description }} </p>
+                                                    <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;More Info & Registration</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                      </mat-tab-group>
+                    <!-- <ul class="nav justify-content-center mb-3 my-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="key-contacts-tab" data-bs-toggle="pill"
                                 data-bs-target="#key-contacts" type="button" role="tab" aria-controls="key-contacts"
@@ -54,7 +100,7 @@
                                 data-bs-target="#alumni-clubs" type="button" role="tab" aria-controls="alumni-clubs"
                                 aria-selected="false">Past Events</button>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="tab-pane fade shadow rounded bg-white show  p-5" id="v-pills-reunion" role="tabpanel"
                     aria-labelledby="v-pills-reunion-tab">
