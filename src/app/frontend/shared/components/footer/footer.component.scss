@@ -4,7 +4,11 @@ footer {
     .footer {
         background: #00035F;
         padding   : 60px 0 18px;
-
+        a.active-link {
+            background: #3D99DB;
+            padding: 10px;
+        }
+        
         .address_description {
             img {
                 width: 100px;

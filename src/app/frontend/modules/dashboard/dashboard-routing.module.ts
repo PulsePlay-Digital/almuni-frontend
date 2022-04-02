@@ -10,6 +10,7 @@ import { CommunityComponent } from './community/community.component';
 import { ConnectComponent } from './connect/connect.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'connect',
     component: ConnectComponent
+  },
+  {
+    path: 'sitemap',
+    component: SitemapComponent
   }
 ];
 
