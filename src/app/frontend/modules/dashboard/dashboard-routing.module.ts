@@ -7,7 +7,6 @@ import { CelebrateComponent } from './celebrate/celebrate.component';
 import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
 import { CommunityComponent } from './community/community.component';
-import { ConnectComponent } from './connect/connect.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
@@ -50,12 +49,12 @@ const routes: Routes = [
     component: CommonPurposeCultureComponent
   },
   {
-    path: 'connect',
-    component: ConnectComponent
-  },
-  {
     path: 'sitemap',
     component: SitemapComponent
+  },
+  { 
+    path: '', 
+    loadChildren: () => import('./../dashboard/connect/connect.module').then(m => m.ConnectModule)
   }
 ];
 

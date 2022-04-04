@@ -1,0 +1,62 @@
+<!-- <app-loader *ngIf="loading"></app-loader> -->
+<mat-tab-group mat-align-tabs="center" >
+    <mat-tab label="Past Events">
+        <div class="row m-0 py-2">
+            <div class="col-lg-6 col-lg-6 my-2" *ngFor="let item of pastEvent">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="eventDate">
+                                    <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="event pic">
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-lg-8">
+                                <p><strong>Alumni Club Name:</strong>&nbsp;{{ item?.title }} </p>
+                                <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description | stripHtml }}</p>
+                                <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;More Info & Registration</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Upcomming Events">
+        <div class="row m-0 py-2">
+            <div class="col-lg-6 my-2" *ngFor="let item of upcomingEvent">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="eventDate">
+                                    <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <p><strong>Alumni Club Name:</strong>{{ item?.title }} </p>
+                                <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description }} </p>
+                                <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;More Info & Registration</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Speak at the event">
+        <div class="row m-0 py-2">
+            <div class="col-lg-12 my-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>Speak at the event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

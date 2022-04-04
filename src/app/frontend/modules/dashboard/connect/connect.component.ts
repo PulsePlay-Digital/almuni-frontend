@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import * as moment from 'moment';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { TokenInterceptor } from './../../../core/token.interceptor';
-import { DataService } from './../../../services/data.service';
+import { TokenInterceptor } from '../../../core/token.interceptor';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-connect',
@@ -11,9 +11,11 @@ import { DataService } from './../../../services/data.service';
   styleUrls: ['./connect.component.scss']
 })
 export class ConnectComponent implements OnInit {
+
   pastEvent: any;
   upcomingEvent: any;
   imgPath: any;
+
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor
@@ -43,7 +45,6 @@ export class ConnectComponent implements OnInit {
         })
       ).subscribe((res: any) => {
         if(res) {
-          console.log(res)
           this.pastEvent = res;
           }
         },error => {

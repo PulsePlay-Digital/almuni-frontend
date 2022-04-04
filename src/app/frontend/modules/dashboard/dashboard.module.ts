@@ -18,7 +18,7 @@ import { CareersComponent } from './careers/careers.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
-import { ConnectComponent } from './connect/connect.component';
+import { ConnectModule } from './connect/connect.module';
 
 
 @NgModule({
@@ -33,14 +33,14 @@ import { ConnectComponent } from './connect/connect.component';
     SitemapComponent,
     AboutUsComponent,
     CareersComponent,
-    CommonPurposeCultureComponent,
-    ConnectComponent
+    CommonPurposeCultureComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     RouterModule,
     SharedModule,
+    ConnectModule,
     CarouselModule,
     MatTabsModule,
     MatCardModule
