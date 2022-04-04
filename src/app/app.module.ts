@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FrontendModule } from './frontend/frontend.module';
 import { UserService } from './frontend/services/user.service';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserService } from './frontend/services/user.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FrontendModule
+    FrontendModule,
+    CKEditorModule
   ],
   providers: [
     UserService

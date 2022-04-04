@@ -11,6 +11,10 @@ import { AlumniReunionComponent } from './alumni-reunion/alumni-reunion.componen
 import { AlumniDrivenEventsComponent } from './alumni-driven-events/alumni-driven-events.component';
 import { IndustryConnectComponent } from './industry-connect/industry-connect.component';
 import { EventsAtBalajiComponent } from './events-at-balaji/events-at-balaji.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HostFormComponent } from './host-form/host-form.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -20,14 +24,19 @@ import { EventsAtBalajiComponent } from './events-at-balaji/events-at-balaji.com
     AlumniReunionComponent,
     AlumniDrivenEventsComponent,
     IndustryConnectComponent,
-    EventsAtBalajiComponent
+    EventsAtBalajiComponent,
+    HostFormComponent
   ],
   imports: [
     CommonModule,
     ConnectRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    CKEditorModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class ConnectModule { }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-events-at-balaji',
@@ -13,9 +14,12 @@ export class EventsAtBalajiComponent implements OnInit {
 
   loading: boolean = false;
 
+  speakEventForm: FormGroup | any;
   pastEvent: any;
   upcomingEvent: any;
-  constructor( ) { }
+  workShopField: boolean = false;
+  speakerFacultyFields: boolean = false;
+  constructor(public fb: FormBuilder ) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -24,5 +28,26 @@ export class EventsAtBalajiComponent implements OnInit {
       this.upcomingEvent = this.upcomingItems;
       this.loading = false;
     }, 500);
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.speakEventForm = this.fb.group({
+
+    });
+  }
+
+  selectCategory(e:any) {
+    let event = e?.target?.value;
+    if (event == 'workshop') {
+      this.workShopField = true;
+      this.speakerFacultyFields = true;
+    } else if(event == 'faculty' || event == 'speaker') {
+      this.speakerFacultyFields = true;
+      this.workShopField = false;
+    } else {
+      this.workShopField = false;
+      this.speakerFacultyFields = false;
+    }
   }
 }

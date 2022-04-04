@@ -1,41 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-industry-connect',
-  templateUrl: './industry-connect.component.html',
-  styleUrls: ['./industry-connect.component.scss']
+  selector: 'app-host-form',
+  templateUrl: './host-form.component.html',
+  styleUrls: ['./host-form.component.scss']
 })
-export class IndustryConnectComponent implements OnInit {
-
-  @Input() pastItems: any;
-  @Input() upcomingItems: any;
-  @Input() imgPath: any;
-
-  loading: boolean = false;
-  industryForm: FormGroup | any;
+export class HostFormComponent implements OnInit {
+  addEventForm: FormGroup | any;
   eventPic:any;
   image: any;
   submitted: boolean = false;
-  pastEvent: any;
-  upcomingEvent: any;
-  constructor( 
+  constructor(
     public fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.loading = true;
-    setTimeout(() => {
-      this.pastEvent = this.pastItems;
-      this.upcomingEvent = this.upcomingItems;
-      this.loading = false;
-    }, 500);
     this.buildForm();
   }
 
-
   buildForm() {
-    this.industryForm = this.fb.group({
+    this.addEventForm = this.fb.group({
       author: [""],
       title: ["", Validators.required],
       venue: ["", Validators.required],
@@ -54,7 +39,7 @@ export class IndustryConnectComponent implements OnInit {
     });
   }
 
-  get f() { return this.industryForm.controls;}
+  get f() { return this.addEventForm.controls;}
 
   onUploadImage(event: any) {
     this.eventPic = event.target.files[0];
@@ -70,7 +55,7 @@ export class IndustryConnectComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    if (this.industryForm.invalid) {
+    if (this.addEventForm.invalid) {
       return;
     } else {
       

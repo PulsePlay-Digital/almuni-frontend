@@ -16,7 +16,9 @@ body {
     font-family   : Roboto, "Helvetica Neue", sans-serif;
     letter-spacing: 1px;
 }
-
+::placeholder {
+    font-size: 14px;
+  }
 .label-danger {
     color: red;
 }
