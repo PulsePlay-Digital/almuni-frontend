@@ -35,6 +35,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AuthService,
     NotificationService,
     TokenInterceptor,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     UserService
   ]
 })

@@ -6,7 +6,7 @@ import { CareersComponent } from './careers/careers.component';
 import { CelebrateComponent } from './celebrate/celebrate.component';
 import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
 import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
-import { CommunityComponent } from './community/community.component';
+// import { CommunityComponent } from './community/community.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
@@ -28,10 +28,10 @@ const routes: Routes = [
     path: 'news',
     component: NewsComponent
   },
-  {
-    path: 'community',
-    component: CommunityComponent
-  },
+  // {
+  //   path: 'community',
+  //   component: CommunityComponent
+  // },
   {
     path: 'celebrate',
     component: CelebrateComponent
@@ -54,7 +54,11 @@ const routes: Routes = [
   },
   { 
     path: '', 
-    loadChildren: () => import('./../dashboard/connect/connect.module').then(m => m.ConnectModule)
+    loadChildren: () => import('./community/community.module').then(m => m.CommunityModule)
+  },
+  { 
+    path: '', 
+    loadChildren: () => import('./connect/connect.module').then(m => m.ConnectModule)
   }
 ];
 

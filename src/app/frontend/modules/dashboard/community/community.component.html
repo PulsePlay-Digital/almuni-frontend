@@ -42,72 +42,18 @@
         <div class="col-md-9">
             <!-- Tabs content -->
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-directory" role="tabpanel"
+                <div class="tab-pane fade shadow rounded bg-white show active p-3 pt-4" id="v-pills-directory" role="tabpanel"
                     aria-labelledby="v-pills-directory-tab">
                     <h4 class="font-italic mb-4">ALUMNI DIRECTORY
                     </h4>
                     <app-search-filter></app-search-filter>
+
+                    <app-alumni-directory></app-alumni-directory>
                 </div>
 
-                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-clubs" role="tabpanel"
+                <div class="tab-pane fade shadow rounded bg-white p-3 pt-4" id="v-pills-clubs" role="tabpanel"
                     aria-labelledby="v-pills-clubs-tab">
-                    <div class="container">
-                        <ul class="nav justify-content-center mb-3 my-3" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="key-digital-tab" data-bs-toggle="pill"
-                                    data-bs-target="#key-digital" type="button" role="tab" aria-controls="key-digital"
-                                    aria-selected="true">Digital
-
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="alumni-clubs-tab" data-bs-toggle="pill"
-                                    data-bs-target="#alumni-strategy" type="button" role="tab"
-                                    aria-controls="alumni-strategy" aria-selected="false">Strategy</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="alumni-clubs-tab" data-bs-toggle="pill"
-                                    data-bs-target="#alumni-clubs" type="button" role="tab" aria-controls="alumni-clubs"
-                                    aria-selected="false">Leadership And Change</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="alumni-clubs-tab" data-bs-toggle="pill"
-                                    data-bs-target="#alumni-clubs" type="button" role="tab" aria-controls="alumni-clubs"
-                                    aria-selected="false">Artificial Intelligence</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="alumni-clubs-tab" data-bs-toggle="pill"
-                                    data-bs-target="#alumni-clubs" type="button" role="tab" aria-controls="alumni-clubs"
-                                    aria-selected="false">Big Data</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-content" id="pills-tabContent">
-                        <!-- digital tab -->
-                        <div class="tab-pane fade show active" id="key-digital" role="tabpanel"
-                            aria-labelledby="key-digital-tab">
-                            sfghois
-                        </div>
-                        <!-- digital tab -->
-                        <div class="tab-pane fade show active" id="key-strategy" role="tabpanel"
-                            aria-labelledby="key-strategy-tab">
-                            sfghois
-                        </div>
-                        <!-- digital tab -->
-                        <div class="tab-pane fade show active" id="key-digital" role="tabpanel"
-                            aria-labelledby="key-digital-tab">
-                            sfghois
-                        </div>
-                        <!-- digital tab -->
-                        <div class="tab-pane fade show active" id="key-digital" role="tabpanel"
-                            aria-labelledby="key-digital-tab">
-                            sfghois
-                        </div>
-                        <!-- Sri Balaji Society Alumni Clubs tab -->
-                        <div class="tab-pane fade" id="alumni-clubs" role="tabpanel" aria-labelledby="alumni-clubs-tab">
-                            alumni-clubs
-                        </div>
-                    </div>
+                    <app-professional-club></app-professional-club>
                 </div>
 
                 <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-messages" role="tabpanel"

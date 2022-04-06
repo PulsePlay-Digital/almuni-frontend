@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/frontend/services/data.service';
 
 @Component({
   selector: 'app-host-form',
@@ -7,16 +8,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./host-form.component.scss']
 })
 export class HostFormComponent implements OnInit {
+  @Input() eventCategory: any;
+
   addEventForm: FormGroup | any;
   eventPic:any;
   image: any;
   submitted: boolean = false;
+  currentUser: any;
+  author: any;
   constructor(
-    public fb: FormBuilder
-  ) { }
+    public fb: FormBuilder,
+    public dataService: DataService
+  ) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(
+        localStorage?.getItem("currentUser") || ""
+      );
+    }
+   }
 
   ngOnInit(): void {
     this.buildForm();
+    let fname = this.currentUser?.first_name;
+    let lname = this.currentUser?.last_name;
+    let mname = this.currentUser?.middle_name;
+    this.author = fname + (mname == null ? "" : " " + mname) + " " + lname;
   }
 
   buildForm() {
@@ -24,7 +40,7 @@ export class HostFormComponent implements OnInit {
       author: [""],
       title: ["", Validators.required],
       venue: ["", Validators.required],
-      category: [""],
+      category: this.eventCategory,
       description: ["", Validators.required],
       date: ["", Validators.required],
       time: [""],
@@ -53,12 +69,36 @@ export class HostFormComponent implements OnInit {
     }
   }
 
-  submit() {
+  async submit() {
     this.submitted = true;
+    let action = {
+      action: 'create-event'
+    }
+
     if (this.addEventForm.invalid) {
       return;
     } else {
-      
+      let formData = new FormData();
+      formData.append("eventImage", this.eventPic ? this.eventPic : "");
+      formData.append("author", this.author);
+      formData.append("title", this.addEventForm.value.title);
+      formData.append("description", this.addEventForm.value.description);
+      formData.append("date", this.addEventForm.value.date);
+      formData.append("venue", this.addEventForm.value.venue);
+      formData.append("cost", this.addEventForm.value.cost);
+      formData.append("is_active", this.addEventForm.value.is_active);
+      formData.append("type", this.addEventForm.value.type);
+      formData.append("time", this.addEventForm.value.time);
+      formData.append("contactNumber", this.addEventForm.value.contactNumber);
+      formData.append("eventPageLink", this.addEventForm.value.eventPageLink);
+      formData.append("eventHost", this.addEventForm.value.eventHost);
+      formData.append("category", this.addEventForm.value.category);
+
+      await this.dataService.postData(action, formData).subscribe((res: any) => {
+        console.log(res)
+      }, error => {
+        console.log(error)
+      });
     }
   }
 }

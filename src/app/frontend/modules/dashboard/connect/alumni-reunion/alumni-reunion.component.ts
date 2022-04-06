@@ -1,20 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-alumni-reunion',
-  templateUrl: './alumni-reunion.component.html',
-  styleUrls: ['./alumni-reunion.component.scss']
+  selector: "app-alumni-reunion",
+  templateUrl: "./alumni-reunion.component.html",
+  styleUrls: ["./alumni-reunion.component.scss"],
 })
 export class AlumniReunionComponent implements OnInit {
   @Input() pastItems: any;
   @Input() upcomingItems: any;
   @Input() imgPath: any;
-  
+
   loading: boolean = false;
   pastEvent: any;
   upcomingEvent: any;
+  eventCategory: string = "alumniReunion";
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -24,5 +25,4 @@ export class AlumniReunionComponent implements OnInit {
       this.loading = false;
     }, 500);
   }
-
 }

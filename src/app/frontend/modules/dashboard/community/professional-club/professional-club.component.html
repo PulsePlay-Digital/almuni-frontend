@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h3 class="heading text-uppercase fw-bolder">PROFESSIONAL CLUB</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 my-2" *ngFor="let item of professionalClub">
+        <div class="card">
+            <img src="./../../../../../../assets/gallary01.png" class="card-img-top" alt="...">
+            <div class="card-header bg-transparent text-center fs-5 border-0">
+                <h3 class="card-title mb-2 fw-bold fs-5"><a>{{ item?.title }}</a></h3>
+            </div>
+            <div class="card-body text-center">
+              <a class="btn btn-primary">Join Club</a>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import * as moment from 'moment';
-import { map } from 'rxjs/operators';
-import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
-import { DataService } from 'src/app/frontend/services/data.service';
-import { environment } from 'src/environments/environment';
+import { Component, Input, OnInit } from "@angular/core";
+import * as moment from "moment";
+import { map } from "rxjs/operators";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
+import { DataService } from "src/app/frontend/services/data.service";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-at-glance',
-  templateUrl: './at-glance.component.html',
-  styleUrls: ['./at-glance.component.scss']
+  selector: "app-at-glance",
+  templateUrl: "./at-glance.component.html",
+  styleUrls: ["./at-glance.component.scss"],
 })
 export class AtGlanceComponent implements OnInit {
   @Input() pastItems: any;
@@ -22,8 +22,7 @@ export class AtGlanceComponent implements OnInit {
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor
-    ) { 
-    }
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -33,5 +32,4 @@ export class AtGlanceComponent implements OnInit {
       this.loading = false;
     }, 500);
   }
-
 }

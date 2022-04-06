@@ -1,11 +1,11 @@
-import { Location } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from "@angular/common";
+import { Component, Input, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-alumni-driven-events',
-  templateUrl: './alumni-driven-events.component.html',
-  styleUrls: ['./alumni-driven-events.component.scss']
+  selector: "app-alumni-driven-events",
+  templateUrl: "./alumni-driven-events.component.html",
+  styleUrls: ["./alumni-driven-events.component.scss"],
 })
 export class AlumniDrivenEventsComponent implements OnInit {
   @Input() pastItems: any;
@@ -16,8 +16,9 @@ export class AlumniDrivenEventsComponent implements OnInit {
 
   pastEvent: any;
   upcomingEvent: any;
+  eventCategory: string = "alumniDrivenEvent";
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -27,5 +28,4 @@ export class AlumniDrivenEventsComponent implements OnInit {
       this.loading = false;
     }, 500);
   }
-
 }

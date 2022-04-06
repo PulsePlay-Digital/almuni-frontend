@@ -38,4 +38,11 @@ export class DataService {
   public getData(action?: string) {
     return this.http.get(`${this.url}/${action}`);
   }
+
+  public postData(action?: any, data?: any) {
+   if (action?.action === 'create-event') {
+      return this.http.post<any>(`${this.url}/${action?.action}`, data);
+    } 
+    return this.http.post<any>(`${this.url}/${action}`, data);
+  }
 }

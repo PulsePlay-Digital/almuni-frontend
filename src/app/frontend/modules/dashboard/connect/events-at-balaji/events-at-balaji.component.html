@@ -61,16 +61,16 @@
                                         <div class="mb-3 row">
                                             <div class="col-sm-10 col-md-6">
                                                 <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name :</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                    <option value="null">Select Event</option>
+                                                    <select class="form-select" aria-label="Default select example" formControlName="eventName">
+                                                    <option value="">Select Event</option>
                                                     <option value="Local Meet & Greet">Yes</option>
                                                     <option value="Annual Reunion">No</option>
                                                     </select>
                                             </div>
                                             <div class="col-sm-10 col-md-6">
                                                 <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category :</label>
-                                                <select class="form-select" aria-label="Default select example" (change)="selectCategory($event)">
-                                                    <option value="null">Select Category</option>
+                                                <select class="form-select" aria-label="Default select example" formControlName="eventCategory" (change)="selectCategory($event)">
+                                                    <option value="">Select Category</option>
                                                     <option value="workshop">Conduct a Workshop</option>
                                                     <option value="faculty">Be a visiting faculty</option>
                                                     <option value="speaker">Speaker</option>
@@ -80,49 +80,50 @@
                                         <ng-container *ngIf="workShopField">
                                             <div class="mb-3 row">
                                                 <div class="col-sm-10 col-md-6">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop:*</label>
-                                                    <input type="number" class="form-control" id="formGroupExampleInput"
+                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop :</label>
+                                                    <input type="text" formControlName="topicWorkshop" class="form-control" id="formGroupExampleInput"
                                                     placeholder="Enter workshop topic here" />
                                                 </div>
                                                 <div class="col-sm-10 col-md-6">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category:*</label>
-                                                    <input type="number" class="form-control" id="formGroupExampleInput"
+                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category :</label>
+                                                    <input type="text" formControlName="academicCategory" class="form-control" id="formGroupExampleInput"
                                                     placeholder="Enter academic category" />
                                                 </div>
                                             </div>
                                         </ng-container>
                                         <ng-container *ngIf="speakerFacultyFields">
                                             <div class="mb-3 row">
-                                                <div class="col-sm-4 col-md-4">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop:*</label>
-                                                    <input type="text" placeholder="DD/MM/YYYY" class="form-control"  bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From :</label>
+                                                    <!-- <input type="text" placeholder="DD/MM/YYYY" class="form-control"  bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
+                                                    <input type="date" class="form-control" formControlName="dateFrom" id="formGroupExampleInput" />
+                                                    <div class="text-danger my-2" *ngIf="(f.dateFrom.touched || submitted) && f.dateFrom.errors?.required">
+                                                        From date is required.
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-4 col-md-4">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">From</label>
-                                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                                    placeholder="From" />
-                                                </div>
-                                                <div class="col-sm-4 col-md-4">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">To</label>
-                                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                                    placeholder="To" />
+                                                <div class="col-sm-6 col-md-6">
+                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To :</label>
+                                                    <input type="date" class="form-control" formControlName="dateTo" id="formGroupExampleInput"/>
+                                                    <div class="text-danger my-2" *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
+                                                        To date is required.
+                                                    </div>
                                                 </div>
                                             </div>
                                         
                                             <div class="mb-3 row">
                                                 <div class="col-sm-12 col-md-12">
-                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event:</label>
-                                                    <ckeditor ></ckeditor>
-                                                    <!-- <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                                                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event :</label>
+                                                    <ckeditor formControlName="description"></ckeditor>
+                                                    <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                                                         Description is required.
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </ng-container>
                                         <div class="row justify-content-center">
                                           <div class="col-lg-4 text-center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button class="btn btn-md btn-info mr-2 rounded text-white" >Submit</button>
+                                                <button class="btn btn-md btn-info mr-2 rounded text-white" (click)="submit()" [disabled]="!speakEventForm.valid">Submit</button>
                                               </div>
                                           </div>
                                         </div>

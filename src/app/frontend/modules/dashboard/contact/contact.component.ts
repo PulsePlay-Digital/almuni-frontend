@@ -36,7 +36,9 @@ export class ContactComponent implements OnInit {
       this.keyData = data;
     })
   }
-  
+  /**
+   * Get all social links
+   */
   async getAllSocialLinks() {
     let action: string = 'all-contact';
     await this.dataService.getData(action).pipe(
@@ -49,7 +51,6 @@ export class ContactComponent implements OnInit {
        })
     ).subscribe((data: any) => {
       this.socialData = data;
-      console.log(this.socialData, 'social data');
     })
   }
 }

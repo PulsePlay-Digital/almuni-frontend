@@ -1,9 +1,3 @@
-/*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*/
 
 .aboutBanner {
     background: url("./../../../../../assets/founder.jpg");
@@ -16,6 +10,14 @@
 }
 img.media-abroad {
     width: 100%;
+}
+
+.heading {
+    font-weight: 600;
+    font-size: 30px;
+    color: #011898;
+    line-height: 36.57px;
+    text-transform: uppercase;
 }
 
 /* Add indicator arrow for the active tab */

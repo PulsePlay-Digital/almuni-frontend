@@ -15,7 +15,8 @@ const routes: Routes = [
         path: 'alumnireunion', component: AlumniReunionComponent
       }
     ]
-  }
+  },
+  { path: '', redirectTo: 'connect', pathMatch: 'full' }
 ];
 
 @NgModule({
