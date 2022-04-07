@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-lg-9 col-md-8 col-sm-7 col">
+      <h2 class="mb-2" mat-dialog-title>BUSINESS VENTURE / START UP DETAIL INFO</h2>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-5 col-2 text-end">
+      <a class="p-0" mat-dialog-close
+        ><i class="fa fa-times fa-2x" aria-hidden="true"></i
+      ></a>
+    </div>
+    <div class="col-lg-12">
+      <hr class="mt-2" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <mat-dialog-content>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <p><strong>Company Name :</strong> &nbsp;{{ data?.data?.company}}</p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <p><strong>Alumni Founder :</strong> &nbsp;{{ data?.data?.owner}}</p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Alumni Course :</strong> &nbsp;{{ data?.data?.course }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Alumni Batch :</strong> &nbsp;{{ data?.data?.batch }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Contact Number :</strong> &nbsp;{{ data?.data?.contact }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Email id :</strong> &nbsp;{{ data?.data?.email }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Website :</strong> &nbsp;{{ data?.data?.website }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Facebook page :</strong> &nbsp;{{ data?.data?.facebook }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>LinkedIn page :</strong> &nbsp;{{ data?.data?.linkedin }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Business Operation Hours :</strong> &nbsp;{{ data?.data?.hours }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Type of Ownership :</strong> &nbsp;{{ data?.data?.type }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Date Founded :</strong> &nbsp;{{ data?.data?.date_founded }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Primary Industry :</strong> &nbsp;{{ data?.data?.industry }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Primary Customers Served :</strong> &nbsp;{{ data?.data?.customer }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Address :</strong> &nbsp;{{ data?.data?.address }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Country :</strong> &nbsp;{{ data?.data?.country }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>State :</strong> &nbsp;{{ data?.data?.state }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>City :</strong> &nbsp;{{ data?.data?.city }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Funding Sought :</strong> &nbsp;{{ data?.data?.funding }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Participate in Campus Placement :</strong> &nbsp;{{ data?.data?.placement == true ? 'Yes' : 'No' }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Provide Internships :</strong> &nbsp;{{ data?.data?.internship == true ? 'Yes' : 'No'  }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Hiring :</strong> &nbsp;{{ data?.data?.hiring == true ? 'Yes' : 'No' }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>Locations Served :</strong> &nbsp;{{ data?.data?.locations }}</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p><strong>International Operations :</strong> &nbsp;{{ data?.data?.international_operations }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <p><strong>Description :</strong></p>
+                  <div [innerHtml]="data?.data?.description"></div>
+                </div>
+            </div>
+          </mat-dialog-content>
+    </div>
+</div>

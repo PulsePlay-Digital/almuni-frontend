@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { SearchFilterComponent } from "./components/search-filter/search-filter.component";
 import { StripHtmlPipe } from './pipes/strip-html.pipe';
+import { DialogEntrepreneurshipComponent } from './components/dialog-entrepreneurship/dialog-entrepreneurship.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { StripHtmlPipe } from './pipes/strip-html.pipe';
     NumbersOnlyDirective,
     ResetPasswordComponent,
     SearchFilterComponent,
-    StripHtmlPipe
+    StripHtmlPipe,
+    DialogEntrepreneurshipComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { StripHtmlPipe } from './pipes/strip-html.pipe';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule
@@ -45,7 +49,8 @@ import { StripHtmlPipe } from './pipes/strip-html.pipe';
     NumbersOnlyDirective,
     ResetPasswordComponent,
     SearchFilterComponent,
-    StripHtmlPipe
+    StripHtmlPipe,
+    DialogEntrepreneurshipComponent
   ]
 })
 export class SharedModule {}

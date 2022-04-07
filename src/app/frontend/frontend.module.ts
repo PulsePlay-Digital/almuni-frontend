@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { FrontendRoutingModule } from './frontend-routing.module';
 import { FrontendComponent } from './frontend.component';
@@ -14,6 +13,7 @@ import { UserService } from './services/user.service';
 import { NotificationService } from './services/notification.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AuthService,
     NotificationService,
     TokenInterceptor,
+    DataService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     UserService
   ]

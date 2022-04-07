@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h3 class="heading text-uppercase fw-bolder">BUSINESS VENTURE / START UP DETAIL INFO</h3>
+    </div>
+    <div class="col-lg-3"><a class="btn btn-primary" routerLink="/community/venture-info">Business Venture / Start Up Detail Info</a></div>
+</div>
+<app-search-filter></app-search-filter>
+
+<div class="row">
+    <div class="col-lg-4 my-2 px-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 3, currentPage: p }">
+        <div class="card">
+            <div class="card-body">
+                <p *ngIf="item?.company" class="mb-2"><strong>Company Name:</strong> &nbsp; {{ item?.company}}</p>
+                <p *ngIf="item?.owner" class="mb-2"><strong>Alumni Founder: </strong> &nbsp;{{ item?.owner}}</p>
+                <p *ngIf="item?.industry" class="mb-2"><strong>Primary Industry:</strong> &nbsp;{{ item?.industry}}</p>
+                <p *ngIf="item?.contact" class="mb-2"><strong>Contact Number:</strong> &nbsp;{{ item?.contact}}</p>
+                <p *ngIf="item?.email" class="mb-2"><strong>Email id:</strong> &nbsp;{{ item?.email}}</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a class="btn btn-primary" (click)="onReadData(item)">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center" *ngIf="entrepreneur?.length > 0">
+        <div class="col text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

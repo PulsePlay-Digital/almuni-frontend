@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professional-club',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalClubComponent implements OnInit {
 
+  club: boolean = false;
   professionalClub = [
     {id: 1, title:'Digital',club:'Join Club'},
     {id: 2, title:'Strategy',club:'Join Club'},
@@ -24,9 +26,17 @@ export class ProfessionalClubComponent implements OnInit {
     {id: 14, title:'Sales',club:'Join Club'},
     {id: 15, title:'SMAC (Social, Mobile, Analytics, Cloud)',club:'Join Club'}
 ];
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  joinUnjoin(data:any) {
+    this.club = !this.club  
+    console.log(this.club);
+  }
+
+  joinClub() {
+    this.router.navigate(['/community/start-club'], { queryParams: { type: 'professional'} })
+  }
 }

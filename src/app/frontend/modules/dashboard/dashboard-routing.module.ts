@@ -28,10 +28,6 @@ const routes: Routes = [
     path: 'news',
     component: NewsComponent
   },
-  // {
-  //   path: 'community',
-  //   component: CommunityComponent
-  // },
   {
     path: 'celebrate',
     component: CelebrateComponent

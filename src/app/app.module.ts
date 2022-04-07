@@ -29,7 +29,6 @@ import { CKEditorModule } from 'ng2-ckeditor';
     CKEditorModule
   ],
   providers: [
-    UserService
   ],
   bootstrap: [AppComponent]
 })

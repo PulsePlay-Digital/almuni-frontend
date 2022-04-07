@@ -40,7 +40,7 @@ export class DataService {
   }
 
   public postData(action?: any, data?: any) {
-   if (action?.action === 'create-event') {
+   if (action?.action === 'create-event' || action?.action === 'create-club') {
       return this.http.post<any>(`${this.url}/${action?.action}`, data);
     } 
     return this.http.post<any>(`${this.url}/${action}`, data);
