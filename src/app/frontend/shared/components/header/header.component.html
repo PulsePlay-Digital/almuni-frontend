@@ -1,84 +1,71 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="['/home']">
-            <img src="./assets/logo.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active-link">Know us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/common-purpose-culture']" routerLinkActive="active-link">common purpose & culture</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/community']" routerLinkActive="active-link">community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/connect']" routerLinkActive="active-link">connect</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/collaborate-contribute']" routerLinkActive="active-link">collaborate & contribute</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/celebrate']" routerLinkActive="active-link">celebrate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active-link">contact</a>
-                </li>
-            </ul>
-            <button *ngIf="currentUser == '{}'" [routerLink]="['/login']">Login</button>
-            <ng-container *ngIf="currentUser != '{}'">
-                <ul class="navbar-nav user mx-auto">
-                    <li class="nav-item dropdown userImg">
-                        <a class="nav-link dropdown-toggle userDrop" id="userDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" data-toggle="dropdown">
-                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" [routerLink]="['/view-profile']"><i class="fa fa-eye"
-                                        aria-hidden="true"></i>
-                                    &nbsp; View Profile</a></li>
-                            <li><a class="dropdown-item" [routerLink]="['/edit-profile']"><i
-                                        class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                    &nbsp; Edit Profile</a></li>
-                            <li><a class="dropdown-item" [routerLink]="['/reset-password']"><i class="fa fa-key"
-                                        aria-hidden="true"></i>
-                                    &nbsp; Reset Password</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"
-                                        aria-hidden="true"></i>&nbsp; Log out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </ng-container>
-
-            <ul class="navbar-nav navSideBar ml-auto align-items-center">
-                <li>
-                    <a class="" onclick="openNav()">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
+<div class="header-banner">
+    <div class="container">
+        <div class="row m-0 my-3">
+            <div class="col-xl-10 col-lg-9 header-logos col-md-9 col-sm-12 text-center">
+                <img src=".../../../../../..//../assets/logo.png" class="logo me-2" alt=" Shri Balaji Logo">
+                <img src="../../../../../assets/logosbs.png" class="logo-img" alt="Shri Balaji Logo">
+            </div>
+            <div
+                class="col-xl-2 col-lg-3 col-md-3 col-sm-12 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                <button type="button" class="btn admission-open fs-6 ">Admission Open</button>
+            </div>
         </div>
     </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class=" fa-burger fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">☰ </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" aria-current="page" [routerLink]="['/home']"
+                            routerLinkActive="active-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/about-us']" routerLinkActive="active-link">Know
+                            us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/common-purpose-culture']"
+                            routerLinkActive="active-link">common purpose & culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/community']"
+                            routerLinkActive="active-link">community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/connect']"
+                            routerLinkActive="active-link">connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/collaborate-contribute']"
+                            routerLinkActive="active-link">collaborate & contribute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/celebrate']"
+                            routerLinkActive="active-link">celebrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/contact']"
+                            routerLinkActive="active-link">contact</a>
+                    </li>
+                </ul>
+                <a class="" onclick="openNav()">
+                    <i class="fa fa-bars fs-6 pe-3" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 
+
+</div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
+    <a class="nav-link fs-6 pe-3" [routerLink]="['/about-us']" routerLinkActive="active-link">Know
+        us</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
-    <a [routerLink]="['/contact']">Contact</a>
+    <a class="nav-link fs-6 pe-3" [routerLink]="['/contact']"
+    routerLinkActive="active-link">contact</a>
 </div>
