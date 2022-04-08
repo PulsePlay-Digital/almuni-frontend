@@ -1,0 +1,19 @@
+.main-heading {
+    font-weight: 600;
+    font-size: 30px;
+    color: #011898;
+    line-height: 36.57px;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 575px) and (max-width: 768px)  {
+    .main-heading {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 574px){
+    .main-heading {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}

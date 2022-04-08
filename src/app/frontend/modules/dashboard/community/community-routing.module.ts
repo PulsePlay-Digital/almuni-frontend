@@ -36,15 +36,14 @@ const routes: Routes = [
       { 
         path: 'venture-info', 
         component: BusinessVentureInfoComponent
-      }
+      },
+      {
+        path: '',
+        redirectTo: 'alumni-directory',
+        pathMatch: 'full'
+      },
     ],
-  },
-  {
-    path: '',
-    redirectTo: '/community/alumni-directory',
-    pathMatch: 'full'
-  },
- 
+  }
 ];
 
 @NgModule({

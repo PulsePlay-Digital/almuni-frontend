@@ -12,12 +12,71 @@ img.media-abroad {
     width: 100%;
 }
 
-.heading {
+.connectVision {
+    .content {
+        position: relative;
+        .box-text{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .content-img {
+            min-height: 170px;
+            height: 170px;
+            object-fit: cover;
+        }
+    }
+    .content-heading {
+        height: 74px;
+        a {
+            font-size: 28px;
+            line-height: 39px;
+            font-weight: 500;
+            cursor: pointer;
+            text-shadow: 1px 1px;
+        }
+        .connect { 
+            color: #FEA641;
+        }
+        .network {
+            color: #F65C8B;
+        }
+        .engage {
+            color: #011898;
+        }
+        .learnGrow {
+            color: #5EB76C;
+        }
+    }
+    .linksSection{
+        ul{
+            padding-inline-start: 0;
+            list-style-type: none;
+        }
+    }
+    .items {
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+.main-heading {
     font-weight: 600;
     font-size: 30px;
     color: #011898;
     line-height: 36.57px;
     text-transform: uppercase;
+}
+.sub-heading{
+    color: #F65C8B;
 }
 
 /* Add indicator arrow for the active tab */
@@ -38,4 +97,16 @@ img.media-abroad {
 
 .nav-pills-custom .nav-link.active::before {
     opacity: 1;
+}
+
+@media screen and (min-width: 575px) and (max-width: 768px)  {
+    .main-heading {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 574px){
+    .main-heading {
+        font-size: 18px;
+        line-height: 30px;
+    }
 }

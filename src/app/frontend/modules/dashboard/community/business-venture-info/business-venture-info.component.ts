@@ -58,6 +58,9 @@ export class BusinessVentureInfoComponent implements OnInit {
     });
   }
 
+  /**
+   * Get form controls
+   */
  get f() { return this.editEntreprenForm.controls;}
 
 
@@ -65,6 +68,10 @@ export class BusinessVentureInfoComponent implements OnInit {
     this.selectedStatus = item;
   }
 
+  /**
+   * Function to add entrepreneur Data
+   * @returns 
+   */
   async add() {
     let action: string = 'create-entrepreneur';
     let params = {
@@ -82,6 +89,9 @@ export class BusinessVentureInfoComponent implements OnInit {
     }
   }
 
+  /**
+   * Navigate to Previous page
+   */
   navigateBack() {
     this.loaction.back();
   }
