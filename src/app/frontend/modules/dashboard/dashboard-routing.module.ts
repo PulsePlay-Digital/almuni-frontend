@@ -49,7 +49,7 @@ const routes: Routes = [
     component: SitemapComponent
   },
   { 
-    path: '', 
+    path: 'community', 
     loadChildren: () => import('./community/community.module').then(m => m.CommunityModule)
   },
   { 

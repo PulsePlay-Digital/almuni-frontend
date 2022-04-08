@@ -1,41 +1,44 @@
-nav {
-    background: #00035F !important;
-
-    .navbar-brand img {
-        width: 100px;
-    }
-
-    .nav-item {
-        a {
-            color         : #fff;
-            text-transform: capitalize;
-            font-size     : 14px;
-            line-height   : 1.4;
+.header-banner {
+    .header-logos {
+        .logo {
+            width: 100px;
         }
-        :hover {
-            background: #3D99DB;
-            transition: all 0.3s ease-in-out;
+        .logo-img {
+            width: 300px;
         }
     }
-
-    .navbar-toggler i {
-        color    : #fff;
-        font-size: 28px;
+    .open-add {
+        .admission-open {
+            background-color: #011898;
+            color: #fff;
+            font-weight: 700;
+            font-family: Montserrat;
+            border-radius: 2px;
+            // box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+        }
+         :hover {
+            background-color: #fff;
+            color: #011898;
+            border-color: #011898;
+        }
     }
-
-    .navbar-toggler:focus,
-    .navbar-toggler:hover,
-    .navbar-toggler:active {
-        box-shadow: none;
-    }
-
-    .otherNav {
+}
+.navbar {
+    .fa-burger {
         display: none;
+    }
+    .responsive-nav {
+        display: none;
+    }
+    .navbar-nav {
+        .nav-link {
+            font-weight: 700;
+            font-family: Montserrat;
+        }
     }
 }
 
 .navSideBar i {
-    color    : #fff;
     font-size: 28px;
 }
 .navSideBar li a {
@@ -49,10 +52,10 @@ nav {
     z-index         : 1;
     top             : 0;
     right           : 0;
-    background-color: #00035F;
+    background-image: linear-gradient(#6468FF, #191C7A);
     overflow-x      : hidden;
     transition      : 0.5s;
-    opacity         : 0.8;
+    // opacity         : 0.8;
     padding-top     : 60px;
 }
 
@@ -77,8 +80,11 @@ nav {
     left     : -15px;
     font-size: 36px;
 }
+a.nav-link:hover {
+    color: #3D99DB !important;
+}
 a.nav-link.active-link {
-    background: #3D99DB;
+    color: #3D99DB !important;
 }
 
 @media screen and (max-width: 564px) and (min-width: 300px) {
