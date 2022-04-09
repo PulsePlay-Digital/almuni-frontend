@@ -8,7 +8,7 @@
         </div>
         <div class="form-outline mb-2">
           <select class="form-select" placeholder="Select institute name" formControlName="institute_id">
-            <option value="" selected>Choose your institute</option>
+            <option value="">Choose your institute</option>
             <option [value]="institute.id" *ngFor="let institute of getInstitutes">
               {{ institute.institute_name }}
             </option>

@@ -1,0 +1,125 @@
+<div class="row">
+    <div class="col-lg-9 col-md-8 col-sm-7 col-10">
+    <h2 mat-dialog-title>Special Project Details</h2>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-5 col text-right">
+    <a class="p-0" mat-dialog-close
+        ><i class="fa fa-times fa-2x" aria-hidden="true"></i
+    ></a>
+    </div>
+    <div class="col-lg-12">
+    <hr class="mt-2" />
+    </div>
+</div>
+
+<form class="example-form" [formGroup]="editSpecialForm">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-3 col-lg-2 col-md-3 col-3 col-form-label fw-bold">Author</label>
+        <div class="col-sm-9 col-lg-10 col-md-9 col">
+            <!-- <input type="text" formControlName="author" readonly class="form-control-plaintext" [(ngModel)]="data.data.author"> -->
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupTitle" class="form-label fw-bold">Project Title :</label>
+        <input type="text" formControlName="title" class="form-control" id="formGroupTitle"  placeholder="Enter Project Title" />
+        <div class="text-danger mt-2"
+            *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
+            Title is required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupCharity" class="form-label fw-bold">Charity/Initiative name :</label>
+        <input type="text" formControlName="charityName" class="form-control" id="formGroupCharity"  placeholder="Enter Charity/Initiative name" />
+        <div class="text-danger mt-2"
+            *ngIf="(f.charityName.touched || submitted) && f.charityName.errors?.required">
+            Charity/Initiative name is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="mr-3 form-label fw-bold" for="inputRadio">Monetary donations accepted :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="monetaryDonation" type="radio" name="monetaryDonation" id="monetary" value="true">
+            <label class="form-check-label" for="monetary">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="monetaryDonation" type="radio" name="monetaryDonation" id="monetary1" value="false">
+            <label class="form-check-label" for="monetary1">No</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="mr-3 form-label fw-bold" for="inputRadio">Time/effort donations invited :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="timeDonation" type="radio" name="timeDonation" id="donation" value="true">
+            <label class="form-check-label" for="donation">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="timeDonation" type="radio" name="timeDonation" id="donation1" value="false">
+            <label class="form-check-label" for="donation1">No</label>
+            </div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupContactName" class="form-label fw-bold">Contact Person name :</label>
+        <input type="text" formControlName="contactName" class="form-control" id="formGroupContactName"  placeholder="Enter Contact Person name" />
+        <div class="text-danger mt-2"
+            *ngIf="(f.contactName.touched || submitted) && f.contactName.errors?.required">
+            Contact person name is required.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="formGroupCharity" class="form-label fw-bold">Country Code :</label>
+                <input type="text" formControlName="code" class="form-control" id="formGroupCharity"  placeholder="Enter country code" />
+                <div class="text-danger mt-2"
+                    *ngIf="(f.code.touched || submitted) && f.code.errors?.required">
+                    Code is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="form-group">
+                <label for="formGroupCharity" class="form-label fw-bold">Contact mobile numbe :</label>
+                <input type="text" formControlName="mobileNumber" class="form-control" id="formGroupCharity"  placeholder="Enter contact number" />
+                <div class="text-danger mt-2"
+                    *ngIf="(f.mobileNumber.touched || submitted) && f.mobileNumber.errors?.required">
+                    Contact number is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupEmail" class="form-label fw-bold">Email Id :</label>
+        <input type="email" formControlName="email" class="form-control" id="formGroupEmail"  placeholder="Enter Email" />
+        <div class="text-danger mt-2"
+            *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+            Email is required.
+        </div>
+        <div class="text-danger mt-2"
+        *ngIf="(f.email.touched || submitted) && f.email.errors?.pattern">
+        Email format is incorrect.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupSocialLink" class="form-label fw-bold">Social Link :</label>
+        <input type="text" formControlName="link" class="form-control" id="formGroupSocialLink"  placeholder="Enter Social Link" />
+        <div class="text-danger mt-2"
+            *ngIf="(f.link.touched || submitted) && f.link.errors?.required">
+            Link is required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label fw-bold">Brief description about the project :</label>
+        <textarea class="form-control" formControlName="description" id="exampleFormControlTextarea1" rows="2"></textarea>
+        <div class="text-danger mt-2"
+            *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+            Description is required.
+        </div>
+    </div>
+    <div class="mb-3">
+    <button >Close</button>
+        <button class="btn btn-info text-white"   (click)="submit()" [disabled]="!editSpecialForm.valid">
+        Submit
+    </button>
+    </div>
+
+</form>

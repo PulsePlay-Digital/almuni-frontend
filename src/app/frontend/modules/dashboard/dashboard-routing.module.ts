@@ -33,10 +33,6 @@ const routes: Routes = [
     component: CelebrateComponent
   },
   {
-    path: 'collaborate-contribute',
-    component: CollaborateContributeComponent
-  },
-  {
     path: 'careers',
     component: CareersComponent
   },
@@ -47,6 +43,10 @@ const routes: Routes = [
   {
     path: 'sitemap',
     component: SitemapComponent
+  },
+  {
+    path: '',
+    loadChildren:() => import('./collaborate-contribute/collaborate-contribute.module').then(m=>m.CollaborateContributeModule)
   },
   { 
     path: '', 
