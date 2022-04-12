@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./engage-society.component.scss']
 })
 export class EngageSocietyComponent implements OnInit {
-
+  postedOpportunity: boolean = false;
+  postedExpertise: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  viewOpportunity() {
+    this.postedOpportunity = !this.postedOpportunity;
+    this.postedExpertise = false;
+  }
+
+  viewExpertise() {
+    this.postedExpertise = !this.postedExpertise;
+    this.postedOpportunity = false
+  }
 }
