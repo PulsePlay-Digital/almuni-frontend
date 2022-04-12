@@ -1,9 +1,10 @@
+
 <div class="row">
     <div class="d-sm-flex align-items-center justify-content-between my-4">
-      <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">Posted jobs by me</h4>
       <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
   </div>
-    <div class="col-lg-12 my-2" *ngFor="let item of allJobs">
+    <div class="col-lg-12 my-2" *ngFor="let item of postedJobsByMe">
         <div class="card">
             <div class="card-body">
               <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.title }}</h5>
@@ -11,9 +12,9 @@
                   <div class="col-lg-6">
                     <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <!-- <div class="col-lg-6">
                     <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
-                  </div>
+                  </div> -->
                   <div class="col-lg-6">
                     <p><b>Job Posted By</b>: &nbsp; <a routerLink="">{{ item?.author }} </a></p>
                   </div>
@@ -54,11 +55,15 @@
                     <p><b>Company website</b>: &nbsp; <a href="{{item?.website }}">{{ item?.website }} </a></p>
                   </div>
                   <div class="col-lg-12">
-                    <p><b>Brief description of job profile</b>: &nbsp; {{ item?.description | stripHtml }} </p>
+                    <p><b>Brief description of job profile</b>: &nbsp;</p>
+                    <p>{{ item?.description | stripHtml }} </p>
                   </div>
-                  <div class="col-lg-12">
-                    <p><b>Job Status</b>: &nbsp; <span [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'">{{ item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</span></p>
+                  <div class="row">
+                    <div class="col text-center">
+                        <p><a class="btn btn-lg btn-primary" [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'" (click)="changeStatus(item)">{{ item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</a></p>
+                      </div>
                   </div>
+                 
               </div>
             </div>
         </div>

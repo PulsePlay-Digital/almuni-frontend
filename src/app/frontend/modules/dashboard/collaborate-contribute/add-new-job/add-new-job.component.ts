@@ -14,6 +14,7 @@ export class AddNewJobComponent implements OnInit {
   addJobForm: FormGroup | any;
   submitted: boolean = false;
   author: any;
+  authorId: any;
   currentUser: any;
 
   constructor(
@@ -25,6 +26,7 @@ export class AddNewJobComponent implements OnInit {
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+      this.authorId = this.currentUser?.id;
     }
    }
 
@@ -40,8 +42,9 @@ export class AddNewJobComponent implements OnInit {
  */
   buildForm() {
     this.addJobForm = this.fb.group({
+      id: [this.authorId],
+      author: [this.author],
       title: ['', Validators.required],
-      author: [''],
       companyName: ['', Validators.required],
       location: ['', Validators.required],
       city: ['', Validators.required],

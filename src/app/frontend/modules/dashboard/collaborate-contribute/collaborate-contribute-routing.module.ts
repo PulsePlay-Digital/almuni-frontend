@@ -7,18 +7,24 @@ import { SpeacialProjectsComponent } from './speacial-projects/speacial-projects
 import { AddNewJobComponent } from './add-new-job/add-new-job.component';
 import { AvailableJobsComponent } from './available-jobs/available-jobs.component';
 import { AddSpecialProjectComponent } from './add-special-project/add-special-project.component';
+import { PostedJobsByMeComponent } from './posted-jobs-by-me/posted-jobs-by-me.component';
+import { ProjectPostedByAlumniComponent } from './project-posted-by-alumni/project-posted-by-alumni.component';
+import { EngageSocietyComponent } from './engage-society/engage-society.component';
 
 const routes: Routes = [
   {
     path: 'collaborate-contribute',
     component: CollaborateContributeComponent,
     children: [
-      { path:'mentorship', component: MentorshipComponent  },
-      { path:'careers', component: CareersComponent  },
+      { path: 'mentorship', component: MentorshipComponent  },
+      { path: 'careers', component: CareersComponent  },
       { path: 'special-projects', component: SpeacialProjectsComponent  },
       { path: 'add-job', component: AddNewJobComponent  },
       { path: 'available-jobs', component: AvailableJobsComponent  },
       { path: 'add-special-project', component: AddSpecialProjectComponent  },
+      { path: 'posted-jobs-by-me', component: PostedJobsByMeComponent  },
+      { path: 'project-by-alumni', component: ProjectPostedByAlumniComponent  },
+      { path: 'engage-with-society', component: EngageSocietyComponent  },
       {
         path: '',
         redirectTo: 'mentorship',

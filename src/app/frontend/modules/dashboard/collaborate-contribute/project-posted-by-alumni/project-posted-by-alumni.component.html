@@ -1,0 +1,46 @@
+<div class="row">
+    <!-- <div class="d-sm-flex align-items-center justify-content-between my-4">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">Posted jobs by me</h4>
+      <button class="btn btn-md btn-primary rounded" >Back</button>
+  </div> -->
+    <div class="col-lg-12 my-2" *ngFor="let item of specialProjectByAlumni">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0 fs-2 main-heading text-capitalize"><p class="mb-0 main-heading fw-bold">Project Name : &nbsp; {{ item?.title }} </p></h5>
+              </div>
+            <div class="card-body">
+              <div class="row">
+                  <div class="col-lg-6">
+                    <p><b>Charity/Initiative Name</b>: &nbsp; {{ item?.charityName }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Monetary donations accepted</b>: &nbsp; <a>{{ item?.monetaryDonation == true ? 'Yes': 'No' }} </a></p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Time/effort donations invited</b>: &nbsp; {{ item?.timeDonation == true ? 'Yes' : 'No' }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Contact mobile number</b>: &nbsp; {{ item?.contactPerson }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Contact person email id</b>: &nbsp; {{ item?.email }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Email id</b>: &nbsp; {{ item?.email }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Social Media Link</b>: &nbsp; {{ item?.city }} </p>
+                  </div>
+                  <div class="col-lg-12">
+                    <p><b>Brief description about the project</b>: &nbsp;</p>
+                    <p>{{ item?.description | stripHtml }} </p>
+                  </div>
+                 
+              </div>
+            </div>
+            <div class="card-footer bg-white text-end">
+                <a class="btn btn-primary text-uppercase">Request sent</a>
+            </div>
+        </div>
+    </div>
+</div>

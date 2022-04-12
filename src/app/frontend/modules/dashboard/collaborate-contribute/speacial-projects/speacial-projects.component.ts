@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeacialProjectsComponent implements OnInit {
 
-  constructor() { }
+  searchData: boolean = false;
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Function to show/hide search data
+   */
+  search() {
+    this.searchData = !this.searchData;
+  }
 }

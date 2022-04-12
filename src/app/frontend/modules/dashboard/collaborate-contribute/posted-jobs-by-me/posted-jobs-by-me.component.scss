@@ -1,0 +1,19 @@
+.main-heading {
+    font-size: 30px;
+    line-height:43.88px;
+    color: #011898;
+    font-family: Montserrat;
+}
+.openJob, .closeJob {
+    color: #fff;
+    border: none;
+}
+.openJob {
+    background-color: green;
+    text-shadow: 1px 1px green;
+    
+}
+.closeJob {
+    background-color: red;
+    text-shadow: 1px 1px red;
+}

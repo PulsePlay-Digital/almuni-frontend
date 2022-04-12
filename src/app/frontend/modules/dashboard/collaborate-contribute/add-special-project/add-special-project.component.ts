@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
@@ -11,34 +12,56 @@ import { DataService } from './../../../../services/data.service';
 export class AddSpecialProjectComponent implements OnInit {
   editSpecialForm : FormGroup | any;
   submitted: boolean = false;
+  currentUser: any;
+  projectId: any;
+  author: any;
+
   constructor( public fb: FormBuilder,
     public dataService: DataService,
-    public notify: TokenInterceptor
-    ) { }
+    public notify: TokenInterceptor,
+    public _location: Location
+    ) {
+      if (localStorage) {
+        this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+        this.projectId = this.currentUser?.id;
+      }
+     }
 
   ngOnInit(): void {
     this.buildSpecialForm();
+    let fname = this.currentUser?.first_name;
+    let lname = this.currentUser?.last_name;
+    let mname = this.currentUser?.middle_name;
+    this.author = fname  + ((mname == null) ? '' : ' ' + mname ) + ' ' + lname;
   }
 
   buildSpecialForm() {
     this.editSpecialForm = this.fb.group({
-      id: [''],
-      author: [''],
+      id: [this.projectId],
+      author: [this.author],
       title: ['', Validators.required],
       charityName: ['', Validators.required],
       monetaryDonation: [false],
       timeDonation: [false],
       contactName: ['', Validators.required],
-      code: ['', Validators.required],
+      code: [''],
       mobileNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
       link: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      is_active:['active']
     });
   }
 
+  /**
+   * Get form controls
+   */
   get f() { return this.editSpecialForm.controls;}
 
+  /**
+   * Function to add special project
+   * @returns 
+   */
   async submit() {
     let action: string = 'create-project';
 
@@ -54,5 +77,12 @@ export class AddSpecialProjectComponent implements OnInit {
           this.notify.notificationService.openFailureSnackBar(error);
       })
     }
+  }
+
+  /**
+   * Function to navigate previous page
+   */
+  navigateBack() {
+    this._location.back();
   }
 }

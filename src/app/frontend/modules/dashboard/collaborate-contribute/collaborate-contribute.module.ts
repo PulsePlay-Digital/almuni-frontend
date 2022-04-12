@@ -12,6 +12,9 @@ import { AddNewJobComponent } from './add-new-job/add-new-job.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { AvailableJobsComponent } from './available-jobs/available-jobs.component';
 import { AddSpecialProjectComponent } from './add-special-project/add-special-project.component';
+import { PostedJobsByMeComponent } from './posted-jobs-by-me/posted-jobs-by-me.component';
+import { ProjectPostedByAlumniComponent } from './project-posted-by-alumni/project-posted-by-alumni.component';
+import { EngageSocietyComponent } from './engage-society/engage-society.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { AddSpecialProjectComponent } from './add-special-project/add-special-pr
     AddNewJobComponent,
     AvailableJobsComponent,
     AddSpecialProjectComponent,
+    PostedJobsByMeComponent,
+    ProjectPostedByAlumniComponent,
+    EngageSocietyComponent
   ],
   imports: [
     CommonModule,

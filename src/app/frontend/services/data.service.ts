@@ -45,4 +45,8 @@ export class DataService {
     } 
     return this.http.post<any>(`${this.url}/${action}`, data);
   }
+
+  updateData(action:string, data: any) {
+      return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+  }
 }
