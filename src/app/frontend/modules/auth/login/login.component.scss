@@ -10,3 +10,58 @@ a {
 .loginbtn {
     background: #00035F;
 }
+
+a {
+    text-decoration: none;
+  }
+  .text-danger {
+    font-size: 12px;
+  }
+  .label-danger {
+    color: red;
+  }
+  .loginbtn {
+    background: #00035f;
+  }
+   .login-page {
+   .login-background {
+    // background-image: url("../../../../../assets/login/image\ 22\ \(1\).png");
+    background-color: #f65c8b;
+    height: auto;
+    background-size: cover;
+    
+    .left-box{
+       
+    height: 100%;
+    padding: 78px;
+    }
+    .btn-login {
+      opacity: 0.3;
+    } 
+  }
+    .login-form {
+      background-color: #011898;
+    
+    .btn-register {
+     background-color: #f65c8b;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     padding: 25px 70px;
+    
+    }
+    .form-control {
+     font-size: 12px !important;
+    }
+  }
+}
+// media query//
+@media (min-width: 992px) {
+  .login-page {
+    .login-background {
+    .left-box{
+       
+      height: 100%;
+      padding: 31px;
+      }
+  }
+}
+}
