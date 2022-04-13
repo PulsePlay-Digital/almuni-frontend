@@ -12,6 +12,7 @@ import { ProjectPostedByAlumniComponent } from './project-posted-by-alumni/proje
 import { EngageSocietyComponent } from './engage-society/engage-society.component';
 import { AddExpertiseComponent } from './add-expertise/add-expertise.component';
 import { AddOpportunityComponent } from './add-opportunity/add-opportunity.component';
+import { AvailableEventComponent } from './available-event/available-event.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'engage-with-society', component: EngageSocietyComponent  },
       { path: 'add-expertise', component: AddExpertiseComponent  },
       { path: 'add-opportunity', component: AddOpportunityComponent  },
+      { path: 'available-event', component: AvailableEventComponent  },
       {
         path: '',
         redirectTo: 'mentorship',

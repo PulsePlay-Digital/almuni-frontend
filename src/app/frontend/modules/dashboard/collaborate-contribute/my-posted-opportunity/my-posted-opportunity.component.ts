@@ -1,4 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { DataService } from 'src/app/frontend/services/data.service';
 
 @Component({
   selector: 'app-my-posted-opportunity',
@@ -6,10 +9,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-posted-opportunity.component.scss']
 })
 export class MyPostedOpportunityComponent implements OnInit {
+  allOpportunity: any;
+  currentUser: any;
+  author: any;
 
-  constructor() { }
+  constructor(
+    public dataService: DataService,
+    public location: Location
+  ) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+   }
 
   ngOnInit(): void {
+    this.getAllOpportunity();
+    let fname = this.currentUser?.first_name;
+    let lname = this.currentUser?.last_name;
+    let mname = this.currentUser?.middle_name;
+    this.author = fname  + ((mname == null) ? '' : ' ' + mname ) + ' ' + lname;
   }
 
+  /**
+   * Function to get all opportunity
+   */
+  async getAllOpportunity() {
+    let action: string = "all-opportunity";
+    await this.dataService.getData(action).pipe(
+      map((item: any) => {
+        return item.data.filter((res: any) => res.author === this.author
+        )
+      })
+    ).subscribe((res: any) => {
+      this.allOpportunity = res;
+    })
+  }
+  /**
+   * Function to redirect previous page
+   */
+  navigateBack() {
+    this.location.back();
+  }
 }

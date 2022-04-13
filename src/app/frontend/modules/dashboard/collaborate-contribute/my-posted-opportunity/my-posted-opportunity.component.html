@@ -1,1 +1,47 @@
-<p>my-posted-opportunity works!</p>
+<div class="row">
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Opportunities</h4>
+  </div>
+    <div class="col-lg-12 my-2" *ngFor="let item of allOpportunity">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.author }}</h5>
+              <div class="row">
+                  <div class="col-lg-6">
+                    <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Package Offer</b>: &nbsp; {{ item?.packageOffer }} </p>
+                  </div>
+                  <div class="col-lg-6" *ngIf="item?.type == 'campusPlacement'">
+                    <p><b>Type</b>: &nbsp; Share Campus Placement Opportunities </p>
+                  </div>
+                  <div class="col-lg-6" *ngIf="item?.type == 'internship'">
+                    <p><b>Type</b>: &nbsp; Share Internship Opportunities </p>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                    <p><b>Positions For Internship</b>: &nbsp; {{ item?.positionsForInternship }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Positions Looking To Hire</b>: &nbsp; {{ item?.positionsLookingToHire }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Specialization</b>: &nbsp; {{ item?.specialization }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Stipend</b>: &nbsp; {{ item?.stipend == 'true' ? 'Yes' : 'No' }} </p>
+                  </div>
+                  
+                  <div class="col-lg-12">
+                    <p><b>Description</b>: &nbsp; </p>
+                    <div [innerHtml]="item.description"></div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,7 @@ import { AddExpertiseComponent } from './add-expertise/add-expertise.component';
 import { AddOpportunityComponent } from './add-opportunity/add-opportunity.component';
 import { MyPostedOpportunityComponent } from './my-posted-opportunity/my-posted-opportunity.component';
 import { MyPostedExpertiseComponent } from './my-posted-expertise/my-posted-expertise.component';
+import { AvailableEventComponent } from './available-event/available-event.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MyPostedExpertiseComponent } from './my-posted-expertise/my-posted-expe
     AddExpertiseComponent,
     AddOpportunityComponent,
     MyPostedOpportunityComponent,
-    MyPostedExpertiseComponent
+    MyPostedExpertiseComponent,
+    AvailableEventComponent
   ],
   imports: [
     CommonModule,

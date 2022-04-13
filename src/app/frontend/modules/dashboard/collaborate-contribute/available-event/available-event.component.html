@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">Participate in Admission Panel</h4>
+      <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+  </div>
+
+    <div class="col-lg-12 my-2" *ngFor="let item of allAdmission">
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.city }}</h5>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p><b>City</b>: &nbsp; {{ item?.city }} </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p><b>Location</b>: &nbsp; {{ item?.location }} </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p><b>Date & Time</b>: &nbsp; {{ item?.dateTime }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

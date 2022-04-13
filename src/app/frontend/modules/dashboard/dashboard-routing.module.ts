@@ -29,10 +29,6 @@ const routes: Routes = [
     component: NewsComponent
   },
   {
-    path: 'celebrate',
-    component: CelebrateComponent
-  },
-  {
     path: 'careers',
     component: CareersComponent
   },
@@ -43,6 +39,10 @@ const routes: Routes = [
   {
     path: 'sitemap',
     component: SitemapComponent
+  },
+  {
+    path: '',
+    loadChildren:() => import('./celebrate/celebrate.module').then(m=>m.CelebrateModule)
   },
   {
     path: '',
