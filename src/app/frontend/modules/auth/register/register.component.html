@@ -1,482 +1,219 @@
-<!-- <div class="container">
-    <div class="row justify-content-center my-4">
-        <div class="col-md-12">
-            <form [formGroup]="registerForm">
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">First name <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="first_name"
-                            placeholder="Enter First name">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
-                            First name is required.
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Last name <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="last_name"
-                            placeholder="Enter Last name">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
-                            Last name is required.
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Institute <span class="label-danger">*</span></label>
-                        <select class="form-select" formControlName="institute_id">
-                            <option value="" selected>Choose your institute</option>
-                            <option [value]="institute.id" *ngFor="let institute of getInstitutes">
-                                {{institute.institute_name}}</option>
-                        </select>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
-                            Institute name is required.
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Batch Year <span class="label-danger">*</span></label>
-                        <select placeholder="Select Batch Year" class="form-select" formControlName="batchYear_id">
-                            <option value="" selected>Choose your batch</option>
-                            <option [value]="batch.id" *ngFor="let batch of getBatch">{{batch.batch}}</option>
-                        </select>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
-                            Batch year is required.
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">City <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
-                        <div class="text-danger mt-2" *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
-                            City name is required.
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Country <span class="label-danger">*</span></label>
-                        <select class="form-select" formControlName="country" (change)="changeCountry($event)">
-                            <option value="" selected>Select Country</option>
-                            <option *ngFor="let row of countries" [value]="row.name">{{row.name}}</option>
-                        </select>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
-                            Country name is required.
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Country Region <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="current_region"
-                            placeholder="Enter Region">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
-                            Country region is required.
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Mobile Number <span class="label-danger">*</span></label>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-3 pb-2">
-                                <input type="text" class="form-control px-2" formControlName="code" placeholder="Code">
-                            </div>
-                            <div class="col-lg-9 col-md-8 col-sm-9">
-                                <input type="text" class="form-control" appNumbersOnly formControlName="mobile_number"
-                                    placeholder="Enter Number">
-                            </div>
+<div class="register-page pt-5 pb-5">
+  <div class="container">
+    <div class="row pt-5 pb-5 justify-content-center my-4">
+      <div class="col-md-12 col-sm-12 col-lg-10 col-xl-10">
+        <form [formGroup]="registerForm">
+          <div class="row">
+            <div class="col-md-5 col-lg-5 col-sm-12 pe-lg-0 pt-5 login-background">
+              <div class="left-box pt-5 pb-5">
+                <h3 class="login-heading fw-bold fs-2 lh-base text-white pt-5 pb-2">
+                  New Alumni <br />Registration
+                </h3>
 
-                            <div class="text-danger mt-2"
-                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
-                                Mobile number is required.
-                            </div>
-                            <div class="text-danger mt-2"
-                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
-                                Minimum 10 number are allowed.
-                            </div>
-                            <div class="text-danger mt-2"
-                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
-                                Maximum 10 number are allowed.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Birthdate <span class="label-danger">*</span></label>
-                        <input type="text" placeholder="DD/MM/YYYY" class="form-control" formControlName="birth_date"
-                            bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
-                            Date of birth is required.
-                        </div>
-                    </div>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <a class="btn btn-login border-0 fw-bold fs-4 text-white ps-0 bg-transparent"
+                    [routerLink]="['/login']">LOG IN</a>
+                  <a class="btn btn-sign ps-lg-4 border-0 fs-4 fw-bold text-white bg-transparent" 
+                  [routerLink]="['/register']">SIGN UP</a>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Personal email Id <span class="label-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="email"
-                            placeholder="Enter Email Id">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                            Email is required.
-                        </div>
-                        <div class="text-danger mt-2"
-                            *ngIf="f.email.dirty && f.email.errors?.pattern">
-                            Email format is incorrect.
-                        </div>
+                <h4 class="register-text text-white pt-3">
+                  <br/>
+                  This Is Exclusively For Sri Balaji <br />
+                  University, Pune Alumni
+                </h4>
+              </div>
+            </div>
+            <div class="col-md-7 col-lg-7 col-sm-12 pe-lg-0 pt-5 pb-5 register-form">
+              <form [formGroup]="registerForm">
+                <div class="right-box pt-5 pb-5">
+                  <div class="row justify-content-center pt-5">
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="text-dark form-control rounded-0"
+                        formControlName="first_name" placeholder="Name"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
+                        First name is required.
+                      </div>
                     </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Current Company <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="current_company"
-                            placeholder="Enter Current Company">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
-                            Company name is required.
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control border-0 rounded-0"
+                        formControlName="last_name" placeholder="Lastname"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
+                        Last name is required.
+                      </div>
                     </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Current Designation <span class="label-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="current_designation"
-                            placeholder="Enter Current Designation">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
-                            Designation is required.
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <select class="form-select p-3 border-0 rounded-0" formControlName="institute_id">
+                        <option value="" selected>Choose your institute</option>
+                        <option [value]="institute.id" *ngFor="let institute of getInstitutes">
+                          {{ institute.institute_name }}
+                        </option>
+                      </select>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
+                        Institute name is required.
+                      </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Password <span class="label-danger">*</span></label>
-                        <input type="password" class="form-control" formControlName="password"
-                            placeholder="Enter Password">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
-                            Password is required.
-                        </div>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
-                            Password must be at least 5 characters long.
-                        </div>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
-                            Password can be max 10 characters long.
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <select placeholder="Select Batch Year" class="form-select rounded-0 p-3 border-0"
+                        formControlName="batchYear_id">
+                        <option value="" selected>Choose your batch</option>
+                        <option [value]="batch.id" *ngFor="let batch of getBatch">
+                          {{ batch.batch }}
+                        </option>
+                      </select>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
+                        Batch year is required.
+                      </div>
                     </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Confirm Password <span class="label-danger">*</span></label>
-                        <input type="password" class="form-control" formControlName="password_confirmation"
-                            placeholder="Enter Confirm Password">
-                        <div *ngIf="(f.password_confirmation.touched || submitted) && f.password_confirmation.errors">
-                            <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.required">
-                                Confirm password is required</div>
-                            <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.MustMatch">
-                                Confirm password does not match.</div>
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control rounded-0 border-0" formControlName="city" placeholder="City"
+                      />
+                      <div class="text-danger mt-2" *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                        City name is required.
+                      </div>
                     </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Security Questions <span class="label-danger">*</span></label>
-                        <select class="form-select" formControlName="securityQuestions_id">
-                            <option value="" selected>Choose first question</option>
-                            <option [value]="que.id" *ngFor="let que of questions">{{que.question}}
-                            </option>
-                        </select>
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">
-                            Security question is required.
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <select class="form-select p-3 border-0 rounded-0"
+                        formControlName="country" (change)="changeCountry($event)">
+                        <option value="" selected>Country</option>
+                        <option *ngFor="let row of countries" [value]="row.name">
+                          {{ row.name }}
+                        </option>
+                      </select>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
+                        Country name is required.
+                      </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Security Answer <span class="label-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="security_answers"
-                            placeholder="Enter Security Answer">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">
-                            Answer is required.
-                        </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control border-0 rounded-0"
+                        formControlName="current_region" placeholder="Select CountryRegion"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
+                        Country region is required.
+                      </div>
                     </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-4">
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control border-0 rounded-0" appNumbersOnly
+                        formControlName="mobile_number" placeholder="+91 MobileNumber"/>
+
+                      <div  class="text-danger mt-2"
+                        *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
+                        Mobile number is required.
+                      </div>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
+                        Minimum 10 number are allowed.
+                      </div>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
+                        Maximum 10 number are allowed.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" placeholder="DD/MM/YYYY"  class="form-control border-0 rounded-0"
+                        formControlName="birth_date" bsDatepicker  [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
+                        Date of birth is required.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="email" class="form-control border-0 rounded-0" formControlName="email"
+                        placeholder="E-mail"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required"> 
+                        Email is required.
+                      </div>
+                      <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                          Email format is incorrect.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control border-0 rounded-0"
+                      formControlName="current_company" placeholder="Enter Current Company"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
+                        Company name is required.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="email" class="form-control border-0 rounded-0"
+                        formControlName="current_designation" placeholder="Enter Current Designation"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
+                        Designation is required.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="password" class="form-control border-0 rounded-0"
+                        formControlName="password" placeholder="Password"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.password.touched || submitted) && f.password.errors?.required"> 
+                        Password is required.
+                      </div>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
+                        Password must be at least 5 characters long.
+                      </div>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
+                        Password can be max 10 characters long.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="password" class="form-control border-0 rounded-0"
+                        formControlName="password_confirmation" placeholder="Confirm Password"/>
+                      <div *ngIf="(f.password_confirmation.touched || submitted) && f.password_confirmation.errors">
+                        <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.required">
+                            Confirm password is required
+                        </div>
+                        <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.MustMatch">
+                            Confirm password does not match.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <select class="form-select p-3 border-0 rounded-0" formControlName="securityQuestions_id">
+                        <option value="" selected>Security question</option>
+                        <option [value]="que.id" *ngFor="let que of questions">
+                          {{ que.question }}
+                        </option>
+                      </select>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">Security question is required.
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
+                      <input type="text" class="form-control border-0 rounded-0"
+                        formControlName="security_answers" placeholder="Security Answer"/>
+                      <div class="text-danger mt-2"
+                        *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">Answer is required.
+                      </div>
+                    </div>
+                    <div class="row pt-4 justify-content-center">
+                      <div class="col-xl-6 col-lg-9 col-md-10 col-sm-8 col-9 text-center pt-3">
                         <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
                         </ngx-recaptcha2>
-
+                      </div>
                     </div>
+                    <div class="row pt-4">
+                      <div class="col-md-12 text-center my-2">
+                        <button type="submit" (click)="submitForm()"
+                          class="btn rounded-0 shadow border-0 rounded-0 text-white btn-register"> Register
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center my-2">
-                        <button type="submit" (click)="submitForm()" class="btn btn-primary registerbtn my-2 me-2">SIGNUP</button>
-                        <button type="submit" [routerLink]="['/login']" class="btn btn-success my-2">ALREADY
-                            ACCOUNT</button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div> -->
-<div class="register-page pt-5 pb-5">
-
-    <div class="container">
-        <div class="row  pt-5 pb-5 justify-content-center my-4">
-            <div class="col-md-12 col-sm-12 col-lg-9">
-                <form [formGroup]="registerForm">
-                    <div class="row">
-                        <div class="col-md-5  col-lg-5 col-sm-12 pe-lg-0 pt-5  login-background ">
-                            <div class="left-box  pt-5 pb-5">
-                                <h3 class="login-heading fw-bold fs-2   lh-base  text-white pt-5 pb-2">New Alumni
-                                    <br>Registration
-                                </h3>
-
-                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                    <a class="btn btn-login border-0 fw-bold fs-4  text-white ps-0 bg-transparent" [routerLink]="['/login']">LOG
-                                        IN</a>
-
-                                    <a class="btn btn-sign ps-lg-4 border-0 fs-4 fw-bold text-white  bg-transparent"
-                                        [routerLink]="['/register']">SIGN
-                                        UP</a>
-
-
-
-                                </div>
-                                <h4 class="register-text text-white pt-3"><br> This Is Exclusively For Sri Balaji <br>
-                                    University, Pune Alumni </h4>
-                            </div>
-                        </div>
-                        <div class="col-md-7  col-lg-7 col-sm-12 pe-lg-0   pt-5 pb-5 register-form">
-
-                            <form [formGroup]="registerForm">
-                               
-                                <div class="right-box  pt-5 pb-5">
-                                    <div class="row justify-content-center pt-5">
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" class="text-dark form-control rounded-0"
-                                                formControlName="first_name" placeholder="Name">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
-                                                First name is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" class="form-control border-0 rounded-0"
-                                                formControlName="last_name" placeholder="Lastname">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
-                                                Last name is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <select class="form-select p-3 border-0 rounded-0"
-                                                formControlName="institute_id">
-                                                <option value="" selected>Choose your institute</option>
-                                                <option [value]="institute.id" *ngFor="let institute of getInstitutes">
-                                                    {{institute.institute_name}}</option>
-                                            </select>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
-                                                Institute name is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <select placeholder="Select Batch Year "
-                                                class="form-select rounded-0 p-3 border-0"
-                                                formControlName="batchYear_id">
-                                                <option value="" selected>Choose your batch</option>
-                                                <option [value]="batch.id" *ngFor="let batch of getBatch">
-                                                    {{batch.batch}}</option>
-                                            </select>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
-                                                Batch year is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" class="form-control rounded-0 border-0"
-                                                formControlName="city" placeholder="City">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
-                                                City name is required.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-5 my-2">
-
-                                            <select class="form-select p-3 border-0 rounded-0" formControlName="country"
-                                                (change)="changeCountry($event)">
-                                                <option value="" selected> Country</option>
-                                                <option *ngFor="let row of countries" [value]="row.name">{{row.name}}
-                                                </option>
-                                            </select>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
-                                                Country name is required.
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" class="form-control border-0 rounded-0"
-                                                formControlName="current_region" placeholder="Select CountryRegion">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
-                                                Country region is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-                                            <input type="text" class="form-control border-0 rounded-0" appNumbersOnly
-                                                formControlName="mobile_number" placeholder="+91 MobileNumber">
-
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
-                                                Mobile number is required.
-                                            </div>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
-                                                Minimum 10 number are allowed.
-                                            </div>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
-                                                Maximum 10 number are allowed.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" placeholder="DD/MM/YYYY"
-                                                class="form-control border-0 rounded-0" formControlName="birth_date"
-                                                bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
-                                                Date of birth is required.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="email" class="form-control border-0 rounded-0"
-                                                formControlName="email" placeholder="E-mail">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                                                Email is required.
-                                            </div>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="f.email.dirty && f.email.errors?.pattern">
-                                                Email format is incorrect.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="text" class="form-control border-0 rounded-0"
-                                                formControlName="current_company" placeholder="Enter Current Company">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
-                                                Company name is required.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="email" class="form-control border-0 rounded-0"
-                                                formControlName="current_designation"
-                                                placeholder="Enter Current Designation">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
-                                                Designation is required.
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="password" class="form-control border-0 rounded-0"
-                                                formControlName="password" placeholder="Password">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
-                                                Password is required.
-                                            </div>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
-                                                Password must be at least 5 characters long.
-                                            </div>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
-                                                Password can be max 10 characters long.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="password" class="form-control border-0 rounded-0"
-                                                formControlName="password_confirmation" placeholder="Confirm Password">
-                                            <div
-                                                *ngIf="(f.password_confirmation.touched || submitted) && f.password_confirmation.errors">
-                                                <div class="text-danger mt-2"
-                                                    *ngIf="f.password_confirmation.errors.required">
-                                                    Confirm password is required</div>
-                                                <div class="text-danger mt-2"
-                                                    *ngIf="f.password_confirmation.errors.MustMatch">
-                                                    Confirm password does not match.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 my-2">
-
-                                            <select class="form-select p-3 border-0 rounded-0"
-                                                formControlName="securityQuestions_id">
-                                                <option value="" selected> Security question</option>
-                                                <option [value]="que.id" *ngFor="let que of questions">{{que.question}}
-                                                </option>
-                                            </select>
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">
-                                                Security question is required.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-5 my-2">
-
-                                            <input type="email" class="form-control border-0 rounded-0"
-                                                formControlName="security_answers" placeholder="Security Answer">
-                                            <div class="text-danger mt-2"
-                                                *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">
-                                                Answer is required.
-                                            </div>
-                                        </div>
-                                        <div class="row pt-4 justify-content-center">
-                                        <div class="col-xl-6 col-lg-9 col-md-10 col-sm-8 col-9 text-center pt-3">
-                                            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey"
-                                                formControlName="recaptcha">
-                                            </ngx-recaptcha2>
-
-                                        </div>
-                                    </div>
-
-                                        <div class="row pt-4">
-                                            <div class="col-md-12 text-center my-2">
-
-                                                <button type="submit" (click)="submitForm()"
-                                                    class="btn rounded-0 shadow border-0 rounded-0 text-white btn-register"
-                                                    >Register</button>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-
-                                </div>
-
-
-                            </form>
-                        </div>
-                    </div>
-
-                </form>
+              </form>
             </div>
-
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
