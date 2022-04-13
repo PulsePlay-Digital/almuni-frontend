@@ -10,6 +10,8 @@ import { AddSpecialProjectComponent } from './add-special-project/add-special-pr
 import { PostedJobsByMeComponent } from './posted-jobs-by-me/posted-jobs-by-me.component';
 import { ProjectPostedByAlumniComponent } from './project-posted-by-alumni/project-posted-by-alumni.component';
 import { EngageSocietyComponent } from './engage-society/engage-society.component';
+import { AddExpertiseComponent } from './add-expertise/add-expertise.component';
+import { AddOpportunityComponent } from './add-opportunity/add-opportunity.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,8 @@ const routes: Routes = [
       { path: 'posted-jobs-by-me', component: PostedJobsByMeComponent  },
       { path: 'project-by-alumni', component: ProjectPostedByAlumniComponent  },
       { path: 'engage-with-society', component: EngageSocietyComponent  },
+      { path: 'add-expertise', component: AddExpertiseComponent  },
+      { path: 'add-opportunity', component: AddOpportunityComponent  },
       {
         path: '',
         redirectTo: 'mentorship',

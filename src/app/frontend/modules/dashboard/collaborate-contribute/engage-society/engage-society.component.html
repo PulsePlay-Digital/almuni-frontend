@@ -24,8 +24,8 @@
                         <p class="card-text fs-2 fw-bold text-primary py-3">1</p>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a routerLink="/collaborate-contribute/"  class="btn btn-primary me-2 rounded-1 text-uppercase">Add</a>
-                                <a class="btn btn-primary me-2 rounded-1 text-uppercase">View</a>
+                                <a routerLink="/collaborate-contribute/add-expertise" class="btn btn-primary me-2 rounded-1 text-uppercase">Add</a>
+                                <a class="btn btn-primary me-2 rounded-1 text-uppercase" (click)="viewExpertise()">View</a>
                               </div>
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                         <p class="card-text fs-2 fw-bold text-primary py-3">0</p>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a class="btn btn-primary me-2 rounded-1 text-uppercase" routerLink="/collaborate-contribute/" >Add</a>
-                                <a class="btn btn-primary me-2 rounded-1 text-uppercase">View</a>
+                                <a class="btn btn-primary me-2 rounded-1 text-uppercase" routerLink="/collaborate-contribute/add-opportunity" >Add</a>
+                                <a class="btn btn-primary me-2 rounded-1 text-uppercase" (click)="viewOpportunity()">View</a>
                               </div>
                         </div>
                     </div>
@@ -49,4 +49,5 @@
     </div>
 </div>
 
-<!-- <app-project-posted-by-alumni *ngIf="searchData"></app-project-posted-by-alumni> -->
+<app-my-posted-opportunity *ngIf="postedOpportunity"></app-my-posted-opportunity>
+<app-my-posted-expertise *ngIf="postedExpertise"></app-my-posted-expertise>
