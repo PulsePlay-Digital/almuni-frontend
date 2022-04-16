@@ -4,16 +4,31 @@ import { CommonModule } from '@angular/common';
 import { CelebrateRoutingModule } from './celebrate-routing.module';
 import { FeaturedAlumniComponent } from './featured-alumni/featured-alumni.component';
 import { FeaturedAlumniDetailsComponent } from './featured-alumni-details/featured-alumni-details.component';
+import { AlumniJourneyComponent } from './alumni-journey/alumni-journey.component';
+import { SharedByMeComponent } from './shared-by-me/shared-by-me.component';
+import { SharedAlumniComponent } from './shared-alumni/shared-alumni.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { AlumniAchievementComponent } from './alumni-achievement/alumni-achievement.component';
+import { AlumniPassionComponent } from './alumni-passion/alumni-passion.component';
 
 
 @NgModule({
   declarations: [
     FeaturedAlumniComponent,
-    FeaturedAlumniDetailsComponent
+    FeaturedAlumniDetailsComponent,
+    AlumniJourneyComponent,
+    SharedByMeComponent,
+    SharedAlumniComponent,
+    AlumniAchievementComponent,
+    AlumniPassionComponent
   ],
   imports: [
     CommonModule,
-    CelebrateRoutingModule
+    CelebrateRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CKEditorModule
   ]
 })
 export class CelebrateModule { }
