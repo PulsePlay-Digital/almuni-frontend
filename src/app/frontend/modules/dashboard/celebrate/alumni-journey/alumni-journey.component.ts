@@ -10,6 +10,8 @@ export class AlumniJourneyComponent implements OnInit {
   isPosted: boolean = false;
   isShared: boolean = false;
   title: string =  'Post a Story';
+  heading: string = "My Story";
+  
   constructor() { }
 
   ngOnInit(): void {

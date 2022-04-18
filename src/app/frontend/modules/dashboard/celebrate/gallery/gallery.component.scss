@@ -1,0 +1,11 @@
+.card {
+    border: none;
+    .card-body {
+        img {
+            height: 252px;
+        }
+        a {
+            cursor: pointer;
+        }
+    }
+}

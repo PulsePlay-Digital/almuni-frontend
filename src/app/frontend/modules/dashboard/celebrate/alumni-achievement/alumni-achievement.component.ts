@@ -10,6 +10,8 @@ export class AlumniAchievementComponent implements OnInit {
   shareAchievement: boolean = false;
   seeAchievement: boolean = false;
   title: string = "Post a Achievement";
+  heading: string = "My Achievement";
+
   constructor() { }
 
   ngOnInit(): void {

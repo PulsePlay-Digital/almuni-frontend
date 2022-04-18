@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { AlumniAchievementComponent } from './alumni-achievement/alumni-achievement.component';
 import { AlumniPassionComponent } from './alumni-passion/alumni-passion.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { MagazineComponent } from './magazine/magazine.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AlumniPassionComponent } from './alumni-passion/alumni-passion.componen
     SharedByMeComponent,
     SharedAlumniComponent,
     AlumniAchievementComponent,
-    AlumniPassionComponent
+    AlumniPassionComponent,
+    GalleryComponent,
+    MagazineComponent
   ],
   imports: [
     CommonModule,

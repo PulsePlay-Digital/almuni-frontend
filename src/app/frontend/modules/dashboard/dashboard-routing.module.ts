@@ -3,11 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './../../../frontend/modules/dashboard/home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
-import { CelebrateComponent } from './celebrate/celebrate.component';
-import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
-import { CommonPurposeCultureComponent } from './common-purpose-culture/common-purpose-culture.component';
-// import { CommunityComponent } from './community/community.component';
-import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 
@@ -15,10 +10,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
   },
   {
     path: 'about-us',
@@ -31,10 +22,6 @@ const routes: Routes = [
   {
     path: 'careers',
     component: CareersComponent
-  },
-  {
-    path: 'common-purpose-culture',
-    component: CommonPurposeCultureComponent
   },
   {
     path: 'sitemap',
@@ -55,6 +42,14 @@ const routes: Routes = [
   { 
     path: '', 
     loadChildren: () => import('./connect/connect.module').then(m => m.ConnectModule)
+  },
+  { 
+    path: '', 
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+  },
+  { 
+    path: '', 
+    loadChildren: () => import('./common-purpose-culture/common-purpose-culture.module').then(m => m.CommonPurposeCultureModule)
   }
 ];
 

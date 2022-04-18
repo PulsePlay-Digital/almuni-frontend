@@ -6,19 +6,19 @@ import { AlumniPassionComponent } from './alumni-passion/alumni-passion.componen
 import { CelebrateComponent } from './celebrate.component';
 import { FeaturedAlumniDetailsComponent } from './featured-alumni-details/featured-alumni-details.component';
 import { FeaturedAlumniComponent } from './featured-alumni/featured-alumni.component';
-import { SharedAlumniComponent } from './shared-alumni/shared-alumni.component';
-import { SharedByMeComponent } from './shared-by-me/shared-by-me.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { MagazineComponent } from './magazine/magazine.component';
 
 const routes: Routes = [
   { path: 'celebrate', component: CelebrateComponent,
   children: [
     { path: 'featured-alumni', component: FeaturedAlumniComponent },
-    { path: 'featured-alumni-details', component: FeaturedAlumniDetailsComponent },
+    { path: 'alumni-details', component: FeaturedAlumniDetailsComponent },
     { path: 'alumni-journey', component: AlumniJourneyComponent },
-    // { path: 'shared-by-me', component: SharedByMeComponent },
-    // { path: 'shared-alumni', component: SharedAlumniComponent },
     { path: 'alumni-achievement', component: AlumniAchievementComponent },
     { path: 'alumni-passion', component: AlumniPassionComponent },
+    { path: 'gallery', component: GalleryComponent },
+    { path: 'magazine', component: MagazineComponent },
     {
       path: '',
       redirectTo: 'featured-alumni',

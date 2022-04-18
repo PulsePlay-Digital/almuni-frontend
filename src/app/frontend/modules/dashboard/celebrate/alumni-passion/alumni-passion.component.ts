@@ -9,6 +9,8 @@ export class AlumniPassionComponent implements OnInit {
   isPassion: boolean = false;
   isShared: boolean = false;
   title: string =  'Post a Passion';
+  heading: string = "My Passion";
+
   constructor() { }
 
   ngOnInit(): void {
