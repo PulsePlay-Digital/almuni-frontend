@@ -11,11 +11,14 @@ export class MentorshipComponent implements OnInit {
 
   user: any = [];
   p: number = 1;
+  loading: boolean = false;
 
   constructor(public dataService: DataService, public router: Router) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllAlumniUser();
+ 
   }
   /**
    * Function to get all alumni user
@@ -24,6 +27,7 @@ export class MentorshipComponent implements OnInit {
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res.data;
+      this.loading = false;
     });
   }
   /**

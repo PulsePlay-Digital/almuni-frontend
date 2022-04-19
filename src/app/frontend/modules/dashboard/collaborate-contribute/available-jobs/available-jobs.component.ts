@@ -11,6 +11,7 @@ import { DataService } from './../../../../services/data.service';
 })
 export class AvailableJobsComponent implements OnInit {
  allJobs: any;
+ loading: boolean = false;
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor,
@@ -18,6 +19,7 @@ export class AvailableJobsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAlljobsData();
   }
 /**
@@ -27,6 +29,7 @@ export class AvailableJobsComponent implements OnInit {
     let action: string = 'all-jobs';
     await this.dataService.getData(action).subscribe((res: any) => {
       this.allJobs = res.data;
+      this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);
     })

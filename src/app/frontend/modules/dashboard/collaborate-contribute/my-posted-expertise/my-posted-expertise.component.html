@@ -1,7 +1,9 @@
 <div class="row">
     <div class="d-sm-flex align-items-center justify-content-between my-4">
       <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Offer Expertise</h4>
-  </div>
+    </div>
+    <app-loader *ngIf="loading"></app-loader>
+    <ng-container *ngIf="!loading">
     <div class="col-lg-12 my-2" *ngFor="let item of allExpertise">
         <div class="card">
             <div class="card-body">
@@ -42,4 +44,5 @@
             </div>
         </div>
     </div>
+  </ng-container>
 </div>
