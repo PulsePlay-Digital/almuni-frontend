@@ -14,6 +14,7 @@ import { AlumniPassionComponent } from './alumni-passion/alumni-passion.componen
 import { GalleryComponent } from './gallery/gallery.component';
 import { MagazineComponent } from './magazine/magazine.component';
 import { SharedModule } from './../../../shared/shared.module';
+import { NewsUpdatesComponent } from './news-updates/news-updates.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SharedModule } from './../../../shared/shared.module';
     AlumniAchievementComponent,
     AlumniPassionComponent,
     GalleryComponent,
-    MagazineComponent
+    MagazineComponent,
+    NewsUpdatesComponent
   ],
   imports: [
     CommonModule,

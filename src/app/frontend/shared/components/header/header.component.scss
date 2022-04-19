@@ -272,7 +272,9 @@ a.nav-link:hover {
 a.nav-link.active-link {
     color: #3D99DB !important;
 }
-
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
 @media screen and (max-width: 564px) and (min-width: 300px) {
     nav {
         .navbar-brand {
