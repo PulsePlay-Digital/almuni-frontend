@@ -14,47 +14,84 @@
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
             <a class="navbar-brand" href="#"></a>
-            <button class=" fa-burger fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+            <button class=" fa-burger fs-4 mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">☰ </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
                     <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" aria-current="page" [routerLink]="['/home']"
+                        <a class="nav-link fs-6 " aria-current="page" [routerLink]="['/home']"
                             routerLinkActive="active-link">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/about-us']" routerLinkActive="active-link">Know
-                            Us</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6 " id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" [routerLink]="['/about-us']" routerLinkActive="active-link"> Know
+                            Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/common-purpose-culture']"
-                            routerLinkActive="active-link">Common Purpose & Culture</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6 " id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/common-purpose-culture']"
+                            routerLinkActive="active-link">Common Purpose & Culture <i class="fa fa-angle-down"
+                                aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/community']"
-                            routerLinkActive="active-link">Community</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6 " id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/community']" routerLinkActive="active-link">Community
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/connect']"
-                            routerLinkActive="active-link">Connect</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/connect']" routerLinkActive="active-link">Connect <i
+                                class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/collaborate-contribute']"
-                            routerLinkActive="active-link">Collaborate & Contribute</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6" id="dropdownMenuButton4" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/collaborate-contribute']"
+                            routerLinkActive="active-link">Collaborate & Contribute <i class="fa fa-angle-down"
+                                aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/celebrate']"
-                            routerLinkActive="active-link">Celebrate</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6" id="dropdownMenuButton5" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/celebrate']" routerLinkActive="active-link">Celebrate
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/contact']"
-                            routerLinkActive="active-link">Contact</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-6" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+                            aria-expanded="false" [routerLink]="['/contact']" routerLinkActive="active-link">Contact <i
+                                class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
+                            <li><a class="dropdown-item" href="#">SBUP</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
                     <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" [routerLink]="['/register']"
-                            routerLinkActive="active-link">Login /Register</a>
+                        <a class="nav-link fs-6 pe-3" [routerLink]="['/register']" routerLinkActive="active-link">Login
+                            /Register</a>
                     </li>
                 </ul>
                 <a class="" onclick="openNav()">
@@ -72,6 +109,5 @@
         us</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
-    <a class="nav-link fs-6 pe-3" [routerLink]="['/contact']"
-    routerLinkActive="active-link">contact</a>
+    <a class="nav-link fs-6 pe-3" [routerLink]="['/contact']" routerLinkActive="active-link">contact</a>
 </div>
