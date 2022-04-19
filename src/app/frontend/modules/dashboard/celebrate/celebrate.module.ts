@@ -13,6 +13,7 @@ import { AlumniAchievementComponent } from './alumni-achievement/alumni-achievem
 import { AlumniPassionComponent } from './alumni-passion/alumni-passion.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { MagazineComponent } from './magazine/magazine.component';
+import { SharedModule } from './../../../shared/shared.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MagazineComponent } from './magazine/magazine.component';
     CelebrateRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    SharedModule
   ]
 })
 export class CelebrateModule { }
