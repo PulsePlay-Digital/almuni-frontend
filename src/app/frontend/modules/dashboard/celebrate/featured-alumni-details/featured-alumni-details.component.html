@@ -5,22 +5,23 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="card">
+            <app-loader *ngIf="loading"></app-loader>
+            <div class="card" *ngIf="!loading">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-4">
-                            img
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 mb-3">
+                            <img class="img-fluid" [src]="imgPath + alumni_details?.picture" alt="event pic">
                         </div>
-                        <div class="col-lg-8">
+                        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-4">
                             <p class="mb-2"><strong>Name :</strong> &nbsp; {{ alumni_details?.alumni_name}}</p>
                             <p class="mb-2"><strong>Batch :</strong> &nbsp;{{ alumni_details?.batch_year}}</p>
                             <p class="mb-2"><strong>Current Designation :</strong> &nbsp;{{ alumni_details?.designation}}</p>
-                            <p class="mb-2"><strong>Current Firm :</strong> &nbsp;{{ alumni_details?.firm}}</p>
+                            <p class="mb-2" *ngIf="alumni_details?.firm"><strong>Current Firm :</strong> &nbsp;{{ alumni_details?.firm }}</p>
                             <p class="mb-2"><strong>Industry :</strong> &nbsp;{{ alumni_details?.industry}}</p>
                             <p class="mb-2"><strong>Current Location :</strong> &nbsp;{{ alumni_details?.location}}</p>
                         </div>
-                        <div col-lg-12>
-                            <p>In {{alumni_details.alumni_name}}’s own words:</p>
+                        <div class="col-lg-12 mt-3">
+                            <p>In {{ alumni_details?.alumni_name }}’s own words:</p>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { DataService } from './../../../../services/data.service';
 
 @Component({
   selector: 'app-featured-alumni-details',
@@ -12,20 +14,33 @@ export class FeaturedAlumniDetailsComponent implements OnInit {
   alumni_details: any;
   type: string = '';
   descriptionHeading: any;
+  alumniId: any;
+  imgPath = environment.imgUrl;
+  loading: boolean = false;
 
   constructor(
     public arouter: ActivatedRoute,
-    public location: Location
-  ) { }
-
-  ngOnInit(): void {
+    public location: Location,
+    public dataService: DataService
+  ) {
     this.arouter.queryParams.subscribe((res: any) => {
+      this.alumniId = res?.id;
       this.descriptionHeading = res.heading;
       this.type = res.type;
     })
-    this.alumni_details = 
-      { id: 1, alumni_name: "new test", batch_year: "2002-2005", designation: "Developer", firm:'www.fb.com', industry: "demo", location: "Delhi", descripton: 'In my world what we say is innerpeace' }
+  }
 
+  ngOnInit(): void {
+    this.loading = true;
+    this.getSingleAlumni()
+  }
+
+  async getSingleAlumni() {
+    let action: string = "single-featured";
+    await this.dataService.getDataById(action,  parseInt(this.alumniId)).subscribe((res: any) => {
+      this.alumni_details = res?.data;
+      this.loading = false;
+    })
   }
 
   navigateBack() {

@@ -1,7 +1,7 @@
 <div class="login-page">
     <div class="container">
         <div class="row justify-content-center my-4 pt-lg-5 pb-lg-5">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
                 <form [formGroup]="loginForm">
                     <div class="row justify-content-center">
                         <div class="col-md-5  col-lg-5 col-sm-12 pe-lg-0 login-background ">
@@ -19,9 +19,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7 col-lg-7 col-sm-12 pe-md-0 pt-5 pb-5 login-form ">
-                            <div class="row pt-5 justify-content-center">
-                                <div class="mb-3 col-md-4 col-6 col-lg-5 ">
+                        <div class="col-md-7 col-lg-7 col-sm-12 ps-md-0 pe-md-0 pt-5 pb-5 login-form ">
+                            <div class="row pt-5 justify-content-center m-0">
+                                <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
                                     <input type="email" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
                                     formControlName="email" placeholder="E-mail">
                                     <div class="text-danger mt-2"
@@ -33,7 +33,7 @@
                                         Email format is incorrect.
                                     </div>
                                 </div>
-                                <div class="mb-3 col-md-4 col-6 col-lg-5">
+                                <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
                                     <input type="password" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
                                         id="exampleInputPassword1" placeholder="Password" formControlName="password">
                                     <div class="text-danger mt-2"
@@ -50,12 +50,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center pt-5 pb-5">
+                            <div class="row justify-content-center pt-5 pb-5 m-0">
                                 <div class="mb-3 col-md-4 col-4 col-lg-4 ">
                                     <button type="submit" class="btn rounded-0 fw-bolder shadow  text-white btn-register"
                                         (click)="login()" [disabled]="!loginForm.valid">Login</button>
                                 </div>
-                                <div class="mb-3 col-md-6 col-8  col-lg-6 align-self-center">
+                                <div class="mb-3 col-md-6 col-8 col-lg-6 align-self-center">
                                     <a [routerLink]="['/forgot-password']" class="btn text-white bg-transparent">
                                         Forgot Password ?
                                     </a>

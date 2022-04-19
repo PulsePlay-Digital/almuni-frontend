@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './../../../frontend/modules/dashboard/home/home.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import { NewsComponent } from './news/news.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
@@ -10,10 +9,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'about-us',
-    component: AboutUsComponent
   },
   {
     path: 'news',
@@ -26,6 +21,10 @@ const routes: Routes = [
   {
     path: 'sitemap',
     component: SitemapComponent
+  },
+  {
+    path: '',
+    loadChildren:() => import('./about-us/about-us.module').then(m=>m.AboutUsModule)
   },
   {
     path: '',

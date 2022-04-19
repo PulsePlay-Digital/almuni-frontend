@@ -39,6 +39,10 @@ export class DataService {
     return this.http.get(`${this.url}/${action}`);
   }
 
+  public getDataById(action: any, id: number) {
+    return this.http.get(`${this.url}/${action}/${id}`);
+  }
+
   public postData(action?: any, data?: any) {
    if (action?.action === 'create-event' || action?.action === 'create-club') {
       return this.http.post<any>(`${this.url}/${action?.action}`, data);

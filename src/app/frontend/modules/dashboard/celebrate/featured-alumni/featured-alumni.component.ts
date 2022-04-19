@@ -46,8 +46,8 @@ export class FeaturedAlumniComponent implements OnInit {
     })
   }
 
-  viewDetail(params: any) {
-    this.router.navigate(['/celebrate/alumni-details'], { queryParams: { data: params, type: 'featured-alumni' } })
+  viewDetail(params: number) {
+    this.router.navigate(['/celebrate/alumni-details'], { queryParams: { id: params, type: 'featured-alumni' } })
   }
   
 }
