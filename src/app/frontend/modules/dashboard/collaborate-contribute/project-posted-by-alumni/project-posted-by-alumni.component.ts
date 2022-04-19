@@ -8,20 +8,22 @@ import { DataService } from './../../../../services/data.service';
 })
 export class ProjectPostedByAlumniComponent implements OnInit {
 specialProjectByAlumni: any;
+loading: boolean = false;
 
   constructor(
     public dataService: DataService
     ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getSpecialAllProject();
   }
 
   async getSpecialAllProject() {
     let action: string = 'all-project';
     await this.dataService.getData(action).subscribe((result: any) => {
-      console.log(result)
       this.specialProjectByAlumni = result.data;
+      this.loading = false;
     })
   }
 }

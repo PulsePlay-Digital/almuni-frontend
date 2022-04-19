@@ -12,6 +12,7 @@ export class MyPostedExpertiseComponent implements OnInit {
   allExpertise: any;
   currentUser: any;
   author: any;
+  loading: boolean = false;
   constructor(
     public dataService: DataService,
     public location: Location
@@ -22,6 +23,7 @@ export class MyPostedExpertiseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllExpertise();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
@@ -41,6 +43,7 @@ export class MyPostedExpertiseComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.allExpertise = res;
+      this.loading = false;
     })
   }
 

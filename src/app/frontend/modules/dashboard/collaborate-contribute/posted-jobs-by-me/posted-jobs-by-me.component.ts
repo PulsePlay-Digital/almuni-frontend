@@ -11,6 +11,7 @@ import { DataService } from './../../../../services/data.service';
 export class PostedJobsByMeComponent implements OnInit {
   currentUser: any;
   postedJobsByMe: any;
+  loading: boolean = false;
 
   constructor(
     public _location: Location,
@@ -22,6 +23,7 @@ export class PostedJobsByMeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllJobsPosted();
   }
 
@@ -31,10 +33,10 @@ export class PostedJobsByMeComponent implements OnInit {
       map(((item: any) => {
         return item.data.filter((result: any) => result.id === this.currentUser.id )
       }))
-    ).subscribe((jobs => {
-      console.log(jobs);
+    ).subscribe(jobs => {
       this.postedJobsByMe = jobs;
-    }))
+      this.loading = false;
+    })
   }
 
   async changeStatus(status: any) {

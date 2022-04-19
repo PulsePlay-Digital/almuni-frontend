@@ -10,6 +10,7 @@ import { DataService } from './../../../../services/data.service';
 })
 export class AvailableEventComponent implements OnInit {
   allAdmission: any;
+  loading: boolean = false;
 
   constructor(
     public dataService: DataService,
@@ -18,6 +19,7 @@ export class AvailableEventComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllAdmissions();
   }
 
@@ -29,6 +31,7 @@ export class AvailableEventComponent implements OnInit {
     await this.dataService.getData(action).subscribe((result: any) => {
       if(result.status == 200) {
         this.allAdmission = result?.data;
+        this.loading = false;
       }
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

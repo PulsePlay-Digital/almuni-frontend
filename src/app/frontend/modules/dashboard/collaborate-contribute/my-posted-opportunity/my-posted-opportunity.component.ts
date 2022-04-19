@@ -12,6 +12,7 @@ export class MyPostedOpportunityComponent implements OnInit {
   allOpportunity: any;
   currentUser: any;
   author: any;
+  loading: boolean = false;
 
   constructor(
     public dataService: DataService,
@@ -23,6 +24,7 @@ export class MyPostedOpportunityComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllOpportunity();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
@@ -42,6 +44,7 @@ export class MyPostedOpportunityComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.allOpportunity = res;
+      this.loading = false;
     })
   }
   /**
