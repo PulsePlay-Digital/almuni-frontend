@@ -1,0 +1,29 @@
+ <!-- SOCIAL IMAGE SEC -->
+ <div class="social-sec">
+    <img src="./../../../../../../assets/contact/alumni.png" class="social-img w-100" alt="Alumni Image">
+</div>
+<!-- SOCIAL IMAGE SEC END -->
+<!-- SOCIAL HEADING -->
+<div class="social-heading my-5 text-center">
+    <h4 class="main-heading text-uppercase fw-bolder">SRI BALAJI UNIVERSITY ALUMNI CLUBS - SOCIAL CHANNELS</h4>
+</div>
+<!-- SOCIAL HEADING END -->
+<!-- SOCIAL CONATINER -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 ">
+            <app-loader *ngIf="loading"></app-loader>
+            <ul class="social-channels" *ngIf="!loading">
+                <li class="social-links fs-5" *ngFor="let social of socialData">
+                    <a href="{{ social?.link }}" class="text-decoration-none">{{ social?.title }}</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 ">
+            <iframe width="100%" height="260" src="https://www.youtube.com/embed/shv16JEFhac" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!-- SOCIAL CONTAINER END -->
