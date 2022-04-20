@@ -4,6 +4,23 @@
     color: #011898;
     font-family: Montserrat;
 }
-.card-header {
-    height: 60px;
+.card {
+    .card-header {
+        height: 60px;
+    }
+    .alumni-pic{
+        max-height: 220px;
+        height: 220px;
+        border-bottom: 1px solid #ededed;
+        img {
+            max-height: 220px;
+            height: 220px;
+            object-fit: cover;
+        }
+    }
+    .noImg {
+        border: 1px solid #ededed;
+        max-height: 220px;
+        height: 220px;
+    }
 }

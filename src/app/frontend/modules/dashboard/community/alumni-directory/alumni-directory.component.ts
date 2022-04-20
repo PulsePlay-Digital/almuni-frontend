@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { environment } from "src/environments/environment";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 
 @Component({
@@ -10,10 +12,17 @@ import { DataService } from "./../../../../services/data.service";
 export class AlumniDirectoryComponent implements OnInit {
   user: any = [];
   p: number = 1;
+  loading: boolean = false;
+  imgPath = environment.imgUrl;
 
-  constructor(public dataService: DataService, public router: Router) {}
+  constructor(
+    public dataService: DataService,
+    public router: Router,
+    public notify: TokenInterceptor
+  ) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllAlumniUser();
   }
   /**
@@ -21,15 +30,23 @@ export class AlumniDirectoryComponent implements OnInit {
    */
   async getAllAlumniUser() {
     let action: string = "all-users";
-    await this.dataService.getData(action).subscribe((res: any) => {
-      this.user = res.data;
-    });
+    await this.dataService.getData(action).subscribe(
+      (res: any) => {
+        this.user = res.data;
+        this.loading = false;
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
   /**
    * Function to navigate on view detail page
    * @param params
    */
-  viewDetail(params: any) {
-    this.router.navigate(["/view-profile"]);
+  viewDetail(id: any) {
+    this.router.navigate(["/community/alumni-details"], {
+      queryParams: { id: id },
+    });
   }
 }
