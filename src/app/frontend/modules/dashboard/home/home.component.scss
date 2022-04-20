@@ -1,608 +1,274 @@
-.btn {
-    font-size     : 14px;
-    border-radius : 0;
-    line-height   : 2.4;
-    background    : #00035F;
-    color         : #fff;
-    font-weight   : 500;
-    text-transform: uppercase;
+
+// SIDEPANNER CSS END 
+// CROUSEL CSS START
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity .6s ease;
+}
+
+.carousel-indicators {
+    .active {
+        opacity: 1;
+    }
+}
+
+.main-heading {
+    color: #011898;
 }
 
 .heading {
-    padding-bottom: 25px;
+    font-size: 30px;
+    line-height: 43px;
+    color: #F65C8B;
+}
 
-    h4 {
-        font-size     : 34px;
-        font-weight   : 600;
-        letter-spacing: 1px;
-        text-transform: capitalize;
-        color         : #161862;
-        line-height   : 1.2;
+.sub-heading {
+    font-size: 30px;
+    line-height: 43px;
+    color: #FEA641;
+}
+.bannerSlider {
+    .openAdd {
+        .registerLogin {
+            background-color: #011898;
+            color: #fff;
+            font-family: 'Montserrat';
+            border-radius: 2px;
+            line-height: 2.5;
+        }
+         :hover {
+            background-color: #fff;
+            color: #011898;
+            border-color: #011898;
+        }
     }
 }
 
-/* Home Banner Section */
-.homeBanner {
-    background       : url('./../../../../../assets/Banner.jpg');
-    background-repeat: no-repeat;
-    background-size  : 100%;
-    display          : flex;
-    min-height       : 580px;
-    max-height       : 100%;
-    align-items      : center;
-
-    .bannerContent {
-        color         : #fff;
-        padding-bottom: 15px;
-
-        h4 {
-            font-size  : 64px;
-            line-height: 78.02px;
-            margin     : 0;
-        }
-    }
-
-    .btn {
-        background: #4C52FE;
-    }
-}
-
-/* Home Banner Section Close */
-/* Feeds Section */
-.feeds {
-    background: #00035F;
-
-    .feedsContent {
-        color: #fff;
-
-        .heading {
-            padding-bottom: 18px;
-
-            h4 {
-                margin: 0;
-                color : #fff;
-            }
-        }
-
-        .btn {
-            background : #23036A;
-            border     : 1px solid #A67DFF;
-            text-shadow: 1px 1px #000;
-            margin-top : 15px;
-        }
-    }
-
-    img {
-        width: 100%;
-    }
-}
-
-/* Feeds Section Close */
-/* Association Section */
-.association {
-    display       : flex;
-    align-items   : center;
-    flex-direction: column;
-    padding       : 45px 0px 12px;
-
-    .associate-text {
-        font-size     : 18px;
-        font-weight   : 500;
-        text-transform: capitalize;
-        text-align    : center;
-        color         : #289BD6;
-    }
-
-    .content {
-        position     : relative;
-        width        : 100%;
-        margin       : auto;
-        overflow     : hidden;
-        border-radius: 50%;
-
-        :hover .content-overlay {
-            background   : rgba(0, 0, 0, 0.6);
-            position     : absolute;
-            height       : 100%;
-            width        : 100%;
-            transition   : all 0.4s ease-out;
-            border-radius: 50%;
-            overflow     : hidden;
-        }
-
-        .content-image {
-            width        : 100%;
-            border-radius: 50%;
-            object-fit   : cover;
-        }
-
-        .content-details {
-            position     : absolute;
-            text-align   : center;
-            padding-left : 1em;
-            padding-right: 1em;
-            width        : 100%;
-            top          : 50%;
-            left         : 50%;
-            opacity      : 0;
-            transform    : translate(-50%, -50%);
-            transition   : all 0.3s ease-in-out 0s;
-            border-radius: 50%;
-            overflow     : hidden;
-
-            a {
-                color      : #fff;
-                font-weight: 600;
-                text-decoration: none;
-            }
-
-            p {
-                color         : #fff;
-                font-weight   : 500;
-                letter-spacing: 1px;
-                font-size     : 14px;
-                padding       : 15px;
-                margin        : 0;
-            }
-        }
-    }
-
-    .content:hover .content-details {
-        top    : 50%;
-        left   : 50%;
-        opacity: 1;
-    }
-
-    .fadeIn-bottom {
-        top: 80%
-    }
-}
-
-/* Association Section Close */
-
-/* Stay Updated */
-.stay-updated {
-    background: #f6f6f6;
-    padding   : 50px 0px;
-
-    form {
-        padding: 0px 0 45px;
-
-        .input-group {
-            input {
-                line-height: 2.4;
-                box-shadow : none;
-                background : #E5E5E5;
-            }
-
-            .btn {
-                width: 175px;
-            }
-        }
-
-        ::placeholder {
-            font-size: 12px !important;
-            color    : #414141;
-        }
-    }
-
-    .box {
-        background                : #fff;
-        box-shadow                : rgb(0 0 0 / 15%) 0px 5px 15px 0px;
-        border-bottom-left-radius : 5px;
-        border-bottom-right-radius: 5px;
-
-        .box-heading {
-            position  : relative;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-
-            img {
-                width : 100%;
-                height: 72px;
-            }
-
-            .box-text {
-                position        : absolute;
-                height          : 100%;
-                width           : 100%;
-                top             : 0;
-                left            : 0;
-                background-color: rgba(0, 0, 0, .66);
-                color           : #fff;
-                display         : flex;
-                align-items     : center;
-                flex-direction  : row;
-                justify-content : center;
-
-                .icon {
-                    position: relative;
-
-                    .text-logo {
-                        position: absolute;
-                        left    : -68%;
-                        width   : 30px;
-                        height  : 30px;
-                        top     : -6px;
-                    }
-                }
-            }
-
-            h4 {
-                margin        : 0;
-                text-align    : center;
-                color         : #fff;
-                font-size     : 18px;
-                text-transform: uppercase;
-                font-weight   : 500;
-                z-index       : 9999;
-            }
-        }
-
-        .boxUL {
-            padding: 18px 0px;
-
-            ul {
-                padding-inline-start: 0;
-                list-style          : none;
-                margin              : 0;
-
-                li {
-                    margin: 5px 10px;
-
-                    a {
-                        text-decoration: none;
-                        color          : #414141;
-                        text-transform : uppercase;
-                        line-height    : 3;
-                        display        : flex;
-                        justify-content: space-between;
-                        align-items    : center;
-
-                        .icon {
-                            float: right;
-
-                            img {
-                                width: 16px;
-                            }
-                        }
-
-                        .text {
-                            width        : 220px;
-                            white-space  : nowrap;
-                            overflow     : hidden;
-                            text-overflow: ellipsis;
-                            margin       : 0;
-                            background   : white;
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-}
-
-/* Stay Updated Close */
-/* Meet Section */
-.meetSection {
-    padding: 20px 0;
-
+// CROUSEL CSS END
+.innerSec {
     .event {
         position: relative;
-
         img {
-            width     : 100%;
+            width: 100%;
             box-shadow: none;
             object-fit: cover;
         }
-
         .upcoming {
-            position                 : absolute;
-            top                      : 10px;
-            right                    : 1px;
-            background               : #00035F;
-            color                    : #fff;
-            font-weight              : 500;
-            padding                  : 10px;
-            text-transform           : uppercase;
-            border-top-left-radius   : 6px;
-            border-bottom-left-radius: 6px;
-
-            p {
-                margin: 0;
-            }
+            position: absolute;
+            top: 10px;
+            right: 1px;
+            background-image: linear-gradient(#6468FF, #191C7A);
+            color: #fff;
+            font-weight: 500;
+            padding: 10px 10px 10px 20px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 15px;
         }
     }
-
     .meet-content {
-        padding-left: 25px;
+        p {
+            color: #011898;
+        }
+        .join-event {
+            background-color: #011898;
+            color: #fff;
+            font-family: 'Montserrat';
+            border-radius: 2px;
+            line-height: 2.5;
+        }
+        .join-event:hover {
+            background-color: #fff;
+            color: #011898;
+            border-color: #011898;
+        }
+    }
+    p {
+        line-height: 1.7;
+    }
+    .btn {
+        line-height: 2;
+    }
+}
 
-        .heading {
-            padding-bottom: 10px;
-
-            p {
-                color: #8A8888;
+.gallary {
+    .home {
+        .owl-nav {
+            .owl-prev {
+                position: absolute;
+                left: 0;
+                bottom: 48%;
+                font-size: 42px;
+                background: none;
+                i {
+                    color: #8d8d8d;
+                    font-size: 24px;
+                }
+            }
+            .owl-next {
+                position: absolute;
+                right: 0;
+                bottom: 48%;
+                font-size: 42px;
+                background: none;
+                i {
+                    color: #8d8d8d;
+                    font-size: 24px;
+                }
             }
         }
-
-        p {
-            line-height: 1.7;
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background: #000;
         }
-
-        .btn {
-            line-height: 2;
+        .owl-nav .owl-prev:hover,
+        .owl-nav .owl-next:hover {
+            background: transparent !important;
+        }
+        .owl-nav .owl-prev i:hover,
+        .owl-nav .owl-prev i:focus,
+        .owl-nav .owl-next i:hover,
+        .owl-nav .owl-next i:focus {
+            color: #000;
+        }
+        .owl-item {
+            img {
+                height: 280px !important;
+                object-fit: cover;
+            }
+        }
+        .owl-item.active.center {
+            opacity: 1;
+            height: 340px !important;
+            margin-top: -30px;
+            border-radius: 5px;
+        }
+        // .owl-carousel {}
+        .owl-stage-outer {
+            padding-top: 40px;
+            .owl-stage {
+                .owl-item {
+                    .gallaryImg {
+                        img {
+                            opacity: .5
+                        }
+                    }
+                }
+                .owl-item.center {
+                    .gallaryImg {
+                        img {
+                            opacity: 1;
+                            height: 340px !important;
+                            margin-top: -38px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-/* Meet Section Close */
-/* Gallary Section */
-.gallary {
-    background: #F6F6F6;
-    padding   : 40px 0;
-
-    .gallaryImg {
-        img {
-            height    : 260px;
-            min-height: 260px;
-            width     : 100%;
+// CONNECT VISION START
+.connectVision {
+    .content {
+        position: relative;
+        .box-text {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+        .content-img {
+            min-height: 170px;
+            height: 170px;
             object-fit: cover;
         }
     }
-
-    .btn {
-        width: 100%;
+    .content-heading {
+        height: 74px;
+        a {
+            font-size: 28px;
+            line-height: 39px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .connect {
+            color: #FEA641;
+        }
+        .network {
+            color: #F65C8B;
+        }
+        .engage {
+            color: #011898;
+        }
+        .learnGrow {
+            color: #5EB76C;
+        }
+    }
+    .items {
+        color: #000;
+        cursor: pointer;
     }
 }
 
-/* Gallary Section Close */
-/* Alumni Stories */
-.alumniStories {
-    .story-content {
-        background: #00035F;
-        padding   : 20px 30px;
-        height    : 100%;
-
-        .heading {
-            padding-bottom: 0;
-
-            h4 {
-                color      : #fff;
-                line-height: 1.5;
-            }
-        }
-
-        p {
-            color: #fff;
-        }
+.more-btn {
+    .know-more {
+        background-color: #F65C8B;
+        color: #FFF;
+        border-radius: 2px;
     }
-
-    .storyDescription {
-        background: #F6F6F6;
-        height    : 100%;
-        padding   : 20px 30px;
-
-        .users {
-            display       : flex;
-            align-items   : center;
-            flex-direction: row;
-            margin-bottom : 18px;
-
-            .user-logo {
-                overflow    : hidden;
-                width       : 110px;
-                height      : 110px;
-                margin-right: 20px;
-
-                .userImg {
-                    width     : 110px;
-                    height    : 110px;
-                    object-fit: cover;
-                    box-shadow: none;
-                }
-            }
-        }
-
-        .image {
-            height    : 120px;
-            min-height: 120px;
-            box-shadow: none;
-        }
-
-        h3 {
-            margin: 0;
-        }
-
-        .storyLogo {
-            display    : flex;
-            align-items: center;
-            padding    : 15px 0;
-
-            .logo {
-                margin-right: 20px;
-
-                img {
-                    height    : 30px;
-                    box-shadow: none;
-                }
-            }
-        }
+    .know-more:hover {
+        background-color: #fff;
+        color: #F65C8B;
+        border-color: #F65C8B;
     }
 }
 
-/* Alumni Stories Close */
+// CONNECT VISION CLOSE
+
 /* Home page map css */
+
 .homeMap {
     padding: 40px 0;
-
     .heading {
         padding-bottom: 0;
     }
-
     img {
         box-shadow: none;
-        width     : 100%;
+        width: 100%;
     }
-
     .mapCount {
         .counter {
-            display       : flex;
+            display: flex;
             flex-direction: column;
-            align-items   : center;
-
+            align-items: center;
             h4 {
-                font-size  : 34px;
+                font-size: 34px;
                 font-weight: 600;
-                color      : #6BCDFF;
+                color: #011898;
             }
         }
-
         .btn {
-            width     : 100%;
             margin-top: 1.5rem;
         }
     }
 }
 
-/* Home page map css Close */
-/* Innovation Css */
-.innovate {
-    padding: 24px 0;
-
-    .image {
-        width     : 100%;
-        box-shadow: none;
-    }
-
-    .heading h4 {
-        text-transform: uppercase;
-    }
-
-    .btn {
-        width     : 100%;
-        margin-top: 20px;
-    }
-}
-.eapps-instagram-feed {
-    margin-top: 24px;
-}
-/* Innovation Css Close */
-@media screen and (max-width: 400px) and (min-width: 300px) {
-    .stay-updated {
-        form {
-            padding: 0px 0 30px;
-
-            .input-group {
-                flex-direction: column;
-                align-items   : center;
-
-                input {
-                    width        : 100%;
-                    margin-bottom: 10px;
-                    border-radius: 1px;
-                }
-
-                .btn {
-                    width: auto;
-                }
-            }
-        }
-
-        .box {
-            .box-heading {
-                .box-text {
-                    .icon {
-                        .text-logo {
-                            left: -52%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width: 575px) and (min-width: 300px) {
-    .heading {
-        padding-bottom: 15px;
-
-        h4 {
-            font-size: 24px;
-        }
-    }
-
-    .homeBanner {
-        min-height     : 320px;
-        background-size: 100% 100%;
-
-        .bannerContent {
-            h4 {
-                font-size  : 32px;
-                line-height: 1.2;
-            }
-        }
-    }
-
-    .association {
-        .content {
-            height: 220px;
-            width : 220px;
-
-            .content-image {
-                height: 220px;
-                width : 220px;
-            }
-        }
-    }
-
-    .innovate {
-        padding: 20px 0;
-
-        .image {
-            margin-bottom: 20px;
-            min-height   : 320px;
-        }
-    }
-
-    .meetSection {
-        .meet-content {
-            padding-left: 0px;
-        }
-    }
-
-    .alumniStories {
-        .storyDescription {
-            .users {
-                margin-bottom: 18px 0;
-            }
-        }
-    }
-
-    .feeds {
-        .feedsContent {
-            padding: 40px 0;
-        }
-    }
-
-    .homeMap {
-        padding: 60px 0 30px;
-    }
-
-    .gallary {
-        background: #F6F6F6;
-        padding   : 40px 0;
-
-        .gallaryImg {
-            padding-bottom: 18px;
-
-            img {
-                height    : 220px;
-                min-height: 220px;
-            }
-        }
-    }
-}
 
 @media screen and (max-width: 767px) and (min-width: 575px) {
     .homeBanner {
