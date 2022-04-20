@@ -73,14 +73,49 @@
 <!-- dummy -->
 <div class="slider-sec">
   <div class="container">
-      <div class="row justify-content-center">
+      <!-- <div class="row justify-content-center">
           <div class="col-lg-12 mt-5 mb-3 text-center">
               <div class="heading fw-bolder text-uppercase">
                   <h4 class="heading fw-bolder text-uppercase">FEATURED ALUMNI</h4>
               </div>
           </div>
-      </div>
+      </div> -->
+      <!--- Gallary Section --->
+<div class="gallary">
+  <div class="container">
       <div class="row">
+          <div class="col-lg-12">
+              <div class="heading">
+                  <h4 class="heading fw-bold text-uppercase text-center">FEATURED ALUMNI</h4>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <owl-carousel-o [options]="galleryOptions">
+                  <ng-template carouselSlide *ngFor="let data of featuredAlumni">
+                    <!-- {{ data | json }} -->
+                      <div class="gallaryImg">
+                          <a href="">
+                              <img [src]=[data.src]>
+                          </a>
+                          <a>
+                            {{data.name}}
+                          </a>
+                      </div>
+                  </ng-template>
+              </owl-carousel-o>
+          </div>
+      </div>
+      <div class="row justify-content-center pt-2">
+          <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-3 mt-lg-5 mt-md-5 mt-sm-4">
+              <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow">Know More</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!--- Gallary Section Close --->
+      <!-- <div class="row">
           <div class="gallary mt-4">
               <div class="owl-carousel home">
                   <div class="test">
@@ -145,7 +180,7 @@
                   </div>
               </div>
           </div>
-      </div>
+      </div> -->
   </div>
 </div>
 <!-- dummy end -->
@@ -275,8 +310,38 @@
   </div>
 </div>
 <!--- Map Section Close--->
-<!-- dummy -->
-<div class="slider-sec">
+<!--- Gallary Section --->
+<div class="gallary">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="heading">
+                  <h4 class="heading fw-bold text-uppercase text-center">Gallery</h4>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <owl-carousel-o [options]="galleryOptions">
+                  <ng-template carouselSlide *ngFor="let data of gallery">
+                      <div class="gallaryImg">
+                          <a href="">
+                              <img [src]=[data.src]>
+                          </a>
+                      </div>
+                  </ng-template>
+              </owl-carousel-o>
+          </div>
+      </div>
+      <div class="row justify-content-center pt-2">
+          <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-3 mt-lg-5 mt-md-5 mt-sm-4">
+              <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow">View More</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!--- Gallary Section Close --->
+<!-- <div class="slider-sec">
   <div class="container">
       <div class="row">
           <div class="gallary">
@@ -325,8 +390,7 @@
           </div>
       </div>
   </div>
-</div>
-<!-- dummy end -->
+</div> -->
 <!-- Network Secton -->
 <div class="instafeed my-5">
   <div class="container">
