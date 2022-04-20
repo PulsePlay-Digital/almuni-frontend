@@ -8,6 +8,8 @@ import { PresidentMessageComponent } from "./president-message/president-message
 import { ManagementTeamComponent } from "./management-team/management-team.component";
 import { StalwartsBlessingsComponent } from "./stalwarts-blessings/stalwarts-blessings.component";
 import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-social-society.component";
+import { EquivalenceToMbaComponent } from "./equivalence-to-mba/equivalence-to-mba.component";
+import { AicteApprovalsComponent } from "./aicte-approvals/aicte-approvals.component";
 
 const routes: Routes = [
   {
@@ -21,6 +23,8 @@ const routes: Routes = [
       { path: "team", component: ManagementTeamComponent },
       { path: "blessings", component: StalwartsBlessingsComponent },
       { path: 'balaji-social-society', component: BalajiSocialSocietyComponent },
+      { path: 'aicte-approvals', component: AicteApprovalsComponent },
+      { path: 'equivalence-to-mba', component: EquivalenceToMbaComponent },
       {
         path: "",
         redirectTo: "welcome-society",
