@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
 import { AlumniDirectoryComponent } from './alumni-directory/alumni-directory.component';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
 import { CommunityComponent } from './community.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
       { 
         path: 'venture-info', 
         component: BusinessVentureInfoComponent
+      },
+      { 
+        path: 'alumni-details', 
+        component: AlumniDetailsComponent
       },
       {
         path: '',

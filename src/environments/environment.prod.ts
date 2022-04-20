@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: "http://192.168.29.37:3306/api"
+  apiUrl: "https://pulseplaydigital.in/sbsAlumni/api",
+  imgUrl: "https://pulseplaydigital.in/sbsAlumni/public/"
 };

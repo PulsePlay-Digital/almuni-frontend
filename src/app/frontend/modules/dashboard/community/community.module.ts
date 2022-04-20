@@ -14,6 +14,7 @@ import { IndustryClubComponent } from './industry-club/industry-club.component';
 import { EntrepreneurshipClubComponent } from './entrepreneurship-club/entrepreneurship-club.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
+import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BusinessVentureInfoComponent } from './business-venture-info/business-v
     CommunityComponent,
     IndustryClubComponent,
     EntrepreneurshipClubComponent,
-    BusinessVentureInfoComponent
+    BusinessVentureInfoComponent,
+    AlumniDetailsComponent
   ],
   imports: [
     CommonModule,
