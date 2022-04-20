@@ -9,6 +9,10 @@ import { SharedModule } from './../../../shared/shared.module';
 import { FounderComponent } from './founder/founder.component';
 import { PresidentMessageComponent } from './president-message/president-message.component';
 import { ManagementTeamComponent } from './management-team/management-team.component';
+import { StalwartsBlessingsComponent } from './stalwarts-blessings/stalwarts-blessings.component';
+import { BalajiSocialSocietyComponent } from './balaji-social-society/balaji-social-society.component';
+import { EquivalenceToMbaComponent } from './equivalence-to-mba/equivalence-to-mba.component';
+import { AicteApprovalsComponent } from './aicte-approvals/aicte-approvals.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { ManagementTeamComponent } from './management-team/management-team.compo
     WelcomeSocietyComponent,
     FounderComponent,
     PresidentMessageComponent,
-    ManagementTeamComponent
+    ManagementTeamComponent,
+    StalwartsBlessingsComponent,
+    BalajiSocialSocietyComponent,
+    EquivalenceToMbaComponent,
+    AicteApprovalsComponent
   ],
   imports: [
     CommonModule,
