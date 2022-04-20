@@ -23,9 +23,6 @@ export class ManagementTeamComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.getAllTeam();
-    setTimeout(() => {
-      this.loading = false;
-    }, 500);
   
   }
 
@@ -34,6 +31,7 @@ export class ManagementTeamComponent implements OnInit {
     await this.dataService.getData(action).subscribe((res: any) => {
       if(res?.status == 200) {
         this.teamData = res.data;
+        this.loading = false;
       }
     },error => {
       this.notify.notificationService.openFailureSnackBar(error);
