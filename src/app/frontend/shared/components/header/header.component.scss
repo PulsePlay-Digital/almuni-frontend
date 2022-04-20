@@ -22,7 +22,15 @@
             border-color: #011898;
         }
     }
-
+    .navbar-nav li:hover > ul.dropdown-menu {
+        display: block;
+    }
+    .nav-link:hover {
+        color: #419BD6 !important;
+    }
+    .nav-link.active-link {
+        color: #419BD6 !important;
+    }
 .navbar {
     .fa-burger {
         display: none;
