@@ -1,0 +1,23 @@
+<div class="contact-img">
+    <img src="./../../../../../../assets/contact/contact.jpg" class="w-100" alt="Contact-img">
+  </div>
+  <div class="container">
+    <div class="content-heading my-lg-5 my-md-5 my-sm-4 my-3 text-center">
+        <h4 class="mb-0 fs-2 main-heading text-uppercase fw-bolder">contact heading</h4>
+    </div>
+    <app-loader *ngIf="loading"></app-loader>
+    <div class="row justify-content-center" *ngIf="!loading">
+        <div class="col-lg-6 col-md-6 my-lg-4 my-md-4 my-sm-3 my-2" *ngFor="let key of keyData">
+            <h6 class="text-center fs-5 fw-bold">{{ key?.title }}:</h6>
+            <p class="text-capitalize text-center fs-5" *ngIf="key?.designation !== null">
+              {{ key?.designation }}
+            </p>
+            <p class="text-center fs-5" *ngIf="key?.phone !== null">
+              Tel: {{ key?.phone }}
+            </p>
+            <p class="text-center fs-5" *ngIf="key?.email !== null">
+              <a href="mailto:{{ key.email }}">Email: {{ key?.email }}</a>
+            </p>
+        </div>
+    </div>
+  </div>

@@ -4,6 +4,8 @@
       <h4 class="main-heading text-uppercase fw-bolder mb-0">Posted jobs by me</h4>
       <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
   </div>
+  <app-loader *ngIf="loading"></app-loader>
+  <ng-container *ngIf="!loading">
     <div class="col-lg-12 my-2" *ngFor="let item of postedJobsByMe">
         <div class="card">
             <div class="card-body">
@@ -12,9 +14,6 @@
                   <div class="col-lg-6">
                     <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
                   </div>
-                  <!-- <div class="col-lg-6">
-                    <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
-                  </div> -->
                   <div class="col-lg-6">
                     <p><b>Job Posted By</b>: &nbsp; <a routerLink="">{{ item?.author }} </a></p>
                   </div>
@@ -68,4 +67,5 @@
             </div>
         </div>
     </div>
+  </ng-container>
 </div>

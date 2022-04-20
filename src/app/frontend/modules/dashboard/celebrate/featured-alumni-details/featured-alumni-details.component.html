@@ -1,1 +1,68 @@
-<p>featured-alumni-details works!</p>
+<ng-container *ngIf="type == 'featured-alumni'">
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+        <h4 class="main-heading text-uppercase fw-bolder mb-0">featured alumni</h4>
+        <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <app-loader *ngIf="loading"></app-loader>
+            <div class="card" *ngIf="!loading">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 mb-3">
+                            <img class="img-fluid" [src]="imgPath + alumni_details?.picture" alt="event pic">
+                        </div>
+                        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-4">
+                            <p class="mb-2"><strong>Name :</strong> &nbsp; {{ alumni_details?.alumni_name}}</p>
+                            <p class="mb-2"><strong>Batch :</strong> &nbsp;{{ alumni_details?.batch_year}}</p>
+                            <p class="mb-2"><strong>Current Designation :</strong> &nbsp;{{ alumni_details?.designation}}</p>
+                            <p class="mb-2" *ngIf="alumni_details?.firm"><strong>Current Firm :</strong> &nbsp;{{ alumni_details?.firm }}</p>
+                            <p class="mb-2"><strong>Industry :</strong> &nbsp;{{ alumni_details?.industry}}</p>
+                            <p class="mb-2"><strong>Current Location :</strong> &nbsp;{{ alumni_details?.location}}</p>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <p>In {{ alumni_details?.alumni_name }}’s own words:</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card-footer bg-transparent border-0">
+                    <a class="btn btn-primary" (click)="onReadData(item)">Read More</a>
+                </div> -->
+            </div>
+        </div>
+    
+    </div>
+</ng-container>
+<ng-container *ngIf="type != 'featured-alumni'">
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+        <h4 class="main-heading text-uppercase fw-bolder mb-0">CELEBRATE ACHIEVEMENTS & PASSION</h4>
+        <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="./../../../../../../assets/gallary01.png" class="img-fluid w-100">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-8 my-3">
+                            <p class="mb-2"><strong>Name :</strong> &nbsp; Harish</p>
+                            <p class="mb-2"><strong>Course :</strong> &nbsp; BITM</p>
+                            <p class="mb-2"><strong>Batch :</strong> &nbsp; 1999 - 2001</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p> <b>{{ descriptionHeading }}</b> </p>
+                            <p class="lh-2">Meet Anurag Tyagi.<br>
+                            Family Man. Loving Son. Husband. Father. Brother. Friend. Farm Owner. Adventurer at Heart. Connected to the Earth. Eyes set on the Stars. Sought after keynote speaker & a mover & shaker in the highly specialized Corporate Real Estate sector. Currently serving as Vice President and Head - Real Estate at Morgan Stanley.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</ng-container>

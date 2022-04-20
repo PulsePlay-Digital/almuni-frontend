@@ -66,6 +66,7 @@ body {
     color: #011898;
     font-family: Montserrat !important;
 }
+
 .alumniStories {
     .owl-nav {
         position: absolute;
@@ -213,9 +214,13 @@ h4.font-italic.mb-4 {
             display: none !important;
         }
     }
+    .main-heading {
+        font-size: 18px !important;
+        line-height: 30px !important;
+    }
 }
 
-@media screen and (max-width: 767px) and (min-width: 574px) {
+@media screen and (max-width: 768px) and (min-width: 575px) {
     .alumniStories {
         .owl-nav {
             position: absolute;
@@ -239,6 +244,9 @@ h4.font-italic.mb-4 {
                 color: #000;
             }
         }
+    }
+    .main-heading {
+        font-size: 22px !important;
     }
 }
 
@@ -282,3 +290,4 @@ h4.font-italic.mb-4 {
         }
     }
 }
+

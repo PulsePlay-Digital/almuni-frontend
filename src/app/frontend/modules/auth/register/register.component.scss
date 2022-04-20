@@ -1,12 +1,7 @@
-.text-danger {
-    font-size: 12px;
-}
-.registerbtn {
-    background: #00035F;
-}
+
 .register-page {
     .login-background {
-    //  background-image: url("../../../../../assets/");
+     background-image: url("../../../../../assets/authImages/registerAuth.png");
      background-color: #f65c8b;
      height: auto;
      background-size: cover;
@@ -82,7 +77,7 @@
     .left-box{
        
       height: 100%;
-      padding: 31px;
+      padding: 25px;
       }
   }
 }

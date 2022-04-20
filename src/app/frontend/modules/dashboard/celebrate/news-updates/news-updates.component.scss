@@ -1,0 +1,65 @@
+
+// NEWS & UPDATES START
+.main-heading {
+    color: #011898;
+}
+
+.university-img {
+    background-image: url('../../../../../../assets/celebrate/balaji-university.png');
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    .bottom-left {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+    }
+    .overlay {
+        background-color: #00000057 !important;
+        position: static;
+        width: 100%;
+        opacity: 1;
+        padding: 200px;
+    }
+}
+
+.more-btn {
+    .read-more {
+        background-color: #011898 !important;
+        color: #FFF !important;
+        border-radius: 2px !important;
+    }
+    .read-more:hover {
+        background-color: #fff !important;
+        color: #011898 !important;
+        border-color: #011898;
+    }
+}
+
+.vice-chancellor {
+    width: max-content;
+}
+
+.news-discription {
+    a {
+        color: #000 !important;
+    }
+     :hover {
+        color: #011898 !important;
+    }
+}
+
+// NEWS & UPDATES END
+// RESPONSIVE CSS START
+@media screen and (max-width: 767px) {
+    .vice-chancellor {
+        width: 90%;
+    }
+    .university-img {
+        .overlay {
+            padding: 200px 0px;
+        }
+    }
+}

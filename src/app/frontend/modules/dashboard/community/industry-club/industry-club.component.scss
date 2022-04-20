@@ -1,8 +1,33 @@
-.heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-}
-.card-header {
-    height: 60px;
-}
+.industry-club{
+    .heading {
+        font-size: 30px;
+        line-height:43.88px;
+        color: #011898;
+    }
+    .card{
+        .card-image1{
+            border-bottom: 10px solid transparent;
+        background: linear-gradient(270deg, #011898 0%, #7053FF 100%);
+            
+        }
+        .card-image2{
+            border-bottom: 10px solid transparent;
+            background: linear-gradient(270deg, #40BA45 0%, #89EB79 100%);
+        }
+        .card-image3{
+            border-bottom: 10px solid transparent;
+            background: linear-gradient(270deg, #F65C8B 0%, #FE87B3 100%);
+    border-radius: 8px;
+        }
+        .card-text{
+            color: #F65C8B;
+        }
+        .card-button{
+            background-color: #011898;
+        }
+        
+    }
+    .Start-club{
+        color: #011898;
+    }
+    }
