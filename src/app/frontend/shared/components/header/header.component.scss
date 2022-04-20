@@ -14,12 +14,26 @@
             font-weight: 700;
             font-family: Montserrat;
             border-radius: 2px;
+           line-height: 28px;
             // box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
         }
          :hover {
             background-color: #fff;
             color: #011898;
             border-color: #011898;
+        }
+        .login-register{
+            background-color: #F65C8B;
+            color: #fff;
+            font-weight: 700;
+            font-family: Montserrat;
+            border-radius: 2px;
+            line-height: 28px;
+         }
+        :hover {
+            background-color: #fff;
+            color: #F65C8B;
+            border-color: #F65C8B;
         }
     }
     .navbar-nav li:hover > ul.dropdown-menu {

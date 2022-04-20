@@ -6,17 +6,18 @@ import { ConnectComponent } from './connect.component';
 
 const routes: Routes = [
   { 
-    path: '', component: ConnectComponent,
+    path: 'connect', component: ConnectComponent,
     children: [
       {
-        path: 'connect', component: AtGlanceComponent
+        path: 'at-glance', component: AtGlanceComponent
       },
       {
         path: 'alumnireunion', component: AlumniReunionComponent
-      }
+      },
+      { path: '', redirectTo: 'at-glance', pathMatch: 'full' }
     ]
   },
-  { path: '', redirectTo: 'connect', pathMatch: 'full' }
+ 
 ];
 
 @NgModule({

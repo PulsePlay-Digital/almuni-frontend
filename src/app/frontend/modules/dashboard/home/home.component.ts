@@ -10,7 +10,7 @@ import { Config } from "./../../../../frontend/services/config";
 })
 export class HomeComponent implements OnInit {
   gallery: any;
-  alumniStories: any;
+  featuredAlumni: any;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -35,8 +35,8 @@ export class HomeComponent implements OnInit {
     mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    dots: true,
-    autoplay: true,
+    dots: false,
+    autoplay: false,
     autoplayTimeout: 2500,
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
     center: true,
-    stagePadding: 300,
+    stagePadding: 200,
     responsive: {
       0: {
         items: 1,
@@ -56,18 +56,18 @@ export class HomeComponent implements OnInit {
       },
       768: {
         items: 1,
-        stagePadding: 250
+        // stagePadding: 250
       },
       1191: {
         items: 1,
-        stagePadding: 350
+        // stagePadding: 350
       }
     }
   };
 
   constructor(public router: Router, public config: Config) {
     this.gallery = this.config.gallary();
-    this.alumniStories = this.config.alumniStories();
+    this.featuredAlumni = this.config.alumniStories();
   }
 
   ngOnInit(): void {}
