@@ -15,6 +15,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { MagazineComponent } from './magazine/magazine.component';
 import { SharedModule } from './../../../shared/shared.module';
 import { NewsUpdatesComponent } from './news-updates/news-updates.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NewsUpdatesComponent } from './news-updates/news-updates.component';
     ReactiveFormsModule,
     FormsModule,
     CKEditorModule,
-    SharedModule
+    SharedModule,
+    MatTabsModule
   ]
 })
 export class CelebrateModule { }

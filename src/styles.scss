@@ -61,27 +61,12 @@ body {
 }
 
 .main-heading {
-    font-size: 30px !important;
+    font-size: 20px !important;
     line-height:43.88px !important;
     color: #011898;
     font-family: Montserrat !important;
 }
 
-.alumniStories {
-    .owl-nav {
-        position: absolute;
-        bottom  : 15px;
-        left    : 17px;
-
-        .owl-prev {
-            background: none !important;
-        }
-
-        .owl-next {
-            background: none !important;
-        }
-    }
-}
 //Custom css common for sidebar vertical tabs
 .know-us {
     img {
@@ -113,8 +98,8 @@ h4.font-italic.mb-4 {
     .owl-nav {
         .owl-prev {
             position  : absolute;
-            left      : -45px;
-            bottom    : 48%;
+            left      : -100px;
+            bottom    : 39%;
             background: none;
 
             i {
@@ -125,8 +110,8 @@ h4.font-italic.mb-4 {
 
         .owl-next {
             position  : absolute;
-            right     : -45px;
-            bottom    : 48%;
+            right     : -100px;
+            bottom    : 39%;
             background: none;
 
             i {
@@ -168,8 +153,8 @@ h4.font-italic.mb-4 {
                             .gallaryImg {
                                 img {
                                     opacity: 1;
-                                    height: 340px !important;
-                                    margin-top: -38px;
+                                    height: 270px !important;
+                                    margin-top: -30px;
                                     border-radius: 5px;
                                 }
                             }
@@ -184,31 +169,6 @@ h4.font-italic.mb-4 {
 
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
-    .alumniStories {
-        .owl-nav {
-            position: absolute;
-            bottom  : -50px;
-            left    : 40%;
-
-            .owl-prev {
-                color: rgb(63, 63, 63);
-                font-size: 22px;
-            }
-
-            .owl-next {
-                color: rgb(63, 63, 63);
-                font-size: 22px;
-            }
-
-            .owl-prev:hover,
-            .owl-prev:focus,
-            .owl-next:hover,
-            .owl-next:focus {
-                color: #000;
-            }
-        }
-    }
-
     .gallary {
         .owl-nav {
             display: none !important;
@@ -221,45 +181,12 @@ h4.font-italic.mb-4 {
 }
 
 @media screen and (max-width: 768px) and (min-width: 575px) {
-    .alumniStories {
-        .owl-nav {
-            position: absolute;
-            bottom  : -50px;
-            left    : 45%;
-
-            .owl-prev {
-                color: rgb(63, 63, 63);
-                font-size: 22px;
-            }
-
-            .owl-next {
-                color: rgb(63, 63, 63); 
-                font-size: 22px;
-            }
-
-            .owl-prev:hover,
-            .owl-prev:focus,
-            .owl-next:hover,
-            .owl-next:focus {
-                color: #000;
-            }
-        }
-    }
     .main-heading {
         font-size: 22px !important;
     }
 }
 
 @media screen and (max-width: 991px) and (min-width: 767px) {
-    .alumniStories {
-        .owl-nav {
-            position: absolute;
-            right   : 20px;
-            top     : 15px;
-            bottom  : unset;
-            left    : unset;
-        }
-    }
     .gallary {
         owl-carousel-o {
             .owl-carousel {
