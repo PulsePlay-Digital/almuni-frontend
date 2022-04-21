@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    // autoplay: true,
-    // autoplayTimeout: 3000,
+    autoplay: true,
+    autoplayTimeout: 3000,
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 2500,
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
