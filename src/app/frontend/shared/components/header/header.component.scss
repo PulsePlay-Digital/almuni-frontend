@@ -130,6 +130,9 @@
     }
   }
 }
+.dropdown-item {
+  cursor: pointer;
+}
 @media screen and (max-width: 564px) and (min-width: 300px) {
   nav {
     .navbar-brand {
