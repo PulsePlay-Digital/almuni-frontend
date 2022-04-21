@@ -1,4 +1,7 @@
 .header-banner {
+    .navbar{
+        .main-header{
+            width: 100%;
     .header-logos {
         .logo {
             width: 100px;
@@ -36,7 +39,15 @@
             border-color: #F65C8B;
         }
     }
+    .btn:focus{
+        box-shadow: none;
+      }
+      .dropdown-menu{
 
+        margin-left: 50px;}
+}
+
+}
 .navbar {
     .fa-burger {
         display: none;
@@ -138,6 +149,13 @@
         }
         .trick_top::before{
             display: none !important;
+        }
+    }
+    .header-banner {
+        .navbar{
+            .dropdown-menu{
+
+                margin-left: 100px !important;}
         }
     }
 }
