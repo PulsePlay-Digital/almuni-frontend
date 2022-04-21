@@ -1,24 +1,44 @@
 <div class="header-banner">
     <div class="container">
-        <div class="row m-0 my-3">
-            <div class="col-xl-8 col-lg-8 header-logos col-md-6 col-sm-12 text-center">
-                <img src=".../../../../../..//../assets/logo.png" class="logo me-2 img-fluid" alt=" Shri Balaji Logo">
-                <img src="../../../../../assets/logosbs.png" class="logo-img img-fluid" alt="Shri Balaji Logo">
+        <div class="navbar navbar-expand-lg navbar-light">
+            <div class="row main-header">
+                <div class="col-xl-8 col-lg-8 header-logos col-md-6 col-sm-12 text-center pt-lg-2">
+                    <img src=".../../../../../..//../assets/logo.png" class="logo me-2 img-fluid"
+                        alt=" Shri Balaji Logo">
+                    <img src="../../../../../assets/logosbs.png" class="logo-img img-fluid" alt="Shri Balaji Logo">
+                </div>
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6 open-add align-self-center text-lg-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                    <button type="button" class="btn admission-open fs-6 ">Admission Open</button>
+                </div>
+                <!-- <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                    <button type="button" class="btn login-register fs-6 ">Log In/ Register</button>
+                </div> -->
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5  open-add align-self-center text-lg-end  pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                    <div class="dropdown">
+                        <a class="btn border-0 " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="../../../../../assets/Ellipse 19.png" class="w-50"> <span class="header-icon"><i
+                                    class="fa fa-angle-down ps-2" aria-hidden="true"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">View Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Reset password</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div
-                class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
-                <button type="button" class="btn admission-open fs-6 ">Admission Open</button>
-            </div>
-            <div
-                class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
-                <button type="button" class="btn login-register fs-6 ">Log In/ Register</button>
-            </div>
-         </div>
- </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
             <a class="navbar-brand" href="#"></a>
-            <button class=" fa-burger fs-4 mobile-toggle" type="button" data-bs-toggle="collapse"
+            <button class=" fa-burger fs-4 mobile-toggle border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false"
                 aria-label="Toggle navigation">☰ </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
@@ -131,7 +151,7 @@
                 </ul>
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
                     <li class="nav-item">
-                        <a class="nav-link fs-6 pe-3" routerLink="/register" routerLinkActive="active-link">Login
+                        <a class="nav-link fs-6 pe-lg-3" routerLink="/register" routerLinkActive="active-link">Login
                             /Register</a>
                     </li>
                 </ul>
