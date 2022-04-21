@@ -2,7 +2,8 @@
     border: none;
     .card-body {
         img {
-            height: 252px;
+            height: 30vh;
+            object-fit: cover;
         }
         a {
             cursor: pointer;
@@ -10,8 +11,11 @@
     }
 }
 .btn-primary {
-    background-color: #419BD6;
+    // background-color: #419BD6;
     border-color: #419BD6;
+}
+.card-body {
+    padding: 1rem 0rem;
 }
 a {
     color: #fff;
@@ -20,4 +24,7 @@ a {
     padding: 6px;
     margin: 10px;
     border-width: 0px;
+}
+iframe.founderVideo {
+    height: 500px;
 }
