@@ -78,6 +78,8 @@
       .dropdown-item {
         color: #fff !important;
         line-height: 35px;
+        white-space: normal;
+        min-width: 15rem !important;
       }
       .trick_top::before {
         content: "";
