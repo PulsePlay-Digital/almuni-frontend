@@ -131,7 +131,9 @@
     }
   }
 }
-
+.dropdown-item {
+  cursor: pointer;
+}
 
 @media (min-width: 300px) and (max-width: 600px) {
   nav {
