@@ -71,39 +71,40 @@
 </div>
 <!--- Inner Section Close --->
 <!--- Featured Alumni Gallary Section --->
-<div class="gallary alumni my-lg-4 my-md-4 my-sm-3 my-2">
+<div class="gallary alumni my-lg-4 my-md-4 my-sm-3 my-2 mb-lg-2 mb-md-2">
   <div class="container">
       <div class="row">
           <div class="col-lg-12  my-lg-5 my-md-5 my-sm-4 my-3">
               <h4 class="heading fw-bold text-uppercase text-center mb-0">FEATURED ALUMNI</h4>
           </div>
       </div>
-      <div class="row justify-content-center">
+      <app-loader *ngIf="loading"></app-loader>
+      <div class="row justify-content-center" *ngIf="!loading">
           <div class="col-lg-8">
               <owl-carousel-o [options]="galleryOptions">
-                  <ng-template carouselSlide *ngFor="let data of featuredAlumni">
+                  <ng-template carouselSlide *ngFor="let data of alumni">
                       <div class="gallaryImg">
                           <a href="">
-                              <img [src]=[data.src]>
+                              <img [src]="imgPath + data.picture" alt="Featured Alumni Images">
                           </a>
                           <div class="row featuredInfo">
                             <div class="col-lg-12 mt-3 text-center">
-                              <h4 class="sub-heading fw-bold text-uppercase">{{ data?.name }}</h4>
-                              <p class="fs-5 fw-bold text-capitalize mb-3">Batch : {{data?.batch}}</p>
-                              <p class="fs-5 fw-bold text-capitalize mb-3">Current Designation : {{data?.current_designation}}</p>
-                              <p class="fs-5 fw-bold text-capitalize mb-3">Current firm : {{data?.current_firm}}</p>
+                              <h4 class="sub-heading fw-bold text-uppercase">{{ data?.alumni_name }}</h4>
+                              <p class="fs-5 fw-bold text-capitalize mb-3">Batch : {{data?.batch_year}}</p>
+                              <p class="fs-5 fw-bold text-capitalize mb-3">Current Designation : {{data?.designation}}</p>
+                              <p class="fs-5 fw-bold text-capitalize mb-3">Current firm : {{data?.company}}</p>
                               <p class="fs-5 fw-bold text-capitalize mb-3">Industry : {{data?.industry}}</p>
-                              <p class="fs-5 fw-bold text-capitalize mb-3">Location : {{data?.Location}}</p>
+                              <p class="fs-5 fw-bold text-capitalize mb-3">Location : {{data?.location}}</p>
+                            </div>
+                            <div class="row justify-content-center m-0">
+                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center mt-2 mt-lg-4 mt-md-4 mt-sm-4">
+                                  <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6" (click)="viewAlunni(data.id)">Know More</a>
+                              </div>
                             </div>
                           </div>
                       </div>
                   </ng-template>
               </owl-carousel-o>
-          </div>
-      </div>
-      <div class="row justify-content-center">
-          <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-2 mt-lg-3 mt-md-3 mt-sm-3">
-              <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">Know More</a>
           </div>
       </div>
   </div>
@@ -240,13 +241,14 @@
               <h4 class="heading fw-bold text-uppercase text-center mb-0">Gallery</h4>
           </div>
       </div>
-      <div class="row justify-content-center">
+      <app-loader *ngIf="loading"></app-loader>
+      <div class="row justify-content-center" *ngIf="!loading">
           <div class="col-lg-8">
               <owl-carousel-o [options]="galleryOptions">
                   <ng-template carouselSlide *ngFor="let data of gallery">
                       <div class="gallaryImg">
                           <a href="">
-                              <img [src]=[data.src]>
+                            <img [src]="imgPath + data.file" alt="Gallery Images">
                           </a>
                       </div>
                   </ng-template>
@@ -255,7 +257,7 @@
       </div>
       <div class="row justify-content-center pt-2">
           <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-3 mt-lg-5 mt-md-5 mt-sm-4">
-              <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View More</a>
+              <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6" routerLink="/celebrate/gallery">View More</a>
           </div>
       </div>
   </div>
@@ -266,17 +268,15 @@
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
-                <h4 class="heading fw-bolder text-uppercase mb-0">NETWORK IS YOUR NETWORTH</h4>
+                <h4 class="heading fw-bolder text-uppercase">NETWORK IS YOUR NETWORTH</h4>
           </div>
       </div>
       <div class="row m-0 py-4">
           <div class="networth text-center">
-
         <!-- <div class="elfsight-app-36d70a82-227c-4f3c-925b-bf7c0d7cd7a1 "></div> -->
               <img src="../../../../../assets/home/Rectangle.png" class="network-image img-fluid" alt="Instafeed">
           </div>
       </div>
-     
       <div class="row justify-content-center">
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 text-center mt-2 mt-lg-3 mt-md-3 mt-sm-3">
             <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View More</a>
