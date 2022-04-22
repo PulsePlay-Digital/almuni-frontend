@@ -1,4 +1,5 @@
 .search-filter {
+  background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
     .section-heading {
         height: 45px;
         background-color: #000360;
@@ -18,10 +19,21 @@
                 font-weight: 500;
             }
         }
+        .form-control{
+          padding: 15px 20px;
+        }
+        .form-select{
+          padding: 17px 20px;
+        }
     }
     .btn-report{
         background: #000360;
         color: #fff;
+    }
+    .search-btn{
+      background-color: #011898;
+      width: 40%;
+      line-height: 38px;
     }
 }
 

@@ -15,7 +15,7 @@
                     </div>
                 </ng-container>
                 <ng-container *ngIf="item?.profile_pic == null">
-                    <img [src]="imgPath + item?.profile_pic" class="card-img-top noImg" alt="Alumni Picture"/>
+                    <img [src]="imgPath + item?.profile_pic" class="card-img-top  img-thumbnail noImg" alt="Alumni Picture"/>
                 </ng-container>
                 <div class="card-body text-center pb-0">
                 <h3 class="card-title mb-2 fw-bold">{{item?.first_name}} {{item?.last_name}}</h3>
@@ -29,7 +29,7 @@
                     <i class="fa fa-link"></i>&nbsp;View more</a>
                 </div>
             </div>
-        </div>
+        </div>  
     </ng-container>
     <div class="row justify-content-center my-3" *ngIf="user?.length > 0">
         <div class="col text-center">

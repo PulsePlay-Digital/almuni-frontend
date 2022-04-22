@@ -1,0 +1,53 @@
+.know-section{
+    .know-balaji{
+        background-image: url("./../../../../../../assets/know-us/backgroundbalaji.png");
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+    }
+    .main-heading {
+        font-size: 30px;
+        line-height:43.88px;
+        color: #011898;
+        font-family: Montserrat;
+    }
+      .small-heading{
+            color: #F65C8B;
+        }
+        .text-name{
+           color:  #FEA641;
+        }
+        .text-para{
+            text-align: justify;
+        }
+    }
+    
+    @media screen and (min-width: 575px) and (max-width: 768px)  {
+        .know-section{
+            .know-balaji{
+                background-image: url("./../../../../../../assets/know-us/backgroundbalaji.png");
+                height: 150px;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        .main-heading {
+            font-size: 22px;
+        }
+    }
+    }
+    @media screen and (min-width: 300px) and (max-width: 574px){
+        .know-section{
+            .know-balaji{
+                background-image: url("./../../../../../../assets/know-us/backgroundbalaji.png");
+                height: 150px;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        .main-heading {
+            font-size: 18px !important;
+            line-height: 30px;
+        }
+    }
+    }
