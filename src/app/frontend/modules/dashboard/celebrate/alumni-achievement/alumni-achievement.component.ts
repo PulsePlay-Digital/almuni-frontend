@@ -11,6 +11,7 @@ export class AlumniAchievementComponent implements OnInit {
   seeAchievement: boolean = false;
   title: string = "Post a Achievement";
   heading: string = "My Achievement";
+  type: string = 'achievement';
 
   constructor() { }
 

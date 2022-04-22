@@ -5,16 +5,16 @@
     font-family: Montserrat;
 }
 .card {
+    background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
     .card-header {
         height: 60px;
     }
     .alumni-pic{
-        max-height: 220px;
-        height: 220px;
-        border-bottom: 1px solid #ededed;
+        min-height: 210px;
+        max-height: 210px;
         img {
-            max-height: 220px;
-            height: 220px;
+            min-height: 210px;
+            max-height: 210px;
             object-fit: cover;
         }
     }
@@ -23,4 +23,9 @@
         max-height: 220px;
         height: 220px;
     }
+    .view-btn {
+        background: #011898;
+        color: #fff;
+        line-height: 1.8;
+      }
 }

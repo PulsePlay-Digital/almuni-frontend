@@ -11,6 +11,7 @@ export class AlumniJourneyComponent implements OnInit {
   isShared: boolean = false;
   title: string =  'Post a Story';
   heading: string = "My Story";
+  type: string = 'journey';
   
   constructor() { }
 
