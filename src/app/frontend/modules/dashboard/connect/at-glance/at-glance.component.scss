@@ -1,8 +1,23 @@
-.description {
-    display: -webkit-box;
-    max-width: 100%;
-    height: 80px;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.card {
+    .eventDate {
+        min-height: 180px;
+        max-height: 180px;
+        .eventPic {
+            min-height: 180px;
+            max-height: 180px;
+        }
+        .eventDummyPic {
+            min-height: 180px;
+            max-height: 180px;
+            border: 1px solid #ededed;
+        }
+    }
+    .description {
+        display: -webkit-box;
+        max-width: 100%;
+        height: 80px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }

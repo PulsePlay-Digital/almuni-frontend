@@ -1,5 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
+import { map } from 'rxjs/operators';
+import { TokenInterceptor } from './../../../../core/token.interceptor';
+import { environment } from './../../../../../../environments/environment';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -8,13 +12,8 @@ import { DataService } from './../../../../services/data.service';
   styleUrls: ['./events-at-balaji.component.scss']
 })
 export class EventsAtBalajiComponent implements OnInit {
-
-  @Input() pastItems: any;
-  @Input() upcomingItems: any;
-  @Input() imgPath: any;
-
+  imgPath: any;
   loading: boolean = false;
-
   speakEventForm: FormGroup | any;
   pastEvent: any;
   upcomingEvent: any;
@@ -22,15 +21,14 @@ export class EventsAtBalajiComponent implements OnInit {
   speakerFacultyFields: boolean = false;
   submitted: boolean = false;
 
-  constructor(public fb: FormBuilder, public dataService: DataService) { }
+  constructor(public fb: FormBuilder, public dataService: DataService, public notify: TokenInterceptor) { 
+    this.imgPath = environment.imgUrl;
+  }
 
   ngOnInit(): void {
     this.loading = true;
-    setTimeout(() => {
-      this.pastEvent = this.pastItems;
-      this.upcomingEvent = this.upcomingItems;
-      this.loading = false;
-    }, 500);
+    this.getAllPastEvents();
+    this.getAllUpcomingEvents();
     this.buildForm();
   }
 
@@ -87,5 +85,61 @@ export class EventsAtBalajiComponent implements OnInit {
         console.log(res);
       })
     }
+  }
+
+  async getAllPastEvents() {
+    let action: string = "all-event";
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res.data.filter((item: any) => {
+            let commingDate = item?.date;
+            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
+            if (moment(currentDate).isAfter(commingDate) == true) {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe((res: any) => {
+          if (res) {
+            this.pastEvent = res;
+            this.loading = false;
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+        }
+      );
+  }
+  /**
+   * Function to Get all upcoming events
+   */
+  async getAllUpcomingEvents() {
+    let action: string = "all-event";
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res.data.filter((item: any) => {
+            let commingDate = item?.date;
+            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
+            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe((res: any) => {
+          if (res) {
+            this.upcomingEvent = res;
+            this.loading = false;
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+        }
+      );
   }
 }

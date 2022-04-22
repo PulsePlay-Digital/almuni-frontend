@@ -16,6 +16,7 @@ export class HostFormComponent implements OnInit {
   submitted: boolean = false;
   currentUser: any;
   author: any;
+  
   constructor(
     public fb: FormBuilder,
     public dataService: DataService

@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12 text-center">
         <h3 class="main-heading text-uppercase fw-bolder">ENGAGE WITH SRI BALAJI SOCIETY</h3>
     </div>
@@ -49,5 +49,81 @@
     </div>
 </div>
 
+<app-my-posted-opportunity *ngIf="postedOpportunity"></app-my-posted-opportunity>
+<app-my-posted-expertise *ngIf="postedExpertise"></app-my-posted-expertise> -->
+<!-- engage-society -->
+<div class="engage-society">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h3 class="main-heading text-uppercase fw-bolder">ENGAGE WITH SRI BALAJI SOCIETY</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12">
+                    <img src="../../../../../../assets/collaborate/engage.png" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 ps-lg-5 py-2 align-self-center">
+                    <p class="sub-text">As a visiting faculty</p>
+                    <p class="sub-text"> Conduct workshop</p>
+                    <p class="sub-text">Participate as a guest speaker at National Seminars</p>
+                    <p class="sub-text">Serve as an expert panelist – admissions</p>
+                    <p class="sub-text">Share internship/company project studies opportunities at
+                        your company
+                    </p>
+                    <p class="sub-text"> Share campus placement opportunities</p>
+                    <p class="sub-text"> Support Company Interface Programs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="row py-lg-5 py-sm-2">
+                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+                    <div class="project-box my-3 py-3 px-2">
+                        <h4 class="posted text-black fw-bold text-center">Offer Expertise</h4>
+                        <h2 class="number fw-bold text-center">0</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3">
+                            <a routerLink="/collaborate-contribute/add-expertise" class="btn project-btn shadow text-white fs-6">Add</a>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3 ">
+                            <a (click)="viewExpertise()" class="btn project-btn shadow text-white fs-6">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+                    <div class="project-box my-3 py-3 px-2">
+                        <h4 class="posted text-black fw-bold text-center">Available Event</h4>
+                        <h2 class="number fw-bold text-center">0</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3 ">
+                            <a routerLink="/collaborate-contribute/available-event" class="btn project-btn shadow text-white fs-6">View Event</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+                    <div class="project-box my-3 py-3 px-2">
+                        <h4 class="posted text-black fw-bold text-center">Share Opportunities</h4>
+                        <h2 class="number fw-bold text-center">0</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3">
+                            <a routerLink="/collaborate-contribute/add-opportunity" class="btn project-btn shadow text-white fs-6">Add</a>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3 ">
+                            <a (click)="viewOpportunity()" class="btn project-btn shadow text-white fs-6">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- end engage-society section-->
 <app-my-posted-opportunity *ngIf="postedOpportunity"></app-my-posted-opportunity>
 <app-my-posted-expertise *ngIf="postedExpertise"></app-my-posted-expertise>

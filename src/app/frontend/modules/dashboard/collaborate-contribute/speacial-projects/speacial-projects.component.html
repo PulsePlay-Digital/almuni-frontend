@@ -75,10 +75,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3">
-                            <a class="btn project-btn text-white fs-6">Add</a>
+                            <a routerLink="/collaborate-contribute/add-special-project" class="btn project-btn text-white fs-6">Add</a>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3 ">
-                            <a class="btn project-btn text-white fs-6">View</a>
+                            <a routerLink="/collaborate-contribute/available-jobs" class="btn project-btn text-white fs-6">View</a>
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 pt-3 ">
-                            <a class="btn project-btn text-white fs-6">Search</a>
+                            <a (click)="search()" class="btn project-btn text-white fs-6">Search</a>
                         </div>
 
                     </div>
@@ -105,3 +105,4 @@
         </div>
     </div>
 </div>
+<app-project-posted-by-alumni *ngIf="searchData"></app-project-posted-by-alumni> 

@@ -1,17 +1,21 @@
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
-.card {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.openJob {
-    color: green;
-    text-shadow: 1px 1px green;
-}
-.closeJob {
-    color: red;
-    text-shadow: 1px 1px red;
+.available-job{
+    .job-section{
+        background-color: #F65C8B;
+    }
+    .apply-btn{
+        background-color: #011898;
+        width: 100%;
+        line-height: 28px;
+    }
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .openJob {
+        color: green;
+        text-shadow: 1px 1px green;
+    }
+    .closeJob {
+        color: red;
+        text-shadow: 1px 1px red;
+    }
 }

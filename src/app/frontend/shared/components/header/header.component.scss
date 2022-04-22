@@ -78,6 +78,8 @@
       .dropdown-item {
         color: #fff !important;
         line-height: 35px;
+        white-space: normal;
+        min-width: 15rem !important;
       }
       .trick_top::before {
         content: "";
@@ -147,7 +149,7 @@
       display: inline-block !important;
     }
     .mobile-toggle{
-      margin-top: -100px !important;
+      margin-top: -110px !important;
       background:none;
     }
     .dropdown-menu {

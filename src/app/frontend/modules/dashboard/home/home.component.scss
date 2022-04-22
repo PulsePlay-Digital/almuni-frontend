@@ -41,6 +41,14 @@
 }
 .common_buttons {
   background-color: #011898;
+  border: 2px solid;
+}
+.common_buttons:hover {
+    background: #fff;
+    border-color: #011898;
+    color: #011898 !important;
+    border: 2px solid;
+    transition: all .2s;
 }
 .bannerSlider {
   .openAdd {
