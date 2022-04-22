@@ -5,6 +5,7 @@
     font-family: Montserrat;
 }
 .card {
+    background: linear-gradient(270deg, #FEA641 0%, #FDC480 100%);
     .card-header {
         height: 60px;
     }
@@ -18,9 +19,32 @@
             object-fit: cover;
         }
     }
+    .card-btn{
+        background: #011898;      
+          color: #fff;       
+          line-height: 1.8;
+          width: 30%;
+    }
     .noImg {
-        border: 1px solid #ededed;
-        max-height: 220px;
-        height: 220px;
+        min-height: 120px;
+     height: 120px;
+  object-fit: cover;
     }
 }
+// .card {
+//     background: linear-gradient(270deg, #FEA641 0%, #FDC480 100%);
+//     img {
+//         min-height: 120px;
+//         height: 120px;
+//         object-fit: cover;
+//     }
+//     .view-btn {
+//         background: #011898;
+//         color: #fff;
+//         line-height: 1.8;
+//     }
+//     .designation {
+//         height: 38px;
+//     }
+// }
+

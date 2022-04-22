@@ -1,12 +1,14 @@
-<div class="search-filter">
+<div class="search-filter px-lg-5 py-lg-5 px-md-3 py-md-3 px-sm-3 py-sm-3 py-3 px-3">
   <form class="" [formGroup]="searchForm">
     <div class="row">
-      <div class="col-4">
-        <div class="form-outline mb-2">
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="name" class="form-control" formControlName="first_name" id="inputName"
             placeholder="First name" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select class="form-select" placeholder="Select institute name" formControlName="institute_id">
             <option value="">Choose your institute</option>
             <option [value]="institute.id" *ngFor="let institute of getInstitutes">
@@ -14,32 +16,44 @@
             </option>
           </select>
         </div>
-
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="name" class="form-control" formControlName="bloodGroop" id="inputName"
             placeholder="Blood group" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="number" class="form-control" formControlName="city" id="inputMobileNumber" placeholder="City" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="number" class="form-control" formControlName="secondaryArea" id="inputMobileNumber"
             placeholder="Secondary functional area" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="number" class="form-control" formControlName="secondaryIndusrty" id="inputMobileNumber"
             placeholder="Secondary industry" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+             <div class="form-outline mb-3">
           <input type="number" class="form-control" formControlName="otherRegion" id="inputMobileNumber"
             placeholder="Other region" />
         </div>
       </div>
-      <div class="col-4">
-        <div class="form-outline mb-2">
+   
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Last name" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Choose your batch</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -47,10 +61,14 @@
             </option>
           </select>
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Country" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Profession Category</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -58,23 +76,31 @@
             </option>
           </select>
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail"
             placeholder="Other funcational area" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail"
             placeholder="Other industry focus" />
         </div>
-        <div class="form-outline mb-2">
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Company" />
         </div>
       </div>
-      <div class="col-4">
-        <div class="form-outline mb-2">
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Email" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Gender</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -82,10 +108,14 @@
             </option>
           </select>
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="State" />
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Primary functinal area</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -93,7 +123,9 @@
             </option>
           </select>
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Primary industry</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -101,7 +133,9 @@
             </option>
           </select>
         </div>
-        <div class="form-outline mb-2">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
             <option value="" selected>Select current region</option>
             <option [value]="batch.id" *ngFor="let batch of getBatch">
@@ -109,8 +143,15 @@
             </option>
           </select>
         </div>
-
-      </div>
+    
     </div>
-  </form>
+</div>
+<div class="row justify-content-center py-3">
+  <div class="col-md-4 text-center ">
+    <a class="btn search-btn border-0 shadow text-white">Search
+
+    </a>
+  </div>
+</div>
+</form>
 </div>
