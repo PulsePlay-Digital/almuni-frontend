@@ -55,7 +55,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   async submit() {
-    // console.log(this.uploadImgForm.value)
+    console.log(this.uploadImgForm.value)
     let action = {
       id: this.currentUser.id,
       action: 'profile-pic'
@@ -67,6 +67,8 @@ export class EditProfileComponent implements OnInit {
 
     await this.userService.postData(action, formData).subscribe((res: any) => {
       console.log(res)
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      this.image = res.data.profile_pic;
     });
   }
 }
