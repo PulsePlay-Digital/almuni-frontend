@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 import { AuthService } from "./../../../../frontend/services/auth.service";
 import { Config } from "./../../../../frontend/services/config";
 import { CountryService } from "./../../../../frontend/services/country.service";
@@ -24,7 +26,9 @@ export class RegisterComponent implements OnInit {
     public countryService: CountryService,
     public dataService: DataService,
     public authService: AuthService,
-    private config: Config
+    public notify: TokenInterceptor,
+    private config: Config,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -56,8 +60,7 @@ export class RegisterComponent implements OnInit {
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
         recaptcha: [""],
-        role: [0],
-        status: null
+        role: [0]
       },
       {
         validators: this.passwordMatch("password", "password_confirmation"),
@@ -78,7 +81,6 @@ export class RegisterComponent implements OnInit {
   public loadCountries() {
     this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
-      console.log(data);
     });
   }
 
@@ -161,7 +163,12 @@ export class RegisterComponent implements OnInit {
       return;
     } else {
       let params = this.registerForm.value;
-      await this.authService.register(params).toPromise();
+      await this.authService.register(params).subscribe((res: any) => {
+        this.notify.notificationService.openSuccessSnackBar(res.message);
+        this.router.navigate(['/login']);
+      },error => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      })
     }
   }
 }

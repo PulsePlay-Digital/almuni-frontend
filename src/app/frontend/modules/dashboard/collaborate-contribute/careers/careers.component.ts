@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./careers.component.scss']
 })
 export class CareersComponent implements OnInit {
-
+  searchData: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  search() {
+    this.searchData = !this.searchData;
+  }
 }

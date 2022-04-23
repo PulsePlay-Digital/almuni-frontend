@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TokenInterceptor } from './../../../core/token.interceptor';
 import { AuthService } from './../../../..//frontend/services/auth.service';
 import { NotificationService } from './../../../../frontend/services/notification.service';
 
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
     public authService: AuthService,
     public notification: NotificationService,
     public fb: FormBuilder,
-    public router: Router
+    public router: Router,
+    public notify: TokenInterceptor
   ) { }
 
   ngOnInit(): void {
@@ -57,7 +59,7 @@ export class LoginComponent implements OnInit {
             location.assign('/');
           }
         }, error => {
-          console.log(error);
+          this.notify.notificationService.openFailureSnackBar(error);
         });
       }
     }

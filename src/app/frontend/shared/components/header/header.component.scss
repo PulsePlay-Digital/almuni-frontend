@@ -74,7 +74,9 @@
         background-color: #011898;
         color: #fff !important;
       }
-
+      .dropdown-item:focus{
+        background: none;
+      }
       .dropdown-item {
         color: #fff !important;
         line-height: 35px;
@@ -110,6 +112,9 @@
         color: #fff !important;
         line-height: 35px;
       }
+.dropdown-item:focus{
+  background: none;
+}
       .dropdown-item:hover {
         background-color: transparent !important;
         text-decoration: underline;

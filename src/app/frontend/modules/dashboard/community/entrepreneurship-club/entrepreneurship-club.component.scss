@@ -1,10 +1,22 @@
 .heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
+  font-size: 30px;
+  line-height: 43.88px;
+  color: #011898;
 }
-.card-body {
-    max-height: 190px;
-    min-height: 190px;
+.card {
+    background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
+  .card-body {
+    max-height: 210px;
+    min-height: 210px;
     overflow: hidden;
+  }
+  .view-btn {
+    background: #011898;
+    color: #fff;
+    line-height: 1.8;
+  }
+}
+.start-club {
+  color: #011898;
+  cursor: pointer;
 }

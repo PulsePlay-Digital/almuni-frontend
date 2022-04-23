@@ -20,6 +20,7 @@ import { AddOpportunityComponent } from './add-opportunity/add-opportunity.compo
 import { MyPostedOpportunityComponent } from './my-posted-opportunity/my-posted-opportunity.component';
 import { MyPostedExpertiseComponent } from './my-posted-expertise/my-posted-expertise.component';
 import { AvailableEventComponent } from './available-event/available-event.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AvailableEventComponent } from './available-event/available-event.compo
     AddOpportunityComponent,
     MyPostedOpportunityComponent,
     MyPostedExpertiseComponent,
-    AvailableEventComponent
+    AvailableEventComponent,
+    ViewDetailsComponent
   ],
   imports: [
     CommonModule,

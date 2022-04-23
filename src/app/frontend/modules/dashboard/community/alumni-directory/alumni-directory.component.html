@@ -4,20 +4,20 @@
     </div>
 </div>
 <app-search-filter></app-search-filter>
-<div class="row">
+<div class="row mt-2">
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of user | paginate: { itemsPerPage: 3, currentPage: p }">
-            <div class="card">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
+            <div class="card p-xl-5 p-lg-5 p-md-5 p-sm-4 p-2">
                 <ng-container *ngIf="item?.profile_pic != null">
                     <div class="alumni-pic">
                         <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="Alumni Picture"/>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="item?.profile_pic == null">
-                    <img [src]="imgPath + item?.profile_pic" class="card-img-top noImg" alt="Alumni Picture"/>
+                    <img [src]="imgPath + item?.profile_pic" class="card-img-top  img-thumbnail noImg" alt="Alumni Picture"/>
                 </ng-container>
-                <div class="card-body text-center">
+                <div class="card-body text-center pb-0">
                 <h3 class="card-title mb-2 fw-bold">{{item?.first_name}} {{item?.last_name}}</h3>
                 <p *ngIf="item?.batch != null" class="card-text mb-2">{{item?.batch}}</p>
                 <p *ngIf="item?.institute_name != null" class="card-text mb-2">Institute : {{item?.institute_name}}</p>
@@ -25,12 +25,13 @@
                 <p *ngIf="item?.country != null" class="card-text mb-2">Current Country : {{item?.country}}</p>
                 <p *ngIf="item?.current_company != null" class="card-text mb-2">Company : {{item?.current_company}}</p>
                 <p *ngIf="item?.e != null" class="card-text mb-2">Designation : {{item?.current_designation}} </p>
-                <a (click)="viewDetail(item.id)" class="btn btn-primary">View</a>
+                <a (click)="viewDetail(item.id)" class="btn btn-md view-btn text-capitalize mt-2">
+                    <i class="fa fa-link"></i>&nbsp;View more</a>
                 </div>
             </div>
-        </div>
+        </div>  
     </ng-container>
-    <div class="row justify-content-center" *ngIf="user?.length > 0">
+    <div class="row justify-content-center my-3" *ngIf="user?.length > 0">
         <div class="col text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>

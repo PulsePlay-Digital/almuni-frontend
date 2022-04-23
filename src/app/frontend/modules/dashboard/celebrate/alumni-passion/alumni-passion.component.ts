@@ -10,6 +10,7 @@ export class AlumniPassionComponent implements OnInit {
   isShared: boolean = false;
   title: string =  'Post a Passion';
   heading: string = "My Passion";
+  type: string = 'passion';
 
   constructor() { }
 

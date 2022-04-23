@@ -1,8 +1,12 @@
 <div class="row">
+
     <div class="col-lg-12 text-center">
         <h3 class="heading text-uppercase fw-bolder">BUSINESS VENTURE / START UP DETAIL INFO</h3>
     </div>
-    <div class="col-lg-3"><a class="btn btn-primary" routerLink="/community/venture-info">Business Venture / Start Up Detail Info</a></div>
+    <div class="justify-content-center py-3">
+        <h6 class="start-club fs-5 fw-bolder" routerLink="/community/venture-info"> Business Venture / Start Up Detail
+            Info </h6>
+    </div>
 </div>
 <app-search-filter></app-search-filter>
 
@@ -17,11 +21,12 @@
                 <p *ngIf="item?.email" class="mb-2"><strong>Email id:</strong> &nbsp;{{ item?.email}}</p>
             </div>
             <div class="card-footer bg-transparent border-0">
-                <a class="btn btn-primary" (click)="onReadData(item)">Read More</a>
+                <a (click)="onReadData(item)" class="btn btn-md view-btn text-capitalize mt-2">
+                    <i class="fa fa-link"></i>&nbsp;Read More</a>
             </div>
         </div>
     </div>
-    <div class="row justify-content-center" *ngIf="entrepreneur?.length > 0">
+    <div class="row justify-content-center my-3" *ngIf="entrepreneur?.length > 0">
         <div class="col text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>

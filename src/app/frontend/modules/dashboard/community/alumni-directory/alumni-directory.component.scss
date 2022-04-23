@@ -1,26 +1,47 @@
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
 .card {
-    .card-header {
-        height: 60px;
+  background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
+  .card-header {
+    height: 60px;
+  }
+  .alumni-pic {
+    min-height: 210px;
+    max-height: 210px;
+    img {
+      min-height: 210px;
+      max-height: 210px;
+      object-fit: cover;
     }
-    .alumni-pic{
-        max-height: 220px;
-        height: 220px;
-        border-bottom: 1px solid #ededed;
-        img {
-            max-height: 220px;
-            height: 220px;
-            object-fit: cover;
-        }
-    }
-    .noImg {
-        border: 1px solid #ededed;
-        max-height: 220px;
-        height: 220px;
-    }
+  }
+  .card-btn {
+    background: #011898;
+    color: #fff;
+    line-height: 1.8;
+    width: 30%;
+  }
+  .noImg {
+    min-height: 210px;
+      max-height: 210px;
+    object-fit: cover;
+  }
+  .view-btn {
+    background: #011898;
+    color: #fff;
+    line-height: 1.8;
+  }
 }
+// .card {
+//     background: linear-gradient(270deg, #FEA641 0%, #FDC480 100%);
+//     img {
+//         min-height: 120px;
+//         height: 120px;
+//         object-fit: cover;
+//     }
+//     .view-btn {
+//         background: #011898;
+//         color: #fff;
+//         line-height: 1.8;
+//     }
+//     .designation {
+//         height: 38px;
+//     }
+// }

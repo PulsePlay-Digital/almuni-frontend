@@ -1,10 +1,157 @@
 <div class="available-job">
-  <div class="row justify-content-center">
+  <div class="row">
     <div class="d-sm-flex align-items-center justify-content-between my-4">
       <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
       <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
     </div>
-    <!-- <app-loader *ngIf="loading"></app-loader>
+    <app-loader *ngIf="loading"></app-loader>
+    <ng-container *ngIf="!loading">
+      <div class="col-lg-6 col-xl-6 my-2" *ngFor="let item of allJobs">
+        <div class="job-section text-md-center text-lg-center py-lg-5 py-md-5 py-sm-4 py-4">
+          <h6 class="job-heading text-white fs-5 fw-bold text-capitalize mb-lg-4 mb-md-4 mb-sm-3 mb-2">{{ item?.title }}
+          </h6>
+          <div class="row justify-content-lg-center">
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Job ID
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0">: {{ item?.id }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Job Posted
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.author }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Contact
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.contactNumber }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Contact person
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.contactPerson }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                email id
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.email }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Location
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.location }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                City
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.city }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Company Name
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.companyName }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Salary
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.salary }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Work experience
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.workExperience }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Skill possessed
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.skillsRequired }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white">
+                Qualification
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : {{ item?.qualification }}
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white">
+                Company website
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0"> : <a href="{{item?.website }}">{{ item?.website }} </a>
+              </h2>
+            </div>
+            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
+              <h2 class="job mb-0 fs-6 text-white ">
+                Description of job profile
+              </h2>
+            </div>
+            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
+              <h2 class="job fs-6 text-white mb-0 pe-lg-2"> : {{ item?.description | stripHtml }}
+              </h2>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-3 pt-4 col-6">
+                <a class="btn shadow border-0 apply-btn text-white">Apply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+
+<!-- <app-loader *ngIf="loading"></app-loader>
   <ng-container *ngIf="!loading">
     <div class="col-lg-12 my-2" *ngFor="let item of allJobs">
         <div class="card">
@@ -67,301 +214,3 @@
         </div>
     </div>
   </ng-container> -->
-
-    <div class="col-lg-6 col-xl-6 my-2">
-      <div class="job-section text-md-center text-lg-center py-5">
-        <h6 class="job-heading text-white fs-5 fw-bold">Chemical Engineer and EA to CEO</h6>
-        <div class="row justify-content-lg-center">
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Job ID
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0">: 104
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Job Posted
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : SUMANTA
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-           Contact
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : 91 75345678934
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Contact person
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : Sumanta kumar Rana
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              email id
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : sumanta.rana@satyeshbrine.com
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Location
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : Ahmedabad
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              City
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : Ahmedabad
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Company Name
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : Satyesh Brinechem
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Salary
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : As per company norms/negotiable
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-             Work experience
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : 5-10 years
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Skill possessed
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : Technical and Management skills
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Qualification
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : BE (Chemical)
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Company website
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0"> : www.satyeshbrine.com
-            </h2>
-          </div>
-          <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-            <h2 class="job mb-0 fs-6 text-white ">
-              Description of job profile
-            </h2>
-          </div>
-          <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-            <h2 class="job fs-6 text-white mb-0 pe-lg-2"> : Require a Chemical Engineer
-              having 5-10 yrs work experience
-              in chemical industry. The position
-              is based at Ahmedabad HO and
-              the incumbent shall work as EA
-              to CEO and will report to CEO.
-              Technical and Management skill
-              sets required. Salary will be as per
-              company standards / negotiable.
-            </h2>
-          </div>
-
-      
-          <div class="row justify-content-center">
-            <div class="col-md-3 py-4 col-6">
-              <a class="btn shadow border-0 apply-btn text-white">Apply</a>
-              </div>
-            </div>
-    </div>
-  </div>
-</div>
-<div class="col-lg-6 col-xl-6  my-2">
-  <div class="job-section text-center py-5 text-white">
-    <h6 class="job-heading text-white fs-5 fw-bold">Chemical Engineer and EA to CEO</h6>
-    <div class="row justify-content-lg-center">
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Job ID
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0">: 104
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Job Posted
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : SUMANTA
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-       Contact
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : 91 75345678934
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Contact person
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : Sumanta kumar Rana
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          email id
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : sumanta.rana@satyeshbrine.com
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Location
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : Ahmedabad
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          City
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : Ahmedabad
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Company Name
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : Satyesh Brinechem
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Salary
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : As per company norms/negotiable
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-         Work experience
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : 5-10 years
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Skill possessed
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : Technical and Management skills
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Qualification
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : BE (Chemical)
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Company website
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0"> : www.satyeshbrine.com
-        </h2>
-      </div>
-      <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-        <h2 class="job mb-0 fs-6 text-white ">
-          Description of job profile
-        </h2>
-      </div>
-      <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-        <h2 class="job fs-6 text-white mb-0 pe-lg-2"> : Require a Chemical Engineer
-          having 5-10 yrs work experience
-          in chemical industry. The position
-          is based at Ahmedabad HO and
-          the incumbent shall work as EA
-          to CEO and will report to CEO.
-          Technical and Management skill
-          sets required. Salary will be as per
-          company standards / negotiable.
-        </h2>
-      </div>
-
-  <div class="row justify-content-center">
-  <div class="col-md-3 py-4 col-6">
-    <a class="btn shadow border-0 apply-btn text-white">Apply</a>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-</div>
-</div>

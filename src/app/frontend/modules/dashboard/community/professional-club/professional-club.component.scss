@@ -1,33 +1,32 @@
-.professional-club{
-.heading {
+.professional-club {
+  .heading {
     font-size: 30px;
-    line-height:43.88px;
+    line-height: 43.88px;
     color: #011898;
-}
-.card{
-    .card-image1{
-        border-bottom: 10px solid transparent;
-    background: linear-gradient(270deg, #011898 0%, #7053FF 100%);
-        
+  }
+  .card {
+    .card-image1 {
+      border-bottom: 10px solid transparent;
+      background: linear-gradient(270deg, #011898 0%, #7053ff 100%);
     }
-    .card-image2{
-        border-bottom: 10px solid transparent;
-        background: linear-gradient(270deg, #40BA45 0%, #89EB79 100%);
+    .card-image2 {
+      border-bottom: 10px solid transparent;
+      background: linear-gradient(270deg, #40ba45 0%, #89eb79 100%);
     }
-    .card-image3{
-        border-bottom: 10px solid transparent;
-        background: linear-gradient(270deg, #F65C8B 0%, #FE87B3 100%);
-border-radius: 8px;
+    .card-image3 {
+      border-bottom: 10px solid transparent;
+      background: linear-gradient(270deg, #f65c8b 0%, #fe87b3 100%);
+      border-radius: 8px;
     }
-    .card-text{
-        color: #F65C8B;
+    .card-text {
+      color: #f65c8b;
     }
-    .card-button{
-        background-color: #011898;
+    .card-button {
+      background-color: #011898;
     }
-    
-}
-.Start-club{
+  }
+  .start-club {
     color: #011898;
-}
+    cursor: pointer;
+  }
 }

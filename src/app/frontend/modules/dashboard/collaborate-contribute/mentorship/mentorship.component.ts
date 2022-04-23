@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from './../../../../../../environments/environment';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -12,13 +13,13 @@ export class MentorshipComponent implements OnInit {
   user: any = [];
   p: number = 1;
   loading: boolean = false;
+  imgPath = environment.imgUrl
 
   constructor(public dataService: DataService, public router: Router) {}
 
   ngOnInit(): void {
     this.loading = true;
     this.getAllAlumniUser();
- 
   }
   /**
    * Function to get all alumni user
@@ -35,6 +36,6 @@ export class MentorshipComponent implements OnInit {
    * @param params
    */
   viewDetail(params: any) {
-    this.router.navigate(["/view-profile"]);
+    this.router.navigate(["/collaborate-contribute/view-details"]);
   }
 }

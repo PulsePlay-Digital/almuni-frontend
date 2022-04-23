@@ -1,9 +1,19 @@
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
-.card-header {
+.card {
+  background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
+  .card-header {
     height: 60px;
+  }
+  .itemPic {
+    min-height: 210px;
+    max-height: 210px;
+    img {
+      min-height: 210px;
+      max-height: 210px;
+    }
+  }
+  .view-btn {
+    background: #011898;
+    color: #fff;
+    line-height: 1.8;
+  }
 }

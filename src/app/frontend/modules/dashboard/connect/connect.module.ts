@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostFormComponent } from './host-form/host-form.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ViewEventDetailComponent } from './view-event-detail/view-event-detail.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AlumniDrivenEventsComponent,
     IndustryConnectComponent,
     EventsAtBalajiComponent,
-    HostFormComponent
+    HostFormComponent,
+    ViewEventDetailComponent
   ],
   imports: [
     CommonModule,
