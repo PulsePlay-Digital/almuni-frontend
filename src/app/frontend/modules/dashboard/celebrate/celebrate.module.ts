@@ -16,6 +16,8 @@ import { MagazineComponent } from './magazine/magazine.component';
 import { SharedModule } from './../../../shared/shared.module';
 import { NewsUpdatesComponent } from './news-updates/news-updates.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/view-journey-detail.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     AlumniPassionComponent,
     GalleryComponent,
     MagazineComponent,
-    NewsUpdatesComponent
+    NewsUpdatesComponent,
+    ViewJourneyDetailComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +41,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     FormsModule,
     CKEditorModule,
     SharedModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxPaginationModule
   ]
 })
 export class CelebrateModule { }

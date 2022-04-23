@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule)
   },
   {
-    path: '**', redirectTo: '/home'
+    path: '**', redirectTo: ''
   }
 ];
 

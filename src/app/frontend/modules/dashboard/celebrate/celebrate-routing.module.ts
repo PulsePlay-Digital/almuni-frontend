@@ -9,6 +9,7 @@ import { FeaturedAlumniComponent } from './featured-alumni/featured-alumni.compo
 import { GalleryComponent } from './gallery/gallery.component';
 import { MagazineComponent } from './magazine/magazine.component';
 import { NewsUpdatesComponent } from './news-updates/news-updates.component';
+import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/view-journey-detail.component';
 
 const routes: Routes = [
   { path: 'celebrate', component: CelebrateComponent,
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'gallery', component: GalleryComponent },
     { path: 'magazine', component: MagazineComponent },
     { path: 'news-update', component: NewsUpdatesComponent },
+    { path: 'journey-detail', component: ViewJourneyDetailComponent },
     {
       path: '',
       redirectTo: 'featured-alumni',

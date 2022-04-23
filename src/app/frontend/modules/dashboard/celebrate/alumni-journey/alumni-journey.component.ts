@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AlumniJourneyComponent implements OnInit {
 
   isPosted: boolean = false;
-  isShared: boolean = false;
+  isShared: boolean = true;
   title: string =  'Post a Story';
   heading: string = "My Story";
   type: string = 'journey';

@@ -7,7 +7,7 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
