@@ -4,8 +4,7 @@
             <div class="row main-header">
                 <div class="col-xl-8 col-lg-8 header-logos col-md-6 col-sm-12 text-center pt-lg-2">
                     <a href="/">
-                        <img src="./assets/logo.png" class="logo me-2 img-fluid"
-                            alt=" Shri Balaji Logo">
+                        <img src="./assets/logo.png" class="logo me-2 img-fluid" alt=" Shri Balaji Logo">
                         <img src="./assets/logosbs.png" class="logo-img img-fluid" alt="Shri Balaji Logo">
                     </a>
                 </div>
@@ -15,7 +14,7 @@
                 </div>
                 <div *ngIf="!currentUser"
                     class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
-                    <button type="button" class="btn login-register fs-6" routerLink="/register"
+                    <button type="button" class="btn login-register fs-6" routerLink="/login"
                         routerLinkActive="active-link">Log In/ Register</button>
                 </div>
                 <div *ngIf="currentUser"
@@ -81,7 +80,9 @@
                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision"> Sri Balaji
                                     Society: Alumni Connect Vision </a></li>
-                            <li><a class="dropdown-item" routerLink="/common-purpose-culture/strategy-framework"> Sri
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/common-purpose-culture/strategy-framework'] : ['login']}}">
+                                    Sri
                                     Balaji Society: Alumni Connect Strategy Framework </a></li>
                         </ul>
                     </li>
@@ -137,11 +138,15 @@
                             <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
                             </li>
-                            <li><a class="dropdown-item" routerLink="/collaborate-contribute/careers">Careers and
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
+                                    and
                                     Jobs</a></li>
-                            <li><a class="dropdown-item" routerLink="/collaborate-contribute/special-projects">Special
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
                                     Projects</a></li>
-                            <li><a class="dropdown-item" routerLink="/collaborate-contribute/engage-with-society">Engage
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
                                     with Sri Balaji Society</a></li>
                         </ul>
                     </li>
@@ -152,7 +157,9 @@
                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
                             <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured-alumni</a>
                             </li>
-                            <li><a class="dropdown-item" routerLink="/celebrate/alumni-journey">Alumni Journey</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Alumni
+                                    Journey</a></li>
                             <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
                                     Achievement</a></li>
                             <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni Passion</a></li>

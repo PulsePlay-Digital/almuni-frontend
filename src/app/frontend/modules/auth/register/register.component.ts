@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit {
   getInstitutes: any;
   submitted: boolean = false;
   siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt";
+  profilePic:any;
+  image:any;
 
   constructor(
     public fb: FormBuilder,
@@ -59,6 +61,7 @@ export class RegisterComponent implements OnInit {
         password_confirmation: ["", Validators.required],
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
+        profile_pic:[""],
         recaptcha: [""],
         role: [0]
       },
@@ -82,6 +85,21 @@ export class RegisterComponent implements OnInit {
     this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
     });
+  }
+  /**
+   * Function to upload Image
+   * @param event 
+   */
+   onUploadImage(event: any) {
+    this.profilePic = event.target.files[0];
+    if (event?.target?.files && event?.target?.files[0]) {
+      this.profilePic = event?.target?.files[0];
+      let reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (_event) => {
+        this.image = _event.target?.result;
+      }
+    }
   }
 
   /**

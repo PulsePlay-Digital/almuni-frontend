@@ -1,85 +1,105 @@
-
 .register-page {
-    .login-background {
+  .login-background {
     //  background-image: url("../../../../../assets/authImages/registerBg.png");
-     background-color: #f65c8b;
-     height: auto;
-     background-size: cover;
-     background-repeat: no-repeat;
-     object-fit: cover;
-     background-position: center center;
-     
-     .left-box{
-        
-     height: 100%;
-     padding: 78px;
-     }
-     .btn-sign {
-       opacity: 0.3;
-     } 
-   }
-     .register-form {
-       background-color: #011898;
-     
-     .btn-register {
+    background-color: #f65c8b;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center center;
+
+    .left-box {
+      height: 100%;
+      padding: 78px;
+    }
+    .btn-sign {
+      opacity: 0.3;
+    }
+  }
+  .register-form {
+    background-color: #011898;
+
+    .btn-register {
       background-color: #f65c8b;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       padding: 20px 50px;
-     
-     }
-     .form-control {
+    }
+    .form-control {
       font-size: 12px !important;
       padding: 18px 20px;
-     }
-     select {
+    }
+    select {
       font-size: 13px;
       color: #646363;
     }
-   }
- }
- // media query//
- @media (min-width: 300px) and (max-width: 600px) {
-  .register-page {
-    .login-background {
-    .left-box{
-       
-      height: 100%;
-      padding: 70px;
-      }
+  }
+  .photo.justify-content-center {
+   
+    img {
+      height: 100px;
+    width: 100px;
+      position: absolute;
+      top: 24%;
+      left: 61%;
+      border-radius: 100%;
+      object-fit: cover;
+      cursor: pointer;
+     
+    }
+  }
+  .choose_file {
+    input[type="file"] {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      top: 24%;
+      left: 60%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 9999;
+    }
+  
   }
 }
-}
- @media (min-width: 600px) and (max-width: 768px) {
+
+// media query//
+@media (min-width: 300px) and (max-width: 600px) {
   .register-page {
     .login-background {
-    .left-box{
-       
-      height: 100%;
-      padding: 150px;
+      .left-box {
+        height: 100%;
+        padding: 70px;
       }
+    }
   }
 }
+@media (min-width: 600px) and (max-width: 768px) {
+  .register-page {
+    .login-background {
+      .left-box {
+        height: 100%;
+        padding: 150px;
+      }
+    }
+  }
 }
 @media (min-width: 768px) and (max-width: 968px) {
   .register-page {
     .login-background {
-    .left-box{
-       
-      height: 100%;
-      padding: 31px;
+      .left-box {
+        height: 100%;
+        padding: 31px;
       }
+    }
   }
-}
 }
 @media (min-width: 768px) and (max-width: 1399px) {
   .register-page {
     .login-background {
-    .left-box{
-       
-      height: 100%;
-      padding: 25px;
+      .left-box {
+        height: 100%;
+        padding: 25px;
       }
+    }
   }
 }
-}
- 

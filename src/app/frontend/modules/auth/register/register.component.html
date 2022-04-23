@@ -13,11 +13,11 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                   <a class="btn btn-login border-0 fw-bold fs-4 text-white ps-0 bg-transparent"
                     [routerLink]="['/login']">LOG IN</a>
-                  <a class="btn btn-sign ps-lg-4 border-0 fs-4 fw-bold text-white bg-transparent" 
-                  [routerLink]="['/register']">SIGN UP</a>
+                  <a class="btn btn-sign ps-lg-4 border-0 fs-4 fw-bold text-white bg-transparent"
+                    [routerLink]="['/register']">SIGN UP</a>
                 </div>
                 <h4 class="register-text text-white pt-3">
-                  <br/>
+                  <br />
                   This Is Exclusively For Sri Balaji <br />
                   University, Pune Alumni
                 </h4>
@@ -25,19 +25,27 @@
             </div>
             <div class="col-md-7 col-lg-7 col-sm-12 pe-lg-0 pt-5 pb-5 register-form">
               <form [formGroup]="registerForm">
-                <div class="right-box pt-5 pb-5">
+                <div class="photo justify-content-center pb-5" > 
+                  <!-- <i class="fa fa-camera"></i> -->
+                  <img src="../../../../../assets/profile-pic.png" *ngIf="!image">
+                  <div class="choose_file">
+                    <input type="file"  formControlName="profile_pic" (change)="onUploadImage($event)" accept="image/*"/>
+                    <img [src]="image"  *ngIf="image">
+                </div>
+                </div>
+                <div class="right-box pt-3 pb-5">
                   <div class="row justify-content-center pt-5">
                     <div class="col-md-5 my-2">
-                      <input type="text" class="text-dark form-control rounded-0"
-                        formControlName="first_name" placeholder="Name"/>
+                      <input type="text" class="text-dark form-control rounded-0" formControlName="first_name"
+                        placeholder="Name" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
                         First name is required.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" class="form-control border-0 rounded-0"
-                        formControlName="last_name" placeholder="Lastname"/>
+                      <input type="text" class="form-control border-0 rounded-0" formControlName="last_name"
+                        placeholder="Lastname" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
                         Last name is required.
@@ -69,15 +77,15 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" class="form-control rounded-0 border-0" formControlName="city" placeholder="City"
-                      />
+                      <input type="text" class="form-control rounded-0 border-0" formControlName="city"
+                        placeholder="City" />
                       <div class="text-danger mt-2" *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
                         City name is required.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <select class="form-select p-3 border-0 rounded-0"
-                        formControlName="country" (change)="changeCountry($event)">
+                      <select class="form-select p-3 border-0 rounded-0" formControlName="country"
+                        (change)="changeCountry($event)">
                         <option value="" selected>Country</option>
                         <option *ngFor="let row of countries" [value]="row.name">
                           {{ row.name }}
@@ -89,8 +97,8 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" class="form-control border-0 rounded-0"
-                        formControlName="current_region" placeholder="Select CountryRegion"/>
+                      <input type="text" class="form-control border-0 rounded-0" formControlName="current_region"
+                        placeholder="Select CountryRegion" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
                         Country region is required.
@@ -98,9 +106,9 @@
                     </div>
                     <div class="col-md-5 my-2">
                       <input type="text" class="form-control border-0 rounded-0" appNumbersOnly
-                        formControlName="mobile_number" placeholder="+91 MobileNumber"/>
+                        formControlName="mobile_number" placeholder="+91 MobileNumber" />
 
-                      <div  class="text-danger mt-2"
+                      <div class="text-danger mt-2"
                         *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
                         Mobile number is required.
                       </div>
@@ -114,8 +122,8 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" placeholder="DD/MM/YYYY"  class="form-control border-0 rounded-0"
-                        formControlName="birth_date" bsDatepicker  [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"/>
+                      <input type="text" placeholder="DD/MM/YYYY" class="form-control border-0 rounded-0"
+                        formControlName="birth_date" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
                         Date of birth is required.
@@ -123,36 +131,35 @@
                     </div>
                     <div class="col-md-5 my-2">
                       <input type="email" class="form-control border-0 rounded-0" formControlName="email"
-                        placeholder="E-mail"/>
-                      <div class="text-danger mt-2"
-                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required"> 
+                        placeholder="E-mail" />
+                      <div class="text-danger mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                         Email is required.
                       </div>
                       <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
-                          Email format is incorrect.
+                        Email format is incorrect.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" class="form-control border-0 rounded-0"
-                      formControlName="current_company" placeholder="Enter Current Company"/>
+                      <input type="text" class="form-control border-0 rounded-0" formControlName="current_company"
+                        placeholder="Enter Current Company" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
                         Company name is required.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="email" class="form-control border-0 rounded-0"
-                        formControlName="current_designation" placeholder="Enter Current Designation"/>
+                      <input type="email" class="form-control border-0 rounded-0" formControlName="current_designation"
+                        placeholder="Enter Current Designation" />
                       <div class="text-danger mt-2"
                         *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
                         Designation is required.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="password" class="form-control border-0 rounded-0"
-                        formControlName="password" placeholder="Password"/>
+                      <input type="password" class="form-control border-0 rounded-0" formControlName="password"
+                        placeholder="Password" />
                       <div class="text-danger mt-2"
-                        *ngIf="(f.password.touched || submitted) && f.password.errors?.required"> 
+                        *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
                         Password is required.
                       </div>
                       <div class="text-danger mt-2"
@@ -166,13 +173,13 @@
                     </div>
                     <div class="col-md-5 my-2">
                       <input type="password" class="form-control border-0 rounded-0"
-                        formControlName="password_confirmation" placeholder="Confirm Password"/>
+                        formControlName="password_confirmation" placeholder="Confirm Password" />
                       <div *ngIf="(f.password_confirmation.touched || submitted) && f.password_confirmation.errors">
                         <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.required">
-                            Confirm password is required
+                          Confirm password is required
                         </div>
                         <div class="text-danger mt-2" *ngIf="f.password_confirmation.errors.MustMatch">
-                            Confirm password does not match.
+                          Confirm password does not match.
                         </div>
                       </div>
                     </div>
@@ -184,14 +191,16 @@
                         </option>
                       </select>
                       <div class="text-danger mt-2"
-                        *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">Security question is required.
+                        *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">
+                        Security question is required.
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" class="form-control border-0 rounded-0"
-                        formControlName="security_answers" placeholder="Security Answer"/>
+                      <input type="text" class="form-control border-0 rounded-0" formControlName="security_answers"
+                        placeholder="Security Answer" />
                       <div class="text-danger mt-2"
-                        *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">Answer is required.
+                        *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">Answer
+                        is required.
                       </div>
                     </div>
                     <div class="row pt-4 justify-content-center">
