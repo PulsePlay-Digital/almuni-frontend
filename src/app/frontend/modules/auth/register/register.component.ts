@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
         security_answers: ["", Validators.required],
         recaptcha: [""],
         role: [0]
-      },
+      },  
       {
         validators: this.passwordMatch("password", "password_confirmation"),
       }
