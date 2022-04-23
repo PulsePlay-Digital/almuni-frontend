@@ -1,0 +1,85 @@
+
+.approval-page {
+    .approval-background {
+    background-image: url("../../../../../assets/login/login.png");
+     background-color: #f65c8b;
+     height: auto;
+     background-size: cover;
+     background-repeat: no-repeat;
+     object-fit: cover;
+     background-position: center center;
+     
+     .left-box{
+        
+     height: 100%;
+     padding: 78px;
+     }
+     .btn-sign {
+       opacity: 0.3;
+     } 
+   }
+     .approval-form {
+       background-color: #011898;
+     
+     .btn-register {
+      background-color: #f65c8b;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 20px 50px;
+     
+     }
+     .form-control {
+      font-size: 12px !important;
+      padding: 18px 20px;
+     }
+     select {
+      font-size: 13px;
+      color: #646363;
+    }
+   }
+ }
+ // media query//
+ @media (min-width: 300px) and (max-width: 600px) {
+    .approval-page {
+        .approval-background {
+    .left-box{
+       
+      height: 100%;
+      padding: 70px;
+      }
+  }
+}
+}
+ @media (min-width: 600px) and (max-width: 768px) {
+    .approval-page {
+        .approval-background {
+    .left-box{
+       
+      height: 100%;
+      padding: 150px;
+      }
+  }
+}
+}
+@media (min-width: 768px) and (max-width: 968px) {
+    .approval-page {
+        .approval-background  {
+    .left-box{
+       
+      height: 100%;
+      padding: 31px;
+      }
+  }
+}
+}
+@media (min-width: 768px) and (max-width: 1399px) {
+    .approval-page {
+        .approval-background {
+    .left-box{
+       
+      height: 100%;
+      padding: 25px;
+      }
+  }
+}
+}
+ 

@@ -64,7 +64,7 @@ export class RegisterComponent implements OnInit {
         profile_pic:[""],
         recaptcha: [""],
         role: [0]
-      },
+      },  
       {
         validators: this.passwordMatch("password", "password_confirmation"),
       }

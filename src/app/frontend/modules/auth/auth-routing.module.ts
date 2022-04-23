@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './../../../frontend/modules/auth/login/login.component';
 import { ForgotPasswordComponent } from './../../../frontend/modules/auth/forgot-password/forgot-password.component';
 import { RegisterComponent } from './../../../frontend/modules/auth/register/register.component';
+import { AlumniApprovalFormComponent } from './alumni-approval-form/alumni-approval-form.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'forgot-password', component: ForgotPasswordComponent
+  },
+  {
+    path: 'alumni-approval-form', component: AlumniApprovalFormComponent
   }
 ];
 
