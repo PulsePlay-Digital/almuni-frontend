@@ -78,6 +78,7 @@ export class SharedByMeComponent implements OnInit {
       
       await this.dataService.postData(action, formData).subscribe((res: any) => {
         if(res.status == 200) {
+          location.reload();
           this.notify.notificationService.openSuccessSnackBar(res.message);
         }
       }, error => {
