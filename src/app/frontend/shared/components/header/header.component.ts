@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   ) {
     if(localStorage.hasOwnProperty('currentUser')) {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
-      console.log(this.currentUser)
     } 
   }
 
@@ -30,7 +29,5 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logout();
     location.assign('/');
-    // this.router.navigate(['/']);
-    // location.reload();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import * as moment from "moment";
 import { map } from "rxjs/operators";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
@@ -91,7 +91,6 @@ export class AtGlanceComponent implements OnInit {
   }
 
   viewDetail(params: any) {
-    console.log(params)
-    this.router.navigate(["/connect/event-detail"]);
+    this.router.navigate(['/connect/event-detail']);
   }
 }

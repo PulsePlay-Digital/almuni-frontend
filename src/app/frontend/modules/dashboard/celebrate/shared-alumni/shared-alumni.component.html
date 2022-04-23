@@ -113,29 +113,26 @@
     </div>
 </div> -->
 
-<div class="row">
+<div class="row mt-lg-3 mt-md-3 mt-sm-3 mt-2">
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
-            *ngFor="let item of sharedData | paginate: { itemsPerPage: 2, currentPage: p }">
+            *ngFor="let item of sharedData | paginate: { itemsPerPage: 6, currentPage: p }">
             <div class="card p-xl-5 p-lg-5 p-md-5 p-sm-4 p-2">
                 <div class="itemPic">
-                    <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="user image">
+                    <img [src]="imgPath + item?.photo" class="card-img-top" alt="user image">
                 </div>
-                <div class="card-body text-center pb-0">
-                    <h3 class="card-title mb-2 fw-bold">{{item?.first_name}} {{item?.last_name}}</h3>
-                    <p *ngIf="item?.batch != null" class="card-text mb-2">{{item?.batch}}</p>
-                    <p *ngIf="item?.institute_name != null" class="card-text mb-2">Institute : {{item?.institute_name}}
-                    </p>
-                    <p *ngIf="item?.current_city != null" class="card-text mb-2">Current City : {{item?.current_city}}
-                    </p>
-                    <p *ngIf="item?.country != null" class="card-text mb-2">Current Country : {{item?.country}}</p>
-                    <p *ngIf="item?.current_company != null" class="card-text mb-2">Company : {{item?.current_company}}
-                    </p>
-                    <p *ngIf="item?.e != null" class="card-text mb-2">Designation : {{item?.current_designation}} </p>
-                    <a (click)="viewDetail(item.id)" class="btn btn-md view-btn text-capitalize mt-2">
-                        <i class="fa fa-link"></i>&nbsp;View more</a>
-                </div>
+                <div class="card-body p-0 pt-3">
+                    <p class="fw-bold fs-5">{{ item?.title != null ? item?.title : 'Divya'}}</p>
+                    <p class="card-text "><b>Course</b> : {{ item?.institute }}</p>
+                    <p class="card-text"><b>Batch</b> : 1999 -2001</p>
+                    <div class="row justify-content-center pt-2">
+                        <div class="col-lg-12 col-md-12">
+                            <a (click)="viewDetail(item.id)" class="btn btn-md view-btn text-capitalize mt-2">
+                                <i class="fa fa-link"></i>&nbsp;Read more</a>
+                        </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </ng-container>

@@ -34,8 +34,7 @@ export class ViewJourneyDetailComponent implements OnInit {
 
   async getJourneyById() {
     let action: string = "single-journey";
-    await this.dataService.getDataById(action, 1).subscribe((res: any) => {
-      console.log(res)
+    await this.dataService.getDataById(action, this.journeyId).subscribe((res: any) => {
       this.journeyData = res?.data;
     })
   }

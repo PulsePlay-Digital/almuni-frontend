@@ -22,7 +22,7 @@
                                                     <img class="img-fluid eventDummyPic" alt="Event pic">
                                                 </ng-container>
                                             </div>
-                                            <!-- <img src="./images/connect-event1.png" class="img-fluid" alt="Connect Event Image"> -->
+                            
                                             <div class="event-date">
                                                 <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
                                                 <p class="fs-6 fw-bold text-white text-center mb-1"><i
@@ -144,7 +144,7 @@
                                         <h6 class="fs-6 fw-bold">Description:</h6>
                                         <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
                                         <div class="more-btn ">
-                                            <a (click)="viewDetail(item.id)" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                            <a routerLink="/connect/event-detail" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                     aria-hidden="true"></i>&nbsp;More Info</a>
                                         </div>
                                     </div>
