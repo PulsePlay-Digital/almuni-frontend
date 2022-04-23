@@ -14,11 +14,11 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./../frontend/modules/user/user.module').then(m => m.UserModule)
+        loadChildren: () => import('./../frontend/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
         path: '',
-        loadChildren: () => import('./../frontend/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./../frontend/modules/user/user.module').then(m => m.UserModule)
       },
       {
         path: '',

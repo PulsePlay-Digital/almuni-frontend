@@ -1,11 +1,10 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-2">
     <h1 class="h3 mb-0 text-gray-800 text-center">Event</h1>
-    <!-- <button class="btn btn-md btn-primary rounded">Back</button> -->
   </div>
 
   <form class="example-form" [formGroup]="addEventForm" >
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="staticEmail" class="col-form-label fw-bold">Event
           Name</label>
         <input type="text" formControlName="title" class="form-control" placeholder="Enter name here">
@@ -13,7 +12,7 @@
           Event name is required.
         </div>
       </div>
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="staticEmail" class="col-form-label fw-bold">Event
           Venue</label>
         <input type="text" class="form-control" formControlName="venue" id="formGroupExampleInput"
@@ -24,7 +23,7 @@
       </div>
     </div>
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Category</label>
           <select class="form-select" aria-label="Default select example" formControlName="category">
@@ -32,7 +31,7 @@
             <option [value]="eventCategory">{{ eventCategory == "alumniReunion" ? 'Annual Alumni Re-Union' : 'Alumni Driven Event'  }}</option>
           </select>
       </div>
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Type</label>
           <select class="form-select" aria-label="Default select example" formControlName="type">
@@ -44,7 +43,7 @@
     </div>
 
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Hosted By </label>
           <input type="text" class="form-control" formControlName="eventHost" id="formGroupExampleInput"
@@ -62,18 +61,16 @@
     </div>
 
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Date</label>
           <input type="date" class="form-control" formControlName="date" id="formGroupExampleInput"
           placeholder="Enter date" />
-            <!-- <input type="text" placeholder="DD/MM/YYYY" class="form-control" formControlName="date"
-            bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
           <div class="text-danger my-2" *ngIf="(f.date.touched || submitted) && f.date.errors?.required">
             Date is required.
           </div>
       </div>
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Time</label>
           <input type="time" class="form-control" formControlName="time" id="formGroupExampleInput"
@@ -81,7 +78,7 @@
         </div>
     </div>
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Cost per person</label>
           <input type="text" class="form-control" formControlName="cost" id="formGroupExampleInput"
             placeholder="Enter cost per person" />
@@ -89,14 +86,14 @@
             Cost is required.
           </div>
       </div>
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">FB event page link</label>
           <input type="text" class="form-control" formControlName="eventPageLink" id="formGroupExampleInput"
             placeholder="Enter FB page link" />
       </div>
     </div>
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput"
           class="col-form-label fw-bold ">Status</label>
           <select class="form-select" aria-label="Default select example" formControlName="is_active">
@@ -104,7 +101,7 @@
             <option value="inactive">Inactive</option>
           </select>
       </div>
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Contact
           person number</label>
           <input type="number" class="form-control" formControlName="contactNumber" id="formGroupExampleInput"
@@ -112,7 +109,7 @@
         </div>
     </div>
     <div class="mb-3 row">
-      <div class="col-sm-10 col-md-6">
+      <div class="col-sm-6 col-md-6">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
           Image</label>
           <input type="file" class="form-control" formControlName="eventImage" id="formGroupLink"

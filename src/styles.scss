@@ -259,6 +259,17 @@ h4.font-italic.mb-4 {
     }
 }
 
+// Active Pagination CSS
+.ngx-pagination .current {
+    padding: 0.5rem 1rem !important;
+    cursor: default;
+    color: #2199e8 !important;
+    font-weight: bold;
+    border: 2px solid;
+    background: #fff !important;
+    border-color: #2199e8 !important;
+    border-radius: 50%;
+}
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
     .gallary {

@@ -1,41 +1,223 @@
-<div class="connect-banner-img">
-    <img src="./images/connect-event-banner-image.png" alt="Connect Event Banner Image" class="img-fluid w-100">
+<div class="connect-banner-img mb-lg-4 mb-md-4 mb-sm-4 mb-3">
+    <img src="./assets/connectImg/atGlanceBanner.png" alt="At Glance Banner" class="img-fluid w-100">
 </div>
-<mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Past Events">
-        <app-loader *ngIf="loading"></app-loader>
-        <!-- <ng-container *ngIf="!loading">
-            <div class="row m-0 py-2">
-                <div class="col-lg-6 col-lg-6 my-2" *ngFor="let item of pastEvent">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="eventDate">
-                                        <ng-container *ngIf="item?.eventImage !== null">
-                                            <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
-                                        </ng-container>
-                                        <ng-container *ngIf="item?.eventImage == null">
-                                            <img class="img-fluid eventDummyPic" alt="Event pic">
-                                        </ng-container>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="Past Events">
+                    <div class="row m-0">
+                        <div class="col-9 my-3">
+                            <app-loader *ngIf="loading"></app-loader>
+                            <ng-container *ngIf="!loading">
+                                <div class="row" *ngFor="let item of pastEvent">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
+                                            <div class="eventDate">
+                                                <ng-container *ngIf="item?.eventImage !== null">
+                                                    <img class="img-fluid" [src]="imgPath + item?.eventImage"
+                                                        alt="Event pic">
+                                                </ng-container>
+                                                <ng-container *ngIf="item?.eventImage == null">
+                                                    <img class="img-fluid eventDummyPic" alt="Event pic">
+                                                </ng-container>
+                                            </div>
+                            
+                                            <div class="event-date">
+                                                <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
+                                                <p class="fs-6 fw-bold text-white text-center mb-1"><i
+                                                        class="fa fa-calendar" aria-hidden="true"></i></p>
+                                                <p class="fs-6 fw-bold text-white text-center">2019</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
+                                        <h6 class="fs-6 fw-bold">Alumni Club Name:</h6>
+                                        <p class="connect-event-description">{{ item?.title }}</p>
+                                        <h6 class="fs-6 fw-bold">Description:</h6>
+                                        <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
+                                        <div class="more-btn ">
+                                            <a (click)="viewDetail(item.id)" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                    aria-hidden="true"></i>&nbsp;More Info</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-lg-8">
-                                    <p><strong>Alumni Club Name:</strong>&nbsp;{{ item?.title }} </p>
-                                    <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description |
-                                        stripHtml }}</p>
-                                    <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
-                                            aria-hidden="true"></i>&nbsp;More Info & Registration</a>
-                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 ">
+                            <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
+                                <form>
+                                    <input type="text" class="form-control shadow" placeholder="Search">
+                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-d-4 my-sm-3 my-3 ">Event
+                                        Type</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Annual Alumni Re-Union (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault3">
+                                        <label class="form-check-label" for="flexRadioDefault3">
+                                            Alumni Driven Events (4)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault4">
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            Events At/By Sri Balaji <br> Society (24)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault5">
+                                        <label class="form-check-label" for="flexRadioDefault5">
+                                            Industry/Professional <br> Events (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault6">
+                                        <label class="form-check-label" for="flexRadioDefault6">
+                                            Annual Reunion(5)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault7">
+                                        <label class="form-check-label" for="flexRadioDefault7">
+                                            Local Meet & Greet (2)
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="sbs-alumni-events">
+                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI
+                                    EVENTS SO FAR
+                                </h6>
+                                <p>Events Across Alumni<br> Clubs : 28</p>
+                                <p>Event Participants : 17</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </ng-container> -->
-    </mat-tab>
-    <mat-tab label="Upcomming Events">
-        <div class="row m-0 py-2">
+                </mat-tab>
+                <mat-tab label="Upcomming Events">
+                    <div class="row m-0">
+                        <div class="col-9 my-3">
+                            <app-loader *ngIf="loading"></app-loader>
+                            <ng-container *ngIf="!loading">
+                                <div class="row" *ngFor="let item of upcomingEvent">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
+                                            <div class="eventDate">
+                                                <ng-container *ngIf="item?.eventImage !== null">
+                                                    <img class="img-fluid" [src]="imgPath + item?.eventImage"
+                                                        alt="Event pic">
+                                                </ng-container>
+                                                <ng-container *ngIf="item?.eventImage == null">
+                                                    <img class="img-fluid eventDummyPic" alt="Event pic">
+                                                </ng-container>
+                                            </div>
+                                            <div class="event-date">
+                                                <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
+                                                <p class="fs-6 fw-bold text-white text-center mb-1"><i
+                                                        class="fa fa-calendar" aria-hidden="true"></i></p>
+                                                <p class="fs-6 fw-bold text-white text-center">2019</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
+                                        <h6 class="fs-6 fw-bold">Alumni Club Name:</h6>
+                                        <p class="connect-event-description">{{ item?.title }}</p>
+                                        <h6 class="fs-6 fw-bold">Description:</h6>
+                                        <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
+                                        <div class="more-btn ">
+                                            <a routerLink="/connect/event-detail" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                    aria-hidden="true"></i>&nbsp;More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 ">
+                            <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
+                                <form>
+                                    <input type="text" class="form-control shadow" placeholder="Search">
+                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-d-4 my-sm-3 my-3 ">Event
+                                        Type</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Annual Alumni Re-Union (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault3">
+                                        <label class="form-check-label" for="flexRadioDefault3">
+                                            Alumni Driven Events (4)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault4">
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            Events At/By Sri Balaji <br> Society (24)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault5">
+                                        <label class="form-check-label" for="flexRadioDefault5">
+                                            Industry/Professional <br> Events (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault6">
+                                        <label class="form-check-label" for="flexRadioDefault6">
+                                            Annual Reunion(5)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault7">
+                                        <label class="form-check-label" for="flexRadioDefault7">
+                                            Local Meet & Greet (2)
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="sbs-alumni-events">
+                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI
+                                    EVENTS SO FAR
+                                </h6>
+                                <p>Events Across Alumni<br> Clubs : 28</p>
+                                <p>Event Participants : 17</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row m-0 py-2">
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <div class="col-lg-6 my-2" *ngFor="let item of upcomingEvent">
@@ -64,6 +246,9 @@
                     </div>
                 </div>
             </ng-container>
+        </div> -->
+                </mat-tab>
+            </mat-tab-group>
         </div>
-    </mat-tab>
-</mat-tab-group>
+    </div>
+</div>

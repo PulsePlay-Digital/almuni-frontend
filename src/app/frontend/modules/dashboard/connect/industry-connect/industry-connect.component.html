@@ -75,20 +75,20 @@
                 </div>
 
                 <form class="example-form" [formGroup]="industryForm">
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Name Submitted by</label>
                       <input type="text" formControlName="nameSubmittedBy" class="form-control"
                         placeholder="Enter name here">
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Submitted by phone number</label>
                       <input type="text" formControlName="numberSubmittedBy" class="form-control"
                         placeholder="Enter number here">
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Submitted by email id</label>
                       <input type="email" formControlName="emailSubmittedBy" class="form-control"
                         placeholder="Enter email here">
@@ -96,7 +96,7 @@
                                           Email is required.
                                         </div> -->
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Are you attending</label>
                       <select class="form-select" aria-label="Default select example" formControlName="attending">
                         <option selected>Select attending</option>
@@ -107,8 +107,8 @@
                     </div>
                   </div>
 
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Event Name:</label>
                       <input type="text" formControlName="title" class="form-control"
                         placeholder="Enter event name here">
@@ -117,7 +117,7 @@
                       </div>
                     </div>
 
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Date:</label>
                       <input type="date" class="form-control" formControlName="date" id="formGroupExampleInput"
                         placeholder="Enter date" />
@@ -126,37 +126,37 @@
                       </div>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Time: </label>
                       <input type="time" class="form-control" formControlName="time" id="formGroupExampleInput" />
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="staticEmail" class="col-form-label fw-bold">Venue</label>
                       <input type="text" class="form-control" formControlName="venue" id="formGroupExampleInput"
                         placeholder="Enter venue" />
                     </div>
                   </div>
 
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">City</label>
                       <input type="text" class="form-control" formControlName="city" id="formGroupExampleInput"
                         placeholder="Enter city" />
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">State</label>
                       <input type="text" class="form-control" formControlName="state" id="formGroupExampleInput"
                         placeholder="Enter State" />
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Country</label>
                       <input type="text" class="form-control" formControlName="country" id="formGroupExampleInput"
                         placeholder="Enter country" />
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Cost per head</label>
                       <input type="number" class="form-control" formControlName="cost" id="formGroupExampleInput"
                         placeholder="Enter cost per head" />
@@ -165,54 +165,54 @@
                       </div>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-6 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Event website link</label>
                       <input type="text" class="form-control" formControlName="eventPageLink" id="formGroupExampleInput"
                         placeholder="Enter website link" />
                     </div>
                   </div>
-                  <div class="mb-3 row">
+                  <div class="row">
                     <div class="col-sm-12 col-md-12">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event:</label>
                       <ckeditor formControlName="description"></ckeditor>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Event contact person
                         name:</label>
                       <input type="text" class="form-control" formControlName="eventHost" id="formGroupExampleInput"
                         placeholder="Enter name" />
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Event contact person
                         phone:</label>
                       <input type="text" class="form-control" formControlName="contactNumber" id="formGroupExampleInput"
                         placeholder="Enter phone" />
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Event contact person
                         email:</label>
                       <input type="email" class="form-control" formControlName="eventPersonEmail"
                         id="formGroupExampleInput" placeholder="Enter email" />
                     </div>
 
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Companies participating:</label>
                       <input type="text" class="form-control" formControlName="companiesParticipating"
                         id="formGroupExampleInput" placeholder="Enter companies here" />
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic focus</label>
                       <input type="text" class="form-control" formControlName="topicFocus" id="formGroupExampleInput"
                         placeholder="Enter topic here" />
                     </div>
-                    <div class="col-sm-10 col-md-6">
+                    <div class="col-sm-6 col-md-6 my-2">
                       <label for="formGroupExampleInput" class="col-form-label fw-bold">Industry focus:</label>
                       <input type="text" class="form-control" formControlName="industryFocus" id="formGroupExampleInput"
                         placeholder="Enter industry" />

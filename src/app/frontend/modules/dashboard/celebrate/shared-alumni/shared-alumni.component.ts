@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from './../../../../../../environments/environment';
+import { DataService } from './../../../../services/data.service';
 
 @Component({
   selector: 'app-shared-alumni',
@@ -7,10 +10,29 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SharedAlumniComponent implements OnInit {
   @Input() heading: any;
-  constructor() { }
+  @Input() type: any;
+  @Input() alumniData: any;
+  
+  p: number = 1;
+  loading: boolean = false;
+  imgPath = environment.imgUrl;
+  sharedData: any = [];
+
+  constructor(
+    public dataService: DataService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.heading)
+    this.loading = true;
+    setTimeout(() => {
+      this.sharedData = this.alumniData;
+      this.loading = false;
+    }, 2000);
+    
   }
 
+  viewDetail(params: any) {
+    this.router.navigate(['/celebrate/journey-detail'], { queryParams: { id: params, type: this.heading } });
+  }
 }
