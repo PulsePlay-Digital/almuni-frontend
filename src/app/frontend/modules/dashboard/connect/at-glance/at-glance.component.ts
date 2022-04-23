@@ -4,6 +4,7 @@ import { map } from "rxjs/operators";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 import { environment } from "./../../../../../../environments/environment";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-at-glance",
@@ -11,9 +12,6 @@ import { environment } from "./../../../../../../environments/environment";
   styleUrls: ["./at-glance.component.scss"],
 })
 export class AtGlanceComponent implements OnInit {
-  // @Input() pastItems: any;
-  // @Input() upcomingItems: any;
-  // @Input() imgPath: any;
   imgPath : any;
   loading: boolean = false;
 
@@ -22,7 +20,8 @@ export class AtGlanceComponent implements OnInit {
 
   constructor(
     public dataService: DataService,
-    public notify: TokenInterceptor
+    public notify: TokenInterceptor,
+    public router: Router
   ) {
     this.imgPath = environment.imgUrl;
   }
@@ -89,5 +88,10 @@ export class AtGlanceComponent implements OnInit {
           this.notify.notificationService.openFailureSnackBar(error);
         }
       );
+  }
+
+  viewDetail(params: any) {
+    console.log(params)
+    this.router.navigate(["/connect/event-detail"]);
   }
 }

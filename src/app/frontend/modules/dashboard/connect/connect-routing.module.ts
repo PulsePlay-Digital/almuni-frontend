@@ -6,6 +6,7 @@ import { AtGlanceComponent } from './at-glance/at-glance.component';
 import { ConnectComponent } from './connect.component';
 import { EventsAtBalajiComponent } from './events-at-balaji/events-at-balaji.component';
 import { IndustryConnectComponent } from './industry-connect/industry-connect.component';
+import { ViewEventDetailComponent } from './view-event-detail/view-event-detail.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
       },
       {
         path: 'professionalevent', component: IndustryConnectComponent
+      },
+      {
+        path: 'event-detail', component: ViewEventDetailComponent
       },
       { path: '', redirectTo: 'at-glance', pathMatch: 'full' }
     ]
