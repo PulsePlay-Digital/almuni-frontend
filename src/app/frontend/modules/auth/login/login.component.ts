@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
           if (res.access_token) {
             localStorage.setItem("currentUser", JSON.stringify(res.user));
             localStorage.setItem("token", JSON.stringify(res.access_token));
-            location.assign('/home');
+            location.assign('/');
           }
         }, error => {
           console.log(error);
