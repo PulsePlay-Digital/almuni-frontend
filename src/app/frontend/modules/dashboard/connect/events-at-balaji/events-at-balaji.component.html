@@ -1,4 +1,4 @@
-<!-- <app-loader *ngIf="loading"></app-loader> -->
+<app-loader *ngIf="loading"></app-loader>
 <mat-tab-group mat-align-tabs="center" >
     <mat-tab label="Past Events">
         <div class="row m-0 py-2">
@@ -52,6 +52,10 @@
                                     <p><strong>Alumni Club Name:</strong>{{ item?.title }} </p>
                                     <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description }} </p>
                                     <!-- <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;More Info & Registration</a> -->
+                                    <div class="more-btn ">
+                                        <a routerLink="/connect/event-detail" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                aria-hidden="true"></i>&nbsp;More Info</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +75,7 @@
                                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                                         <h1 class="h3 mb-0 text-gray-800 text-center">Event</h1>
                                       </div>
-                                    
-                                      <form class="example-form" [formGroup]="speakEventForm" >
+                                     <form class="example-form" [formGroup]="speakEventForm" >
                                         <div class="row">
                                             <div class="col-sm-6 col-md-6 my-2">
                                                 <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name :</label>
@@ -123,8 +126,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                            <div class="row">
+                                           <div class="row">
                                                 <div class="col-sm-12 col-md-12 my-2">
                                                     <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event :</label>
                                                     <ckeditor formControlName="description"></ckeditor>
