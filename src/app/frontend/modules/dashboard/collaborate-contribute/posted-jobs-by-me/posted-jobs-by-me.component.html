@@ -1,8 +1,8 @@
-
+<div class="posted-job p-4">
 <div class="row">
     <div class="d-sm-flex align-items-center justify-content-between my-4">
       <h4 class="main-heading text-uppercase fw-bolder mb-0">Posted jobs by me</h4>
-      <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+      <button class="btn btn-md text-white back-btn rounded" (click)="navigateBack()">Back</button>
   </div>
   <app-loader *ngIf="loading"></app-loader>
   <ng-container *ngIf="!loading">
@@ -59,7 +59,7 @@
                   </div>
                   <div class="row">
                     <div class="col text-center">
-                        <p><a class="btn btn-lg btn-primary" [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'" (click)="changeStatus(item)">{{ item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</a></p>
+                        <p><a class="btn btn-lg back-btn text-white" [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'" (click)="changeStatus(item)">{{ item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</a></p>
                       </div>
                   </div>
                  
@@ -68,4 +68,5 @@
         </div>
     </div>
   </ng-container>
+</div>
 </div>
