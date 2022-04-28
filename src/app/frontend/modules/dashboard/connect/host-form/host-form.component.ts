@@ -29,6 +29,7 @@ export class HostFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.eventCategory)
     this.buildForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
