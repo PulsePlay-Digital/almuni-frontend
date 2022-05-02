@@ -4,37 +4,37 @@
     </div>
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-    <div class="col-lg-12 my-2" *ngFor="let item of allOpportunity">
-        <div class="card">
+    <div class="col-lg-4 my-2" *ngFor="let item of allOpportunity">
+        <div class="card shadow">
             <div class="card-body">
               <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.author }}</h5>
               <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Package Offer</b>: &nbsp; {{ item?.packageOffer }} </p>
                   </div>
-                  <div class="col-lg-6" *ngIf="item?.type == 'campusPlacement'">
+                  <div class="col-lg-12" *ngIf="item?.type == 'campusPlacement'">
                     <p><b>Type</b>: &nbsp; Share Campus Placement Opportunities </p>
                   </div>
-                  <div class="col-lg-6" *ngIf="item?.type == 'internship'">
+                  <div class="col-lg-12" *ngIf="item?.type == 'internship'">
                     <p><b>Type</b>: &nbsp; Share Internship Opportunities </p>
                   </div>
                   
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Positions For Internship</b>: &nbsp; {{ item?.positionsForInternship }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Positions Looking To Hire</b>: &nbsp; {{ item?.positionsLookingToHire }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Specialization</b>: &nbsp; {{ item?.specialization }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Stipend</b>: &nbsp; {{ item?.stipend == 'true' ? 'Yes' : 'No' }} </p>
                   </div>
                   
