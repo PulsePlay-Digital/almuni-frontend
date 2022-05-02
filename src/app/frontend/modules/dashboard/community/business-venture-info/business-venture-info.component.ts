@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Config } from './../../../../services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
@@ -18,7 +18,7 @@ export class BusinessVentureInfoComponent implements OnInit {
      public fb: FormBuilder,
      public dataService: DataService,
      public notify: TokenInterceptor,
-     public loaction: Location
+     public config: Config
   ) { }
 
   ngOnInit(): void {
@@ -92,7 +92,7 @@ export class BusinessVentureInfoComponent implements OnInit {
   /**
    * Navigate to Previous page
    */
-  navigateBack() {
-    this.loaction.back();
+   back() {
+    this.config.navigateBack();
   }
 }

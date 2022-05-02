@@ -40,7 +40,7 @@ export class AlumniDrivenEventsComponent implements OnInit {
           return res.data.filter((item: any) => {
             let commingDate = item?.date;
             let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isAfter(commingDate) == true) {
+            if (moment(currentDate).isAfter(commingDate) == true && item?.category == "alumniDrivenEvent") {
               return item;
             }
           });
@@ -67,9 +67,10 @@ export class AlumniDrivenEventsComponent implements OnInit {
       .pipe(
         map((res: any) => {
           return res.data.filter((item: any) => {
+            console.log(item)
             let commingDate = item?.date;
             let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+            if (moment(currentDate).isSameOrBefore(commingDate) == true && item?.category == "alumniDrivenEvent") {
               return item;
             }
           });

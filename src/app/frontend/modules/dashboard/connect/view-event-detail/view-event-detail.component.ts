@@ -1,30 +1,28 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Config } from "./../../../../services/config";
 
 @Component({
-  selector: 'app-view-event-detail',
-  templateUrl: './view-event-detail.component.html',
-  styleUrls: ['./view-event-detail.component.scss']
+  selector: "app-view-event-detail",
+  templateUrl: "./view-event-detail.component.html",
+  styleUrls: ["./view-event-detail.component.scss"],
 })
 export class ViewEventDetailComponent implements OnInit {
   event_detail: any;
 
-  constructor(
-    public arouter: ActivatedRoute,
-    public location: Location
-  ) {
+  constructor(public arouter: ActivatedRoute, public config: Config) {
+    //Get query params
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res)
-      this.event_detail = res; 
-    })
-   }
-
-  ngOnInit(): void {
-   
+      this.event_detail = res;
+    });
   }
 
-  navigateBack () {
-    this.location.back();
+  ngOnInit(): void {}
+
+  /**
+   * Function to navigate on previous page
+   */
+  back() {
+    this.config.navigateBack();
   }
 }

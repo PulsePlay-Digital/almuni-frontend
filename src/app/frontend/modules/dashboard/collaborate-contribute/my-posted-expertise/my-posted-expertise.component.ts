@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Config } from './../../../../services/config';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class MyPostedExpertiseComponent implements OnInit {
   loading: boolean = false;
   constructor(
     public dataService: DataService,
-    public location: Location
+    public config: Config
   ) { 
     if (localStorage) {
       this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -50,7 +50,7 @@ export class MyPostedExpertiseComponent implements OnInit {
   /**
    * Function to redirect previous page
    */
-  navigateBack() {
-    this.location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

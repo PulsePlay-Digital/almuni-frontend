@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from './../../../../services/data.service';
 import { environment } from './../../../../../../environments/environment';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
+import { Config } from './../../../../services/config';
 
 @Component({
   selector: 'app-start-new-club',
@@ -22,7 +22,7 @@ export class StartNewClubComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public dataService: DataService,
-    public _location: Location,
+    public config: Config,
     public aroute: ActivatedRoute,
     public notify: TokenInterceptor
   ) { 
@@ -76,13 +76,16 @@ export class StartNewClubComponent implements OnInit {
       await this.dataService.postData(action, formData).subscribe((res: any) => {
         if(res.status == 200) {
           this.notify.notificationService.openSuccessSnackBar(res.message)
-          this._location.back();
+          this.config.navigateBack();
         }
       });
     }
   }
 
-  navigateBack() {
-    this._location.back();
+  /**
+   * Function to navigate previous page
+   */
+  back() {
+    this.config.navigateBack();
   }
 }

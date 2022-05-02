@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class Config {
 
-  constructor() {
+  constructor(public _location: Location) {
 
   }
 
@@ -118,5 +119,9 @@ export class Config {
     } else {
       return true;
     }
+  }
+
+  navigateBack() {
+    this._location.back();
   }
 }

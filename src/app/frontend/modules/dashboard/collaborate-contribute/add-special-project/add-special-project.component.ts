@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Config } from 'src/app/frontend/services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
@@ -19,7 +19,7 @@ export class AddSpecialProjectComponent implements OnInit {
   constructor( public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor,
-    public _location: Location
+    public config: Config
     ) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -82,7 +82,7 @@ export class AddSpecialProjectComponent implements OnInit {
   /**
    * Function to navigate previous page
    */
-  navigateBack() {
-    this._location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

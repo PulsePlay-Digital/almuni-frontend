@@ -1,7 +1,7 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Config } from './../../../../services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
@@ -21,7 +21,7 @@ export class AddExpertiseComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public _location: Location,
+    public config: Config,
     public dataService: DataService,
     public notify: TokenInterceptor,
     public router: Router
@@ -108,7 +108,7 @@ export class AddExpertiseComponent implements OnInit {
   /**
    * Function to redirect previous page
    */
-  navigateBack() {
-    this._location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

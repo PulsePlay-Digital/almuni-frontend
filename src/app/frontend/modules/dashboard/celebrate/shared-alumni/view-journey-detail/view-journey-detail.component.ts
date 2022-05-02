@@ -1,8 +1,8 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from './../../../../../services/data.service';
 import { environment } from './../../../../../../../environments/environment';
+import { Config } from './../../../../../services/config';
 
 @Component({
   selector: 'app-view-journey-detail',
@@ -18,7 +18,7 @@ export class ViewJourneyDetailComponent implements OnInit {
   storyType: string = '';
 
   constructor(
-    public location: Location,
+    public config: Config,
     public arouter: ActivatedRoute,
     public dataService: DataService
   ) {
@@ -39,7 +39,7 @@ export class ViewJourneyDetailComponent implements OnInit {
     })
   }
 
-  navigateBack() {
-    this.location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

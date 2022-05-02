@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Config } from './../../../../services/config';
 import { environment } from './../../../../../../environments/environment';
 import { DataService } from './../../../../services/data.service';
 
@@ -16,7 +17,7 @@ export class AlumniDetailsComponent implements OnInit {
   loading: boolean = false;
 
   constructor(public arouter: ActivatedRoute, 
-    public dataService: DataService, public _location: Location) {
+    public dataService: DataService, public config: Config) {
     this.arouter.queryParams.subscribe((res: any) => {
       this.alumniId = res.id;
     })
@@ -42,7 +43,7 @@ export class AlumniDetailsComponent implements OnInit {
   /**
    * Function to redirect previous page
    */
-  navigateBack() {
-    this._location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

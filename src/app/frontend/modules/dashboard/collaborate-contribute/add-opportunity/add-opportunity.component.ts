@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import { Config } from "./../../../../services/config";
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,7 +21,7 @@ export class AddOpportunityComponent implements OnInit {
   corporateField: boolean = false;
 
   constructor(
-    public _location: Location,
+    public config: Config,
     public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor,
@@ -108,7 +108,7 @@ export class AddOpportunityComponent implements OnInit {
   /**
    * Function to redirect previous page 
    */
-  navigateBack() {
-    this._location.back();
+   back() {
+    this.config.navigateBack();
   }
 }

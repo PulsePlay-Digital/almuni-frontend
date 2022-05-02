@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from './../../../../services/data.service';
 import { environment } from './../../../../../../environments/environment';
+import { Config } from "./../../../../services/config";
 
 @Component({
   selector: 'app-view-details',
@@ -17,7 +18,9 @@ export class ViewDetailsComponent implements OnInit {
   loading: boolean = false;
 
   constructor(public arouter: ActivatedRoute, 
-    public dataService: DataService, public _location: Location) {
+    public dataService: DataService, 
+    private config: Config,
+    public _location: Location) {
     this.arouter.queryParams.subscribe((res: any) => {
       this.alumniId = res.id;
     })
@@ -36,14 +39,13 @@ export class ViewDetailsComponent implements OnInit {
     await this.dataService.getDataById(action, this.alumniId).subscribe((res: any) => {
       this.userDetail = res.data;
       this.loading = false;
-      console.log(this.userDetail)
     })
   }
 
   /**
    * Function to redirect previous page
    */
-  navigateBack() {
-    this._location.back();
+   back() {
+    this.config.navigateBack();
   }
 }

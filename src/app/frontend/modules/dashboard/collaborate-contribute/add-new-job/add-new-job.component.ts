@@ -1,7 +1,7 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Config } from './../../../../services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
@@ -21,7 +21,7 @@ export class AddNewJobComponent implements OnInit {
     public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor,
-    public _location: Location,
+    public config: Config,
     public router: Router
   ) {
     if (localStorage) {
@@ -90,7 +90,7 @@ export class AddNewJobComponent implements OnInit {
 /**
  * Navigate to Previous page
  */
-  navigateBack() {
-    this._location.back();
+ back() {
+    this.config.navigateBack();
   }
 }
