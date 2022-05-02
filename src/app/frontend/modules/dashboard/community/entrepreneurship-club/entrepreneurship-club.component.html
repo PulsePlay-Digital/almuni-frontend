@@ -3,17 +3,13 @@
     <div class="col-lg-12 text-center">
         <h3 class="heading text-uppercase fw-bolder">BUSINESS VENTURE / START UP DETAIL INFO</h3>
     </div>
-    <div class="justify-content-center py-3">
-        <h6 class="start-club fs-5 fw-bolder" routerLink="/community/venture-info"> Business Venture / Start Up Detail
-            Info </h6>
-    </div>
 </div>
 <app-search-filter></app-search-filter>
 
 <div class="row mt-1">
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-        <div class="col-lg-4 my-2 px-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 3, currentPage: p }">
+        <div class="col-lg-4 my-2 px-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 6, currentPage: p }">
             <div class="card">
                 <div class="card-body">
                     <p *ngIf="item?.company" class="mb-2"><strong>Company Name:</strong> &nbsp; {{ item?.company}}</p>
@@ -32,6 +28,12 @@
     <div class="row justify-content-center my-3" *ngIf="entrepreneur?.length > 0">
         <div class="col text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+    <div class="justify-content-center py-3">
+        <div class="col text-center">
+            <h6 class="start-club fs-5 fw-bolder" routerLink="/community/venture-info"> Business Venture / Start Up Detail
+                Info </h6>
         </div>
     </div>
 </div>
