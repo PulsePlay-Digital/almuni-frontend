@@ -9,9 +9,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./management-team.component.scss']
 })
 export class ManagementTeamComponent implements OnInit {
-  teamData: any;
+  teamData: any = [];
   imgPath: any;
   loading: boolean = true;
+  p: number = 1;
 
   constructor(
     public dataService: DataService,

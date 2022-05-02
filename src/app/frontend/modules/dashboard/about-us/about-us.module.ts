@@ -13,6 +13,7 @@ import { StalwartsBlessingsComponent } from './stalwarts-blessings/stalwarts-ble
 import { BalajiSocialSocietyComponent } from './balaji-social-society/balaji-social-society.component';
 import { EquivalenceToMbaComponent } from './equivalence-to-mba/equivalence-to-mba.component';
 import { AicteApprovalsComponent } from './aicte-approvals/aicte-approvals.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AicteApprovalsComponent } from './aicte-approvals/aicte-approvals.compo
   imports: [
     CommonModule,
     AboutUsRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ]
 })
 export class AboutUsModule { }
