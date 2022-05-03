@@ -24,11 +24,11 @@
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
                                     <input type="email" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
                                     formControlName="email" placeholder="E-mail">
-                                    <div class="text-danger mt-2"
+                                    <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                                         Email is required.
                                     </div>
-                                    <div class="text-danger mt-2"
+                                    <div class="text-danger fw-bold mt-2"
                                         *ngIf="f.email.dirty && f.email.errors?.pattern">
                                         Email format is incorrect.
                                     </div>
@@ -36,15 +36,15 @@
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
                                     <input type="password" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
                                         id="exampleInputPassword1" placeholder="Password" formControlName="password">
-                                    <div class="text-danger mt-2"
+                                    <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
                                         Password is required.
                                     </div>
-                                    <div class="text-danger mt-2"
+                                    <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
                                         Password must be at least 5 characters long.
                                     </div>
-                                    <div class="text-danger mt-2"
+                                    <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
                                         Password can be max 10 characters long.
                                     </div>

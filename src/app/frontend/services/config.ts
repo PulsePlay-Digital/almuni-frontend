@@ -16,6 +16,13 @@ export class Config {
       { id: 2, label: 'Female' }];
   }
 
+  role() {
+    return [
+      { id: 0, label: 'Admin' },
+      { id: 1, label: 'Alumni' }
+    ];
+  }
+
   maritalStatus() {
     return [
       { id: 1, status: 'Single' },
