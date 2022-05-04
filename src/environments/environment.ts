@@ -4,10 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: "http://192.168.29.37:3306/api",
-  // imgUrl: "http://192.168.29.37:3306/"
-  apiUrl: "https://pulseplaydigital.in/sbsAlumni/api",
-  imgUrl: "https://pulseplaydigital.in/sbsAlumni/public/"
+  apiUrl: "https://swadeshdigital.com/sbsAlumni/public/api",
+  imgUrl: "https://swadeshdigital.com/sbsAlumni/public/"
 };
 
 /*
