@@ -4,36 +4,36 @@
     </div>
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-    <div class="col-lg-12 my-2" *ngFor="let item of allExpertise">
-        <div class="card">
+    <div class="col-lg-4 my-2 " *ngFor="let item of allExpertise">
+        <div class="card shadow border-0">
             <div class="card-body">
               <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.author }}</h5>
               <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Event Name</b>: &nbsp; {{ item?.eventName }} </p>
                   </div>
-                  <div class="col-lg-6" *ngIf="item?.type == 'seminar'">
+                  <div class="col-lg-12" *ngIf="item?.type == 'seminar'">
                     <p><b>Type</b>: &nbsp; Speak at National Seminar </p>
                   </div>
-                  <div class="col-lg-6" *ngIf="item?.type == 'faculty'">
+                  <div class="col-lg-12" *ngIf="item?.type == 'faculty'">
                     <p><b>Type</b>: &nbsp; Offer expertise as a Visting Faculty</p>
                   </div>
-                  <div class="col-lg-6" *ngIf="item?.type == 'workshops'">
+                  <div class="col-lg-12" *ngIf="item?.type == 'workshops'">
                     <p><b>Type</b>: &nbsp; Offer expertise to conduct Workshops </p>
                   </div>
                   <div class="col-lg-6">
                     <p><b>Participation Type</b>: &nbsp; {{ item?.participationType }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Workshop</b>: &nbsp; {{ item?.workshopTopic }} </p>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <p><b>Venue</b>: &nbsp; {{ item?.venue }} </p>
                   </div>
                   <div class="col-lg-12">

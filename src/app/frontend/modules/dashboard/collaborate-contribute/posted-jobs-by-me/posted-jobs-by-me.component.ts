@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Config } from './../../../../services/config';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class PostedJobsByMeComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    public _location: Location,
+    public config: Config,
     public dataService: DataService
   ) {
     if (localStorage) {
@@ -44,16 +45,13 @@ export class PostedJobsByMeComponent implements OnInit {
     let params = {
       id: JSON.stringify(status.id),
       is_active: status.is_active
-      // id: this.params.data.id,
-      // is_active: this.status
     }
      await this.dataService.updateData(action, params).subscribe((res: any) => {
       console.log(res)
      })
-    console.log(status.id)
   }
 
-  navigateBack() {
-    this._location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

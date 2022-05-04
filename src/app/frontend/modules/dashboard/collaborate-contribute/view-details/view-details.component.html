@@ -1,1 +1,432 @@
-<p>view-details works!</p>
+<!-- COLLABORATE CONTAINER START -->
+<app-loader *ngIf="loading"></app-loader>
+<ng-container *ngIf="!loading">
+  <div class="row">
+    <div class="col text-end">
+      <button class="btn btn-sm btn-primary rounded" (click)="back()">
+        Back
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-6 col-md-6 collaborate-image text-center">
+      <img [src]="imgPath + userDetail?.profile_pic" class="collab-img img-fluid" alt="Alumni Pic">
+    </div>
+  </div>
+  <div class="row">
+    <div class="collaborate-heading my-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">
+        GENERAL INFORMATION
+      </h4>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Name</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.first_name}} {{userDetail?.last_name}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Current state</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.current_state}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Birth date</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.birth_date}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Current city</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.city}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Institute</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.institute_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Permanent address</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.permanent_address}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Institute wise roll #</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.Institute_wise_roll}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Permanent country</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.permanent_country}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Batch year</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.batch_year}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Permanent state</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.permanent_state}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Gender</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.gender}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Permanent city</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.permanent_city}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Marital status</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.marital_status}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">LinkedIn profile</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.linkedin_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Personal email id</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.email}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Twitter profile</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.twitter_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Office email id</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.office_email}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Skype profile</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.skype_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+      <div class="gernel-discription">Current address</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.current_address}} </pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Facebook profile</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.facebook_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Current country</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.country}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Instagram profile</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.instagram_id}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Current region</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.current_region}}</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Council Member Designation</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: {{userDetail?.council_member_designation}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="collaborate-heading my-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">
+        WORK / BUSINESS INFORMATION
+      </h4>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Professional tittle</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: </pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Current office address</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: </pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Profession category</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>: </pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Business</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Current employer</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Business office address</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="collaborate-heading my-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">
+        MENTORSHIP / SKILL
+      </h4>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Provide mentorship</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Other function area</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+      <div class="gernel-discription">Skills</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Primary industry focus</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Primary function area</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Secondary industry focus</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Secondary function area</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Other industry focus</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="collaborate-heading my-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">WORK EXPERIENCE</h4>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Company name</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:  SRV media Pvt Ltd</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">End date</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:  2016-10-13</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Job tittle</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:  java</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">High level summary</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:  java developer</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Start date</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:  2016-10-16</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription"></div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="collaborate-heading my-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">EDUCATION</h4>
+    </div>
+    <div class="collaborate-headingmy-3 my-xl-5 my-lg-5 my-md-5 my-sm-3 text-center">
+      <h4 class="main-heading text-uppercase fs-2 fw-bolder mb-0">OTHER</h4>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Family/Relatives associated with SBS</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription">Passion/Hobbies</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">Languages</div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription">
+        <pre>:</pre>
+      </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-6 col-md-6 col-6">
+      <div class="pre-gernel-discription"></div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-md-6 col-6">
+      <div class="gernel-discription"></div>
+    </div>
+
+    <!-- COLLABORATE CONTAINER END -->
+  </div>
+</ng-container>

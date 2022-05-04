@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class Config {
 
-  constructor() {
+  constructor(public _location: Location) {
 
   }
 
@@ -13,6 +14,13 @@ export class Config {
     return [
       { id: 1, label: 'Male' },
       { id: 2, label: 'Female' }];
+  }
+
+  role() {
+    return [
+      { id: 0, label: 'Admin' },
+      { id: 1, label: 'Alumni' }
+    ];
   }
 
   maritalStatus() {
@@ -118,5 +126,9 @@ export class Config {
     } else {
       return true;
     }
+  }
+
+  navigateBack() {
+    this._location.back();
   }
 }

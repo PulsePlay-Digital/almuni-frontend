@@ -1,12 +1,12 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { TokenInterceptor } from './../../../../core/token.interceptor';
-import { DataService } from './../../../../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { Config } from "./../../../../services/config";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { DataService } from "./../../../../services/data.service";
 
 @Component({
-  selector: 'app-available-event',
-  templateUrl: './available-event.component.html',
-  styleUrls: ['./available-event.component.scss']
+  selector: "app-available-event",
+  templateUrl: "./available-event.component.html",
+  styleUrls: ["./available-event.component.scss"],
 })
 export class AvailableEventComponent implements OnInit {
   allAdmission: any;
@@ -14,9 +14,9 @@ export class AvailableEventComponent implements OnInit {
 
   constructor(
     public dataService: DataService,
-    public _location: Location,
+    public config: Config,
     public notify: TokenInterceptor
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -27,21 +27,24 @@ export class AvailableEventComponent implements OnInit {
    * Function to get all admission
    */
   async getAllAdmissions() {
-    let action: string = 'all-admission';
-    await this.dataService.getData(action).subscribe((result: any) => {
-      if(result.status == 200) {
-        this.allAdmission = result?.data;
-        this.loading = false;
+    let action: string = "all-admission";
+    await this.dataService.getData(action).subscribe(
+      (result: any) => {
+        if (result.status == 200) {
+          this.allAdmission = result?.data;
+          this.loading = false;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
-    }, error => {
-      this.notify.notificationService.openFailureSnackBar(error);
-    });
+    );
   }
 
   /**
    * Function to redirect previous page
    */
-  navigateBack() {
-    this._location.back();
+  back() {
+    this.config.navigateBack();
   }
 }

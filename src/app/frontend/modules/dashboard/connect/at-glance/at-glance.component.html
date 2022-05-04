@@ -38,7 +38,7 @@
                                         <h6 class="fs-6 fw-bold">Description:</h6>
                                         <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
                                         <div class="more-btn ">
-                                            <a (click)="viewDetail(item.id)" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                            <a routerLink="/connect/event-detail" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                     aria-hidden="true"></i>&nbsp;More Info</a>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                         <h6 class="fs-6 fw-bold">Description:</h6>
                                         <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
                                         <div class="more-btn ">
-                                            <a routerLink="/connect/event-detail" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                            <a routerLink="/connect/event-detail" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                     aria-hidden="true"></i>&nbsp;More Info</a>
                                         </div>
                                     </div>
@@ -217,36 +217,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row m-0 py-2">
-            <app-loader *ngIf="loading"></app-loader>
-            <ng-container *ngIf="!loading">
-                <div class="col-lg-6 my-2" *ngFor="let item of upcomingEvent">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="eventDate">
-                                        <ng-container *ngIf="item?.eventImage !== null">
-                                            <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
-                                        </ng-container>
-                                        <ng-container *ngIf="item?.eventImage == null">
-                                            <img class="img-fluid eventDummyPic" alt="Event pic">
-                                        </ng-container>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <p><strong>Alumni Club Name:</strong>{{ item?.title }} </p>
-                                    <p class="description"><strong>Description:</strong>&nbsp;{{ item?.description }}
-                                    </p>
-                                    <a class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
-                                            aria-hidden="true"></i>&nbsp;More Info & Registration</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-        </div> -->
                 </mat-tab>
             </mat-tab-group>
         </div>

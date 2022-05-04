@@ -12,6 +12,7 @@ import { DataService } from './../../../../services/data.service';
 export class EntrepreneurshipClubComponent implements OnInit {
   entrepreneur: any;
   p: number = 1;
+  loading : boolean = false;
 
   constructor(
     public dataService: DataService, 
@@ -20,6 +21,7 @@ export class EntrepreneurshipClubComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllEntrepreneurship();
   }
 
@@ -28,7 +30,7 @@ export class EntrepreneurshipClubComponent implements OnInit {
     await this.dataService.getData(action).subscribe((res: any) => {
       if (res.status == 200) {
         this.entrepreneur = res?.data;
-        console.log(this.entrepreneur)
+        this.loading = false;
       }
     },(error) => {
       this.notify.notificationService.openFailureSnackBar(error);

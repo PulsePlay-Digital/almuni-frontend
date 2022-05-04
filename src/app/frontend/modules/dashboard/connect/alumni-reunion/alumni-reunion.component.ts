@@ -39,7 +39,7 @@ export class AlumniReunionComponent implements OnInit {
           return res.data.filter((item: any) => {
             let commingDate = item?.date;
             let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isAfter(commingDate) == true) {
+            if (moment(currentDate).isAfter(commingDate) == true && item?.category == 'alumniReunion' ) {
               return item;
             }
           });
@@ -69,7 +69,7 @@ export class AlumniReunionComponent implements OnInit {
           return res.data.filter((item: any) => {
             let commingDate = item?.date;
             let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+            if (moment(currentDate).isSameOrBefore(commingDate) == true && item?.category == 'alumniReunion') {
               return item;
             }
           });

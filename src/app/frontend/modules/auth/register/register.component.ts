@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt";
   profilePic:any;
   image:any;
+  userRole: any;
 
   constructor(
     public fb: FormBuilder,
@@ -31,7 +32,9 @@ export class RegisterComponent implements OnInit {
     public notify: TokenInterceptor,
     private config: Config,
     public router: Router
-  ) {}
+  ) {
+    this.userRole = this.config.role();
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -63,7 +66,7 @@ export class RegisterComponent implements OnInit {
         security_answers: ["", Validators.required],
         profile_pic:[""],
         recaptcha: [""],
-        role: [0]
+        role: ["", Validators.required]
       },  
       {
         validators: this.passwordMatch("password", "password_confirmation"),

@@ -1,8 +1,24 @@
+.posted-job{
+    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
 .main-heading {
     font-size: 30px;
     line-height:43.88px;
     color: #011898;
     font-family: Montserrat;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
+    background-clip: border-box;
+    border: none;
+    border-radius: 0.25rem;
+}
+.back-btn{
+    background-color: #011898;
 }
 .openJob, .closeJob {
     color: #fff;
@@ -13,7 +29,8 @@
     text-shadow: 1px 1px green;
     
 }
-.closeJob {
-    background-color: red;
-    text-shadow: 1px 1px red;
+// .closeJob {
+//     background-color: red;
+//     text-shadow: 1px 1px red;
+// }
 }

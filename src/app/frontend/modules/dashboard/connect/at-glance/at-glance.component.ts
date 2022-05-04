@@ -89,8 +89,4 @@ export class AtGlanceComponent implements OnInit {
         }
       );
   }
-
-  viewDetail(params: any) {
-    this.router.navigate(['/connect/event-detail']);
-  }
 }

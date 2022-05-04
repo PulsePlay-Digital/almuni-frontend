@@ -1,7 +1,7 @@
 
       <div class="d-sm-flex align-items-center justify-content-between my-4">
             <h4 class="main-heading text-uppercase fw-bolder mb-0">Business Venture / Start Up Detail Info</h4>
-        <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+        <button class="btn btn-sm btn-primary rounded" (click)="back()">Back</button>
       </div>
   
 
@@ -207,11 +207,11 @@
                         id="inputName" placeholder="Enter Location"/>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center my-3">
                     <div class="col-lg-4 text-center">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button class="btn btn-md btn-info me-2 rounded text-white" (click)="add()" [disabled]="!editEntreprenForm.valid">Submit</button>
-                            <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+                            <button class="btn btn-md btn-primary rounded" (click)="back()">Back</button>
                           </div>
                     </div>
                 </div>

@@ -19,9 +19,8 @@
           border-radius: 2px;
           line-height: 28px;
           width: 100%;
-          // box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
         }
-        :hover {
+        .admission-open:hover {
           background-color: #fff;
           color: #011898;
           border-color: #011898;
@@ -34,7 +33,7 @@
           border-radius: 2px;
           line-height: 28px;
         }
-        :hover {
+        .login-register:hover {
           background-color: #fff;
           color: #f65c8b;
           border-color: #f65c8b;
@@ -51,8 +50,8 @@
   .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
   }
-  .nav-link{
-    color:  #000000;;
+  .nav-link {
+    color: #000000;
   }
   .nav-link:hover {
     color: #011898 !important;
@@ -60,7 +59,7 @@
   .nav-link.active-link {
     color: #011898 !important;
   }
-  .nav-link i{
+  .nav-link i {
     padding-left: 2px;
   }
   .navbar {
@@ -80,7 +79,7 @@
         background-color: #011898;
         color: #fff !important;
       }
-      .dropdown-item:focus{
+      .dropdown-item:focus {
         background: none;
       }
       .dropdown-item {
@@ -118,9 +117,9 @@
         color: #fff !important;
         line-height: 35px;
       }
-.dropdown-item:focus{
-  background: none;
-}
+      .dropdown-item:focus {
+        background: none;
+      }
       .dropdown-item:hover {
         background-color: transparent !important;
         text-decoration: underline;
@@ -159,9 +158,9 @@
     .mobile-toggle {
       display: inline-block !important;
     }
-    .mobile-toggle{
+    .mobile-toggle {
       margin-top: -110px !important;
-      background:none;
+      background: none;
     }
     .dropdown-menu {
       position: static;
@@ -178,22 +177,16 @@
       }
       .open-add {
         .admission-open {
-          background-color: #011898;
-          color: #fff;
-          font-weight: 700;
           font-size: 12px !important;
-          font-family: Montserrat;
-          width: 100%;
-          
+          border-radius: 2px;
+          line-height: 28px;
         }
       }
     }
   }
-  
 }
 
-
- @media (min-width: 600px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 768px) {
   nav {
     .navSideBar {
       display: none;
@@ -204,9 +197,9 @@
     .mobile-toggle {
       display: inline-block !important;
     }
-    .mobile-toggle{
+    .mobile-toggle {
       margin-top: -100px !important;
-      background:none;
+      background: none;
     }
     .dropdown-menu {
       position: static;
@@ -223,13 +216,9 @@
       }
       .open-add {
         .admission-open {
-          background-color: #011898;
-          color: #fff;
-          font-weight: 700;
           font-size: 12px !important;
-          font-family: Montserrat;
-          width: 100%;
-          
+          border-radius: 2px;
+          line-height: 28px;
         }
       }
     }
@@ -237,7 +226,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 968px) {
-
   nav {
     .navSideBar {
       display: none;
@@ -248,9 +236,9 @@
     .mobile-toggle {
       display: inline-block !important;
     }
-    .mobile-toggle{
+    .mobile-toggle {
       margin-top: -100px !important;
-      background:none;
+      background: none;
     }
     .dropdown-menu {
       position: static;
@@ -267,13 +255,9 @@
       }
       .open-add {
         .admission-open {
-          background-color: #011898;
-          color: #fff;
-          font-weight: 700;
           font-size: 12px !important;
-          font-family: Montserrat;
-          width: 100%;
-          
+          border-radius: 2px;
+          line-height: 28px;
         }
       }
     }
@@ -281,22 +265,18 @@
 }
 
 @media (min-width: 768px) and (max-width: 1399px) {
-  .header-banner{
-    .nav-link{
-  font-size: 10px !important;
+  .header-banner {
+    .nav-link {
+      font-size: 10px !important;
     }
   }
-  .navbar{
+  .navbar {
     .open-add {
       .admission-open {
-        background-color: #011898;
-        color: #fff;
-        font-weight: 700;
         font-size: 12px !important;
-        font-family: Montserrat;
-        width: 100%;
-        
+        border-radius: 2px;
+        line-height: 28px;
       }
+    }
   }
-}
 }

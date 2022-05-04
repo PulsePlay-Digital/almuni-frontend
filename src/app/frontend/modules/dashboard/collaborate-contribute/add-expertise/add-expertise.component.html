@@ -1,6 +1,7 @@
+<div class="expertise p-4">
 <div class="d-sm-flex align-items-center justify-content-between my-4">
     <h4 class="main-heading text-uppercase fw-bolder mb-0">Add expertise</h4>
-    <button class="btn btn-md btn-primary rounded" (click)="navigateBack()">Back</button>
+    <button class="btn btn-md back-btn text-white rounded" (click)="back()">Back</button>
 </div>
 
 <form class="example-form" [formGroup]="addExpertiseForm">
@@ -91,8 +92,9 @@
                 Submit
             </button>
             <button class="btn btn-md btn-primary rounded text-white"
-              (click)="navigateBack()">Back</button>
+              (click)="back()">Back</button>
           </div>
         </div>
     </div>
 </form>
+</div>

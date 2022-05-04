@@ -35,7 +35,9 @@ export class MentorshipComponent implements OnInit {
    * Function to navigate on view detail page
    * @param params
    */
-  viewDetail(params: any) {
-    this.router.navigate(["/collaborate-contribute/view-details"]);
+  viewDetail(params: number) {
+    this.router.navigate(["/collaborate-contribute/view-details"], {
+      queryParams: { id: params }
+    });
   }
 }
