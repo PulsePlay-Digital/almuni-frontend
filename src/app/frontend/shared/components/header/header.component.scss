@@ -181,6 +181,9 @@
           border-radius: 2px;
           line-height: 28px;
         }
+        .login-register{
+          font-size: 12px !important;
+        } 
       }
     }
   }
@@ -220,6 +223,9 @@
           border-radius: 2px;
           line-height: 28px;
         }
+        .login-register{
+          font-size: 12px !important;
+        } 
       }
     }
   }
@@ -260,6 +266,11 @@
           line-height: 28px;
         }
       }
+      .open-add{
+        .login-register{
+          font-size: 12px !important;
+        }  }
+      
     }
   }
 }
@@ -271,12 +282,15 @@
     }
   }
   .navbar {
-    .open-add {
-      .admission-open {
+    .open-add{
+     .admission-open {
         font-size: 12px !important;
         border-radius: 2px;
         line-height: 28px;
       }
-    }
+      .login-register{
+        font-size: 12px !important;
+      }
+    }   
   }
 }
