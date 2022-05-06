@@ -145,6 +145,19 @@
         </div>
     
     </div>
+    <!-- <div class="col-md-4 my-3">
+      <label class="form-label">Option </label>
+      <select class="form-select" formControlName="role">
+      <option value="" selected>Select option</option>
+        <option *ngFor="let role of userRole" [value]="role.id">
+          {{ role?.label }}
+        </option>
+      </select>
+      <div class="text-danger fw-bold mt-2"
+        *ngIf="(f.role.touched || submitted) && f.role.errors?.required">
+        Role is required.
+      </div>
+    </div> -->
 </div>
 <div class="row justify-content-center pt-lg-3 pt-md-3 pt-sm-3 pt-2">
   <div class="col-md-4 text-center ">

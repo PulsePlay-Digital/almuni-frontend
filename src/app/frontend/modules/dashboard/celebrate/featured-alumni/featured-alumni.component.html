@@ -10,8 +10,8 @@
             <div class="card p-xl-5 p-lg-5 p-md-5 p-sm-4 p-2 text-center">
                 <img [src]="imgPath + item.picture" class="card-img-top" alt="featured_user">
                 <div class="card-body p-0 pt-3">
-                <p class="card-text fs-5 fw-bold">{{ item?.alumni_name }}</p>
-                <p class="card-text">{{ item?.batch_year }}</p>
+                <p class="card-text fs-5 fw-bold"> <span class="name">Name: </span>{{ item?.alumni_name }}</p>
+                <p class="card-text"> <span class="name">Name: </span>{{ item?.batch_year }}</p>
                 <p class="card-text designation">{{ item?.designation }}</p>
                 <div class="row justify-content-center pt-2">
                     <div class="col-lg-12 col-md-12">

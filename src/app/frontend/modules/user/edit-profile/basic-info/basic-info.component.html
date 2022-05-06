@@ -129,7 +129,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6 my-3">
+                <div class="col-md-4 my-3">
                     <label class="form-label">Personal email Id <span class="label-danger">*</span></label>
                     <input type="email" class="form-control" formControlName="personal_email" placeholder="Enter personal email">
                     <div class="text-danger mt-2" *ngIf="(f.personal_email.touched || submitted) && f.personal_email.errors?.required">
@@ -139,10 +139,24 @@
                         Email format is incorrect.
                     </div>
                 </div>
-                <div class="col-md-6 my-3">
+                <div class="col-md-4 my-3">
                     <label class="form-label">Office email Id </label>
                     <input type="email" class="form-control" formControlName="office_email" placeholder="Enter offical mail">
                 </div>
+                <div class="col-md-4 my-3">
+                    <label class="form-label">Option </label>
+                    <select class="form-select" formControlName="role">
+                      <!-- <option value="" selected disabled hidden>Select option</option> -->
+                      <option value="" selected>Select option</option>
+                      <option *ngFor="let role of userRole" [value]="role.id">
+                        {{ role?.label }}
+                      </option>
+                    </select>
+                    <div class="text-danger fw-bold mt-2"
+                      *ngIf="(f.role.touched || submitted) && f.role.errors?.required">
+                      Role is required.
+                    </div>
+                  </div>
             </div>
 
             <div class="row">

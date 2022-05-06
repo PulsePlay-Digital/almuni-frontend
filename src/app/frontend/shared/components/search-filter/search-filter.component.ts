@@ -12,9 +12,11 @@ export class SearchFilterComponent implements OnInit {
   getInstitutes: any;
   getBatch: any;
   getFormData: any;
+
   constructor(public fb: FormBuilder, public dataService: DataService) { 
    
   }
+  
 
   ngOnInit(): void {
     this.buildForm();

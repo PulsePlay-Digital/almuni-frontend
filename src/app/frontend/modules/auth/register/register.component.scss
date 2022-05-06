@@ -40,7 +40,7 @@
     width: 100px;
       position: absolute;
       top: 24%;
-      left: 61%;
+      left: 60%;
       border-radius: 100%;
       object-fit: cover;
       cursor: pointer;
@@ -52,7 +52,7 @@
       height: 100px;
       width: 100px;
       position: absolute;
-      top: 24%;
+      top: 30%;
       left: 60%;
       opacity: 0;
       cursor: pointer;
@@ -68,8 +68,35 @@
     .login-background {
       .left-box {
         height: 100%;
-        padding: 70px;
+        padding: 60px;
       }
+    }
+    .photo.justify-content-center {
+   
+      img {
+        height: 100px;
+      width: 100px;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+       
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 120%;
+        left: 30%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
+    
     }
   }
 }
@@ -81,6 +108,31 @@
         padding: 150px;
       }
     }
+    .photo.justify-content-center {
+   
+      img {
+        height: 100px;
+      width: 100px;
+      
+        border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+       
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 140%;
+        left: 50%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
+    
+    }
   }
 }
 @media (min-width: 768px) and (max-width: 968px) {
@@ -88,18 +140,169 @@
     .login-background {
       .left-box {
         height: 100%;
-        padding: 31px;
+        padding: 20px;
       }
+    }
+    .photo.justify-content-center {
+   
+      img {
+        height: 100px;
+      width: 100px;
+        position: absolute;
+        top: 40%;
+      border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+       
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+     opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
+    
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 968px) and (max-width: 1300px) {
+  .register-page {
+    .login-background {
+      .left-box {
+        height: 100%;
+        padding: 31px;
+      }
+    }
+    .photo.justify-content-center {
+   
+      img {
+        height: 100px;
+      width: 100px;
+        position: absolute;
+        top: 40%;
+     border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+       
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+       opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
+    
+    }
+  }
+}
+@media (min-width: 1300px) and (max-width: 1500px) {
   .register-page {
     .login-background {
       .left-box {
         height: 100%;
         padding: 25px;
       }
+    }
+      .photo.justify-content-center {
+   
+        img {
+          height: 100px;
+        width: 100px;
+          position: absolute;
+          top: 40%;
+     border-radius: 100%;
+          object-fit: cover;
+          cursor: pointer;
+         
+        }
+      }
+      .choose_file {
+        input[type="file"] {
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          top: 40%;
+          opacity: 0;
+          cursor: pointer;
+          z-index: 9999;
+        }
+      
+      
+    }
+  }
+}
+@media (min-width: 1500px) and (max-width: 1600px) {
+  .register-page {
+    .login-background {
+      .left-box {
+        height: 100%;
+        padding: 25px;
+      }
+    }
+      .photo.justify-content-center {
+   
+        img {
+          height: 100px;
+        width: 100px;
+          position: absolute;
+          top: 40%;
+         border-radius: 100%;
+          object-fit: cover;
+          cursor: pointer;
+         
+        }
+      }
+      .choose_file {
+        input[type="file"] {
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          top: 40%;
+          opacity: 0;
+          cursor: pointer;
+          z-index: 9999;
+        }
+      
+      
+    }
+  }
+}
+@media (min-width: 1600px) and (max-width: 1870px) {
+  .register-page {
+    .photo.justify-content-center {
+   
+      img {
+        height: 100px;
+      width: 100px;
+        position: absolute;
+        top: 40%;
+       border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+       
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+      opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
+    
     }
   }
 }

@@ -18,7 +18,7 @@ export class Config {
 
   role() {
     return [
-      { id: 0, label: 'Admin' },
+      { id: 0, label: 'Student' },
       { id: 1, label: 'Alumni' }
     ];
   }
