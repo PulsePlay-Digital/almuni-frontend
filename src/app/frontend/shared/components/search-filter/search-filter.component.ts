@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { Config } from "./../../../services/config";
 import { DataService } from "./../../../services/data.service";
 
 @Component({
@@ -12,10 +13,13 @@ export class SearchFilterComponent implements OnInit {
   getInstitutes: any;
   getBatch: any;
   getFormData: any;
+  userRole: any;
 
-  constructor(public fb: FormBuilder, public dataService: DataService) { 
-   
-  }
+  constructor(public fb: FormBuilder, 
+    public dataService: DataService,
+    public config: Config) {
+      this.userRole = this.config.role();
+     }
   
 
   ngOnInit(): void {
@@ -45,7 +49,8 @@ export class SearchFilterComponent implements OnInit {
       current_company: [""],
       reg_date_from: [""],
       reg_date_to: [""],
-      otherRegion:[""]  
+      otherRegion:[""],
+      role:['']  
       });
   }
 
