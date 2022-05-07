@@ -17,6 +17,8 @@ import { SearchFilterComponent } from "./components/search-filter/search-filter.
 import { StripHtmlPipe } from './pipes/strip-html.pipe';
 import { DialogEntrepreneurshipComponent } from './components/dialog-entrepreneurship/dialog-entrepreneurship.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import { StartupCornerComponent } from './components/startup-corner/startup-corner.component';
+import { AskforGeneralComponent } from './components/askfor-general/askfor-general.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     ResetPasswordComponent,
     SearchFilterComponent,
     StripHtmlPipe,
-    DialogEntrepreneurshipComponent
+    DialogEntrepreneurshipComponent,
+    StartupCornerComponent,
+    AskforGeneralComponent,
   ],
   imports: [
     CommonModule,

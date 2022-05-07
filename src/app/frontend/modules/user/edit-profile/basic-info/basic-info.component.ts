@@ -17,6 +17,7 @@ export class BasicInfoComponent implements OnInit {
   maritalStatus: any;
   bloodGroup: any;
   countries: any;
+  userRole: any;
   submitted: boolean = false;
   showOpt: boolean = false;
   constructor(
@@ -28,6 +29,7 @@ export class BasicInfoComponent implements OnInit {
     this.gender = this.config.genderDt();
     this.maritalStatus = this.config.maritalStatus();
     this.bloodGroup = this.config.bloodGroup();
+    this.userRole = this.config.role();
   }
 
   ngOnInit(): void {
