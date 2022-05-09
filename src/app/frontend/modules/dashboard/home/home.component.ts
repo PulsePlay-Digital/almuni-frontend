@@ -14,37 +14,30 @@ export class HomeComponent implements OnInit {
   gallery: any;
   featuredAlumni: any;
   alumni: any;
-  homebanner: any;
+  homebanner:any;
   loading: boolean = false;
   imgPath = environment.imgUrl;
 
-  // Home banner options
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
     mouseDrag: true,
     touchDrag: false,
-    pullDrag: false,
+   pullDrag: false,
     dots: false,
     navSpeed: 700,
     autoplay: true,
     autoplayTimeout: 3000,
-
+    
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
     ],
     nav: true,
   };
-  // Home banner json data
-  homeBanner = [
-    { id: 1, src: "../../../../../assets/Banner.jpg" },
-    { id: 2, src: "../../../../../assets/Banner.jpg" },
-    { id: 3, src: "../../../../../assets/Banner.jpg" },
-    { id: 4, src: "../../../../../assets/Banner.jpg" },
-  ];
-
-  customOptions: OwlOptions = {
+   homeBanner = [{id:1, src:"../../../../../assets/Banner.jpg"},{id:2, src:"../../../../../assets/Banner.jpg"},{id:3, src:"../../../../../assets/Banner.jpg"},{id:4, src:"../../../../../assets/Banner.jpg"}] 
+  
+   customOptions: OwlOptions = {
     loop: true,
     items: 1,
     mouseDrag: true,
@@ -61,7 +54,6 @@ export class HomeComponent implements OnInit {
     nav: true,
   };
 
-  // Gallery Options
   galleryOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -102,12 +94,16 @@ export class HomeComponent implements OnInit {
     public router: Router,
     public config: Config,
     public dataService: DataService
-  ) { }
+  ) {
+    // this.gallery = this.config.gallary();
+    // this.featuredAlumni = this.config.alumniStories();
+  }
 
   ngOnInit(): void {
     this.loading = true;
     this.getAllFeaturedAlumni();
     this.getAllGallery();
+    this.getAllHomebanner();
   }
   /**
    * Function to connect user with alumni
@@ -142,8 +138,19 @@ export class HomeComponent implements OnInit {
   async getAllGallery() {
     let action: string = "all-gallery";
     await this.dataService.getData(action).subscribe((result: any) => {
-      this.gallery = result?.data;
+      this.gallery =  result?.data;
+      this.loading = false;                                                                                                                                                                                                                               
+    })
+  }
+  
+ /**
+   * Function to get homebanner
+   */
+  async getAllHomebanner() {
+    let action: string = "all-homebanner";
+    await this.dataService.getData(action).subscribe((result: any) => {
+      this.homebanner =  result?.data;
       this.loading = false;
-    });
+    })
   }
 }
