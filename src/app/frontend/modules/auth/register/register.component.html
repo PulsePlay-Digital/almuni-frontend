@@ -18,7 +18,7 @@
                 </div>
                 <h4 class="register-text text-white pt-3">
                   <br />
-                  This Is Exclusively For Sri Balaji <br/>
+                  This is exclusively for Sri Balaji <br/>
                   University, Pune Alumni
                 </h4>
               </div>
@@ -209,8 +209,13 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
+                      <div class="form-outline mb-3">
+                        <input type="textarea" class="form-control p-3 border-0 rounded-0" formControlName="address" id="Address" placeholder="Address" />
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
                       <select class="form-select p-3 border-0 rounded-0" formControlName="role">
-                        <option value="" selected disabled hidden>Select option</option>
+                        <option value="" selected disabled hidden>SignUp as a</option>
                         <option *ngFor="let role of userRole" [value]="role.id">
                           {{ role?.label }}
                         </option>

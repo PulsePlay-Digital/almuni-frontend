@@ -14,9 +14,28 @@ export class HomeComponent implements OnInit {
   gallery: any;
   featuredAlumni: any;
   alumni: any;
+  homebanner:any;
   loading: boolean = false;
   imgPath = environment.imgUrl;
 
+  homebannerOptions: OwlOptions = {
+    loop: true,
+    items: 1,
+    mouseDrag: true,
+    touchDrag: false,
+   pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    
+    navText: [
+      '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+      '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+    ],
+    nav: true,
+  };
+   homeBanner = [{id:1, src:"../../../../../assets/Banner.jpg"},{id:2, src:"../../../../../assets/Banner.jpg"},{id:3, src:"../../../../../assets/Banner.jpg"},{id:4, src:"../../../../../assets/Banner.jpg"}] 
   customOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -83,6 +102,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.getAllFeaturedAlumni();
     this.getAllGallery();
+    this.getAllHomebanner();
   }
   /**
    * Function to connect user with alumni
@@ -118,6 +138,17 @@ export class HomeComponent implements OnInit {
     let action: string = "all-gallery";
     await this.dataService.getData(action).subscribe((result: any) => {
       this.gallery =  result?.data;
+      this.loading = false;
+    })
+  }
+  
+ /**
+   * Function to get homebanner
+   */
+  async getAllHomebanner() {
+    let action: string = "all-homebanner";
+    await this.dataService.getData(action).subscribe((result: any) => {
+      this.homebanner =  result?.data;
       this.loading = false;
     })
   }

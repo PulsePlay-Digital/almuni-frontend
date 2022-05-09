@@ -1,6 +1,6 @@
 <!--- Home Banner Section --->
 <div class="bannerSlider">
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -21,7 +21,16 @@
           <img src="./assets/home/image3.png" class="d-block w-100" alt="Banner">
       </div>
   </div>
-</div>
+</div> -->
+<app-loader *ngIf="loading"></app-loader>
+<owl-carousel-o [options]="homebannerOptions">
+    <ng-template carouselSlide *ngFor="let data of homebanner">
+        <div class="homebannerImg">
+                <img [src]="data?.src" [alt]="data.alt" >
+        </div>
+    </ng-template>
+</owl-carousel-o>
+
 <div class="container">
   <div class="row my-lg-5 my-md-5 my-sm-4 my-4">
       <div class="col openAdd text-center ">
