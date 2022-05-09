@@ -41,12 +41,12 @@
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-             <div class="form-outline mb-3">
+        <div class="form-outline mb-3">
           <input type="number" class="form-control" formControlName="otherRegion" id="inputMobileNumber"
             placeholder="Other region" />
         </div>
       </div>
-   
+
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Last name" />
@@ -88,8 +88,8 @@
           <input type="text" class="form-control" formControlName="country" id="inputEmail"
             placeholder="Other industry focus" />
         </div>
-        </div>
-        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Company" />
         </div>
@@ -143,23 +143,28 @@
             </option>
           </select>
         </div>
-    </div>
-    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-      <div class="form-outline mb-3">
-        <select class="form-select" formControlName="role">
-          <option value="" selected>Select user role</option>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <select class="form-select" formControlName="role">
+            <option value="" selected>Select user role</option>
             <option *ngFor="let role of userRole" [value]="role.id">
               {{ role?.label }}
             </option>
           </select>
+        </div>
       </div>
-  </div>
-</div>
-<div class="row justify-content-center pt-lg-3 pt-md-3 pt-sm-3 pt-2">
-  <div class="col-md-4 text-center ">
-    <a class="btn search-btn border-0 shadow text-white">Search
-    </a>
-  </div>
-</div>
-</form>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <input type="textarea" class="form-control" formControlName="country" id="inputEmail" placeholder="Address" />
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-lg-3 pt-md-3 pt-sm-3 pt-2">
+      <div class="col-md-4 text-center ">
+        <a class="btn search-btn border-0 shadow text-white">Search
+        </a>
+      </div>
+    </div>
+  </form>
 </div>

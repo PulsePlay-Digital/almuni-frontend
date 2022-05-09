@@ -18,7 +18,7 @@
                 </div>
                 <h4 class="register-text text-white pt-3">
                   <br />
-                  This Is Exclusively For Sri Balaji <br/>
+                  This is exclusively for Sri Balaji <br/>
                   University, Pune Alumni
                 </h4>
               </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-md-5 my-2">
                       <select class="form-select p-3 border-0 rounded-0" formControlName="institute_id">
-                        <option value="" selected>Choose your institute</option>
+                        <option value="" selected>Choose your Institute</option>
                         <option [value]="institute.id" *ngFor="let institute of getInstitutes">
                           {{ institute.institute_name }}
                         </option>
@@ -127,7 +127,7 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
-                      <input type="text" placeholder="DD/MM/YYYY" class="form-control border-0 rounded-0"
+                      <input type="text" placeholder="DD/MM/YYYY (DOB)" class="form-control border-0 rounded-0"
                         formControlName="birth_date" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" />
                       <div class="text-danger fw-bold mt-2"
                         *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
@@ -209,8 +209,13 @@
                       </div>
                     </div>
                     <div class="col-md-5 my-2">
+                      <div class="form-outline mb-3">
+                        <input type="textarea" class="form-control p-3 border-0 rounded-0" formControlName="address" id="Address" placeholder="Address" />
+                      </div>
+                    </div>
+                    <div class="col-md-5 my-2">
                       <select class="form-select p-3 border-0 rounded-0" formControlName="role">
-                        <option value="" selected disabled hidden>Select option</option>
+                        <option value="" selected disabled hidden>SignUp as a</option>
                         <option *ngFor="let role of userRole" [value]="role.id">
                           {{ role?.label }}
                         </option>
