@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { UserService } from "src/app/frontend/services/user.service";
 import { Config } from "./../../../services/config";
 import { DataService } from "./../../../services/data.service";
 
@@ -17,6 +18,7 @@ export class SearchFilterComponent implements OnInit {
 
   constructor(public fb: FormBuilder, 
     public dataService: DataService,
+    private userService: UserService,
     public config: Config) {
       this.userRole = this.config.role();
      }
@@ -24,10 +26,10 @@ export class SearchFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
-    // this.onChangeValue();
-    // this.getAllInstitutes();
-    // this.getAllBatches();
-    // this.filteruserData();
+    this.onChangeValue();
+    this.getAllInstitutes();
+    this.getAllBatches();
+    this.filteruserData();
   }
 
   buildForm() {
@@ -92,8 +94,8 @@ export class SearchFilterComponent implements OnInit {
    * User search filter
    */
   async filteruserData() {
-    // await this.userService.filterUsers(this.searchForm.value).subscribe((res: any) => {
-    //   this.userService.filteredData.next(res);
-    // })
+    await this.userService.filterUsers(this.searchForm.value).subscribe((res: any) => {
+      // this.userService.filteredData.next(res);
+    })
   }
 }

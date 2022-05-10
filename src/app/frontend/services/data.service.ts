@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +13,25 @@ export class DataService {
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
-
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side errors
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Server-side errors
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
   /**
    * Api to get all institutes name
    * @returns 
    */
   public getAllInstitutes() {
-    return this.http.get(`${this.url}/all-institute`);
+    return this.http.get(`${this.url}/all-institute`).pipe(catchError(this.handleError));
+    // return this.http.get(`${this.url}/all-institute`);
   }
 
   /**
@@ -44,14 +58,14 @@ export class DataService {
   }
 
   public postData(action?: any, data?: any) {
-   if (action?.action === 'create-event' || action?.action === 'create-club'
-    || action?.action === 'create-journey') {
+    if (action?.action === 'create-event' || action?.action === 'create-club'
+      || action?.action === 'create-journey') {
       return this.http.post<any>(`${this.url}/${action?.action}`, data);
-    } 
+    }
     return this.http.post<any>(`${this.url}/${action}`, data);
   }
 
-  updateData(action:string, data: any) {
-      return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+  updateData(action: string, data: any) {
+    return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }
 }

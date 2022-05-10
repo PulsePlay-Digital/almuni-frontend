@@ -28,4 +28,12 @@ export class UserService {
     return this.http.post<any>(`${this.url}/${action?.action}` + '/' + action?.id, data);
   }
 
+   /**
+   * Api to filter user data by params
+   * @param data 
+   * @returns 
+   */
+    public filterUsers(data: any) {
+      return this.http.post(`${this.url}/filter`, data);
+    }
 }
