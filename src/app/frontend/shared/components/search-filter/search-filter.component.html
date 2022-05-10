@@ -9,47 +9,22 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
+          <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Last name" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <input type="email" class="form-control" formControlName="email" id="inputEmail" placeholder="Email" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
           <select class="form-select" placeholder="Select institute name" formControlName="institute_id">
             <option value="">Choose your institute</option>
             <option [value]="institute.id" *ngFor="let institute of getInstitutes">
-              {{ institute.institute_name }}
+              {{ institute?.institute_name }}
             </option>
           </select>
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="name" class="form-control" formControlName="bloodGroop" id="inputName"
-            placeholder="Blood group" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="number" class="form-control" formControlName="city" id="inputMobileNumber" placeholder="City" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="number" class="form-control" formControlName="secondaryArea" id="inputMobileNumber"
-            placeholder="Secondary functional area" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="number" class="form-control" formControlName="secondaryIndusrty" id="inputMobileNumber"
-            placeholder="Secondary industry" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="number" class="form-control" formControlName="otherRegion" id="inputMobileNumber"
-            placeholder="Other region" />
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Last name" />
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
@@ -64,25 +39,201 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Country" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
           <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
-            <option value="" selected>Profession Category</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
-              {{ batch.batch }}
-            </option>
+            <option value="" selected>Gender</option>
+            <option value=""> All</option>
+            <option value="Male"> Male</option>
+            <option value="Female"> Female</option>
           </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="country" id="inputEmail"
-            placeholder="Other funcational area" />
+          <select placeholder="Select blood group" class="form-select" formControlName="bloodGroop">
+            <option value="" selected>Blood Group</option>
+            <option value="">All</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
         </div>
       </div>
+
+
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Country" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <input type="text" class="form-control" formControlName="state" id="inputEmail" placeholder="State" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <input type="number" class="form-control" formControlName="city" id="inputMobileNumber" placeholder="City" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+        <div class="form-outline mb-3">
+          <select placeholder="Select profession category" class="form-select" formControlName="batchYear_id">
+            <option value="" selected>Profession Category</option>
+            <option value="employed">
+              Employed
+            </option>
+            <option value="business">
+              Business Owner/Founder/Co-Founder/Self Employed
+            </option>
+            <option value="both">
+              Both
+            </option>
+          </select>
+        </div>
+      </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
+              <option value="" selected>Primary functinal area</option>
+              <option value=""> All</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Branding">Branding</option>
+              <option value="Digital">Digital</option>
+              <option value="CRM/CX">CRM/CX</option>
+              <option value="Corporate Strategy">Corporate Strategy</option>
+              <option value="IT">IT</option>
+              <option value="Operations">Operations</option>
+              <option value="Supply Chain">Supply Chain</option>
+              <option value="Finance">Finance</option>
+              <option value="Banking">Banking</option>
+              <option value="HR-Recruiting">HR-Recruiting</option>
+              <option value="HR-Talent Management">HR-Talent Management</option>
+              <option value="HR-Learning &amp; Growth">HR-Learning &amp; Growth</option>
+              <option value="HR-Generalist">HR-Generalist</option>
+              <option value="Consulting">Consulting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Select secondary functional area" class="form-select" formControlName="secondaryArea">
+              <option value="">Secondary Function Area</option>
+              <option value=""> All</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Branding">Branding</option>
+              <option value="Digital">Digital</option>
+              <option value="CRM/CX">CRM/CX</option>
+              <option value="Corporate Strategy">Corporate Strategy</option>
+              <option value="IT">IT</option>
+              <option value="Operations">Operations</option>
+              <option value="Supply Chain">Supply Chain</option>
+              <option value="Finance">Finance</option>
+              <option value="Banking">Banking</option>
+              <option value="HR-Recruiting">HR-Recruiting</option>
+              <option value="HR-Talent Management">HR-Talent Management</option>
+              <option value="HR-Learning &amp; Growth">HR-Learning &amp; Growth</option>
+              <option value="HR-Generalist">HR-Generalist</option>
+              <option value="Consulting">Consulting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
+              <option value="" selected>Primary industry</option>
+              <option [value]="batch.id" *ngFor="let batch of getBatch">
+                {{ batch.batch }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
+              <option value="" selected>Select current region</option>
+              <option value="">Select Current Region</option>
+              <option value=""> All</option>
+              <option value="India">India</option>
+              <option value="Asia (Excluding India)">Asia (Excluding India)</option>
+              <option value="North Americas">North Americas</option>
+              <option value="South Americas">South Americas</option>
+              <option value="UK/Europe">UK/Europe</option>
+              <option value="Middle East">Middle East &amp; Africa</option>
+              <option value="Australia">Australia &amp; New Zealand</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Select secondary industry" class="form-select" formControlName="secondaryIndusrty">
+              <option value="">Secondary Indusrty</option>
+              <option value=""> All</option>
+              <option value="Aerospace and Defense">Aerospace and Defense</option>
+              <option value="Automotive">Automotive</option>
+              <option value="Banking, Finance &amp; Insurance">Banking, Finance &amp; Insurance
+              </option>
+              <option value="Chemicals">Chemicals</option>
+              <option value="Consumer Products">Consumer Products</option>
+              <option value="Defense and Security">Defense and Security</option>
+              <option value="E-Commerce">E-Commerce</option>
+              <option value="Education and Research">Education and Research</option>
+              <option value="Engineering, Construction, and Operations">Engineering,
+                Construction, and Operations
+              </option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="High Tech &amp; Information Technology">High Tech &amp; Information
+                Technology
+              </option>
+              <option value="Industrial Machinery and Components">Industrial Machinery and
+                Components
+              </option>
+              <option value="Life Sciences">Life Sciences</option>
+              <option value="Media, Entertainment, Events">Media, Entertainment, Events
+              </option>
+              <option value="Mill Products">Mill Products</option>
+              <option value="Mining">Mining</option>
+              <option value="Oil and Gas">Oil and Gas</option>
+              <option value="Pharmaceuticals">Pharmaceuticals</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Public Sector">Public Sector</option>
+              <option value="Retail">Retail</option>
+              <option value="Sports">Sports</option>
+              <option value="Telecommunications">Telecommunications</option>
+              <option value="Travel, Hotels, Hospitality and Transportation">Travel,
+                Hotels, Hospitality and Transportation
+              </option>
+              <option value="Utilities">Utilities</option>
+              <option value="Wholesale Distribution">Wholesale Distribution</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+          <div class="form-outline mb-3">
+            <select placeholder="Other region" class="form-select" formControlName="otherRegion">
+              <option value="">Select Current Region</option>
+              <option value=""> All</option>
+              <option value="India">India</option>
+              <option value="Asia (Excluding India)">Asia (Excluding India)</option>
+              <option value="North Americas">North Americas</option>
+              <option value="South Americas">South Americas</option>
+              <option value="UK/Europe">UK/Europe</option>
+              <option value="Middle East">Middle East &amp; Africa</option>
+              <option value="Australia">Australia &amp; New Zealand</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
           <input type="text" class="form-control" formControlName="country" id="inputEmail"
@@ -94,56 +245,7 @@
           <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Company" />
         </div>
       </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="last_name" id="inputEmail" placeholder="Email" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
-            <option value="" selected>Gender</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
-              {{ batch.batch }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="State" />
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
-            <option value="" selected>Primary functinal area</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
-              {{ batch.batch }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
-            <option value="" selected>Primary industry</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
-              {{ batch.batch }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
-            <option value="" selected>Select current region</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
-              {{ batch.batch }}
-            </option>
-          </select>
-        </div>
-      </div>
+
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
           <select class="form-select" formControlName="role">
@@ -152,11 +254,6 @@
               {{ role?.label }}
             </option>
           </select>
-        </div>
-      </div>
-      <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-        <div class="form-outline mb-3">
-          <input type="textarea" class="form-control" formControlName="country" id="inputEmail" placeholder="Address" />
         </div>
       </div>
     </div>

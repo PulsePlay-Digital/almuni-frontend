@@ -102,6 +102,32 @@ h4.font-italic.mb-4 {
     padding: 12px;
     text-transform: uppercase;
 }
+.bannerSlider{
+    .owl-nav {
+        display: flex !important;
+        justify-content: space-between !important;
+        position: relative;
+        top: -400px !important;
+        .owl-prev {
+            background: none !important;
+            
+            i {
+                color    : B9B9B9;
+                font-size: 24px;
+            }
+        }
+
+        .owl-next {
+           
+            background: none !important;
+            i {
+                color    : B9B9B9;
+                font-size: 24px;
+            }
+        }
+    }
+
+}
 .alumni {
     .owl-nav {
         .owl-prev {
