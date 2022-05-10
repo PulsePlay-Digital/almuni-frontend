@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs/internal/Subject';
+import { takeUntil } from 'rxjs/operators';
 import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from 'src/app/frontend/services/data.service';
 import { environment } from 'src/environments/environment';
@@ -14,6 +16,7 @@ export class NewsUpdatesComponent implements OnInit {
   imgPath = environment.imgUrl;
   p: number = 1;
   loading: boolean = false;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(private dataService: DataService,
     public notify: TokenInterceptor
   ) { }
@@ -26,11 +29,17 @@ export class NewsUpdatesComponent implements OnInit {
    */
   async getAllNews() {
     let action: string = 'all-news';
-    await this.dataService.getData(action).subscribe((res: any) => {
+    await this.dataService.getData(action).pipe(takeUntil(this.destroy$)).subscribe((res: any) => {
       this.allNewsUpdates = res.data;
+      console.log(this.allNewsUpdates)
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);
     })
+  }
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    // Unsubscribe from the subject
+    this.destroy$.unsubscribe();
   }
 }

@@ -31,7 +31,6 @@ export class DataService {
    */
   public getAllInstitutes() {
     return this.http.get(`${this.url}/all-institute`).pipe(catchError(this.handleError));
-    // return this.http.get(`${this.url}/all-institute`);
   }
 
   /**
