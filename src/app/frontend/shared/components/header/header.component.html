@@ -1,16 +1,26 @@
 <div class="header-banner">
-    <div class="container">
+    <div class="container-fluid px-5">
         <div class="navbar navbar-expand-lg navbar-light">
             <div class="row main-header">
-                <div class="col-xl-8 col-lg-8 header-logos col-md-6 col-sm-12 text-center pt-lg-2">
+                <!-- <div class="col-xl-8 col-lg-8 header-logos col-md-6 col-sm-12 text-center pt-lg-2">
                     <a href="/">
                         <img src="./assets/logo.png" class="logo me-2 img-fluid" alt=" Shri Balaji Logo">
                         <img src="./assets/logosbs.png" class="logo-img img-fluid" alt="Shri Balaji Logo">
-                    </a>
-                </div>
+                    </a>        
+                </div> -->
+                <div class="col-xl-4 col-lg-4 header-logos col-md-4 col-sm-12"></div>
                 <div
                     class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6 open-add align-self-center text-lg-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
                     <button type="button" class="btn admission-open fs-6">Admission Open</button>
+                </div>
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6 open-add align-self-center text-lg-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                    <a class="" href=""> <span class="header-icon"><i class="fa fa-envelope-o"
+                                aria-hidden="true"></i></span>admissions@sbup.edu.in</a>
+                </div>
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6 open-add align-self-center text-lg-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
+                    <a class="" href=""> <span class="header-icon"></span>www.sbup.edu.in</a>
                 </div>
                 <div *ngIf="!currentUser"
                     class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6 open-add align-self-center text-end pe-lg-0 pe-md-0 mt-3 mt-xl-0  mt-lg-0 mt-md-0">
@@ -38,8 +48,13 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container">
-            <a class="navbar-brand" href="#"></a>
+        <div class="container-fluid mx-lg-5">
+            <a class="navbar-brand" href="#">
+
+                <img src="./assets/logo.png" class="logo me-2 img-fluid" alt=" Shri Balaji Logo">
+                <img src="./assets/logosbs.png" class="logo-img img-fluid" alt="Shri Balaji Logo">
+            </a>
+
             <button class=" fa-burger fs-4 mobile-toggle border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false"
                 aria-label="Toggle navigation">☰ </button>
@@ -47,7 +62,7 @@
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
                     <li class="nav-item">
                         <a class="nav-link fs-6" aria-current="page" routerLink="/"
-                            >Home</a>
+                            routerLinkActive="active-link">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link fs-6" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -163,7 +178,8 @@
                             <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured-alumni</a>
                             </li>
                             <li><a class="dropdown-item"
-                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate Journey, Achievements & Passion</a></li>
+                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate
+                                    Journey, Achievements & Passion</a></li>
                             <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
                                     Achievement</a></li> -->
                             <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni Passion</a></li> -->
@@ -199,10 +215,7 @@
                             <li> <a href="#" class="dropdown-item">Get Featured</a></li>
                             <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/contact']"
                                     routerLinkActive="active-link">News</a></li>
-                            <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/startup-corner']"
-                                    routerLinkActive="active-link">start</a></li>
-                            <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/askfor-general']"
-                                    routerLinkActive="active-link">ask for general</a></li>
+
                         </ul>
                     </div>
                 </div>

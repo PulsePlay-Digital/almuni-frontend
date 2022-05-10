@@ -2,14 +2,6 @@
   .navbar {
     .main-header {
       width: 100%;
-      .header-logos {
-        .logo {
-          width: 100px;
-        }
-        .logo-img {
-          width: 300px;
-        }
-      }
       .open-add {
         .admission-open {
           background-color: #011898;
@@ -18,7 +10,7 @@
           font-family: Montserrat;
           border-radius: 2px;
           line-height: 28px;
-          width: 100%;
+         
         }
         .admission-open:hover {
           background-color: #fff;
@@ -45,6 +37,40 @@
       .dropdown-menu {
         margin-left: 50px;
       }
+      .dropdown-menu {
+        background-color: #011898;
+        color: #fff !important;
+        a:active{
+          text-decoration: underline;
+        }
+      }
+        
+      .dropdown-item:focus {
+        background: none;
+      }
+      .dropdown-item {
+        color: #fff !important;
+        line-height: 35px;
+        white-space: normal;
+        min-width: 15rem !important;
+      }
+      .trick_top::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #011898;
+        right: 80%;
+        top: -8px;
+        z-index: 99999;
+      }
+      .dropdown-item:hover {
+        background-color: transparent !important;
+        text-decoration: underline;
+      }
     }
   }
   .navbar-nav li:hover > ul.dropdown-menu {
@@ -63,6 +89,12 @@
     padding-left: 2px;
   }
   .navbar {
+    .logo {
+      width: 100px;
+    }
+    .logo-img {
+      width: 300px;
+    }
     .fa-burger {
       display: none;
     }
