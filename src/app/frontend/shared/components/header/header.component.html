@@ -47,28 +47,29 @@
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
                     <li class="nav-item">
                         <a class="nav-link fs-6" aria-current="page" routerLink="/"
-                            routerLinkActive="active-link">Home</a>
+                            >Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link fs-6" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" routerLink="/about-us" routerLinkActive="active-link"> Know
                             Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" routerLink="/about-us/welcome-society">Welcome to Sri Balaji
-                                    Society </a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/balaji-group">Sri Balaji Society
-                                    Group</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/founder">The Founder</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/president-message">President’s
-                                    Message</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/team"> Management Team</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/blessings"> Stalwarts Blessings</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society"> Sri Balaji
-                                    Society for Social</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/aicte-approvals"> AICTE Approvals</a>
-                            </li>
-                            <li><a class="dropdown-item" routerLink="/about-us/equivalence-to-mba"> AIU Equivalence to
-                                    MBA</a></li>
+                            <li><a class="dropdown-item" routerLink="/about-us/founder">Our Founder Chancellor</a></li>
+                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society"> Welcome to Sri
+                                    Balaji</a></li>
+                            <!-- <li><a class="dropdown-item" routerLink="/about-us/welcome-society">Welcome to Sri Balaji
+                                        Society </a></li>
+                                <li><a class="dropdown-item" routerLink="/about-us/balaji-group">Sri Balaji Society
+                                        Group</a></li>
+                                <li><a class="dropdown-item" routerLink="/about-us/president-message">President’s
+                                        Message</a></li>
+                                <li><a class="dropdown-item" routerLink="/about-us/team"> Management Team</a></li>
+                                <li><a class="dropdown-item" routerLink="/about-us/blessings"> Stalwarts Blessings</a></li>
+
+                                <li><a class="dropdown-item" routerLink="/about-us/aicte-approvals"> AICTE Approvals</a>
+                                </li>
+                                <li><a class="dropdown-item" routerLink="/about-us/equivalence-to-mba"> AIU Equivalence to
+                                        MBA</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -77,12 +78,12 @@
                             routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
                                 aria-hidden="true"></i></a>
                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision"> Sri Balaji
-                                    Society: Alumni Connect Vision </a></li>
-                            <li><a class="dropdown-item"
+                            <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision"> The
+                                    Founder Message </a></li>
+                            <!-- <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/common-purpose-culture/strategy-framework'] : ['login']}}">
                                     Sri
-                                    Balaji Society: Alumni Connect Strategy Framework </a></li>
+                                    Balaji Society: Alumni Connect Strategy Framework </a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -102,8 +103,13 @@
                                     Clubs</a></li>
                             <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
-                                    Entrepreneurship
-                                    Club</a></li>
+                                    Business Venture</a></li>
+                            <li>
+                                <a class="dropdown-item" routerLink="/startup-corner">Start-up Corner</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" routerLink="/askfor-general">Ask for General info</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -114,7 +120,7 @@
                             <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['login']}}">
                                     Events At a Glance</a></li>
-                            <li><a class="dropdown-item"
+                            <!-- <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/connect/alumnireunion'] : ['login']}}">
                                     Annual Alumni Re-Union</a></li>
                             <li><a class="dropdown-item"
@@ -125,7 +131,7 @@
                                     Events At/By Sri Balaji Socity Alma Mater</a></li>
                             <li><a class="dropdown-item"
                                     routerLink="{{(currentUser) ? ['/connect/professionalevent'] : ['login']}}">
-                                    Industry / Professional Events</a></li>
+                                    Industry / Professional Events</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -157,11 +163,10 @@
                             <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured-alumni</a>
                             </li>
                             <li><a class="dropdown-item"
-                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Alumni
-                                    Journey</a></li>
-                            <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
-                                    Achievement</a></li>
-                            <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni Passion</a></li>
+                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate Journey, Achievements & Passion</a></li>
+                            <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
+                                    Achievement</a></li> -->
+                            <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni Passion</a></li> -->
                             <li><a class="dropdown-item" routerLink="/celebrate/gallery">Gallery</a></li>
                             <li><a class="dropdown-item" routerLink="/celebrate/magazine">Corporate Citizen Magazine</a>
                             </li>
@@ -190,14 +195,10 @@
                                     routerLinkActive="active-link">
                                     Connect</a> </li>
                             <li><a href="./assets/doc/Transcript-Application-Form1.pdf" target="_blank"
-                                class="dropdown-item">Apply For Transcript</a></li>
+                                    class="dropdown-item">Apply For Transcript</a></li>
                             <li> <a href="#" class="dropdown-item">Get Featured</a></li>
                             <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/contact']"
                                     routerLinkActive="active-link">News</a></li>
-                            <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/startup-corner']"
-                                    routerLinkActive="active-link">Start Up Corner</a></li>
-                            <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/askfor-general']"
-                                    routerLinkActive="active-link">Ask For General</a></li>
                         </ul>
                     </div>
                 </div>
