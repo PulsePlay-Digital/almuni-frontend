@@ -1,7 +1,7 @@
 .register-page {
   .login-background {
     //  background-image: url("../../../../../assets/authImages/registerBg.png");
-    background-color: #f65c8b;
+    background-color:var(--btn-background);
     height: auto;
     background-size: cover;
     background-repeat: no-repeat;
