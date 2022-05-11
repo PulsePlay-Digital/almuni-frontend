@@ -1,7 +1,10 @@
 .card {
-    background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
+    background: #E2E7FF;
     .card-header {
       height: 60px;
+    }
+    img{
+      height: 30vh;
     }
     .itemPic {
       min-height: 210px;

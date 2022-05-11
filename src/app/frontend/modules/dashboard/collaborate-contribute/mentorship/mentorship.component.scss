@@ -1,14 +1,11 @@
 .card {
-  background: linear-gradient(270deg, #fea641 0%, #fdc480 100%);
-  .card-header {
-    height: 60px;
-  }
+  background: #E2E7FF;
+  
   .itemPic {
     min-height: 210px;
     max-height: 210px;
     img {
-      min-height: 210px;
-      max-height: 210px;
+     height: 30vh;
     }
   }
   .view-btn {

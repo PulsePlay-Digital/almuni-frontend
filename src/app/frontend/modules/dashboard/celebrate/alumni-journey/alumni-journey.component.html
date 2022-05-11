@@ -1,33 +1,46 @@
 <div class="alumni-journey">
-<div class="row">
-    <div class="col-lg-12 text-center">
-        <h3 class="main-heading text-uppercase fw-bolder">ALUMNI JOURNEY</h3>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h3 class="main-heading text-uppercase fw-bolder">ALUMNI JOURNEY</h3>
+        </div>
     </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col-lg-4 pt-2">
-        <div class="card p-4">
-            <div class="card-body text-center">
-                <h5 class="card-title fs-6 fw-bold lh-1">Shared Journey By Me</h5>
-                <p class="card-text fs-3 fw-bold py-3">0</p>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                <a (click)="showViewShared()" class="btn share-btn text-white me-2 rounded-1 text-uppercase">Share Journey</a>
+    <div class="row justify-content-center">
+        <div class="col-lg-4 pt-2">
+            <img src="../../../../../../assets/celebrate/celebrate.png" class="img-fluid">
+        </div>
+        <div class="col-lg-3 pt-2 text-center my-lg-4 my-md-3">
+            <div class="card p-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-6 fw-bold lh-1">Shared Journey By Me</h5>
+                    <p class="card-text fs-3 fw-bold py-3">0</p>
+                    <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                        <a (click)="showViewShared()"
+                            class="btn share-btn text-white me-2 rounded-1 text-uppercase">Share Journey</a>
+                    </div> -->
                 </div>
+            </div>
+            <div class="btn-group text-center my-3" role="group" aria-label="Basic example">
+                <a (click)="showViewShared()"
+                    class="btn share-btn text-white me-2 rounded-1 text-uppercase">Share Journey</a>
+            </div>
+        </div>
+        <div class="col-lg-3  pt-2 text-center my-lg-4">
+            <div class="card p-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-6 fw-bold lh-1">Shared Journey By Alumni</h5>
+                    <p class="card-text fs-3 fw-bold  py-3">10</p>
+                    <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" (click)="showSeekDetail()"
+                            class="btn text-white share-btn me-2 rounded-1 text-uppercase">See Journey</button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="btn-group my-3" role="group" aria-label="Basic example">
+                <button type="button" (click)="showSeekDetail()"
+                    class="btn text-white share-btn me-2 rounded-1 text-uppercase">See Journey</button>
             </div>
         </div>
     </div>
-    <div class="col-lg-4  pt-2">
-        <div class="card p-4">
-            <div class="card-body text-center">
-                <h5 class="card-title fs-6 fw-bold lh-1">Shared Journey By Alumni</h5>
-                <p class="card-text fs-3 fw-bold  py-3">10</p>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" (click)="showSeekDetail()" class="btn text-white share-btn me-2 rounded-1 text-uppercase">See Journey</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 <app-shared-by-me *ngIf="isPosted" [title]="title" [type]="type"></app-shared-by-me>
 <app-shared-alumni *ngIf="isShared" [heading]="heading" [alumniData]="alumniData"></app-shared-alumni>

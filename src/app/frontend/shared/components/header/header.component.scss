@@ -2,87 +2,60 @@
   .navbar {
     .main-header {
       width: 100%;
-      .header-logos {
-        .logo {
-          width: 100px;
-        }
-        .logo-img {
-          width: 300px;
-        }
-      }
       .open-add {
         .admission-open {
-          background-color: #011898;
+          background-color: var(--btn-background);
           color: #fff;
           font-weight: 700;
           font-family: Montserrat;
           border-radius: 2px;
           line-height: 28px;
-          width: 100%;
+          font-size: var(--font-S-16);
         }
         .admission-open:hover {
-          background-color: #fff;
+          background-color: var(--btn-background);
           color: #011898;
           border-color: #011898;
         }
         .login-register {
-          background-color: #f65c8b;
-          color: #fff;
-          font-weight: 700;
+          font-weight: 500;
           font-family: Montserrat;
           border-radius: 2px;
           line-height: 28px;
+          font-size: var(--font-S-14);
         }
         .login-register:hover {
           background-color: #fff;
           color: #f65c8b;
           border-color: #f65c8b;
         }
+        i {
+          color: var(--i-color-1);
+          font-size: var(--font-S-24);
+        }
+        a {
+          --font-S-14: 14px;
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+        line-height: 17px;
+        }
       }
+
       .btn:focus {
         box-shadow: none;
       }
       .dropdown-menu {
         margin-left: 50px;
       }
-    }
-  }
-  .navbar-nav li:hover > ul.dropdown-menu {
-    display: block;
-  }
-  .nav-link {
-    color: #000000;
-  }
-  .nav-link:hover {
-    color: #011898 !important;
-  }
-  .nav-link.active-link {
-    color: #011898 !important;
-  }
-  .nav-link i {
-    padding-left: 2px;
-  }
-  .navbar {
-    .fa-burger {
-      display: none;
-    }
-    .responsive-nav {
-      display: none;
-    }
-    .navbar-nav {
-      .nav-link {
-        font-weight: 700;
-        font-family: Montserrat;
-      }
-
       .dropdown-menu {
         background-color: #011898;
         color: #fff !important;
-        a:active{
+        a:active {
           text-decoration: underline;
         }
       }
-      
+
       .dropdown-item:focus {
         background: none;
       }
@@ -109,7 +82,82 @@
         background-color: transparent !important;
         text-decoration: underline;
       }
-    
+    }
+  }
+  .navbar-nav{
+    justify-content: space-around;
+  }
+  .navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+  }
+  .nav-link {
+    color: #000000;
+  }
+  .nav-link:hover {
+    color: var( --nav-color);
+  }
+  .nav-link.active-link {
+    color: var( --nav-color);
+  }
+  .nav-link i {
+    padding-left: 2px;
+  }
+  .navbar {
+    .main-nav{
+      width: 100% !important;
+    }
+    .logo {
+      width: 100px;
+    }
+    .logo-img {
+      width: 300px;
+    }
+    .fa-burger {
+      display: none;
+    }
+    .responsive-nav {
+      display: none;
+    }
+    .navbar-nav {
+      .nav-link {
+        font-weight: 700;
+        font-family: Montserrat;
+      }
+
+      .dropdown-menu {
+        background-color: #011898;
+        color: #fff !important;
+        a:active {
+          text-decoration: underline;
+        }
+      }
+
+      .dropdown-item:focus {
+        background: none;
+      }
+      .dropdown-item {
+        color: #fff !important;
+        line-height: 35px;
+        white-space: normal;
+        min-width: 15rem !important;
+      }
+      .trick_top::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #011898;
+        right: 80%;
+        top: -8px;
+        z-index: 99999;
+      }
+      .dropdown-item:hover {
+        background-color: transparent !important;
+        text-decoration: underline;
+      }
     }
     .right-dropdown {
       .dropdown-menu {
@@ -153,10 +201,11 @@
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
-  nav {
+  .navbar {
     .navSideBar {
       display: none;
     }
+    
     .otherNav {
       display: block !important;
     }
@@ -164,8 +213,7 @@
       display: inline-block !important;
     }
     .mobile-toggle {
-      margin-top: -110px !important;
-      background: none;
+    background: none;
     }
     .dropdown-menu {
       position: static;
@@ -174,7 +222,15 @@
     .trick_top::before {
       display: none !important;
     }
+    .logo-img {
+        width: 100px !important;
+      }
+      .logo {
+        width: 100px !important;
+      }
+   
   }
+
   .header-banner {
     .navbar {
       .dropdown-menu {
@@ -186,9 +242,9 @@
           border-radius: 2px;
           line-height: 28px;
         }
-        .login-register{
+        .login-register {
           font-size: 12px !important;
-        } 
+        }
       }
     }
   }
@@ -228,16 +284,16 @@
           border-radius: 2px;
           line-height: 28px;
         }
-        .login-register{
+        .login-register {
           font-size: 12px !important;
-        } 
+        }
       }
     }
   }
 }
 
 @media (min-width: 768px) and (max-width: 968px) {
-  nav {
+  .navbar {
     .navSideBar {
       display: none;
     }
@@ -248,7 +304,7 @@
       display: inline-block !important;
     }
     .mobile-toggle {
-      margin-top: -100px !important;
+    
       background: none;
     }
     .dropdown-menu {
@@ -271,11 +327,11 @@
           line-height: 28px;
         }
       }
-      .open-add{
-        .login-register{
+      .open-add {
+        .login-register {
           font-size: 12px !important;
-        }  }
-      
+        }
+      }
     }
   }
 }
@@ -287,15 +343,15 @@
     }
   }
   .navbar {
-    .open-add{
-     .admission-open {
+    .open-add {
+      .admission-open {
         font-size: 12px !important;
         border-radius: 2px;
         line-height: 28px;
       }
-      .login-register{
+      .login-register {
         font-size: 12px !important;
       }
-    }   
+    }
   }
 }

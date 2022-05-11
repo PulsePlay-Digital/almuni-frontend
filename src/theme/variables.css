@@ -9,7 +9,7 @@
     --background-pos-100: 100%;
     --background-pos-center: center;
     --background-pos-top: top;
-    --btn-background: #FC640E;
+    --btn-background: #011898;
     --bg-header-color: #04003a;
     --bg-footer: #33333a;
     --bg-Transparent: transparent;
@@ -42,7 +42,9 @@
     --border-radius-2: 2px;
     --border-radius-3: 3px;
     --border-radius-50: 50%;
+    --nav-color:#289BD6;
     --cursor-pon: pointer;
+    --i-color-1:#289BD6;
     --commonBG-orange: #f7630c;
     --papaya-color: #9FFF05;
     --display-none: none;
