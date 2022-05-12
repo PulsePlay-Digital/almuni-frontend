@@ -52,6 +52,26 @@ export class HomeComponent implements OnInit {
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
     ],
     nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 0,
+      },
+      400: {
+        items: 1,
+        stagePadding: 0,
+        nav: false,
+      },
+      768: {
+        items: 1,
+        nav: false,
+        // stagePadding: 250
+      },
+      1191: {
+        items: 1,
+        // stagePadding: 350
+      },
+    },
   };
 
   galleryOptions: OwlOptions = {
@@ -78,9 +98,11 @@ export class HomeComponent implements OnInit {
       400: {
         items: 1,
         stagePadding: 0,
+        nav: false,
       },
       768: {
         items: 1,
+        nav: false,
         // stagePadding: 250
       },
       1191: {

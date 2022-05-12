@@ -31,6 +31,7 @@ footer {
           font-size: 12px;
         }
       }
+    
     }
     .links {
       .links_heading {
@@ -70,12 +71,18 @@ footer {
             font-size: 12px;
             text-decoration: none;
           }
+          a:hover{
+            color: var(--btn-hover);
+          }
           .ref:hover {
             // color: #011898;
             transition: all 0.3s ease-in-out;
           }
           .footer-mail a {
             color: #ffcc29;
+          }
+          .footer-mail a:hover {
+            color: var(--btn-hover);
           }
         }
       }
@@ -120,17 +127,26 @@ footer {
         text-decoration: none;
         color:var(--footer-link);
       }
+      a:hover{
+        color: #fff;
+    }
     }
     .siteText {
-      text-align: center;
+     
       a {
         text-decoration: none;
         color:var(--footer-link);
+      }
+      a:hover{
+        color: #fff;
       }
     }
     .webCounter {
       .visitors {
         color:var(--footer-link);
+      }
+      .visitors:hover{
+        color: #fff;
       }
     }
   }
