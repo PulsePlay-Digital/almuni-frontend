@@ -107,22 +107,20 @@ h4.font-italic.mb-4 {
         display: flex !important;
         justify-content: space-between !important;
         position: relative;
-        top: -400px !important;
+        top: -380px !important;
         .owl-prev {
-            background: none !important;
-            
+         background-color: transparent !important;
             i {
                 color    : B9B9B9;
                 font-size: 24px;
+                color: #B9B9B9 !important;
             }
         }
-
-        .owl-next {
-           
-            background: none !important;
-            i {
-                color    : B9B9B9;
-                font-size: 24px;
+      .owl-next {
+            background-color: transparent !important;
+             i {
+               font-size: 24px;
+                color: #B9B9B9 !important;
             }
         }
     }

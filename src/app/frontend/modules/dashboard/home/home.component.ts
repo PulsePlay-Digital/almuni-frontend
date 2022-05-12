@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
   };
-   homeBanner = [{id:1, src:"../../../../../assets/Banner.jpg"},{id:2, src:"../../../../../assets/Banner.jpg"},{id:3, src:"../../../../../assets/Banner.jpg"},{id:4, src:"../../../../../assets/Banner.jpg"}] 
+   homeBanner = [{id:1, src:"../../../../../assets/home/Banner1.png"},{id:2, src:"../../../../../assets/home/Banner2.png"},{id:3, src:"../../../../../assets/home/Banner3.png"},{id:4, src:"../../../../../assets/home/Banner4.png"}] 
   
    customOptions: OwlOptions = {
     loop: true,
