@@ -153,4 +153,5 @@ export class HomeComponent implements OnInit {
       this.loading = false;
     })
   }
+
 }
