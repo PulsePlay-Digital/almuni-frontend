@@ -1,14 +1,20 @@
 .login-page {
   .login-background {
-    background-image: url("../../../../../assets/authImages/loginBg.webp");
+    background-image: url("../../../../../assets/authImages/loginBg.png");
     background-color: #011898;
-    height: auto;
-    background-size: cover;
+    height: var(--height-auto);
+    background-size: var(--background-s-cover);
     .login-heading {
-      font-family: Montserrat;
+      font-family: var(--family);
     }
     .btn-login {
-      opacity: 0.3;
+      opacity: var(--opacity-0-3);
+    }
+    .loginBtn {
+      background-color: #289bd6;
+    }
+    .signUpBtn {
+      background-color: #68ccff;
     }
   }
   .login-form {
@@ -16,12 +22,11 @@
     .btn-register {
       background-color: #011898;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      width: 100%;
+      width: var(--width-0100);
       line-height: 40px;
     }
     .form-control {
-      font-size: 12px;
+      font-size: var(--font-s-12);
     }
   }
 }
-
