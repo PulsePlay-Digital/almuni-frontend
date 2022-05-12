@@ -19,6 +19,7 @@ import { DialogEntrepreneurshipComponent } from './components/dialog-entrepreneu
 import { MatDialogModule } from "@angular/material/dialog";
 import { StartupCornerComponent } from './components/startup-corner/startup-corner.component';
 import { AskforGeneralComponent } from './components/askfor-general/askfor-general.component';
+import { UsersBannerComponent } from './components/users-banner/users-banner.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AskforGeneralComponent } from './components/askfor-general/askfor-gener
     DialogEntrepreneurshipComponent,
     StartupCornerComponent,
     AskforGeneralComponent,
+    UsersBannerComponent,
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,8 @@ import { AskforGeneralComponent } from './components/askfor-general/askfor-gener
     ResetPasswordComponent,
     SearchFilterComponent,
     StripHtmlPipe,
-    DialogEntrepreneurshipComponent
+    DialogEntrepreneurshipComponent,
+    UsersBannerComponent
   ]
 })
 export class SharedModule {}
