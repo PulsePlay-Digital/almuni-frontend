@@ -9,10 +9,10 @@ import { catchError } from 'rxjs/operators';
 })
 export class DataService {
   url: any;
-
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
@@ -31,7 +31,6 @@ export class DataService {
    */
   public getAllInstitutes() {
     return this.http.get(`${this.url}/all-institute`).pipe(catchError(this.handleError));
-    // return this.http.get(`${this.url}/all-institute`);
   }
 
   /**
@@ -68,4 +67,6 @@ export class DataService {
   updateData(action: string, data: any) {
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }
+
+
 }
