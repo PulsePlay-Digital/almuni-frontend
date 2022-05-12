@@ -13,9 +13,9 @@
           font-size: var(--font-S-16);
         }
         .admission-open:hover {
-          background-color: var(--btn-background);
+          background-color: var(--btn-hover);
           color: #fff;
-          border-color: #011898;
+          
         }
         .login-register {
           font-weight: 500;
@@ -26,8 +26,8 @@
         }
         .login-register:hover {
           background-color: #fff;
-          color: #f65c8b;
-          border-color: #f65c8b;
+          color:var(--btn-hover);
+        
         }
         i {
           color: var(--i-color-1);
@@ -40,6 +40,10 @@
           font-style: normal;
           font-weight: 500;
         line-height: 17px;
+        color: var( --header-link-1);
+        }
+        a:hover{
+          color: var(--header-link);
         }
       }
 
