@@ -6,6 +6,12 @@
     --align-flex-end: flex-end;
     --background-s-cover: cover;
     --background-s-contain: contain;
+    --header-link-1:#000000;
+    --header-link:#0dcaf0;
+    --btn-hover:#0dcaf0;
+    --bg-card:#0dcaf0;
+    --text-color:#011898;
+    --background-cover: cover;
     --background-no-repeat: no-repeat;
     --background-pos-100: 100%;
     --background-pos-center: center;
@@ -153,4 +159,8 @@
     --twitter-color: #2478ba;
     --youtube-color: #c33223;
     --width-0100: 100%;
+    --footer-bg:#000D58;
+    --bottom-footer-bg:#289BD6;
+    --footer-link:#000D58;
+    
 }
