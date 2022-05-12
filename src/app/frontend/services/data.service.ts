@@ -9,7 +9,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class DataService {
   url: any;
-  instaUrl: any = 'https://graph.facebook.com/v13.0/instagram_oembed';
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
@@ -68,5 +67,6 @@ export class DataService {
   updateData(action: string, data: any) {
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }
+
 
 }
