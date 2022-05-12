@@ -14,7 +14,7 @@
         }
         .admission-open:hover {
           background-color: var(--btn-background);
-          color: #011898;
+          color: #fff;
           border-color: #011898;
         }
         .login-register {
@@ -32,6 +32,7 @@
         i {
           color: var(--i-color-1);
           font-size: var(--font-S-24);
+          vertical-align: bottom;
         }
         a {
           --font-S-14: 14px;
@@ -110,7 +111,7 @@
       width: 100px;
     }
     .logo-img {
-      width: 300px;
+      width: 200px;
     }
     .fa-burger {
       display: none;
@@ -214,6 +215,7 @@
     }
     .mobile-toggle {
     background: none;
+    margin-top: 20px;
     }
     .dropdown-menu {
       position: static;
@@ -223,7 +225,7 @@
       display: none !important;
     }
     .logo-img {
-        width: 100px !important;
+        width: 150px !important;
       }
       .logo {
         width: 100px !important;
@@ -260,11 +262,10 @@
     }
     .mobile-toggle {
       display: inline-block !important;
-    }
-    .mobile-toggle {
-      margin-top: -100px !important;
+      margin-top: 20px;
       background: none;
     }
+  
     .dropdown-menu {
       position: static;
       width: 90%;
@@ -292,7 +293,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 968px) {
+@media (min-width: 768px) and (max-width: 980px) {
   .navbar {
     .navSideBar {
       display: none;
@@ -302,9 +303,7 @@
     }
     .mobile-toggle {
       display: inline-block !important;
-    }
-    .mobile-toggle {
-    
+      margin-top: 20px;
       background: none;
     }
     .dropdown-menu {
@@ -343,6 +342,12 @@
     }
   }
   .navbar {
+    .logo-img {
+      width: 150px !important;
+    }
+    .logo {
+      width: 100px !important;
+    }
     .open-add {
       .admission-open {
         font-size: 12px !important;
