@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
   };
-   homeBanner = [{id:1, src:"../../../../../assets/Banner.jpg"},{id:2, src:"../../../../../assets/Banner.jpg"},{id:3, src:"../../../../../assets/Banner.jpg"},{id:4, src:"../../../../../assets/Banner.jpg"}] 
+   homeBanner = [{id:1, src:"../../../../../assets/home/Banner1.webp"},{id:2, src:"../../../../../assets/home/Banner2.webp"},{id:3, src:"../../../../../assets/home/Banner3.webp"},{id:4, src:"../../../../../assets/home/Banner4.webp"}] 
   
    customOptions: OwlOptions = {
     loop: true,
@@ -175,4 +175,5 @@ export class HomeComponent implements OnInit {
       this.loading = false;
     })
   }
+
 }

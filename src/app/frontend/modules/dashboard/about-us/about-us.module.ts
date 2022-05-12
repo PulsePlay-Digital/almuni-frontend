@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { AboutUsRoutingModule } from './about-us-routing.module';
 import { AboutUsComponent } from './about-us.component';
 import { BalajiGroupComponent } from './balaji-group/balaji-group.component';
@@ -33,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     AboutUsRoutingModule,
     SharedModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgDynamicBreadcrumbModule
   ]
 })
 export class AboutUsModule { }
