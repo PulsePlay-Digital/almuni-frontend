@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { EditProfileModule } from './edit-profile/edit-profile.module';
+import { SharedModule } from '../../shared/shared.module';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { EditProfileModule } from './edit-profile/edit-profile.module';
     UserRoutingModule,
     RouterModule,
     EditProfileModule,
-    MatExpansionModule
+    MatExpansionModule,
+    SharedModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class UserModule { }

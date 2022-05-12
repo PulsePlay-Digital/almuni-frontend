@@ -1,32 +1,37 @@
 .register-page {
   .login-background {
-    //  background-image: url("../../../../../assets/authImages/registerBg.png");
-    background-color:var(--btn-background);
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    background-position: center center;
-
-    .left-box {
-      height: 100%;
-      padding: 78px;
+    background-image: url("../../../../../assets/authImages/loginBg.png");
+    background-color: #011898;
+    height: var(--height-auto);
+    background-size: var(--background-s-cover);
+    background-repeat: var(--background-no-repeat);
+    .login-heading {
+      font-family: var(--family);
     }
-    .btn-sign {
-      opacity: 0.3;
+    .btn-login {
+      opacity: var(--opacity-0-3);
+    }
+    .loginBtn {
+      background-color: #289bd6;
+    }
+    .signUpBtn {
+      background-color: #68ccff;
+    }
+    .muted-text {
+      font-family: var(--family);
     }
   }
   .register-form {
-    background-color: #011898;
-
+    background-color: #289bd6;
     .btn-register {
-      background-color: #f65c8b;
+      background-color: #011898;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      padding: 20px 50px;
+      width: var(--width-0100);
+      line-height: 40px;
     }
     .form-control {
       font-size: 12px !important;
-      padding: 18px 20px;
+      // padding: 18px 20px;
     }
     select {
       font-size: 13px;
@@ -34,17 +39,15 @@
     }
   }
   .photo.justify-content-center {
-   
     img {
       height: 100px;
-    width: 100px;
+      width: 100px;
       position: absolute;
       top: 24%;
       left: 60%;
       border-radius: 100%;
       object-fit: cover;
       cursor: pointer;
-     
     }
   }
   .choose_file {
@@ -58,7 +61,6 @@
       cursor: pointer;
       z-index: 9999;
     }
-  
   }
 }
 
@@ -72,17 +74,15 @@
       }
     }
     .photo.justify-content-center {
-   
       img {
         height: 100px;
-      width: 100px;
+        width: 100px;
         position: relative;
         top: 0%;
         left: 0%;
         border-radius: 100%;
         object-fit: cover;
         cursor: pointer;
-       
       }
     }
     .choose_file {
@@ -96,7 +96,6 @@
         cursor: pointer;
         z-index: 9999;
       }
-    
     }
   }
 }
@@ -109,15 +108,13 @@
       }
     }
     .photo.justify-content-center {
-   
       img {
         height: 100px;
-      width: 100px;
-      
+        width: 100px;
+
         border-radius: 100%;
         object-fit: cover;
         cursor: pointer;
-       
       }
     }
     .choose_file {
@@ -131,7 +128,6 @@
         cursor: pointer;
         z-index: 9999;
       }
-    
     }
   }
 }
@@ -144,16 +140,14 @@
       }
     }
     .photo.justify-content-center {
-   
       img {
         height: 100px;
-      width: 100px;
+        width: 100px;
         position: absolute;
         top: 40%;
-      border-radius: 100%;
+        border-radius: 100%;
         object-fit: cover;
         cursor: pointer;
-       
       }
     }
     .choose_file {
@@ -162,11 +156,10 @@
         width: 100px;
         position: absolute;
         top: 40%;
-     opacity: 0;
+        opacity: 0;
         cursor: pointer;
         z-index: 9999;
       }
-    
     }
   }
 }
@@ -179,16 +172,14 @@
       }
     }
     .photo.justify-content-center {
-   
       img {
         height: 100px;
-      width: 100px;
+        width: 100px;
         position: absolute;
         top: 40%;
-     border-radius: 100%;
+        border-radius: 100%;
         object-fit: cover;
         cursor: pointer;
-       
       }
     }
     .choose_file {
@@ -197,11 +188,10 @@
         width: 100px;
         position: absolute;
         top: 40%;
-       opacity: 0;
+        opacity: 0;
         cursor: pointer;
         z-index: 9999;
       }
-    
     }
   }
 }
@@ -213,31 +203,27 @@
         padding: 25px;
       }
     }
-      .photo.justify-content-center {
-   
-        img {
-          height: 100px;
+    .photo.justify-content-center {
+      img {
+        height: 100px;
         width: 100px;
-          position: absolute;
-          top: 40%;
-     border-radius: 100%;
-          object-fit: cover;
-          cursor: pointer;
-         
-        }
+        position: absolute;
+        top: 40%;
+        border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
       }
-      .choose_file {
-        input[type="file"] {
-          height: 100px;
-          width: 100px;
-          position: absolute;
-          top: 40%;
-          opacity: 0;
-          cursor: pointer;
-          z-index: 9999;
-        }
-      
-      
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
     }
   }
 }
@@ -249,47 +235,15 @@
         padding: 25px;
       }
     }
-      .photo.justify-content-center {
-   
-        img {
-          height: 100px;
-        width: 100px;
-          position: absolute;
-          top: 40%;
-         border-radius: 100%;
-          object-fit: cover;
-          cursor: pointer;
-         
-        }
-      }
-      .choose_file {
-        input[type="file"] {
-          height: 100px;
-          width: 100px;
-          position: absolute;
-          top: 40%;
-          opacity: 0;
-          cursor: pointer;
-          z-index: 9999;
-        }
-      
-      
-    }
-  }
-}
-@media (min-width: 1600px) and (max-width: 1870px) {
-  .register-page {
     .photo.justify-content-center {
-   
       img {
         height: 100px;
-      width: 100px;
+        width: 100px;
         position: absolute;
         top: 40%;
-       border-radius: 100%;
+        border-radius: 100%;
         object-fit: cover;
         cursor: pointer;
-       
       }
     }
     .choose_file {
@@ -298,11 +252,36 @@
         width: 100px;
         position: absolute;
         top: 40%;
-      opacity: 0;
+        opacity: 0;
         cursor: pointer;
         z-index: 9999;
       }
-    
+    }
+  }
+}
+@media (min-width: 1600px) and (max-width: 1870px) {
+  .register-page {
+    .photo.justify-content-center {
+      img {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+        border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+    .choose_file {
+      input[type="file"] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 40%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 9999;
+      }
     }
   }
 }

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   validLogin: any;
   submitted: boolean = false;
+  heading:string = "SBUP Exclusive Alumni";
 
   constructor(
     public authService: AuthService,

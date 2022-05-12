@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
   profilePic:any;
   image:any;
   userRole: any;
+  bannerHeaading: string = "new alumni registration"
 
   constructor(
     public fb: FormBuilder,

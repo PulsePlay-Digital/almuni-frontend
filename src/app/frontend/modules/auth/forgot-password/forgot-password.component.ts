@@ -13,6 +13,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   forgotPassForm: FormGroup | any;
   submitted: boolean = false;
+  heading:string = "SBUP Exclusive Alumni";
+  
   constructor(
     private authService: AuthService,
     public notificationService: NotificationService,
