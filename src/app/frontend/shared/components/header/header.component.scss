@@ -15,7 +15,6 @@
         .admission-open:hover {
           background-color: var(--btn-hover);
           color: #fff;
-          
         }
         .login-register {
           font-weight: 500;
@@ -26,8 +25,7 @@
         }
         .login-register:hover {
           background-color: #fff;
-          color:var(--btn-hover);
-        
+          color: var(--btn-hover);
         }
         i {
           color: var(--i-color-1);
@@ -39,10 +37,10 @@
           font-family: "Montserrat";
           font-style: normal;
           font-weight: 500;
-        line-height: 17px;
-        color: var( --header-link-1);
+          line-height: 17px;
+          color: var(--header-link-1);
         }
-        a:hover{
+        a:hover {
           color: var(--header-link);
         }
       }
@@ -89,7 +87,7 @@
       }
     }
   }
-  .navbar-nav{
+  .navbar-nav {
     justify-content: space-around;
   }
   .navbar-nav li:hover > ul.dropdown-menu {
@@ -99,16 +97,16 @@
     color: #000000;
   }
   .nav-link:hover {
-    color: var( --nav-color);
+    color: var(--form-bg);
   }
   .nav-link.active-link {
-    color: var( --nav-color);
+    color: var(--form-bg);
   }
   .nav-link i {
     padding-left: 2px;
   }
   .navbar {
-    .main-nav{
+    .main-nav {
       width: 100% !important;
     }
     .logo {
@@ -210,7 +208,7 @@
     .navSideBar {
       display: none;
     }
-    
+
     .otherNav {
       display: block !important;
     }
@@ -218,8 +216,8 @@
       display: inline-block !important;
     }
     .mobile-toggle {
-    background: none;
-    margin-top: 20px;
+      background: none;
+      margin-top: 20px;
     }
     .dropdown-menu {
       position: static;
@@ -229,12 +227,11 @@
       display: none !important;
     }
     .logo-img {
-        width: 150px !important;
-      }
-      .logo {
-        width: 100px !important;
-      }
-   
+      width: 150px !important;
+    }
+    .logo {
+      width: 100px !important;
+    }
   }
 
   .header-banner {
@@ -269,7 +266,7 @@
       margin-top: 20px;
       background: none;
     }
-  
+
     .dropdown-menu {
       position: static;
       width: 90%;
@@ -340,7 +337,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1399px) {
-   .navbar {
+  .navbar {
     .logo-img {
       width: 150px !important;
     }

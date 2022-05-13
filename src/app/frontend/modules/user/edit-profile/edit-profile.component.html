@@ -1,113 +1,282 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row my-5">
         <div class="col-lg-9">
-            <ul class="nav nav-tabs" id="nav-tab" role="tablist">
-                <!---- Basic Information Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/basic-info']"
-                        id="nav-basic-tab" data-bs-toggle="tab" data-bs-target="#nav-basic" type="button" role="tab"
-                        aria-controls="nav-basic" aria-selected="true">Basic Information</button>
-                </li>
-                <!---- Basic Information Tab Close---->
-                <!---- Employement Information Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/employment-info']"
-                        id="nav-business-tab" data-bs-toggle="tab" data-bs-target="#nav-business" type="button"
-                        role="tab" aria-controls="nav-business" aria-selected="false">Employment/Business
-                        Information</button>
-                </li>
-                <!---- Employement Information Tab Close---->
-                <!---- Mentorship Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/mentorship']"
-                        id="nav-mentorship-tab" data-bs-toggle="tab" data-bs-target="#nav-mentorship" type="button"
-                        role="tab" aria-controls="nav-mentorship" aria-selected="false">Mentorship and Skill</button>
-                </li>
-                <!---- Mentorship Tab Close---->
-                <!---- Work Experience Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/experience']"
-                        id="nav-experience-tab" data-bs-toggle="tab" data-bs-target="#nav-experience" type="button"
-                        role="tab" aria-controls="nav-experience" aria-selected="false">Work Experience</button>
-                </li>
-                <!---- Work Experience Tab Close ---->
-                <!---- Education Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/education']"
-                        id="nav-education-tab" data-bs-toggle="tab" data-bs-target="#nav-education" type="button"
-                        role="tab" aria-controls="nav-education" aria-selected="false">Education</button>
-                </li>
-                <!---- Education Tab Close ---->
-                <!---- Others Tab ---->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" routerLinkActive="active" [routerLink]="['/edit-profile/others']"
-                        id="nav-others-tab" data-bs-toggle="tab" data-bs-target="#nav-others" type="button" role="tab"
-                        aria-controls="nav-others" aria-selected="false">Others</button>
-                </li>
-                <!---- Others Tab Close ---->
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <!---- Basic Information Form ---->
-                <div class="tab-pane fade show active" id="nav-basic" role="tabpanel" aria-labelledby="nav-basic-tab">
-                    <app-basic-info></app-basic-info>
-                </div>
-                <!---- Basic Information Form Close ---->
-                <!---- Employement Business Form ---->
-                <div class="tab-pane fade" id="nav-business" role="tabpanel" aria-labelledby="nav-business-tab">
-                    <app-employment-business-info></app-employment-business-info>
-                </div>
-                <!---- Employement Business Form Close ---->
-                <!-- Mentroship Form -->
-                <div class="tab-pane fade" id="nav-mentorship" role="tabpanel" aria-labelledby="nav-mentorship-tab">
-                    <app-mentorship></app-mentorship>
-                </div>
-                <!-- Mentroship Form Close -->
-                <!-- Experience Form -->
-                <div class="tab-pane fade" id="nav-experience" role="tabpanel" aria-labelledby="nav-experience-tab">
-                    <app-experience></app-experience>
-                </div>
-                <!-- Experience Form Close -->
-                <!-- Education Form -->
-                <div class="tab-pane fade" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab">
-                    <app-education></app-education>
-                </div>
-                <!-- Education Form Close -->
-                <!-- Others Form -->
-                <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">
-                    <app-others></app-others>
-                </div>
-                <!-- Others Form Close-->
-            </div>
+            <mat-accordion>
+                <mat-expansion-panel expanded=true>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            GENERAL INFORMATION
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.email }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.mobile_number }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current Company: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current Designation: <span class="ms-2 fw-normal">{{ user?.current_designation }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current country: <span class="ms-2 fw-normal">{{ user?.current_country }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current region: <span class="ms-2 fw-normal">{{ user?.current_Region }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current state: <span class="ms-2 fw-normal">{{ user?.current_state }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Current city: <span class="ms-2 fw-normal">{{ user?.current_city }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
+                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
+
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            WORK/BUSINESS INFORMATION
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <div class="col-lg-6">fdfdf</div>
+                        <div class="col-lg-6">fdfdf</div>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            MENTORSHIP / SKILL
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <div class="col-lg-6">fdfdf</div>
+                        <div class="col-lg-6">fdfdf</div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
         <div class="col-lg-3">
             <div class="card">
-                <form [formGroup]="uploadImgForm">
-                        <ng-container *ngIf="image !== undefined">
-                            <div class="row justify-content-center mt-2">
-                                <div class="col-lg-6 text-center">
-                                    <img [src]="imgUrl + image" class="img-fluid" alt="picture">
-                                </div>
-                            </div>
-                        </ng-container>
-                        <ng-container *ngIf="currentUser">
-                            <div class="row justify-content-center mt-2">
-                                <div class="col-lg-6 text-center">
-                                    <img [src]="imgUrl + currentUser?.profile_pic" class="img-fluid" alt="picture">
-                                </div>
-                            </div>
-                        </ng-container>
-                    <div class="card-body text-center">
-                        <div class="choose_file">
-                            <input type="file" formControlName="profile_pic" (change)="onUploadImage($event)" accept="image/*"/>
-                            <button type="button" class="btn">Upload profile picture</button>
-                        </div>
-                        <div class="progress mt-3">
-                            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                    </div>
-                </form>
+                <img src="./assets/dummy.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text fw-bold">Name:<span class="ms-2 fw-normal">{{ user?.first_name }}</span> </p>
+                    <p class="card-text fw-bold">Birth date: <span class="ms-2 fw-normal">{{ user?.birth_date }}</span></p>
+                    <p class="card-text fw-bold">Anniversary: <span class="ms-2 fw-normal">{{ user?.anniversary_date }}</span></p>
+                </div>
             </div>
         </div>
+    </div>
+</div> -->
+<div class="edit-profile">
+    <app-users-banner [heading]="heading"></app-users-banner>
+    <div class="container">
+        <app-loader *ngIf="loading"></app-loader>
+        <form [formGroup]="form" *ngIf="!loading">
+            <div class="row my-xl-5 my-lg-4 my-md-4 my-sm-4 my-3">
+                <div class="col-lg-12 text-center">
+                    <h3 class="main-heading text-uppercase fw-bolder mb-0">General information</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="form-bg pt-lg-3 pt-md-3">
+                        <div class="row m-0">
+                            <div class="col-lg-12 pe-3 pt-lg-0 pt-md-0 pt-3 text-end">
+                                <a class="editIcon" (click)="editUser()">
+                                    <img src="./assets/users/Edit.png" class="img-fluid"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="photo">
+                                    <div class="choose_file">
+                                        <input type="file" formControlName="profile_pic" (change)="onUploadImage($event)" accept="image/*" />
+                                        <ng-container *ngIf="user?.profile_pic !== null && !image">
+                                            <img [src]="imgPath + user?.profile_pic" class="img-fluid " alt="profile picture">
+                                        </ng-container>
+                                        <ng-container *ngIf="user?.profile_pic == null && !image">
+                                            <img src="./assets/users/profile-pic.png" class="text-center w-25 " alt="profile picture" > 
+                                        </ng-container>
+                                        <ng-container *ngIf="image">
+                                            <img [src]="image" class="text-center w-25" alt="profile picture" > 
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="text-dark form-control rounded-0 p-3"
+                                    formControlName="first_name" placeholder="First name" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    formControlName="last_name" placeholder="Last name" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <select class="form-control form-select p-3 border-0 rounded-0" formControlName="institute_name">
+                                    <option value="" selected>Choose your Institute</option>
+                                    <option [value]="institute.institute_name" *ngFor="let institute of getInstitutes">
+                                        {{ institute.institute_name }}
+                                    </option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    formControlName="institute_roll_no" placeholder="Institute wise roll no." />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <select placeholder="Select Batch Year" formControlName="batch"
+                                    class="form-control form-select rounded-0 p-3 border-0">
+                                    <option value="" selected>Choose your batch</option>
+                                    <option [value]="batch.id" *ngFor="let batch of getBatch">
+                                        {{ batch.batch }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <select placeholder="Select Batch Year" formControlName="gender"
+                                    class="form-control form-select rounded-0 p-3 border-0">
+                                    <option value="" selected>Gender</option>
+                                    <option [value]="gen.label" *ngFor="let gen of gender">
+                                        {{ gen.label }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    formControlName="office_email" placeholder="Official Email Id" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    formControlName="current_address" placeholder="Current Address" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3" formControlName="country"
+                                    placeholder="Current country" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    formControlName="current_region" placeholder="Current region" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="current_state" placeholder="State" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3" formControlName="city"
+                                    placeholder="City" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="permanent_address" placeholder="Permanent address" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="permanent_country" placeholder="Permanent country" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="linkedin_id" placeholder="Linkedin profile" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="twitter_id" placeholder="Twitter profile" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="skype_id" placeholder="Skype profile" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="facebook_id" placeholder="Facebook profile" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="instagram_id" placeholder="Instagram profile" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    formControlName="council_member_designation"
+                                    placeholder="Council member designation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-xl-5 my-lg-4 my-md-4 my-sm-4 my-3">
+                <div class="col-lg-12 text-center">
+                    <h3 class="main-heading text-uppercase fw-bolder mb-0">Work/Business information</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="form-bg pt-lg-3">
+                        <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    placeholder="Professional title" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Professional category" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Current employer" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Current office address" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3" placeholder="Business" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Business office address" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-xl-5 my-lg-4 my-md-4 my-sm-4 my-3">
+                <div class="col-lg-12 text-center">
+                    <h3 class="main-heading text-uppercase fw-bolder mb-0">Mentorship / Skill</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="form-bg mb-5">
+                        <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                    placeholder="Provide mentorship" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3" placeholder="Skills" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Primary function area" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Secondary function area" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Other function area" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Primary industry focus" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Secondary industry focus" />
+                            </div>
+                            <div class="col-md-5 my-2">
+                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                    placeholder="Other industry focus" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

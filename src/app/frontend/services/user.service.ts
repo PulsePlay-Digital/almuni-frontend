@@ -20,9 +20,14 @@ export class UserService {
    * @param id 
    * @returns 
    */
-  public getUsersById(id: any) {
-    return this.http.get(`${this.url}/user`);
+  // public getUsersById(id: any) {
+  //   return this.http.get(`${this.url}/user`);
+  // }
+
+  public getUsersById(action: string, id: number) {
+    return this.http.get(`${this.url}/${action}/${id}`);
   }
+
 
   public postData(action?: any, data?: any) {
     return this.http.post<any>(`${this.url}/${action?.action}` + '/' + action?.id, data);

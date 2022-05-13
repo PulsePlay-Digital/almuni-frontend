@@ -1,11 +1,32 @@
 .view-profile {
   form {
     .form-bg {
-      background-color: #289bd6;
+      background-color: var(--form-bg);
     }
-    select {
-      font-size: 13px;
-      color: #646363;
+    .form-control {
+      font-size: var(--font-s-14);
+    }
+  }
+  .choose_file {
+    position: var(--position-relative);
+    input[type="file"] {
+      height: var(--height-100);
+      width: 146px;
+      min-height: 146px;
+      position: var(--position-absolute);
+      cursor: var(--cursor-pointer);
+      z-index: var(--z-index-9999);
+      border-radius: var(--border-radius-50);
+      opacity: var(--opacity-none);
+    }
+    img {
+      height: 146px;
+      width: 146px;
+      min-height: 146px;
+      border: 3px solid var(--btn-background);
+      border-radius: var(--border-radius-50);
+      background: var(--bs-white);
+      object-fit: var(--object-cover);
     }
   }
 }

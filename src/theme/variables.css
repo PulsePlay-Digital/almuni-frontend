@@ -49,8 +49,8 @@
     --border-radius-2: 2px;
     --border-radius-3: 3px;
     --border-radius-50: 50%;
-    --nav-color:#289BD6;
-    --cursor-pon: pointer;
+    --form-bg:#289BD6;
+    --cursor-pointer: pointer;
     --i-color-1:#289BD6;
     --commonBG-orange: #f7630c;
     --papaya-color: #9FFF05;
@@ -60,7 +60,8 @@
     --display-Grid: grid;
     --display-Flex: flex;
     --family: Montserrat;
-    --font-S-12: 12px;
+    --font-s-12: 12px;
+    --font-s-13: 13px;
     --font-S-14: 14px;
     --font-S-16: 16px;
     --font-S-18: 18px;
@@ -160,7 +161,6 @@
     --youtube-color: #c33223;
     --width-0100: 100%;
     --footer-bg:#000D58;
-    --bottom-footer-bg:#289BD6;
     --footer-link:#000D58;
-    
+    --z-index-9999: 9999;
 }
