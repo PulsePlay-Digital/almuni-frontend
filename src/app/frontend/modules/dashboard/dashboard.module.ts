@@ -11,7 +11,6 @@ import { CelebrateComponent } from './celebrate/celebrate.component';
 import { CollaborateContributeComponent } from './collaborate-contribute/collaborate-contribute.component';
 import { EventComponent } from './event/event.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
-// import { AboutUsComponent } from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
@@ -26,7 +25,6 @@ import { ConnectModule } from './connect/connect.module';
     CollaborateContributeComponent,
     EventComponent,
     SitemapComponent,
-    // AboutUsComponent,
     CareersComponent
   ],
   imports: [

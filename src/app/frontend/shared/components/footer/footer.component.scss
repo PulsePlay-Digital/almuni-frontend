@@ -31,7 +31,6 @@ footer {
           font-size: 12px;
         }
       }
-    
     }
     .links {
       .links_heading {
@@ -71,7 +70,7 @@ footer {
             font-size: 12px;
             text-decoration: none;
           }
-          a:hover{
+          a:hover {
             color: var(--btn-hover);
           }
           .ref:hover {
@@ -111,41 +110,40 @@ footer {
     }
   }
   .copyright-section {
-    background: var( --bottom-footer-bg);
+    background: var(--form-bg);
     color: #fff;
     padding: 20px 0;
     p {
       margin: 0;
       font-size: var(--font-S-14);
       .heart {
-        color:var(--footer-link);
+        color: var(--footer-link);
         font-size: var(--font-S-22);
       }
     }
     .copyright-text {
       a {
         text-decoration: none;
-        color:var(--footer-link);
+        color: var(--footer-link);
       }
-      a:hover{
+      a:hover {
         color: #fff;
-    }
+      }
     }
     .siteText {
-     
       a {
         text-decoration: none;
-        color:var(--footer-link);
+        color: var(--footer-link);
       }
-      a:hover{
+      a:hover {
         color: #fff;
       }
     }
     .webCounter {
       .visitors {
-        color:var(--footer-link);
+        color: var(--footer-link);
       }
-      .visitors:hover{
+      .visitors:hover {
         color: #fff;
       }
     }

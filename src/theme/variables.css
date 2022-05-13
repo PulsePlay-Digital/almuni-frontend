@@ -51,8 +51,8 @@
     --border-radius-2: 2px;
     --border-radius-3: 3px;
     --border-radius-50: 50%;
-    --nav-color:#289BD6;
-    --cursor-pon: pointer;
+    --form-bg:#289BD6;
+    --cursor-pointer: pointer;
     --i-color-1:#289BD6;
     --commonBG-orange: #f7630c;
     --papaya-color: #9FFF05;
@@ -62,8 +62,13 @@
     --display-Grid: grid;
     --display-Flex: flex;
     --family: Montserrat;
+<<<<<<< HEAD
     --font-style-normal:normal;
     --font-S-12: 12px;
+=======
+    --font-s-12: 12px;
+    --font-s-13: 13px;
+>>>>>>> 3f35c7c706e9e13461c0010ca1aec7f376cf5ee3
     --font-S-14: 14px;
     --font-S-16: 16px;
     --font-S-18: 18px;
@@ -172,9 +177,12 @@
     --youtube-color: #c33223;
     --width-0100: 100%;
     --footer-bg:#000D58;
-    --bottom-footer-bg:#289BD6;
     --footer-link:#000D58;
+<<<<<<< HEAD
     --width:100%;
     --width-1:100px;
     --width-2:200px;
+=======
+    --z-index-9999: 9999;
+>>>>>>> 3f35c7c706e9e13461c0010ca1aec7f376cf5ee3
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ViewProfileComponent } from './../../../frontend/modules/user/view-profile/view-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 const routes: Routes = [
   {
@@ -9,9 +10,13 @@ const routes: Routes = [
     component: ViewProfileComponent
   },
   {
-    path:'edit-profile',
-    loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule)
-  }
+    path: 'edit-profile',
+    component: EditProfileComponent
+  },
+  // {
+  //   path:'edit-profile',
+  //   loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule)
+  // }
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { DataService } from "./../../../services/data.service";
 import { Config } from "./../../../../frontend/services/config";
-import { environment } from "src/environments/environment";
+import { environment } from "./../../../../../environments/environment";
 
 @Component({
   selector: "app-home",
@@ -125,7 +125,6 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.getAllFeaturedAlumni();
     this.getAllGallery();
-    this.getAllHomebanner();
   }
   /**
    * Function to connect user with alumni
@@ -162,17 +161,6 @@ export class HomeComponent implements OnInit {
     await this.dataService.getData(action).subscribe((result: any) => {
       this.gallery =  result?.data;
       this.loading = false;                                                                                                                                                                                                                               
-    })
-  }
-  
- /**
-   * Function to get homebanner
-   */
-  async getAllHomebanner() {
-    let action: string = "all-homebanner";
-    await this.dataService.getData(action).subscribe((result: any) => {
-      this.homebanner =  result?.data;
-      this.loading = false;
     })
   }
 
