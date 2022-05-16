@@ -1,7 +1,7 @@
 .header-banner {
 
   .header-navbar{
-   
+ 
     .main-header {
       width: var(--width);
       .top-header{
@@ -99,7 +99,7 @@
   }
  
   .navbar {
-
+    z-index: 99;
     .navbar-nav{
       justify-content: var( --justify-space-around);
     }
