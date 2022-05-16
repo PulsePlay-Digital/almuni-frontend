@@ -14,13 +14,13 @@ import { AicteApprovalsComponent } from "./aicte-approvals/aicte-approvals.compo
 const routes: Routes = [
   {
     path: 'about-us/:pageOneID',
-    component: AboutUsComponent,
+    component: FounderComponent,
     data: {
       title: 'about-us',
       breadcrumb: [
         {
           label: 'About Us',
-          url: ''
+          url: '/about-us/:pageOneID'
         }
       ]
     },
@@ -45,7 +45,7 @@ const routes: Routes = [
   },
   {
     path: 'about-us/:pageOneID/founder/:pageTwoID/balaji-social-society/:pageThreeID',
-    component: FounderComponent,
+    component: BalajiSocialSocietyComponent,
     data: {
       title: 'balaji-social-society',
       breadcrumb: [
