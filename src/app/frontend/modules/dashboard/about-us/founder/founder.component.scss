@@ -1,10 +1,4 @@
 .know-us-section {
-  .main-heading {
-    font-size: 30px;
-    line-height: 43.88px;
-    color: #011898;
-    font-family: Montserrat;
-  }
   .small-heading {
     color: #f65c8b;
   }
@@ -12,7 +6,7 @@
     color: #fea641;
   }
   .text-para {
-    text-align: justify;
+    text-align: var(--text-J);
   }
   .founderVideo {
     p {
