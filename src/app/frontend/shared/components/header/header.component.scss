@@ -1,7 +1,7 @@
 .header-banner {
- 
+
   .header-navbar{
- 
+   
     .main-header {
       width: var(--width);
       .top-header{
@@ -76,7 +76,7 @@
         color:var(--bs-white);
         line-height: var(--line-height-2);  
         white-space: normal;
-        min-width: 12rem !important;
+        min-width: 10rem !important;
       }
       .trick_top::before {
         content: "";
@@ -99,7 +99,7 @@
   }
  
   .navbar {
-    z-index: 2;
+
     .navbar-nav{
       justify-content: var( --justify-space-around);
     }
