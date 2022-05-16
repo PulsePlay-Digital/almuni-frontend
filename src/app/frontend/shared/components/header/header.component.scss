@@ -1,7 +1,7 @@
 .header-nav {
   
   .header-navbar{
-  z-index: 2;
+  z-index: 38;
     .main-header {
       width: var(--width);
       
@@ -95,8 +95,7 @@
     }
   }
   .topnav{
-    
-      z-index: 1;
+     z-index: 34;
     .navbar-nav{
       justify-content: var( --justify-space-around);
     }
