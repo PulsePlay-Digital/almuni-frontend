@@ -19,7 +19,7 @@ export class ResetPasswordComponent implements OnInit {
     public router: Router,
     public interceptor: TokenInterceptor) { 
     // get current user
-    // this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
   }
 
   ngOnInit(): void {
