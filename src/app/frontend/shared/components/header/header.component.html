@@ -39,8 +39,8 @@
                                                     aria-hidden="true"></i></span>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <li><a class="dropdown-item" routerLink="view-profile">View Profile</a></li>
-                                            <li><a class="dropdown-item" routerLink="edit-profile">Edit Profile</a></li>
+                                            <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View Profile</a></li>
+                                            <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
                                             <li><a class="dropdown-item" routerLink="reset-password">Reset Password</a>
                                             </li>
                                             <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
