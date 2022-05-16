@@ -52,6 +52,7 @@
     transition: all .2s;
 }
 .bannerSlider {
+  z-index: 3;
   .openAdd {
     .registerLogin {
       background-color: #011898;
