@@ -300,6 +300,11 @@ h4.font-italic.mb-4 {
             display: none !important;
         }
     }
+    .bannerSlider{
+        .owl-nav {
+            display: none !important;
+        }
+    }
     .main-heading {
         font-size: 18px !important;
         line-height: 30px !important;
@@ -309,6 +314,11 @@ h4.font-italic.mb-4 {
 @media screen and (max-width: 768px) and (min-width: 575px) {
     .main-heading {
         font-size: 22px !important;
+    }
+    .bannerSlider{
+        .owl-nav {
+            display: none !important;
+        }
     }
 }
 

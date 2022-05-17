@@ -38,7 +38,6 @@
 }
 .common_buttons {
   background-color: #011898;
-  border: 2px solid;
 }
 .common_buttons:hover {
   background: #fff;
@@ -51,16 +50,16 @@
   z-index: 3;
   .openAdd {
     .registerLogin {
-      background-color: #011898;
-      color: #fff;
-      font-family: "Montserrat";
-      border-radius: 2px;
+      background-color: var(--btn-background);
+      color: var(--bs-white);
+      font-family: var(--family);
+      border-radius: var(--border-radius-2);
       line-height: 2.5;
     }
     :hover {
-      background-color: #fff;
-      color: #011898;
-      border-color: #011898;
+      background-color: var(--bs-white);
+      color: var(--btn-background);
+      border-color: var(--btn-background);
     }
   }
 }
@@ -68,37 +67,38 @@
 // CROUSEL CSS END
 .innerSec {
   .event {
-    position: relative;
+    position: var(--position-relative);
     img {
-      width: 100%;
-      box-shadow: none;
-      object-fit: cover;
+      width: var(--width);
+      box-shadow: var(--box-shadow-none);
+      object-fit: var(--object-cover);
     }
     .upcoming {
-      position: absolute;
+      position: var(--position-absolute);
       top: 0px;
       right: 0px;
-      background-image: linear-gradient(#6468ff, #191c7a);
-      color: #fff;
-      font-weight: 500;
-      padding: 10px;
+      background-color: var(--btn-background);
+      font-size: var(--font-S-16);
+      color: var(--bs-white);
+      font-weight: var(--font-B-500);
+      padding: 6px 10px;
     }
   }
   .meet-content {
     p {
-      color: #011898;
+      color: var(--btn-background);
     }
     .join-event {
-      background-color: #011898;
-      color: #fff;
-      font-family: "Montserrat";
+      background-color: var(--btn-background);
+      color: var(--bs-white);
+      font-family: var(--family);
       border-radius: 2px;
       line-height: 2.5;
     }
     .join-event:hover {
-      background-color: #fff;
-      color: #011898;
-      border-color: #011898;
+      background-color: var(--bs-white);
+      color: var(--btn-background);
+      border-color: var(--btn-background);
     }
   }
   p {
@@ -276,9 +276,10 @@
       flex-direction: column;
       align-items: center;
       h4 {
-        font-size: 34px;
-        font-weight: 600;
-        color: #011898;
+        font-size: var(--font-S-20);
+        font-weight: var(--font-B-600);
+        color: var(--nav-color);
+        font-family: var(--family);
       }
     }
     .btn {
@@ -289,17 +290,17 @@
 /* Alumni Stories */
 .alumniStories {
   .story-content {
-    background: #00035f;
+    background: var(--bg-color);
     height: var(--height-100);
   }
 
   .storyDescription {
-    background: #f6f6f6;
+    background: #f2f2f2;
     height: var(--height-100);
 
     .users {
-      display: flex;
-      align-items: center;
+      display: var(--display-Flex);
+      align-items: var(--align-center);
       flex-direction: row;
       position: var(--position-relative);
 
