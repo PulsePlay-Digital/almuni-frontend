@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./balaji-social-society.component.scss']
 })
 export class BalajiSocialSocietyComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
