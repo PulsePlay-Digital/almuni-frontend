@@ -9,27 +9,27 @@
         </ng-template>
     </owl-carousel-o>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row my-lg-5 my-md-5 my-sm-4 my-4">
             <div class="col openAdd text-center ">
                 <a class="btn registerLogin fs-5 px-4" routerLink="/register">Register / Login</a>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- BANNER CROUSEL END -->
 <!--- INNER Section --->
 <div class="innerSec my-lg-3 my-md-3 my-2">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-12 my-lg-4 my-md-4 my-sm-3 my-3 text-center">
-                <h4 class="heading fw-bolder text-uppercase ">EVENTS</h4>
+            <div class="col-lg-12 my-lg-4 my-md-4 my-sm-3 my-3">
+                <h4 class="main-heading fw-bolder text-uppercase">EVENTS</h4>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-xl-5 pb-lg-5 pb-md-4 pb-sm-4 pb-3">
             <div class="col-lg-6 col-md-6 my-2">
                 <div class="event">
-                    <img src="../../../../../assets/home/event.webp" alt="PUNE MEET 2022">
+                    <img src="./assets/home/event.webp" alt="PUNE MEET 2022">
                     <div class="upcoming text-uppercase">
                         <p class="m-0">Upcoming event</p>
                     </div>
@@ -39,7 +39,7 @@
                 <div class="meet-content p-xl-4 p-lg-3 p-md-2 p-sm-1">
                     <div class="row">
                         <div class="col">
-                            <h4 class="sub-heading fw-bolder text-uppercase">PUNE MEET 2022</h4>
+                            <h4 class="main-heading fs-3 fw-bolder text-uppercase">PUNE MEET 2022</h4>
                         </div>
                         <div class="col-lg-12">
                             <p>
@@ -61,7 +61,7 @@
 </div>
 <!--- Inner Section Close --->
 <!--- Featured Alumni Gallary Section --->
-<div class="gallary alumni my-lg-4 my-md-4 my-sm-3 my-2 mb-lg-2 mb-md-2">
+<!-- <div class="gallary alumni my-lg-4 my-md-4 my-sm-3 my-2 mb-lg-2 mb-md-2">
     <div class="container">
         <div class="row">
             <div class="col-lg-12  my-lg-5 my-md-5 my-sm-4 my-3">
@@ -101,10 +101,164 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!--- Featured Alumni Gallary Section Close --->
+<!--- Alumni Stories --->
+<div class="alumniStories my-xl-5 my-lg-5 my-md-5 my-sm-4 mb-3">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let stories of alumni">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 pe-xl-0 pe-lg-0">
+                    <div class="story-content p-lg-5 p-md-5 p-sm-5 p-4">
+                        <h4 class="main-heading text-white fw-bold text-uppercase">Featured Alumni</h4>
+                        <div class="text-white" [innerHtml]="stories?.description"></div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 ps-xl-0 ps-lg-0">
+                    <div class="storyDescription p-lg-5 p-md-5 p-sm-5 p-4">
+                        <div class="users mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
+                            <div class="user-logo">
+                                <img class="userImg" [src]="imgPath + stories?.picture" />
+                            </div>
+                            <div class="username">
+                                <h3>{{ stories?.alumni_name }}</h3>
+                            </div>
+                            <p class="quotes mb-0"><img src="./../../../../../assets/home/quotes.png"/></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="storyLogo">
+                                    <div class="logo">
+                                        <img src="./assets/story-logo01.png" />
+                                    </div>
+                                    <div class="logo-content">
+                                        <p class="mb-0">{{ stories?.batch_year }}</p>
+                                    </div>
+                                </div>
+                                <div class="storyLogo">
+                                    <div class="logo">
+                                        <img src="./assets/story-logo02.png" />
+                                    </div>
+                                    <div class="logo-content">
+                                        <p class="mb-0">
+                                            {{ stories?.designation }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="storyLogo">
+                                    <div class="logo">
+                                        <img src="./assets/story-logo03.png" />
+                                    </div>
+                                    <div class="logo-content">
+                                        <p class="mb-0">{{ stories?.company }}</p>
+                                    </div>
+                                </div>
+                                <div class="storyLogo">
+                                    <div class="logo">
+                                        <img src="./assets/story-logo04.png" />
+                                    </div>
+                                    <div class="logo-content">
+                                        <p class="mb-0">
+                                            {{ stories?.industry }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="storyLogo">
+                                    <div class="logo">
+                                        <img src="./assets/story-logo05.png" />
+                                    </div>
+                                    <div class="logo-content">
+                                        <p class="mb-0">{{ stories?.location }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
+<!---- Alumni stories Close  ---->
+<!--- Association Section --->
+<div class="association">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="main-heading fw-bold text-uppercase">our purpose of almuni associations</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                <div class="content">
+                    <a>
+                        <div class="content-overlay"></div>
+                        <img class="content-image" src="./assets/association03.png" />
+                        <div class="content-details fadeIn-bottom">
+                            <p class="content-title">
+                                There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered
+                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                    </a>
+                </div>
+                <h5 class="associate-text my-3">Connect</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                <div class="content">
+                    <a>
+                        <div class="content-overlay"></div>
+                        <img class="content-image" src="./assets/association04.png" />
+                        <div class="content-details fadeIn-bottom">
+                            <p class="content-title">
+                                There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered
+                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                    </a>
+                </div>
+                <h5 class="associate-text my-3">Network</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                <div class="content">
+                    <a>
+                        <div class="content-overlay"></div>
+                        <img class="content-image" src="./assets/association01.png" />
+                        <div class="content-details fadeIn-bottom">
+                            <p class="content-title">
+                                There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered
+                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                    </a>
+                </div>
+                <h5 class="associate-text my-3">Engage & Support</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                <div class="content">
+                    <a>
+                        <div class="content-overlay"></div>
+                        <img class="content-image" src="./assets/association02.png" />
+                        <div class="content-details fadeIn-bottom">
+                            <p class="content-title">
+                                There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered
+                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                    </a>
+                </div>
+                <h5 class="associate-text my-3">Learn (LifeLong & Grow)</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- Association Section Close --->
 <!-- CONNECT VISION START -->
-<div class="connectVision">
+<!-- <div class="connectVision">
     <div class="container">
         <div class="row text-center">
             <div class="col my-3 my-lg-5 my-md-5 my-sm-4">
@@ -114,7 +268,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 pe-xl-0 pe-lg-0 ">
                 <div class="content">
-                    <img class="w-100 content-img" src="../../../../../assets/home/purpose01.webp" alt="services-img">
+                    <img class="w-100 content-img" src="./assets/home/purpose01.webp" alt="services-img">
                     <a class="box-text"></a>
                 </div>
                 <div class="content-heading my-3">
@@ -123,7 +277,7 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 px-xl-0 px-lg-0">
                 <div class="content">
-                    <img class="w-100 content-img" src="../../../../../assets/home/purpose02.webp" alt="services-img">
+                    <img class="w-100 content-img" src="./assets/home/purpose02.webp" alt="services-img">
                     <a class="box-text"></a>
                 </div>
                 <div class="content-heading my-3">
@@ -132,7 +286,7 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 px-xl-0 px-lg-0">
                 <div class="content">
-                    <img class="w-100 content-img" src="../../../../../assets/home/purpose03.webp" alt="services-img">
+                    <img class="w-100 content-img" src="./assets/home/purpose03.webp" alt="services-img">
                     <a class="box-text"></a>
                 </div>
                 <div class="content-heading my-3">
@@ -141,7 +295,7 @@
             </div>
             <div class="col-xl-3 col-lg-3 ps-xl-0  col-md-6 col-sm-6 ps-lg-0 ">
                 <div class="content">
-                    <img class="w-100 content-img" src="../../../../../assets/home/purpose04.webp" alt="services-img">
+                    <img class="w-100 content-img" src="./assets/home/purpose04.webp" alt="services-img">
                     <a class="box-text"></a>
                 </div>
                 <div class="content-heading my-3">
@@ -156,19 +310,19 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- CONNECT VISION CLOSE -->
 <!--- Map Section --->
 <div class="homeMap my-lg-4 my-md-4 my-3">
     <div class="container">
-        <div class="row text-center">
+        <div class="row">
             <div class="col-lg-12 my-lg-5 my-md-5 my-sm-4 my-3">
-                <h4 class="heading fw-bolder text-uppercase">AlUMNI AROUND THE WORLD</h4>
+                <h4 class="main-heading fw-bolder text-uppercase">AlUMNI AROUND THE WORLD</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-5 col-lg-7 col-md-12 my-2">
-                <img src="../../../../../assets/home/map.webp" />
+                <img src="./assets/home/map.webp" />
             </div>
             <div class="col-xl-7 col-lg-7 col-md-12 my-2 align-self-center">
                 <div class="mapCount">
@@ -236,7 +390,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 my-lg-4 my-md-4 my-sm-3 my-3">
-                <h4 class="heading fw-bold text-uppercase text-center mb-0">Gallery</h4>
+                <h4 class="main-heading fw-bold text-uppercase mb-0">Gallery</h4>
             </div>
         </div>
         <app-loader *ngIf="loading"></app-loader>
@@ -263,11 +417,11 @@
 </div>
 <!--- Gallary Section Close --->
 <!-- Network Secton -->
-<div class="instafeed my-lg-5 my-md-4 my-sm-3 my-3">
+<div class="instafeed my-xl-5 my-lg-5 my-md-4 my-sm-3 my-4 py-xl-5 py-lg-5 py-md-5 py-sm-4 py-4">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-12 text-center">
-                <h4 class="heading fw-bolder text-uppercase">NETWORK IS YOUR NETWORTH</h4>
+            <div class="col-lg-12">
+                <h4 class="main-heading fw-bolder text-uppercase">NETWORK IS YOUR NETWORTH</h4>
             </div>
         </div>
         <div class="row m-0 py-4">
@@ -285,3 +439,114 @@
         </div>
     </div>
 </div>
+<!--- Stay Updated Section --->
+<div class="stay-updated my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
+    <div class="container">
+        <div class="row justify-content-between my-lg-5 my-md-5 my-sm-5 my-5">
+            <div class="col-xl-6 col-lg-6 col-md-5">
+                <h4 class="main-heading fw-bolder text-uppercase">stay updated</h4>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-7">
+                <form>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS"
+                            aria-label="Recipient's username" aria-describedby="button-addon2" />
+                        <button class="btn btn-primary" type="button" id="button-addon2">
+                            Subscribe now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 my-2">
+                <div class="box">
+                    <div class="box-heading">
+                        <img src="./assets/learnBox01.jpg" />
+                        <div class="box-text">
+                            <div class="icon">
+                                <img class="text-logo" src="./assets/Mask-Group01.png" />
+                                <h4>learn & grow</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxUL">
+                        <ul>
+                            <li>
+                                <a href=""><span class="text">Mentorship</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">Exclusive resources</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">Contribute back </span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 my-2">
+                <div class="box">
+                    <div class="box-heading">
+                        <img src="./assets/learnBox02.jpg" />
+                        <div class="box-text">
+                            <div class="icon">
+                                <img class="text-logo" src="./assets/Mask-Group02.png" />
+                                <h4>Latest News</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxUL">
+                        <ul>
+                            <li>
+                                <a href=""><span class="text">Memorial Service for...</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">Sri Balaji University Rajasthan</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">Sri Balaji University Hyderabad</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 my-2">
+                <div class="box">
+                    <div class="box-heading">
+                        <img src="./assets/learnBox03.jpg" />
+                        <div class="box-text">
+                            <div class="icon">
+                                <img class="text-logo" src="./assets/Mask-Group03.png" />
+                                <h4>Latest Club</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxUL">
+                        <ul>
+                            <li>
+                                <a href=""><span class="text">13 Jan 2022</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">26 Jan 2022 </span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="text">8 Ma rch 2022</span>
+                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- Stay Updated Section Close --->

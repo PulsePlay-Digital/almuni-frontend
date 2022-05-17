@@ -17,7 +17,6 @@ body {
 
 body {
     margin        : 0;
-    // font-family   : Roboto, "Helvetica Neue", sans-serif;
     letter-spacing: 1px;
     font-family: Montserrat !important;
 }
@@ -62,10 +61,10 @@ body {
 }
 
 .main-heading {
-    font-size: 20px !important;
+    font-size: var(--font-S-32) !important;
     line-height:43.88px !important;
-    color: #011898;
-    font-family: Montserrat !important;
+    color: var(--btn-background);
+    font-family: var(--family) !important;
 }
 
 .sub-heading {

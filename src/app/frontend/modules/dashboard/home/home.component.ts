@@ -118,7 +118,7 @@ export class HomeComponent implements OnInit {
     public dataService: DataService
   ) {
     // this.gallery = this.config.gallary();
-    // this.featuredAlumni = this.config.alumniStories();
+    this.featuredAlumni = this.config.alumniStories();
   }
 
   ngOnInit(): void {
