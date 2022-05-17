@@ -62,6 +62,9 @@ export class HomeComponent implements OnInit {
         stagePadding: 0,
         nav: false,
       },
+      500:{
+        nav: false,
+      },
       768: {
         items: 1,
         nav: false,

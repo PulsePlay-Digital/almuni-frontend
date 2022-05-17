@@ -295,12 +295,24 @@
   }
 }
 
+@media screen and (max-width: 575px) and (min-width: 300px) {
+  .bannerSlider{
+  .homeBanner {
+    .owl-nav {
+      display: none  !important;
+    }
+  }
+}
+}
+
 @media screen and (max-width: 767px) and (min-width: 575px) {
   .homeBanner {
     min-height: 450px;
     background-size: 100% 100%;
     background-position: top;
-
+    .owl-nav {
+      display: none  !important;
+    }
     .bannerContent {
       h4 {
         font-size: 44px;
