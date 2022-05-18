@@ -1,36 +1,16 @@
-// p {
-//     text-align: justify;
-// }
-// .founderVideo {
-//     width: 600px;
-//     height: 340px;
-// }
-// @media screen and (max-width: 574px) and (min-width: 280px) {
-//     .founderVideo {
-//         width: 100%;
-//         height: 220px;
-//     }
-// }
-// @media screen and (max-width: 768px) and (min-width: 575px) {
-//     .founderVideo {
-//         width: 100%;
-//         height: 300px;
-//     }
-// }
-.know-us-section{
-    .main-heading {
-        font-size: 30px;
-        line-height:43.88px;
-        color: #011898;
-        font-family: Montserrat;
+.know-us-section {
+  .small-heading {
+    color: #f65c8b;
+  }
+  .text-name {
+    color: #fea641;
+  }
+  .text-para {
+    text-align: var(--text-J);
+  }
+  .founderVideo {
+    p {
+      color: var(--btn-background);
     }
-    .small-heading{
-        color: #F65C8B;
-    }
-    .text-name{
-       color:  #FEA641;
-    }
-    .text-para{
-        text-align: justify;
-    }
+  }
 }

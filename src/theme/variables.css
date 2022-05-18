@@ -11,6 +11,7 @@
     --header-link:#0dcaf0;
     --btn-hover:#0dcaf0;
     --bg-card:#0dcaf0;
+    --nav-color:#0dcaf0;
     --text-color:#011898;
     --background-cover: cover;
     --background-no-repeat: no-repeat;
@@ -51,6 +52,7 @@
     --border-radius-2: 2px;
     --border-radius-3: 3px;
     --border-radius-50: 50%;
+    --box-shadow-none:none;
     --form-bg:#289BD6;
     --cursor-pointer: pointer;
     --i-color-1:#289BD6;
@@ -64,6 +66,8 @@
     --family: Montserrat;
     --font-style-normal:normal;
     --font-S-12: 12px;
+    --font-S-6: 6px;
+    --font-s-8: 8px;
     --font-S-14: 14px;
     --font-S-16: 16px;
     --font-S-18: 18px;

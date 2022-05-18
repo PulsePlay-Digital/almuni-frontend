@@ -25,10 +25,6 @@
   }
 }
 
-.main-heading {
-  color: #011898;
-}
-
 .heading {
   font-size: 30px;
   line-height: 43px;
@@ -42,71 +38,67 @@
 }
 .common_buttons {
   background-color: #011898;
-  border: 2px solid;
 }
 .common_buttons:hover {
-    background: #fff;
-    border-color: #011898;
-    color: #011898 !important;
-    border: 2px solid;
-    transition: all .2s;
+  background: #fff;
+  border-color: #011898;
+  color: #011898 !important;
+  border: 2px solid;
+  transition: all 0.2s;
 }
 .bannerSlider {
   z-index: 3;
   .openAdd {
     .registerLogin {
-      background-color: #011898;
-      color: #fff;
-      font-family: "Montserrat";
-      border-radius: 2px;
+      background-color: var(--btn-background);
+      color: var(--bs-white);
+      font-family: var(--family);
+      border-radius: var(--border-radius-2);
       line-height: 2.5;
     }
     :hover {
-      background-color: #fff;
-      color: #011898;
-      border-color: #011898;
+      background-color: var(--bs-white);
+      color: var(--btn-background);
+      border-color: var(--btn-background);
     }
   }
-
-
 }
 
 // CROUSEL CSS END
 .innerSec {
   .event {
-    position: relative;
+    position: var(--position-relative);
     img {
-      width: 100%;
-      box-shadow: none;
-      object-fit: cover;
+      width: var(--width);
+      box-shadow: var(--box-shadow-none);
+      object-fit: var(--object-cover);
     }
     .upcoming {
-      position: absolute;
-      top: 10px;
-      right: 1px;
-      background-image: linear-gradient(#6468ff, #191c7a);
-      color: #fff;
-      font-weight: 500;
-      padding: 10px 10px 10px 20px;
-      border-top-left-radius: 50px;
-      border-bottom-left-radius: 15px;
+      position: var(--position-absolute);
+      top: 0px;
+      right: 0px;
+      background-color: var(--btn-background);
+      font-size: var(--font-S-16);
+      color: var(--bs-white);
+      font-weight: var(--font-B-500);
+      padding: 6px 10px;
     }
   }
   .meet-content {
     p {
-      color: #011898;
+      color: var(--btn-background);
     }
     .join-event {
-      background-color: #011898;
-      color: #fff;
-      font-family: "Montserrat";
+      background-color: var(--btn-background);
+      color: var(--bs-white);
+      font-family: var(--family);
       border-radius: 2px;
       line-height: 2.5;
     }
     .join-event:hover {
-      background-color: #fff;
-      color: #011898;
-      border-color: #011898;
+      background-color: var(--bs-white);
+      color: var(--btn-background);
+      border-color: var(--btn-background);
     }
   }
   p {
@@ -284,9 +276,10 @@
       flex-direction: column;
       align-items: center;
       h4 {
-        font-size: 34px;
-        font-weight: 600;
-        color: #011898;
+        font-size: var(--font-S-20);
+        font-weight: var(--font-B-600);
+        color: var(--nav-color);
+        font-family: var(--family);
       }
     }
     .btn {
@@ -294,7 +287,280 @@
     }
   }
 }
+/* Alumni Stories */
+.alumniStories {
+  .story-content {
+    background: var(--bg-color);
+    height: var(--height-100);
+  }
 
+  .storyDescription {
+    background: #f2f2f2;
+    height: var(--height-100);
+
+    .users {
+      display: var(--display-Flex);
+      align-items: var(--align-center);
+      flex-direction: row;
+      position: var(--position-relative);
+
+      .user-logo {
+        overflow: hidden;
+        width: 110px;
+        height: 110px;
+        margin-right: 20px;
+        border-radius: var(--border-radius-50);
+
+        .userImg {
+          width: 110px;
+          height: 110px;
+          object-fit: var(--object-cover);
+          box-shadow: var(--box-shadow-none);
+          border-radius: var(--border-radius-50);
+        }
+      }
+      .quotes {
+        position: var(--position-absolute);
+        right: 0;
+        top: -8px;
+        img{
+          width: 50px;
+        }
+      }
+    }
+
+    .image {
+      height: 120px;
+      min-height: 120px;
+      box-shadow: var(--box-shadow-none);
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    .storyLogo {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+
+      .logo {
+        margin-right: 20px;
+
+        img {
+          height: 30px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+/* Alumni Stories Close */
+/* Association Section */
+.association {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 45px 0px 12px;
+
+  .associate-text {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    color: #289bd6;
+  }
+
+  .content {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%;
+
+    :hover .content-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transition: all 0.4s ease-out;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .content-image {
+      width: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .content-details {
+      position: absolute;
+      text-align: center;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease-in-out 0s;
+      border-radius: 50%;
+      overflow: hidden;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      p {
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 14px;
+        padding: 15px;
+        margin: 0;
+      }
+    }
+  }
+
+  .content:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+
+  .fadeIn-bottom {
+    top: 80%;
+  }
+}
+
+/* Association Section Close */
+/* Instafeed Section */
+.instafeed {
+  background: #f6f6f6;
+}
+/* Stay Updated */
+.stay-updated {
+  form {
+    .input-group {
+      input {
+        line-height: 2.4;
+        box-shadow: none;
+        background: #e5e5e5;
+      }
+
+      .btn-primary {
+        width: 175px;
+        background-color: var(--btn-background);
+        color: var(--bs-white);
+      }
+    }
+
+    ::placeholder {
+      font-size: var(--font-S-12) !important;
+      color: #414141;
+    }
+  }
+
+  .box {
+    background: #fff;
+    box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    .box-heading {
+      position: relative;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+      img {
+        width: 100%;
+        height: 72px;
+      }
+
+      .box-text {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.66);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+
+        .icon {
+          position: relative;
+
+          .text-logo {
+            position: absolute;
+            left: -68%;
+            width: 30px;
+            height: 30px;
+            top: -6px;
+          }
+        }
+      }
+
+      h4 {
+        margin: 0;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 500;
+        z-index: 9999;
+      }
+    }
+
+    .boxUL {
+      padding: 18px 0px;
+
+      ul {
+        padding-inline-start: 0;
+        list-style: none;
+        margin: 0;
+
+        li {
+          margin: 5px 10px;
+
+          a {
+            text-decoration: none;
+            color: #414141;
+            text-transform: uppercase;
+            line-height: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon {
+              float: right;
+
+              img {
+                width: 16px;
+              }
+            }
+
+            .text {
+              width: 220px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin: 0;
+              background: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Stay Updated Close */
 @media screen and (max-width: 767px) and (min-width: 575px) {
   .homeBanner {
     min-height: 450px;

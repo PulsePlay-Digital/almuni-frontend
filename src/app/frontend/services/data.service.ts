@@ -65,7 +65,6 @@ export class DataService {
   }
 
   updateData(action: any, data: any) {
-    console.log(action, data)
     if (action?.action === 'update-user'){
      return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
    }
