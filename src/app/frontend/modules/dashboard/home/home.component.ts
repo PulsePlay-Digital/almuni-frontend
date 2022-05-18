@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
   };
+  //Home banner static data
    homeBanner = [{id:1, src:"./assets/home/Banner1.webp"},{id:2, src:"./assets/home/Banner2.webp"},{id:3, src:"./assets/home/Banner3.webp"},{id:4, src:"./assets/home/Banner4.webp"}] 
   
    customOptions: OwlOptions = {
@@ -56,6 +57,7 @@ export class HomeComponent implements OnInit {
       0: {
         items: 1,
         stagePadding: 0,
+        nav: false
       },
       400: {
         items: 1,
@@ -63,11 +65,11 @@ export class HomeComponent implements OnInit {
         nav: false,
       },
       500:{
-        nav: false,
+        nav: true,
       },
       768: {
         items: 1,
-        nav: false,
+        nav: true,
         // stagePadding: 250
       },
       1191: {
@@ -105,13 +107,16 @@ export class HomeComponent implements OnInit {
       },
       768: {
         items: 1,
-        nav: false,
-        // stagePadding: 250
+        nav: true
       },
       1191: {
         items: 1,
-        // stagePadding: 350
+        nav: true
       },
+      1450: { 
+        items: 1,
+        nav: true
+      }
     },
   };
 

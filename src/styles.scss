@@ -3,354 +3,342 @@
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "theme/variables.css";
 @font-face {
-    font-family: Montserrat;
-    src: url("./assets/fonts/Montserrat-Regular.ttf");
+  font-family: Montserrat;
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
 .invalid-feedback {
-    display: block !important;
+  display: block !important;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin        : 0;
-    letter-spacing: 1px;
-    font-family: Montserrat !important;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: Montserrat !important;
 }
 
 ::placeholder {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .label-danger {
-    color: red;
+  color: red;
 }
 
 .text-danger {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .form-label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .mat-snack-bar-container {
-    background: #4e73df;
+  background: #4e73df;
 }
 
 .mat-simple-snackbar-action {
-    color: #fff;
+  color: #fff;
 }
 
 .green-snackbar {
-    background: rgb(2, 192, 72);
-    color     : #fff;
+  background: rgb(2, 192, 72);
+  color: #fff;
 }
 
 .red-snackbar {
-    background: #dc3545;
-    color     : #fff;
+  background: #dc3545;
+  color: #fff;
 }
 
 .warning-snackbar {
-    background: #ffc107;
-    color     : #fff;
+  background: #ffc107;
+  color: #fff;
 }
 
 .main-heading {
-    font-size: var(--font-S-32) !important;
-    line-height:43.88px !important;
-    color: var(--btn-background);
-    font-family: var(--family) !important;
+  font-size: var(--font-S-32) !important;
+  line-height: 43.88px !important;
+  color: var(--btn-background);
+  font-family: var(--family) !important;
 }
 
 .sub-heading {
-    font-size: 30px;
-    line-height: 43px;
-    color: #FEA641;
-    font-family: Montserrat !important;
+  font-size: 30px;
+  line-height: 43px;
+  color: #fea641;
+  font-family: Montserrat !important;
 }
 
 //Custom css common for sidebar vertical tabs
 .know-us {
-    img {
-        width: 100%;
-        object-fit: cover;
-    }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 .nav-pills-custom .nav-link {
-    color: #0d205f;
-    background: #fff;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
+  color: #0d205f;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
 }
 
 .nav-pills-custom .nav-link.active {
-    background: #3a96da !important;
-    color: #fff !important;
+  background: #3a96da !important;
+  color: var(--bs-white) !important;
 }
-h4.font-italic.mb-4 {
-    text-align: center;
-    margin: auto;
-    background: #3D4097;
-    color: #fff;
-    padding: 12px;
-    text-transform: uppercase;
+h4.font-italic {
+  text-align: var(--text-C);
+  margin: var(--margin-auto);
+  background: #3d4097;
+  color: var(--bs-white);
+  padding: var(--pad-12);
+  text-transform: var(--text-upper);
 }
-.bannerSlider{
-    .owl-nav {
-        display: flex !important;
-        justify-content: space-between !important;
-        position: relative;
-        top: -380px !important;
-        .owl-prev {
-         background-color: transparent !important;
-            i {
-                color    : B9B9B9;
-                font-size: 24px;
-                color: #B9B9B9 !important;
-            }
-        }
-      .owl-next {
-            background-color: transparent !important;
-             i {
-               font-size: 24px;
-                color: #B9B9B9 !important;
-            }
-        }
-    }
 
+.bannerSlider {
+  .owl-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    position: relative;
+    top: -270px !important;
+    .owl-prev {
+      background-color: transparent !important;
+      i {
+        color: #B9B9B9;
+        font-size: 24px;
+        color: #b9b9b9 !important;
+      }
+    }
+    .owl-next {
+      background-color: transparent !important;
+      i {
+        font-size: 24px;
+        color: #b9b9b9 !important;
+      }
+    }
+  }
 }
-.alumni {
-    .owl-nav {
-        .owl-prev {
-            position  : absolute;
-            left      : -100px;
-            top    : 24%;
-            background: none;
-
-            i {
-                color    : #8d8d8d;
-                font-size: 24px;
-            }
-        }
-
-        .owl-next {
-            position  : absolute;
-            right     : -100px;
-            top    : 24%;
-            background: none;
-
-            i {
-                color    : #8d8d8d;
-                font-size: 24px;
-            }
-        }
+/* Home Featured Alumni slider*/
+.alumniStories {
+  .owl-nav {
+    position: var(--position-absolute);
+    bottom: 28px;
+    left: 43%;
+    .owl-prev,
+    .owl-next {
+      background: var(--bg-Transparent);
+      font-size: var(--font-S-18);
     }
-
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-        background: #000;
-    }
-    .owl-nav .owl-prev:hover,
-    .owl-nav .owl-next:hover {
-        background: transparent !important;
-    }
-
-    .owl-nav .owl-prev i:hover,
-    .owl-nav .owl-prev i:focus,
-    .owl-nav .owl-next i:hover,
-    .owl-nav .owl-next i:focus {
-        color: #000;
-    }
-
-    owl-carousel-o {
-        .owl-carousel {
-            .owl-stage-outer{
-                padding-top: 40px;
-                owl-stage {
-                    .owl-stage {
-                        .owl-item {
-                            .gallaryImg {
-                                img {
-                                    opacity: .5
-                                }
-                                .featuredInfo {
-                                    display: none;
-                                }
-                            }
-                        }
-                        .owl-item.center {
-                            .gallaryImg {
-                                img {
-                                    opacity: 1;
-                                    height: 270px !important;
-                                    margin-top: -30px;
-                                    border-radius: 5px;
-                                }
-                                .featuredInfo {
-                                    display: block;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-   
-    }
+  }
 }
+/* Featured alumni Css End */
+/* Home Gallery css */
 .gallary {
-    .owl-nav {
-        .owl-prev {
-            position  : absolute;
-            left      : -100px;
-            bottom    : 39%;
-            background: none;
+  .owl-nav {
+    .owl-prev {
+      position: var(--position-absolute);
+      left: -203px;
+      background: none;
+      top: 130px;
 
-            i {
-                color    : #8d8d8d;
-                font-size: 24px;
-            }
-        }
-
-        .owl-next {
-            position  : absolute;
-            right     : -100px;
-            bottom    : 39%;
-            background: none;
-
-            i {
-                color    : #8d8d8d;
-                font-size: 24px;
-            }
-        }
+      i {
+        color: #8d8d8d;
+        font-size: 24px;
+      }
     }
 
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-        background: #000;
-    }
-    .owl-nav .owl-prev:hover,
-    .owl-nav .owl-next:hover {
-        background: transparent !important;
-    }
+    .owl-next {
+      position: var(--position-absolute);
+      right: -203px;
+      top: 130px;
+      background: none;
 
-    .owl-nav .owl-prev i:hover,
-    .owl-nav .owl-prev i:focus,
-    .owl-nav .owl-next i:hover,
-    .owl-nav .owl-next i:focus {
-        color: #000;
+      i {
+        color: #8d8d8d;
+        font-size: 24px;
+      }
     }
+  }
 
-    owl-carousel-o {
-        .owl-carousel {
-            .owl-stage-outer{
-                padding-top: 40px;
-                owl-stage {
-                    .owl-stage {
-                        .owl-item {
-                            .gallaryImg {
-                                img {
-                                    opacity: .5
-                                }
-                                .featuredInfo {
-                                    display: none;
-                                }
-                            }
-                        }
-                        .owl-item.center {
-                            .gallaryImg {
-                                img {
-                                    opacity: 1;
-                                    height: 270px !important;
-                                    margin-top: -30px;
-                                    border-radius: 5px;
-                                }
-                                .featuredInfo {
-                                    display: block;
-                                }
-                            }
-                        }
-                    }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #000;
+  }
+  .owl-nav .owl-prev:hover,
+  .owl-nav .owl-next:hover {
+    background: transparent !important;
+  }
+
+  .owl-nav .owl-prev i:hover,
+  .owl-nav .owl-prev i:focus,
+  .owl-nav .owl-next i:hover,
+  .owl-nav .owl-next i:focus {
+    color: #000;
+  }
+
+  owl-carousel-o {
+    .owl-carousel {
+      .owl-stage-outer {
+        padding-top: 40px;
+        owl-stage {
+          .owl-stage {
+            .owl-item {
+              .gallaryImg {
+                img {
+                  opacity: 0.5;
                 }
+                .featuredInfo {
+                  display: none;
+                }
+              }
             }
+            .owl-item.center {
+              .gallaryImg {
+                img {
+                  opacity: 1;
+                  height: 270px !important;
+                  margin-top: -30px;
+                  border-radius: 5px;
+                }
+                .featuredInfo {
+                  display: block;
+                }
+              }
+            }
+          }
         }
-   
+      }
     }
+  }
 }
-
+/* Home Gallery Css End */
 // Active Pagination CSS
 .ngx-pagination .current {
-    padding: 0.5rem 1rem !important;
-    cursor: default;
-    color: #2199e8 !important;
-    font-weight: bold;
-    border: 2px solid;
-    background: #fff !important;
-    border-color: #2199e8 !important;
-    border-radius: 50%;
+  padding: 0.5rem 1rem !important;
+  cursor: default;
+  color: #2199e8 !important;
+  font-weight: bold;
+  border: 2px solid;
+  background: #fff !important;
+  border-color: #2199e8 !important;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
-    .gallary {
-        .owl-nav {
-            display: none !important;
-        }
+  .gallary {
+    .owl-nav {
+      display: none !important;
     }
-    .bannerSlider{
-        .owl-nav {
-            display: none !important;
-        }
+  }
+  .bannerSlider {
+    .owl-nav {
+      display: none !important;
     }
-    .main-heading {
-        font-size: 18px !important;
-        line-height: 30px !important;
-    }
+  }
+  .main-heading {
+    font-size: 18px !important;
+    line-height: 30px !important;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 575px) {
-    .main-heading {
-        font-size: 22px !important;
+  .main-heading {
+    font-size: 22px !important;
+  }
+  .bannerSlider {
+    .owl-nav {
+      display: none !important;
     }
-    .bannerSlider{
-        .owl-nav {
-            display: none !important;
+  }
+  .alumniStories {
+    .owl-nav {
+      position: var(--position-absolute);
+      top: 38px;
+      right: 15%;
+      left: unset;
+    }
+  }
+  .gallary {
+    .owl-nav {
+        .owl-prev {
+          left: -53px;
         }
-    }
+        .owl-next {
+          right: -53px;
+        }
+      }
+  }
 }
 
 @media screen and (max-width: 991px) and (min-width: 767px) {
-    .gallary {
-        owl-carousel-o {
-            .owl-carousel {
-                .owl-stage-outer{
-                    padding-top: 40px;
-                    owl-stage {
-                        .owl-stage {
-                            .owl-item {
-                                .gallaryImg {
-                                    img {
-                                        opacity: .5
-                                    }
-                                }
-                            }
-                            .owl-item.center {
-                                .gallaryImg {
-                                    img {
-                                        opacity: 1;
-                                        height: 320px !important;
-                                        margin-top: -29px;
-                                    }
-                                }
-                            }
-                        }
-                    }
+  .gallary {
+    owl-carousel-o {
+      .owl-carousel {
+        .owl-stage-outer {
+          padding-top: 40px;
+          owl-stage {
+            .owl-stage {
+              .owl-item {
+                .gallaryImg {
+                  img {
+                    opacity: 0.5;
+                  }
                 }
+              }
+              .owl-item.center {
+                .gallaryImg {
+                  img {
+                    opacity: 1;
+                    height: 320px !important;
+                    margin-top: -29px;
+                  }
+                }
+              }
             }
+          }
         }
+      }
     }
+    .owl-nav {
+        .owl-prev {
+          left: -55px;
+        }
+        .owl-next {
+          right: -55px;
+        }
+      }
+  }
+  
+  .alumniStories {
+    .owl-nav {
+      position: var(--position-absolute);
+      top: 38px;
+      right: 14%;
+      left: unset;
+    }
+  }
 }
-
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+  .alumniStories {
+    .owl-nav {
+      left: 42%;
+    }
+  }
+  .gallary {
+    .owl-nav {
+      .owl-prev {
+        left: -180px;
+      }
+      .owl-next {
+        right: -180px;
+      }
+    }
+  }
+}

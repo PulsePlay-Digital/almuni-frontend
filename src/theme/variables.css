@@ -23,6 +23,7 @@
     --bg-header-color: #04003a;
     --bg-footer: #33333a;
     --bg-Transparent: transparent;
+    --bg-gray: #F2F2F2;
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -119,6 +120,7 @@
     --letter-space-1-5: 1.5px;
     --letter-space-1: 1px;
     --letter-space-0-5: .5px;
+    --margin-auto: auto;
     --margin-0: 0;
     --margin-2: 2px;
     --margin-5: 5px;  
@@ -148,6 +150,7 @@
     --pad-2: 2px;
     --pad-5: 5px;
     --pad-10: 10px;
+    --pad-12: 12px;
     --pad-15: 15px;
     --pad-20: 20px;
     --mar-1:1px;
@@ -176,8 +179,8 @@
     --youtube-color: #c33223;
     --width-0100: 100%;
     --footer-bg:#000D58;
-    --footer-link:#000D58;
     --width:100%;
     --width-1:100px;
     --width-2:200px;
+    --z-index-9999: 9999;
 }
