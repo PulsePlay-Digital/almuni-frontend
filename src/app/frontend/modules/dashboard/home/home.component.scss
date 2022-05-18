@@ -25,12 +25,6 @@
   }
 }
 
-.heading {
-  font-size: 30px;
-  line-height: 43px;
-  color: #f65c8b;
-}
-
 .sub-heading {
   font-size: 30px;
   line-height: 43px;
@@ -247,24 +241,9 @@
     cursor: pointer;
   }
 }
-
-.more-btn {
-  .know-more {
-    background-color: #f65c8b;
-    color: #fff;
-    border-radius: 2px;
-  }
-  .know-more:hover {
-    background-color: #fff;
-    color: #f65c8b;
-    border-color: #f65c8b;
-  }
-}
-
 // CONNECT VISION CLOSE
 
 /* Home page map css */
-
 .homeMap {
   img {
     box-shadow: none;
@@ -276,7 +255,7 @@
       flex-direction: column;
       align-items: center;
       h4 {
-        font-size: var(--font-S-20);
+        font-size: var(--font-S-18);
         font-weight: var(--font-B-600);
         color: var(--nav-color);
         font-family: var(--family);
@@ -303,7 +282,7 @@
       align-items: var(--align-center);
       flex-direction: row;
       position: var(--position-relative);
-
+    
       .user-logo {
         overflow: hidden;
         width: 110px;
@@ -337,6 +316,7 @@
 
     h3 {
       margin: 0;
+      font-family: var(--family);
     }
 
     .storyLogo {
@@ -492,10 +472,8 @@
         align-items: center;
         flex-direction: row;
         justify-content: center;
-
         .icon {
           position: relative;
-
           .text-logo {
             position: absolute;
             left: -68%;
@@ -527,7 +505,6 @@
 
         li {
           margin: 5px 10px;
-
           a {
             text-decoration: none;
             color: #414141;
@@ -539,12 +516,10 @@
 
             .icon {
               float: right;
-
               img {
                 width: 16px;
               }
             }
-
             .text {
               width: 220px;
               white-space: nowrap;
@@ -561,6 +536,21 @@
 }
 
 /* Stay Updated Close */
+
+@media screen and (max-width:575px) and (min-width: 300px) {
+  .stay-updated {
+    .box {  
+      .boxUL {
+        padding: 5px;
+        ul {
+          li {
+            margin: 0px 15px;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 767px) and (min-width: 575px) {
   .homeBanner {
     min-height: 450px;
@@ -635,10 +625,16 @@
         .box-text {
           .icon {
             .text-logo {
-              left: -115%;
+              left: -30%;
+              width: 22px;
+              height: 22px;
+              top: 0px;;
             }
           }
         }
+      }
+      .boxUL {
+        padding: 5px;
       }
     }
   }

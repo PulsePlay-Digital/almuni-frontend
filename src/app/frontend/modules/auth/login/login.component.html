@@ -61,7 +61,8 @@
                             </div>
                             <div class="row justify-content-center pt-4 pb-5 m-0">
                                 <div class="mb-3 col-md-4 col-4 col-lg-4 ">
-                                    <button type="submit"
+                                    <app-loader *ngIf="loading"></app-loader>
+                                    <button type="submit" *ngIf="!loading"
                                         class="btn rounded-0 fw-bolder shadow  text-white btn-register"
                                         (click)="login()" [disabled]="!loginForm.valid">Log In</button>
                                 </div>
