@@ -4,6 +4,8 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 import { DataService } from "./../../../services/data.service";
 import { Config } from "./../../../../frontend/services/config";
 import { environment } from "./../../../../../environments/environment";
+import { map } from "rxjs/operators";
+import * as moment from "moment";
 
 @Component({
   selector: "app-home",
@@ -17,6 +19,8 @@ export class HomeComponent implements OnInit {
   homebanner:any;
   loading: boolean = false;
   imgPath = environment.imgUrl;
+  allNews: any;
+  allEvents: any;
 
   homebannerOptions: OwlOptions = {
     loop: true,
@@ -125,7 +129,6 @@ export class HomeComponent implements OnInit {
     public config: Config,
     public dataService: DataService
   ) {
-    // this.gallery = this.config.gallary();
     this.featuredAlumni = this.config.alumniStories();
   }
 
@@ -133,6 +136,8 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.getAllFeaturedAlumni();
     this.getAllGallery();
+    this.getAllNews();
+    this.getAllEvents();
   }
   /**
    * Function to connect user with alumni
@@ -172,4 +177,39 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  /**
+   * Function to get all news
+   */
+  async getAllNews() {
+    let action: string = "all-news";
+    await this.dataService.getData(action).subscribe((result: any) => {
+      this.allNews = result?.data;
+      this.loading = false;
+    })
+  }
+
+  /**
+   * Function to get all alumni events
+   */
+  async getAllEvents() {
+    let action: string = "all-event";
+    await this.dataService.getData(action).pipe(
+      map((res:any) => {
+        return res.data.filter((item:any) => {
+          if(item?.category !== "admin"){
+            return item;
+          }
+        });
+      })
+    ).subscribe((result: any) => {
+      this.allEvents = result;
+      this.loading = false;
+    })
+  }
+
+  viewAlumniDetail(params: any) {
+    this.router.navigate(["/view-profile"], {
+      queryParams: { id: params },
+    });
+  }
 }
