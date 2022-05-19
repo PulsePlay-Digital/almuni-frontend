@@ -20,6 +20,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { StartupCornerComponent } from './components/startup-corner/startup-corner.component';
 import { AskforGeneralComponent } from './components/askfor-general/askfor-general.component';
 import { UsersBannerComponent } from './components/users-banner/users-banner.component';
+import { ViewMapComponent } from './components/view-map/view-map.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
     StartupCornerComponent,
     AskforGeneralComponent,
     UsersBannerComponent,
+    ViewMapComponent,
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
     SearchFilterComponent,
     StripHtmlPipe,
     DialogEntrepreneurshipComponent,
-    UsersBannerComponent
+    UsersBannerComponent,
+    ViewMapComponent
   ]
 })
 export class SharedModule {}

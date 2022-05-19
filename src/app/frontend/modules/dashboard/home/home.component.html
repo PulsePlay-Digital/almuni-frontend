@@ -8,14 +8,6 @@
             </div>
         </ng-template>
     </owl-carousel-o>
-
-    <!-- <div class="container">
-        <div class="row my-lg-5 my-md-5 my-sm-4 my-4">
-            <div class="col openAdd text-center ">
-                <a class="btn registerLogin fs-5 px-4" routerLink="/register">Register / Login</a>
-            </div>
-        </div>
-    </div> -->
 </div>
 <!-- BANNER CROUSEL END -->
 <!--- INNER Section --->
@@ -57,52 +49,8 @@
             </div>
         </div>
     </div>
-    <!-- CONTAINER END -->
 </div>
 <!--- Inner Section Close --->
-<!--- Featured Alumni Gallary Section --->
-<!-- <div class="gallary alumni my-lg-4 my-md-4 my-sm-3 my-2 mb-lg-2 mb-md-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12  my-lg-5 my-md-5 my-sm-4 my-3">
-                <h4 class="heading fw-bold text-uppercase text-center mb-0">FEATURED ALUMNI</h4>
-            </div>
-        </div>
-        <app-loader *ngIf="loading"></app-loader>
-        <div class="row justify-content-center" *ngIf="!loading">
-            <div class="col-lg-8">
-                <owl-carousel-o [options]="galleryOptions">
-                    <ng-template carouselSlide *ngFor="let data of alumni">
-                        <div class="gallaryImg">
-                            <a href="">
-                                <img [src]="imgPath + data.picture" alt="Featured Alumni Images">
-                            </a>
-                            <div class="row featuredInfo">
-                                <div class="col-lg-12 mt-3 text-center">
-                                    <h4 class="sub-heading fw-bold text-uppercase">{{ data?.alumni_name }}</h4>
-                                    <p class="fs-5 fw-bold text-capitalize mb-3">Batch : {{data?.batch_year}}</p>
-                                    <p class="fs-5 fw-bold text-capitalize mb-3">Current Designation :
-                                        {{data?.designation}}</p>
-                                    <p class="fs-5 fw-bold text-capitalize mb-3">Current firm : {{data?.company}}</p>
-                                    <p class="fs-5 fw-bold text-capitalize mb-3">Industry : {{data?.industry}}</p>
-                                    <p class="fs-5 fw-bold text-capitalize mb-3">Location : {{data?.location}}</p>
-                                </div>
-                                <div class="row justify-content-center m-0">
-                                    <div
-                                        class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center mt-2 mt-lg-4 mt-md-4 mt-sm-4">
-                                        <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                                            (click)="viewAlunni(data.id)">Know More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </owl-carousel-o>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!--- Featured Alumni Gallary Section Close --->
 <!--- Alumni Stories --->
 <div class="alumniStories my-xl-5 my-lg-5 my-md-5 my-sm-4 mb-3">
     <owl-carousel-o [options]="customOptions">
@@ -167,8 +115,16 @@
                             <div class="row justify-content-lg-end justify-content-md-end justify-content-sm-start m-0">
                                 <div
                                     class="col-xl-12 col-lg-6 col-md-6 col-sm-6 ps-sm-1 pe-md-0 pe-lg-0 mt-xl-0 mt-lg-0 mt-sm-2 mt-md-0 mt-2 text-xl-end text-lg-end text-md-end text-start">
-                                    <a (click)="viewAlumniDetail(stories)" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                                    >read More</a>
+                                    <ng-container *ngIf="currentUser">
+                                        <a (click)="viewAlumniDetail(stories)"
+                                            class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
+                                            More</a>
+                                    </ng-container>
+                                    <ng-container *ngIf="!currentUser">
+                                        <a routerLink="/login"
+                                            class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
+                                            More</a>
+                                    </ng-container>
                                 </div>
                             </div>
                         </div>
@@ -184,13 +140,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="main-heading fw-bold text-uppercase text-lg-start text-md-start text-sm-start text-center">Purpose</h4>
+                <h4 class="main-heading fw-bold text-uppercase text-lg-start text-md-start text-sm-start text-center">
+                    Purpose</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 my-2">
                 <div class="content">
-                    <a>
+                    <a routerLink="/connect">
                         <div class="content-overlay"></div>
                         <img class="content-image" src="./assets/association03.png" />
                         <div class="content-details fadeIn-bottom">
@@ -198,15 +155,15 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a href="#">View Details</a>
+                            <a >View Details</a>
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3">Connect</h5>
+                <h5 class="associate-text my-3" routerLink="/connect">Connect</h5>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 my-2">
                 <div class="content">
-                    <a>
+                    <a routerLink="/community/alumni-directory">
                         <div class="content-overlay"></div>
                         <img class="content-image" src="./assets/association04.png" />
                         <div class="content-details fadeIn-bottom">
@@ -214,15 +171,15 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a href="#">View Details</a>
+                            <a >View Details</a>
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3">Network</h5>
+                <h5 routerLink="/community/alumni-directory" class="associate-text my-3">Network</h5>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 my-2">
                 <div class="content">
-                    <a>
+                    <a routerLink="/collaborate-contribute/engage-with-society">
                         <div class="content-overlay"></div>
                         <img class="content-image" src="./assets/association01.png" />
                         <div class="content-details fadeIn-bottom">
@@ -230,15 +187,15 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a href="#">View Details</a>
+                            <a>View Details</a>
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3">Engage & Support</h5>
+                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/engage-with-society">Engage & Support</h5>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 my-2">
                 <div class="content">
-                    <a>
+                    <a routerLink="/collaborate-contribute/mentorship">
                         <div class="content-overlay"></div>
                         <img class="content-image" src="./assets/association02.png" />
                         <div class="content-details fadeIn-bottom">
@@ -246,71 +203,16 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a href="#">View Details</a>
+                            <a >View Details</a>
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3">Learn (LifeLong & Grow)</h5>
+                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/mentorship">Learn (LifeLong & Grow)</h5>
             </div>
         </div>
     </div>
 </div>
 <!--- Association Section Close --->
-<!-- CONNECT VISION START -->
-<!-- <div class="connectVision">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col my-3 my-lg-5 my-md-5 my-sm-4">
-                <h4 class="heading fw-bolder text-uppercase mb-0">Purpose</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 pe-xl-0 pe-lg-0 ">
-                <div class="content">
-                    <img class="w-100 content-img" src="./assets/home/purpose01.webp" alt="services-img">
-                    <a class="box-text"></a>
-                </div>
-                <div class="content-heading my-3">
-                    <a class="mb-0 connect text-uppercase text-decoration-none">connect</a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 px-xl-0 px-lg-0">
-                <div class="content">
-                    <img class="w-100 content-img" src="./assets/home/purpose02.webp" alt="services-img">
-                    <a class="box-text"></a>
-                </div>
-                <div class="content-heading my-3">
-                    <a class="mb-0 network text-uppercase text-decoration-none">network</a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 px-xl-0 px-lg-0">
-                <div class="content">
-                    <img class="w-100 content-img" src="./assets/home/purpose03.webp" alt="services-img">
-                    <a class="box-text"></a>
-                </div>
-                <div class="content-heading my-3">
-                    <a class="mb-0 engage text-uppercase text-decoration-none">Engage & support</a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 ps-xl-0  col-md-6 col-sm-6 ps-lg-0 ">
-                <div class="content">
-                    <img class="w-100 content-img" src="./assets/home/purpose04.webp" alt="services-img">
-                    <a class="box-text"></a>
-                </div>
-                <div class="content-heading my-3">
-                    <a class="mb-0 learnGrow text-uppercase text-decoration-none">learn & grow</a>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-2 mt-lg-3 mt-md-3 mt-sm-3">
-                <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                    routerLink="/connect/at-glance">Know More</a>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- CONNECT VISION CLOSE -->
 <!--- Map Section --->
 <div class="homeMap my-lg-4 my-md-4 my-3">
     <div class="container">
@@ -319,7 +221,7 @@
                 <h4 class="main-heading fw-bolder text-uppercase">AlUMNI AROUND THE WORLD</h4>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-lg-5 pb-md-5 pb-sm-4 pb-4">
             <div class="col-xl-4 col-lg-5 col-md-12 my-2">
                 <img src="./assets/home/map.webp" />
             </div>
@@ -372,7 +274,7 @@
                         </div>
                         <div
                             class="col-xl-7 col-lg-8 col-md-6 col-sm-6 col-6 my-2 pe-xl-0 pe-lg-3 text-lg-end text-md-center text-center">
-                            <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
+                            <a routerLink="view-map" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
                                 Map</a>
                         </div>
                     </div>
@@ -418,7 +320,7 @@
     <div class="container">
         <div class="row justify-content-center pt-xl-4 pt-lg-4 pt-md-4 pt-sm-3 pt-2">
             <div class="col-lg-12">
-                <h4 class="main-heading fw-bolder text-uppercase">NETWORK IS YOUR NETWORTH</h4>
+                <h4 class="main-heading fw-bolder text-uppercase mb-0">NETWORK IS YOUR NETWORTH</h4>
             </div>
         </div>
         <div class="row m-0 py-4">
@@ -474,11 +376,13 @@
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                             <li>
-                                <a routerLink="/community/professional-club"><span class="text">Exclusive resources</span>
+                                <a routerLink="/community/professional-club"><span class="text">Exclusive
+                                        resources</span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                             <li>
-                                <a routerLink="collaborate-contribute/engage-with-society"><span class="text">Contribute back </span>
+                                <a routerLink="collaborate-contribute/engage-with-society"><span class="text">Contribute
+                                        back </span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                         </ul>
@@ -522,7 +426,7 @@
                         <app-loader *ngIf="loading"></app-loader>
                         <ul *ngIf="!loading">
                             <li *ngFor="let event of allEvents">
-                                <a href=""><span class="text">{{event.date | date: 'mediumDate' }}</span>
+                                <a href=""><span class="text">{{event.date | date: 'd MMM, y' }}</span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                         </ul>
