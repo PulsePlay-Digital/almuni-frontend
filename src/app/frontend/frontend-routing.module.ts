@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FrontendComponent } from './frontend.component';
 import { ResetPasswordComponent } from './shared/components/reset-password/reset-password.component';
+import { ViewMapComponent } from './shared/components/view-map/view-map.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'reset-password',
         component: ResetPasswordComponent
+      },
+      {
+        path: 'view-map',
+        component: ViewMapComponent
       },
       {
         path: '',

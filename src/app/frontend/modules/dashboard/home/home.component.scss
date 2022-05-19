@@ -281,6 +281,7 @@
     text-transform: var(--text-capital);
     text-align: var(--text-C);
     color: var(--bg-color);
+    cursor: var( --cursor-pointer);
   }
 
   .content {
@@ -317,7 +318,6 @@
       left: 50%;
       opacity: 0;
       transform: translate(-50%, -50%);
-      transition: all 0.3s ease-in-out 0s;
       border-radius: 50%;
       overflow: hidden;
 
@@ -325,6 +325,7 @@
         color: #fff;
         font-weight: 600;
         text-decoration: none;
+        text-shadow: 1px 1px #fff;
       }
 
       p {
@@ -334,6 +335,7 @@
         font-size: 14px;
         padding: 15px;
         margin: 0;
+        text-shadow: 1px 1px #fff;
       }
     }
   }
@@ -526,6 +528,12 @@
   .feeds {
     .feedsContent {
       padding: 40px 0;
+    }
+  }
+  .association {
+    .content {
+      width: 100%;
+      height: auto;
     }
   }
 }

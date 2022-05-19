@@ -37,11 +37,12 @@ export class ViewProfileComponent implements OnInit {
     public config: Config,
     public arouter: ActivatedRoute
   ) {
-    // Get token
+    // Get Queryparams
     this.arouter.queryParams.subscribe((res: any) => {
-      if (res) {
-        this.userId = res?.id;
+      if (res?.type == 'featuredAlumni') {
+        this.user = res;
       }
+      this.userId = res?.id;
     });
     this.token = this.authService.getToken();
     this.gender = this.config.genderDt();
@@ -60,11 +61,11 @@ export class ViewProfileComponent implements OnInit {
         .subscribe((res: any) => {
           this.user = res?.data;
           this.form.patchValue({
-            ...this.user,
+            ...this.user
           });
           this.loading = false;
         });
-    }
+    } 
   }
 
   buildForm() {

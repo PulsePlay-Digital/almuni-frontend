@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   imgPath = environment.imgUrl;
   allNews: any;
   allEvents: any;
+  currentUser: any;
 
   homebannerOptions: OwlOptions = {
     loop: true,
@@ -130,6 +131,7 @@ export class HomeComponent implements OnInit {
     public dataService: DataService
   ) {
     this.featuredAlumni = this.config.alumniStories();
+    this.currentUser = localStorage?.getItem('currentUser') || '';
   }
 
   ngOnInit(): void {
@@ -138,12 +140,6 @@ export class HomeComponent implements OnInit {
     this.getAllGallery();
     this.getAllNews();
     this.getAllEvents();
-  }
-  /**
-   * Function to connect user with alumni
-   */
-  goJoin() {
-    this.router.navigate(["/login"]);
   }
 
   /**
@@ -208,8 +204,7 @@ export class HomeComponent implements OnInit {
   }
 
   viewAlumniDetail(params: any) {
-    this.router.navigate(["/view-profile"], {
-      queryParams: { id: params },
-    });
+    this.router.navigate(["/view-profile"],{ queryParams: { ...params, type:'featuredAlumni' }});
   }
 }
+
