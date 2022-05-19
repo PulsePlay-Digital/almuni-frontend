@@ -426,6 +426,9 @@
 
     .boxUL {
       padding: 18px 0px;
+      height: 182px;
+      overflow: hidden;
+      overflow-y: auto;
 
       ul {
         padding-inline-start: 0;

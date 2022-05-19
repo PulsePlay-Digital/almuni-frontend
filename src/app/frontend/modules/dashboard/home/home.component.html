@@ -167,7 +167,7 @@
                             <div class="row justify-content-lg-end justify-content-md-end justify-content-sm-start m-0">
                                 <div
                                     class="col-xl-12 col-lg-6 col-md-6 col-sm-6 ps-sm-1 pe-md-0 pe-lg-0 mt-xl-0 mt-lg-0 mt-sm-2 mt-md-0 mt-2 text-xl-end text-lg-end text-md-end text-start">
-                                    <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
+                                    <a (click)="viewAlumniDetail(stories)" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
                                     >read More</a>
                                 </div>
                             </div>
@@ -470,7 +470,7 @@
                     <div class="boxUL">
                         <ul>
                             <li>
-                                <a href=""><span class="text">Mentorship</span>
+                                <a routerLink="/collaborate-contribute/mentorship"><span class="text">Mentorship</span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                             <li>
@@ -497,17 +497,10 @@
                         </div>
                     </div>
                     <div class="boxUL">
-                        <ul>
-                            <li>
-                                <a href=""><span class="text">Memorial Service for...</span>
-                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="text">Sri Balaji University Rajasthan</span>
-                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="text">Sri Balaji University Hyderabad</span>
+                        <app-loader *ngIf="loading"></app-loader>
+                        <ul *ngIf="!loading">
+                            <li *ngFor="let news of allNews">
+                                <a href=""><span class="text">{{news?.title}}</span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                         </ul>
@@ -526,17 +519,10 @@
                         </div>
                     </div>
                     <div class="boxUL">
-                        <ul>
-                            <li>
-                                <a href=""><span class="text">13 Jan 2022</span>
-                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="text">26 Jan 2022 </span>
-                                    <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="text">8 March 2022</span>
+                        <app-loader *ngIf="loading"></app-loader>
+                        <ul *ngIf="!loading">
+                            <li *ngFor="let event of allEvents">
+                                <a href=""><span class="text">{{event.date | date: 'mediumDate' }}</span>
                                     <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                             </li>
                         </ul>
