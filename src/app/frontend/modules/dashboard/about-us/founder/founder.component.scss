@@ -12,5 +12,60 @@
     p {
       color: var(--btn-background);
     }
+    iframe {
+      width: var(--width-0100);
+      height: 450px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) and (min-width: 300px) {
+  .know-us-section {
+    .founderVideo {
+      iframe {
+        height: 200px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 574px) and (min-width: 400px) {
+  .know-us-section {
+    .founderVideo {
+      iframe {
+        height: 288px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 575px) {
+  .know-us-section {
+    .founderVideo {
+      iframe {
+        height: 352px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .know-us-section {
+    .founderVideo {
+      iframe {
+        height: 430px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+  .know-us-section {
+    .founderVideo {
+      iframe {
+        height: 400px;
+      }
+    }
   }
 }
