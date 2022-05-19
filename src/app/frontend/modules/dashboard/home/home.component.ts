@@ -5,7 +5,7 @@ import { DataService } from "./../../../services/data.service";
 import { Config } from "./../../../../frontend/services/config";
 import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
-import * as moment from "moment";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-home",
@@ -16,12 +16,14 @@ export class HomeComponent implements OnInit {
   gallery: any;
   featuredAlumni: any;
   alumni: any;
-  homebanner:any;
+  homebanner: any;
   loading: boolean = false;
   imgPath = environment.imgUrl;
   allNews: any;
   allEvents: any;
   currentUser: any;
+  form: FormGroup | any;
+  submitted: boolean | undefined;
 
   homebannerOptions: OwlOptions = {
     loop: true,
@@ -33,7 +35,7 @@ export class HomeComponent implements OnInit {
     navSpeed: 700,
     autoplay: true,
     autoplayTimeout: 3000,
-    
+
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -41,9 +43,14 @@ export class HomeComponent implements OnInit {
     nav: true,
   };
   //Home banner static data
-   homeBanner = [{id:1, src:"./assets/home/Banner1.webp"},{id:2, src:"./assets/home/Banner2.webp"},{id:3, src:"./assets/home/Banner3.webp"},{id:4, src:"./assets/home/Banner4.webp"}] 
-  
-   customOptions: OwlOptions = {
+  homeBanner = [
+    { id: 1, src: "./assets/home/Banner1.webp" },
+    { id: 2, src: "./assets/home/Banner2.webp" },
+    { id: 3, src: "./assets/home/Banner3.webp" },
+    { id: 4, src: "./assets/home/Banner4.webp" },
+  ];
+
+  customOptions: OwlOptions = {
     loop: true,
     items: 1,
     mouseDrag: true,
@@ -62,14 +69,14 @@ export class HomeComponent implements OnInit {
       0: {
         items: 1,
         stagePadding: 0,
-        nav: false
+        nav: false,
       },
       400: {
         items: 1,
         stagePadding: 0,
         nav: false,
       },
-      500:{
+      500: {
         nav: true,
       },
       768: {
@@ -112,34 +119,52 @@ export class HomeComponent implements OnInit {
       },
       768: {
         items: 1,
-        nav: true
+        nav: true,
       },
       1191: {
         items: 1,
-        nav: true
+        nav: true,
       },
-      1450: { 
+      1450: {
         items: 1,
-        nav: true
-      }
+        nav: true,
+      },
     },
   };
 
   constructor(
     public router: Router,
     public config: Config,
-    public dataService: DataService
+    public dataService: DataService,
+    public fb: FormBuilder
   ) {
     this.featuredAlumni = this.config.alumniStories();
-    this.currentUser = localStorage?.getItem('currentUser') || '';
+    this.currentUser = localStorage?.getItem("currentUser") || "";
   }
 
   ngOnInit(): void {
     this.loading = true;
+    this.buildForm();
     this.getAllFeaturedAlumni();
     this.getAllGallery();
     this.getAllNews();
     this.getAllEvents();
+  }
+
+  buildForm() {
+    this.form = this.fb.group({
+      email: [
+        "",
+        [
+          Validators.required,
+          Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
+        ],
+      ]
+    });
+  }
+
+  get f() {
+    return this.form.controls;
   }
 
   /**
@@ -168,9 +193,9 @@ export class HomeComponent implements OnInit {
   async getAllGallery() {
     let action: string = "all-gallery";
     await this.dataService.getData(action).subscribe((result: any) => {
-      this.gallery =  result?.data;
-      this.loading = false;                                                                                                                                                                                                                               
-    })
+      this.gallery = result?.data;
+      this.loading = false;
+    });
   }
 
   /**
@@ -181,7 +206,7 @@ export class HomeComponent implements OnInit {
     await this.dataService.getData(action).subscribe((result: any) => {
       this.allNews = result?.data;
       this.loading = false;
-    })
+    });
   }
 
   /**
@@ -189,22 +214,35 @@ export class HomeComponent implements OnInit {
    */
   async getAllEvents() {
     let action: string = "all-event";
-    await this.dataService.getData(action).pipe(
-      map((res:any) => {
-        return res.data.filter((item:any) => {
-          if(item?.category !== "admin"){
-            return item;
-          }
-        });
-      })
-    ).subscribe((result: any) => {
-      this.allEvents = result;
-      this.loading = false;
-    })
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res.data.filter((item: any) => {
+            if (item?.category !== "admin") {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe((result: any) => {
+        this.allEvents = result;
+        this.loading = false;
+      });
   }
 
   viewAlumniDetail(params: any) {
-    this.router.navigate(["/view-profile"],{ queryParams: { ...params, type:'featuredAlumni' }});
+    this.router.navigate(["/view-profile"], {
+      queryParams: { ...params, type: "featuredAlumni" },
+    });
+  }
+
+  subscribe() {
+    this.submitted = true;
+    if(this.form.invalid) {
+      return;
+    } else {
+      console.log(this.form.value);
+    }
   }
 }
-

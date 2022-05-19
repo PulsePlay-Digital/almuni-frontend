@@ -322,20 +322,20 @@
       overflow: hidden;
 
       a {
-        color: #fff;
+        color: var(--bs-white);
         font-weight: 600;
         text-decoration: none;
-        text-shadow: 1px 1px #fff;
+        text-shadow: 1px 1px var(--bs-white);
       }
 
       p {
-        color: #fff;
+        color: var(--bs-white);
         font-weight: 500;
         letter-spacing: 1px;
         font-size: 14px;
         padding: 15px;
         margin: 0;
-        text-shadow: 1px 1px #fff;
+        text-shadow: 1px 0px var(--bs-white);
       }
     }
   }

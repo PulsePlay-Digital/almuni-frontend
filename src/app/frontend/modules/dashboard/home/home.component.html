@@ -155,7 +155,7 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a >View Details</a>
+                            <a>View Details</a>
                         </div>
                     </a>
                 </div>
@@ -171,7 +171,7 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a >View Details</a>
+                            <a>View Details</a>
                         </div>
                     </a>
                 </div>
@@ -191,7 +191,8 @@
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/engage-with-society">Engage & Support</h5>
+                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/engage-with-society">Engage &
+                    Support</h5>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 my-2">
                 <div class="content">
@@ -203,11 +204,12 @@
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered
                             </p>
-                            <a >View Details</a>
+                            <a>View Details</a>
                         </div>
                     </a>
                 </div>
-                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/mentorship">Learn (LifeLong & Grow)</h5>
+                <h5 class="associate-text my-3" routerLink="/collaborate-contribute/mentorship">Learn (LifeLong & Grow)
+                </h5>
             </div>
         </div>
     </div>
@@ -230,51 +232,52 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">6405</h4>
+                                <h4 class="text-bolder fs-5">6405</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">India</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">118</h4>
+                                <h4 class="text-bolder fs-5">118</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">Middle East & Africa
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">111</h4>
+                                <h4 class="text-bolder fs-5">111</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">North Americas</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">57</h4>
+                                <h4 class="text-bolder fs-5">57</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">UK/Europe
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">23</h4>
+                                <h4 class="text-bolder fs-5">23</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">Australia & New Zealand</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">111</h4>
+                                <h4 class="text-bolder fs-5">111</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">South America</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 my-2">
                             <div class="counter">
-                                <h4 class="text-bolder">67</h4>
+                                <h4 class="text-bolder fs-5">67</h4>
                                 <p class="text-center fs-6 fw-bolder text-capitalize">Asia (Excluding India)</p>
                             </div>
                         </div>
                         <div
                             class="col-xl-7 col-lg-8 col-md-6 col-sm-6 col-6 my-2 pe-xl-0 pe-lg-3 text-lg-end text-md-center text-center">
-                            <a routerLink="view-map" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
+                            <a routerLink="view-map"
+                                class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
                                 Map</a>
                         </div>
                     </div>
@@ -346,13 +349,19 @@
                 <h4 class="main-heading fw-bolder text-uppercase">stay updated</h4>
             </div>
             <div class="col-xl-5 col-lg-6 col-md-7">
-                <form>
+                <form [formGroup]="form">
                     <div class="input-group">
-                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS"
+                        <input type="email" class="form-control" formControlName="email" placeholder="EMAIL ADDRESS"
                             aria-label="Recipient's username" aria-describedby="button-addon2" />
-                        <button class="btn common_buttons text-white" type="button" id="button-addon2">
+                        <button class="btn common_buttons text-white" id="button-addon2" (click)="subscribe()">
                             Subscribe now
                         </button>
+                    </div>
+                    <div class="text-danger mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                        Email is required.
+                    </div>
+                    <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                        Email format is incorrect.
                     </div>
                 </form>
             </div>

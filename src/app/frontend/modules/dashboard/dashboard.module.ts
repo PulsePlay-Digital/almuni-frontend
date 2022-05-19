@@ -15,6 +15,7 @@ import { CareersComponent } from './careers/careers.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { ConnectModule } from './connect/connect.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,6 +32,8 @@ import { ConnectModule } from './connect/connect.module';
     CommonModule,
     DashboardRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     ConnectModule,
     CarouselModule,
