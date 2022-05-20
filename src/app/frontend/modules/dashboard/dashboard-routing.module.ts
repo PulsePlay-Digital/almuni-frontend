@@ -6,6 +6,7 @@ import { HomeComponent } from './../../../frontend/modules/dashboard/home/home.c
 import { CareersComponent } from './careers/careers.component';
 import { NewsComponent } from './news/news.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
+import { TranscriptComponent } from './transcript/transcript.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
   { 
     path: '', 
     loadChildren: () => import('./common-purpose-culture/common-purpose-culture.module').then(m => m.CommonPurposeCultureModule)
+  },
+  {
+    path: 'transcript',
+    component: TranscriptComponent
   }
 ];
 

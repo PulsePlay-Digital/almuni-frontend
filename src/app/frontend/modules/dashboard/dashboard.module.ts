@@ -16,6 +16,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { ConnectModule } from './connect/connect.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranscriptComponent } from './transcript/transcript.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CollaborateContributeComponent,
     EventComponent,
     SitemapComponent,
-    CareersComponent
+    CareersComponent,
+    TranscriptComponent
   ],
   imports: [
     CommonModule,
