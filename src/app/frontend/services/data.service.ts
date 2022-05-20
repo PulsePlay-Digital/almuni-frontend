@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
-import { throwError } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -9,6 +9,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class DataService {
   url: any;
+  public scrollSection = new Subject<any>();
+
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
@@ -71,5 +73,7 @@ export class DataService {
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }
 
-
+  public scrollSec() {
+    this.scrollSection.next();
+  }
 }

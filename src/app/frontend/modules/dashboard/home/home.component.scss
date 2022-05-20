@@ -484,6 +484,19 @@
       }
     }
   }
+  .association {
+    .content {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .stay-updated {
+    .box {
+      .boxUL {
+        height: 140px;
+      }
+    }
+  }
 }
 @media screen and (max-width: 767px) and (min-width: 575px) {
   .homeBanner {
@@ -532,8 +545,8 @@
   }
   .association {
     .content {
-      width: 100%;
-      height: auto;
+      width: 220px;
+      height: 220px;
     }
   }
 }
@@ -575,6 +588,7 @@
       }
       .boxUL {
         padding: 5px;
+        height: 156px;
       }
     }
   }
