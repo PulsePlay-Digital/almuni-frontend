@@ -12,7 +12,6 @@ export class AlumniConnectVisionComponent implements OnInit {
     "THE FOUNDER & CHANCELLOR – LATE PROF. DR. (COL.) A. BALASUBRAMANIAN MESSAGE ON THE SRI BALAJI UNIVERSITY, PUNE : ALUMNI CONNECT VISION";
 
   constructor(
-    public scroller: ViewportScroller,
     public dataService: DataService
   ) {}
 

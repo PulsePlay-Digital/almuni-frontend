@@ -1,18 +1,18 @@
-<div class="header-nav py-3 d-lg-block d-xl-block d-sm-none d-md-block d-none">
-    <div class="container-fluid  px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
+<div class="header-nav d-lg-block d-xl-block d-sm-none d-md-block d-none" [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
+    <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
         <div class="row">
-            <div class="col-md-12 col-lg-3 col-xl-4 col-sm-8 col-8">
+            <div class="col-md-12 col-lg-3 col-xl-4 col-sm-8 col-8 d-flex align-self-center">
                 <div class="open-add align-self-center text-center">
-                    <a class="navbar-brand " href="#">
-                        <img src="../../../../../assets/SBU logo.png" class="logo   w-75 img-fluid "
+                    <a class="navbar-brand" routerLink="/">
+                        <img src="./assets/SBU logo.png" class="logo img-fluid "
                             alt=" Shri Balaji Logo">
                     </a>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-9 col-xl-8 col-sm-12 col-12">
+            <div class="col-md-12 col-lg-9 col-xl-8 col-sm-12 col-12 d-flex align-self-center">
                 <div class="row">
-                    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12 py-3">
-                        <div class="navbar navbar-expand-lg header-navbar navbar-light">
+                    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light">
                             <div class="top-header">
                                 <div class="open-add align-self-center">
                                     <a href="https://bit.ly/sbup_mba8" target="_blank"
