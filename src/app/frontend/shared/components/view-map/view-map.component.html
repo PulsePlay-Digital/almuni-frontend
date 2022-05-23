@@ -1,1 +1,10 @@
-<p>view-map works!</p>
+<agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType' [mapDraggable]='mapDraggable' 
+[showDefaultInfoWindow]="true" [zoom]="1">
+<agm-marker *ngFor="let marker of coordinates"  [latitude]="marker.lat" [longitude]="marker.longi">
+    <agm-info-window #infoWindow>
+        {{ marker.label }}
+  </agm-info-window>
+</agm-marker>
+</agm-map>
+
+<!-- [iconUrl]="iconUrl" -->
