@@ -21,6 +21,7 @@ import { StartupCornerComponent } from './components/startup-corner/startup-corn
 import { AskforGeneralComponent } from './components/askfor-general/askfor-general.component';
 import { UsersBannerComponent } from './components/users-banner/users-banner.component';
 import { ViewMapComponent } from './components/view-map/view-map.component';
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import { ViewMapComponent } from './components/view-map/view-map.component';
     MatDialogModule,
     MatMenuModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDOOCCaDPxmU5SLeaq1X7R_LMFGnay-XOg'
+    })
   ],
   exports: [
     HeaderComponent,
