@@ -18,6 +18,8 @@
 
 .bannerSlider {
   z-index: 3;
+  padding-top: 200px;
+
   .openAdd {
     .registerLogin {
       background-color: var(--btn-background);
@@ -94,85 +96,6 @@
     }
   }
 }
-
-// .gallary {
-//   .home {
-//     .owl-nav {
-//       .owl-prev {
-//         position: absolute;
-//         left: 0;
-//         bottom: 48%;
-//         font-size: 42px;
-//         background: none;
-//         i {
-//           color: #8d8d8d;
-//           font-size: 24px;
-//         }
-//       }
-//       .owl-next {
-//         position: absolute;
-//         right: 0;
-//         bottom: 48%;
-//         font-size: 42px;
-//         background: none;
-//         i {
-//           color: #8d8d8d;
-//           font-size: 24px;
-//         }
-//       }
-//     }
-//     .owl-theme .owl-dots .owl-dot.active span,
-//     .owl-theme .owl-dots .owl-dot:hover span {
-//       background: #000;
-//     }
-//     .owl-nav .owl-prev:hover,
-//     .owl-nav .owl-next:hover {
-//       background: transparent !important;
-//     }
-//     .owl-nav .owl-prev i:hover,
-//     .owl-nav .owl-prev i:focus,
-//     .owl-nav .owl-next i:hover,
-//     .owl-nav .owl-next i:focus {
-//       color: #000;
-//     }
-//     .owl-item {
-//       img {
-//         height: 280px !important;
-//         object-fit: cover;
-//       }
-//     }
-//     .owl-item.active.center {
-//       opacity: 1;
-//       height: 256px !important;
-//       margin-top: -24px;
-//       border-radius: 5px;
-//     }
-//     // .owl-carousel {}
-//     .owl-stage-outer {
-//       padding-top: 40px;
-//       .owl-stage {
-//         .owl-item {
-//           .gallaryImg {
-//             img {
-//               opacity: 0.5;
-//             }
-//           }
-//         }
-//         .owl-item.center {
-//           .gallaryImg {
-//             img {
-//               opacity: 1;
-//               height: 340px !important;
-//               margin-top: -38px;
-//               border-radius: 5px;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 /* Home page map css */
 .homeMap {
   background: var(--bg-gray);
