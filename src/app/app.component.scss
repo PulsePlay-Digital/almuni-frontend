@@ -1,0 +1,20 @@
+.scrollToTop {
+    position: var(--position-fix);
+    bottom: 8px;
+    right: 8px;
+    font-size: var(--font-S-20);
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    text-align: var(--text-C);
+    color: var(--bs-white);
+    line-height: 36px;
+    background: rgba(90, 92, 105, 0.5);
+    cursor: var(--cursor-pointer);
+    z-index: var(--z-index-9999);
+  }
+  .scrollToTop:hover{
+    background: #5a5c69;
+  }

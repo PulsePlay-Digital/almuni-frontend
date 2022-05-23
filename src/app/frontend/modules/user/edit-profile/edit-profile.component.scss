@@ -8,10 +8,16 @@
     }
     .editIcon {
       cursor: var(--cursor-pointer);
-      img {
-        height: 36px;
-        width: 38px;
-      }
+      background: var(--btn-background);
+      text-transform: var(--text-upper);
+      font-size: var(--font-S-14);
+      color: var(--bs-white);
+      border: 2px solid var(--btn-background);
+    }
+    .editIcon:hover {
+      border: 2px solid var(--btn-background);
+      color: var(--bs-background);
+      background-color: var(--bs-white);
     }
   }
   .choose_file {
@@ -34,19 +40,6 @@
       border-radius: var(--border-radius-50);
       background: var(--bs-white);
       object-fit: var(--object-cover);
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .edit-profile {
-    form {
-      .editIcon {
-        img {
-          height: 28px;
-          width: 30px;
-        }
-      }
     }
   }
 }

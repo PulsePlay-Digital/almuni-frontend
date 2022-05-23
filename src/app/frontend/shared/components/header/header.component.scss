@@ -7,7 +7,7 @@
   .header-navbar {
     .top-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: var(--justify-space-between);
       width: 100%;
 
       .open-add {
@@ -38,7 +38,7 @@
         i {
           color: var(--i-color-1);
           font-size: var(--font-S-24);
-          vertical-align: bottom;
+          vertical-align: var(--vertical-A-bottom);
         }
         a {
           font-size: var(--font-S-14);
@@ -54,14 +54,14 @@
       }
 
       .btn:focus {
-        box-shadow: none;
+        box-shadow: var(--box-shadow-none);
       }
 
       .dropdown-menu {
         background-color: var(--bg-color);
         color: var(--bs-white);
         a:active {
-          text-decoration: underline;
+          text-decoration: var(--text-underline);
         }
       }
       .dropdown-item:focus {
@@ -72,6 +72,7 @@
         line-height: var(--line-height-2);
         white-space: normal;
         min-width: 10rem !important;
+        cursor: var(--cursor-pointer)
       }
       .trick_top::before {
         content: "";
@@ -84,7 +85,7 @@
         border-bottom: 8px solid #011898;
         right: 80%;
         top: -8px;
-        z-index: 99999;
+        z-index: var(--z-index-9999);
       }
       .dropdown-item:hover {
         background-color: var(--bg-Transparent);
@@ -161,7 +162,7 @@
         border-bottom: 8px solid #011898;
         right: 80%;
         top: -8px;
-        z-index: 99999;
+        z-index: var(--z-index-9999);
       }
       .dropdown-item:hover {
         background-color: var(--bg-Transparent);
@@ -436,7 +437,6 @@
   position: var(--position-fix);
   top: 0;
   width: var(--width-0100);
-  // transition: 0.2s;
   background: var(--bs-white);
   z-index: var(--z-index-9999);
   padding: 1rem 0;

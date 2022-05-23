@@ -6,7 +6,7 @@ import { DataService } from "./../../../services/data.service";
 import { AuthService } from "./../../../services/auth.service";
 import { UserService } from "./../../../services/user.service";
 import { Config } from "./../../../services/config";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { environment } from "./../../../../../environments/environment";
 
 @Component({
@@ -35,7 +35,8 @@ export class ViewProfileComponent implements OnInit {
     public countryService: CountryService,
     public dataService: DataService,
     public config: Config,
-    public arouter: ActivatedRoute
+    public arouter: ActivatedRoute,
+    public router: Router
   ) {
     // Get Queryparams
     this.arouter.queryParams.subscribe((res: any) => {
@@ -60,6 +61,7 @@ export class ViewProfileComponent implements OnInit {
         .getUsersById(action, this.userId)
         .subscribe((res: any) => {
           this.user = res?.data;
+          console.log(this.user)
           this.form.patchValue({
             ...this.user
           });
@@ -142,5 +144,12 @@ export class ViewProfileComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  editUser(id: any) {
+    console.log(id)
+    this.router.navigate(["/edit-profile"], {
+      queryParams: { id: id },
+    });
   }
 }

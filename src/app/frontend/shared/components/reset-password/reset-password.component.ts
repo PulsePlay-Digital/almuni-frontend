@@ -32,7 +32,7 @@ export class ResetPasswordComponent implements OnInit {
   buildForm() {
     this.resetPasswordForm = this.fb.group({
       id: [this.currentUser?.id],
-      current_password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
+      old_password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
       new_password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
       new_password_confirmation: ['', [Validators.required]],
     },

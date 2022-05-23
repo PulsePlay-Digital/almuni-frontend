@@ -2,6 +2,12 @@
   form {
     .form-bg {
       background-color: var(--form-bg);
+      .editIcon {
+        i {
+          font-size: var(--font-S-30);
+          cursor: var(--cursor-pointer);
+        }
+      }
     }
     .form-control {
       font-size: var(--font-s-14);

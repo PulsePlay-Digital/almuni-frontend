@@ -19,7 +19,7 @@
     --background-pos-center: center;
     --background-pos-top: top;
     --bg-color:#011898;
-    --btn-background: #011898;
+    --btn-background: #00035F;
     --bg-header-color: #04003a;
     --bg-footer: #33333a;
     --bg-Transparent: transparent;
@@ -180,6 +180,9 @@
     --youtube-color: #c33223;
     --width-0100: 100%;
     --footer-bg:#000D58;
+    --vertical-A-top: top;
+    --vertical-A-bottom: bottom;
+    --vertical-A-middle: middle;
     --width:100%;
     --width-1:100px;
     --width-2:200px;
