@@ -6,6 +6,7 @@ import { Config } from "./../../../../frontend/services/config";
 import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UserService } from "src/app/frontend/services/user.service";
 
 @Component({
   selector: "app-home",
@@ -136,7 +137,8 @@ export class HomeComponent implements OnInit {
     public router: Router,
     public config: Config,
     public dataService: DataService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private userService: UserService
   ) {
     this.featuredAlumni = this.config.alumniStories();
     this.currentUser = localStorage?.getItem("currentUser") || "";
@@ -171,8 +173,11 @@ export class HomeComponent implements OnInit {
    * Function to get all alumni
    */
   async getAllFeaturedAlumni() {
-    let action: string = "all-featured";
-    await this.dataService.getData(action).subscribe((result: any) => {
+    let params = {
+      action: 'all-users',
+      status: 2
+    }
+    await this.userService.getUsersByStatus(params).subscribe((result: any) => {
       this.alumni = result?.data;
       this.loading = false;
     });
@@ -239,7 +244,7 @@ export class HomeComponent implements OnInit {
 
   subscribe() {
     this.submitted = true;
-    if(this.form.invalid) {
+    if (this.form.invalid) {
       return;
     } else {
       console.log(this.form.value);
