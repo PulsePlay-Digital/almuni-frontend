@@ -22,6 +22,7 @@ import { AskforGeneralComponent } from './components/askfor-general/askfor-gener
 import { UsersBannerComponent } from './components/users-banner/users-banner.component';
 import { ViewMapComponent } from './components/view-map/view-map.component';
 import { AgmCoreModule } from "@agm/core";
+import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AgmCoreModule } from "@agm/core";
     AskforGeneralComponent,
     UsersBannerComponent,
     ViewMapComponent,
+    DashboardBannerComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { AgmCoreModule } from "@agm/core";
     StripHtmlPipe,
     DialogEntrepreneurshipComponent,
     UsersBannerComponent,
-    ViewMapComponent
+    ViewMapComponent,
+    DashboardBannerComponent
   ]
 })
 export class SharedModule {}
