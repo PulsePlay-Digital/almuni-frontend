@@ -15,14 +15,43 @@
   }
 
   .know-section {
+    .sbup-image {
+      img {
+        height: 330px;
+      }
+    }
     .small-heading {
       color: #f65c8b;
     }
     .text-name {
       color: #fea641;
     }
-    .text-para {
+    p {
       text-align: var(--text-J);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .balajiSociety {
+    .know-section {
+      .sbup-image {
+        img {
+          height: 300px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 300px) {
+  .balajiSociety {
+    .know-section {
+      .sbup-image {
+        img {
+          height: 230px;
+        }
+      }
     }
   }
 }
