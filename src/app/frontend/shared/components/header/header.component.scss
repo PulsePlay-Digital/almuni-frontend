@@ -73,6 +73,7 @@
         white-space: normal;
         min-width: 10rem !important;
         cursor: var(--cursor-pointer);
+        font-size: var(--font-S-13);
       }
       .trick_top::before {
         content: "";
@@ -147,7 +148,7 @@
         background: var(--bg-Transparent);
       }
       .dropdown-item {
-        font-size: var(--font-S-12);
+        font-size: var(--font-S-13);
         cursor: var(--cursor-pointer);
         color: var(--bs-white);
         line-height: var(--line-height-2);
@@ -185,6 +186,7 @@
       .dropdown-item {
         color: var(--bs-white);
         line-height: var(--line-height-2);
+        font-size: var(--font-S-13);
       }
       .dropdown-item:focus {
         background: none;
