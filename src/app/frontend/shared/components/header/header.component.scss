@@ -418,6 +418,7 @@
   }
 }
 
+/** SHRINK HEADER CSS **/
 .stickyHeader {
   position: var(--position-fix);
   top: 0;
@@ -439,9 +440,9 @@
   }
   .header-navbar {
     display: none;
-    hr {
-      display: none;
-    }
+  }
+  hr {
+    display: none;
   }
 }
 .fixedHeader {
