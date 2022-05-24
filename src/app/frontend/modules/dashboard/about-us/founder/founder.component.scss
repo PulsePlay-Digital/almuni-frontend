@@ -19,54 +19,67 @@
         height: 450px;
       }
     }
+    .text-blue {
+      color: var(--btn-background);
+    }
   }
 }
 
 @media screen and (max-width: 400px) and (min-width: 300px) {
-  .know-us-section {
-    .founderVideo {
-      iframe {
-        height: 200px;
+  .founderPage {
+    .know-us-section {
+      .founderVideo {
+        iframe {
+          height: 200px;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 574px) and (min-width: 400px) {
-  .know-us-section {
-    .founderVideo {
-      iframe {
-        height: 288px;
+  .founderPage {
+    .know-us-section {
+      .founderVideo {
+        iframe {
+          height: 288px;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 767px) and (min-width: 575px) {
-  .know-us-section {
-    .founderVideo {
-      iframe {
-        height: 352px;
+  .founderPage {
+    .know-us-section {
+      .founderVideo {
+        iframe {
+          height: 352px;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  .know-us-section {
-    .founderVideo {
-      iframe {
-        height: 430px;
+  .founderPage {
+    .know-us-section {
+      .founderVideo {
+        iframe {
+          height: 430px;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
-  .know-us-section {
-    .founderVideo {
-      iframe {
-        height: 400px;
+  .founderPage {
+    .know-us-section {
+      .founderVideo {
+        iframe {
+          height: 400px;
+        }
       }
     }
   }
