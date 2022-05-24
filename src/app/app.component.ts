@@ -11,8 +11,7 @@ export class AppComponent {
   constructor() {
   }
   isShow: boolean | undefined;
-  topPosToStartShowing = 100;
-
+  positionToShow = 100;
 
   ngOnInit(): void {
   }
@@ -20,10 +19,8 @@ export class AppComponent {
   @HostListener('window:scroll')
   checkScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    console.log('[scroll]', scrollPosition);
     
-    if (scrollPosition >= this.topPosToStartShowing) {
+    if (scrollPosition >= this.positionToShow) {
       this.isShow = true;
     } else {
       this.isShow = false;

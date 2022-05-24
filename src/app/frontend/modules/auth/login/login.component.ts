@@ -82,6 +82,7 @@ export class LoginComponent implements OnInit {
           }
         },
         (error) => {
+          this.loading = false;
           this.notify.notificationService.openFailureSnackBar(error);
         }
       );
