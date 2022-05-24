@@ -17,7 +17,7 @@
   .know-section {
     .sbup-image {
       img {
-        height: 330px;
+        object-fit: var(--object-cover);
       }
     }
     .small-heading {
@@ -32,18 +32,6 @@
   }
 }
 
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .balajiSociety {
-    .know-section {
-      .sbup-image {
-        img {
-          height: 300px;
-          object-fit: contain;
-        }
-      }
-    }
-  }
-}
 @media screen and (max-width: 400px) and (min-width: 300px) {
   .balajiSociety {
     .know-section {

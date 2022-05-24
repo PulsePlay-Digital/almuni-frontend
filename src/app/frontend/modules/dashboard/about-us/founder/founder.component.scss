@@ -3,6 +3,7 @@
   .know-us-section {
     .small-heading {
       color: #f65c8b;
+      font-size: var(--font-S-18);
     }
     .text-name {
       color: #fea641;
@@ -33,6 +34,9 @@
           height: 200px;
         }
       }
+      .small-heading {
+        font-size: var(--font-S-14);
+      }
     }
   }
 }
@@ -45,6 +49,9 @@
           height: 288px;
         }
       }
+      .small-heading {
+        font-size: var(--font-S-14);
+      }
     }
   }
 }
@@ -56,6 +63,9 @@
         iframe {
           height: 352px;
         }
+      }
+      .small-heading {
+        font-size: var(--font-S-16);
       }
     }
   }
