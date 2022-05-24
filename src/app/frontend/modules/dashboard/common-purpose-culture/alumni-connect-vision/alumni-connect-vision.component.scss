@@ -1,63 +1,58 @@
-.main-heading{
-    font-size: 30px !important;
-    line-height: 43.88px !important;
-    font-weight: 700 !important;
-    color: #011898;
-    font-family: Montserrat !important;    
-}
-.connectVision {
-
+.commonPurposePage {
+    padding-top: 151px;
+  .connectVision {
     .content {
-        position: relative;
-        .box-text{
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.45);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: center;
-        }
-        .content-img {
-            min-height: 240px;
-            height: 240px;
-            object-fit: cover;
-        }
+      position: relative;
+      .box-text {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .content-img {
+        min-height: 240px;
+        height: 240px;
+        object-fit: cover;
+      }
     }
     .content-heading {
-        height: 74px;
-        a {
-            font-size: 28px;
-            line-height: 39px;
-            font-weight: 500;
-            cursor: pointer;
-            text-shadow: 1px 1px;
-        }
-        .connect { 
-            color: #FEA641;
-        }
-        .network {
-            color: #F65C8B;
-        }
-        .engage {
-            color: #011898;
-        }
-        .learnGrow {
-            color: #5EB76C;
-        }
+      height: 74px;
+      a {
+        font-size: 28px;
+        line-height: 39px;
+        font-weight: 500;
+        cursor: pointer;
+        text-shadow: 1px 1px;
+      }
+      .connect {
+        color: #fea641;
+      }
+      .network {
+        color: #f65c8b;
+      }
+      .engage {
+        color: #011898;
+      }
+      .learnGrow {
+        color: #5eb76c;
+      }
     }
-    .linksSection{
-        ul{
-            padding-inline-start: 0;
-            list-style-type: none;
-        }
+    .linksSection {
+      ul {
+        padding-inline-start: 0;
+        list-style-type: none;
+      }
     }
     .items {
-        color: #000;
-        cursor: pointer;
+      color: #000;
+      cursor: pointer;
     }
+  }
 }

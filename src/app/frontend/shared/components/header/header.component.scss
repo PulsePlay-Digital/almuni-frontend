@@ -5,6 +5,9 @@
     }
   }
   .header-navbar {
+    img.userImg {
+      width: 47px;
+    }
     .top-header {
       display: flex;
       justify-content: var(--justify-space-between);
@@ -60,6 +63,8 @@
       .dropdown-menu {
         background-color: var(--bg-color);
         color: var(--bs-white);
+        width: 9rem;
+        left: -66px;
         a:active {
           text-decoration: var(--text-underline);
         }
@@ -71,7 +76,7 @@
         color: var(--bs-white);
         line-height: var(--line-height-2);
         white-space: normal;
-        min-width: 10rem !important;
+        min-width: 9rem !important;
         cursor: var(--cursor-pointer);
         font-size: var(--font-S-13);
       }
@@ -106,7 +111,7 @@
     .nav-link {
       color: var(--bs-black);
       font-weight: var(--font-B-500);
-      font-size: var(--font-S-12);
+      font-size: var(--font-S-14);
     }
     .nav-link:hover {
       color: var(--nav-color);
@@ -427,11 +432,16 @@
       padding: 8px 0;
     }
   }
+  .topnav {
+    .nav-link {
+      font-size: var(--font-S-13);
+    }
+  }
   .header-navbar {
     display: none;
-  }
-  hr {
-    display: none;
+    hr {
+      display: none;
+    }
   }
 }
 .fixedHeader {
@@ -443,7 +453,7 @@
   z-index: var(--z-index-9999);
   padding: 1rem 0;
   .header-navbar {
-    padding: 1rem 0;
+    padding: 0 0 0.6rem;
   }
 }
 .hideUser {
@@ -454,7 +464,7 @@
 }
 .showUser {
   .login-register {
-    font-size: var(--font-S-12);
+    font-size: var(--font-S-13);
   }
   img {
     width: 40px !important;

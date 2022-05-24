@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NgDynamicBreadcrumbModule } from "ng-dynamic-breadcrumb";
 import { AboutUsRoutingModule } from "./about-us-routing.module";
 import { AboutUsComponent } from "./about-us.component";
 import { SharedModule } from "./../../../shared/shared.module";
@@ -16,8 +15,7 @@ import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-soc
   imports: [
     CommonModule,
     AboutUsRoutingModule,
-    SharedModule,
-    NgDynamicBreadcrumbModule,
+    SharedModule
   ],
 })
 export class AboutUsModule {}

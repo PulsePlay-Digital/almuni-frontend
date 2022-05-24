@@ -1,25 +1,28 @@
-.bannerImg {
-  background: url("./../../../../../../assets/know-us/backgroundbalaji.png");
-  background-repeat: var(--background-no-repeat);
-  height: 320px;
-  background-size: 100% 100%;
-  display: var(--display-Flex);
-  align-items: var(--align-center);
-  h3 {
-    letter-spacing: var(--letter-space-1);
-    font-family: var(--family);
-    font-size: var(--font-S-34);
+.balajiSociety {
+  padding-top: 151px;
+  .bannerImg {
+    background: url("./../../../../../../assets/know-us/backgroundbalaji.png");
+    background-repeat: var(--background-no-repeat);
+    height: 320px;
+    background-size: 100% 100%;
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+    h3 {
+      letter-spacing: var(--letter-space-1);
+      font-family: var(--family);
+      font-size: var(--font-S-34);
+    }
   }
-}
 
-.know-section {
-  .small-heading {
-    color: #f65c8b;
-  }
-  .text-name {
-    color: #fea641;
-  }
-  .text-para {
-    text-align: var(--text-J);
+  .know-section {
+    .small-heading {
+      color: #f65c8b;
+    }
+    .text-name {
+      color: #fea641;
+    }
+    .text-para {
+      text-align: var(--text-J);
+    }
   }
 }

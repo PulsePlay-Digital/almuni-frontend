@@ -1,20 +1,23 @@
-.know-us-section {
-  .small-heading {
-    color: #f65c8b;
-  }
-  .text-name {
-    color: #fea641;
-  }
-  .text-para {
-    text-align: var(--text-J);
-  }
-  .founderVideo {
-    p {
-      color: var(--btn-background);
+.founderPage {
+  padding-top: 151px;
+  .know-us-section {
+    .small-heading {
+      color: #f65c8b;
     }
-    iframe {
-      width: var(--width-0100);
-      height: 450px;
+    .text-name {
+      color: #fea641;
+    }
+    .text-para {
+      text-align: var(--text-J);
+    }
+    .founderVideo {
+      p {
+        color: var(--btn-background);
+      }
+      iframe {
+        width: var(--width-0100);
+        height: 450px;
+      }
     }
   }
 }
@@ -28,7 +31,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 574px) and (min-width: 400px) {
   .know-us-section {

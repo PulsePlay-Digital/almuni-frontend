@@ -1,5 +1,7 @@
 @import "./../../../../../theme/variables.css";
-
+.homePage {
+  padding-top: 151px;
+}
 .sub-heading {
   font-size: 30px;
   line-height: 43px;
@@ -18,7 +20,6 @@
 
 .bannerSlider {
   z-index: 3;
-  padding-top: 200px;
 
   .openAdd {
     .registerLogin {
@@ -87,7 +88,6 @@
       min-height: 208px;
       width: 100%;
       object-fit: cover;
-      // margin-bottom: ;
     }
     .featuredInfo {
       p {

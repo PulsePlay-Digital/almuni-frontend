@@ -4,7 +4,6 @@ import { CommonPurposeCultureRoutingModule } from './common-purpose-culture-rout
 import { CommonPurposeCultureComponent } from './common-purpose-culture.component';
 import { AlumniConnectVisionComponent } from './alumni-connect-vision/alumni-connect-vision.component';
 import { SharedModule } from './../../../shared/shared.module';
-import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
 
 
 @NgModule({
@@ -15,8 +14,7 @@ import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
   imports: [
     CommonModule,
     SharedModule,
-    CommonPurposeCultureRoutingModule,
-    NgDynamicBreadcrumbModule
+    CommonPurposeCultureRoutingModule
   ]
 })
 export class CommonPurposeCultureModule { }
