@@ -75,7 +75,7 @@ body {
 }
 
 .commonTopPadding {
-  padding-top: 151px;
+  padding-top: 150px;
 }
 
 .bannerSlider {
@@ -251,6 +251,9 @@ body {
         }
       }
   }
+  .commonTopPadding {
+    padding-top: 108px;
+  }
 }
 
 @media screen and (max-width: 991px) and (min-width: 767px) {
@@ -299,6 +302,9 @@ body {
       right: 14%;
       left: unset;
     }
+  }
+  .commonTopPadding {
+    padding-top: 120px;
   }
 }
 @media screen and (max-width: 1200px) and (min-width: 991px) {

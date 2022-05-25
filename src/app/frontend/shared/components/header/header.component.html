@@ -1,9 +1,9 @@
-<div class="header-nav d-lg-block d-xl-block d-sm-none d-md-block d-none"
+<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2"
     [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
     <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
         <div class="row">
             <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
-                <div class="open-add align-self-center text-center">
+                <div class="open-add align-self-center text-center bigLogo">
                     <a class="navbar-brand" routerLink="/">
                         <img src="./assets/SBU logo.png" class="logo img-fluid " alt=" Shri Balaji Logo">
                     </a>
@@ -12,7 +12,7 @@
             <div class="col-md-12 col-lg-9 col-xl-9 col-sm-12 col-12 align-self-center">
                 <div class="row">
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light">
+                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
                             <div class="top-header">
                                 <div class="open-add align-self-center">
                                     <a href="https://bit.ly/sbup_mba8" target="_blank"
@@ -21,12 +21,12 @@
                                 <div class="open-add align-self-center"> <a class="text-decoration-none" target="_blank"
                                         href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
                                                 class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                        admissions@sbup.edu.in</a>
+                                        alumni@sbup.edu.in</a>
                                 </div>
                                 <div class="open-add align-self-center"> <a class=" text-decoration-none"
                                         target="_blank" href="mailto:alumni@sbup.edu.in"> <span
                                             class="header-icon pe-3"><i class="fa fa-globe"
-                                                aria-hidden="true"></i></span>alumni@sbup.edu.in</a>
+                                                aria-hidden="true"></i></span>www.sbup.edu.in</a>
                                 </div>
                                 <ng-container *ngIf="!currentUser">
                                     <div class="open-add align-self-center">
@@ -34,8 +34,7 @@
                                             routerLinkActive="active-link">
                                             <span class="header-icon pe-3"><i class="fa fa-user-o"
                                                     aria-hidden="true"></i></span>
-                                            Log In/
-                                            Register</a>
+                                            Login / Register</a>
                                     </div>
                                 </ng-container>
                                 <ng-container *ngIf="currentUser">
@@ -64,9 +63,12 @@
                         </div>
                     </div>
                     <hr class="mb-0">
-                    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 py-1">
-                        <nav class="navbar topnav navbar-expand-lg navbar-light">
-                            <button class=" fa-burger fs-4 mobile-toggle border-0" type="button"
+                    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+                        <nav class="navbar topnav navbar-expand-lg navbar-light pt-xl-3 pt-lg-3 pt-md-2 pb-0">
+                            <a class="navbar-brand smallLogo" routerLink="/">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid " alt="Shri Balaji Logo">
+                            </a>
+                            <button class="fa-burger fs-4 mobile-toggle border-0" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbarToggler"
                                 aria-controls="navbarTogglerDemo01" aria-expanded="false"
                                 aria-label="Toggle navigation">☰ </button>
@@ -276,7 +278,7 @@
     </div>
 </div>
 <!-- for mobile design -->
-<div class="header-nav py-3 d-sm-block d-block d-md-none d-lg-none d-xl-none">
+<!-- <div class="header-nav py-3 d-sm-block d-block d-md-none d-lg-none d-xl-none">
     <nav class="navbar topnav navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"> <img src="./assets/SBU logo.png" class="logo  img-fluid "
@@ -357,20 +359,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- <li><a class="dropdown-item"
-                                                            routerLink="{{(currentUser) ? ['/connect/at-glance/#upcoming-event'] : ['login']}}">
-                                                            Upcoming Event</a></li> -->
-                    <!-- <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/alumnireunion'] : ['login']}}">
-                                                Annual Alumni Re-Union</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/drivenevent'] : ['login']}}">
-                                                Alumni Driven Events</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/almamater'] : ['login']}}">
-                                                Events At/By Sri Balaji Socity Alma Mater</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink<div class="header-nav">--->
+                 
                     <li class="nav-item dropdown">
                         <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false"
                             routerLink="/collaborate-contribute" routerLinkActive="active-link"> Collaborate<i
@@ -403,17 +392,6 @@
                                     Journey, Achievements & Passion</a></li>
                         </ul>
                     </li>
-                    <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
-                                        Achievement</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni
-                                        Passion</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/gallery">Gallery</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/magazine">Corporate Citizen
-                                        Magazine</a>
-                                </li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/news-update">News and
-                                        Updates</a></li>
-                           -->
                     <li class="nav-item dropdown">
                         <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false"
                             routerLink="/contact" routerLinkActive="active-link">Contact
@@ -434,7 +412,7 @@
                     <div id="" class="dropdown dropstart">
                         <button class="btn  dropdown" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <i class="fa fa-bars fs-6 " aria-hidden="true"></i>
+                            <i class="fa fa-bars fs-6" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu trick_top">
                             <li><a class="nav-link dropdown-item fs-6 pe-3" routerLink="/connect/at-glance"
@@ -502,4 +480,4 @@
 
 
     </div>
-</div>
+</div> -->
