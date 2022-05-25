@@ -3,7 +3,6 @@ footer {
   letter-spacing: 1px;
   .footer {
     background: var(--footer-bg);
-    padding: 50px 0 15px;
     a.active-link {
       background: var(--footer-bg);
       padding: 10px;
@@ -14,11 +13,7 @@ footer {
       }
       h4 {
         font-size: 1.125rem;
-        color: #fff;
         font-family: Montserrat;
-        font-weight: 700;
-        margin: 10px 0 25px 0;
-        text-transform: capitalize;
       }
       p {
         font-size: 13px;
@@ -42,14 +37,17 @@ footer {
           position: relative;
           text-transform: capitalize;
         }
-        h4::after {
+        span {
+          position: relative;
+        }
+        span::after {
           content: "";
           position: absolute;
           height: 3px;
-          width: 62px;
+          width: 100%;
           background: #ffcc29;
-          bottom: -4px;
-          left: 0;
+          bottom: -10px;
+          right: 0px;
         }
       }
 

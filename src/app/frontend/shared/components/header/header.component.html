@@ -1,4 +1,4 @@
-<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2"
+<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2"
     [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
     <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
         <div class="row">
@@ -18,12 +18,12 @@
                                     <a href="https://bit.ly/sbup_mba8" target="_blank"
                                         class="btn admission-open">Admissions Open</a>
                                 </div>
-                                <div class="open-add align-self-center"> <a class="text-decoration-none" target="_blank"
+                                <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
                                         href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
                                                 class="fa fa-envelope-o" aria-hidden="true"></i></span>
                                         alumni@sbup.edu.in</a>
                                 </div>
-                                <div class="open-add align-self-center"> <a class=" text-decoration-none"
+                                <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
                                         target="_blank" href="mailto:alumni@sbup.edu.in"> <span
                                             class="header-icon pe-3"><i class="fa fa-globe"
                                                 aria-hidden="true"></i></span>www.sbup.edu.in</a>
@@ -147,20 +147,6 @@
                                                     Upcoming Event</a></li>
                                         </ul>
                                     </li>
-                                    <!-- <li><a class="dropdown-item"
-                                                                routerLink="{{(currentUser) ? ['/connect/at-glance/#upcoming-event'] : ['login']}}">
-                                                                Upcoming Event</a></li> -->
-                                    <!-- <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/alumnireunion'] : ['login']}}">
-                                                    Annual Alumni Re-Union</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/drivenevent'] : ['login']}}">
-                                                    Alumni Driven Events</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/almamater'] : ['login']}}">
-                                                    Events At/By Sri Balaji Socity Alma Mater</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink<div class="header-nav">--->
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown"
                                             aria-expanded="false" routerLink="/collaborate-contribute"
@@ -196,17 +182,6 @@
                                                     Journey, Achievements & Passion</a></li>
                                         </ul>
                                     </li>
-                                    <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
-                                            Achievement</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni
-                                            Passion</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/gallery">Gallery</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/magazine">Corporate Citizen
-                                            Magazine</a>
-                                    </li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/news-update">News and
-                                            Updates</a></li>
-                               -->
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
                                             aria-expanded="false" routerLink="/contact"
@@ -244,11 +219,40 @@
                                         </div>
                                     </ng-container>
                                     <ng-container *ngIf="!currentUser">
-                                        <div class="open-add align-self-center" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                        <div class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                             <a class="btn login-register p-0" routerLink="/login"
                                                 routerLinkActive="active-link">Log In</a>
                                         </div>
                                     </ng-container>
+                                    <div class="responsiveBtn my-3">
+                                        <div class="row justify-content-between m-0">
+                                            <div class="col-md-4 col-sm-5 ps-0">
+                                                <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
+                                                    href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
+                                                            class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                                    alumni@sbup.edu.in</a>
+                                            </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-5 ps-0">
+                                                <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
+                                                    target="_blank" href="mailto:alumni@sbup.edu.in"> <span
+                                                        class="header-icon pe-3"><i class="fa fa-globe"
+                                                            aria-hidden="true"></i></span>www.sbup.edu.in</a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!-- btnfdndjfd
+                                        <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
+                                            href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
+                                                    class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                            alumni@sbup.edu.in</a>
+                                    </div>
+                                    <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
+                                            target="_blank" href="mailto:alumni@sbup.edu.in"> <span
+                                                class="header-icon pe-3"><i class="fa fa-globe"
+                                                    aria-hidden="true"></i></span>www.sbup.edu.in</a>
+                                    </div> -->
+                                    </div>
                                 </ul>
 
                                 <div class="right-dropdown">
