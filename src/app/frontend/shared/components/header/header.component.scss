@@ -225,37 +225,28 @@
       }
     }
   }
+  .responsiveBtn {
+    display: none;
+  }
 }
 // medai query//
 @media (min-width: 300px) and (max-width: 574px) {
   .header-nav {
     .header-navbar {
-      .open-add {
-        .admission-open {
-          font-size: var(--font-S-12);
-          border-radius: 2px;
-          line-height: var(--line-height-1);
-          background-color: var(--btn-background);
-          color: var(--bs-white);
-          font-weight: var(--font-B-700);
-          font-family: var(--family);
-        }
-        .login-register {
-          font-size: var(--font-S-12);
-        }
-        i {
-          display: none;
-        }
-        a {
-          font-size: var(--font-S-12);
-          font-family: var(--family);
-          font-style: var(--font-style-normal);
-          font-weight: var(--font-B-500);
-          line-height: 6.9px;
-          color: var(--header-link-1);
-        }
-        a:hover {
-          color: var(--header-link) !important;
+      .mailBtn {
+        display: none;
+      }
+      .top-header {
+        .open-add {
+          .admission-open {
+            font-size: var(--font-S-12);
+          }
+          .login-register {
+            font-size: var(--font-S-12);
+          }
+          i {
+            font-size: var(--font-S-20);
+          }
         }
       }
       .dropdown-menu {
@@ -291,6 +282,9 @@
       .trick_top::before {
         display: none !important;
       }
+      .responsiveBtn {
+        display: block;
+      }
     }
     .mobile-add {
       display: block;
@@ -300,36 +294,20 @@
 @media (min-width: 575px) and (max-width: 767px) {
   .header-nav {
     .header-navbar {
-      .open-add {
-        .admission-open {
-          font-size: var(--font-S-12);
-          border-radius: 2px;
-          line-height: var(--line-height-1);
-          background-color: var(--btn-background);
-          color: var(--bs-white);
-          font-weight: var(--font-B-700);
-          font-family: var(--family);
-        }
-        .login-register {
-          font-size: var(--font-S-12);
-        }
-        i {
-          color: var(--i-color-1);
-          font-size: var(--font-S-20);
-          vertical-align: baseline;
-          line-height: 6.9px;
-        }
-        a {
-          font-size: var(--font-S-12);
-          font-family: var(--family);
-          font-style: var(--font-style-normal);
-          font-weight: var(--font-B-600);
-          line-height: 6.9px;
-          color: var(--header-link-1);
-          font-family: var(--family);
-        }
-        a:hover {
-          color: var(--header-link);
+      .mailBtn {
+        display: none;
+      }
+      .top-header {
+        .open-add {
+          .admission-open {
+            font-size: var(--font-S-12) !important;
+          }
+          .login-register {
+            font-size: var(--font-S-12);
+          }
+          i {
+            font-size: var(--font-S-20);
+          }
         }
       }
     }
@@ -349,9 +327,12 @@
       display: block;
       background: none;
     }
+    .responsiveBtn {
+      display: block;
+    }
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .header-nav {
     .header-navbar {
       .top-header {
@@ -383,13 +364,16 @@
       .logo {
         width: 200px !important;
       }
-   
+
       .dropdown-menu {
         position: static;
         width: 90%;
       }
       .trick_top::before {
         display: none !important;
+      }
+      .responsiveBtn {
+        display: block;
       }
     }
     .mobile-toggle {
@@ -423,11 +407,10 @@
     }
     .mobile-toggle {
       display: none;
-      background: none;
     }
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .bigLogo {
     display: none;
   }
@@ -436,7 +419,8 @@
       .smallLogo {
         display: block;
         .mobileLogo {
-          width: 150px;
+          width: 184px;
+          height: 45px;
         }
       }
     }
@@ -475,11 +459,10 @@
     }
   }
 }
-@media (min-width: 1400px) and (max-width: 1800px) {
+@media (min-width: 1400px) {
   .header-nav {
     .mobile-toggle {
       display: none;
-      background: none;
     }
   }
 }
@@ -529,6 +512,7 @@
   .login-register {
     font-size: var(--font-S-13);
     font-weight: var(--font-B-600);
+    color: var(--bs-black);
   }
   img {
     width: 40px !important;
