@@ -1,0 +1,13 @@
+.bannerImg {
+    background: url("./../../../../../assets/users/userBanner.jpg");
+    background-repeat: var(--background-no-repeat);
+    height: 250px;
+    background-size: 100% 100%;
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+    h3 {
+      letter-spacing: var(--letter-space-1);
+      font-family: var(--family);
+      font-size: var(--font-S-34);
+    }
+  }
