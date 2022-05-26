@@ -187,7 +187,7 @@
     .mobile-add {
       display: none;
     }
-    .rightResponsive {
+    .responsiveList {
       display: none;
     }
     .right-dropdown {
@@ -348,7 +348,7 @@
     }
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-nav {
     .header-navbar {
       .top-header {
@@ -432,7 +432,7 @@
     }
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .bigLogo {
     display: none;
   }
@@ -444,6 +444,11 @@
           // width: 184px;
           height: 45px;
         }
+      }
+    }
+    .topnav {
+      .responsiveList {
+        display: block;
       }
     }
   }

@@ -26,6 +26,7 @@ export class ProfessionalClubComponent implements OnInit {
     {id: 14, title:'Sales',club:'Join Club'},
     {id: 15, title:'SMAC (Social, Mobile, Analytics, Cloud)',club:'Join Club'}
 ];
+heading: string = "professional club";
   constructor(public router: Router) { }
 
   ngOnInit(): void {

@@ -1,14 +1,23 @@
 .bannerImg {
-  background: url("./../../../../../assets/users/userBanner.jpg");
+  background: url("./../../../../../assets/users/userBanner.webp");
   background-repeat: var(--background-no-repeat);
   height: 250px;
   background-size: 100% 100%;
-  display: var(--display-Flex);
-  align-items: var(--align-center);
+  position: var(--position-relative);
+  .layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: var(--position-absolute);
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height-100);
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+  }
   h3 {
     letter-spacing: var(--letter-space-1);
     font-family: var(--family);
-    font-size: var(--font-S-34);
+    font-size: var(--font-S-32);
   }
 }
 

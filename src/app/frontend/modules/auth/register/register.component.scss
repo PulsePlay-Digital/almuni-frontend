@@ -37,34 +37,32 @@
       color: #646363;
     }
   }
-  .photo.justify-content-center {
-    img {
-      height: 100px;
-      width: 100px;
-      position: absolute;
-      top: 24%;
-      left: 60%;
-      border-radius: 100%;
-      object-fit: cover;
-      cursor: pointer;
-    }
-  }
   .choose_file {
+    position: var(--position-relative);
     input[type="file"] {
-      height: 100px;
-      width: 100px;
-      position: absolute;
-      top: 30%;
-      left: 60%;
-      opacity: 0;
-      cursor: pointer;
-      z-index: 9999;
+      height: var(--height-100);
+      width: 132px;
+      min-height: 132px;
+      position: var(--position-absolute);
+      cursor: var(--cursor-pointer);
+      z-index: var(--z-index-9999);
+      border-radius: var(--border-radius-50);
+      opacity: var(--opacity-none);
+    }
+    img {
+      height: 132px;
+      width: 132px;
+      min-height: 132px;
+      border: 3px solid var(--btn-background);
+      border-radius: var(--border-radius-50);
+      background: var(--bs-white);
+      object-fit: var(--object-cover);
     }
   }
 }
 
 // media query//
-@media (min-width: 300px) and (max-width: 600px) {
+@media (min-width: 300px) and (max-width: 574px) {
   .register-page {
     .login-background {
       .left-box {
@@ -72,33 +70,20 @@
         padding: 60px;
       }
     }
-    .photo.justify-content-center {
+    .choose_file {
+      input[type="file"] {
+        width: 100px;
+        min-height: 100px;
+      }
       img {
         height: 100px;
         width: 100px;
-        position: relative;
-        top: 0%;
-        left: 0%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
+        min-height: 100px;
       }
     }
-    .choose_file {
-      input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 120%;
-        left: 30%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
-      }
-    }
-  }
 }
-@media (min-width: 600px) and (max-width: 768px) {
+}
+@media (min-width: 575px) and (max-width: 767px) {
   .register-page {
     .login-background {
       .left-box {
@@ -106,31 +91,9 @@
         padding: 150px;
       }
     }
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
-    .choose_file {
-      input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 140%;
-        left: 50%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
-      }
-    }
   }
 }
-@media (min-width: 768px) and (max-width: 968px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .register-page {
     .login-background {
       .left-box {
@@ -138,31 +101,19 @@
         padding: 20px;
       }
     }
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
     .choose_file {
       input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
+        width: 114px;
+        min-height: 114px;
+      }
+      img {
+        height: 114px;
+        min-height: 114px;
       }
     }
   }
 }
-@media (min-width: 968px) and (max-width: 1300px) {
+@media (min-width: 992px) and (max-width: 1300px) {
   .register-page {
     .login-background {
       .left-box {
@@ -170,26 +121,14 @@
         padding: 31px;
       }
     }
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
     .choose_file {
       input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
+        width: 122px;
+        min-height: 122px;
+      }
+      img {
+        height: 122px;
+        min-height: 122px;
       }
     }
   }
@@ -202,28 +141,6 @@
         padding: 25px;
       }
     }
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
-    .choose_file {
-      input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
-      }
-    }
   }
 }
 @media (min-width: 1500px) and (max-width: 1600px) {
@@ -232,54 +149,6 @@
       .left-box {
         height: 100%;
         padding: 25px;
-      }
-    }
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
-    .choose_file {
-      input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
-      }
-    }
-  }
-}
-@media (min-width: 1600px) and (max-width: 1870px) {
-  .register-page {
-    .photo.justify-content-center {
-      img {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        border-radius: 100%;
-        object-fit: cover;
-        cursor: pointer;
-      }
-    }
-    .choose_file {
-      input[type="file"] {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        top: 40%;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 9999;
       }
     }
   }

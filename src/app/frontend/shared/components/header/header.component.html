@@ -68,8 +68,7 @@
                     <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
                         <nav class="navbar topnav navbar-expand-lg navbar-light pt-xl-3 pt-lg-3 pt-md-2 pb-0">
                             <a class="navbar-brand smallLogo" routerLink="/home">
-                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid "
-                                    alt="Shri Balaji Logo">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid " alt="Shri Balaji Logo">
                             </a>
                             <button class="fa-burger fs-4 mobile-toggle border-0" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbarToggler"
@@ -200,6 +199,23 @@
                                                     Clubs – Social Channels</a></li>
                                         </ul>
                                     </li>
+                                    <div class="responsiveList">
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown"
+                                                aria-expanded="false" routerLink="/transcript"
+                                                routerLinkActive="active-link">Apply For Transcript</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                                routerLinkActive="active-link">Get Featured</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown"
+                                                aria-expanded="false" routerLink="/news"
+                                                routerLinkActive="active-link">News</a>
+                                        </li>
+                                    </div>
                                     <ng-container *ngIf="currentUser">
                                         <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2"
                                             [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
@@ -230,27 +246,6 @@
                                                 routerLinkActive="active-link">Log In</a>
                                         </div>
                                     </ng-container>
-                                    <div class="rightResponsive">
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                                aria-expanded="false" routerLink="/connect/at-glance"
-                                                routerLinkActive="active-link">Connect</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                                aria-expanded="false" routerLink="/transcript"
-                                                routerLinkActive="active-link">Apply For Transcript</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                                aria-expanded="false" routerLinkActive="active-link">Get Featured</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                                aria-expanded="false" routerLink="/news"
-                                                routerLinkActive="active-link">News</a>
-                                        </li>
-                                    </div>
                                     <div class="responsiveBtn my-3">
                                         <div class="row justify-content-between m-0">
                                             <div class="col-md-4 col-sm-5 ps-0">
