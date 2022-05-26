@@ -1,7 +1,14 @@
 .card {
   background: var(--card-bg);
-  .card-header {
-    height: 60px;
+  .card-body {
+    height: 78px;
+    .designation {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .alumni-pic {
     min-height: 210px;
@@ -43,6 +50,10 @@
         max-height: 150px;
       }
     }
+    .noImg {
+      min-height: 150px;
+      max-height: 150px;
+    }
   }
 }
 
@@ -56,6 +67,10 @@
         max-height: 140px;
       }
     }
+    .noImg {
+      min-height: 140px;
+      max-height: 140px;
+    }
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -67,6 +82,10 @@
         min-height: 160px;
         max-height: 160px;
       }
+    }
+    .noImg {
+      min-height: 160px;
+      max-height: 160px;
     }
   }
 }

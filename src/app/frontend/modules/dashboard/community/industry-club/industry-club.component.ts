@@ -21,7 +21,7 @@ export class IndustryClubComponent implements OnInit {
     {id: 9, title:'Defense And Security',club:'Join Club'},
     {id: 10, title:'E-Commerce',club:'Join Club'}
   ];
-
+  heading: string = "industry club";
   constructor(
     public router: Router
   ) { }

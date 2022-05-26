@@ -1,19 +1,90 @@
 .professional-club {
   .heading {
-    font-size: 30px;
+    font-size: var(--font-S-30);
     line-height: 43.88px;
-    color: #011898;
+    color: var(--btn-background);
   }
   .card {
-    .card-text {
-      color: #f65c8b;
+    .card-body {
+      height: 80px;
+      display: var(--display-Flex);
+      align-items: var(--align-center);
+      justify-content: var(--justify-content-center);
+      .card-text {
+        color: #333;
+        font-size: var(--font-S-20);
+      }
     }
+   
     .card-button {
-      background-color: #011898;
+      background-color: var(--btn-background);
+      border-radius: var(--border-radius-2);
+      line-height: var(--line-height-1-8);
+      font-size: var(--font-S-16);
+    }
+    .card-button:hover{
+      background-color: var(--bs-white);
+      border: 1px solid var(--btn-background);
+      color: var(--btn-background);
     }
   }
+  .common_text {
+    font-size: var(--font-S-22);
+  }
   .start-club {
-    color: #011898;
-    cursor: pointer;
+    color: var(--btn-background);
+    cursor: var(--cursor-pointer);
+  }
+}
+
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .professional-club {
+    .card {
+      .card-body {
+        .card-text {
+          font-size: var(--font-S-16);
+        }
+      }
+      .card-button {
+        font-size: var(--font-S-14);
+      }
+    }
+    .common_text {
+      font-size: var(--font-S-16);
+    }
+  }
+}
+
+@media (min-width: 574px) and (max-width: 767px) {
+  .professional-club {
+    .card {
+      .card-body {
+        .card-text {
+          font-size: var(--font-S-18);
+        }
+      }
+      .card-button {
+        font-size: var(--font-S-14);
+      }
+    }
+    .common_text {
+      font-size: var(--font-S-18);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .professional-club {
+    .card {
+      .card-body {
+        .card-text {
+          font-size: var(--font-S-16);
+        }
+      }
+    }
+    .common_text {
+      font-size: var(--font-S-20);
+    }
   }
 }

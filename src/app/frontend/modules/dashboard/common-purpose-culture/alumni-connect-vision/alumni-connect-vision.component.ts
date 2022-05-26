@@ -8,8 +8,7 @@ import { DataService } from "./../../../../services/data.service";
   styleUrls: ["./alumni-connect-vision.component.scss"],
 })
 export class AlumniConnectVisionComponent implements OnInit {
-  heading: string =
-    "THE FOUNDER & CHANCELLOR – LATE PROF. DR. (COL.) A. BALASUBRAMANIAN MESSAGE ON THE SRI BALAJI UNIVERSITY, PUNE : ALUMNI CONNECT VISION";
+  heading: string = "COMMON PURPOSE";
 
   constructor(
     public dataService: DataService

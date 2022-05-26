@@ -30,12 +30,12 @@ footer {
     .links {
       .links_heading {
         h4 {
-          color: #fff;
-          font-weight: 800;
-          font-size: 14px;
-          font-family: Montserrat;
-          position: relative;
-          text-transform: capitalize;
+          color: var(--bs-white);
+          font-weight: var(--font-B-700);
+          font-size: var(--font-S-16);
+          font-family: var(--family);
+          position: var(--position-relative);
+          text-transform: var(--text-capital);
         }
         span {
           position: relative;
@@ -63,10 +63,11 @@ footer {
           a {
             line-height: 1.8rem;
 
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            text-decoration: none;
+            cursor: var(--cursor-pointer);
+            color: var(--bs-white);
+            font-size: var(--font-S-14);
+            text-decoration: var(--text-decoration-none);
+            font-weight: var(--font-B-500);
           }
           a:hover {
             color: var(--btn-hover);
