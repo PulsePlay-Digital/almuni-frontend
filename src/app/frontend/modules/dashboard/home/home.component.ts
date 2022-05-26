@@ -173,11 +173,9 @@ export class HomeComponent implements OnInit {
    * Function to get all alumni
    */
   async getAllFeaturedAlumni() {
-    let params = {
-      action: 'all-users',
-      status: 2
-    }
-    await this.userService.getUsersByStatus(params).subscribe((result: any) => {
+    let action: string = "all-featured"
+    await this.dataService.getData(action).subscribe((result: any) => {
+      console.log(result)
       this.alumni = result?.data;
       this.loading = false;
     });

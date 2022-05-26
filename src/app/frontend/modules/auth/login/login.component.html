@@ -1,14 +1,14 @@
 <div class="login-page commonTopPadding">
     <app-users-banner [heading]="heading"></app-users-banner>
     <div class="container">
-        <div class="row justify-content-center my-4 pt-lg-5 pb-lg-5">
+        <div class="row justify-content-center my-4 py-lg-5 py-md-5 py-sm-4 py-3">
             <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12">
                 <form [formGroup]="loginForm">
                     <div class="row justify-content-center">
                         <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12 login-background ">
-                            <div class="row py-5">
+                            <div class="row py-lg-5 py-md-5 py-sm-4 py-3">
                                 <div class="col-lg-12 text-center">
-                                    <h3 class="login-heading fw-bold fs-3 lh-base text-white pt-5 pb-2">SBUP Exclusive
+                                    <h3 class="login-heading fw-bold fs-3 lh-base text-white pt-lg-5 pt-md-3 pt-3 mb-0 pb-lg-4">SBUP Exclusive
                                         Alumni
                                     </h3>
                                 </div>
@@ -28,10 +28,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ps-md-0 pe-md-0 pt-5 pb-5 login-form ">
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ps-md-0 pe-md-0 py-xl-5 py-lg-5 py-md-4 login-form ">
                             <div class="row pt-5 justify-content-center m-0">
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
-                                    <input type="email" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
+                                    <input type="email" class="form-control rounded-0 fs-6 text-black p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                         formControlName="email" placeholder="E-mail">
                                     <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
-                                    <input type="password" class="form-control rounded-0 fs-6 text-black pt-3 pb-3"
+                                    <input type="password" class="form-control rounded-0 fs-6 text-black p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                         id="exampleInputPassword1" placeholder="Password" formControlName="password">
                                     <div class="text-danger fw-bold mt-2"
                                         *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
@@ -59,14 +59,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center pt-4 pb-5 m-0">
-                                <div class="mb-3 col-md-4 col-4 col-lg-4 ">
+                            <div class="row justify-content-center pt-4 pb-xl-5 pb-lg-4 pb-md-4 pb-sm-4 pb-4 m-0">
+                                <div class="mb-3 col-md-4 col-sm-5 col-lg-4">
                                     <app-loader *ngIf="loading"></app-loader>
                                     <button type="submit" *ngIf="!loading"
                                         class="btn rounded-0 fw-bolder shadow  text-white btn-register"
                                         (click)="login()" [disabled]="!loginForm.valid">Log In</button>
                                 </div>
-                                <div class="mb-3 col-md-6 col-8 col-lg-6 align-self-center">
+                                <div class="mb-3 col-md-6 col-sm-6 col-lg-6 align-self-center text-xl-start text-lg-start text-md-start text-center">
                                     <a [routerLink]="['/forgot-password']" class="btn text-white bg-transparent">
                                         Forgot Password ?
                                     </a>

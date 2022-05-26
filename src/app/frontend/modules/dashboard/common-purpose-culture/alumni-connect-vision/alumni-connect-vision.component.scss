@@ -68,6 +68,14 @@
         height: 180px;
       }
     }
+    .connectVision {
+      .content-heading {
+        height: 60px;
+        a {
+          font-size: var(--font-S-18);
+        }
+      }
+    }
   }
 }
 @media (min-width: 400px) and (max-width: 574px) {
@@ -77,6 +85,14 @@
         height: 205px;
       }
     }
+    .connectVision {
+      .content-heading {
+        height: 34px;
+        a {
+          font-size: var(--font-S-18);
+        }
+      }
+    }
   }
 }
 @media (min-width: 575px) and (max-width: 767px) {
@@ -84,6 +100,14 @@
     #founderMsg {
       .founderVideo {
         height: 290px;
+      }
+    }
+    .connectVision {
+      .content-heading {
+        height: 34px;
+        a {
+          font-size: var(--font-S-22);
+        }
       }
     }
   }

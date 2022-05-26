@@ -54,9 +54,6 @@
     }
   }
   .meet-content {
-    p {
-      color: var(--btn-background);
-    }
     .join-event {
       background-color: var(--btn-background);
       color: var(--bs-white);
@@ -193,7 +190,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 45px 0px 12px;
 
   .associate-text {
     font-size: var(--font-S-18);
@@ -201,7 +197,7 @@
     text-transform: var(--text-capital);
     text-align: var(--text-C);
     color: var(--bg-color);
-    cursor: var( --cursor-pointer);
+    cursor: var(--cursor-pointer);
   }
 
   .content {
@@ -277,7 +273,7 @@
   background: #f6f6f6;
   .networth {
     z-index: 3;
-   }
+  }
 }
 /* Stay Updated */
 .stay-updated {
@@ -399,24 +395,81 @@
     .box {
       .boxUL {
         padding: 5px;
+        height: 140px;
         ul {
           li {
             margin: 0px 15px;
           }
         }
       }
+      .box-heading {
+        img {
+          height: 56px;
+        }
+        .box-text {
+          .icon {
+            .text-logo {
+              left: -54px;
+              width: 22px;
+              height: 22px;
+              top: 0;
+            }
+          }
+        }
+
+        h4 {
+          font-size: var(--font-S-14);
+        }
+      }
+    }
+    form {
+      .input-group {
+        input {
+          line-height: 1.8;
+        }
+      }
     }
   }
+
   .association {
     .content {
       width: 200px;
       height: 200px;
     }
+    .associate-text {
+      font-size: var(--font-S-16);
+    }
   }
-  .stay-updated {
-    .box {
-      .boxUL {
-        height: 140px;
+  .innerSec {
+    .event {
+      .upcoming {
+        font-size: var(--font-S-14);
+        padding: 4px 8px;
+      }
+    }
+    .meet-content {
+      .join-event {
+        line-height: 1.8;
+      }
+    }
+  }
+  .alumniStories {
+    .storyDescription {
+      .users {
+        .user-logo {
+          width: 94px;
+          height: 94px;
+
+          .userImg {
+            width: 94px;
+            height: 94px;
+          }
+        }
+        .quotes {
+          img {
+            width: 34px;
+          }
+        }
       }
     }
   }
@@ -447,10 +500,6 @@
     .meet-content {
       padding-left: 0px;
     }
-  }
-
-  .homeMap {
-    padding: 60px 0 30px;
   }
 
   .alumniStories {
