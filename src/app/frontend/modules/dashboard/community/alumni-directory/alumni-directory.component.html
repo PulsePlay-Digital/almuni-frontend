@@ -11,7 +11,7 @@
         <ng-container *ngIf="!loading">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
                 *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
-                <div class="card p-xl-5 p-lg-5 p-md-5 p-sm-4 p-2">
+                <div class="card p-xl-5 p-lg-5 p-md-4 p-sm-3 p-2">
                     <ng-container *ngIf="item?.profile_pic != null">
                         <div class="alumni-pic">
                             <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="Alumni Picture" />
@@ -33,7 +33,7 @@
                         </p>
                         <p *ngIf="item?.e != null" class="card-text mb-2">Designation : {{item?.current_designation}}
                         </p>
-                        <a (click)="viewDetail(item.id)" class="btn btn-md view-btn text-capitalize mt-2">
+                        <a (click)="viewDetail(item.id)" class="btn btn-lg btn-xl btn-md btn-sm  view-btn text-capitalize mt-2 mb-lg-0 mb-xl-0 mb-md-0 mb-2">
                             <i class="fa fa-link"></i>&nbsp;View more</a>
                     </div>
                 </div>

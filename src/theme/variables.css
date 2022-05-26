@@ -52,12 +52,16 @@
     --border-radius-1: 1px;
     --border-radius-2: 2px;
     --border-radius-3: 3px;
+    --border-radius-4: 4px;
+    --border-radius-5: 5px;
+    --border-radius-6: 6px;
     --border-radius-50: 50%;
     --box-shadow-none:none;
-    --form-bg:#289BD6;
     --cursor-pointer: pointer;
-    --i-color-1:#289BD6;
     --commonBG-orange: #f7630c;
+    --card-bg: #E2E7FF;
+    --form-bg:#289BD6;
+    --i-color-1:#289BD6;
     --papaya-color: #9FFF05;
     --display-none: none;
     --display-Block: block;
@@ -111,6 +115,7 @@
     --line-height-1-2: 1.2;
     --line-height-1-5: 1.5;
     --line-height-1-7: 1.7;
+    --line-height-1-8: 1.8;
     --line-height-2: 2;
     --line-height-2-3: 2.3;
     --line-height-2-5: 2.5;
@@ -140,10 +145,6 @@
     --opacity-none: 0;
     --outline-offset-0: 0px;
     --outline-offset-10: 10px;
-    --border-radius-1:1px;
-    --border-radius-2:2px;
-    --border-radius-3:6px;
-    --border-radius-4:14px;
     --order-1: 1;
     --order-2: 2;
     --order-3: 3;
