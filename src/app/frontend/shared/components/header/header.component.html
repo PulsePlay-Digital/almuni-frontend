@@ -5,22 +5,24 @@
             <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
                 <div class="open-add align-self-center text-center bigLogo">
                     <a class="navbar-brand" routerLink="/home">
-                        <img src="./assets/SBU logo.png" class="logo img-fluid" alt=" Shri Balaji Logo">
+                        <img src="./assets/SBU logo.png" class="logo img-fluid " alt=" Shri Balaji Logo">
                     </a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-9 col-xl-9 col-sm-12 col-12 align-self-center">
                 <div class="row">
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
+                        <div
+                            class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
                             <div class="top-header">
                                 <div class="open-add align-self-center">
                                     <a href="https://bit.ly/sbup_mba8" target="_blank"
                                         class="btn admission-open">Admissions Open</a>
                                 </div>
-                                <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
-                                        href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
-                                                class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none"
+                                        target="_blank" href="mailto:admissions@sbup.edu.in"> <span
+                                            class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                aria-hidden="true"></i></span>
                                         alumni@sbup.edu.in</a>
                                 </div>
                                 <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
@@ -79,14 +81,16 @@
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false" routerLink="/about-us/founder-chancellor"
-                                            routerLinkActive="active-link"> Know
+                                            aria-haspopup="true" aria-expanded="false"
+                                            routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">
+                                            Know
                                             Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor">Founder
-                                                    Chancellor</a></li>
                                             <li><a class="dropdown-item"
-                                                    routerLink="/about-us/balaji-social-society"> SBUP</a>
+                                                    routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">Founder
+                                                    Chancellor</a></li>
+                                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society"
+                                                    routerLinkActive="active-link"> SBUP</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -213,7 +217,8 @@
                                         </li>
                                     </div>
                                     <ng-container *ngIf="currentUser">
-                                        <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                        <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2"
+                                            [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                             <div class="dropdown">
                                                 <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -235,7 +240,8 @@
                                         </div>
                                     </ng-container>
                                     <ng-container *ngIf="!currentUser">
-                                        <div class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                        <div class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start"
+                                            [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                             <a class="btn login-register p-0" routerLink="/login"
                                                 routerLinkActive="active-link">Log In</a>
                                         </div>
@@ -243,18 +249,21 @@
                                     <div class="responsiveBtn my-3">
                                         <div class="row justify-content-between m-0">
                                             <div class="col-md-4 col-sm-5 ps-0">
-                                                <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
-                                                    href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
-                                                            class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                                    alumni@sbup.edu.in</a>
-                                            </div>
+                                                <div class="open-add mailBtn align-self-center"> <a
+                                                        class="text-decoration-none" target="_blank"
+                                                        href="mailto:admissions@sbup.edu.in"> <span
+                                                            class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                                aria-hidden="true"></i></span>
+                                                        alumni@sbup.edu.in</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-4 col-sm-5 ps-0">
-                                                <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
-                                                    target="_blank" href="mailto:alumni@sbup.edu.in"> <span
-                                                        class="header-icon pe-3"><i class="fa fa-globe"
-                                                            aria-hidden="true"></i></span>www.sbup.edu.in</a>
-                                            </div>
+                                                <div class="open-add mailBtn align-self-center"> <a
+                                                        class=" text-decoration-none" target="_blank"
+                                                        href="mailto:alumni@sbup.edu.in"> <span
+                                                            class="header-icon pe-3"><i class="fa fa-globe"
+                                                                aria-hidden="true"></i></span>www.sbup.edu.in</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -267,8 +276,8 @@
                                             <i class="fa fa-bars fs-6" aria-hidden="true"></i>
                                         </button>
                                         <ul class="dropdown-menu trick_top">
-                                            <li><a class="nav-link dropdown-item pe-3"
-                                                    routerLink="/connect/at-glance" routerLinkActive="active-link">
+                                            <li><a class="nav-link dropdown-item pe-3" routerLink="/connect/at-glance"
+                                                    routerLinkActive="active-link">
                                                     Connect</a> </li>
                                             <li><a routerLink="/transcript" class="dropdown-item">Apply For
                                                     Transcript</a></li>
@@ -309,7 +318,7 @@
                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor">Founder
                                     Chancellor</a></li>
-                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society">
+                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society" routerLinkActive="active-link">
                                     SBUP</a></li>
                         </ul>
                     </li>

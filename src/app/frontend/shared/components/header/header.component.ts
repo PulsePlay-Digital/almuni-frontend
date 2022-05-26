@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
    */
   logout() {
     this.authService.logout();
-    location.assign("/");
+    location.assign("/home");
   }
   /**
    * Scroll target Section
