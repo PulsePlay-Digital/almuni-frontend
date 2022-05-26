@@ -10,7 +10,7 @@ import { TranscriptComponent } from './transcript/transcript.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
