@@ -127,7 +127,6 @@
                                             <li><a class="dropdown-item"
                                                     routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
                                                     Business Ventures</a></li>
-
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -197,7 +196,7 @@
                                         </ul>
                                     </li>
                                     <ng-container *ngIf="currentUser">
-                                        <div class="align-self-center" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                        <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                             <div class="dropdown">
                                                 <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -224,6 +223,28 @@
                                                 routerLinkActive="active-link">Log In</a>
                                         </div>
                                     </ng-container>
+                                    <div class="rightResponsive">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+                                                aria-expanded="false" routerLink="/connect/at-glance"
+                                                routerLinkActive="active-link">Connect</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+                                                aria-expanded="false" routerLink="/transcript"
+                                                routerLinkActive="active-link">Apply For Transcript</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                                routerLinkActive="active-link">Get Featured</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+                                                aria-expanded="false" routerLink="/news"
+                                                routerLinkActive="active-link">News</a>
+                                        </li>
+                                    </div>
                                     <div class="responsiveBtn my-3">
                                         <div class="row justify-content-between m-0">
                                             <div class="col-md-4 col-sm-5 ps-0">
@@ -241,23 +262,12 @@
                                             </div>
                                             </div>
                                         </div>
-                                        <!-- btnfdndjfd
-                                        <div class="open-add mailBtn align-self-center"> <a class="text-decoration-none" target="_blank"
-                                            href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
-                                                    class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                            alumni@sbup.edu.in</a>
-                                    </div>
-                                    <div class="open-add mailBtn align-self-center"> <a class=" text-decoration-none"
-                                            target="_blank" href="mailto:alumni@sbup.edu.in"> <span
-                                                class="header-icon pe-3"><i class="fa fa-globe"
-                                                    aria-hidden="true"></i></span>www.sbup.edu.in</a>
-                                    </div> -->
                                     </div>
                                 </ul>
 
                                 <div class="right-dropdown">
                                     <div id="" class="dropdown dropstart">
-                                        <button class="btn  dropdown" type="button" id="dropdownMenu2"
+                                        <button class="btn dropdown" type="button" id="dropdownMenu2"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="fa fa-bars fs-6" aria-hidden="true"></i>
                                         </button>

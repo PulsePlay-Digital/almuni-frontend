@@ -187,6 +187,9 @@
     .mobile-add {
       display: none;
     }
+    .rightResponsive {
+      display: none;
+    }
     .right-dropdown {
       .dropdown-menu {
         top: 50px;
@@ -289,7 +292,14 @@
     .mobile-add {
       display: block;
     }
+    .right-dropdown {
+      display: none;
+    }
+    .rightResponsive {
+      display: block;
+    }
   }
+ 
 }
 @media (min-width: 575px) and (max-width: 767px) {
   .header-nav {
@@ -329,6 +339,12 @@
     }
     .responsiveBtn {
       display: block;
+    }
+    .rightResponsive {
+      display: block;
+    }
+    .right-dropdown {
+      display: none;
     }
   }
 }
@@ -380,6 +396,12 @@
       display: block;
       background: none;
     }
+    .rightResponsive {
+      display: block;
+    }
+    .right-dropdown {
+      display: none;
+    }
   }
 }
 @media (min-width: 991px) and (max-width: 1399px) {
@@ -419,7 +441,7 @@
       .smallLogo {
         display: block;
         .mobileLogo {
-          width: 184px;
+          // width: 184px;
           height: 45px;
         }
       }
