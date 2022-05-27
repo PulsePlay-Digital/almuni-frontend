@@ -119,6 +119,9 @@ footer {
         font-size: var(--font-S-18);
       }
     }
+    .link {
+      white-space: nowrap;
+    }
     .visitors {
       color: yellow;
       font-weight: var(--font-B-600);
