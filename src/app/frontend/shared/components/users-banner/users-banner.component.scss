@@ -25,6 +25,7 @@
   .bannerImg {
     background-size: cover;
     background-position-x: center;
+    height: 150px;
     h3 {
       font-size: var(--font-S-18);
     }
@@ -33,6 +34,7 @@
 
 @media (min-width: 574px) and (max-width: 767px) {
   .bannerImg {
+    height: 180px;
     h3 {
       font-size: var(--font-S-22);
     }
@@ -41,6 +43,7 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .bannerImg {
+    height: 200px;
     h3 {
       font-size: var(--font-S-26);
     }

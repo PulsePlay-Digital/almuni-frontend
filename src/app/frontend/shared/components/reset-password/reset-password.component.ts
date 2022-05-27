@@ -13,6 +13,7 @@ export class ResetPasswordComponent implements OnInit {
   resetPasswordForm: FormGroup | any;
   currentUser: any;
   submitted: boolean = false;
+  heading: string = "RESET PASSWORD";
 
   constructor(public fb: FormBuilder, 
     public authService: AuthService, 

@@ -4,8 +4,17 @@
     background-repeat: var(--background-no-repeat);
     height: 250px;
     background-size: 100% 100%;
-    display: var(--display-Flex);
-    align-items: var(--align-center);
+    position: var(--position-relative);
+    .layer {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: var(--position-absolute);
+      top: 0;
+      left: 0;
+      width: var(--width);
+      height: var(--height-100);
+      display: var(--display-Flex);
+      align-items: var(--align-center);
+    }
     h3 {
       letter-spacing: var(--letter-space-1);
       font-family: var(--family);
@@ -47,6 +56,7 @@
     .bannerImg {
       background-size: cover;
       background-position-x: center;
+      height: 150px;
       h3 {
         font-size: var(--font-S-18);
       }
@@ -57,6 +67,7 @@
 @media (min-width: 574px) and (max-width: 767px) {
   .balajiSociety {
     .bannerImg {
+      height: 180px;
       h3 {
         font-size: var(--font-S-22);
       }
@@ -67,6 +78,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .balajiSociety {
     .bannerImg {
+      height: 200px;
       h3 {
         font-size: var(--font-S-26);
       }

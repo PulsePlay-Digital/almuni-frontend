@@ -37,6 +37,9 @@ export class AlumniDirectoryComponent implements OnInit {
       },
       (error) => {
         this.notify.notificationService.openFailureSnackBar(error);
+        setTimeout(() => {
+          this.loading = false;
+        }, 500);
       }
     );
   }

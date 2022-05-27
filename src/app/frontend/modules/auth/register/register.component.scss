@@ -59,6 +59,10 @@
       object-fit: var(--object-cover);
     }
   }
+  .invalidText {
+    color: var(--bs-danger);
+    font-size: var(--font-S-14);
+  }
 }
 
 // media query//

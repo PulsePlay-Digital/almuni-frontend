@@ -17,6 +17,7 @@ export class NewsUpdatesComponent implements OnInit {
   p: number = 1;
   loading: boolean = false;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  heading: string= "NEWS & UPDATES";
   constructor(private dataService: DataService,
     public notify: TokenInterceptor
   ) { }
@@ -29,14 +30,17 @@ export class NewsUpdatesComponent implements OnInit {
    */
   async getAllNews() {
     let action: string = 'all-news';
+    this.loading = true;
     await this.dataService.getData(action).pipe(takeUntil(this.destroy$)).subscribe((res: any) => {
       this.allNewsUpdates = res.data;
       console.log(this.allNewsUpdates)
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);
+      this.loading = false;
     })
   }
+
   ngOnDestroy() {
     this.destroy$.next(true);
     // Unsubscribe from the subject

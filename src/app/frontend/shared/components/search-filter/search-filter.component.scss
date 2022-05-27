@@ -15,8 +15,15 @@
     }
     .search-btn{
       background-color: var(--btn-background);
+      border: 1px solid var(--btn-background);
+      color: var(--bs-white);
+      font-weight: var(--font-B-600);
       width: 40%;
       line-height: 38px;
+    }
+    .search-btn:hover {
+      background: var(--bs-white);
+      color: var(--btn-background);
     }
 }
 

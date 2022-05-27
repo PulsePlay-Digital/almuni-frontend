@@ -156,8 +156,7 @@
                             <img class="content-image" src="./assets/association03.png" />
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
-                                    There are many variations of passages of Lorem Ipsum available,
-                                    but the majority have suffered
+                                    There are many variations of passages of Lorem Ipsum available the majority have suffered
                                 </p>
                                 <a>View Details</a>
                             </div>
@@ -281,7 +280,7 @@
                             </div>
                             <div
                                 class="col-xl-7 col-lg-8 col-md-6 col-sm-6 col-6 my-2 pe-xl-0 pe-lg-3 text-lg-end text-md-center text-center">
-                                <a routerLink="view-map"
+                                <a routerLink="/view-map"
                                     class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
                                     Map</a>
                             </div>
@@ -326,7 +325,7 @@
     <!-- Network Secton -->
     <div class="instafeed my-xl-5 my-lg-5 my-md-4 my-sm-3 my-4 py-xl-5 py-lg-5 py-md-5 py-sm-4 py-3">
         <div class="container">
-            <div class="row justify-content-center pt-xl-4 pt-lg-4 pt-md-4 pt-sm-3 pt-2">
+            <div class="row justify-content-center pt-xl-0 pt-lg-0 pt-md-0 pt-sm-0 pt-2">
                 <div class="col-lg-12">
                     <h4 class="main-heading fw-bolder text-uppercase mb-0">NETWORK IS YOUR NETWORTH</h4>
                 </div>
@@ -421,7 +420,7 @@
                             <app-loader *ngIf="loading"></app-loader>
                             <ul *ngIf="!loading">
                                 <li *ngFor="let news of allNews">
-                                    <a href=""><span class="text">{{news?.title}}</span>
+                                    <a routerLink="/celebrate/news-update"><span class="text">{{news?.title}}</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                                 </li>
                             </ul>
@@ -443,7 +442,7 @@
                             <app-loader *ngIf="loading"></app-loader>
                             <ul *ngIf="!loading">
                                 <li *ngFor="let event of allEvents">
-                                    <a href=""><span class="text">{{event.date | date: 'd MMM, y' }}</span>
+                                    <a routerLink="/connect/event-detail" [queryParams]="event"><span class="text">{{event.date | date: 'd MMM, y' }}</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                                 </li>
                             </ul>

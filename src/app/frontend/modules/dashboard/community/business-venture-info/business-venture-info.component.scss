@@ -5,9 +5,13 @@ form {
         }
     }
 }
-@media screen and (min-width: 575px) and (max-width: 768px)  {
-
+.btn-info {
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
 }
-@media screen and (min-width: 300px) and (max-width: 574px){
-
+.btn-info:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
 }
+

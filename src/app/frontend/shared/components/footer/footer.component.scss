@@ -17,7 +17,7 @@ footer {
       }
       p {
         font-size: 13px;
-        color: #fff;
+        color: var(--bs-white);
         font-family: Montserrat;
         line-height: 17.07px;
         font-weight: 500;
@@ -53,7 +53,7 @@ footer {
 
       ul {
         list-style: none;
-        color: #fff;
+        color: var(--bs-white);
         font-size: 12px;
         line-height: 12px;
         font-family: Montserrat;
@@ -110,41 +110,25 @@ footer {
   }
   .copyright-section {
     background: var(--form-bg);
-    color: #fff;
+    color: var(--bs-white);
     padding: 20px 0;
     p {
       margin: 0;
       font-size: var(--font-S-14);
       .heart {
-        color: var(--footer-bg);
         font-size: var(--font-S-18);
       }
     }
-    .copyright-text {
-      a {
-        text-decoration: none;
-        color: var(--footer-bg);
-      }
-      a:hover {
-        color: #fff;
-      }
+    .visitors {
+      color: yellow;
+      font-weight: var(--font-B-600);
     }
-    .siteText {
-      a {
-        text-decoration: none;
-        color: var(--footer-bg);
-      }
-      a:hover {
-        color: #fff;
-      }
+    .visitors:hover {
+      color: var(--bs-white);
+      font-weight: var(--font-B-500);
     }
-    .webCounter {
-      .visitors {
-        color: var(--footer-bg);
-      }
-      .visitors:hover {
-        color: #fff;
-      }
+    .heart {
+      color: var(--bs-danger) !important;
     }
   }
 }

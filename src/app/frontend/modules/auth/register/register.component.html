@@ -50,7 +50,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="text-dark form-control rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="first_name"
                         placeholder="Name" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
                         First name is required.
                       </div>
@@ -58,7 +58,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="last_name"
                         placeholder="Lastname" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
                         Last name is required.
                       </div>
@@ -70,7 +70,7 @@
                           {{ institute.institute_name }}
                         </option>
                       </select>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
                         Institute name is required.
                       </div>
@@ -83,7 +83,7 @@
                           {{ batch.batch }}
                         </option>
                       </select>
-                      <div class="text-danger text-start mt-2 fw-bold"
+                      <div class="invalidText text-start mt-2 fw-bold"
                         *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
                         Batch year is required.
                       </div>
@@ -91,7 +91,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="city"
                         placeholder="City" />
-                      <div class="text-danger text-start mt-2 fw-bold"
+                      <div class="invalidText text-start mt-2 fw-bold"
                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
                         City name is required.
                       </div>
@@ -104,7 +104,7 @@
                           {{ row.name }}
                         </option>
                       </select>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
                         Country name is required.
                       </div>
@@ -112,7 +112,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="current_region"
                         placeholder="Select CountryRegion" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
                         Country region is required.
                       </div>
@@ -121,15 +121,15 @@
                       <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" appNumbersOnly
                         formControlName="mobile_number" placeholder="+91 MobileNumber" />
 
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
                         Mobile number is required.
                       </div>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
                         Minimum 10 number are allowed.
                       </div>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
                         Maximum 10 number are allowed.
                       </div>
@@ -137,7 +137,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" placeholder="DD/MM/YYYY (DOB)" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                         formControlName="birth_date" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
                         Date of birth is required.
                       </div>
@@ -145,18 +145,18 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="email" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="email"
                         placeholder="E-mail" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                         Email is required.
                       </div>
-                      <div class="text-danger text-start fw-bold mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                      <div class="invalidText text-start fw-bold mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
                         Email format is incorrect.
                       </div>
                     </div>
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="current_company"
                         placeholder="Enter Current Company" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
                         Company name is required.
                       </div>
@@ -164,7 +164,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="email" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="current_designation"
                         placeholder="Enter Current Designation" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
                         Designation is required.
                       </div>
@@ -172,15 +172,15 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="password" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="password"
                         placeholder="Password" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
                         Password is required.
                       </div>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
                         Password must be at least 5 characters long.
                       </div>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
                         Password can be max 10 characters long.
                       </div>
@@ -189,11 +189,11 @@
                       <input type="password" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                         formControlName="password_confirmation" placeholder="Confirm Password" />
                       <div *ngIf="(f.password_confirmation.touched || submitted) && f.password_confirmation.errors">
-                        <div class="text-danger text-start fw-bold mt-2"
+                        <div class="invalidText text-start fw-bold mt-2"
                           *ngIf="f.password_confirmation.errors.required">
                           Confirm password is required
                         </div>
-                        <div class="text-danger text-start fw-bold mt-2"
+                        <div class="invalidText text-start fw-bold mt-2"
                           *ngIf="f.password_confirmation.errors.MustMatch">
                           Confirm password does not match.
                         </div>
@@ -206,7 +206,7 @@
                           {{ que.question }}
                         </option>
                       </select>
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.securityQuestions_id.touched || submitted) && f.securityQuestions_id.errors?.required">
                         Security question is required.
                       </div>
@@ -214,7 +214,7 @@
                     <div class="col-lg-5 col-md-6 my-2">
                       <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="security_answers"
                         placeholder="Security Answer" />
-                      <div class="text-danger text-start fw-bold mt-2"
+                      <div class="invalidText text-start fw-bold mt-2"
                         *ngIf="(f.security_answers.touched || submitted) && f.security_answers.errors?.required">Answer
                         is required.
                       </div>

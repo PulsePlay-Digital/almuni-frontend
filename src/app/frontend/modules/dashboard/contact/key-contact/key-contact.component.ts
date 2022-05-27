@@ -10,6 +10,7 @@ import { DataService } from './../../../../services/data.service';
 export class KeyContactComponent implements OnInit {
   keyData: any;
   loading: boolean = false;
+  heading: string = "CONTACT US";
   constructor(
     public dataService: DataService
   ) { }

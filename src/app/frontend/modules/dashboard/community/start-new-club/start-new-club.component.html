@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-sm-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
     <h4 class="main-heading text-uppercase fw-bold mb-0">Create Club</h4>
-    <button class="btn btn-sm btn-primary rounded" (click)="back()">Back</button>
+    <button class="btn btn-sm btn-info rounded" (click)="back()">Back</button>
   </div>
   <form class="example-form" [formGroup]="addClubForm">
     <div class="mb-3 row mr-0">
@@ -43,7 +43,7 @@
     <div class="row justify-content-center my-4">
       <div class="col-lg-4 text-center">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button class="btn btn-md btn-info mr-2 rounded text-white" (click)="addClub()"
+          <button class="btn btn-md btn-info mr-2 rounded" (click)="addClub()"
             [disabled]="!addClubForm.valid">
             Create
           </button>

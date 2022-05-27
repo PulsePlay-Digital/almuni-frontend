@@ -28,5 +28,9 @@
     .form-control {
       font-size: var(--font-s-12);
     }
+    .invalidText {
+      color: var(--bs-danger);
+      font-size: var(--font-S-14);
+    }
   }
 }

@@ -10,6 +10,7 @@ export class FrontendComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

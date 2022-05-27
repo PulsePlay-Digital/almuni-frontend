@@ -57,6 +57,7 @@ export class AtGlanceComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false
         }
       );
   }
@@ -86,6 +87,7 @@ export class AtGlanceComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
         }
       );
   }

@@ -241,7 +241,6 @@
         color: var(--bs-white);
         font-weight: 600;
         text-decoration: none;
-        text-shadow: 1px 1px var(--bs-white);
       }
 
       p {
@@ -435,6 +434,18 @@
     .content {
       width: 200px;
       height: 200px;
+      .content-title {
+        height: 114px;
+      }
+      .content-details {
+        p {
+          font-size: 12px;
+          padding: 15px 0;
+        }
+        a {
+          text-shadow: none;
+        }
+      }
     }
     .associate-text {
       font-size: var(--font-S-16);
