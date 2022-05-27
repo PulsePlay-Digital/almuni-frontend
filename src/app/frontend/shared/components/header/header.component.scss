@@ -475,10 +475,24 @@
       }
     }
   }
+  .stickyHeader {
+    .topnav {
+      .nav-link {
+        font-size: 11px;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1300px) {
   .header-nav {
+    .topnav {
+      .nav-link {
+        font-size: var(--font-S-12);
+      }
+    }
+  }
+  .stickyHeader {
     .topnav {
       .nav-link {
         font-size: var(--font-S-12);
@@ -501,7 +515,7 @@
   width: var(--width-0100);
   transition: 0.3s ease-in;
   background: var(--bs-white);
-  z-index: var(--z-index-9999);
+  z-index: var(--z-index-999);
   .navbar-brand {
     .logo {
       width: 48%;
@@ -511,7 +525,7 @@
   .topnav {
     padding-top: 0.5rem;
     .nav-link {
-      font-size: var(--font-S-14);
+      font-size: var(--font-S-13);
     }
   }
   .header-navbar {
@@ -521,13 +535,14 @@
     display: none;
   }
 }
+
 .fixedHeader {
   position: var(--position-fix);
   top: 0;
   transition: 0.4s ease-out;
   width: var(--width-0100);
   background: var(--bs-white);
-  z-index: var(--z-index-9999);
+  z-index: var(--z-index-999);
 }
 .hideUser {
   display: block;

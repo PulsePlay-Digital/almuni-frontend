@@ -188,5 +188,6 @@
     --width:100%;
     --width-1:100px;
     --width-2:200px;
+    --z-index-999: 999;
     --z-index-9999: 9999;
 }
