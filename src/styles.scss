@@ -348,18 +348,24 @@ body {
 
 @media screen and (max-width: 1600px) and (min-width: 1200px) {
     .commonTopPadding {
-        padding-top: 156px;
+        padding-top: 150px;
     }
 }
 
-@media screen and (max-width: 1900px) and (min-width: 1600px) {
+@media screen and (max-width: 1750px) and (min-width: 1600px) {
     .commonTopPadding {
-        padding-top: 170px;
+        padding-top: 160px;
+    }
+}
+
+@media screen and (max-width: 1900px) and (min-width: 1750px) {
+    .commonTopPadding {
+        padding-top: 166px;
     }
 }
 
 @media screen and (max-width: 2100px) and (min-width: 1900px) {
     .commonTopPadding {
-        padding-top: 188px;
+        padding-top: 174px;
     }
 }

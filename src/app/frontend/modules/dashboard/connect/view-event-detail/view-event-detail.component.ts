@@ -9,6 +9,7 @@ import { Config } from "./../../../../services/config";
 })
 export class ViewEventDetailComponent implements OnInit {
   event_detail: any;
+  heading: string= "EVENT DETAIL INFORMATION";
 
   constructor(public arouter: ActivatedRoute, public config: Config) {
     //Get query params
