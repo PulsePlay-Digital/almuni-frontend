@@ -119,6 +119,15 @@
   .story-content {
     background: var(--bg-color);
     height: var(--height-100);
+    .text-description {
+      cursor: pointer;
+      height: 295px;
+      text-overflow: ellipsis;
+      width: 100%;
+      display: block;
+      white-space: normal;
+      overflow: hidden;
+    }
   }
 
   .storyDescription {
@@ -465,6 +474,16 @@
     }
   }
   .alumniStories {
+    .story-content {
+      .text-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: auto;
+      }
+    }
     .storyDescription {
       .users {
         .user-logo {
@@ -611,3 +630,4 @@
     background-position: top;
   }
 }
+

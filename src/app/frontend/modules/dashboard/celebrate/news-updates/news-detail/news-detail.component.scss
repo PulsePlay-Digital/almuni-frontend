@@ -7,5 +7,15 @@
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        white-space: normal;
     }
 }
+@media (min-width: 300px) and (max-width: 575px) {
+    .news-content {
+      .news-discription {
+        text-align: justify;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+  

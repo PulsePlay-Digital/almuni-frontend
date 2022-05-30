@@ -299,7 +299,6 @@
       display: block;
     }
   }
- 
 }
 @media (min-width: 575px) and (max-width: 767px) {
   .header-nav {
@@ -500,10 +499,45 @@
     }
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width: 3400px) {
   .header-nav {
     .mobile-toggle {
       display: none;
+    }
+  }
+
+  .stickyHeader {
+    .topnav {
+      .navbar-nav {
+        .nav-link {
+          font-size: var(--font-S-16);
+        }
+      }
+    }
+    .showUser{
+      .login-register{
+        font-size: var(--font-S-16);
+      }
+    } 
+  }
+
+  .fixedHeader {
+    .topnav {
+      .nav-link {
+        font-size: var(--font-S-16);
+      }
+    }
+  }
+  .fixedHeader {
+    .upperNav {
+      .top-header {
+        .open-add {
+          a,
+          .login-register {
+            font-size: var(--font-S-16);
+          }
+        }
+      }
     }
   }
 }
