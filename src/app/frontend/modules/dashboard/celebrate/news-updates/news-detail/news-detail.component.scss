@@ -1,0 +1,11 @@
+.allNews {
+    height: 280px;
+    overflow-y: auto;
+    .title {
+        cursor: pointer;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

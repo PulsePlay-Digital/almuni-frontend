@@ -1,39 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs/internal/Subject';
+import { Subject } from 'rxjs';
+import { DataService } from './../../../../../services/data.service';
+import { environment } from './../../../../../../../environments/environment';
 import { takeUntil } from 'rxjs/operators';
-import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
-import { DataService } from 'src/app/frontend/services/data.service';
-import { environment } from 'src/environments/environment';
+import { TokenInterceptor } from './../../../../../core/token.interceptor';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-news-updates',
-  templateUrl: './news-updates.component.html',
-  styleUrls: ['./news-updates.component.scss']
+  selector: 'app-news-detail',
+  templateUrl: './news-detail.component.html',
+  styleUrls: ['./news-detail.component.scss']
 })
-export class NewsUpdatesComponent implements OnInit {
-
+export class NewsDetailComponent implements OnInit {
   allNewsUpdates: any;
+  newsDetail: any;
   imgPath = environment.imgUrl;
   loading: boolean = false;
   p: number = 1;
   destroy$: Subject<boolean> = new Subject<boolean>();
   heading: string= "NEWS & UPDATES";
-  constructor(private dataService: DataService,
-    public notify: TokenInterceptor
-  ) { }
+  constructor(
+    public dataService: DataService,
+    public notify: TokenInterceptor,
+    public arouter: ActivatedRoute
+    ) {
+      this.arouter.queryParams.subscribe((res: any) => {
+        this.newsDetail = res;
+      })
+     }
 
   ngOnInit(): void {
     this.getAllNews();
   }
-  /**
-   * Get all news updates
-   */
+
   async getAllNews() {
     let action: string = 'all-news';
     this.loading = true;
     await this.dataService.getData(action).pipe(takeUntil(this.destroy$)).subscribe((res: any) => {
       this.allNewsUpdates = res.data;
-      console.log(this.allNewsUpdates)
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

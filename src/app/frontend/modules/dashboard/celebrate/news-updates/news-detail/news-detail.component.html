@@ -8,27 +8,22 @@
                 </div>
             </div>
             <app-loader *ngIf="loading"></app-loader>
-            <ng-container *ngIf="!loading">
-                <div *ngFor="let news of allNewsUpdates | paginate: { itemsPerPage: 1, currentPage: p }">
-                    <div class="university-img py-3">
-                        <img class="img-fluid"
-                            [src]="(news?.newsImage) ? imgPath + news?.newsImage : './assets/celebrate/balaji-university.png'"
-                            alt="news photo">
-                    </div>
-                    <div class="news-content pt-3">
-                        <h6 class="news-discription fs-6 fw-bolder text-capitalize">News Title:</h6>
-                        <p class="news-discription fs-6 text-capitalize"> {{news?.title}}</p>
-                        <h6 class="news-discription fs-6 fw-bolder text-capitalize"> News Description:</h6>
-                        <div class="news-discription fs-6 text-capitalize" [innerHtml]="news?.description">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-center">
-                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-                        </div>
+            <div *ngIf="!loading">
+                <div class="university-img py-3">
+                    <img class="img-fluid"
+                        [src]="(newsDetail?.newsImage) ? imgPath + newsDetail?.newsImage : './assets/celebrate/balaji-university.png'"
+                        alt="news photo">
+                </div>
+                <div class="news-content pt-3">
+                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">News Title:</h6>
+                    <p class="news-discription fs-6 text-capitalize"> {{newsDetail?.title}}</p>
+                    <p class="news-discription fs-6 text-capitalize">Created On: {{newsDetail?.created_at | date}}</p>
+                    <p class="news-discription fs-6 text-capitalize">Author: {{newsDetail?.author}}</p>
+                    <h6 class="news-discription fs-6 fw-bolder text-capitalize"> News Detail Description:</h6>
+                    <div class="news-discription fs-6 text-capitalize" [innerHtml]="newsDetail?.description">
                     </div>
                 </div>
-            </ng-container>
+            </div>
         </div>
         <div class="col-lg-3">
             <div class="text-center">

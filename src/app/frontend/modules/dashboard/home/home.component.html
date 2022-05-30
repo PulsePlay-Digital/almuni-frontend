@@ -420,7 +420,8 @@
                             <app-loader *ngIf="loading"></app-loader>
                             <ul *ngIf="!loading">
                                 <li *ngFor="let news of allNews">
-                                    <a routerLink="/celebrate/news-update"><span class="text">{{news?.title}}</span>
+                                    <a routerLink="/celebrate/news-detail"
+                                    [queryParams]="news" [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
                                 </li>
                             </ul>
