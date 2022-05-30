@@ -345,3 +345,21 @@ body {
         }
     }
 }
+
+
+}
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+    .commonTopPadding {
+        padding-top: 156px;
+    }
+}
+@media screen and (max-width: 1900px) and (min-width: 1600px) {
+    .commonTopPadding {
+        padding-top: 170px;
+    }
+}
+@media screen and (max-width: 2100px) and (min-width: 1900px) {
+    .commonTopPadding {
+        padding-top: 188px;
+    }
+}

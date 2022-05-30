@@ -1,28 +1,31 @@
 .news-discription {
-    a {
-        color: var(--btn-black) !important;
-    }
-     :hover {
-        color: var(--btn-background) !important;
-    }
+  a {
+    color: var(--btn-black) !important;
+  }
+  :hover {
+    color: var(--btn-background) !important;
+  }
 }
 .allNews {
-    height: 280px;
-    overflow-y: auto;
-    .title {
-        cursor: pointer;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+  height: 280px;
+  overflow-y: auto;
+  .title {
+    cursor: pointer;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+  }
 }
 
 // NEWS & UPDATES END
 // RESPONSIVE CSS START
 @media (min-width: 300px) and (max-width: 575px) {
+  .news-content {
     .news-discription {
-        text-align: justify;
-        overflow-wrap: break-word;
+      text-align: justify;
+      overflow-wrap: break-word;
     }
   }
+}
