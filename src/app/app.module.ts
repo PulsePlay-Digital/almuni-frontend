@@ -11,7 +11,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FrontendModule } from './frontend/frontend.module';
 import { UserService } from './frontend/services/user.service';
 import { CKEditorModule } from 'ng2-ckeditor';
-
+import { BreadcrumbModule } from "xng-breadcrumb";
+import { BreadcrumbService } from 'xng-breadcrumb';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,9 +27,10 @@ import { CKEditorModule } from 'ng2-ckeditor';
     FormsModule,
     ReactiveFormsModule,
     FrontendModule,
-    CKEditorModule
+    CKEditorModule,
+    BreadcrumbModule
   ],
-  providers: [
+  providers: [BreadcrumbService
   ],
   bootstrap: [AppComponent]
 })

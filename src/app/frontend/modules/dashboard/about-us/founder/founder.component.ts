@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
   selector: 'app-founder',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FounderComponent implements OnInit {
   heading: string = "THE FOUNDER CHANCELLOR";
-  constructor() { }
+  constructor(private breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
+    this.breadcrumbService.set('@ChildOne', 'Founder Chancellor');
   }
 
 }

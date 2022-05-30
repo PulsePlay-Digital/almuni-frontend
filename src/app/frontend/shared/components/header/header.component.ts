@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     public router: Router,
     private authService: AuthService,
     public dataService: DataService,
-    @Inject(DOCUMENT) public document: Document 
+    @Inject(DOCUMENT) public document: Document
   ) {
     if (localStorage.hasOwnProperty("currentUser")) {
       this.currentUser = JSON.parse(
@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
     fromEvent(window, 'scroll').subscribe((event: any) => {
       let response: any = this.document.defaultView?.scrollY;
       response > 100 ? this.enableSticky = true : this.enableSticky = false;
-    }) 
+    })
   }
 
   /**
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
    */
   logout() {
     this.authService.logout();
-    location.assign("/home");
+    location.assign("/");
   }
   /**
    * Scroll target Section
@@ -49,5 +49,5 @@ export class HeaderComponent implements OnInit {
    */
   target(sectionId: any) {
     this.dataService.scrollSection.next(sectionId);
-  }  
+  }
 }

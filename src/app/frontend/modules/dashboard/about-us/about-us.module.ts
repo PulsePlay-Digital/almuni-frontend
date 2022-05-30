@@ -5,7 +5,8 @@ import { AboutUsComponent } from "./about-us.component";
 import { SharedModule } from "./../../../shared/shared.module";
 import { FounderComponent } from "./founder/founder.component";
 import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-social-society.component";
-
+import { BreadcrumbModule } from "xng-breadcrumb";
+import { MatIconModule } from "@angular/material/icon";
 @NgModule({
   declarations: [
     AboutUsComponent,
@@ -15,7 +16,9 @@ import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-soc
   imports: [
     CommonModule,
     AboutUsRoutingModule,
-    SharedModule
+    SharedModule,
+    BreadcrumbModule,
+    MatIconModule
   ],
 })
 export class AboutUsModule {}

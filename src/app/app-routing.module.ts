@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule)
+    loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule),
+    data: {breadcrumb: { skip: true }},
   },
   {
     path: '**', redirectTo: '/home'

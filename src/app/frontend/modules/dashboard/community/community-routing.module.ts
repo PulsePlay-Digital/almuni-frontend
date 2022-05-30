@@ -13,30 +13,37 @@ const routes: Routes = [
   { 
     path: 'community', 
     component: CommunityComponent,
+    data: {breadcrumb: {alias: 'Community'} },
     children: [
       { 
         path: 'alumni-directory', 
-        component: AlumniDirectoryComponent
+        component: AlumniDirectoryComponent,
+        data: {breadcrumb: {alias: 'Alumni Directory'} },
       },
       { 
         path: 'professional-club', 
-        component: ProfessionalClubComponent
+        component: ProfessionalClubComponent,
+        data: {breadcrumb: {alias: 'Professional Club'} },
       },
       { 
         path: 'industry-club', 
-        component: IndustryClubComponent
+        component: IndustryClubComponent,
+        data: {breadcrumb: {alias: 'Industry Club'} },
       },
       { 
         path: 'entrepreneurship-club', 
-        component: EntrepreneurshipClubComponent
+        component: EntrepreneurshipClubComponent,
+        data: {breadcrumb: {alias: 'Entrepreneurship Club'} },
       },
       { 
         path: 'start-club', 
-        component: StartNewClubComponent
+        component: StartNewClubComponent,
+        data: {breadcrumb: {alias: 'start-club'} },
       },
       { 
         path: 'venture-info', 
-        component: BusinessVentureInfoComponent
+        component: BusinessVentureInfoComponent,
+        data: {breadcrumb: {alias: 'venture-info'} },
       },
       { 
         path: 'alumni-details', 
