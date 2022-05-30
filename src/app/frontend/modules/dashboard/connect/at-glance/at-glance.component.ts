@@ -17,6 +17,7 @@ export class AtGlanceComponent implements OnInit {
 
   pastEvent: any;
   upcomingEvent: any;
+  heading: string = "Events at a Glance";
 
   constructor(
     public dataService: DataService,
