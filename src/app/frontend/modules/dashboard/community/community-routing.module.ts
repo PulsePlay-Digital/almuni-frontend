@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
 import { AlumniDirectoryComponent } from './alumni-directory/alumni-directory.component';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
+import { CommunityPageComponent } from './community-page/community-page.component';
 import { CommunityComponent } from './community.component';
 import { EntrepreneurshipClubComponent } from './entrepreneurship-club/entrepreneurship-club.component';
 import { IndustryClubComponent } from './industry-club/industry-club.component';
@@ -15,6 +16,10 @@ const routes: Routes = [
     component: CommunityComponent,
     data: {breadcrumb: {alias: 'Community'} },
     children: [
+      { 
+        path: 'home', 
+        component: CommunityPageComponent
+      },
       { 
         path: 'alumni-directory', 
         component: AlumniDirectoryComponent,
@@ -51,7 +56,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'alumni-directory',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
     ],

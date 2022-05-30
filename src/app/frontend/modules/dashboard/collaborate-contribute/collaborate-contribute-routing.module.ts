@@ -14,12 +14,14 @@ import { AddExpertiseComponent } from './add-expertise/add-expertise.component';
 import { AddOpportunityComponent } from './add-opportunity/add-opportunity.component';
 import { AvailableEventComponent } from './available-event/available-event.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
+import { CollaboratePageComponent } from './collaborate-page/collaborate-page.component';
 
 const routes: Routes = [
   {
     path: 'collaborate-contribute',
     component: CollaborateContributeComponent,
     children: [
+      { path: 'home', component: CollaboratePageComponent  },
       { path: 'mentorship', component: MentorshipComponent  },
       { path: 'careers', component: CareersComponent  },
       { path: 'special-projects', component: SpeacialProjectsComponent  },
@@ -35,7 +37,7 @@ const routes: Routes = [
       { path: 'view-details', component: ViewDetailsComponent  },
       {
         path: '',
-        redirectTo: 'mentorship',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
     ]

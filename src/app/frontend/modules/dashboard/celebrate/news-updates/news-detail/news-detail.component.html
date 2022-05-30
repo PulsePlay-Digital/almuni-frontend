@@ -35,9 +35,9 @@
                     <mat-list>
                         <mat-list-item *ngFor="let news of allNewsUpdates">
                             <mat-icon mat-list-icon>image</mat-icon>
-                            <div mat-line> <small>{{news.created_at | date}}</small> </div>
+                            <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
                             <div mat-line>
-                                <h6 class="title fs-6 text-capitalize fw-bold my-2" routerLink="/celebrate/news-detail"
+                                <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail"
                                     [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
                             </div>
                         </mat-list-item>
