@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CareersComponent implements OnInit {
   searchData: boolean = false;
+  heading: string = "CAREERS AND JOBS";
   constructor() { }
 
   ngOnInit(): void {

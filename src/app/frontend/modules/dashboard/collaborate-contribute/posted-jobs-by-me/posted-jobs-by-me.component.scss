@@ -1,36 +1,32 @@
-.posted-job{
-    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
-.card {
+.posted-job {
+  .card {
     position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
     background-clip: border-box;
     border: none;
     border-radius: 0.25rem;
-}
-.back-btn{
-    background-color: #011898;
-}
-.openJob, .closeJob {
-    color: #fff;
-    border: none;
-}
-.openJob {
+    background: var(--form-bg);
+  }
+  .openJob,
+  .closeJob {
+    border: 1px solid var(--btn-background);
+  }
+  .openJob {
     background-color: green;
     text-shadow: 1px 1px green;
-    
+  }
 }
-// .closeJob {
-//     background-color: red;
-//     text-shadow: 1px 1px red;
-// }
+.project-btn {
+  background: var(--btn-background);
+  border: 1px solid var(--btn-background);
+  color: var(--bs-white);
+  border-radius: var(--border-radius-2);
+  width: var(--width);
+}
+.project-btn:hover {
+  background: var(--bs-white);
+  color: var(--bs-background);
 }

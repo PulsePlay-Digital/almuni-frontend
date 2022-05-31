@@ -1,12 +1,13 @@
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
 .post-job{
-    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
-    .btn-back{
-        background-color:#011898;
-    }
+    background: var(--form-bg);
+}
+.btn-info{
+    background: var(--btn-background);
+    border: 1px solid var(--btn-background);
+    color: var(--bs-white);
+    border-radius: var(--border-radius-2);
+}
+.btn-info:hover{
+    background: var(--bs-white);
+    color: var(--bs-background);
 }
