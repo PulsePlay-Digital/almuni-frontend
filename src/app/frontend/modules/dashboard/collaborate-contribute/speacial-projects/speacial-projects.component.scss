@@ -1,17 +1,55 @@
 .special-projects {
   .project-box {
-    background: #E2E7FF;
+    background: #e2e7ff;
     height: 180px;
   }
   .number {
     color: #011898;
   }
-  .project-btn {
-    background-color: #011898;
-    width: 100%;
-    font-size: 12px !important;
-  }
-  ul li{
+  ul li {
     line-height: 24.38px;
+  }
+}
+.number {
+  color: var(--bs-primary);
+}
+.project-btn {
+  background: var(--btn-background);
+  border: 1px solid var(--btn-background);
+  color: var(--bs-white);
+  border-radius: var(--border-radius-2);
+  width: var(--width);
+}
+.project-btn:hover {
+  background: var(--bs-white);
+  color: var(--bs-background);
+}
+@media (min-width: 575px) and (max-width: 767px) {
+  .special-projects {
+    .project-box {
+      height: auto;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .special-projects {
+    .project-box {
+      height: 152px;
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .special-projects {
+    .project-box {
+      height: 208px;
+    }
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .special-projects {
+    .project-box {
+      height: 250px;
+    }
   }
 }

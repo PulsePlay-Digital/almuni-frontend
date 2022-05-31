@@ -5,35 +5,35 @@
         <div class="card">
             <div class="card-header border-0">
                 <h5 class="card-title mb-0 text-white text-capitalize">
-                  <p class="mb-0 text-white main-heading fs-5 fw-bold lh-base">Project Name : &nbsp; {{ item?.title }} </p>
+                  <p class="mb-0 main-heading fs-5 fw-bold lh-base">{{ item?.title }} </p>
                 </h5>
               </div>
             <div class="card-body">
-              <div class="row">
+              <div class="row ">
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Charity/Initiative Name</b>: &nbsp; {{ item?.charityName }} </p>
+                    <p class="mb-2"><b>Charity/Initiative Name</b>: &nbsp; {{ item?.charityName }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Monetary donations accepted</b>: &nbsp; <a>{{ item?.monetaryDonation == true ? 'Yes': 'No' }} </a></p>
+                    <p class="mb-2"><b>Monetary donations accepted</b>: &nbsp; <a>{{ item?.monetaryDonation == true ? 'Yes': 'No' }} </a></p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Time/effort donations invited</b>: &nbsp; {{ item?.timeDonation == true ? 'Yes' : 'No' }} </p>
+                    <p class="mb-2"><b>Time/effort donations invited</b>: &nbsp; {{ item?.timeDonation == true ? 'Yes' : 'No' }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Contact mobile number</b>: &nbsp; {{ item?.contactPerson }} </p>
+                    <p class="mb-2"><b>Contact mobile number</b>: &nbsp; {{ item?.contactPerson }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Contact person email id</b>: &nbsp; {{ item?.email }} </p>
+                    <p class="mb-2"><b>Contact person email id</b>: &nbsp; {{ item?.email }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Email id</b>: &nbsp; {{ item?.email }} </p>
+                    <p class="mb-2"><b>Email id</b>: &nbsp; {{ item?.email }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Social Media Link</b>: &nbsp; {{ item?.city }} </p>
+                    <p class="mb-2"><b>Social Media Link</b>: &nbsp; {{ item?.city }} </p>
                   </div>
                   <div class="col-lg-12">
-                    <p class="text-white mb-2"><b>Brief description about the project</b>: &nbsp;</p>
-                    <p class="text-white mb-2">{{ item?.description | stripHtml }} </p>
+                    <p class="mb-2"><b>Brief description about the project</b>: &nbsp;</p>
+                    <p class="mb-2">{{ item?.description | stripHtml }} </p>
                   </div>
                  
               </div>

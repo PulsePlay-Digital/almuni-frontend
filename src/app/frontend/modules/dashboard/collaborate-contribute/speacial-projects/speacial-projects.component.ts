@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SpeacialProjectsComponent implements OnInit {
 
   searchData: boolean = false;
+  heading: string = "SPECIAL PROJECTS";
 
   constructor(
   ) { }
