@@ -24,7 +24,6 @@ export class MyPostedOpportunityComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllOpportunity();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
@@ -36,6 +35,7 @@ export class MyPostedOpportunityComponent implements OnInit {
    * Function to get all opportunity
    */
   async getAllOpportunity() {
+    this.loading = true;
     let action: string = "all-opportunity";
     await this.dataService.getData(action).pipe(
       map((item: any) => {
@@ -44,6 +44,10 @@ export class MyPostedOpportunityComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.allOpportunity = res;
+      console.log(res)
+      this.loading = false;
+    },
+    error => {
       this.loading = false;
     })
   }

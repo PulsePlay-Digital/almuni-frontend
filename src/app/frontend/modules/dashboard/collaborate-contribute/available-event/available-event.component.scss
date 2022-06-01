@@ -1,9 +1,14 @@
-.main-heading {
-    font-size: 30px;
-    line-height:43.88px;
-    color: #011898;
-    font-family: Montserrat;
-}
 .card{
-    background-color: #F65C8B;
+    background-color: var(--card-bg);
 }
+.project-btn {
+    background: var(--btn-background);
+    border: 1px solid var(--btn-background);
+    color: var(--bs-white);
+    border-radius: var(--border-radius-2);
+    width: var(--width);
+  }
+  .project-btn:hover {
+    background: var(--bs-white);
+    color: var(--bs-background);
+  }

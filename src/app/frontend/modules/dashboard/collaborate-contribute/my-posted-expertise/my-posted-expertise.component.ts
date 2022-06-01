@@ -43,6 +43,7 @@ export class MyPostedExpertiseComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.allExpertise = res;
+      console.log(res)
       this.loading = false;
     })
   }

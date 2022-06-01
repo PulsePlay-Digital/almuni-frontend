@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class EngageSocietyComponent implements OnInit {
   postedOpportunity: boolean = false;
   postedExpertise: boolean = false;
+  heading: string = "ENGAGE WITH SRI BALAJI SOCIETY";
   constructor() { }
 
   ngOnInit(): void {
