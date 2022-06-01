@@ -21,7 +21,7 @@ export class ConnectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
 

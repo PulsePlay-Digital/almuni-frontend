@@ -21,16 +21,14 @@ export class AlumniDirectoryComponent implements OnInit {
     private breadcrumbService: BreadcrumbService,
     public router: Router,
     public notify: TokenInterceptor
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.breadcrumbService.set('@ChildTwo', 'alumni-directory');
     this.loading = true;
     this.getAllAlumniUser();
   }
-  /**
-   * Function to get all alumni user
-   */
+  /**  Function to get all alumni user */
   async getAllAlumniUser() {
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe(

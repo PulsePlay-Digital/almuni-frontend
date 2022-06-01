@@ -190,9 +190,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /**
-   * Function to get all gallery
-   */
+  /** * Function to get all gallery  */
   async getAllGallery() {
     let action: string = "all-gallery";
     await this.dataService.getData(action).subscribe((result: any) => {
@@ -201,9 +199,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /**
-   * Function to get all news
-   */
+  /** * Function to get all news */
   async getAllNews() {
     let action: string = "all-news";
     await this.dataService.getData(action).subscribe((result: any) => {
@@ -212,9 +208,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /**
-   * Function to get all alumni events
-   */
+  /** * Function to get all alumni events */
   async getAllEvents() {
     let action: string = "all-event";
     await this.dataService

@@ -36,9 +36,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  /**
-   * Function to logout user
-   */
+  /*** Logout */
   logout() {
     this.authService.logout();
     location.assign("/");

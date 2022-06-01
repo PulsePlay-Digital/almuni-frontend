@@ -20,9 +20,7 @@ export class ViewEventDetailComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  /**
-   * Function to navigate on previous page
-   */
+  /*** Function to navigate on previous page */
   back() {
     this.config.navigateBack();
   }
