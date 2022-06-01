@@ -10,10 +10,11 @@ import { DataService } from './../../../../services/data.service';
   styleUrls: ['./featured-alumni.component.scss']
 })
 export class FeaturedAlumniComponent implements OnInit {
-  allFeatured: any;
+  user: any;
   imgPath = environment.imgUrl;
   p: number = 1;
   loading: boolean = false;
+  heading: string = "FEATURED ALUMNI";
 
   constructor(
     public dataService: DataService,
@@ -27,12 +28,13 @@ export class FeaturedAlumniComponent implements OnInit {
   }
 
   async getAllFeaturedAlumni() {
-    let  action: string = 'all-featured';
+    let  action: string = 'all-users';
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.allFeatured = res.data;
+      this.user = res.data;
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);
+      this.loading = false;
     })
   }
 

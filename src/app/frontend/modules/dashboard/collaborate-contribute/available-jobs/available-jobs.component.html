@@ -7,9 +7,10 @@
       </div>
       <app-loader *ngIf="loading"></app-loader>
       <ng-container *ngIf="!loading">
-        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2" *ngFor="let item of allJobs">
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2"
+          *ngFor="let item of allJobs | paginate: { itemsPerPage: 6, currentPage: p }">
           <div class="job-section py-lg-4 py-md-4 py-sm-3 py-3 px-lg-4 px-md-4 px-sm-3 px-3">
-            <h6 class="job-heading fs-5 fw-bold text-uppercase mb-lg-4 mb-md-4 mb-sm-3 mb-3">{{ item?.title
+            <h6 class="job-heading fs-5 fw-bold text-capitalize mb-lg-4 mb-md-4 mb-sm-3 mb-3">{{ item?.title
               }}
             </h6>
             <div class="row justify-content-lg-center">
@@ -39,6 +40,11 @@
           </div>
         </div>
       </ng-container>
+      <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2" *ngIf="allJobs?.length > 0">
+        <div class="col text-center">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
     </div>
   </div>
 </div>

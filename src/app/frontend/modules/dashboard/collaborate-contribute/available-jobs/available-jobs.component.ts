@@ -11,6 +11,7 @@ import { DataService } from "./../../../../services/data.service";
 export class AvailableJobsComponent implements OnInit {
   allJobs: any;
   loading: boolean = false;
+  p: number = 1;
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor,

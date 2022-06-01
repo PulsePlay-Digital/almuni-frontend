@@ -1,46 +1,48 @@
-<div class="row">
-    <div class="col text-end">
-        <button class="btn btn-sm btn-primary rounded" (click)="back()">
-            Back
-        </button>
+<div class="container">
+    <div class="row">
+        <div class="col text-end mt-2">
+            <button class="btn btn-sm view-btn" (click)="back()">
+                Back
+            </button>
+        </div>
     </div>
-</div>
-<div class="text-center my-4">
-    <h4 class="main-heading text-uppercase fw-bolder mb-0">CELEBRATE ACHIEVEMENTS & PASSION</h4>
-</div>
-<div class="row">
-    <div class="col-lg-12">
-        <app-loader *ngIf="loading"></app-loader>
-        <div class="card" *ngIf="!loading">
-            <div class="card-body">
-                <div class="row justify-content-center">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5 text-center">
-                                <img class="img-fluid mb-3" [src]="imgPath + journeyData?.photo" alt="event pic" />
+    <div class="text-center my-4">
+        <h4 class="main-heading text-uppercase fw-bolder mb-0">CELEBRATE ACHIEVEMENTS & PASSION</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <app-loader *ngIf="loading"></app-loader>
+            <div class="card border-0" *ngIf="!loading">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-5 text-center">
+                                    <img class="img-fluid mb-3" [src]="imgPath + journeyData?.photo" alt="event pic" />
 
-                                <p class="mt-3 mb-2">
-                                    <strong>Name :</strong> &nbsp;
-                                    {{ journeyData?.title }}
-                                </p>
-                                <p class="mb-2">
-                                    <strong>Course :</strong> &nbsp;{{
-                                    journeyData?.institute
-                                    }}
-                                </p>
-                                <p class="mb-2" *ngIf="journeyData?.batch_year != null">
-                                    <strong>Batch :</strong> &nbsp;{{
-                                    journeyData?.batch_year
-                                    }}
-                                </p>
+                                    <p class="mt-3 mb-2">
+                                        <strong>Name :</strong> &nbsp;
+                                        {{ journeyData?.title }}
+                                    </p>
+                                    <p class="mb-2">
+                                        <strong>Course :</strong> &nbsp;{{
+                                        journeyData?.institute
+                                        }}
+                                    </p>
+                                    <p class="mb-2" *ngIf="journeyData?.batch_year != null">
+                                        <strong>Batch :</strong> &nbsp;{{
+                                        journeyData?.batch_year
+                                        }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 mt-3">
-                        <p class="main-heading text-uppercase fw-bold text-center">
-                            {{ storyType }}:
-                        </p>
-                        <div [innerHtml]="journeyData?.description"></div>
+                        <div class="col-lg-12 mt-3">
+                            <p class="main-heading text-uppercase fw-bold text-center mb-3">
+                                {{ storyType }}:
+                            </p>
+                            <div [innerHtml]="journeyData?.description"></div>
+                        </div>
                     </div>
                 </div>
             </div>
