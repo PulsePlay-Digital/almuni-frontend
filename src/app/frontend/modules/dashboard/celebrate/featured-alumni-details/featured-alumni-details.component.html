@@ -1,62 +1,65 @@
 <ng-container *ngIf="type == 'featured-alumni'">
-  <div class="row">
-    <div class="col text-end">
-      <button class="btn btn-sm btn-primary rounded" (click)="back()">
-        Back
-      </button>
+  <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
+  <div class="container">
+    <div class="row">
+      <div class="col text-end mt-2">
+        <button class="btn btn-sm view-btn lh-base" (click)="back()">
+          Back
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="text-center my-4">
-    <h4 class="main-heading text-uppercase fw-bolder mb-0">featured alumni</h4>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <app-loader *ngIf="loading"></app-loader>
-      <div class="card" *ngIf="!loading">
-        <div class="card-body">
-          <div class="row justify-content-center">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-              <div class="row justify-content-center">
-                <div class="col-lg-5 text-center">
-                  <img class="img-fluid mb-3" [src]="imgPath + alumni_details?.picture" alt="event pic" />
+    <div class="text-center my-4">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">featured alumni</h4>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="card border-0" *ngIf="!loading">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                <div class="row justify-content-center">
+                  <div class="col-lg-5 text-center">
+                    <img class="img-fluid mb-3" [src]="imgPath + alumni_details?.picture" alt="event pic" />
 
-                  <p class="mt-3 mb-2">
-                    <strong>Name :</strong> &nbsp;
-                    {{ alumni_details?.alumni_name }}
-                  </p>
-                  <p class="mb-2">
-                    <strong>Batch :</strong> &nbsp;{{
-                    alumni_details?.batch_year
-                    }}
-                  </p>
-                  <p class="mb-2">
-                    <strong>Current Designation :</strong> &nbsp;{{
-                    alumni_details?.designation
-                    }}
-                  </p>
-                  <p class="mb-2" *ngIf="alumni_details?.firm">
-                    <strong>Current Firm :</strong> &nbsp;{{
-                    alumni_details?.firm
-                    }}
-                  </p>
-                  <p class="mb-2">
-                    <strong>Industry :</strong> &nbsp;{{
-                    alumni_details?.industry
-                    }}
-                  </p>
-                  <p class="mb-3">
-                    <strong>Current Location :</strong> &nbsp;{{
-                    alumni_details?.location
-                    }}
-                  </p>
+                    <p class="mt-3 mb-2">
+                      <strong>Name :</strong> &nbsp;
+                      {{ alumni_details?.alumni_name }}
+                    </p>
+                    <p class="mb-2">
+                      <strong>Batch :</strong> &nbsp;{{
+                      alumni_details?.batch_year
+                      }}
+                    </p>
+                    <p class="mb-2">
+                      <strong>Current Designation :</strong> &nbsp;{{
+                      alumni_details?.designation
+                      }}
+                    </p>
+                    <p class="mb-2" *ngIf="alumni_details?.firm">
+                      <strong>Current Firm :</strong> &nbsp;{{
+                      alumni_details?.firm
+                      }}
+                    </p>
+                    <p class="mb-2">
+                      <strong>Industry :</strong> &nbsp;{{
+                      alumni_details?.industry
+                      }}
+                    </p>
+                    <p class="mb-3">
+                      <strong>Current Location :</strong> &nbsp;{{
+                      alumni_details?.location
+                      }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-12 mt-3">
-              <p class="main-heading text-uppercase fw-bold text-center">
-                In {{ alumni_details?.alumni_name }}’s own words:
-              </p>
-              <div [innerHtml]="alumni_details?.description"></div>
+              <div class="col-lg-12 mt-3">
+                <p class="main-heading text-uppercase fw-bold text-center mb-3">
+                  In {{ alumni_details?.alumni_name }}’s own words:
+                </p>
+                <div [innerHtml]="alumni_details?.description"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -65,43 +68,46 @@
   </div>
 </ng-container>
 <ng-container *ngIf="type != 'featured-alumni'">
-  <div class="d-sm-flex align-items-center justify-content-between my-4">
-    <h4 class="main-heading text-uppercase fw-bolder mb-0">
-      CELEBRATE ACHIEVEMENTS & PASSION
-    </h4>
-    <button class="btn btn-md btn-primary rounded" (click)="back()">
-      Back
-    </button>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-12">
-              <img src="./assets/gallary01.png" class="img-fluid w-100" />
+  <!-- <app-dashboard-banner [heading]="heading"></app-dashboard-banner> -->
+  <div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between my-4">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">
+        CELEBRATE ACHIEVEMENTS & PASSION
+      </h4>
+      <button class="btn btn-md btn-primary rounded" (click)="back()">
+        Back
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <img src="./assets/gallary01.png" class="img-fluid w-100" />
+              </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-lg-8 my-3">
-              <p class="mb-2"><strong>Name :</strong> &nbsp; Harish</p>
-              <p class="mb-2"><strong>Course :</strong> &nbsp; BITM</p>
-              <p class="mb-2"><strong>Batch :</strong> &nbsp; 1999 - 2001</p>
-            </div>
-            <div class="col-lg-12">
-              <p>
-                <b>{{ descriptionHeading }}</b>
-              </p>
-              <p class="lh-2">
-                Meet Anurag Tyagi.<br />
-                Family Man. Loving Son. Husband. Father. Brother. Friend. Farm
-                Owner. Adventurer at Heart. Connected to the Earth. Eyes set on
-                the Stars. Sought after keynote speaker & a mover & shaker in
-                the highly specialized Corporate Real Estate sector. Currently
-                serving as Vice President and Head - Real Estate at Morgan
-                Stanley.
-              </p>
+            <div class="row">
+              <div class="col-lg-8 my-3">
+                <p class="mb-2"><strong>Name :</strong> &nbsp; Harish</p>
+                <p class="mb-2"><strong>Course :</strong> &nbsp; BITM</p>
+                <p class="mb-2"><strong>Batch :</strong> &nbsp; 1999 - 2001</p>
+              </div>
+              <div class="col-lg-12">
+                <p>
+                  <b>{{ descriptionHeading }}</b>
+                </p>
+                <p class="lh-2">
+                  Meet Anurag Tyagi.<br />
+                  Family Man. Loving Son. Husband. Father. Brother. Friend. Farm
+                  Owner. Adventurer at Heart. Connected to the Earth. Eyes set on
+                  the Stars. Sought after keynote speaker & a mover & shaker in
+                  the highly specialized Corporate Real Estate sector. Currently
+                  serving as Vice President and Head - Real Estate at Morgan
+                  Stanley.
+                </p>
+              </div>
             </div>
           </div>
         </div>
