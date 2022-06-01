@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'collaborate-contribute',
     component: CollaborateContributeComponent,
     children: [
-      { path: 'home', component: CollaboratePageComponent  },
+      { path: 'collaborate', component: CollaboratePageComponent  },
       { path: 'mentorship', component: MentorshipComponent  },
       { path: 'careers', component: CareersComponent  },
       { path: 'special-projects', component: SpeacialProjectsComponent  },

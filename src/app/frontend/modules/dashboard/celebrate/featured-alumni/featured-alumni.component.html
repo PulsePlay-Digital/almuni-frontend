@@ -11,21 +11,21 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
                 *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
                 <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
-                    <ng-container *ngIf="item?.profile_pic != null">
+                    <ng-container *ngIf="item?.picture != null">
                         <div class="alumni-pic">
-                            <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="Alumni Picture" />
+                            <img [src]="imgPath + item?.picture" class="card-img-top" alt="Alumni Picture" />
                         </div>
                     </ng-container>
-                    <ng-container *ngIf="item?.profile_pic == null">
-                        <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg"
+                    <ng-container *ngIf="item?.picture == null">
+                        <img [src]="imgPath + item?.picture" class="card-img-top img-thumbnail noImg"
                             alt="Alumni Picture" />
                     </ng-container>
                     <div class="card-header bg-transparent border-0 text-center pt-3">
-                        <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.first_name}} {{item?.last_name}}</h3>
+                        <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.alumni_name}}</h3>
                     </div>
                     <div class="card-body text-center pb-0 pt-2">
-                        <p class="card-text mb-2">({{item?.batch}})</p>
-                        <p *ngIf="item?.current_designation != null" class="card-text mb-2 designation">{{item?.current_designation}}
+                        <p class="card-text mb-2">{{item?.batch_year}}</p>
+                        <p *ngIf="item?.designation != null" class="card-text mb-2 designation">{{item?.designation}}
                         </p>                       
                     </div>
                     <div class="card-footer bg-transparent border-0 text-center">

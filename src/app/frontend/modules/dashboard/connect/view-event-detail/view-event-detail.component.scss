@@ -1,10 +1,44 @@
-.view-event{
-    .read-more{
-        background-color:#011898;
-        width: 80%;
-        line-height: 38px;
+.view-event {
+  .read-more {
+    background-color: var(--btn-background);
+    width: 80%;
+    line-height: 38px;
+  }
+  .your-idea {
+    background-color: var(--form-bg);
+    .commentField:focus {
+      box-shadow: none;
     }
-    .your-idea{
-        background-color:#F65C8B;
+    ::placeholder {
+      color: var(--bs-white);
+      opacity: .7;
     }
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: var(--bs-white);
+      opacity: .7;
+    }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: var(--bs-white);
+      opacity: .7;
+    }
+  }
+}
+.view-btn {
+  background: var(--btn-background);
+  color: var(--bs-white);
+  border: 1px solid var(--btn-background);
+  border-radius: var(--border-radius-2);
+}
+.view-btn:hover {
+  background: var(--bs-white);
+  color: var(--btn-background);
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .view-btn {
+        width: var(--width);
+      }
 }

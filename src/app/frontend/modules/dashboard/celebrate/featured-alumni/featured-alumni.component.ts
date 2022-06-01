@@ -28,7 +28,7 @@ export class FeaturedAlumniComponent implements OnInit {
   }
 
   async getAllFeaturedAlumni() {
-    let  action: string = 'all-users';
+    let  action: string = 'all-featured';
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res.data;
       this.loading = false;

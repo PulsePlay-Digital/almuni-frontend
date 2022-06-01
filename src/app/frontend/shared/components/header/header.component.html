@@ -90,7 +90,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/community" routerLinkActive="active-link">Community
+                                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/community/community-home']}}" routerLinkActive="active-link">Community
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
                                             <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}">Alumni
@@ -118,7 +118,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/collaborate-contribute" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
+                                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/collaborate-contribute/collaborate']}}" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
                                             <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
