@@ -1,0 +1,19 @@
+<div class="commonTopPadding">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="g-map">
+          <agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType' [mapDraggable]='mapDraggable'
+            [showDefaultInfoWindow]="true" [zoom]="1">
+            <agm-marker *ngFor="let marker of coordinates" [latitude]="marker.lat" [longitude]="marker.longi">
+              <agm-info-window #infoWindow>
+                {{ marker.label }}
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

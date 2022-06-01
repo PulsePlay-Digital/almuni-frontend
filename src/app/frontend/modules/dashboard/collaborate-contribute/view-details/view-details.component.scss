@@ -1,0 +1,17 @@
+.back {
+    background: var(--btn-background);
+    color: var(--bs-white);
+  }
+  .collab-img {
+    max-height: 230px;
+    min-height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  @media (min-width: 300px) and (max-width: 575px) {
+    .collab-img {
+      max-height: 200px;
+      min-height: 200px;
+    }
+  }
+  

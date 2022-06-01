@@ -21,6 +21,7 @@ import { MyPostedOpportunityComponent } from './my-posted-opportunity/my-posted-
 import { MyPostedExpertiseComponent } from './my-posted-expertise/my-posted-expertise.component';
 import { AvailableEventComponent } from './available-event/available-event.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
+import { CollaboratePageComponent } from './collaborate-page/collaborate-page.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
     MyPostedOpportunityComponent,
     MyPostedExpertiseComponent,
     AvailableEventComponent,
-    ViewDetailsComponent
+    ViewDetailsComponent,
+    CollaboratePageComponent
   ],
   imports: [
     CommonModule,

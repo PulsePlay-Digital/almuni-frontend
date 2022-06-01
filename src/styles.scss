@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "theme/variables.css";
@@ -6,6 +7,7 @@
     font-family: Montserrat;
     src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
+
 .invalid-feedback {
     display: block !important;
 }
@@ -16,8 +18,7 @@ body {
 }
 
 body {
-    margin        : 0;
-    // font-family   : Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
     letter-spacing: 1px;
     font-family: Montserrat !important;
 }
@@ -31,7 +32,7 @@ body {
 }
 
 .text-danger {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .form-label {
@@ -48,214 +49,130 @@ body {
 
 .green-snackbar {
     background: rgb(2, 192, 72);
-    color     : #fff;
+    color: #fff;
 }
 
 .red-snackbar {
     background: #dc3545;
-    color     : #fff;
+    color: #fff;
 }
 
 .warning-snackbar {
     background: #ffc107;
-    color     : #fff;
+    color: #fff;
 }
 
 .main-heading {
-    font-size: 20px !important;
-    line-height:43.88px !important;
-    color: #011898;
-    font-family: Montserrat !important;
+    font-size: var(--font-S-32) !important;
+    line-height: 43.88px !important;
+    color: var(--btn-background);
+    font-family: var(--family) !important;
 }
 
 .sub-heading {
     font-size: 30px;
     line-height: 43px;
-    color: #FEA641;
+    color: #fea641;
     font-family: Montserrat !important;
 }
 
-//Custom css common for sidebar vertical tabs
-.know-us {
-    img {
-        width: 100%;
-        object-fit: cover;
-    }
-}
-.nav-pills-custom .nav-link {
-    color: #0d205f;
-    background: #fff;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
+.commonTopPadding {
+    padding-top: 150px;
 }
 
-.nav-pills-custom .nav-link.active {
-    background: #3a96da !important;
-    color: #fff !important;
-}
-h4.font-italic.mb-4 {
-    text-align: center;
-    margin: auto;
-    background: #3D4097;
-    color: #fff;
-    padding: 12px;
-    text-transform: uppercase;
-}
-.bannerSlider{
+.bannerSlider {
     .owl-nav {
         display: flex !important;
         justify-content: space-between !important;
         position: relative;
-        top: -380px !important;
+        top: -280px !important;
         .owl-prev {
-         background-color: transparent !important;
-            i {
-                color    : B9B9B9;
-                font-size: 24px;
-                color: #B9B9B9 !important;
-            }
-        }
-      .owl-next {
             background-color: transparent !important;
-             i {
-               font-size: 24px;
-                color: #B9B9B9 !important;
-            }
-        }
-    }
-
-}
-.alumni {
-    .owl-nav {
-        .owl-prev {
-            position  : absolute;
-            left      : -100px;
-            top    : 24%;
-            background: none;
-
             i {
-                color    : #8d8d8d;
+                color: #B9B9B9;
                 font-size: 24px;
+                color: #b9b9b9 !important;
             }
         }
-
         .owl-next {
-            position  : absolute;
-            right     : -100px;
-            top    : 24%;
-            background: none;
-
+            background-color: transparent !important;
             i {
-                color    : #8d8d8d;
                 font-size: 24px;
+                color: #b9b9b9 !important;
             }
         }
-    }
-
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-        background: #000;
-    }
-    .owl-nav .owl-prev:hover,
-    .owl-nav .owl-next:hover {
-        background: transparent !important;
-    }
-
-    .owl-nav .owl-prev i:hover,
-    .owl-nav .owl-prev i:focus,
-    .owl-nav .owl-next i:hover,
-    .owl-nav .owl-next i:focus {
-        color: #000;
-    }
-
-    owl-carousel-o {
-        .owl-carousel {
-            .owl-stage-outer{
-                padding-top: 40px;
-                owl-stage {
-                    .owl-stage {
-                        .owl-item {
-                            .gallaryImg {
-                                img {
-                                    opacity: .5
-                                }
-                                .featuredInfo {
-                                    display: none;
-                                }
-                            }
-                        }
-                        .owl-item.center {
-                            .gallaryImg {
-                                img {
-                                    opacity: 1;
-                                    height: 270px !important;
-                                    margin-top: -30px;
-                                    border-radius: 5px;
-                                }
-                                .featuredInfo {
-                                    display: block;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-   
     }
 }
+
+
+/* Home Featured Alumni slider*/
+
+.alumniStories {
+    .owl-nav {
+        position: var(--position-absolute);
+        bottom: 28px;
+        left: 43%;
+        .owl-prev,
+        .owl-next {
+            background: var(--bg-Transparent);
+            font-size: var(--font-S-18);
+        }
+    }
+}
+
+
+/* Featured alumni Css End */
+
+
+/* Home Gallery css */
+
 .gallary {
     .owl-nav {
         .owl-prev {
-            position  : absolute;
-            left      : -100px;
-            bottom    : 39%;
+            position: var(--position-absolute);
+            left: -203px;
             background: none;
-
+            top: 130px;
             i {
-                color    : #8d8d8d;
+                color: #8d8d8d;
                 font-size: 24px;
             }
         }
-
         .owl-next {
-            position  : absolute;
-            right     : -100px;
-            bottom    : 39%;
+            position: var(--position-absolute);
+            right: -203px;
+            top: 130px;
             background: none;
-
             i {
-                color    : #8d8d8d;
+                color: #8d8d8d;
                 font-size: 24px;
             }
         }
     }
-
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
         background: #000;
     }
     .owl-nav .owl-prev:hover,
     .owl-nav .owl-next:hover {
         background: transparent !important;
     }
-
     .owl-nav .owl-prev i:hover,
     .owl-nav .owl-prev i:focus,
     .owl-nav .owl-next i:hover,
     .owl-nav .owl-next i:focus {
         color: #000;
     }
-
     owl-carousel-o {
         .owl-carousel {
-            .owl-stage-outer{
+            .owl-stage-outer {
                 padding-top: 40px;
                 owl-stage {
                     .owl-stage {
                         .owl-item {
                             .gallaryImg {
                                 img {
-                                    opacity: .5
+                                    opacity: 0.5;
                                 }
                                 .featuredInfo {
                                     display: none;
@@ -279,9 +196,11 @@ h4.font-italic.mb-4 {
                 }
             }
         }
-   
     }
 }
+
+
+/* Home Gallery Css End */
 
 // Active Pagination CSS
 .ngx-pagination .current {
@@ -295,13 +214,24 @@ h4.font-italic.mb-4 {
     border-radius: 50%;
 }
 
+.xng-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+
 @media screen and (max-width: 574px) and (min-width: 300px) {
     .gallary {
         .owl-nav {
             display: none !important;
         }
     }
-    .bannerSlider{
+    .bannerSlider {
         .owl-nav {
             display: none !important;
         }
@@ -310,16 +240,40 @@ h4.font-italic.mb-4 {
         font-size: 18px !important;
         line-height: 30px !important;
     }
+    .commonTopPadding {
+        padding-top: 134px;
+    }
 }
 
 @media screen and (max-width: 768px) and (min-width: 575px) {
     .main-heading {
         font-size: 22px !important;
     }
-    .bannerSlider{
+    .bannerSlider {
         .owl-nav {
             display: none !important;
         }
+    }
+    .alumniStories {
+        .owl-nav {
+            position: var(--position-absolute);
+            top: 38px;
+            right: 15%;
+            left: unset;
+        }
+    }
+    .gallary {
+        .owl-nav {
+            .owl-prev {
+                left: -53px;
+            }
+            .owl-next {
+                right: -53px;
+            }
+        }
+    }
+    .commonTopPadding {
+        padding-top: 124px;
     }
 }
 
@@ -327,14 +281,14 @@ h4.font-italic.mb-4 {
     .gallary {
         owl-carousel-o {
             .owl-carousel {
-                .owl-stage-outer{
+                .owl-stage-outer {
                     padding-top: 40px;
                     owl-stage {
                         .owl-stage {
                             .owl-item {
                                 .gallaryImg {
                                     img {
-                                        opacity: .5
+                                        opacity: 0.5;
                                     }
                                 }
                             }
@@ -352,6 +306,66 @@ h4.font-italic.mb-4 {
                 }
             }
         }
+        .owl-nav {
+            .owl-prev {
+                left: -55px;
+            }
+            .owl-next {
+                right: -55px;
+            }
+        }
+    }
+    .alumniStories {
+        .owl-nav {
+            position: var(--position-absolute);
+            top: 38px;
+            right: 14%;
+            left: unset;
+        }
+    }
+    .commonTopPadding {
+        padding-top: 145px;
     }
 }
 
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+    .alumniStories {
+        .owl-nav {
+            left: 42%;
+        }
+    }
+    .gallary {
+        .owl-nav {
+            .owl-prev {
+                left: -180px;
+            }
+            .owl-next {
+                right: -180px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+    .commonTopPadding {
+        padding-top: 150px;
+    }
+}
+
+@media screen and (max-width: 1750px) and (min-width: 1600px) {
+    .commonTopPadding {
+        padding-top: 160px;
+    }
+}
+
+@media screen and (max-width: 1900px) and (min-width: 1750px) {
+    .commonTopPadding {
+        padding-top: 166px;
+    }
+}
+
+@media screen and (max-width: 2100px) and (min-width: 1900px) {
+    .commonTopPadding {
+        padding-top: 174px;
+    }
+}

@@ -1,64 +1,4 @@
-<!-- <div class="container">
-    <div class="row my-5">
-        <div class="col-lg-9">
-            <mat-accordion>
-                <mat-expansion-panel expanded=true>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            GENERAL INFORMATION
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="row">
-                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.email }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.mobile_number }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current Company: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current Designation: <span class="ms-2 fw-normal">{{ user?.current_designation }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current country: <span class="ms-2 fw-normal">{{ user?.current_country }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current region: <span class="ms-2 fw-normal">{{ user?.current_Region }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current state: <span class="ms-2 fw-normal">{{ user?.current_state }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Current city: <span class="ms-2 fw-normal">{{ user?.current_city }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Email: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
-                        <div class="col-lg-6 mb-2 fw-bold">Mobile: <span class="ms-2 fw-normal">{{ user?.current_company }}</span></div>
-
-                    </div>
-                </mat-expansion-panel>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            WORK/BUSINESS INFORMATION
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="row">
-                        <div class="col-lg-6">fdfdf</div>
-                        <div class="col-lg-6">fdfdf</div>
-                    </div>
-                </mat-expansion-panel>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            MENTORSHIP / SKILL
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="row">
-                        <div class="col-lg-6">fdfdf</div>
-                        <div class="col-lg-6">fdfdf</div>
-                    </div>
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-        <div class="col-lg-3">
-            <div class="card">
-                <img src="./assets/dummy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text fw-bold">Name:<span class="ms-2 fw-normal">{{ user?.first_name }}</span> </p>
-                    <p class="card-text fw-bold">Birth date: <span class="ms-2 fw-normal">{{ user?.birth_date }}</span></p>
-                    <p class="card-text fw-bold">Anniversary: <span class="ms-2 fw-normal">{{ user?.anniversary_date }}</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<div class="view-profile">
+<div class="view-profile commonTopPadding">
     <app-users-banner [heading]="heading"></app-users-banner>
     <div class="container">
         <app-loader *ngIf="loading"></app-loader>
@@ -71,7 +11,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-11">
                     <div class="form-bg pt-lg-3">
-                        <div class="row justify-content-center pt-4">
+                        <div class="row m-0">
+                            <div class="col-lg-12 pe-3 pt-lg-0 pt-md-0 pt-3 text-end">
+                                <a class="editIcon" (click)="editUser(user?.id)">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <div class="photo">
                                     <div class="choose_file">
@@ -87,85 +34,85 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
+                        <div class="row justify-content-center py-lg-4 py-md-4 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="text-dark form-control rounded-0 p-3"
-                                    formControlName="first_name" placeholder="First name" />
+                                <input type="text" class="text-dark form-control rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                    formControlName="first_name" placeholder="First name"/>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="last_name" placeholder="Last name" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                 formControlName="institute_name" placeholder="Institute name" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="institute_roll_no" placeholder="Institute wise roll no." />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                 formControlName="batch" placeholder="Batch" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                 formControlName="gender" placeholder="Gender"/>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="office_email" placeholder="Official Email Id" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="current_address" placeholder="Current Address" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3" formControlName="country"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="country"
                                     placeholder="Current country" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="current_region" placeholder="Current region" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="current_state" placeholder="State" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3" formControlName="city"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="city"
                                     placeholder="City" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="permanent_address" placeholder="Permanent address" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="permanent_country" placeholder="Permanent country" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="linkedin_id" placeholder="Linkedin profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="twitter_id" placeholder="Twitter profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="skype_id" placeholder="Skype profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="facebook_id" placeholder="Facebook profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="instagram_id" placeholder="Instagram profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     formControlName="council_member_designation"
                                     placeholder="Council member designation" />
                             </div>
@@ -175,7 +122,7 @@
             </div>
             <div class="row my-xl-5 my-lg-4 my-md-4 my-sm-4 my-3">
                 <div class="col-lg-12 text-center">
-                    <h3 class="main-heading text-uppercase fw-bolder mb-0">Work/Business information</h3>
+                    <h3 class="main-heading text-uppercase fw-bolder mb-0">Work / Business information</h3>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -183,26 +130,26 @@
                     <div class="form-bg pt-lg-3">
                         <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Professional title" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Professional category" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Current employer" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Current office address" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3" placeholder="Business" />
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" placeholder="Business" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Business office address" />
                             </div>
                         </div>
@@ -219,34 +166,34 @@
                     <div class="form-bg mb-5">
                         <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-3"
+                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Provide mentorship" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3" placeholder="Skills" />
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" placeholder="Skills" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Primary function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Secondary function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Other function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Primary industry focus" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Secondary industry focus" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-3"
+                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
                                     placeholder="Other industry focus" />
                             </div>
                         </div>

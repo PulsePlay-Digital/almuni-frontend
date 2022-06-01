@@ -1,5 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { environment } from './../../../environments/environment';
 
 @Injectable({
@@ -14,7 +16,18 @@ export class UserService {
   ) { 
     this.url = environment.apiUrl;
   }
-
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side errors
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Server-side errors
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
   /**
    * Get user by Id
    * @param id 
@@ -25,10 +38,12 @@ export class UserService {
   // }
 
   public getUsersById(action: string, id: number) {
-    return this.http.get(`${this.url}/${action}/${id}`);
+    return this.http.get(`${this.url}/${action}/${id}`).pipe(catchError(this.handleError));
   }
 
-
+  public getUsersByStatus(data:any) {
+    return this.http.get(`${this.url}/${data.action}/${data.status}`).pipe(catchError(this.handleError));
+  }
   public postData(action?: any, data?: any) {
     return this.http.post<any>(`${this.url}/${action?.action}` + '/' + action?.id, data);
   }

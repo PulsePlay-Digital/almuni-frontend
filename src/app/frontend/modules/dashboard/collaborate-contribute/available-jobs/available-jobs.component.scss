@@ -1,21 +1,49 @@
-.available-job{
-    .job-section{
-        background-color: #F65C8B;
-    }
-    .apply-btn{
-        background-color: #011898;
-        width: 100%;
-        line-height: 28px;
-    }
-    .card {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    .openJob {
-        color: green;
-        text-shadow: 1px 1px green;
-    }
-    .closeJob {
-        color: red;
-        text-shadow: 1px 1px red;
-    }
+.available-job {
+  .job-section {
+    background-color: var(--card-bg);
+  }
+  .job-heading {
+    color: var(--btn-background);
+  }
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .openJob {
+    color: green;
+    text-shadow: 1px 1px green;
+  }
+  .closeJob {
+    color: red;
+    text-shadow: 1px 1px red;
+  }
+  .content {
+    height: 225px;
+    overflow-y: auto;
+  }
 }
+.project-btn {
+  background: var(--btn-background);
+  border: 1px solid var(--btn-background);
+  color: var(--bs-white);
+  border-radius: var(--border-radius-2);
+  width: var(--width);
+}
+.project-btn:hover {
+  background: var(--bs-white);
+  color: var(--bs-background);
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .available-job {
+    .content {
+      height: 196px;
+    }
+  }
+}
+@media (min-width: 575px) and (max-width: 768px) {
+    .available-job {
+      .content {
+        height: 184px;
+      }
+    }
+  }

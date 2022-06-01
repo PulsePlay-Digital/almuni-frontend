@@ -20,6 +20,9 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { StartupCornerComponent } from './components/startup-corner/startup-corner.component';
 import { AskforGeneralComponent } from './components/askfor-general/askfor-general.component';
 import { UsersBannerComponent } from './components/users-banner/users-banner.component';
+import { ViewMapComponent } from './components/view-map/view-map.component';
+import { AgmCoreModule } from "@agm/core";
+import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
     StartupCornerComponent,
     AskforGeneralComponent,
     UsersBannerComponent,
+    ViewMapComponent,
+    DashboardBannerComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +51,10 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
     MatDialogModule,
     MatMenuModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDOOCCaDPxmU5SLeaq1X7R_LMFGnay-XOg'
+    })
   ],
   exports: [
     HeaderComponent,
@@ -57,7 +65,9 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
     SearchFilterComponent,
     StripHtmlPipe,
     DialogEntrepreneurshipComponent,
-    UsersBannerComponent
+    UsersBannerComponent,
+    ViewMapComponent,
+    DashboardBannerComponent
   ]
 })
 export class SharedModule {}

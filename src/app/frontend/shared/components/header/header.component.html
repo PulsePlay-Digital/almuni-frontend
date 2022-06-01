@@ -1,516 +1,439 @@
-<div class="header-nav py-3 d-lg-block d-xl-block d-sm-none d-md-block d-none">
-    <div class="container-fluid  px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
+<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2" [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
+    <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
         <div class="row">
-            <div class="col-md-12 col-lg-3 col-xl-4 col-sm-8 col-8">
-                <div class="open-add align-self-center text-center">
-                    <a class="navbar-brand " href="#">
-                        <img src="../../../../../assets/SBU logo.png"
-                            class="logo   w-75 img-fluid " alt=" Shri Balaji Logo">
+            <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
+                <div class="open-add align-self-center text-center bigLogo">
+                    <a class="navbar-brand" routerLink="/home">
+                        <img src="./assets/SBU logo.png" class="logo img-fluid " alt=" Shri Balaji Logo">
                     </a>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-9 col-xl-8 col-sm-12 col-12">
-<div class="row">
-    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12 py-3">
-                <div class="navbar navbar-expand-lg header-navbar navbar-light">
-                    <div class="top-header">
-                        <div class="open-add align-self-center">
-                            <a href="https://www.sbup.edu.in/Admission" target="_blank"
-                                class="btn admission-open">Admissions Open</a>
-                        </div>
-                        <div class="open-add align-self-center"> <a class="text-decoration-none" target="_blank"
-                                href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i
-                                        class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                admissions@sbup.edu.in</a>
-                        </div>
-                        <div class="open-add align-self-center"> <a class=" text-decoration-none" target="_blank"
-                                href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
-                                        aria-hidden="true"></i></span>alumni@sbup.edu.in</a>
-                        </div>
-                        <ng-container *ngIf="!currentUser">
-                            <div class="open-add align-self-center">
-                                <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
-                                    <span class="header-icon pe-3"><i class="fa fa-user-o"
-                                            aria-hidden="true"></i></span>
-                                    Log In/
-                                    Register</a>
-                            </div>
-                        </ng-container>
-                        <ng-container *ngIf="currentUser">
-                            <div class="align-self-center">
-                                <div class="dropdown">
-                                    <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="./assets/Ellipse-19.png" class="w-50"> <span class="header-icon"><i
-                                                class="fa fa-angle-down ps-2" aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" routerLink="view-profile"
-                                                [queryParams]="{id: currentUser?.id}">View Profile</a></li>
-                                        <li><a class="dropdown-item" routerLink="edit-profile"
-                                                [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
-                                        <li><a class="dropdown-item" routerLink="reset-password">Reset Password</a>
-                                        </li>
-                                        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-                                    </ul>
+            <div class="col-md-12 col-lg-9 col-xl-9 col-sm-12 col-12 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
+                            <div class="top-header">
+                                <div class="open-add align-self-center">
+                                    <a href="https://bit.ly/sbup_mba8" target="_blank" class="btn admission-open">Admissions Open</a>
                                 </div>
-                            </div>
-                        </ng-container>
-                    </div>
-                </div>
-                </div>
-                <hr>
-                <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 py-1">
-                <nav class="navbar topnav navbar-expand-lg navbar-light">
-                    <button class=" fa-burger fs-4 mobile-toggle border-0 " type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">☰ </button>
-                    <div class="collapse navbar-collapse" id="navbarToggler">
-                        <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" routerLink="/"
-                                    routerLinkActive="active-link">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" routerLink="/about-us/1"
-                                    routerLinkActive="active-link"> Know
-                                    Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" routerLink="/about-us/1/founder/2">Our Founder
-                                            Chancellor</a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="/about-us/1/founder/2/balaji-social-society/3"> Welcome
-                                            to Sri
-                                            Balaji University Pune</a></li>
-                                    <!-- <li><a class="dropdown-item" routerLink="/about-us/welcome-society">Welcome to Sri Balaji
-                                                        Society </a></li>
-                                                <li><a class="dropdown-item" routerLink="/about-us/balaji-group">Sri Balaji Society
-                                                        Group</a></li>
-                                                <li><a class="dropdown-item" routerLink="/about-us/president-message">President’s
-                                                        Message</a></li>
-                                                <li><a class="dropdown-item" routerLink="/about-us/team"> Management Team</a></li>
-                                                <li><a class="dropdown-item" routerLink="/about-us/blessings"> Stalwarts Blessings</a></li>
-                
-                                                <li><a class="dropdown-item" routerLink="/about-us/aicte-approvals"> AICTE Approvals</a>
+                                <div class="open-add mailBtn align-self-center">
+                                    <a class="text-decoration-none" target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                aria-hidden="true"></i></span> alumni@sbup.edu.in
+                                    </a>
+                                </div>
+                                <div class="open-add mailBtn align-self-center">
+                                    <a class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
+                                                aria-hidden="true"></i></span>www.sbup.edu.in</a>
+                                </div>
+                                <ng-container *ngIf="!currentUser">
+                                    <div class="open-add align-self-center">
+                                        <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
+                                            <span class="header-icon pe-3"><i class="fa fa-user-o"
+                                                    aria-hidden="true"></i></span> Login / Register</a>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="currentUser">
+                                    <div class="align-self-center">
+                                        <div class="dropdown">
+                                            <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="./assets/Ellipse-19.png" class="userImg"> <span class="header-icon"><i class="fa fa-angle-down ps-2"
+                                                        aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View Profile</a></li>
+                                                <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
+                                                <li><a class="dropdown-item" routerLink="reset-password">Reset
+                                                        Password</a>
                                                 </li>
-                                                <li><a class="dropdown-item" routerLink="/about-us/equivalence-to-mba"> AIU Equivalence to
-                                                        MBA</a></li>  -->
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/common-purpose-culture"
-                                    routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
-                                        aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
-                                            The
-                                            Founder Message </a></li>
-                                    <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
-                                            Sri Balaji Society: Alumni Connect Vision </a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/common-purpose-culture/strategy-framework'] : ['login']}}">
-                                            Sri
-                                            Balaji Society: Alumni Connect Strategy Framework </a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/community"
-                                    routerLinkActive="active-link">Community
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}">Alumni
-                                            Directory</a>
+                                                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-0">
+                    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+                        <nav class="navbar topnav navbar-expand-lg navbar-light pt-xl-3 pt-lg-3 pt-md-2 pb-0">
+                            <a class="navbar-brand smallLogo" routerLink="/home">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid " alt="Shri Balaji Logo">
+                            </a>
+                            <button class="fa-burger fs-4 mobile-toggle border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">☰ </button>
+                            <div class="collapse navbar-collapse" id="navbarToggler">
+                                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}">Professional
-                                            Clubs</a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}">Industry
-                                            Clubs</a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
-                                            Business Venture</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/connect/at-glance"
-                                    routerLinkActive="active-link">Connect
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton3">
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/connect/at-glance/#past-event'] : ['login']}}">
-                                            Connect at glance</a>
-                                        <ul class="list-group bg-transparent">
-                                            <li class="list-group-item bg-transparent"><a class="dropdown-item"
-                                                    routerLink="/connect/at-glance">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">
+                                            Know
+                                            Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">Founder
+                                                    Chancellor</a></li>
+                                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society" routerLinkActive="active-link"> SBUP</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/common-purpose-culture" routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
+                                                aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                                            <li><a (click)="target('founderMsg')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                                    The
+                                                    Founder's Message </a></li>
+                                            <li><a (click)="target('connectVision')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                                    SBUP Alumni Connect Vision </a></li>
+                                            <li><a (click)="target('strategy')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                                    SBUP Alumni Connect Strategy Framework </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/community" routerLinkActive="active-link">Community
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}">Alumni
+                                                    Directory</a>
+                                            </li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}">Professional
+                                                    Clubs</a></li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}">Industry
+                                                    Clubs</a></li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
+                                                    Business Ventures</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/connect/at-glance" routerLinkActive="active-link">Connect
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/connect/at-glance/#past-event'] : ['login']}}">
+                                                    Connect at glance</a>
+                                            </li>
+                                            <li><a class="dropdown-item" routerLink="/connect/at-glance">
                                                     Past Event</a></li>
-                                            <li class="list-group-item bg-transparent"><a class="dropdown-item"
-                                                    routerLink="/connect/at-glance/#upcoming-event">
+                                            <li><a class="dropdown-item" routerLink="/connect/at-glance/#upcoming-event">
                                                     Upcoming Event</a></li>
                                         </ul>
                                     </li>
-                                </ul>
-                            </li>
-                            <!-- <li><a class="dropdown-item"
-                                                                routerLink="{{(currentUser) ? ['/connect/at-glance/#upcoming-event'] : ['login']}}">
-                                                                Upcoming Event</a></li> -->
-                            <!-- <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/alumnireunion'] : ['login']}}">
-                                                    Annual Alumni Re-Union</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/drivenevent'] : ['login']}}">
-                                                    Alumni Driven Events</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/connect/almamater'] : ['login']}}">
-                                                    Events At/By Sri Balaji Socity Alma Mater</a></li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink<div class="header-nav">--->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/collaborate-contribute"
-                                    routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
-                                        aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/collaborate-contribute" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
+                                                aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
+                                            </li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
+                                                    and
+                                                    Jobs</a></li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
+                                                    Projects</a></li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
+                                                    with SBUP</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
-                                            and
-                                            Jobs</a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
-                                            Projects</a></li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
-                                            with Sri Balaji Society</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/celebrate"
-                                    routerLinkActive="active-link">Celebrate
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
-                                    <li><a class="dropdown-item"
-                                            routerLink="/celebrate/featured-alumni">Featured-alumni</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/celebrate" routerLinkActive="active-link">Celebrate
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
+                                            <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured Alumni</a>
+                                            </li>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate
+                                                    Journey, Achievements & Passion</a></li>
+                                            <li><a class="dropdown-item" routerLink="/celebrate/news-update">
+                                                    News and Updates </a></li>
+                                        </ul>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate
-                                            Journey, Achievements & Passion</a></li>
-                                </ul>
-                            </li>
-                            <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
-                                            Achievement</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni
-                                            Passion</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/gallery">Gallery</a></li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/magazine">Corporate Citizen
-                                            Magazine</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/contact" routerLinkActive="active-link">Contact
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
+                                            <li><a class="dropdown-item" routerLink="/contact/key-contact">Key
+                                                    Contacts</a>
+                                            </li>
+                                            <li><a class="dropdown-item" routerLink="/contact/social-links">SBUP
+                                                    Alumni
+                                                    Clubs – Social Channels</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a class="dropdown-item" routerLink="/celebrate/news-update">News and
-                                            Updates</a></li>
-                               -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                    aria-expanded="false" routerLink="/contact" routerLinkActive="active-link">Contact
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
-                                    <li><a class="dropdown-item" routerLink="/contact/key-contact">Key
-                                            Contacts</a>
-                                    </li>
-                                    <li><a class="dropdown-item" routerLink="/contact/social-links">Sri Balaji
-                                            Society<br>
-                                            Alumni
-                                            Clubs – Social Channels</a></li>
+                                    <div class="responsiveList">
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/transcript" routerLinkActive="active-link">Apply For
+                                                Transcript</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active-link">Get Featured</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/celebrate/news-update" routerLinkActive="active-link">News</a>
+                                        </li>
+                                    </div>
+                                    <ng-container *ngIf="currentUser">
+                                        <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                            <div class="dropdown">
+                                                <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="./assets/Ellipse-19.png" class="w-50"> <span class="header-icon"><i class="fa fa-angle-down ps-2"
+                                                            aria-hidden="true"></i></span>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View Profile</a></li>
+                                                    <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
+                                                    <li><a class="dropdown-item" routerLink="reset-password">Reset
+                                                            Password</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                    <ng-container *ngIf="!currentUser">
+                                        <div class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                            <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">Log In</a>
+                                        </div>
+                                    </ng-container>
+                                    <div class="responsiveBtn my-3">
+                                        <div class="row justify-content-between m-0">
+                                            <div class="col-md-4 col-sm-5 ps-0">
+                                                <div class="open-add mailBtn align-self-center">
+                                                    <a class="text-decoration-none" target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                                aria-hidden="true"></i></span> alumni@sbup.edu.in
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-5 ps-0">
+                                                <div class="open-add mailBtn align-self-center">
+                                                    <a class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
+                                                                aria-hidden="true"></i></span>www.sbup.edu.in</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </ul>
-                            </li>
 
-                        </ul>
-                       
-                        <div class="right-dropdown">
-                            <div id="" class="dropdown dropstart">
-                                <button class="btn  dropdown" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="fa fa-bars fs-6 " aria-hidden="true"></i>
-                                </button>
-                                <ul class="dropdown-menu trick_top">
-                                    <li><a class="nav-link dropdown-item fs-6 pe-3" routerLink="/connect/at-glance"
-                                            routerLinkActive="active-link">
-                                            Connect</a> </li>
-                                    <li><a href="./assets/doc/Transcript-Application-Form1.pdf" target="_blank"
-                                            class="dropdown-item">Apply For Transcript</a></li>
-                                    <li> <a href="#" class="dropdown-item">Get Featured</a></li>
-                                    <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/contact']"
-                                            routerLinkActive="active-link">News</a></li>
-                                </ul>
+                                <div class="right-dropdown">
+                                    <div id="" class="dropdown dropstart">
+                                        <button class="btn dropdown" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-bars fs-6" aria-hidden="true"></i>
+                                        </button>
+                                        <ul class="dropdown-menu trick_top">
+                                            <li><a class="nav-link dropdown-item pe-3" routerLink="/connect/at-glance" routerLinkActive="active-link">
+                                                    Connect</a> </li>
+                                            <li><a routerLink="/transcript" class="dropdown-item">Apply For
+                                                    Transcript</a></li>
+                                            <li> <a href="#" class="dropdown-item">Get Featured</a></li>
+                                            <li> <a class="nav-link pe-3 dropdown-item" routerLink="/celebrate/news-update" routerLinkActive="active-link">News</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </nav>
                     </div>
-                </nav>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 </div>
 <!-- for mobile design -->
-<div class="header-nav py-3 d-sm-block d-block d-md-none d-lg-none d-xl-none">
-   <nav class="navbar topnav navbar-expand-lg navbar-light">
-                    <div class="container-fluid">
-                    <a class="navbar-brand" href="#">    <img src="../../../../../assets/SBU logo.png"
-                    class="logo  img-fluid " alt=" Shri Balaji Logo"></a>
-   
-            
-                <button class=" fa-burger fs-4 mobile-toggle border-0 " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                    aria-label="Toggle navigation">☰ </button>
-                <div class="collapse navbar-collapse" id="navbarToggler">
-                    <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" routerLink="/"
-                                routerLinkActive="active-link">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" routerLink="/about-us/1"
-                                routerLinkActive="active-link"> Know
-                                Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" routerLink="/about-us/1/founder/2">Our Founder
-                                        Chancellor</a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="/about-us/1/founder/2/balaji-social-society/3"> Welcome
-                                        to Sri
-                                        Balaji University Pune</a></li>
-                                <!-- <li><a class="dropdown-item" routerLink="/about-us/welcome-society">Welcome to Sri Balaji
-                                                    Society </a></li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/balaji-group">Sri Balaji Society
-                                                    Group</a></li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/president-message">President’s
-                                                    Message</a></li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/team"> Management Team</a></li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/blessings"> Stalwarts Blessings</a></li>
-            
-                                            <li><a class="dropdown-item" routerLink="/about-us/aicte-approvals"> AICTE Approvals</a>
-                                            </li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/equivalence-to-mba"> AIU Equivalence to
-                                                    MBA</a></li>  -->
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/common-purpose-culture"
-                                routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
-                                    aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
-                                        The
-                                        Founder Message </a></li>
-                                <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
-                                        Sri Balaji Society: Alumni Connect Vision </a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/common-purpose-culture/strategy-framework'] : ['login']}}">
-                                        Sri
-                                        Balaji Society: Alumni Connect Strategy Framework </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/community"
-                                routerLinkActive="active-link">Community
-                                <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}">Alumni
-                                        Directory</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}">Professional
-                                        Clubs</a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}">Industry
-                                        Clubs</a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
-                                        Business Venture</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/connect/at-glance"
-                                routerLinkActive="active-link">Connect
-                                <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton3">
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/connect/at-glance/#past-event'] : ['login']}}">
-                                        Connect at glance</a>
-                                    <ul class="list-group bg-transparent">
-                                        <li class="list-group-item bg-transparent"><a class="dropdown-item"
-                                                routerLink="/connect/at-glance">
-                                                Past Event</a></li>
-                                        <li class="list-group-item bg-transparent"><a class="dropdown-item"
-                                                routerLink="/connect/at-glance/#upcoming-event">
-                                                Upcoming Event</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li><a class="dropdown-item"
-                                                            routerLink="{{(currentUser) ? ['/connect/at-glance/#upcoming-event'] : ['login']}}">
-                                                            Upcoming Event</a></li> -->
-                        <!-- <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/alumnireunion'] : ['login']}}">
-                                                Annual Alumni Re-Union</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/drivenevent'] : ['login']}}">
-                                                Alumni Driven Events</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink="{{(currentUser) ? ['/connect/almamater'] : ['login']}}">
-                                                Events At/By Sri Balaji Socity Alma Mater</a></li>
-                                        <li><a class="dropdown-item"
-                                                routerLink<div class="header-nav">--->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/collaborate-contribute"
-                                routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
-                                    aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
-                                        and
-                                        Jobs</a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
-                                        Projects</a></li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
-                                        with Sri Balaji Society</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/celebrate"
-                                routerLinkActive="active-link">Celebrate
-                                <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
-                                <li><a class="dropdown-item"
-                                        routerLink="/celebrate/featured-alumni">Featured-alumni</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate
-                                        Journey, Achievements & Passion</a></li>
-                            </ul>
-                        </li>
-                        <!-- <li><a class="dropdown-item" routerLink="/celebrate/alumni-achievement">Alumni
-                                        Achievement</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/alumni-passion">Alumni
-                                        Passion</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/gallery">Gallery</a></li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/magazine">Corporate Citizen
-                                        Magazine</a>
-                                </li>
-                                <li><a class="dropdown-item" routerLink="/celebrate/news-update">News and
-                                        Updates</a></li>
-                           -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                aria-expanded="false" routerLink="/contact" routerLinkActive="active-link">Contact
-                                <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
-                                <li><a class="dropdown-item" routerLink="/contact/key-contact">Key
-                                        Contacts</a>
-                                </li>
-                                <li><a class="dropdown-item" routerLink="/contact/social-links">Sri Balaji
-                                        Society<br>
-                                        Alumni
-                                        Clubs – Social Channels</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                   
-                    <div class="right-dropdown">
-                        <div id="" class="dropdown dropstart">
-                            <button class="btn  dropdown" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa fa-bars fs-6 " aria-hidden="true"></i>
-                            </button>
-                            <ul class="dropdown-menu trick_top">
-                                <li><a class="nav-link dropdown-item fs-6 pe-3" routerLink="/connect/at-glance"
-                                        routerLinkActive="active-link">
-                                        Connect</a> </li>
-                                <li><a href="./assets/doc/Transcript-Application-Form1.pdf" target="_blank"
-                                        class="dropdown-item">Apply For Transcript</a></li>
-                                <li> <a href="#" class="dropdown-item">Get Featured</a></li>
-                                <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/contact']"
-                                        routerLinkActive="active-link">News</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </nav>
-          
-            <div class="navbar navbar-expand-lg header-navbar navbar-light">
+<!-- <div class="header-nav py-3 d-sm-block d-block d-md-none d-lg-none d-xl-none">
+    <nav class="navbar topnav navbar-expand-lg navbar-light">
         <div class="container-fluid">
-        <div class="row w-100">
-            <div class="col-md-6 col-sm-6 col-6 open-add align-self-center">
-                <a href="https://www.sbup.edu.in/Admission" target="_blank"
-                    class="btn admission-open">Admissions Open</a>
-            </div>
-            <ng-container *ngIf="!currentUser">
-                <div class=" align-self-center open-add col-md-6 col-sm-6 text-end col-6">
-                    <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
-                        <span class="header-icon pe-3"><i class="fa fa-user-o"
-                                aria-hidden="true"></i></span>
-                        Log In/
-                        Register</a>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="currentUser">
-                <div class="align-self-center col-md-6 col-sm-6 col-6 text-end">
-                    <div class="dropdown">
-                        <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="./assets/Ellipse-19.png" class="w-50"> <span class="header-icon"><i
-                                    class="fa fa-angle-down ps-2" aria-hidden="true"></i></span>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" routerLink="view-profile"
-                                    [queryParams]="{id: currentUser?.id}">View Profile</a></li>
-                            <li><a class="dropdown-item" routerLink="edit-profile"
-                                    [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
-                            <li><a class="dropdown-item" routerLink="reset-password">Reset Password</a>
+            <a class="navbar-brand" href="#"> <img src="./assets/SBU logo.png" class="logo  img-fluid "
+                    alt=" Shri Balaji Logo"></a>
+
+
+            <button class=" fa-burger fs-4 mobile-toggle border-0 " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">☰ </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link"> Know
+                            Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor">Founder
+                                    Chancellor</a></li>
+                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society" routerLinkActive="active-link">
+                                    SBUP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/common-purpose-culture" routerLinkActive="active-link">Common Purpose <i
+                                class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                    The
+                                    Founder's Message </a></li>
+                            <li><a class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                    SBUP Alumni Connect Vision </a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/common-purpose-culture/strategy-framework'] : ['login']}}">
+                                    SBUP Alumni Connect Strategy Framework </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/community" routerLinkActive="active-link">Community
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}">Alumni
+                                    Directory</a>
                             </li>
-                            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}">Professional
+                                    Clubs</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}">Industry
+                                    Clubs</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}">
+                                    Business Ventures</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/connect/at-glance" routerLinkActive="active-link">Connect
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/connect/at-glance/#past-event'] : ['login']}}">
+                                    Connect at glance</a>
+                                <ul class="list-group bg-transparent">
+                                    <li class="list-group-item bg-transparent"><a class="dropdown-item"
+                                            routerLink="/connect/at-glance">
+                                            Past Event</a></li>
+                                    <li class="list-group-item bg-transparent"><a class="dropdown-item"
+                                            routerLink="/connect/at-glance/#upcoming-event">
+                                            Upcoming Event</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/collaborate-contribute" routerLinkActive="active-link"> Collaborate<i
+                                class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
+                                    and
+                                    Jobs</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
+                                    Projects</a></li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
+                                    with SBUP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/celebrate" routerLinkActive="active-link">Celebrate
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
+                            <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured Alumni</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}">Celebrate
+                                    Journey, Achievements & Passion</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false"
+                            routerLink="/contact" routerLinkActive="active-link">Contact
+                            <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
+                            <li><a class="dropdown-item" routerLink="/contact/key-contact">Key
+                                    Contacts</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/contact/social-links">SBUP
+                                    Alumni
+                                    Clubs – Social Channels</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="right-dropdown">
+                    <div id="" class="dropdown dropstart">
+                        <button class="btn  dropdown" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa fa-bars fs-6" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu trick_top">
+                            <li><a class="nav-link dropdown-item fs-6 pe-3" routerLink="/connect/at-glance"
+                                    routerLinkActive="active-link">
+                                    Connect</a> </li>
+                            <li><a href="./assets/doc/Transcript-Application-Form1.pdf" target="_blank"
+                                    class="dropdown-item">Apply For Transcript</a></li>
+                            <li> <a href="#" class="dropdown-item">Get Featured</a></li>
+                            <li> <a class="nav-link fs-6 pe-3 dropdown-item" [routerLink]="['/contact']"
+                                    routerLinkActive="active-link">News</a></li>
                         </ul>
                     </div>
                 </div>
-            </ng-container>
-            <div class=" col-md-6 col-sm-6 col-6 open-add align-self-center pt-2"> <a class="text-decoration-none" target="_blank"
-                    href="mailto:admissions@sbup.edu.in"> <span class="header-icon "><i
-                            class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                    admissions@sbup.edu.in</a>
             </div>
-            <div class="col-md-6 col-sm-6 col-6 open-add align-self-center text-end pt-2"> <a class=" text-decoration-none" target="_blank"
-                    href="mailto:alumni@sbup.edu.in"> <span class="header-icon"><i class="fa fa-globe"
-                            aria-hidden="true"></i></span>alumni@sbup.edu.in</a>
-            </div>
-            
         </div>
-    </div>
-       
+    </nav>
 
-</div>
-</div>
+    <div class="navbar navbar-expand-lg header-navbar navbar-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 open-add align-self-center">
+                    <a href="https://bit.ly/sbup_mba8" target="_blank" class="btn admission-open">Admissions Open</a>
+                </div>
+                <ng-container *ngIf="!currentUser">
+                    <div class=" align-self-center open-add col-md-6 col-sm-6 col-6 text-end">
+                        <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
+                            <span class="header-icon pe-3"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                            Log In/
+                            Register</a>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="currentUser">
+                    <div class="align-self-center col-md-6 col-sm-6 col-6 text-end">
+                        <div class="dropdown">
+                            <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="./assets/Ellipse-19.png" class="w-50"> <span class="header-icon"><i
+                                        class="fa fa-angle-down ps-2" aria-hidden="true"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" routerLink="view-profile"
+                                        [queryParams]="{id: currentUser?.id}">View Profile</a></li>
+                                <li><a class="dropdown-item" routerLink="edit-profile"
+                                        [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
+                                <li><a class="dropdown-item" routerLink="reset-password">Reset Password</a>
+                                </li>
+                                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class=" col-md-6 col-sm-6 col-6 open-add align-self-center pt-2"> <a class="text-decoration-none"
+                        target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon "><i
+                                class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        admissions@sbup.edu.in</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-6 open-add align-self-center text-end pt-2"> <a
+                        class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span
+                            class="header-icon"><i class="fa fa-globe"
+                                aria-hidden="true"></i></span>alumni@sbup.edu.in</a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div> -->

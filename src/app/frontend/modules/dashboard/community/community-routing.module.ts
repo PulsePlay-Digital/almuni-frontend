@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
 import { AlumniDirectoryComponent } from './alumni-directory/alumni-directory.component';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
+import { CommunityPageComponent } from './community-page/community-page.component';
 import { CommunityComponent } from './community.component';
 import { EntrepreneurshipClubComponent } from './entrepreneurship-club/entrepreneurship-club.component';
 import { IndustryClubComponent } from './industry-club/industry-club.component';
@@ -13,30 +14,41 @@ const routes: Routes = [
   { 
     path: 'community', 
     component: CommunityComponent,
+    data: {breadcrumb: {alias: 'Community'} },
     children: [
       { 
+        path: 'home', 
+        component: CommunityPageComponent
+      },
+      { 
         path: 'alumni-directory', 
-        component: AlumniDirectoryComponent
+        component: AlumniDirectoryComponent,
+        data: {breadcrumb: {alias: 'Alumni Directory'} },
       },
       { 
         path: 'professional-club', 
-        component: ProfessionalClubComponent
+        component: ProfessionalClubComponent,
+        data: {breadcrumb: {alias: 'Professional Club'} },
       },
       { 
         path: 'industry-club', 
-        component: IndustryClubComponent
+        component: IndustryClubComponent,
+        data: {breadcrumb: {alias: 'Industry Club'} },
       },
       { 
         path: 'entrepreneurship-club', 
-        component: EntrepreneurshipClubComponent
+        component: EntrepreneurshipClubComponent,
+        data: {breadcrumb: {alias: 'Entrepreneurship Club'} },
       },
       { 
         path: 'start-club', 
-        component: StartNewClubComponent
+        component: StartNewClubComponent,
+        data: {breadcrumb: {alias: 'start-club'} },
       },
       { 
         path: 'venture-info', 
-        component: BusinessVentureInfoComponent
+        component: BusinessVentureInfoComponent,
+        data: {breadcrumb: {alias: 'venture-info'} },
       },
       { 
         path: 'alumni-details', 
@@ -44,7 +56,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'alumni-directory',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
     ],

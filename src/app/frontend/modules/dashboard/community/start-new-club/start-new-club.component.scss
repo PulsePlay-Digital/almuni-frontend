@@ -1,19 +1,13 @@
-.main-heading {
-    font-weight: 600;
-    font-size: 30px;
-    color: #011898;
-    line-height: 36.57px;
-    font-family: Montserrat;
+.back {
+    background: var(--btn-background);
+    color: var(--bs-white);
 }
-
-@media screen and (min-width: 575px) and (max-width: 768px)  {
-    .main-heading {
-        font-size: 22px;
-    }
+.btn-info {
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
 }
-@media screen and (min-width: 300px) and (max-width: 574px){
-    .main-heading {
-        font-size: 18px;
-        line-height: 30px;
-    }
+.btn-info:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
 }

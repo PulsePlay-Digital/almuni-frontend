@@ -39,6 +39,7 @@ export class SearchFilterComponent implements OnInit {
       bloodGroop:[""],
       city:[""],
       country:[""],
+      state: [''],
       primaryArea:[""],
       secondaryArea:[""],
       primaryIndustry:[""],

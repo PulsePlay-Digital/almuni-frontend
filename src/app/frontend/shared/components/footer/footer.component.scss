@@ -3,9 +3,8 @@ footer {
   letter-spacing: 1px;
   .footer {
     background: var(--footer-bg);
-    padding: 50px 0 15px;
     a.active-link {
-      background: var(--footer-link);
+      background: var(--footer-bg);
       padding: 10px;
     }
     .address_description {
@@ -14,15 +13,11 @@ footer {
       }
       h4 {
         font-size: 1.125rem;
-        color: #fff;
         font-family: Montserrat;
-        font-weight: 700;
-        margin: 10px 0 25px 0;
-        text-transform: capitalize;
       }
       p {
         font-size: 13px;
-        color: #fff;
+        color: var(--bs-white);
         font-family: Montserrat;
         line-height: 17.07px;
         font-weight: 500;
@@ -35,27 +30,30 @@ footer {
     .links {
       .links_heading {
         h4 {
-          color: #fff;
-          font-weight: 800;
-          font-size: 14px;
-          font-family: Montserrat;
-          position: relative;
-          text-transform: capitalize;
+          color: var(--bs-white);
+          font-weight: var(--font-B-700);
+          font-size: var(--font-S-16);
+          font-family: var(--family);
+          position: var(--position-relative);
+          text-transform: var(--text-capital);
         }
-        h4::after {
+        span {
+          position: relative;
+        }
+        span::after {
           content: "";
           position: absolute;
           height: 3px;
-          width: 62px;
+          width: 100%;
           background: #ffcc29;
-          bottom: -4px;
-          left: 0;
+          bottom: -10px;
+          right: 0px;
         }
       }
 
       ul {
         list-style: none;
-        color: #fff;
+        color: var(--bs-white);
         font-size: 12px;
         line-height: 12px;
         font-family: Montserrat;
@@ -65,10 +63,11 @@ footer {
           a {
             line-height: 1.8rem;
 
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            text-decoration: none;
+            cursor: var(--cursor-pointer);
+            color: var(--bs-white);
+            font-size: var(--font-S-14);
+            text-decoration: var(--text-decoration-none);
+            font-weight: var(--font-B-500);
           }
           a:hover {
             color: var(--btn-hover);
@@ -111,41 +110,28 @@ footer {
   }
   .copyright-section {
     background: var(--form-bg);
-    color: #fff;
+    color: var(--bs-white);
     padding: 20px 0;
     p {
       margin: 0;
       font-size: var(--font-S-14);
       .heart {
-        color: var(--footer-link);
-        font-size: var(--font-S-22);
+        font-size: var(--font-S-18);
       }
     }
-    .copyright-text {
-      a {
-        text-decoration: none;
-        color: var(--footer-link);
-      }
-      a:hover {
-        color: #fff;
-      }
+    .link {
+      white-space: nowrap;
     }
-    .siteText {
-      a {
-        text-decoration: none;
-        color: var(--footer-link);
-      }
-      a:hover {
-        color: #fff;
-      }
+    .visitors {
+      color: yellow;
+      font-weight: var(--font-B-600);
     }
-    .webCounter {
-      .visitors {
-        color: var(--footer-link);
-      }
-      .visitors:hover {
-        color: #fff;
-      }
+    .visitors:hover {
+      color: var(--bs-white);
+      font-weight: var(--font-B-500);
+    }
+    .heart {
+      color: var(--bs-danger) !important;
     }
   }
 }

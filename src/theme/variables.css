@@ -19,10 +19,11 @@
     --background-pos-center: center;
     --background-pos-top: top;
     --bg-color:#011898;
-    --btn-background: #011898;
+    --btn-background: #00035F;
     --bg-header-color: #04003a;
     --bg-footer: #33333a;
     --bg-Transparent: transparent;
+    --bg-gray: #F2F2F2;
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -51,11 +52,16 @@
     --border-radius-1: 1px;
     --border-radius-2: 2px;
     --border-radius-3: 3px;
+    --border-radius-4: 4px;
+    --border-radius-5: 5px;
+    --border-radius-6: 6px;
     --border-radius-50: 50%;
-    --form-bg:#289BD6;
+    --box-shadow-none:none;
     --cursor-pointer: pointer;
-    --i-color-1:#289BD6;
     --commonBG-orange: #f7630c;
+    --card-bg: #E2E7FF;
+    --form-bg:#289BD6;
+    --i-color-1:#289BD6;
     --papaya-color: #9FFF05;
     --display-none: none;
     --display-Block: block;
@@ -64,9 +70,10 @@
     --display-Flex: flex;
     --family: Montserrat;
     --font-style-normal:normal;
-    --font-S-12: 12px;
     --font-S-6: 6px;
     --font-s-8: 8px;
+    --font-S-12: 12px;
+    --font-S-13: 13px;
     --font-S-14: 14px;
     --font-S-16: 16px;
     --font-S-18: 18px;
@@ -94,6 +101,7 @@
     --font-B-700: 700;
     --flex-dir-col: column;
     --flex-dir-row: row;
+    --flex-wrap: wrap;
     --height-100: 100%;
     --height-auto: auto;
     --insta-color: #c33223;
@@ -107,6 +115,7 @@
     --line-height-1-2: 1.2;
     --line-height-1-5: 1.5;
     --line-height-1-7: 1.7;
+    --line-height-1-8: 1.8;
     --line-height-2: 2;
     --line-height-2-3: 2.3;
     --line-height-2-5: 2.5;
@@ -118,6 +127,7 @@
     --letter-space-1-5: 1.5px;
     --letter-space-1: 1px;
     --letter-space-0-5: .5px;
+    --margin-auto: auto;
     --margin-0: 0;
     --margin-2: 2px;
     --margin-5: 5px;  
@@ -135,10 +145,6 @@
     --opacity-none: 0;
     --outline-offset-0: 0px;
     --outline-offset-10: 10px;
-    --border-radius-1:1px;
-    --border-radius-2:2px;
-    --border-radius-3:6px;
-    --border-radius-4:14px;
     --order-1: 1;
     --order-2: 2;
     --order-3: 3;
@@ -147,6 +153,7 @@
     --pad-2: 2px;
     --pad-5: 5px;
     --pad-10: 10px;
+    --pad-12: 12px;
     --pad-15: 15px;
     --pad-20: 20px;
     --mar-1:1px;
@@ -175,8 +182,12 @@
     --youtube-color: #c33223;
     --width-0100: 100%;
     --footer-bg:#000D58;
-    --footer-link:#000D58;
+    --vertical-A-top: top;
+    --vertical-A-bottom: bottom;
+    --vertical-A-middle: middle;
     --width:100%;
     --width-1:100px;
     --width-2:200px;
+    --z-index-999: 999;
+    --z-index-9999: 9999;
 }

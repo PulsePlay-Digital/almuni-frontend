@@ -1,22 +1,31 @@
-.heading {
-  font-size: 30px;
-  line-height: 43.88px;
-  color: #011898;
-}
 .card {
-    background: #E2E7FF;
+  background: var(--card-bg);
   .card-body {
-    max-height: 210px;
-    min-height: 210px;
-    overflow: hidden;
+    max-height: 192px;
+    min-height: 192px;
+    overflow: var(--overflow-H);
   }
   .view-btn {
-    background: #011898;
-    color: #fff;
-    line-height: 1.8;
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
+    line-height: var(--line-height-1-8);
+  }
+  .view-btn:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
   }
 }
 .start-club {
-  color: #011898;
-  cursor: pointer;
+  color: var(--btn-background);
+  cursor: var(--cursor-pointer);
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  .card {
+    .card-body {
+      max-height: 182px;
+      min-height: 182px;
+    }
+  }
 }

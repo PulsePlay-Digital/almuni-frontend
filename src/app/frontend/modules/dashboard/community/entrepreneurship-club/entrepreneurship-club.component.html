@@ -1,39 +1,43 @@
-<div class="row">
-
-    <div class="col-lg-12 text-center">
-        <h3 class="heading text-uppercase fw-bolder">BUSINESS VENTURE / START UP DETAIL INFO</h3>
+<app-dashboard-banner [heading]="heading"></app-dashboard-banner>
+<div class="container">
+    <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
+        <div class="col-lg-12 text-center">
+            <h3 class="main-heading text-uppercase mb-0 fw-bold">BUSINESS VENTURE / START UP DETAIL INFO</h3>
+        </div>
     </div>
-</div>
-<app-search-filter></app-search-filter>
-
-<div class="row mt-1">
-    <app-loader *ngIf="loading"></app-loader>
-    <ng-container *ngIf="!loading">
-        <div class="col-lg-4 my-2 px-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 6, currentPage: p }">
-            <div class="card py-3">
-                <div class="card-body text-center">
-                    <p *ngIf="item?.company" class="mb-2"><strong>Company Name:</strong> &nbsp; {{ item?.company}}</p>
-                    <p *ngIf="item?.owner" class="mb-2"><strong>Alumni Founder: </strong> &nbsp;{{ item?.owner}}</p>
-                    <p *ngIf="item?.industry" class="mb-2"><strong>Primary Industry:</strong> &nbsp;{{ item?.industry}}</p>
-                    <p *ngIf="item?.contact" class="mb-2"><strong>Contact Number:</strong> &nbsp;{{ item?.contact}}</p>
-                    <p *ngIf="item?.email" class="mb-2"><strong>Email id:</strong> &nbsp;{{ item?.email}}</p>
-                </div>
-                <div class="card-footer bg-transparent  text-center border-0">
-                    <a (click)="onReadData(item)" class="btn btn-md view-btn text-capitalize">
-                        <i class="fa fa-link"></i>&nbsp;Read More</a>
+    <app-search-filter></app-search-filter>
+    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3">
+        <app-loader *ngIf="loading"></app-loader>
+        <ng-container *ngIf="!loading">
+            <div class="col-lg-4 col-md-6 col-sm-6 my-2 px-2"
+                *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="card py-xl-3 py-lg-3 py-md-3 py-sm-2 py-2">
+                    <div class="card-body text-center p-xl-3 p-lg-3 p-md-3 p-sm-2 p-2">
+                        <p *ngIf="item?.company" class="mb-2"><strong>Company Name:</strong> &nbsp; {{ item?.company}}
+                        </p>
+                        <p *ngIf="item?.owner" class="mb-2"><strong>Alumni Founder: </strong> &nbsp;{{ item?.owner}}</p>
+                        <p *ngIf="item?.industry" class="mb-2"><strong>Primary Industry:</strong> &nbsp;{{
+                            item?.industry}}</p>
+                        <p *ngIf="item?.contact" class="mb-2"><strong>Contact Number:</strong> &nbsp;{{ item?.contact}}
+                        </p>
+                        <p *ngIf="item?.email" class="mb-2"><strong>Email id:</strong> &nbsp;{{ item?.email}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent  text-center border-0">
+                        <a (click)="onReadData(item)" class="btn btn-lg btn-md btn-sm view-btn text-capitalize">
+                            <i class="fa fa-link"></i>&nbsp;Read More</a>
+                    </div>
                 </div>
             </div>
+        </ng-container>
+        <div class="row justify-content-center my-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4 mb-xl-0 mb-lg-0 mb-md-2 mb-sm-2 mb-2" *ngIf="entrepreneur?.length > 0">
+            <div class="col text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
         </div>
-    </ng-container>
-    <div class="row justify-content-center my-3" *ngIf="entrepreneur?.length > 0">
-        <div class="col text-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
-    </div>
-    <div class="justify-content-center py-3">
-        <div class="col text-center">
-            <h6 class="start-club fs-5 fw-bolder" routerLink="/community/venture-info"> Business Venture / Start Up Detail
-                Info </h6>
+        <div class="justify-content-center mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3 ">
+            <div class="col text-center">
+                <h6 class="start-club fs-5 fw-bold lh-base" routerLink="/community/venture-info"> Share your Business Venture / Start-Up Information </h6>
+            </div>
         </div>
     </div>
 </div>

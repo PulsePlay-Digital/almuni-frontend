@@ -2,6 +2,12 @@
   form {
     .form-bg {
       background-color: var(--form-bg);
+      .editIcon {
+        i {
+          font-size: var(--font-S-30);
+          cursor: var(--cursor-pointer);
+        }
+      }
     }
     .form-control {
       font-size: var(--font-s-14);
@@ -30,3 +36,19 @@
     }
   }
 }
+
+@media (min-width: 300px) and (max-width: 574px) {
+  .view-profile {
+    .choose_file {
+      input[type="file"] {
+        width: 120px;
+        min-height: 120px;
+      }
+      img {
+        height: 120px;
+        width: 120px;
+        min-height: 120px;
+      }
+    }
+  }
+} 

@@ -15,6 +15,9 @@ import { EntrepreneurshipClubComponent } from './entrepreneurship-club/entrepren
 import { MatDialogModule } from '@angular/material/dialog';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
 import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
+import { MatIconModule } from '@angular/material/icon';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { CommunityPageComponent } from './community-page/community-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { AlumniDetailsComponent } from './alumni-details/alumni-details.componen
     IndustryClubComponent,
     EntrepreneurshipClubComponent,
     BusinessVentureInfoComponent,
-    AlumniDetailsComponent
+    AlumniDetailsComponent,
+    CommunityPageComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,9 @@ import { AlumniDetailsComponent } from './alumni-details/alumni-details.componen
     FormsModule,
     NgxPaginationModule,
     CKEditorModule,
-    MatDialogModule
+    MatDialogModule,
+    BreadcrumbModule,
+    MatIconModule
   ]
 })
 export class CommunityModule { }

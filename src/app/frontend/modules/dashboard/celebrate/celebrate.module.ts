@@ -17,6 +17,9 @@ import { NewsUpdatesComponent } from './news-updates/news-updates.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/view-journey-detail.component';
+import { NewsDetailComponent } from './news-updates/news-detail/news-detail.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/
     GalleryComponent,
     MagazineComponent,
     NewsUpdatesComponent,
-    ViewJourneyDetailComponent
+    ViewJourneyDetailComponent,
+    NewsDetailComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +45,8 @@ import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/
     CKEditorModule,
     SharedModule,
     MatTabsModule,
+    MatIconModule,
+    MatListModule,
     NgxPaginationModule
   ]
 })

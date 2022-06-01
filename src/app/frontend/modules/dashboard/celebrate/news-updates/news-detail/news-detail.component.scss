@@ -1,0 +1,21 @@
+.allNews {
+    height: 280px;
+    overflow-y: auto;
+    .title {
+        cursor: pointer;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: normal;
+    }
+}
+@media (min-width: 300px) and (max-width: 575px) {
+    .news-content {
+      .news-discription {
+        text-align: justify;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+  

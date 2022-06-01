@@ -17,6 +17,7 @@ export class AtGlanceComponent implements OnInit {
 
   pastEvent: any;
   upcomingEvent: any;
+  heading: string = "Events at a Glance";
 
   constructor(
     public dataService: DataService,
@@ -57,6 +58,7 @@ export class AtGlanceComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false
         }
       );
   }
@@ -86,6 +88,7 @@ export class AtGlanceComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
         }
       );
   }

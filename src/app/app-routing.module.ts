@@ -4,20 +4,21 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
     path: '',
-    loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule)
+    loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule),
+    data: {breadcrumb: { skip: true }},
   },
   {
-    path: '**', redirectTo: '/'
+    path: '**', redirectTo: '/home'
   }
 ];
 
 @NgModule({
-  imports:  [RouterModule.forRoot(routes, { useHash: true })],
+  imports:  [RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

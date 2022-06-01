@@ -1,0 +1,22 @@
+.transcript {
+  .table {
+    thead {
+      vertical-align: middle;
+    }
+    th,
+    td {
+      height: 118px;
+    }
+    td {
+      padding: 20px 15px;
+    }
+  }
+  .btnDownload {
+    background: var(--form-bg);
+    border: 3px solid var(--form-bg);
+  }
+  .btnDownload:hover {
+      background-color: var(--bs-white);
+      color: var(--form-bg);
+  }
+}

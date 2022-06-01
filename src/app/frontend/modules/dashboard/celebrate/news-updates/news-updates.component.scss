@@ -1,66 +1,31 @@
-
-// NEWS & UPDATES START
-.university-img {
-    // background-image: url('../../../../../../assets/celebrate/balaji-university.png');
-    height: 400px;
-    width: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    background-size: cover;
-
-    img {
-        height: 300px;
-        object-fit: cover;
-    }
-    .bottom-left {
-        position: absolute;
-        bottom: 20px;
-        left: 15px;
-    }
-    .overlay {
-        background-color: #00000057 !important;
-        position: static;
-        width: 100%;
-        opacity: 1;
-        padding: 200px;
-    }
-}
-
-.more-btn {
-    .read-more {
-        background-color: #011898 !important;
-        color: #FFF !important;
-        border-radius: 2px !important;
-    }
-    .read-more:hover {
-        background-color: #fff !important;
-        color: #011898 !important;
-        border-color: #011898;
-    }
-}
-
-.vice-chancellor {
-    width: max-content;
-}
-
 .news-discription {
-    a {
-        color: #000 !important;
-    }
-     :hover {
-        color: #011898 !important;
-    }
+  a {
+    color: var(--btn-black) !important;
+  }
+  :hover {
+    color: var(--btn-background) !important;
+  }
+}
+.allNews {
+  height: 280px;
+  overflow-y: auto;
+  .title {
+    cursor: pointer;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+  }
 }
 
 // NEWS & UPDATES END
 // RESPONSIVE CSS START
-@media screen and (max-width: 767px) {
-    .vice-chancellor {
-        width: 90%;
+@media (min-width: 300px) and (max-width: 575px) {
+  .news-content {
+    .news-discription {
+      text-align: justify;
+      overflow-wrap: break-word;
     }
-    .university-img {
-        .overlay {
-            padding: 200px 0px;
-        }
-    }
+  }
 }

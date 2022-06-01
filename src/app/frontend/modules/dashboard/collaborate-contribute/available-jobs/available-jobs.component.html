@@ -1,150 +1,44 @@
-<div class="available-job">
-  <div class="row">
-    <div class="d-sm-flex align-items-center justify-content-between my-4">
-      <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
-      <button class="btn btn-sm btn-primary rounded" (click)="back()">Back</button>
-    </div>
-    <app-loader *ngIf="loading"></app-loader>
-    <ng-container *ngIf="!loading">
-      <div class="col-lg-6 col-xl-6 my-2" *ngFor="let item of allJobs">
-        <div class="job-section text-md-center text-lg-center py-lg-5 py-md-5 py-sm-4 py-4">
-          <h6 class="job-heading text-white fs-5 fw-bold text-capitalize mb-lg-4 mb-md-4 mb-sm-3 mb-2">{{ item?.title }}
-          </h6>
-          <div class="row justify-content-lg-center">
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Job ID
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0">: {{ item?.id }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Job Posted
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.author }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Contact
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.contactNumber }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Contact person
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.contactPerson }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                email id
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.email }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Location
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.location }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                City
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.city }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Company Name
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.companyName }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Salary
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.salary }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Work experience
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.workExperience }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Skill possessed
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.skillsRequired }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white">
-                Qualification
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : {{ item?.qualification }}
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white">
-                Company website
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0"> : <a href="{{item?.website }}">{{ item?.website }} </a>
-              </h2>
-            </div>
-            <div class="col-md-5 col-xl-5 col-lg-5 col-5 text-end">
-              <h2 class="job mb-0 fs-6 text-white ">
-                Description of job profile
-              </h2>
-            </div>
-            <div class="col-md-7 col-7 col-lg-7 col-xl-7 ps-lg-0 text-start">
-              <h2 class="job fs-6 text-white mb-0 pe-lg-2"> : {{ item?.description | stripHtml }}
-              </h2>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-md-3 pt-4 col-6">
-                <a class="btn shadow border-0 apply-btn text-white">Apply</a>
+<div class="container">
+  <div class="available-job">
+    <div class="row mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
+      <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
+        <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
+        <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button>
+      </div>
+      <app-loader *ngIf="loading"></app-loader>
+      <ng-container *ngIf="!loading">
+        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2" *ngFor="let item of allJobs">
+          <div class="job-section py-lg-4 py-md-4 py-sm-3 py-3 px-lg-4 px-md-4 px-sm-3 px-3">
+            <h6 class="job-heading fs-5 fw-bold text-uppercase mb-lg-4 mb-md-4 mb-sm-3 mb-3">{{ item?.title
+              }}
+            </h6>
+            <div class="row justify-content-lg-center">
+              <div class="col-12">
+                <div class="content">
+                  <p><strong>Job ID</strong> : &nbsp;{{item?.id}}</p>
+                  <p><strong>Job Posted</strong> : &nbsp;{{ item?.author }}</p>
+                  <p><strong>Contact</strong> : &nbsp;{{ item?.contactNumber }}</p>
+                  <p><strong>Contact person</strong> : &nbsp;{{ item?.contactPerson }}</p>
+                  <p><strong>Email id</strong> : &nbsp;{{ item?.email }}</p>
+                  <p><strong>Location</strong> : &nbsp;{{ item?.location }}</p>
+                  <p><strong>City</strong> : &nbsp;{{ item?.city }}</p>
+                  <p><strong>Company Name</strong> : &nbsp;{{ item?.companyName }}</p>
+                  <p><strong>Salary</strong> : &nbsp;{{ item?.salary }}</p>
+                  <p><strong>Work experience</strong> : &nbsp;{{ item?.workExperience }}</p>
+                  <p><strong>Skill possessed</strong> : &nbsp;{{ item?.skillsRequired }}</p>
+                  <p><strong>Company website</strong> : &nbsp;<a href="{{item?.website }}">{{ item?.website }} </a></p>
+                  <p><strong>Description of job</strong> : &nbsp;{{ item?.description | stripHtml }}</p>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-4 col-xl-4 col-lg-5 pt-4 col-6">
+                  <a class="btn shadow project-btn">Apply</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
   </div>
 </div>

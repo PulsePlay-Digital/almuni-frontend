@@ -1,105 +1,53 @@
+<app-users-banner [heading]="heading"></app-users-banner>
 <div class="container">
-    <div class="row">
-        <div class="news-heading  text-center">
-            <h4 class="main-heading text-uppercase fw-bolder text-center"> NEWS & UPDATES</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12" *ngFor="let news of allNewsUpdates">         
-            <div class="university-img">
-                <img [src]="(news?.newsImage) ? imgPath + news?.newsImage : '../../../../../../assets/celebrate/balaji-university.png' ">
-                <!-- <div class="overlay">
-                    <h4 class="text-white bottom-left px-3">{{news?.title}} </h4>
-                </div> -->
-            </div>
-            <div class="news-content">
-                <h6 class="news-discription fs-6 fw-bolder text-capitalize">News Title:</h6>
-                <p class="news-discription fs-6 text-capitalize"> {{news?.title}}</p>
-                <p class="news-discription fs-6 text-capitalize">Created On: {{news?.created_at | date}}</p>
-
-                <p class="news-discription fs-6 text-capitalize">Author:{{news?.author}}</p>
-
-
-                <h6 class="news-discription fs-6 fw-bolder text-capitalize"> News Description:</h6>
-                <div class="news-discription fs-6 text-capitalize" [innerHtml]="news?.description">
+    <div class="row my-xl-5 my-lg-5 my-md-5 my-sm-4 my-3">
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="main-heading text-uppercase fw-bolder">News & Updates</h3>
                 </div>
             </div>
+            <app-loader *ngIf="loading"></app-loader>
+            <ng-container *ngIf="!loading">
+                <div *ngFor="let news of allNewsUpdates | paginate: { itemsPerPage: 1, currentPage: p }">
+                    <div class="py-3 text-lg-start text-md-start text-sm-center text-center">
+                        <img class="img-fluid"
+                            [src]="(news?.newsImage) ? imgPath + news?.newsImage : './assets/celebrate/balaji-university.png'"
+                            alt="news photo">
+                    </div>
+                    <div class="news-content pt-3">
+                        <h6 class="news-discription fs-6 fw-bolder text-capitalize">News Title:</h6>
+                        <p class="news-discription fs-6 text-capitalize"> {{news?.title}}</p>
+                        <h6 class="news-discription fs-6 fw-bolder text-capitalize"> News Description:</h6>
+                        <div class="news-discription fs-6 text-capitalize" [innerHtml]="news?.description">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
-        <!-- <div class="col-lg-3" >
-            <div class="news-heading text-center">
+        <div class="col-lg-3">
+            <div class="text-center">
                 <h4 class="main-heading text-uppercase fw-bolder"> ALL NEWS </h4>
             </div>
-            <ul class="list-group">
-                <li class="fs-6 fw-bolder py-4 text-capitalize" *ngFor="let news of allNewsUpdates"> {{news?.title}}</li>
-              </ul> -->
-            <!-- <div class="college-groups text-center">
-                <img [src]="(news?.newsImage) ? imgPath + news?.newsImage : '../../../../../../assets/celebrate/balaji-university.png' " class="college-groups-image img-fluid"
-                    alt="college-groups-image">
-            </div> -->
-            <!-- <h6 class="image-discription fs-6 fw-bolder py-4 text-capitalize"> {{news?.title}}</h6> -->
-            <!-- <div class="college-groups text-center">
-                <img src="./assets/celebrate/group2.png" class="college-groups-image img-fluid"
-                    alt="college-groups-image">
-            </div>
-            <h6 class="image-discription fs-6 fw-bolder py-4  text-capitalize"> Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.</h6>
-            <div class="college-groups text-center">
-                <img src="./assets/celebrate/group3.png" class="college-groups-image img-fluid"
-                    alt="college-groups-image">
-            </div>
-            <h6 class="image-discription fs-6 fw-bolder py-4 text-capitalize"> Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.</h6>
-            <div class="col more-btn text-center mb-3">
-                <button type="button" class="btn read-more text-capitalize mt-5 fs-5 mb-5 px-4">Read More</button>
-            </div> -->
-        <!-- </div> -->
+            <app-loader *ngIf="loading"></app-loader>
+            <ng-container *ngIf="!loading">
+                <div class="allNews">
+                    <mat-list>
+                        <mat-list-item *ngFor="let news of allNewsUpdates">
+                            <mat-icon mat-list-icon>image</mat-icon>
+                            <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
+                            <div mat-line>
+                                <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail"
+                                    [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
+                            </div>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </ng-container>
+        </div>
     </div>
-</div>
-<!-- NEWS & UPDATES CONTAINER END -->
-<!-- COMMUNICATION CHANNELS CONTAINER START -->
-<!-- <div class="container">
-    <div class="row ">
-        <div class="news-heading my-5 text-center">
-            <h4 class="main-heading text-uppercase fw-bolder">Our Communication Channels</h4>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-6 ">
-                <div class="vice-chancellor m-auto">
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize"> 1.<br> Dr. G.K. Shirude<br> Vice
-                        Chancellor – Sri Balaji University, Pune</h6>
-                    <p class="news-discription">Mobile # 9860306084<br> Landline # 020-66741280<br> Email id:
-                        vc@sbup.edu.in</p>
-
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">2.<br> Brig. M.L. Bhambhani (Retd.)<br>
-                        Advisor – Sri Balaji University, Pune</h6>
-                    <p class="news-discription">Mobile # 9765390250<br> Landline # 020-66741478<br> Email id:
-                        bhambhani@sbup.edu.in</p>
-
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">3<br> Dr. Biju G Pillai<br> Senior
-                        Director – IT & Admissions</h6>
-
-                    <p class="news-discription">Dean, Sri Balaji University, Pune<br> Mobile # 9049985978<br> Landline #
-                        020-66741222<br> Email id: bijupillai@sbup.edu.in</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 ">
-                <div class="vice-chancellor m-auto">
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">4.<br> Dr. Dimple Saini<br> Senior
-                        Director – Corporate Relations<br> Dean, Sri Balaji University, Pune<br> Chairman CDC, BCACS and
-                        BLC</h6>
-                    <p class="news-discription">Mobile # 9823178782<br> Landline # 020-66741244<br> Email id:
-                        director.cr@sbup.edu.in </p>
-
-
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">5.<br> Prof. V.T. Vignesh<br> Director
-                        Academics & Examination<br> Sri Balaji University, Pune</h6>
-                    <p class="news-discription">Mobile # 9923080846<br> Landline # 020-66741223<br> Email id:
-                        director.academics@sbup.edu.in</p>
-
-                    <h6 class="news-discription fs-6 fw-bolder text-capitalize">6.<br> Deepak Rai</h6>
-                    <p class="news-discription">Alumnus (Pioneer Batch 1999-2001)<br> Mobile # 9834662720<br> Email id:
-                        deepakrai9@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div> -->

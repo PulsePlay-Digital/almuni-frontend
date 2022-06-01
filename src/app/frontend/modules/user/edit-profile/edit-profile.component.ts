@@ -62,6 +62,10 @@ export class EditProfileComponent implements OnInit {
             ...this.user
           });
           this.loading = false;
+        },
+        error => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
         });
     }
   }
@@ -187,5 +191,12 @@ export class EditProfileComponent implements OnInit {
         this.notify.notificationService.openFailureSnackBar(error);
       })
     }
+  }
+
+  /**
+   * Function to navigate previous page
+   */
+  back() {
+    this.config.navigateBack();
   }
 }

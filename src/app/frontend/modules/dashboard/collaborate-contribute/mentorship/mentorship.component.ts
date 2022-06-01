@@ -13,7 +13,8 @@ export class MentorshipComponent implements OnInit {
   user: any = [];
   p: number = 1;
   loading: boolean = false;
-  imgPath = environment.imgUrl
+  imgPath = environment.imgUrl;
+  heading: string = "MENTORSHIP";
 
   constructor(public dataService: DataService, public router: Router) {}
 

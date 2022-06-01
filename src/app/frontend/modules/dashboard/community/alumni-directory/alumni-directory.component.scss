@@ -1,31 +1,103 @@
 .card {
-  background: #E2E7FF;
-  .card-header {
-    height: 60px;
+  background: var(--card-bg);
+  .card-body {
+    height: 78px;
+    .designation {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .alumni-pic {
     min-height: 210px;
     max-height: 210px;
+    background-color: var(--bs-white);
     img {
       min-height: 210px;
       max-height: 210px;
-      object-fit: cover;
+      object-fit: var(--object-cover);
     }
   }
   .card-btn {
-    background: #011898;
-    color: #fff;
-    line-height: 1.8;
+    background: var(--btn-background);
+    color: var(--bs-white);
+    line-height: var(--line-height-1-8);
     width: 30%;
   }
   .noImg {
     min-height: 210px;
-      max-height: 210px;
-    object-fit: cover;
+    max-height: 210px;
+    object-fit: var(--object-cover);
   }
   .view-btn {
-    background: #011898;
-    color: #fff;
-    line-height: 1.8;
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
+    line-height: var(--line-height-1-8);
+  }
+  .view-btn:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+  .card {
+    .alumni-pic {
+      min-height: 150px;
+      max-height: 150px;
+      width: 50%;
+      margin: auto;
+      img {
+        min-height: 150px;
+        max-height: 150px;
+      }
+    }
+    .noImg {
+      min-height: 150px;
+      max-height: 150px;
+    }
+  }
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  .card {
+    .alumni-pic {
+      min-height: 140px;
+      max-height: 140px;
+      img {
+        min-height: 140px;
+        max-height: 140px;
+      }
+    }
+    .noImg {
+      min-height: 140px;
+      max-height: 140px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card {
+    .alumni-pic {
+      min-height: 160px;
+      max-height: 160px;
+      img {
+        min-height: 160px;
+        max-height: 160px;
+      }
+    }
+    .noImg {
+      min-height: 160px;
+      max-height: 160px;
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bannerImg {
+    h3 {
+      font-size: var(--font-S-30);
+    }
   }
 }

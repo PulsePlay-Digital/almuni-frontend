@@ -1,159 +1,177 @@
-<div class="post-job p-4">
-<div class="d-sm-flex align-items-center justify-content-between my-lg-4 my-md-4 my-sm-3 my-2">
-    <h4 class="main-heading text-uppercase  fw-bolder mb-0">POST A JOB</h4>
-    <button class="btn btn-sm text-white btn-back rounded" (click)="back()">Back</button>
-</div>
-
-  <form class="example-form" [formGroup]="addJobForm">
+<div class="container">
+  <div class="mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-4">
     <div class="row">
-      <div class="col-sm-12 col-md-6 my-2">
-        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Job Id :</label>
-        <input type="text" formControlName="id" [(ngModel)]="authorId" readonly class="form-control py-2" >
-      </div>
-      <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Submitted By :</label>
-          <input type="text" formControlName="author" [(ngModel)]="author" readonly class=" py-2 form-control" >
+      <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
+        <h4 class="main-heading text-uppercase fw-bold mb-0">POST A JOB</h4>
+        <button class="btn btn-sm btn-info lh-base" (click)="back()">Back</button>
       </div>
     </div>
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
+    <div class="post-job p-xl-4 p-lg-4 p-md-4 p-sm-3 p-3">
+      <form class="example-form" [formGroup]="addJobForm">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Job Id :</label>
+            <input type="text" formControlName="id" [(ngModel)]="authorId" readonly class="form-control py-2">
+          </div>
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Submitted By :</label>
+            <input type="text" formControlName="author" [(ngModel)]="author" readonly class=" py-2 form-control">
+          </div>
+        </div>
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
             <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Title :</label>
             <input type="text" formControlName="title" class="form-control py-2" placeholder="Enter title here">
             <div class="text-danger my-2" *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
-                Title is required.
+              Title is required.
             </div>
-        </div>
-        
-        <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Company Name :</label>
-          <input type="text" formControlName="companyName" class="form-control py-2" placeholder="Enter company here">
-          <div class="text-danger my-2" *ngIf="(f.companyName.touched || submitted) && f.companyName.errors?.required">
-            Company name is required.
+          </div>
+
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Company Name :</label>
+            <input type="text" formControlName="companyName" class="form-control py-2" placeholder="Enter company here">
+            <div class="text-danger my-2"
+              *ngIf="(f.companyName.touched || submitted) && f.companyName.errors?.required">
+              Company name is required.
+            </div>
           </div>
         </div>
-    </div>
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
             <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Location :</label>
             <input type="text" formControlName="location" placeholder="Enter location here" class="form-control py-2">
             <div class="text-danger my-2" *ngIf="(f.location.touched || submitted) && f.location.errors?.required">
-                Location is required.
-              </div>
-        </div>
-        <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">City :</label>
-          <input type="text" class="form-control py-2" formControlName="city" placeholder="Enter city here" >
-          <div class="text-danger my-2" *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
-            City is required.
+              Location is required.
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">City :</label>
+            <input type="text" class="form-control py-2" formControlName="city" placeholder="Enter city here">
+            <div class="text-danger my-2" *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+              City is required.
+            </div>
           </div>
         </div>
-    </div>
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
             <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Salary :</label>
             <input type="text" formControlName="salary" placeholder="Enter salary here" class="form-control py-2">
             <div class="text-danger my-2" *ngIf="(f.salary.touched || submitted) && f.salary.errors?.required">
-                Salary is required.
+              Salary is required.
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 my-2 align-self-center">
+          </div>
+          <div class="col-sm-12 col-md-6 my-2 align-self-center">
             <div class="row">
-                <label for="staticEmail" class="col-form-label col-sm-12 fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Fresher can apply :</label>
-                <div class="col-sm-12">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="fresherApply" formControlName="fresherApply" 
-                        id="hiring1" value="true">
-                        <label class="form-check-label" for="hiring1">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="fresherApply" value="false"
-                        formControlName="fresherApply" id="hiring2">
-                        <label class="form-check-label" for="hiring2">No</label>
-                    </div>
+              <label for="staticEmail" class="col-form-label col-sm-12 fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Fresher
+                can
+                apply :</label>
+              <div class="col-sm-12">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="fresherApply" formControlName="fresherApply"
+                    id="hiring1" value="true">
+                  <label class="form-check-label" for="hiring1">Yes</label>
                 </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="fresherApply" value="false"
+                    formControlName="fresherApply" id="hiring2">
+                  <label class="form-check-label" for="hiring2">No</label>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
 
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
             <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Work Experience : :</label>
-            <input type="text" formControlName="workExperience" class="form-control py-2" placeholder="Enter work experience here">
-            <div class="text-danger my-2" *ngIf="(f.workExperience.touched || submitted) && f.workExperience.errors?.required">
+            <input type="text" formControlName="workExperience" class="form-control py-2"
+              placeholder="Enter work experience here">
+            <div class="text-danger my-2"
+              *ngIf="(f.workExperience.touched || submitted) && f.workExperience.errors?.required">
               Experience is required.
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Skills Required :</label>
-          <input type="text" formControlName="skillsRequired" class="form-control py-2" placeholder="Enter skills here">
-          <div class="text-danger my-2" *ngIf="(f.skillsRequired.touched || submitted) && f.skillsRequired.errors?.required">
-            Skills is required.
+          </div>
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Skills Required :</label>
+            <input type="text" formControlName="skillsRequired" class="form-control py-2"
+              placeholder="Enter skills here">
+            <div class="text-danger my-2"
+              *ngIf="(f.skillsRequired.touched || submitted) && f.skillsRequired.errors?.required">
+              Skills is required.
+            </div>
           </div>
         </div>
-    </div>
 
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
-            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Basic education qualification :</label>
-            <input type="text" formControlName="qualification" class="form-control py-2" placeholder="Enter qualification here">
-            <div class="text-danger my-2" *ngIf="(f.qualification.touched || submitted) && f.qualification.errors?.required">
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Basic education qualification
+              :</label>
+            <input type="text" formControlName="qualification" class="form-control py-2"
+              placeholder="Enter qualification here">
+            <div class="text-danger my-2"
+              *ngIf="(f.qualification.touched || submitted) && f.qualification.errors?.required">
               Qualification is required.
             </div>
+          </div>
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name of contact person :</label>
+            <input type="text" class="form-control py-2" formControlName="contactPerson" id="formGroupExampleInput"
+              placeholder="Enter contact person here" />
+            <div class="text-danger my-2"
+              *ngIf="(f.contactPerson.touched || submitted) && f.contactPerson.errors?.required">
+              Contact person is required.
+            </div>
+          </div>
         </div>
-        <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name of contact person :</label>
-          <input type="text" class="form-control py-2" formControlName="contactPerson" id="formGroupExampleInput"
-          placeholder="Enter contact person here" />
-          <div class="text-danger my-2" *ngIf="(f.contactPerson.touched || submitted) && f.contactPerson.errors?.required">
-           Contact person is required.
-         </div>
-        </div>
-    </div>
 
 
-    <div class=" row">
-        <div class="col-sm-12 col-md-6 my-2">
+        <div class=" row">
+          <div class="col-sm-12 col-md-6 my-2">
             <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Contact mobile number :</label>
             <input type="text" class="form-control py-2" formControlName="contactNumber" id="formGroupExampleInput"
-            placeholder="Enter contact number here" />
-            <div class="text-danger my-2" *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.required">
-            Contact number is required.
+              placeholder="Enter contact number here" />
+            <div class="text-danger my-2"
+              *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.required">
+              Contact number is required.
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 my-2">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Email of contact person :</label>
-          <input type="email" class="form-control py-2" formControlName="email" id="formGroupExampleInput"
-          placeholder="Enter email here" />
-  
-          <div class="text-danger my-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-            Email is required.
           </div>
-          <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+          <div class="col-sm-12 col-md-6 my-2">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Email of contact person :</label>
+            <input type="email" class="form-control py-2" formControlName="email" id="formGroupExampleInput"
+              placeholder="Enter email here" />
+
+            <div class="text-danger my-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+              Email is required.
+            </div>
+            <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
               Email format is incorrect.
+            </div>
           </div>
         </div>
-    </div>
 
-    <div class=" row mr-0 my-2">
-         <label for="formGroupExampleInput" class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Brief description of job profile :</label>
-        <div class="col-sm-12">
-          <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
-          <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
-            Description is required.
+        <div class=" row mr-0 my-2">
+          <label for="formGroupExampleInput" class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Brief
+            description of job profile :</label>
+          <div class="col-sm-12">
+            <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
+            <div class="text-danger my-2"
+              *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+              Description is required.
+            </div>
           </div>
         </div>
-    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-4 mt-3 text-center">
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="btn btn-md btn-info me-2 rounded text-white" (click)="addJob()" [disabled]="!addJobForm.valid">
-                Add
-            </button>
-            <button class="btn btn-md text-white btn-back rounded text-white"
-              (click)="back()">Back</button>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 mt-3 text-center">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-md btn-info me-2 lh-base" (click)="addJob()" [disabled]="!addJobForm.valid">
+                Submit
+              </button>
+              <button class="btn btn-md btn-info lh-base" (click)="back()">Back</button>
+            </div>
           </div>
         </div>
+      </form>
     </div>
-  </form>
   </div>
+</div>

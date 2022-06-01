@@ -1,56 +1,54 @@
-    <div class="d-sm-flex align-items-center justify-content-between my-4">
-      <h4 class="main-heading text-uppercase fw-bolder mb-0">Create Club</h4>
-      <button class="btn btn-sm btn-primary rounded" (click)="back()">Back</button>
+<div class="container">
+  <div class="d-sm-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
+    <h4 class="main-heading text-uppercase fw-bold mb-0">Create Club</h4>
+    <button class="btn btn-sm btn-info rounded" (click)="back()">Back</button>
+  </div>
+  <form class="example-form" [formGroup]="addClubForm">
+    <div class="mb-3 row mr-0">
+      <label for="staticEmail" class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name &nbsp;<span
+          class="text-danger">*</span></label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="name" class="form-control" placeholder="Enter Title here" />
+        <div class="text-danger my-2" *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
+          Name is required.
+        </div>
+      </div>
     </div>
-    <form class="example-form" [formGroup]="addClubForm">
-      <div class="mb-3 row mr-0">
-        <label for="staticEmail"
-         class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0" >Name &nbsp;<span class="text-danger">*</span></label
-        >
-        <div class="col-sm-10">
-          <input type="text" formControlName="name" class="form-control"
-            placeholder="Enter Title here"/>
-            <div class="text-danger my-2" *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
-              Name is required.
-            </div>
+    <div class="mb-3 row mr-0">
+      <label for="staticEmail" class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Description
+        &nbsp;<span class="text-danger">*</span></label>
+      <div class="col-sm-10">
+        <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
+        <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+          Description is required.
         </div>
       </div>
-      <div class="mb-3 row mr-0">
-        <label for="staticEmail"
-          class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Description &nbsp;<span class="text-danger">*</span></label>
-        <div class="col-sm-10">
-          <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
-          <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
-            Description is required.
-          </div>
+    </div>
+    <div class="mb-3 row mr-0 align-items-center">
+      <label for="formGroupExampleInput" class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Club
+        Image &nbsp;<span class="text-danger">*</span></label>
+      <div class="col-sm-4">
+        <input type="file" class="form-control" formControlName="clubImage" id="formGroupLink"
+          (change)="onUploadImage($event)" accept="image/*" />
+        <div class="text-danger my-2" *ngIf="(f.clubImage.touched || submitted) && f.clubImage.errors?.required">
+          Image is required.
         </div>
       </div>
-      <div class="mb-3 row mr-0 align-items-center">
-        <label for="formGroupExampleInput" 
-        class="col-sm-2 col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Club Image &nbsp;<span class="text-danger">*</span></label>
-        <div class="col-sm-4">
-          <input type="file" class="form-control" formControlName="clubImage"
-            id="formGroupLink" (change)="onUploadImage($event)" accept="image/*"/>
-            <div class="text-danger my-2" *ngIf="(f.clubImage.touched || submitted) && f.clubImage.errors?.required">
-                Image is required.
-            </div>
+      <ng-container *ngIf="image !== undefined">
+        <div class="col-lg-6">
+          <img [src]="image" class="img-fluid h-md-75" alt="picture">
         </div>
-        <ng-container *ngIf="image !== undefined">
-          <div class="col-lg-6">
-              <img [src]="image" class="img-fluid h-md-75" alt="picture">
-          </div>
-        </ng-container>
-      </div>
-      <div class="row justify-content-center my-4">
-        <div class="col-lg-4 text-center">
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button
-              class="btn btn-md btn-info mr-2 rounded text-white"
-              (click)="addClub()" [disabled]="!addClubForm.valid">
-              Create
-            </button>
-          </div>
+      </ng-container>
+    </div>
+    <div class="row justify-content-center my-4">
+      <div class="col-lg-4 text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button class="btn btn-md btn-info mr-2 rounded" (click)="addClub()"
+            [disabled]="!addClubForm.valid">
+            Create
+          </button>
         </div>
       </div>
-    </form>
-  
+    </div>
+  </form>
+</div>
