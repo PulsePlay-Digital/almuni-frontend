@@ -1,6 +1,13 @@
 .shared{
-    background: linear-gradient(269.95deg, #F65C8B 0.04%, #FE87B3 99.95%);
-    .btn-info{
-        background-color: #011898;
-    }
+    background: var(--card-bg);
+    .view-btn {
+        background: var(--btn-background);
+        color: var(--bs-white);
+        border: 1px solid var(--btn-background);
+        line-height: var(--line-height-1-8);
+      }
+      .view-btn:hover {
+        background: var(--bs-white);
+        color: var(--btn-background);
+      }
 }

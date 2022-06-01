@@ -12,9 +12,10 @@ export class AlumniJourneyComponent implements OnInit {
   isPosted: boolean = false;
   isShared: boolean = true;
   title: string =  'Post a Story';
-  heading: string = "My Story";
+  storyHeading: string = "My Story";
   type: string = 'journey';
   alumniData: any;
+  heading: string = "ALUMNI JOURNEY";
   
   constructor(
     public dataService: DataService
