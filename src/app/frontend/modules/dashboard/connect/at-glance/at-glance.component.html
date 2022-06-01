@@ -1,6 +1,3 @@
-<!-- <div class="connect-banner-img mb-lg-4 mb-md-4 mb-sm-4 mb-3">
-    <img src="./assets/connectImg/atGlanceBanner.png" alt="At Glance Banner" class="img-fluid w-100">
-</div> -->
 <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
 <div class="container">
     <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
@@ -23,7 +20,7 @@
                                                     <img class="img-fluid eventDummyPic" alt="Event pic">
                                                 </ng-container>
                                             </div>
-                            
+
                                             <div class="event-date">
                                                 <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
                                                 <p class="fs-6 fw-bold text-white text-center mb-1"><i
@@ -39,8 +36,10 @@
                                         <h6 class="fs-6 fw-bold">Description:</h6>
                                         <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
                                         <div class="more-btn ">
-                                            <a routerLink="/connect/event-detail" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
-                                                    aria-hidden="true"></i>&nbsp;More Info</a>
+                                            <a routerLink="{{(currentUser) ? ['/connect/event-detail'] : ['/login']}}"
+                                                [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i
+                                                    class="fa fa-plus" aria-hidden="true"></i>&nbsp;{{currentUser ?
+                                                'More Info' : 'Login for more information'}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +112,7 @@
                         </div>
                     </div>
                 </mat-tab>
-                <mat-tab  id="upcoming-event" label="Upcomming Events">
+                <mat-tab id="upcoming-event" label="Upcomming Events">
                     <div class="row m-0">
                         <div class="col-9 my-3">
                             <app-loader *ngIf="loading"></app-loader>
@@ -145,7 +144,8 @@
                                         <h6 class="fs-6 fw-bold">Description:</h6>
                                         <p class="connect-event-description"> {{ item?.description | stripHtml }}</p>
                                         <div class="more-btn ">
-                                            <a routerLink="/connect/event-detail" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                            <a routerLink="/connect/event-detail" [queryParams]="item"
+                                                class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                     aria-hidden="true"></i>&nbsp;More Info</a>
                                         </div>
                                     </div>
@@ -219,6 +219,29 @@
                         </div>
                     </div>
                 </mat-tab>
+                <ng-container *ngIf="currentUser">
+                    <mat-tab id="host" label="I will host">
+                        <div class="row m-0">
+                            <div class="col-12 my-3">
+                                <app-host-form></app-host-form>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab id="speakEvent" label="Speak at the event">
+                        <div class="row m-0">
+                            <div class="col-12 my-3">
+                                <app-events-at-balaji></app-events-at-balaji>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab id="professionalEvent" label="Share a professional event">
+                        <div class="row m-0">
+                            <div class="col-12 my-3">
+                                <app-events-at-balaji></app-events-at-balaji>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </ng-container>
             </mat-tab-group>
         </div>
     </div>
