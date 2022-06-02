@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from 'src/app/frontend/services/data.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class HostFormComponent implements OnInit {
   
   constructor(
     public fb: FormBuilder,
-    public dataService: DataService
+    public dataService: DataService,
+    public notify: TokenInterceptor
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
@@ -97,9 +99,11 @@ export class HostFormComponent implements OnInit {
       formData.append("category", this.addEventForm.value.category);
 
       await this.dataService.postData(action, formData).subscribe((res: any) => {
-        console.log(res)
+        if (res?.status == 200) {
+          this.notify.notificationService.openSuccessSnackBar(res?.message);
+        }
       }, error => {
-        console.log(error)
+        this.notify.notificationService.openFailureSnackBar(error);;
       });
     }
   }

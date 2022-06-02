@@ -1,33 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import * as moment from 'moment';
-import { map } from 'rxjs/operators';
-import { environment } from './../../../../../../environments/environment';
-import { TokenInterceptor } from './../../../../core/token.interceptor';
-import { DataService } from './../../../../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import * as moment from "moment";
+import { map } from "rxjs/operators";
+import { environment } from "./../../../../../../environments/environment";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { DataService } from "./../../../../services/data.service";
 
 @Component({
-  selector: 'app-industry-connect',
-  templateUrl: './industry-connect.component.html',
-  styleUrls: ['./industry-connect.component.scss']
+  selector: "app-industry-connect",
+  templateUrl: "./industry-connect.component.html",
+  styleUrls: ["./industry-connect.component.scss"],
 })
 export class IndustryConnectComponent implements OnInit {
   imgPath = environment.imgUrl;
   loading: boolean = false;
   industryForm: FormGroup | any;
-  eventPic:any;
+  eventPic: any;
   image: any;
   submitted: boolean = false;
-  pastEvent: any;
-  upcomingEvent: any;
   currentUser: any;
   author: any;
 
-  constructor( 
+  constructor(
     public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor
-  ) { 
+  ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
         localStorage?.getItem("currentUser") || ""
@@ -37,8 +35,6 @@ export class IndustryConnectComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-    this.getAllUpcomingEvents();
-    this.getAllPastEvents();
     this.buildForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
@@ -46,9 +42,9 @@ export class IndustryConnectComponent implements OnInit {
     this.author = fname + (mname == null ? "" : " " + mname) + " " + lname;
   }
 
-/**
- * Build Form Data
- */
+  /**
+   * Build Form Data
+   */
   buildForm() {
     this.industryForm = this.fb.group({
       author: [""],
@@ -62,34 +58,36 @@ export class IndustryConnectComponent implements OnInit {
       is_active: ["active"],
       eventPageLink: [""],
       contactNumber: [""],
-      attending: [''],
-      city: [''],
-      country:[''],
-      state: [''],
-      eventPersonEmail: [''],
-      topicFocus: [''],
-      industryFocus: [''],
-      nameSubmittedBy: [''],
-      numberSubmittedBy: [''],
-      emailSubmittedBy: [''],
-      companiesParticipating: [''],
-      category:['alumni']
+      attending: [""],
+      city: [""],
+      country: [""],
+      state: [""],
+      eventPersonEmail: [""],
+      topicFocus: [""],
+      industryFocus: [""],
+      nameSubmittedBy: [""],
+      numberSubmittedBy: [""],
+      emailSubmittedBy: [""],
+      companiesParticipating: [""],
+      category: ["alumni"],
     });
   }
 
   /**
    * Get form Controls
    */
-  get f() { return this.industryForm.controls;}
+  get f() {
+    return this.industryForm.controls;
+  }
 
   /**
    * Function to add Event
-   * @returns 
+   * @returns
    */
   async submit() {
     let action = {
-      action: 'create-event'
-    }
+      action: "create-event",
+    };
     this.submitted = true;
     if (this.industryForm.invalid) {
       return;
@@ -110,77 +108,40 @@ export class IndustryConnectComponent implements OnInit {
       formData.append("city", this.industryForm.value.city);
       formData.append("country", this.industryForm.value.country);
       formData.append("state", this.industryForm.value.state);
-      formData.append("eventPersonEmail", this.industryForm.value.eventPersonEmail);
+      formData.append(
+        "eventPersonEmail",
+        this.industryForm.value.eventPersonEmail
+      );
       formData.append("topicFocus", this.industryForm.value.topicFocus);
       formData.append("industryFocus", this.industryForm.value.industryFocus);
-      formData.append("nameSubmittedBy", this.industryForm.value.nameSubmittedBy);
-      formData.append("numberSubmittedBy", this.industryForm.value.numberSubmittedBy);
-      formData.append("emailSubmittedBy", this.industryForm.value.emailSubmittedBy);
-      formData.append("companiesParticipating", this.industryForm.value.companiesParticipating);
+      formData.append(
+        "nameSubmittedBy",
+        this.industryForm.value.nameSubmittedBy
+      );
+      formData.append(
+        "numberSubmittedBy",
+        this.industryForm.value.numberSubmittedBy
+      );
+      formData.append(
+        "emailSubmittedBy",
+        this.industryForm.value.emailSubmittedBy
+      );
+      formData.append(
+        "companiesParticipating",
+        this.industryForm.value.companiesParticipating
+      );
       formData.append("category", this.industryForm.value.category);
-      
 
-      await this.dataService.postData(action, formData).subscribe((res: any) => {
-        console.log(res)
-      }, error => {
-        console.log(error)
-      });
+      await this.dataService.postData(action, formData).subscribe(
+        (res: any) => {
+          if (res?.status == 200) {
+            this.notify.notificationService.openSuccessSnackBar(res?.message);
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+        }
+      );
     }
-  }
-
-  async getAllPastEvents() {
-    let action: string = "all-event";
-    await this.dataService
-      .getData(action)
-      .pipe(
-        map((res: any) => {
-          return res.data.filter((item: any) => {
-            let commingDate = item?.date;
-            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isAfter(commingDate) == true) {
-              return item;
-            }
-          });
-        })
-      )
-      .subscribe((res: any) => {
-          if (res) {
-            this.pastEvent = res;
-            this.loading = false;
-          }
-        },
-        (error) => {
-          this.notify.notificationService.openFailureSnackBar(error);
-        }
-      );
-  }
-  /**
-   * Function to Get all upcoming events
-   */
-  async getAllUpcomingEvents() {
-    let action: string = "all-event";
-    await this.dataService
-      .getData(action)
-      .pipe(
-        map((res: any) => {
-          return res.data.filter((item: any) => {
-            let commingDate = item?.date;
-            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
-            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
-              return item;
-            }
-          });
-        })
-      )
-      .subscribe((res: any) => {
-          if (res) {
-            this.upcomingEvent = res;
-            this.loading = false;
-          }
-        },
-        (error) => {
-          this.notify.notificationService.openFailureSnackBar(error);
-        }
-      );
   }
 }

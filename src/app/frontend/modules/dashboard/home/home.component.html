@@ -5,7 +5,7 @@
         <owl-carousel-o [options]="homebannerOptions" *ngIf="!loading">
             <ng-template carouselSlide *ngFor="let banner of homeBanner">
                 <div class="homebannerImg">
-                    <img [src]="banner?.src">
+                    <img [src]="banner?.src" alt="banner img">
                 </div>
             </ng-template>
         </owl-carousel-o>
@@ -69,18 +69,18 @@
                             <div class="storyDescription p-lg-5 p-md-5 p-sm-5 p-4">
                                 <div class="users mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
                                     <div class="user-logo">
-                                        <img class="userImg" [src]="imgPath + stories?.picture" />
+                                        <img class="userImg" [src]="imgPath + stories?.picture" alt="user img"/>
                                     </div>
                                     <div class="username">
                                         <h3 class="fw-bold">{{ stories?.alumni_name }}</h3>
                                     </div>
-                                    <p class="quotes mb-0"><img src="./assets/home/quotes.png" /></p>
+                                    <p class="quotes mb-0"><img src="./assets/home/quotes.png" alt="alumni img"/></p>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="storyLogo">
                                             <div class="logo">
-                                                <img src="./assets/story-logo01.png" />
+                                                <img src="./assets/story-logo01.png" alt="story img"/>
                                             </div>
                                             <div class="logo-content">
                                                 <p class="mb-0">{{ stories?.batch_year }}</p>
@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="storyLogo">
                                             <div class="logo">
-                                                <img src="./assets/story-logo02.png" />
+                                                <img src="./assets/story-logo02.png" alt="story img"/>
                                             </div>
                                             <div class="logo-content">
                                                 <p class="mb-0">
@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="storyLogo">
                                             <div class="logo">
-                                                <img src="./assets/story-logo03.png" />
+                                                <img src="./assets/story-logo03.png" alt="story img"/>
                                             </div>
                                             <div class="logo-content">
                                                 <p class="mb-0">{{ stories?.company }}</p>
@@ -106,7 +106,7 @@
                                         </div>
                                         <div class="storyLogo pb-xl-0 pb-lg-0">
                                             <div class="logo">
-                                                <img src="./assets/story-logo05.png" />
+                                                <img src="./assets/story-logo05.png" alt="story img"/>
                                             </div>
                                             <div class="logo-content">
                                                 <p class="mb-0">{{ stories?.location }}</p>
@@ -153,7 +153,7 @@
                     <div class="content">
                         <a routerLink="/connect">
                             <div class="content-overlay"></div>
-                            <img class="content-image" src="./assets/association03.png" />
+                            <img class="content-image" src="./assets/association03.png" alt="association img"/>
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
                                     There are many variations of passages of Lorem Ipsum available the majority have suffered
@@ -168,7 +168,7 @@
                     <div class="content">
                         <a routerLink="/community/alumni-directory">
                             <div class="content-overlay"></div>
-                            <img class="content-image" src="./assets/association04.png" />
+                            <img class="content-image" src="./assets/association04.png" alt="association img"/>
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
                                     There are many variations of passages of Lorem Ipsum available,
@@ -184,7 +184,7 @@
                     <div class="content">
                         <a routerLink="/collaborate-contribute/engage-with-society">
                             <div class="content-overlay"></div>
-                            <img class="content-image" src="./assets/association01.png" />
+                            <img class="content-image" src="./assets/association01.png" alt="association img"/>
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
                                     There are many variations of passages of Lorem Ipsum available,
@@ -201,7 +201,7 @@
                     <div class="content">
                         <a routerLink="/collaborate-contribute/mentorship">
                             <div class="content-overlay"></div>
-                            <img class="content-image" src="./assets/association02.png" />
+                            <img class="content-image" src="./assets/association02.png" alt="association img"/>
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
                                     There are many variations of passages of Lorem Ipsum available,
@@ -375,10 +375,10 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 my-2 pe-xl-5 pe-lg-4 pe-md-1">
                     <div class="box">
                         <div class="box-heading">
-                            <img src="./assets/learnBox01.jpg" />
+                            <img src="./assets/learnBox01.jpg" alt="learn img"/>
                             <div class="box-text">
                                 <div class="icon">
-                                    <img class="text-logo" src="./assets/Mask-Group01.png" />
+                                    <img class="text-logo" src="./assets/Mask-Group01.png" alt="maskgroup img"/>
                                     <h4 class="mb-0 text-white text-uppercase">learn & grow</h4>
                                 </div>
                             </div>
@@ -388,18 +388,18 @@
                                 <li>
                                     <a routerLink="/collaborate-contribute/mentorship"><span
                                             class="text">Mentorship</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img"/></span></a>
                                 </li>
                                 <li>
                                     <a routerLink="/community/professional-club"><span class="text">Exclusive
                                             resources</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img"/></span></a>
                                 </li>
                                 <li>
                                     <a routerLink="collaborate-contribute/engage-with-society"><span
                                             class="text">Contribute
                                             back </span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img"/></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -408,10 +408,10 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 my-2 px-xl-4 px-lg-3 px-md-1">
                     <div class="box">
                         <div class="box-heading">
-                            <img src="./assets/learnBox02.jpg" />
+                            <img src="./assets/learnBox02.jpg" alt="learn img"/>
                             <div class="box-text">
                                 <div class="icon">
-                                    <img class="text-logo" src="./assets/Mask-Group02.png" />
+                                    <img class="text-logo" src="./assets/Mask-Group02.png" alt="mask img"/>
                                     <h4 class="mb-0 text-white text-uppercase">Latest News</h4>
                                 </div>
                             </div>
@@ -422,7 +422,7 @@
                                 <li *ngFor="let news of allNews">
                                     <a routerLink="/celebrate/news-detail"
                                     [queryParams]="news" [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img"/></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -434,7 +434,7 @@
                             <img src="./assets/learnBox03.jpg" />
                             <div class="box-text">
                                 <div class="icon">
-                                    <img class="text-logo" src="./assets/Mask-Group03.png" />
+                                    <img class="text-logo" src="./assets/Mask-Group03.png" alt="mask img"/>
                                     <h4 class="mb-0 text-white text-uppercase">Latest Events</h4>
                                 </div>
                             </div>
@@ -444,7 +444,7 @@
                             <ul *ngIf="!loading">
                                 <li *ngFor="let event of allEvents">
                                     <a routerLink="/connect/event-detail" [queryParams]="event"><span class="text">{{event.date | date: 'd MMM, y' }}</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" /></span></a>
+                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img"/></span></a>
                                 </li>
                             </ul>
                         </div>

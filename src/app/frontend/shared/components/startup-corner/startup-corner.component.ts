@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-startup-corner',
-  templateUrl: './startup-corner.component.html',
-  styleUrls: ['./startup-corner.component.scss']
+  selector: "app-startup-corner",
+  templateUrl: "./startup-corner.component.html",
+  styleUrls: ["./startup-corner.component.scss"],
 })
 export class StartupCornerComponent implements OnInit {
+  heading: string = "START-UP CORNER";
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

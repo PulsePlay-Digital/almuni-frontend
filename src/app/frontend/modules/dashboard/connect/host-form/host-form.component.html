@@ -1,5 +1,5 @@
-<div class="d-sm-flex align-items-center justify-content-between mb-2">
-    <h1 class="h3 mb-0 text-gray-800 text-center">Event</h1>
+<div class="d-flex align-items-center justify-content-between my-xl-4 my-lg-4 my-md-4 my-sm-4 my-3">
+    <h1 class="h3 mb-0 main-heading text-center">Event</h1>
   </div>
 
   <form class="example-form" [formGroup]="addEventForm" >
@@ -28,7 +28,10 @@
           Category</label>
           <select class="form-select" aria-label="Default select example" formControlName="category">
             <option value="null">Select Category</option>
-            <option [value]="eventCategory">{{ eventCategory == "alumniReunion" ? 'Annual Alumni Re-Union' : 'Alumni Driven Event'  }}</option>
+            <option value="alumniDrivenEvent">Alumni Driven Event</option>
+            <option value="alumniReunion">Annual Alumni Re-Union</option>
+            
+            <!-- <option [value]="eventCategory">{{ eventCategory == "alumniReunion" ? 'Annual Alumni Re-Union' : 'Alumni Driven Event'  }}</option> -->
           </select>
       </div>
       <div class="col-sm-6 col-md-6">
@@ -125,7 +128,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-4 text-center">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="btn btn-md btn-info mr-2 rounded text-white" (click)="submit()" [disabled]="!addEventForm.valid">Submit</button>
+            <button class="btn btn-md project-btn lh-base" (click)="submit()" [disabled]="!addEventForm.valid">Submit</button>
           </div>
       </div>
     </div>

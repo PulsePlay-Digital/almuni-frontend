@@ -2,3 +2,13 @@
     background-color: transparent;
     color: #0d6efd !important;
 }
+.view-btn {
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
+    line-height: var(--line-height-1-8);
+  }
+  .view-btn:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
+  }
