@@ -7,6 +7,7 @@ import { Config } from "./../../../../services/config";
   styleUrls: ["./magazine.component.scss"],
 })
 export class MagazineComponent implements OnInit {
+  heading: string = "CORPORATE CITIZEN MAGAZINE";
   constructor(public config: Config) {}
 
   ngOnInit(): void {}

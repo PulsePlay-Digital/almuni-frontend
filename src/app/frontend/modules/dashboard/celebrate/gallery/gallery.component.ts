@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./gallery.component.scss"],
 })
 export class GalleryComponent implements OnInit {
+  heading: string = "CLASS WISE PICTURE";
   constructor() {}
 
   ngOnInit(): void {}
