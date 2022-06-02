@@ -14,6 +14,7 @@ import { ViewEventDetailComponent } from './view-event-detail/view-event-detail.
 import { HostFormComponent } from './host-form/host-form.component';
 import { EventsAtBalajiComponent } from './events-at-balaji/events-at-balaji.component';
 import { IndustryConnectComponent } from './industry-connect/industry-connect.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { IndustryConnectComponent } from './industry-connect/industry-connect.co
     MatTabsModule,
     MatCardModule,
     CKEditorModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxPaginationModule
   ]
 })
 export class ConnectModule { }

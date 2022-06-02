@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sitemap.component.scss']
 })
 export class SitemapComponent implements OnInit {
-
+  heading:string= "SITE MAP";
   constructor() { }
 
   ngOnInit(): void {

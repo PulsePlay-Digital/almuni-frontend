@@ -14,7 +14,7 @@ import { Router } from "@angular/router";
 export class AtGlanceComponent implements OnInit {
   imgPath : any;
   loading: boolean = false;
-
+  p: number = 1;
   pastEvent: any;
   upcomingEvent: any;
   heading: string = "Events at a Glance";

@@ -5,6 +5,11 @@
     color: var(--btn-background);
   }
   .card {
+    .card-image {
+      .clubImg {
+        height: 250px;
+      }
+    }
     .card-body {
       height: 80px;
       display: var(--display-Flex);
@@ -41,6 +46,11 @@
 @media (min-width: 300px) and (max-width: 575px) {
   .industry-club {
     .card {
+      .card-image {
+        .clubImg {
+          height: 200px;
+        }
+      }
       .card-body {
         .card-text {
           font-size: var(--font-S-16);
@@ -55,10 +65,28 @@
     }
   }
 }
-
-@media (min-width: 574px) and (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 575px) {
   .industry-club {
     .card {
+      .card-image {
+        width: 50%;
+        margin: auto;
+        .clubImg {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  .industry-club {
+    .card {
+      .card-image {
+        .clubImg {
+          height: 200px;
+        }
+      }
       .card-body {
         .card-text {
           font-size: var(--font-S-18);
@@ -77,6 +105,11 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .industry-club {
     .card {
+      .card-image {
+        .clubImg {
+          height: 200px;
+        }
+      }
       .card-body {
         .card-text {
           font-size: var(--font-S-16);

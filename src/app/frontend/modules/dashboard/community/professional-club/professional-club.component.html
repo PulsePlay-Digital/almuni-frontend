@@ -8,204 +8,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
+            <app-loader *ngIf="loading"></app-loader>
+            <ng-container *ngIf="!loading">
+            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3" *ngFor="let item of professionalClub">
                 <div class="card border-0">
-                    <div class="card-image1 rounded-bottom rounded-3">
-                        <img src="./assets/community/professional_club/unsplash_SYTO3xs06fU.png" class="card-img-top"
-                            alt="Digital Img">
+                    <div class="card-image rounded-bottom rounded-3">
+                        <img [src]="imgPath + item?.clubImage" class="card-img-top clubImg" alt="Digital Img">
                     </div>
                     <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Digital</p>
+                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">{{item?.name}}</p>
                     </div>
                     <div class="card-footer bg-transparent border-0 text-center">
                         <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image2 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_7tXA8xwe4W4.png" class="card-img-top"
-                            alt="Strategy Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Strategy</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image3 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_GoXNygZlftg.png" class="card-img-top"
-                            alt="Leadership Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">Leadership And Change</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image1 rounded-bottom rounded-3">
-                        <img src="./assets/community/professional_club/unsplash_naSAHDWRNbQ.png" class="card-img-top"
-                            alt="Artificial Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">Artificial Intelligence</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image2 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_pypeCEaJeZY.png" class="card-img-top"
-                            alt="Big Data Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">Big Data</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image3 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_0VGG7cqTwCo.png" class="card-img-top"
-                            alt="Digital Transformation Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">Digital Transformation</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image1 rounded-bottom rounded-3">
-                        <img src="./assets/community/professional_club/unsplash_rYlYZjiu8f4.png" class="card-img-top"
-                            alt="Finance Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">Finance</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image2 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_7okkFhxrxNw.png" class="card-img-top"
-                            alt="Fintech Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold  pb-3 pt-3 lh-sm">FinTech</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image3 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_qCi_MzVODoU.png" class="card-img-top"
-                            alt="Future work Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">HR / Future Of Work</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image1  rounded-bottom rounded-3">
-                        <img src="./assets/community/professional_club/unsplash_K1ukmy8bxdA (1).png"
-                            class="card-img-top" alt="IOT Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Internet Of Things (IOT)</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image2 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_WqZwkrBuZIE.png" class="card-img-top"
-                            alt="Logistics Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Logistics, Supply Chain</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image3 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_5r5554u-mHo.png" class="card-img-top"
-                            alt="Marketing Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Marketing, Advertising &
-                            Amp; Media</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-xl-4 col-lg-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image1 rounded-bottom rounded-3">
-                        <img src="./assets/community/professional_club/unsplash_SYTO3xs06fU.png" class="card-img-top"
-                            alt="Sales Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">Sales</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3">
-                <div class="card border-0">
-                    <div class="card-image2 rounded-bottom">
-                        <img src="./assets/community/professional_club/unsplash_7tXA8xwe4W4.png" class="card-img-top"
-                            alt="SMAC Img">
-                    </div>
-                    <div class="card-body text-center">
-                        <p class="card-text fw-bold pb-3 pt-3 lh-sm">SMAC (Social, Mobile,
-                            Analytics, Cloud)</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join Club</a>
-                    </div>
-                </div>
-            </div>
+        </ng-container>
             <div class="row justify-content-center mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
                 <div class="col-lg-8 text-center">
                     <h6 class="new-club text-black fw-bolder pt-3 lh-base common_text"> Want to Start a New Club: <br>Please submit
