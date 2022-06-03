@@ -27,8 +27,8 @@ export class FeaturedAlumniDetailsComponent implements OnInit {
   ) {
     this.arouter.queryParams.subscribe((res: any) => {
       this.alumniId = res?.id;
-      this.descriptionHeading = res.heading;
-      this.type = res.type;
+      this.descriptionHeading = res?.heading;
+      this.type = res?.type;
     });
   }
 

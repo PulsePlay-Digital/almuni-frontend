@@ -1,59 +1,55 @@
 <div class="row my-xl-4 my-lg-4 my-md-4 my-sm-3 mb-3 mt-0">
-    <div class="d-flex align-items-center justify-content-between my-4">
-      <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Offer Expertise</h4>
-    </div>
-    <app-loader *ngIf="loading"></app-loader>
-    <ng-container *ngIf="!loading">
+  <div class="d-flex align-items-center justify-content-between my-4">
+    <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Offer Expertise</h4>
+  </div>
+  <app-loader *ngIf="loading"></app-loader>
+  <ng-container *ngIf="!loading">
     <ng-container *ngIf="allExpertise.length > 0">
-    <div class="col-lg-4 col-md-6 my-2" *ngFor="let item of allExpertise">
+      <div class="col-lg-4 col-md-6 my-2" *ngFor="let item of allExpertise">
         <div class="card card-bg shadow border-0">
-            <div class="card-body">
-              <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.author }}</h5>
-              <div class="row">
-                  <div class="col-lg-12">
-                    <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
-                  </div>
-                  <div class="col-lg-12">
-                    <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
-                  </div>
-                  <div class="col-lg-12">
-                    <p><b>Event Name</b>: &nbsp; {{ item?.eventName }} </p>
-                  </div>
-                  <div class="col-lg-12" *ngIf="item?.type == 'seminar'">
-                    <p><b>Type</b>: &nbsp; Speak at National Seminar </p>
-                  </div>
-                  <div class="col-lg-12" *ngIf="item?.type == 'faculty'">
-                    <p><b>Type</b>: &nbsp; Offer expertise as a Visting Faculty</p>
-                  </div>
-                  <div class="col-lg-12" *ngIf="item?.type == 'workshops'">
-                    <p><b>Type</b>: &nbsp; Offer expertise to conduct Workshops </p>
-                  </div>
-                  <div class="col-lg-6">
-                    <p><b>Participation Type</b>: &nbsp; {{ item?.participationType }} </p>
-                  </div>
-                  <div class="col-lg-12">
-                    <p><b>Workshop</b>: &nbsp; {{ item?.workshopTopic }} </p>
-                  </div>
-                  <div class="col-lg-12">
-                    <p><b>Venue</b>: &nbsp; {{ item?.venue }} </p>
-                  </div>
-                  <div class="col-lg-12">
-                    <p><b>Description</b>: &nbsp;  </p>
-                    <div [innerHtml]="item.description"></div>
-                  </div>
+          <div class="card-body">
+            <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.author }}</h5>
+            <div class="row">
+              <div class="col-lg-12">
+                <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
+              </div>
+              <div class="col-lg-12">
+                <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
+              </div>
+              <div class="col-lg-12">
+                <p><b>Event Name</b>: &nbsp; {{ item?.eventName }} </p>
+              </div>
+              <div class="col-lg-12" *ngIf="item?.type == 'seminar'">
+                <p><b>Type</b>: &nbsp; Speak at National Seminar </p>
+              </div>
+              <div class="col-lg-12" *ngIf="item?.type == 'faculty'">
+                <p><b>Type</b>: &nbsp; Offer expertise as a Visting Faculty</p>
+              </div>
+              <div class="col-lg-12" *ngIf="item?.type == 'workshops'">
+                <p><b>Type</b>: &nbsp; Offer expertise to conduct Workshops </p>
+              </div>
+              <div class="col-lg-6">
+                <p><b>Participation Type</b>: &nbsp; {{ item?.participationType }} </p>
+              </div>
+              <div class="col-lg-12">
+                <p><b>Workshop</b>: &nbsp; {{ item?.workshopTopic }} </p>
+              </div>
+              <div class="col-lg-12">
+                <p><b>Venue</b>: &nbsp; {{ item?.venue }} </p>
+              </div>
+              <div class="col-lg-12">
+                <p><b>Description</b>: &nbsp; </p>
+                <div [innerHtml]="item.description"></div>
               </div>
             </div>
+          </div>
         </div>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="allExpertise.length == 0">
-    <div class="col-lg-12 my-2 text-center">
-        <div class="card shadow border-0">
-            <div class="card-body">
-              <h5 class="card-title fs-4">No data found</h5>
-            </div>
-        </div>
-    </div>
-  </ng-container>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="allExpertise?.length == 0">
+      <div class="col-12 py-3 text-center fw-bold">
+        <p class="fs-5">No data found!</p>
+      </div>
+    </ng-container>
   </ng-container>
 </div>

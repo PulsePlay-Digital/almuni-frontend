@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./careers.component.scss']
 })
 export class CareersComponent implements OnInit {
-  searchData: boolean = false;
+  searchData: boolean = true;
   heading: string = "CAREERS AND JOBS";
   constructor() { }
 

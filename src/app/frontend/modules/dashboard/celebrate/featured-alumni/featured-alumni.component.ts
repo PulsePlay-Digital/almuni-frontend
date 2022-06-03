@@ -23,11 +23,11 @@ export class FeaturedAlumniComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllFeaturedAlumni();
   }
 
   async getAllFeaturedAlumni() {
+    this.loading = true;
     let  action: string = 'all-featured';
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res.data;

@@ -33,14 +33,25 @@
             <ng-container *ngIf="!loading">
                 <div class="allNews">
                     <mat-list>
-                        <mat-list-item *ngFor="let news of allNewsUpdates">
-                            <mat-icon mat-list-icon>image</mat-icon>
-                            <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
-                            <div mat-line>
-                                <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail"
-                                    [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
+                        <ng-container *ngIf="allNewsUpdates?.length > 0">
+                            <mat-list-item *ngFor="let news of allNewsUpdates">
+                                <mat-icon mat-list-icon>image</mat-icon>
+                                <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
+                                <div mat-line>
+                                    <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail"
+                                        [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
+                                </div>
+                            </mat-list-item>
+                        </ng-container>
+                        <ng-container *ngIf="allNewsUpdates?.length == 0">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        No data found!
+                                    </div>
+                                </div>
                             </div>
-                        </mat-list-item>
+                        </ng-container>
                     </mat-list>
                 </div>
             </ng-container>

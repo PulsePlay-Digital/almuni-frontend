@@ -5,15 +5,22 @@
         <div class="col-lg-8 col-md-12 ">
             <app-loader *ngIf="loading"></app-loader>
             <ul class="social-channels" *ngIf="!loading">
-                <li class="social-links fs-5" *ngFor="let social of socialData">
-                    <a href="{{ social?.link }}" class="text-decoration-none">{{ social?.title }}</a>
-                </li>
+                <ng-container *ngIf="socialData?.length > 0">
+                    <li class="social-links fs-5" *ngFor="let social of socialData">
+                        <a href="{{ social?.link }}" class="text-decoration-none">{{ social?.title }}</a>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="socialData?.length == 0">
+                    <li>No data found</li>
+                </ng-container>
 
             </ul>
         </div>
         <div class="col-lg-4 col-md-12 ">
-            <iframe width="100%" height="260" src="https://www.youtube.com/embed/shv16JEFhac" title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="260" src="https://www.youtube.com/embed/shv16JEFhac"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
 </div>

@@ -6,150 +6,48 @@
         </div>
     </div>
     <div class="mb-4">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/image 27.png" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-20.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/image 28.png" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-v2-issue8.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
+        <div class="row">
+            <ng-container *ngIf="allMagazine?.length > 0">
+                <app-loader *ngIf="loading"></app-loader>
+                <ng-container *ngIf="!loading">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 my-2" *ngFor="let item of allMagazine | paginate: { itemsPerPage: 6, currentPage: p }">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <ng-container *ngIf="item?.file != null">
+                                    <img [src]="imgPath + item?.file" class="img-fluid w-100 mb-3 magazineImg"
+                                        alt="magazine img" />
+                                </ng-container>
+                                <ng-container *ngIf="item?.file == null">
+                                    <img class="img-fluid w-100 mb-3 noImg" alt="magazine img">
+                                </ng-container>
+                                <div
+                                    class="row row justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-sm-start justify-content-center">
+                                    <div class="col-lg-5 col-sm-5 col-4 text-lg-start text-sm-start">
+                                        <a target="_blank" [href]="item?.link"
+                                            class="btn btn-md view-btn lh-base mt-2 text-decoration-none text-uppercase rounded-0">Read</a>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7 col-7 text-lg-end text-sm-end">
+                                        <a target="_blank" href="https://corporatecitizen.in/"
+                                            class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase rounded-0">Subscribe</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </ng-container>
+                <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-4 mb-0" *ngIf="allMagazine?.length > 0">
+                    <div class="col text-center">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/image 29.png" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-v2-issue15.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
+            </ng-container>
+            <ng-container *ngIf="allMagazine?.length == 0">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            No data found!
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/magazine4.jpg" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-v2-issue3.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/magazine5.jpg" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-v2-issue2.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/magazine6.jpg" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-v2-issue6.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/magazine7.jpg" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v2-issue20/corporate-citizen-magazine-issue-22.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 my-2">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img src="./assets/magazine/magazine8.jpg" class="img-fluid w-100 mb-3" alt="magazine img">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-sm-5 text-lg-start text-sm-start">
-                                <a target="_blank"
-                                    href="https://corporatecitizen.in/v3-Issue8/blowing-my-own-trumpet-med-in-india.html"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Read</a>
-                            </div>
-                            <div class="col-lg-7 col-sm-7 text-lg-end text-sm-end">
-                                <a target="_blank" href="https://corporatecitizen.in/"
-                                    class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase">Subscribe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </ng-container>
         </div>
-        

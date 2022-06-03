@@ -9,68 +9,76 @@
     <div class="row mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
       <app-loader *ngIf="loading"></app-loader>
       <ng-container *ngIf="!loading">
-        <div class="col-lg-12 my-2" *ngFor="let item of postedJobsByMe">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.title }}</h5>
-              <div class="row">
-                <div class="col-lg-6">
-                  <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Job Posted By</b>: &nbsp; <a routerLink="">{{ item?.author }} </a></p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Contact mobile number</b>: &nbsp; {{ item?.contactNumber }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Contact person name</b>: &nbsp; {{ item?.contactPerson }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Contact person email id</b>: &nbsp; {{ item?.email }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Location</b>: &nbsp; {{ item?.location }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>City</b>: &nbsp; {{ item?.city }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Company Name</b>: &nbsp; {{ item?.companyName }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Salary</b>: &nbsp; {{ item?.salary }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Fresher</b>: &nbsp; {{ item?.fresherApply == true ? 'Yes' : 'False' }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Work experience</b>: &nbsp; {{ item?.workExperience }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Skills possessed</b>: &nbsp; {{ item?.skillsRequired }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Basic education qualification</b>: &nbsp; {{ item?.qualification }} </p>
-                </div>
-                <div class="col-lg-6">
-                  <p><b>Company website</b>: &nbsp; <a href="{{item?.website }}">{{ item?.website }} </a></p>
-                </div>
-                <div class="col-lg-12">
-                  <p><b>Brief description of job profile</b>: &nbsp;</p>
-                  <p>{{ item?.description | stripHtml }} </p>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5 col-9 text-center">
-                    <p><a class="btn project-btn lh-lg" [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'"
-                        (click)="changeStatus(item)">{{
-                        item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</a></p>
+        <ng-container *ngIf="postedJobsByMe?.length > 0">
+          <div class="col-lg-12 my-2" *ngFor="let item of postedJobsByMe">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title fs-2 main-heading text-capitalize">{{ item?.title }}</h5>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Job Posted By</b>: &nbsp; <a routerLink="">{{ item?.author }} </a></p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Contact mobile number</b>: &nbsp; {{ item?.contactNumber }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Contact person name</b>: &nbsp; {{ item?.contactPerson }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Contact person email id</b>: &nbsp; {{ item?.email }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Location</b>: &nbsp; {{ item?.location }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>City</b>: &nbsp; {{ item?.city }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Company Name</b>: &nbsp; {{ item?.companyName }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Salary</b>: &nbsp; {{ item?.salary }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Fresher</b>: &nbsp; {{ item?.fresherApply == true ? 'Yes' : 'False' }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Work experience</b>: &nbsp; {{ item?.workExperience }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Skills possessed</b>: &nbsp; {{ item?.skillsRequired }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Basic education qualification</b>: &nbsp; {{ item?.qualification }} </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p><b>Company website</b>: &nbsp; <a href="{{item?.website }}">{{ item?.website }} </a></p>
+                  </div>
+                  <div class="col-lg-12">
+                    <p><b>Brief description of job profile</b>: &nbsp;</p>
+                    <p>{{ item?.description | stripHtml }} </p>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5 col-9 text-center">
+                      <p><a class="btn project-btn lh-lg"
+                          [ngClass]="(item.is_active == 'open') ? 'openJob' : 'closeJob'"
+                          (click)="changeStatus(item)">{{
+                          item?.is_active == 'open' ? 'Job Open' : 'Job Closed' }}</a></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="postedJobsByMe?.length == 0">
+          <div class="col-12 py-3 text-center fw-bold">
+            <p class="fs-5">No data found!</p>
+          </div>
+        </ng-container>
       </ng-container>
     </div>
   </div>

@@ -1,37 +1,10 @@
 .card {
-  background-color: var(--bg-card);
-  height: 224px;
+  background-color: var(--card-bg);
   .card-heading {
     color: var(--text-color);
   }
-  .detail {
-    font-size: var(--font-S-20);
-    padding: 0 5px;
-  }
 }
 @media (min-width: 300px) and (max-width: 575px) {
-    .card {
-      .detail {
-        font-size: var(--font-S-16);
-        padding: 0 5px;
-      }
-    }
-  }
-@media (min-width: 575px) and (max-width: 768px) {
-  .card {
-    height: 244px;
-    .detail {
-      font-size: var(--font-S-14);
-      padding: 0 5px;
-    }
-  }
+ 
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .card {
-    height: 234px;
-    .detail {
-      font-size: var(--font-S-16);
-    }
-  }
-}
