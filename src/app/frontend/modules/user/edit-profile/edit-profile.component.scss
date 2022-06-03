@@ -42,6 +42,10 @@
       object-fit: var(--object-cover);
     }
   }
+  .invalidText {
+    color: var(--bs-danger);
+    font-size: var(--font-S-13);
+}
 }
 
 @media (min-width: 300px) and (max-width: 574px) {

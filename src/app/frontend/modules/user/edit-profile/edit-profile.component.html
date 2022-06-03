@@ -18,7 +18,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 pe-3 pt-lg-0 pt-md-0 pt-3 text-end">
-                                <a class="editIcon btn rounded-0" (click)="editUser()">
+                                <a type="button" class="editIcon btn rounded-0" (click)="editUser()">
                                     Update
                                 </a>
                             </div>
@@ -27,15 +27,18 @@
                             <div class="col-lg-6 text-center">
                                 <div class="photo">
                                     <div class="choose_file">
-                                        <input type="file" formControlName="profile_pic" (change)="onUploadImage($event)" accept="image/*" />
+                                        <input type="file" formControlName="profile_pic"
+                                            (change)="onUploadImage($event)" accept="image/*" />
                                         <ng-container *ngIf="user?.profile_pic !== null && !image">
-                                            <img [src]="imgPath + user?.profile_pic" class="img-fluid " alt="profile picture">
+                                            <img [src]="imgPath + user?.profile_pic" class="img-fluid "
+                                                alt="profile picture">
                                         </ng-container>
                                         <ng-container *ngIf="user?.profile_pic == null && !image">
-                                            <img src="./assets/users/profile-pic.png" class="text-center w-25 " alt="profile picture" > 
+                                            <img src="./assets/users/profile-pic.png" class="text-center w-25 "
+                                                alt="profile picture">
                                         </ng-container>
                                         <ng-container *ngIf="image">
-                                            <img [src]="image" class="text-center w-25" alt="profile picture" > 
+                                            <img [src]="image" class="text-center w-25" alt="profile picture">
                                         </ng-container>
                                     </div>
                                 </div>
@@ -43,98 +46,172 @@
                         </div>
                         <div class="row justify-content-center py-lg-4 py-md-4 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="text-dark form-control rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="text-dark form-control rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="first_name" placeholder="First name" />
+                                <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
+                                    *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
+                                    First name is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="last_name" placeholder="Last name" />
+                                <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
+                                    *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
+                                    Last name is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <select class="form-control form-select p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2 border-0 rounded-0" formControlName="institute_name">
+                                <select
+                                    class="form-control form-select p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0 rounded-0"
+                                    formControlName="institute_name">
                                     <option value="" selected>Choose your Institute</option>
                                     <option [value]="institute.institute_name" *ngFor="let institute of getInstitutes">
                                         {{ institute.institute_name }}
                                     </option>
                                 </select>
-
+                                <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
+                                    *ngIf="(f.institute_name.touched || submitted) && f.institute_name.errors?.required">
+                                    Institute name is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="institute_roll_no" placeholder="Institute wise roll no." />
+                                <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
+                                    *ngIf="(f.institute_roll_no.touched || submitted) && f.institute_roll_no.errors?.required">
+                                    Institute roll no. is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
                                 <select placeholder="Select Batch Year" formControlName="batch"
-                                    class="form-control form-select rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2 border-0">
+                                    class="form-control form-select rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0">
                                     <option value="" selected>Choose your batch</option>
                                     <option [value]="batch.id" *ngFor="let batch of getBatch">
                                         {{ batch.batch }}
                                     </option>
                                 </select>
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.batch.touched || submitted) && f.batch.errors?.required">
+                                    Batch year is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
                                 <select placeholder="Select Batch Year" formControlName="gender"
-                                    class="form-control form-select rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2 border-0">
+                                    class="form-control form-select rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0">
                                     <option value="" selected>Gender</option>
                                     <option [value]="gen.label" *ngFor="let gen of gender">
                                         {{ gen.label }}
                                     </option>
                                 </select>
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.gender.touched || submitted) && f.gender.errors?.required">
+                                    Gender is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="office_email" placeholder="Official Email Id" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.office_email.touched || submitted) && f.office_email.errors?.required">
+                                    Official email is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="current_address" placeholder="Current Address" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.current_address.touched || submitted) && f.current_address.errors?.required">
+                                    Current address is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="country"
-                                    placeholder="Current country" />
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
+                                    formControlName="country" placeholder="Current country" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.country.touched || submitted) && f.country.errors?.required">
+                                    Country is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="current_region" placeholder="Current region" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
+                                    Region is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="current_state" placeholder="State" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.current_state.touched || submitted) && f.current_state.errors?.required">
+                                    State is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="city"
-                                    placeholder="City" />
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
+                                    formControlName="city" placeholder="City" />
+                                <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                    City name is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="permanent_address" placeholder="Permanent address" />
+                                    <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.permanent_address.touched || submitted) && f.permanent_address.errors?.required">
+                                    Permanent address is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="permanent_country" placeholder="Permanent country" />
+                                    <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
+                                    *ngIf="(f.permanent_country.touched || submitted) && f.permanent_country.errors?.required">
+                                    Permanent country is required.
+                                </div>
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="linkedin_id" placeholder="Linkedin profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="twitter_id" placeholder="Twitter profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="skype_id" placeholder="Skype profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="facebook_id" placeholder="Facebook profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="instagram_id" placeholder="Instagram profile" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     formControlName="council_member_designation"
                                     placeholder="Council member designation" />
                             </div>
@@ -152,26 +229,33 @@
                     <div class="form-bg pt-lg-3">
                         <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Professional title" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Professional category" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Current employer" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Current office address" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" placeholder="Business" />
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
+                                    placeholder="Business" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Business office address" />
                             </div>
                         </div>
@@ -188,34 +272,43 @@
                     <div class="form-bg mb-5">
                         <div class="row justify-content-center py-lg-5 py-md-5 py-2 m-lg-auto m-md-auto m-sm-0 m-0">
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control border-0 rounded-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Provide mentorship" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" placeholder="Skills" />
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
+                                    placeholder="Skills" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Primary function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Secondary function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Other function area" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Primary industry focus" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Secondary industry focus" />
                             </div>
                             <div class="col-md-5 my-2">
-                                <input type="text" class="form-control rounded-0 border-0 p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2"
+                                <input type="text"
+                                    class="form-control rounded-0 border-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
                                     placeholder="Other industry focus" />
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { Config } from "./../../../services/config";
 import { CountryService } from "./../../../services/country.service";
@@ -27,6 +27,7 @@ export class EditProfileComponent implements OnInit {
   profilePic: any;
   image: any;
   imgPath = environment.imgUrl;
+  submitted:boolean | undefined;
   constructor(
     public fb: FormBuilder,
     public userService: UserService,
@@ -76,20 +77,20 @@ export class EditProfileComponent implements OnInit {
   buildForm() {
     this.form = this.fb.group({
       profile_pic: [""],
-      first_name: [""],
-      last_name: [""],
-      institute_name: [""],
-      institute_roll_no: [""],
-      batch: [""],
-      gender: [""],
-      office_email: [""],
-      current_address: [""],
-      country: [""],
-      current_region: [""],
-      current_state: [""],
-      city: [""],
-      permanent_address: [""],
-      permanent_country: [""],
+      first_name: ["", Validators.required],
+      last_name: ["", Validators.required],
+      institute_name: ["", Validators.required],
+      institute_roll_no: ["", Validators.required],
+      batch: ["", Validators.required],
+      gender: ["", Validators.required],
+      office_email: ["", Validators.required],
+      current_address: ["", Validators.required],
+      country: ["", Validators.required],
+      current_region: ["", Validators.required],
+      current_state: ["", Validators.required],
+      city: ["", Validators.required],
+      permanent_address: ["", Validators.required],
+      permanent_country: ["", Validators.required],
       linkedin_id: [""],
       twitter_id: [""],
       skype_id: [""],
@@ -97,6 +98,10 @@ export class EditProfileComponent implements OnInit {
       instagram_id: [""],
       council_member_designation: [""],
     });
+  }
+
+  get f() {
+    return this.form.controls;
   }
 
   /**
@@ -150,6 +155,7 @@ export class EditProfileComponent implements OnInit {
   }
 
  async editUser() {
+    this.submitted = true;
     if (this.form.invalid) {
       return;
     } else {
