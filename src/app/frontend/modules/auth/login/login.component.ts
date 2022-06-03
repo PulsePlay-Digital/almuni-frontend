@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("currentUser", JSON.stringify(res.user));
             localStorage.setItem("token", JSON.stringify(res.access_token));
             this.loading = false;
-            location.assign("/home");
+            location.assign("#/home");
             this.notify.notificationService.openSuccessSnackBar(
               "Login Successfully"
             );
