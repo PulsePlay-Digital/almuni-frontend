@@ -1,159 +1,165 @@
 .register-page {
-  .login-background {
-    background-image: url("../../../../../assets/users/loginBg.png");
-    background-color: var(--btn-background);
-    height: var(--height-auto);
-    background-size: var(--background-s-cover);
-    background-repeat: var(--background-no-repeat);
-    .login-heading {
-      font-family: var(--family);
+    .login-background {
+        background-image: url("../../../../../assets/users/loginBg.png");
+        background-color: var(--btn-background);
+        height: var(--height-auto);
+        background-size: var(--background-s-cover);
+        background-repeat: var(--background-no-repeat);
+        .login-heading {
+            font-family: var(--family);
+        }
+        .btn-login {
+            opacity: var(--opacity-0-3);
+        }
+        .loginBtn {
+            background-color: var(--form-bg);
+        }
+        .signUpBtn {
+            background-color: #68ccff;
+        }
+        .muted-text {
+            font-family: var(--family);
+        }
     }
-    .btn-login {
-      opacity: var(--opacity-0-3);
+    .register-form {
+        background-color: var(--form-bg);
+        .btn-register {
+            background-color: var(--btn-background);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: var(--width-0100);
+            line-height: 40px;
+        }
+        .form-control {
+            font-size: var(--font-s-12) !important;
+        }
+        select {
+            font-size: var(--font-s-14);
+            color: #646363;
+        }
     }
-    .loginBtn {
-      background-color: var(--form-bg);
+    .choose_file {
+        position: var(--position-relative);
+        input[type="file"] {
+            height: var(--height-100);
+            width: 132px;
+            min-height: 132px;
+            position: var(--position-absolute);
+            cursor: var(--cursor-pointer);
+            z-index: var(--z-index-9999);
+            border-radius: var(--border-radius-50);
+            opacity: var(--opacity-none);
+        }
+        img {
+            height: 132px;
+            width: 132px !important;
+            min-height: 132px;
+            border: 3px solid var(--btn-background);
+            border-radius: var(--border-radius-50);
+            background: var(--bs-white);
+            object-fit: var(--object-cover);
+        }
     }
-    .signUpBtn {
-      background-color: #68ccff;
+    .invalidText {
+        color: var(--bs-danger);
+        font-size: var(--font-S-13);
     }
-    .muted-text {
-      font-family: var(--family);
-    }
-  }
-  .register-form {
-    background-color: var(--form-bg);
-    .btn-register {
-      background-color: var(--btn-background);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      width: var(--width-0100);
-      line-height: 40px;
-    }
-    .form-control {
-      font-size: var(--font-s-12) !important;
-    }
-    select {
-      font-size: var(--font-s-14);
-      color: #646363;
-    }
-  }
-  .choose_file {
-    position: var(--position-relative);
-    input[type="file"] {
-      height: var(--height-100);
-      width: 132px;
-      min-height: 132px;
-      position: var(--position-absolute);
-      cursor: var(--cursor-pointer);
-      z-index: var(--z-index-9999);
-      border-radius: var(--border-radius-50);
-      opacity: var(--opacity-none);
-    }
-    img {
-      height: 132px;
-      width: 132px;
-      min-height: 132px;
-      border: 3px solid var(--btn-background);
-      border-radius: var(--border-radius-50);
-      background: var(--bs-white);
-      object-fit: var(--object-cover);
-    }
-  }
-  .invalidText {
-    color: var(--bs-danger);
-    font-size: var(--font-S-14);
-  }
 }
 
 // media query//
 @media (min-width: 300px) and (max-width: 574px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 60px;
-      }
-    }
-    .choose_file {
-      input[type="file"] {
-        width: 100px;
-        min-height: 100px;
-      }
-      img {
-        height: 100px;
-        width: 100px;
-        min-height: 100px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 60px;
+            }
+        }
+        .choose_file {
+            input[type="file"] {
+                width: 100px;
+                min-height: 100px;
+            }
+            img {
+                height: 100px !important;
+                width: 100px !important;
+                min-height: 100px;
+            }
+        }
     }
 }
-}
+
 @media (min-width: 575px) and (max-width: 767px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 150px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 150px;
+            }
+        }
     }
-  }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 20px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 20px;
+            }
+        }
+        .choose_file {
+            input[type="file"] {
+                width: 114px;
+                min-height: 114px;
+            }
+            img {
+                height: 114px;
+                min-height: 114px;
+            }
+        }
     }
-    .choose_file {
-      input[type="file"] {
-        width: 114px;
-        min-height: 114px;
-      }
-      img {
-        height: 114px;
-        min-height: 114px;
-      }
-    }
-  }
 }
+
 @media (min-width: 992px) and (max-width: 1300px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 31px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 31px;
+            }
+        }
+        .choose_file {
+            input[type="file"] {
+                width: 122px;
+                min-height: 122px;
+            }
+            img {
+                height: 122px;
+                min-height: 122px;
+                width: 122px !important;
+            }
+        }
     }
-    .choose_file {
-      input[type="file"] {
-        width: 122px;
-        min-height: 122px;
-      }
-      img {
-        height: 122px;
-        min-height: 122px;
-      }
-    }
-  }
 }
+
 @media (min-width: 1300px) and (max-width: 1500px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 25px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 25px;
+            }
+        }
     }
-  }
 }
+
 @media (min-width: 1500px) and (max-width: 1600px) {
-  .register-page {
-    .login-background {
-      .left-box {
-        height: 100%;
-        padding: 25px;
-      }
+    .register-page {
+        .login-background {
+            .left-box {
+                height: 100%;
+                padding: 25px;
+            }
+        }
     }
-  }
 }
