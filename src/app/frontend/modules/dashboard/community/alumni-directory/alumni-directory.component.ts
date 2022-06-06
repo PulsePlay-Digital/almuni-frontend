@@ -33,7 +33,7 @@ export class AlumniDirectoryComponent implements OnInit {
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        this.user = res.data;
+        this.user = res?.data;
         this.loading = false;
       },
       (error) => {

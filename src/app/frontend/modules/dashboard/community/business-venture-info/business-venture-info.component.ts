@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Config } from './../../../../services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-business-venture-info',
@@ -18,7 +19,8 @@ export class BusinessVentureInfoComponent implements OnInit {
      public fb: FormBuilder,
      public dataService: DataService,
      public notify: TokenInterceptor,
-     public config: Config
+     public config: Config,
+     public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -82,9 +84,13 @@ export class BusinessVentureInfoComponent implements OnInit {
       return;
     } else {
       await this.dataService.postData(action, params).subscribe((res: any) => {
-        if(res.status == 200) {
+        if(res?.status == 200) {
           this.notify.notificationService.openSuccessSnackBar(res?.message);
+          this.router.navigate(['/community/entrepreneurship-club'])
         }
+      },
+      error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       });
     }
   }

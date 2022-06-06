@@ -54,7 +54,6 @@ export class ProfessionalClubComponent implements OnInit {
   }
   joinUnjoin(data: any) {
     this.club = !this.club;
-    console.log(this.club);
   }
 
   joinClub() {

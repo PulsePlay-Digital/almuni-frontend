@@ -26,6 +26,7 @@ export class IndustryClubComponent implements OnInit {
   }
 
   async getAllindustryClub() {
+    this.loading = true;
     let action: string = "all-club";
     await this.dataService.getData(action)
     .pipe(
@@ -49,7 +50,6 @@ export class IndustryClubComponent implements OnInit {
 
   joinUnjoin() {
     this.club = !this.club;
-    console.log(this.club);
   }
 
   joinClub() {
