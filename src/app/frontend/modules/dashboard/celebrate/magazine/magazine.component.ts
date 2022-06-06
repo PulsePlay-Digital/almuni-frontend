@@ -31,7 +31,7 @@ export class MagazineComponent implements OnInit {
     this.loading = true;
     let action: string = "all-magazine";
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.allMagazine = res.Magazine;
+      this.allMagazine = res?.Magazine;
       this.loading = false;
     },
     error => {

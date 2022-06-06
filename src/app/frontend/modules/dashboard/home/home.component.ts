@@ -175,7 +175,6 @@ export class HomeComponent implements OnInit {
   async getAllFeaturedAlumni() {
     let action: string = "all-featured"
     await this.dataService.getData(action).subscribe((result: any) => {
-      console.log(result)
       this.alumni = result?.data;
       this.loading = false;
     });
