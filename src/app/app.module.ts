@@ -13,7 +13,7 @@ import { CKEditorModule } from "ng2-ckeditor";
 import { BreadcrumbModule } from "xng-breadcrumb";
 import { BreadcrumbService } from "xng-breadcrumb";
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from "ngx-cookieconsent";
-const cookieConfig:NgcCookieConsentConfig = {
+const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
     domain: 'localhost'// it is recommended to set your domain, for cookies to work properly
   },
@@ -31,24 +31,24 @@ const cookieConfig:NgcCookieConsentConfig = {
   layouts: {
     "my-custom-layout": '{{messagelink}}{{compliance}}'
   },
-  elements:{
+  elements: {
     messagelink: `
     <span id="cookieconsent:desc" class="cc-message">{{message}} 
-      <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>, 
+      <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>
       <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> 
       <a aria-label="learn more about our terms of service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank">{{tosLink}}</a>
     </span>
     `,
   },
-  content:{
-    message: 'We use cookies to give you a better experience. By using our website you agree to ',
-    
-    cookiePolicyLink: 'Cookie Policy',
-    cookiePolicyHref: 'https://cookie.com',
- 
+  content: {
+    message: 'We use cookies to give you a better experience. By using our website you agree to',
+
+    // cookiePolicyLink: 'Cookie Policy',
+    // cookiePolicyHref: 'https://cookie.com',
+
     privacyPolicyLink: 'Privacy Policy',
     privacyPolicyHref: 'https://www.sbup.edu.in/About/privacy_policy',
- 
+
     // tosLink: 'Terms of Service',
     // tosHref: 'https://tos.com',
   }
@@ -72,4 +72,4 @@ const cookieConfig:NgcCookieConsentConfig = {
   providers: [BreadcrumbService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
