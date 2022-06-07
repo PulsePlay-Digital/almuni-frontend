@@ -227,9 +227,7 @@ export class HomeComponent implements OnInit {
       .pipe(
         map((res: any) => {
           return res.data.filter((item: any) => {
-            if (item?.category !== "admin") {
               return item;
-            }
           });
         })
       )
@@ -243,8 +241,8 @@ export class HomeComponent implements OnInit {
   }
 
   viewAlumniDetail(params: any) {
-    this.router.navigate(["/view-profile"], {
-      queryParams: { ...params, type: "featuredAlumni" },
+    this.router.navigate(["/celebrate/alumni-details"], {
+      queryParams: { ...params },
     });
   }
 

@@ -82,12 +82,12 @@
                                         <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/common-purpose-culture" routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                            <li><a (click)="target('founderMsg')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('founderMsg')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     The
                                                     Founder's Message </a></li>
-                                            <li><a (click)="target('connectVision')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('connectVision')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     SBUP Alumni Connect Vision </a></li>
-                                            <li><a (click)="target('strategy')" class="dropdown-item" routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('strategy')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     SBUP Alumni Connect Strategy Framework </a></li>
                                         </ul>
                                     </li>
@@ -95,14 +95,14 @@
                                         <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/community/community-home']}}" routerLinkActive="active-link">Community
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}" routerLinkActive="active-link">Alumni
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}" routerLinkActive="active-link">Alumni
                                                     Directory</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}" routerLinkActive="active-link">Professional
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}" routerLinkActive="active-link">Professional
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}" routerLinkActive="active-link">Industry
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}" routerLinkActive="active-link">Industry
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}" routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}" routerLinkActive="active-link">
                                                     Business Ventures</a></li>
                                         </ul>
                                     </li>
@@ -110,12 +110,12 @@
                                         <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/connect/at-glance" routerLinkActive="active-link">Connect
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['login']}}">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['login']}}">
                                                     Connect at glance</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="/connect/at-glance">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="/connect/at-glance">
                                                     Past Event</a></li>
-                                            <li><a class="dropdown-item" routerLink="/connect/at-glance">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="/connect/at-glance">
                                                     Upcoming Event</a></li>
                                         </ul>
                                     </li>
@@ -123,14 +123,14 @@
                                         <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/collaborate-contribute/collaborate']}}" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
                                                     and
                                                     Jobs</a></li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
                                                     Projects</a></li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
                                                     with SBUP</a></li>
                                         </ul>
                                     </li>

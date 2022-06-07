@@ -300,33 +300,26 @@
                     <h4 class="main-heading fw-bold text-uppercase mb-0">Gallery</h4>
                 </div>
             </div>
-            <ng-container *ngIf="gallery?.length > 0">
-                <app-loader *ngIf="loading"></app-loader>
-                <div class="row justify-content-center" *ngIf="!loading">
-                    <div class="col-lg-8">
-                        <owl-carousel-o [options]="galleryOptions">
-                            <ng-template carouselSlide *ngFor="let data of gallery">
-                                <div class="gallaryImg">
-                                    <a href="">
-                                        <img class="mb-3" [src]="imgPath + data.file" alt="Gallery Images">
-                                    </a>
-                                </div>
-                            </ng-template>
-                        </owl-carousel-o>
-                    </div>
+            <app-loader *ngIf="loading"></app-loader>
+            <div class="row justify-content-center" *ngIf="!loading">
+                <div class="col-lg-8">
+                    <owl-carousel-o [options]="galleryOptions">
+                        <ng-template carouselSlide *ngFor="let data of gallery">
+                            <div class="gallaryImg">
+                                <a href="">
+                                    <img class="mb-3" [src]="imgPath + data.file" alt="Gallery Images">
+                                </a>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
                 </div>
-                <div class="row justify-content-center pt-2">
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-2">
-                        <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                            routerLink="/celebrate/gallery">View More</a>
-                    </div>
+            </div>
+            <div class="row justify-content-center pt-2">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-2">
+                    <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
+                        routerLink="/celebrate/gallery">View More</a>
                 </div>
-            </ng-container>
-            <ng-container *ngIf="gallery?.length == 0">
-                <div class="col-12 py-3 text-center fw-bold">
-                    <p class="fs-5">No data found!</p>
-                </div>
-            </ng-container>
+            </div>
         </div>
     </div>
     <!--- Gallary Section Close --->
@@ -427,11 +420,19 @@
                         <div class="boxUL">
                             <app-loader *ngIf="loading"></app-loader>
                             <ul *ngIf="!loading">
-                                <li *ngFor="let news of allNews">
-                                    <a routerLink="/celebrate/news-detail" [queryParams]="news"
-                                        [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
-                                </li>
+                                <ng-container *ngIf="allNews?.length > 0">
+                                    <li *ngFor="let news of allNews">
+                                        <a routerLink="/celebrate/news-detail" [queryParams]="news"
+                                            [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
+                                            <span class="icon"><img src="./assets/box-arrow.png"
+                                                    alt="box img" /></span></a>
+                                    </li>
+                                </ng-container>
+                                <ng-container *ngIf="allNews?.length == 0">
+                                    <div class="col-12 py-3 text-center fw-bold">
+                                        <p class="fs-5">No data found!</p>
+                                    </div>
+                                </ng-container>
                             </ul>
                         </div>
                     </div>
@@ -450,11 +451,19 @@
                         <div class="boxUL">
                             <app-loader *ngIf="loading"></app-loader>
                             <ul *ngIf="!loading">
-                                <li *ngFor="let event of allEvents">
-                                    <a routerLink="/connect/event-detail" [queryParams]="event"><span
-                                            class="text">{{event.date | date: 'd MMM, y' }}</span>
-                                        <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
-                                </li>
+                                <ng-container *ngIf="allEvents?.length > 0">
+                                    <li *ngFor="let event of allEvents">
+                                        <a routerLink="/connect/event-detail" [queryParams]="event"><span
+                                                class="text">{{event.date | date: 'd MMM, y' }}</span>
+                                            <span class="icon"><img src="./assets/box-arrow.png"
+                                                    alt="box img" /></span></a>
+                                    </li>
+                                </ng-container>
+                                <ng-container *ngIf="allEvents?.length == 0">
+                                    <div class="col-12 py-3 text-center fw-bold">
+                                        <p class="fs-5">No data found!</p>
+                                    </div>
+                                </ng-container>
                             </ul>
                         </div>
                     </div>

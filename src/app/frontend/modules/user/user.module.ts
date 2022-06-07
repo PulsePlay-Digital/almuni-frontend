@@ -5,26 +5,24 @@ import { UserRoutingModule } from './user-routing.module';
 import { RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
-// import { EditProfileModule } from './edit-profile/edit-profile.module';
 import { SharedModule } from '../../shared/shared.module';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProfileModule } from './edit-profile/edit-profile.module';
 
 
 @NgModule({
   declarations: [
-    ViewProfileComponent,
-    EditProfileComponent
+    ViewProfileComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
-    // EditProfileModule,
+    EditProfileModule,
     MatExpansionModule,
     BsDatepickerModule.forRoot()
   ]
