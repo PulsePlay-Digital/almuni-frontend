@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngx-translate/core": "^14.0.0",
     "@ptkdev/webcomponent-instagram-widget": "^2.9.0",
     "@types/ckeditor": "^4.9.10",
     "@types/google.maps": "^3.49.0",
