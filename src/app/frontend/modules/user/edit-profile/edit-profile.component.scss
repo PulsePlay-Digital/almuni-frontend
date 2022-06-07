@@ -11,6 +11,7 @@
 
 .choose_file button {
     width: 100%;
+    font-size: var(--font-S-14);
 }
 
 .choose_file input[type="file"] {
@@ -25,7 +26,7 @@
 .nav {
     .nav-item{
         .nav-link {
-            font-size: 12px;
+            font-size: var(--font-S-14);
         }
     }
 }
