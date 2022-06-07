@@ -1,14 +1,15 @@
   // SOCIAL CHANNELS CSS START
-
-.social-channels {
-    .social-links {
-        list-style: none;
-        line-height: 2.1em;
-        a {
-            color: #000 !important;
-        }
-         :hover {
-            color: #011898 !important;
-        }
-    }
-}
+  .social-channels {
+      .social-links {
+          list-style: none;
+          line-height: 2.1em;
+          a {
+              // color: #000 !important;
+              font-size: 16px;
+              line-height: 0;
+          }
+           :hover {
+              color: #B83E40 !important;
+          }
+      }
+  }
