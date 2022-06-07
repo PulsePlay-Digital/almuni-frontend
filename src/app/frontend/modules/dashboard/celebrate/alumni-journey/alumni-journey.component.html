@@ -2,9 +2,7 @@
 <div class="container">
     <div class="alumni-journey">
         <div class="row row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-4 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
-            <div class="col-lg-12 text-center">
-                <h3 class="main-heading text-uppercase fw-bolder">ALUMNI JOURNEY</h3>
-            </div>
+
         </div>
         <div class="row justify-content-center mb-3">
             <div class="col-lg-4 col-md-12 my-lg-2 my-md-3 my-sm-3 my-2">
@@ -41,16 +39,15 @@
         </div>
         <div class="search-filter p-4">
             <form class="">
-              <div class="row">
-                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-                  <div class="form-outline">
-                    <input type="name" class="form-control" id="inputName"
-                      placeholder="Alumni name" />
-                  </div>
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                        <div class="form-outline">
+                            <input type="name" class="form-control" id="inputName" placeholder="Alumni name" />
+                        </div>
+                    </div>
                 </div>
-              </div>
             </form>
-          </div>
+        </div>
     </div>
     <app-shared-by-me *ngIf="isPosted" [title]="title" [type]="type"></app-shared-by-me>
     <app-shared-alumni *ngIf="isShared" [heading]="storyHeading" [alumniData]="alumniData"></app-shared-alumni>
