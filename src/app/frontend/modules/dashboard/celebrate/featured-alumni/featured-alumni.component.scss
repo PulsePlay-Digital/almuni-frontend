@@ -1,5 +1,12 @@
 .card {
     background: var(--card-bg);
+    .card-title {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .card-body {
       height: 78px;
       .designation {

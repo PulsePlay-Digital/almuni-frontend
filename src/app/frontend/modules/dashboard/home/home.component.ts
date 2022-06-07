@@ -7,6 +7,7 @@ import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from "src/app/frontend/services/user.service";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 
 @Component({
   selector: "app-home",
@@ -138,7 +139,7 @@ export class HomeComponent implements OnInit {
     public config: Config,
     public dataService: DataService,
     public fb: FormBuilder,
-    private userService: UserService
+    public notify: TokenInterceptor
   ) {
     this.featuredAlumni = this.config.alumniStories();
     this.currentUser = localStorage?.getItem("currentUser") || "";
@@ -248,12 +249,24 @@ export class HomeComponent implements OnInit {
   }
 
   async subscribe() {
+    this.loading = true;
     this.submitted = true;
+    let action: string = "newsletter";
     if (this.form.invalid) {
       return;
     } else {
       console.log(this.form.value);
-      // await 
+      await this.dataService.postData(action, this.form.value).subscribe((res: any) => {
+        console.log(res);
+        if(res?.status == 200) {
+          this.notify.notificationService.openSuccessSnackBar(res?.message);
+          this.loading = false;
+        }
+      },
+      error => {
+        this.notify.notificationService.openFailureSnackBar(error);
+        this.loading = false;
+      })
     }
   }
 }
