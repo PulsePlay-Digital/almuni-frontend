@@ -145,7 +145,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loading = true;
     this.buildForm();
     this.getAllFeaturedAlumni();
     this.getAllGallery();
@@ -173,9 +172,13 @@ export class HomeComponent implements OnInit {
    * Function to get all alumni
    */
   async getAllFeaturedAlumni() {
+    this.loading = true;
     let action: string = "all-featured"
     await this.dataService.getData(action).subscribe((result: any) => {
       this.alumni = result?.data;
+      this.loading = false;
+    },
+    error => {
       this.loading = false;
     });
   }
@@ -191,24 +194,32 @@ export class HomeComponent implements OnInit {
 
   /** * Function to get all gallery  */
   async getAllGallery() {
+    this.loading = true;
     let action: string = "all-gallery";
     await this.dataService.getData(action).subscribe((result: any) => {
       this.gallery = result?.data;
+      this.loading = false;
+    }, error => {
       this.loading = false;
     });
   }
 
   /** * Function to get all news */
   async getAllNews() {
+    this.loading = true;
     let action: string = "all-news";
     await this.dataService.getData(action).subscribe((result: any) => {
       this.allNews = result?.data;
+      this.loading = false;
+    },
+    error => {
       this.loading = false;
     });
   }
 
   /** * Function to get all alumni events */
   async getAllEvents() {
+    this.loading = true;
     let action: string = "all-event";
     await this.dataService
       .getData(action)
@@ -224,6 +235,9 @@ export class HomeComponent implements OnInit {
       .subscribe((result: any) => {
         this.allEvents = result;
         this.loading = false;
+      }, 
+      error => {
+        this.loading = false;
       });
   }
 
@@ -233,12 +247,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  subscribe() {
+  async subscribe() {
     this.submitted = true;
     if (this.form.invalid) {
       return;
     } else {
       console.log(this.form.value);
+      // await 
     }
   }
 }

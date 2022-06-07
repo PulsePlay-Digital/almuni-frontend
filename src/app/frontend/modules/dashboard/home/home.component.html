@@ -301,6 +301,7 @@
             </div>
             <app-loader *ngIf="loading"></app-loader>
             <div class="row justify-content-center" *ngIf="!loading">
+                <ng-container *ngIf="gallery.length > 0"></ng-container>
                 <div class="col-lg-8">
                     <owl-carousel-o [options]="galleryOptions">
                         <ng-template carouselSlide *ngFor="let data of gallery">
