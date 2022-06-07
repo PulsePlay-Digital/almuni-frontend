@@ -35,7 +35,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     messagelink: `
     <span id="cookieconsent:desc" class="cc-message">{{message}} 
       <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>, 
-      <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> and our 
+      <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> 
       <a aria-label="learn more about our terms of service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank">{{tosLink}}</a>
     </span>
     `,
@@ -47,10 +47,10 @@ const cookieConfig:NgcCookieConsentConfig = {
     cookiePolicyHref: 'https://cookie.com',
  
     privacyPolicyLink: 'Privacy Policy',
-    privacyPolicyHref: 'https://privacy.com',
+    privacyPolicyHref: 'https://www.sbup.edu.in/About/privacy_policy',
  
-    tosLink: 'Terms of Service',
-    tosHref: 'https://tos.com',
+    // tosLink: 'Terms of Service',
+    // tosHref: 'https://tos.com',
   }
 };
 @NgModule({

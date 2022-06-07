@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/frontend/services/data.service';
 
 @Component({
   selector: 'app-sitemap',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SitemapComponent implements OnInit {
   heading:string= "SITE MAP";
-  constructor() { }
+  constructor(   public dataService: DataService) { }
 
   ngOnInit(): void {
   }
-
+  /**
+   * Scroll target Section
+   * @param sectionId
+   */
+   target(sectionId: any) {
+    this.dataService.scrollSection.next(sectionId);
+  }
 }

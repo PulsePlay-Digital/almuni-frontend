@@ -2,17 +2,16 @@
 <div class="professional-club">
     <div class="container">
         <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
-            <div class="col-lg-12 text-center">
+            <!-- <div class="col-lg-12 text-center">
                 <h3 class="main-heading text-uppercase fw-bold mb-0">PROFESSIONAL CLUB
                 </h3>
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="professionalClub?.length > 0">
-                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3"
-                        *ngFor="let item of professionalClub">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3" *ngFor="let item of professionalClub">
                         <div class="card border-0">
                             <div class="card-image rounded-bottom rounded-3">
                                 <img [src]="imgPath + item?.clubImage" class="card-img-top clubImg" alt="Digital Img">
@@ -36,11 +35,8 @@
             <div class="row justify-content-center mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
                 <div class="col-lg-8 text-center">
                     <h6 class="new-club text-black fw-bolder pt-3 lh-base common_text"> Want to Start a New Club:
-                        <br>Please submit
-                        your
-                        request for Club Formation by filling up this form.</h6>
-                    <h6 class="start-club fw-bolder lh-base common_text" (click)="joinClub()"> START A CLUB
-                        (Professional Focus)
+                        <br>Please submit your request for Club Formation by filling up this form.</h6>
+                    <h6 class="start-club fw-bolder lh-base common_text" (click)="joinClub()"> START A CLUB (Professional Focus)
                     </h6>
                 </div>
             </div>
