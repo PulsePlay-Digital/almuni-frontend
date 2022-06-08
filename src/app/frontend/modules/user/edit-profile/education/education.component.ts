@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Config } from './../../../../services/config';
 
 @Component({
   selector: 'app-education',
@@ -8,8 +9,12 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EducationComponent implements OnInit {
 
-  experienceForm: FormGroup | any;
-  constructor(public fb: FormBuilder) {}
+  educationForm: FormGroup | any;
+  specialization: any;
+  submitted: boolean | undefined;
+  constructor(public fb: FormBuilder, public config: Config) {
+    this.specialization = this.config.specialization;
+  }
 
   ngOnInit(): void {
     this.buildform();
@@ -19,25 +24,30 @@ export class EducationComponent implements OnInit {
    * Function to build form data
    */
   buildform() {
-    this.experienceForm = this.fb.group({
-      degree: [""],
-      instituteName: [""],
-      yearOfPassing: [""],
-      specialization: [""],
+    this.educationForm = this.fb.group({
+      degree: ["", Validators.required],
+      instituteName: ["", Validators.required],
+      yearOfPassing: ["", Validators.required],
+      specialization: ["", Validators.required],
       otherSpecialization: [""],
       addItems: this.fb.array([]),
     });
   }
+
   addItems(): FormArray {
-    return this.experienceForm.get("addItems") as FormArray;
+    return this.educationForm.get("addItems") as FormArray;
+  }
+
+  get f() {
+    return this.educationForm.controls;
   }
 
   newItems(): FormGroup {
     return this.fb.group({
-      degree: [""],
-      instituteName: [""],
-      yearOfPassing: [""],
-      specialization: [""],
+      degree: ["", Validators.required],
+      instituteName: ["",Validators.required],
+      yearOfPassing: ["", Validators.required],
+      specialization: ["", Validators.required],
       otherSpecialization: [""]
     });
   }
@@ -51,7 +61,8 @@ export class EducationComponent implements OnInit {
   }
 
   edit() {
-    console.log(this.experienceForm.value);
+    this.submitted = true;
+    console.log(this.educationForm.value);
   }
 
 }

@@ -4,9 +4,11 @@
         <app-loader *ngIf="loading"></app-loader>
         <owl-carousel-o [options]="homebannerOptions" *ngIf="!loading">
             <ng-template carouselSlide *ngFor="let banner of homeBanner">
-                <div class="homebannerImg">
-                    <img [src]="banner?.src" alt="banner img">
-                </div>
+                <ng-container>
+                    <div class="homebannerImg">
+                        <img [src]="imgPath + banner?.file" alt="banner img">
+                    </div>
+                </ng-container>
             </ng-template>
         </owl-carousel-o>
     </div>

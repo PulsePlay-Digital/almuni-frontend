@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Config } from 'src/app/frontend/services/config';
 
 @Component({
   selector: 'app-mentorship',
@@ -9,8 +10,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MentorshipComponent implements OnInit {
   mentorForm: FormGroup | any;
   submitted: boolean = false;
+  functionArea: any;
+  industryFocus: any;
 
-  constructor(public fb: FormBuilder) {}
+  constructor(public fb: FormBuilder,
+    public config: Config) {
+    this.functionArea = this.config.functionArea;
+    this.industryFocus = this.config.industryFocus;
+  }
 
   ngOnInit(): void {
     this.buildform();

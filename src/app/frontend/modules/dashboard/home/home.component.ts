@@ -6,8 +6,7 @@ import { Config } from "./../../../../frontend/services/config";
 import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { UserService } from "src/app/frontend/services/user.service";
-import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
+import { TokenInterceptor } from "./../../../core/token.interceptor";
 
 @Component({
   selector: "app-home",
@@ -16,9 +15,8 @@ import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 })
 export class HomeComponent implements OnInit {
   gallery: any;
-  featuredAlumni: any;
+  homeBanner: any;
   alumni: any;
-  homebanner: any;
   loading: boolean = false;
   imgPath = environment.imgUrl;
   allNews: any;
@@ -44,13 +42,6 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
   };
-  //Home banner static data
-  homeBanner = [
-    { id: 1, src: "./assets/home/Banner1.webp" },
-    { id: 2, src: "./assets/home/Banner2.webp" },
-    { id: 3, src: "./assets/home/Banner3.webp" },
-    { id: 4, src: "./assets/home/Banner4.webp" },
-  ];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -141,12 +132,12 @@ export class HomeComponent implements OnInit {
     public fb: FormBuilder,
     public notify: TokenInterceptor
   ) {
-    this.featuredAlumni = this.config.alumniStories();
     this.currentUser = localStorage?.getItem("currentUser") || "";
   }
 
   ngOnInit(): void {
     this.buildForm();
+    this.getBanner();
     this.getAllFeaturedAlumni();
     this.getAllGallery();
     this.getAllNews();
@@ -161,12 +152,27 @@ export class HomeComponent implements OnInit {
           Validators.required,
           Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
         ],
-      ]
+      ],
     });
   }
 
   get f() {
     return this.form.controls;
+  }
+  async getBanner() {
+    this.loading = true;
+    let action: string = 'all-gallery';
+    await this.dataService.getData(action).pipe(
+      map((res: any) => {
+        return res?.data?.filter((item: any) => {
+          if (item?.type == 'Home main banner') {
+            return item;
+          }
+        });
+      })
+    ).subscribe((result: any) => {
+      this.homeBanner = result;
+    })
   }
 
   /**
@@ -174,14 +180,16 @@ export class HomeComponent implements OnInit {
    */
   async getAllFeaturedAlumni() {
     this.loading = true;
-    let action: string = "all-featured"
-    await this.dataService.getData(action).subscribe((result: any) => {
-      this.alumni = result?.data;
-      this.loading = false;
-    },
-    error => {
-      this.loading = false;
-    });
+    let action: string = "all-featured";
+    await this.dataService.getData(action).subscribe(
+      (result: any) => {
+        this.alumni = result?.data;
+        this.loading = false;
+      },
+      (error) => {
+        this.loading = false;
+      }
+    );
   }
   /**
    * Function to redirect alumni details
@@ -197,25 +205,30 @@ export class HomeComponent implements OnInit {
   async getAllGallery() {
     this.loading = true;
     let action: string = "all-gallery";
-    await this.dataService.getData(action).subscribe((result: any) => {
-      this.gallery = result?.data;
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-    });
+    await this.dataService.getData(action).subscribe(
+      (result: any) => {
+        this.gallery = result?.data;
+        this.loading = false;
+      },
+      (error) => {
+        this.loading = false;
+      }
+    );
   }
 
   /** * Function to get all news */
   async getAllNews() {
     this.loading = true;
     let action: string = "all-news";
-    await this.dataService.getData(action).subscribe((result: any) => {
-      this.allNews = result?.data;
-      this.loading = false;
-    },
-    error => {
-      this.loading = false;
-    });
+    await this.dataService.getData(action).subscribe(
+      (result: any) => {
+        this.allNews = result?.data;
+        this.loading = false;
+      },
+      (error) => {
+        this.loading = false;
+      }
+    );
   }
 
   /** * Function to get all alumni events */
@@ -227,25 +240,36 @@ export class HomeComponent implements OnInit {
       .pipe(
         map((res: any) => {
           return res.data.filter((item: any) => {
-              return item;
+            return item;
           });
         })
       )
-      .subscribe((result: any) => {
-        this.allEvents = result;
-        this.loading = false;
-      }, 
-      error => {
-        this.loading = false;
-      });
+      .subscribe(
+        (result: any) => {
+          this.allEvents = result;
+          this.loading = false;
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        }
+      );
   }
-
+  /**
+   * Function to navigate on Alumni detail page
+   * @param params
+   */
   viewAlumniDetail(params: any) {
     this.router.navigate(["/celebrate/alumni-details"], {
-      queryParams: { ...params }, skipLocationChange: true
+      queryParams: { ...params, type: "featured-alumni" },
+      skipLocationChange: true
     });
   }
 
+  /**
+   * Function to subscribe on newsletter
+   * @returns 
+   */
   async subscribe() {
     this.loading = true;
     this.submitted = true;
@@ -254,17 +278,19 @@ export class HomeComponent implements OnInit {
       return;
     } else {
       console.log(this.form.value);
-      await this.dataService.postData(action, this.form.value).subscribe((res: any) => {
-        console.log(res);
-        if(res?.status == 200) {
-          this.notify.notificationService.openSuccessSnackBar(res?.message);
+      await this.dataService.postData(action, this.form.value).subscribe(
+        (res: any) => {
+          console.log(res);
+          if (res?.status == 200) {
+            this.notify.notificationService.openSuccessSnackBar(res?.message);
+            this.loading = false;
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
           this.loading = false;
         }
-      },
-      error => {
-        this.notify.notificationService.openFailureSnackBar(error);
-        this.loading = false;
-      })
+      );
     }
   }
 }

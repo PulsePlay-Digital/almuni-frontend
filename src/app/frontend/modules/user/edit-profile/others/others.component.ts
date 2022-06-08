@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Config } from './../../../../services/config';
 
 @Component({
   selector: 'app-others',
@@ -10,7 +11,12 @@ export class OthersComponent implements OnInit {
 
   othersForm: FormGroup | any;
   submitted: boolean = false;
-  constructor(public fb: FormBuilder) {}
+  familyRelative: any;
+  hobbies: any;
+  constructor(public fb: FormBuilder, public config: Config) {
+    this.familyRelative = this.config.familyAssociate;
+    this.hobbies = this.config.hobbies;
+  }
 
   ngOnInit(): void {
     this.buildForm();

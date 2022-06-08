@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "src/app/frontend/services/auth.service";
 import { environment } from "src/environments/environment";
 import { BreadcrumbService } from "xng-breadcrumb";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
@@ -20,11 +21,12 @@ export class AlumniDirectoryComponent implements OnInit {
     public dataService: DataService,
     private breadcrumbService: BreadcrumbService,
     public router: Router,
-    public notify: TokenInterceptor
-  ) { }
+    private notify: TokenInterceptor,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.breadcrumbService.set('@ChildTwo', 'alumni-directory');
+    this.breadcrumbService.set("@ChildTwo", "alumni-directory");
     this.loading = true;
     this.getAllAlumniUser();
   }
@@ -37,10 +39,15 @@ export class AlumniDirectoryComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
-        this.notify.notificationService.openFailureSnackBar(error);
-        setTimeout(() => {
-          this.loading = false;
-        }, 500);
+        if (error?.status == 401) {
+          this.notify.notificationService.openFailureSnackBar(
+            error?.error?.message
+          );
+          this.router.navigate(['/login']);
+        } else {
+          this.notify.notificationService.openFailureSnackBar(error);
+        }
+        this.loading = false;
       }
     );
   }

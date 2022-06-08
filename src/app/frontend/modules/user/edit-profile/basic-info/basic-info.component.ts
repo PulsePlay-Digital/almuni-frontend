@@ -19,15 +19,17 @@ export class BasicInfoComponent implements OnInit {
   countries: any;
   submitted: boolean = false;
   showOpt: boolean = false;
+  region: any;
   constructor(
     public fb: FormBuilder,
     public countryService: CountryService,
     public dataService: DataService,
     private config: Config
   ) { 
-    this.gender = this.config.genderDt();
-    this.maritalStatus = this.config.maritalStatus();
-    this.bloodGroup = this.config.bloodGroup();
+    this.gender = this.config.gender;
+    this.maritalStatus = this.config.maritalStatus;
+    this.bloodGroup = this.config.bloodGroup;
+    this.region = this.config.region;
   }
 
   ngOnInit(): void {
@@ -53,7 +55,7 @@ export class BasicInfoComponent implements OnInit {
       blood_group: ['', Validators.required],
       mobile_code: ['', Validators.required],
       mobile_number: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      land_code: [''],
+      landline_code: [''],
       landline_number: ['', [Validators.minLength(10), Validators.maxLength(10)]],
       city: ['', Validators.required],
       showMobile: [this.showOpt, Validators.required],
@@ -65,11 +67,14 @@ export class BasicInfoComponent implements OnInit {
       anniversary_date: ['', Validators.required],
       current_address: ['', Validators.required],
       current_country: ['', Validators.required],
+      other_country: [''],
       current_region: ['', Validators.required],
+      other_region: [''],
       current_state: ['', Validators.required],
       current_city: ['', Validators.required],
       permanent_address: ['', Validators.required],
       permanent_country: ['', Validators.required],
+      other_permanentCountry: [''],
       permanent_state: ['', Validators.required],
       permanent_city: ['', Validators.required],
       linkedin_id: ['', Validators.required],
@@ -122,7 +127,7 @@ export class BasicInfoComponent implements OnInit {
    */
   async getAllBatches() {
     await this.dataService.getAllBatches().subscribe((res: any) => {
-      this.getBatch = res.BatchYear;
+      this.getBatch = res?.BatchYear;
     }, error => {
       console.log(error)
     });

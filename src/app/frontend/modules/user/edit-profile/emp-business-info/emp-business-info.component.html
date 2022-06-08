@@ -3,51 +3,53 @@
         <form [formGroup]="empBuisnessForm">
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">If employee, professional title </label>
+                    <label class=" form-label fw-bold">If employee, professional title </label>
                     <select class="form-select" formControlName="professional_title">
-                        <option value="" selected>Choose professional title</option>
+                        <option value="" selected>Select professional title</option>
+                        <option *ngFor="let item of professionalTitle; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Other professional title </label>
+                    <label class=" form-label fw-bold">Other professional title </label>
                     <input type="text" class="form-control" formControlName="other_professional_title" placeholder="Enter last name">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Profession category: </label>
+                    <label class=" form-label fw-bold">Profession category: </label>
                     <select class="form-select" formControlName="professional_category">
-                        <option value="" selected>Choose profession category</option>
+                        <option value="" selected>Select professional category</option>
+                        <option *ngFor="let item of professionCategory; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Current employer </label>
+                    <label class=" form-label fw-bold">Current employer </label>
                     <input type="text" class="form-control" formControlName="current_employer" placeholder="Enter last name">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Current office address </label>
+                    <label for="exampleFormControlTextarea1" class=" form-label fw-bold">Current office address </label>
                     <textarea class="form-control" formControlName="current_office_address" id="exampleFormControlTextarea1" rows="2"></textarea>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">If, Business owner, current title </label>
+                    <label class=" form-label fw-bold">If, Business owner, current title </label>
                     <input type="text" class="form-control" formControlName="business_owner" placeholder="Enter last name">
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Current business owned name</label>
+                    <label class=" form-label fw-bold">Current business owned name</label>
                     <input type="text" class="form-control" formControlName="business_name" placeholder="Enter last name">
                 </div>
             </div>
 
             <div class="row justify-content-center">
                 <div class="col-lg-3 my-3 text-center">
-                    <button type="button" (click)="edit()" class="btn btn-success">Edit</button>
+                    <button type="button" (click)="edit()" [disabled]="!empBuisnessForm.valid" class="btn btn-success">Update</button>
                 </div>
             </div>
 

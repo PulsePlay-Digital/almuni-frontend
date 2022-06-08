@@ -3,20 +3,23 @@
         <form [formGroup]="basicInfoForm">
             <div class="row">
                 <div class="col-md-4 my-3">
-                    <label class="form-label">First name <span class="label-danger">*</span></label>
+                    <label class=" form-label fw-bold">First name <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="first_name" placeholder="Enter first name">
-                    <div class="text-danger mt-2" *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.first_name.touched || submitted) && f.first_name.errors?.required">
                         First name is required.
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Middle name</label>
-                    <input type="text" class="form-control" formControlName="middle_name" placeholder="Enter middle name">
+                    <label class=" form-label fw-bold">Middle name</label>
+                    <input type="text" class="form-control" formControlName="middle_name"
+                        placeholder="Enter middle name">
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Last name <span class="label-danger">*</span></label>
+                    <label class=" form-label fw-bold">Last name <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="last_name" placeholder="Enter last name">
-                    <div class="text-danger mt-2" *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.last_name.touched || submitted) && f.last_name.errors?.required">
                         Last name is required.
                     </div>
                 </div>
@@ -24,115 +27,127 @@
 
             <div class="row">
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Institute <span class="label-danger">*</span></label>
+                    <label class=" form-label fw-bold">Institute <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="institute_id">
                         <option value="" selected>Choose your institute</option>
-                        <option [value]="institute.id" *ngFor="let institute of getInstitutes">
+                        <option [value]="institute.id" *ngFor="let institute of getInstitutes; let i=index;">
                             {{institute.institute_name}}</option>
                     </select>
-                    <div class="text-danger mt-2" *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
                         Institute name is required.
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Batch year <span class="label-danger">*</span></label>
+                    <label class=" form-label fw-bold">Batch year <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="batchYear_id">
                         <option value="" selected>Choose your batch</option>
-                        <option [value]="batch.id" *ngFor="let batch of getBatch">{{batch.batch}}</option>
+                        <option [value]="batch.id" *ngFor="let batch of getBatch; let i=index;">{{batch.batch}}</option>
                     </select>
-                    <div class="text-danger mt-2" *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
                         Batch year is required.
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Institute wise roll # </label>
-                    <input type="text" class="form-control" formControlName="institute_wise_roll" placeholder="Enter roll number">
+                    <label class=" form-label fw-bold">Institute wise roll # </label>
+                    <input type="text" class="form-control" formControlName="institute_wise_roll"
+                        placeholder="Enter roll number">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Gender <span class="label-danger">*</span></label>
+                    <label class=" form-label fw-bold">Gender <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="gender">
                         <option value="" selected>Select gender</option>
-                        <option *ngFor="let gen of gender" [value]="gen.id">{{ gen.label }}</option>
+                        <option *ngFor="let gen of gender; let i=index;" [value]="gen.id">{{ gen.label }}</option>
                     </select>
                     <div class="text-danger mt-2" *ngIf="(f.gender.touched || submitted) && f.gender.errors?.required">
                         Gender is required.
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Marital status </label>
+                    <label class=" form-label fw-bold">Marital status </label>
                     <select class="form-select" formControlName="marital_status">
                         <option value="" selected>Select marital status</option>
-                        <option *ngFor="let marital of maritalStatus" [value]="marital.id">{{ marital.status }}</option>
+                        <option *ngFor="let marital of maritalStatus; let i=index;" [value]="marital.id">{{ marital.status }}</option>
                     </select>
                 </div>
                 <div class="col-md-4 my-3">
-                    <label class="form-label">Blood group </label>
+                    <label class=" form-label fw-bold">Blood group </label>
                     <select class="form-select" formControlName="blood_group">
                         <option value="" selected>Select blood group</option>
-                        <option *ngFor="let group of bloodGroup" [value]="group.id">{{ group.group }}</option>
+                        <option *ngFor="let group of bloodGroup; let i=index;" [value]="group.id">{{ group.group }}</option>
                     </select>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4 my-3">
+                <div class="col-lg-4 col-md-6 my-3">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-3 pb-2">
-                            <label class="form-label">Code <span class="label-danger">*</span></label>
-                            <input type="text" formControlName="mobile_code" class="form-control px-1" placeholder="Code">
+                        <div class="col-lg-3 col-md-4 col-sm-3 col-3 pb-2 pe-2">
+                            <label class=" form-label fw-bold">Code <span class="label-danger">*</span></label>
+                            <input type="text" formControlName="mobile_code" class="form-control px-1"
+                                placeholder="Code">
                         </div>
-                        <div class="col-lg-9 col-md-8 col-sm-9">
-                            <label class="form-label">Mobile Number <span class="label-danger">*</span></label>
-                            <input type="text" formControlName="mobile_number" appNumbersOnly class="form-control" placeholder="Enter Number">
+                        <div class="col-lg-9 col-md-8 col-sm-9 col-9">
+                            <label class=" form-label fw-bold">Mobile Number <span class="label-danger">*</span></label>
+                            <input type="text" formControlName="mobile_number" appNumbersOnly class="form-control"
+                                placeholder="Enter Number">
                         </div>
-                        <div class="text-danger mt-2" *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
                             Mobile number is required.
                         </div>
-                        <div class="text-danger mt-2" *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.minlength">
                             Minimum 10 number are allowed.
                         </div>
-                        <div class="text-danger mt-2" *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
                             Maximum 10 number are allowed.
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-lg-4 col-md-6 my-3">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-3 pb-2">
-                            <label class="form-label">Code </label>
-                            <input type="text" formControlName="land_code" class="form-control px-1" placeholder="Code">
+                        <div class="col-lg-3 col-md-4 col-sm-3 col-3 pb-2 pe-2">
+                            <label class=" form-label fw-bold">Code </label>
+                            <input type="text" formControlName="landline_code" class="form-control px-1" placeholder="Code">
                         </div>
-                        <div class="col-lg-9 col-md-8 col-sm-9">
-                            <label class="form-label">Phone landline</label>
-                            <input type="text" class="form-control" appNumbersOnly formControlName="landline_number" placeholder="Enter landline number">
+                        <div class="col-lg-9 col-md-8 col-sm-9 col-9">
+                            <label class=" form-label fw-bold">Phone landline</label>
+                            <input type="text" class="form-control" appNumbersOnly formControlName="landline_number"
+                                placeholder="Enter landline number">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 my-3">
-                    <label class="form-label"> Display mobile number to all</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="exampleRadios1">
-                        <label class=" form-check-label " for="exampleRadios1 ">
-                            Yes
-                        </label>
+                <div class="col-lg-4 col-md-6 my-3">
+                    <label class=" form-label fw-bold col-12"> Display mobile number to all</label>
+                    <div class="col-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
                     </div>
-                    <div class="form-check ">
-                        <input class="form-check-input " type="radio " id="exampleRadios2 ">
-                        <label class="form-check-label" for="exampleRadios2">
-                            No
-                        </label>
-                    </div>
+
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 my-3">
-                    <label class="form-label">Personal email Id <span class="label-danger">*</span></label>
-                    <input type="email" class="form-control" formControlName="personal_email" placeholder="Enter personal email">
-                    <div class="text-danger mt-2" *ngIf="(f.personal_email.touched || submitted) && f.personal_email.errors?.required">
+                    <label class=" form-label fw-bold">Personal email Id <span class="label-danger">*</span></label>
+                    <input type="email" class="form-control" formControlName="personal_email"
+                        placeholder="Enter personal email">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.personal_email.touched || submitted) && f.personal_email.errors?.required">
                         Personal email is required.
                     </div>
                     <div class="text-danger mt-2" *ngIf="f.personal_email.dirty && f.personal_email.errors?.pattern">
@@ -140,128 +155,161 @@
                     </div>
                 </div>
                 <div class="col-md-6 my-3">
-                    <label class="form-label">Office email Id </label>
-                    <input type="email" class="form-control" formControlName="office_email" placeholder="Enter offical mail">
+                    <label class=" form-label fw-bold">Office email Id </label>
+                    <input type="email" class="form-control" formControlName="office_email"
+                        placeholder="Enter offical mail">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 my-3">
-                    <label class="form-label">Birthdate <span class="label-danger">*</span></label>
-                    <input type="text" placeholder="DD/MM/YYYY" formControlName="birth_date" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                    <div class="text-danger mt-2" *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
+                    <label class=" form-label fw-bold">Birthdate <span class="label-danger">*</span></label>
+                    <input type="text" placeholder="DD/MM/YYYY" formControlName="birth_date" class="form-control"
+                        bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
                         Date of birth is required.
                     </div>
                 </div>
                 <div class="col-md-6 my-3">
-                    <label class="form-label">Anniversary date </label>
-                    <input type="text" placeholder="DD/MM/YYYY" formControlName="anniversary_date" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                    <label class=" form-label fw-bold">Anniversary date </label>
+                    <input type="text" placeholder="DD/MM/YYYY" formControlName="anniversary_date" class="form-control"
+                        bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Current address <span
+                    <label for="exampleFormControlTextarea1" class=" form-label fw-bold">Current address <span
                             class="label-danger">*</span></label>
-                    <textarea class="form-control" formControlName="current_address" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    <div class="text-danger mt-2" *ngIf="(f.current_address.touched || submitted) && f.current_address.errors?.required">
+                    <textarea class="form-control" formControlName="current_address" id="exampleFormControlTextarea1"
+                        rows="2"></textarea>
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.current_address.touched || submitted) && f.current_address.errors?.required">
                         Current address is required.
                     </div>
                 </div>
-                <div class="col-md-6 my-3">
-                    <label class="form-label">Current country </label>
+                <div class="col-md-3 col-lg-6 my-3">
+                    <label class=" form-label fw-bold">Current country </label>
                     <select class="form-select" formControlName="current_country" (change)="changeCountry($event)">
-                        <option value="" selected>Select Country</option>
-                        <option *ngFor="let row of countries" [value]="row.code">{{row.name}}</option>
+                        <option value="" selected disabled>Select Country</option>
+                        <option *ngFor="let row of countries; let i=index;" [value]="row.name">{{row.name}}</option>
                     </select>
+                </div>
+                <div class="col-md-3 col-lg-6 my-3">
+                    <label class="form-label fw-bold">Other current country </label>
+                    <input type="text" class="form-control" formControlName="other_country"
+                    placeholder="Other country">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 my-3">
-                    <label class="form-label">Current region </label>
-                    <select class="form-select" formControlName="current_region">
-                        <option>M</option>
-                        <option>F</option>
+                <div class="col-lg-3 my-3">
+                    <label class=" form-label fw-bold">Current region </label>
+                    <select class="form-select" formControlName="blood_group">
+                        <option value="" selected disabled>Select region</option>
+                        <option *ngFor="let item of region; let i=index;" [value]="item.label">{{ item.label }}</option>
                     </select>
                 </div>
-                <div class="col-lg-4 my-3">
-                    <label class="form-label">Current state <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="current_state" placeholder="Enter current state">
-                    <div class="text-danger mt-2" *ngIf="(f.current_state.touched || submitted) && f.current_state.errors?.required">
+                <div class="col-md-3 my-3">
+                    <label class="form-label fw-bold">Other current region </label>
+                    <input type="text" class="form-control" formControlName="other_region"
+                    placeholder="Other region">
+                </div>
+                <div class="col-lg-3 my-3">
+                    <label class=" form-label fw-bold">Current state <span class="label-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="current_state"
+                        placeholder="Enter current state">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.current_state.touched || submitted) && f.current_state.errors?.required">
                         Current state is required.
                     </div>
                 </div>
-                <div class="col-lg-4 my-3">
-                    <label class="form-label">Current city <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="current_city" placeholder="Enter current city">
-                    <div class="text-danger mt-2" *ngIf="(f.current_city.touched || submitted) && f.current_city.errors?.required">
+                <div class="col-lg-3 my-3">
+                    <label class=" form-label fw-bold">Current city <span class="label-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="current_city"
+                        placeholder="Enter current city">
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.current_city.touched || submitted) && f.current_city.errors?.required">
                         Current city is required.
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Permanent address <span
+                <div class="col-lg-7 my-3">
+                    <label for="exampleFormControlTextarea1" class=" form-label fw-bold">Permanent address <span
                             class="label-danger">*</span></label>
-                    <textarea class="form-control" formControlName="permanent_address" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    <div class="text-danger mt-2" *ngIf="(f.permanent_address.touched || submitted) && f.permanent_address.errors?.required">
+                    <textarea class="form-control" formControlName="permanent_address" id="exampleFormControlTextarea1"
+                        rows="2"></textarea>
+                    <div class="text-danger mt-2"
+                        *ngIf="(f.permanent_address.touched || submitted) && f.permanent_address.errors?.required">
                         Permanent address is required.
                     </div>
                 </div>
-                <div class="col-lg-6 my-3">
-                    <label class="form-label">Permanent country </label>
-                    <select class="form-select" formControlName="permanent_country">
-                        <option>M</option>
-                        <option>F</option>
+                <div class="col-lg-5 my-3">
+                    <label class=" form-label fw-bold">Permanent country </label>
+                    <select class="form-select" formControlName="permanent_country" (change)="changeCountry($event)">
+                        <option value="" selected disabled>Select Country</option>
+                        <option *ngFor="let row of countries; let i=index;" [value]="row.name">{{row.name}}</option>
                     </select>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
-                    <label class="form-label">Permanent state <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="permanent_state" placeholder="Enter permanent state">
+                <div class="col-md-4 my-3">
+                    <label class="form-label fw-bold">Other Permanent country </label>
+                    <input type="text" class="form-control" formControlName="other_permanentCountry"
+                    placeholder="Other country">
                 </div>
-                <div class="col-lg-6 my-3">
-                    <label class="form-label">Permanent city <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="permanent_city" placeholder="Enter permanent city">
+                <div class="col-lg-4 my-3">
+                    <label class=" form-label fw-bold">Permanent state <span class="label-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="permanent_state"
+                        placeholder="Enter permanent state">
+                </div>
+                <div class="col-lg-4 my-3">
+                    <label class=" form-label fw-bold">Permanent city <span class="label-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="permanent_city"
+                        placeholder="Enter permanent city">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">LinkedIn profile id </label>
-                    <input type="text" class="form-control" formControlName="linkedin_id" placeholder="Enter linkdin id">
+                    <label class=" form-label fw-bold">LinkedIn profile id </label>
+                    <input type="text" class="form-control" formControlName="linkedin_id"
+                        placeholder="Enter linkdin id">
                 </div>
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">Twitter id</label>
+                    <label class=" form-label fw-bold">Twitter id</label>
                     <input type="text" class="form-control" formControlName="twitter_id" placeholder="Enter Twitter id">
                 </div>
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">Skype id </label>
+                    <label class=" form-label fw-bold">Skype id </label>
                     <input type="text" class="form-control" formControlName="skype_id" placeholder="Enter Skype id">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">Facebook id </label>
-                    <input type="text" class="form-control" formControlName="facebook_id" placeholder="Enter facebook id">
+                    <label class=" form-label fw-bold">Facebook id </label>
+                    <input type="text" class="form-control" formControlName="facebook_id"
+                        placeholder="Enter facebook id">
                 </div>
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">Instagram id</label>
-                    <input type="text" class="form-control" formControlName="instagram_id" placeholder="Enter instagram id">
+                    <label class=" form-label fw-bold">Instagram id</label>
+                    <input type="text" class="form-control" formControlName="instagram_id"
+                        placeholder="Enter instagram id">
                 </div>
                 <div class="col-lg-4 my-3">
-                    <label class="form-label">Council Member Designation</label>
-                    <input type="text" class="form-control" formControlName="council_member_designation" placeholder="Enter council member Designation">
+                    <label class=" form-label fw-bold">Council Member Designation</label>
+                    <input type="text" class="form-control" formControlName="council_member_designation"
+                        placeholder="Enter council member Designation">
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-3 my-3 text-center">
-                    <button type="button" (click)="edit()" class="btn btn-success">Edit</button>
+                    <button type="button" (click)="edit()" class="btn btn-success" [disabled]="!basicInfoForm.valid">Update</button>
                 </div>
 
             </div>

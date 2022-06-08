@@ -32,10 +32,18 @@ export class MentorshipComponent implements OnInit {
       this.user = res.data;
       this.loading = false;
     },
-    error => {
-      this.notify.notificationService.openFailureSnackBar(error);
+    (error) => {
+      if (error?.status == 401) {
+        this.notify.notificationService.openFailureSnackBar(
+          error?.error?.message
+        );
+        this.router.navigate(['/login']);
+      } else {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
       this.loading = false;
-    });
+    }
+    );
   }
   /**
    * Function to navigate on view detail page

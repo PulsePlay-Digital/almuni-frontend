@@ -1,41 +1,52 @@
 <div class="row">
     <div class="col-lg-12">
-        <form [formGroup]="experienceForm">
+        <form [formGroup]="educationForm">
             <div class="card p-3 my-3">
                 <div class="row">
                     <div class="col-lg-6 my-3">
-                        <label class="form-label">Name of degree: </label>
+                        <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="degree"
                             placeholder="Enter degree name">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
+                            Degree name is required.
+                        </div>
                     </div>
                     <div class="col-lg-6 my-3">
-                        <label class="form-label">Name of institute </label>
+                        <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="instituteName"
                             placeholder="Enter institute name">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
+                            Institute name is required.
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4 my-3">
-                        <label class="form-label">Year of passing</label>
+                        <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
                         <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing" class="form-control"
                             bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
+                            Year of passing is required.
+                        </div>
                     </div>
                     <div class="col-lg-4 my-3">
-                        <label class="form-label">Specialisation </label>
+                        <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span> </label>
                         <select class="form-select" formControlName="specialization">
-                            <option value="" selected disabled>select</option>
-                            <option value="marketing">Marketing</option>
-                            <option value="sales">Sales</option>
-                            <option value="finance">Finance</option>
-                            <option value="hr">HR</option>
-                            <option value="operations">Operations</option>
-                            <option value="systems">Systems</option>
-                            <option value="others">Others</option>
+                            <option value="" selected>Select specialization</option>
+                            <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{ item.label
+                                }}</option>
                         </select>
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
+                            Specialization is required.
+                        </div>
                     </div>
                     <div class="col-lg-4 my-3">
-                        <label class="form-label">Other specialization </label>
+                        <label class="form-label fw-bold">Other specialization </label>
                         <input type="text" class="form-control" formControlName="otherSpecialization"
                             placeholder="Enter other specialization">
                     </div>
@@ -44,46 +55,63 @@
             <ng-container *ngFor="let items of addItems().controls; let i=index" [formGroupName]="i">
                 <div class="card p-3 mb-3">
                     <div class="row">
-                        <div class="col-lg-4 my-3">
-                            <label class="form-label">Company name </label>
-                            <input type="text" class="form-control" formControlName="company_name"
-                                placeholder="Enter company name">
+                        <div class="col-lg-6 my-3">
+                            <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="degree"
+                                placeholder="Enter degree name">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
+                                Degree name is required.
+                            </div>
                         </div>
-                        <div class="col-lg-4 my-3">
-                            <label class="form-label">Job title </label>
-                            <input type="text" class="form-control" formControlName="job_title"
-                                placeholder="Enter job title">
-                        </div>
-                        <div class="col-lg-4 my-3">
-                            <label class="form-label">Start date </label>
-                            <input type="text" placeholder="dd/mm/yyyy" formControlName="start_date"
-                                class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                        <div class="col-lg-6 my-3">
+                            <label class="form-label fw-bold">Name of institute <span
+                                    class="label-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="instituteName"
+                                placeholder="Enter institute name">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
+                                Institute name is required.
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-4 my-3">
-                            <label class="form-label">End date </label>
-                            <input type="text" placeholder="dd/mm/yyyy" formControlName="end_date" class="form-control"
-                                bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                        </div>
-                        <div class="col-lg-2 my-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Default checkbox
-                                </label>
+                            <label class="form-label fw-bold">Year of passing <span
+                                    class="label-danger">*</span></label>
+                            <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing"
+                                class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
+                                Year of passing is required.
                             </div>
                         </div>
-                        <div class="col-lg-6 my-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">High level summary </label>
-                            <textarea class="form-control" formControlName="high_summary"
-                                id="exampleFormControlTextarea1" rows="2"></textarea>
+                        <div class="col-lg-4 my-3">
+                            <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span>
+                            </label>
+                            <select class="form-select" formControlName="specialization">
+                                <option value="" selected>Select specialization</option>
+                                <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{
+                                    item.label }}</option>
+                            </select>
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
+                                Specialization is required.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 my-3">
+                            <label class="form-label fw-bold">Other specialization </label>
+                            <input type="text" class="form-control" formControlName="otherSpecialization"
+                                placeholder="Enter other specialization">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col text-end">
-                            <button type="button" (click)="removeItems(i)" class="btn-close" aria-label="Close"></button>
+                            <button type="button" (click)="removeItems(i)" class="bg-transparent border-0 closeBtn"
+                                aria-label="Close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -91,9 +119,11 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 text-center">
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" (click)="addQuantity()" class="btn btn-success rounded me-2">Add Items</button>
-                        <button type="button" (click)="edit()" class="btn btn-success rounded">Edit</button>
-                      </div>
+                        <button type="button" (click)="addQuantity()" class="btn btn-success rounded me-2">Add
+                            Items</button>
+                        <button type="button" (click)="edit()" [disabled]="!educationForm.valid"
+                            class="btn btn-success rounded">Edit</button>
+                    </div>
                 </div>
             </div>
         </form>

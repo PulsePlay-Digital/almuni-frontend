@@ -3,18 +3,15 @@
         <form [formGroup]="othersForm">
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Family/Relatives associated with SBS </label>
+                    <label class="form-label fw-bold">Family/Relatives associated with SBS </label>
                     <select class="form-select" formControlName="family_relative">
-                        <option value="" selected disabled>Select</option>
-                        <option value="Spouse">Spouse</option>
-                        <option value="Siblings">Siblings</option>
-                        <option value="Other Family Members">Other Family Members</option>
-                        <option value="Both Spouse & Siblings">Both Spouse & Siblings</option>
-                        <option value="Not Applicable">Not Applicable</option>
+                        <option value="" selected>Select family/relative</option>
+                        <option *ngFor="let item of familyRelative; let i=index;" [value]="item.label">{{ item.label
+                            }}</option>
                     </select>
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label"> Add languages <span class="label-danger">*</span></label>
+                    <label class="form-label fw-bold"> Add languages <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="add_language"
                         placeholder="Enter last name">
                         <div class="text-danger mt-2" *ngIf="(f.add_language.touched || submitted) && f.add_language.errors?.required">
@@ -25,20 +22,15 @@
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Hobbies/Passion </label>
+                    <label class="form-label fw-bold">Hobbies/Passion </label>
                     <select class="form-select" formControlName="hobbies_passion">
-                        <option value="" selected disabled>Select</option>
-                        <option value="Adventure Sports">Adventure Sports</option>
-                        <option value="Sailing">Sailing</option>
-                        <option value="Golfing">Golfing</option>
-                        <option value="Marathon">Marathon</option>
-                        <option value="Photography">Photography</option>
-                        <option value="Trecking">Trecking</option>
-                        <option value="Cooking">Cooking</option>
+                        <option value="" selected>Select family/relative</option>
+                        <option *ngFor="let item of hobbies; let i=index;" [value]="item.label">{{ item.label
+                            }}</option>
                     </select>
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Other passion/hobbies </label>
+                    <label class="form-label fw-bold">Other passion/hobbies </label>
                     <input type="text" class="form-control" formControlName="other_hobbies_passion"
                         placeholder="Enter last name">
                 </div>
@@ -46,13 +38,13 @@
 
             <div class="row">
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Security quesitons </label>
+                    <label class="form-label fw-bold">Security quesitons </label>
                     <select class="form-select" formControlName="security_questions">
                         <option value="" selected>Choose professional title</option>
                     </select>
                 </div>
                 <div class="col-lg-6 my-3">
-                    <label class="form-label">Security answer </label>
+                    <label class="form-label fw-bold">Security answer </label>
                     <input type="text" class="form-control" formControlName="security_answer"
                         placeholder="Enter last name">
                 </div>

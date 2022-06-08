@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { Config } from "./../../../../services/config";
 
 @Component({
   selector: "app-emp-business-info",
@@ -8,11 +9,15 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 })
 export class EmpBusinessInfoComponent implements OnInit {
   empBuisnessForm: FormGroup | any;
+  professionalTitle: any;
+  professionCategory: any;
 
-  constructor(public fb: FormBuilder) {}
+  constructor(public fb: FormBuilder, public config: Config) {}
 
   ngOnInit(): void {
     this.buildForm();
+    this.professionalTitle = this.config.professionalTitle;
+    this.professionCategory = this.config.professionCategory;
   }
 
   /**

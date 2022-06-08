@@ -46,7 +46,7 @@ export class ViewProfileComponent implements OnInit {
       this.userId = res?.id;
     });
     this.token = this.authService.getToken();
-    this.gender = this.config.genderDt();
+    this.gender = this.config.gender;
   }
 
   async ngOnInit() {
