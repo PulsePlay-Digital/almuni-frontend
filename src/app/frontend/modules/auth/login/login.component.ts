@@ -71,20 +71,24 @@ export class LoginComponent implements OnInit {
     } else {
       await this.authService.login(this.loginForm.value).subscribe(
         (res: any) => {
-          if (res.access_token) {
-            localStorage.setItem("currentUser", JSON.stringify(res.user));
-            localStorage.setItem("token", JSON.stringify(res.access_token));
+          console.log(res, 'login response')
+          if (res?.access_token || res?.status == 200) {
+            localStorage.setItem("currentUser", JSON.stringify(res?.user));
+            localStorage.setItem("token", JSON.stringify(res?.access_token));
             this.loading = false;
             location.assign("#/home");
             location.reload();
             this.notify.notificationService.openSuccessSnackBar(
               "Login Successfully"
             );
+          } else if (res?.status == 401) {
+            this.notify.notificationService.openFailureSnackBar(res?.message);
+            this.loading = false;
           }
         },
         (error) => {
-          this.loading = false;
           this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
         }
       );
     }

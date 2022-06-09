@@ -26,6 +26,7 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
 import { MatListModule } from "@angular/material/list";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSidenavModule,
     MatListModule,
     FlexLayoutModule,
+    MatExpansionModule,
 
     ReactiveFormsModule,
     FormsModule,

@@ -280,7 +280,7 @@
       }
       .dropdown-menu {
         position: static;
-        width: 90%;
+        width: 100%;
       }
       .trick_top::before {
         display: none !important;
@@ -598,4 +598,15 @@
 
 .menu-spacer {
   flex: 1 1 auto;
+}
+
+
+.text-toogle[aria-expanded=false] .text-expanded {
+  display: none;
+}
+.text-toogle[aria-expanded=true] .text-collapsed {
+  display: none;
+}
+.text-toogle[aria-expanded=false] .text-expanded {
+  font-size: 30px !important;
 }

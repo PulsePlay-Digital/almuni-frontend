@@ -70,7 +70,7 @@
                             <div class="storyDescription p-lg-5 p-md-5 p-sm-5 p-4">
                                 <div class="users mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
                                     <div class="user-logo">
-                                        <img class="userImg" [src]="imgPath + stories?.featured_image" alt="user img" />
+                                        <img class="userImg" [src]="imgPath + stories?.picture" alt="user img" />
                                     </div>
                                     <div class="username">
                                         <h3 class="fw-bold">{{ stories?.alumni_name }}</h3>
@@ -365,11 +365,11 @@
                                     Subscribe now
                                 </button>
                             </div>
-                            <div class="text-danger mt-2"
+                            <div class="invalidText fw-bold alert alert-danger p-2 mt-2"
                                 *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                                 Email is required.
                             </div>
-                            <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                            <div class="invalidText fw-bold alert alert-danger p-2 mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
                                 Email format is incorrect.
                             </div>
                         </form>

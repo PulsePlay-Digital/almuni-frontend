@@ -4,372 +4,404 @@
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "theme/variables.css";
 @font-face {
-    font-family: Montserrat;
-    src: url("./assets/fonts/Montserrat-Regular.ttf");
+  font-family: Montserrat;
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
 
 .invalid-feedback {
-    display: block !important;
+  display: block !important;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    letter-spacing: 1px;
-    font-family: Montserrat !important;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: Montserrat !important;
 }
 
 ::placeholder {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .label-danger {
-    color: red;
+  color: red;
 }
 
 .text-danger {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .form-label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .mat-snack-bar-container {
-    background: #4e73df;
+  background: #4e73df;
 }
 
 .mat-simple-snackbar-action {
-    color: #fff;
+  color: #fff;
 }
 
 .green-snackbar {
-    background: rgb(2, 192, 72);
-    color: #fff;
+  background: rgb(2, 192, 72);
+  color: #fff;
 }
 
 .red-snackbar {
-    background: #dc3545;
-    color: #fff;
+  background: #dc3545;
+  color: #fff;
 }
 
 .alert {
-    padding: 0.4rem;
+  padding: 0.4rem;
 }
 
 .warning-snackbar {
-    background: #ffc107;
-    color: #fff;
+  background: #ffc107;
+  color: #fff;
 }
 
 .main-heading {
-    font-size: var(--font-S-32) !important;
-    line-height: 43.88px !important;
-    color: var(--bg-color);
-    font-family: var(--family) !important;
+  font-size: var(--font-S-32) !important;
+  line-height: 43.88px !important;
+  color: var(--bg-color);
+  font-family: var(--family) !important;
 }
 
 .sub-heading {
-    font-size: 30px;
-    line-height: 43px;
-    color: #fea641;
-    font-family: Montserrat !important;
+  font-size: 30px;
+  line-height: 43px;
+  color: #fea641;
+  font-family: Montserrat !important;
 }
 
 .commonTopPadding {
-    padding-top: 150px;
+  padding-top: 150px;
 }
 
 .bannerSlider {
-    .owl-nav {
-        display: flex !important;
-        justify-content: space-between !important;
-        position: relative;
-        top: -280px !important;
-        .owl-prev {
-            background-color: transparent !important;
-            i {
-                color: #B9B9B9;
-                font-size: 24px;
-                color: #b9b9b9 !important;
-            }
-        }
-        .owl-next {
-            background-color: transparent !important;
-            i {
-                font-size: 24px;
-                color: #b9b9b9 !important;
-            }
-        }
+  .owl-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-self: center !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    .owl-prev {
+      background-color: transparent !important;
+      i {
+        color: #b9b9b9;
+        font-size: 24px;
+        color: #b9b9b9 !important;
+      }
     }
+    .owl-next {
+      background-color: transparent !important;
+      i {
+        font-size: 24px;
+        color: #b9b9b9 !important;
+      }
+    }
+  }
+  .owl-theme {
+    .owl-dots{
+      .owl-dot {
+        span {
+          width: 13px;
+          height: 13px;
+          background: #8f9ff3;
+        }
+      }
+      .owl-dot.active span,.owl-dot:hover span {
+        background: #011898 !important;
+      }
+    }
+  }
 }
-
 
 /* Home Featured Alumni slider*/
 
 .alumniStories {
-    .owl-nav {
-        position: var(--position-absolute);
-        bottom: 28px;
-        left: 43%;
-        .owl-prev,
-        .owl-next {
-            background: var(--bg-Transparent);
-            font-size: var(--font-S-18);
-        }
+  .owl-nav {
+    position: var(--position-absolute);
+    bottom: 28px;
+    left: 43%;
+    .owl-prev,
+    .owl-next {
+      background: var(--bg-Transparent);
+      font-size: var(--font-S-18);
     }
+  }
 }
 
-
 /* Featured alumni Css End */
-
 
 /* Home Gallery css */
 
 .gallary {
-    .owl-nav {
-        .owl-prev {
-            position: var(--position-absolute);
-            left: -203px;
-            background: none;
-            top: 130px;
-            i {
-                color: #8d8d8d;
-                font-size: 24px;
-            }
-        }
-        .owl-next {
-            position: var(--position-absolute);
-            right: -203px;
-            top: 130px;
-            background: none;
-            i {
-                color: #8d8d8d;
-                font-size: 24px;
-            }
-        }
+  .owl-nav {
+    .owl-prev {
+      position: var(--position-absolute);
+      left: -203px;
+      background: none;
+      top: 130px;
+      i {
+        color: #8d8d8d;
+        font-size: 24px;
+      }
     }
-    .owl-theme .owl-dots .owl-dot.active span,
-    .owl-theme .owl-dots .owl-dot:hover span {
-        background: #000;
+    .owl-next {
+      position: var(--position-absolute);
+      right: -203px;
+      top: 130px;
+      background: none;
+      i {
+        color: #8d8d8d;
+        font-size: 24px;
+      }
     }
-    .owl-nav .owl-prev:hover,
-    .owl-nav .owl-next:hover {
-        background: transparent !important;
-    }
-    .owl-nav .owl-prev i:hover,
-    .owl-nav .owl-prev i:focus,
-    .owl-nav .owl-next i:hover,
-    .owl-nav .owl-next i:focus {
-        color: #000;
-    }
-    owl-carousel-o {
-        .owl-carousel {
-            .owl-stage-outer {
-                padding-top: 40px;
-                owl-stage {
-                    .owl-stage {
-                        .owl-item {
-                            .gallaryImg {
-                                img {
-                                    opacity: 0.5;
-                                }
-                                .featuredInfo {
-                                    display: none;
-                                }
-                            }
-                        }
-                        .owl-item.center {
-                            .gallaryImg {
-                                img {
-                                    opacity: 1;
-                                    height: 270px !important;
-                                    margin-top: -30px;
-                                    border-radius: 5px;
-                                }
-                                .featuredInfo {
-                                    display: block;
-                                }
-                            }
-                        }
-                    }
+  }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #000;
+  }
+  .owl-nav .owl-prev:hover,
+  .owl-nav .owl-next:hover {
+    background: transparent !important;
+  }
+  .owl-nav .owl-prev i:hover,
+  .owl-nav .owl-prev i:focus,
+  .owl-nav .owl-next i:hover,
+  .owl-nav .owl-next i:focus {
+    color: #000;
+  }
+  owl-carousel-o {
+    .owl-carousel {
+      .owl-stage-outer {
+        padding-top: 40px;
+        owl-stage {
+          .owl-stage {
+            .owl-item {
+              .gallaryImg {
+                img {
+                  opacity: 0.5;
                 }
+                .featuredInfo {
+                  display: none;
+                }
+              }
             }
+            .owl-item.center {
+              .gallaryImg {
+                img {
+                  opacity: 1;
+                  height: 270px !important;
+                  margin-top: -30px;
+                  border-radius: 5px;
+                }
+                .featuredInfo {
+                  display: block;
+                }
+              }
+            }
+          }
         }
+      }
     }
+  }
 }
-
 
 /* Home Gallery Css End */
 
 // Active Pagination CSS
 .ngx-pagination .current {
-    padding: 0.5rem 1rem !important;
-    cursor: default;
-    color: #2199e8 !important;
-    font-weight: bold;
-    border: 2px solid;
-    background: #fff !important;
-    border-color: #2199e8 !important;
-    border-radius: 50%;
+  padding: 0.5rem 1rem !important;
+  cursor: default;
+  color: #2199e8 !important;
+  font-weight: bold;
+  border: 2px solid;
+  background: #fff !important;
+  border-color: #2199e8 !important;
+  border-radius: 50%;
 }
 
 .xng-breadcrumb-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    left: 3%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 3%;
 }
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
-    .gallary {
-        .owl-nav {
-            display: none !important;
-        }
+  .gallary {
+    .owl-nav {
+      display: none !important;
     }
-    .bannerSlider {
-        .owl-nav {
-            display: none !important;
-        }
+  }
+  .bannerSlider {
+    .owl-nav {
+      display: none !important;
     }
-    .main-heading {
-        font-size: 18px !important;
-        line-height: 30px !important;
-    }
-    .commonTopPadding {
-        padding-top: 134px;
-    }
+  }
+  .main-heading {
+    font-size: 18px !important;
+    line-height: 30px !important;
+  }
+  .commonTopPadding {
+    padding-top: 134px;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 575px) {
-    .main-heading {
-        font-size: 22px !important;
+  .main-heading {
+    font-size: 22px !important;
+  }
+  .bannerSlider {
+    .owl-nav {
+      display: none !important;
     }
-    .bannerSlider {
-        .owl-nav {
-            display: none !important;
-        }
+  }
+  .alumniStories {
+    .owl-nav {
+      position: var(--position-absolute);
+      top: 38px;
+      right: 15%;
+      left: unset;
     }
-    .alumniStories {
-        .owl-nav {
-            position: var(--position-absolute);
-            top: 38px;
-            right: 15%;
-            left: unset;
-        }
+  }
+  .gallary {
+    .owl-nav {
+      .owl-prev {
+        left: -53px;
+      }
+      .owl-next {
+        right: -53px;
+      }
     }
-    .gallary {
-        .owl-nav {
-            .owl-prev {
-                left: -53px;
-            }
-            .owl-next {
-                right: -53px;
-            }
-        }
-    }
-    .commonTopPadding {
-        padding-top: 124px;
-    }
+  }
+  .commonTopPadding {
+    padding-top: 124px;
+  }
 }
 
 @media screen and (max-width: 991px) and (min-width: 767px) {
-    .gallary {
-        owl-carousel-o {
-            .owl-carousel {
-                .owl-stage-outer {
-                    padding-top: 40px;
-                    owl-stage {
-                        .owl-stage {
-                            .owl-item {
-                                .gallaryImg {
-                                    img {
-                                        opacity: 0.5;
-                                    }
-                                }
-                            }
-                            .owl-item.center {
-                                .gallaryImg {
-                                    img {
-                                        opacity: 1;
-                                        height: 320px !important;
-                                        margin-top: -29px;
-                                    }
-                                }
-                            }
-                        }
-                    }
+  .gallary {
+    owl-carousel-o {
+      .owl-carousel {
+        .owl-stage-outer {
+          padding-top: 40px;
+          owl-stage {
+            .owl-stage {
+              .owl-item {
+                .gallaryImg {
+                  img {
+                    opacity: 0.5;
+                  }
                 }
+              }
+              .owl-item.center {
+                .gallaryImg {
+                  img {
+                    opacity: 1;
+                    height: 320px !important;
+                    margin-top: -29px;
+                  }
+                }
+              }
             }
+          }
         }
-        .owl-nav {
-            .owl-prev {
-                left: -55px;
-            }
-            .owl-next {
-                right: -55px;
-            }
-        }
+      }
     }
-    .alumniStories {
-        .owl-nav {
-            position: var(--position-absolute);
-            top: 38px;
-            right: 14%;
-            left: unset;
-        }
+    .owl-nav {
+      .owl-prev {
+        left: -55px;
+      }
+      .owl-next {
+        right: -55px;
+      }
     }
-    .commonTopPadding {
-        padding-top: 145px;
+  }
+  .alumniStories {
+    .owl-nav {
+      position: var(--position-absolute);
+      top: 38px;
+      right: 14%;
+      left: unset;
     }
+  }
+  .commonTopPadding {
+    padding-top: 145px;
+  }
+  .bannerSlider {
+    .owl-nav {
+      top: 40%;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
-    .alumniStories {
-        .owl-nav {
-            left: 42%;
-        }
+  .alumniStories {
+    .owl-nav {
+      left: 42%;
     }
-    .gallary {
-        .owl-nav {
-            .owl-prev {
-                left: -180px;
-            }
-            .owl-next {
-                right: -180px;
-            }
-        }
+  }
+  .gallary {
+    .owl-nav {
+      .owl-prev {
+        left: -180px;
+      }
+      .owl-next {
+        right: -180px;
+      }
     }
+  }
 }
-
-@media screen and (max-width: 1600px) and (min-width: 1200px) {
-    .commonTopPadding {
-        padding-top: 150px;
+@media screen and (max-width: 1100px) and (min-width: 991px) {
+    .bannerSlider {
+      .owl-nav {
+        top: 42%;
+      }
     }
+  }
+@media screen and (max-width: 1200px) and (min-width: 1100px) {
+  .bannerSlider {
+    .owl-nav {
+      top: 45%;
+    }
+  }
+}
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+  .commonTopPadding {
+    padding-top: 150px;
+  }
 }
 
 @media screen and (max-width: 1750px) and (min-width: 1600px) {
-    .commonTopPadding {
-        padding-top: 160px;
-    }
+  .commonTopPadding {
+    padding-top: 160px;
+  }
 }
 
 @media screen and (max-width: 1900px) and (min-width: 1750px) {
-    .commonTopPadding {
-        padding-top: 166px;
-    }
+  .commonTopPadding {
+    padding-top: 166px;
+  }
 }
 
 @media screen and (max-width: 2100px) and (min-width: 1900px) {
-    .commonTopPadding {
-        padding-top: 174px;
-    }
+  .commonTopPadding {
+    padding-top: 174px;
+  }
 }

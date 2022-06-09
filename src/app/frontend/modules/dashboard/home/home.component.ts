@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
     loop: true,
     items: 1,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 700,
     autoplay: true,
     autoplayTimeout: 3000,
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
     ],
-    nav: true,
+    nav: true
   };
 
   customOptions: OwlOptions = {

@@ -5,7 +5,7 @@
             <mat-tab-group mat-align-tabs="start">
                 <mat-tab id="past-event" label="Past Events">
                     <div class="row m-0">
-                        <div class="col-9 my-3">
+                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
@@ -54,14 +54,14 @@
                                         </div>
                                     </div>
                                 </ng-container>
-                                <ng-container *ngIf="pastEvent?.length > 0">
+                                <ng-container *ngIf="pastEvent?.length == 0">
                                     <div class="col-12 py-3 text-center fw-bold">
                                         <p class="fs-5">No data found!</p>
                                     </div>
                                 </ng-container>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 ">
+                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
                                 <form>
                                     <input type="text" class="form-control shadow" placeholder="Search">
@@ -131,7 +131,7 @@
                 </mat-tab>
                 <mat-tab id="upcoming-event" label="Upcomming Events">
                     <div class="row m-0">
-                        <div class="col-9 my-3">
+                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
@@ -179,7 +179,7 @@
                                 </div>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 ">
+                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
                                 <form>
                                     <input type="text" class="form-control shadow" placeholder="Search">

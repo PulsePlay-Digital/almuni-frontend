@@ -26,6 +26,13 @@
     .news-discription {
       text-align: justify;
       overflow-wrap: break-word;
+      table {
+        tbody{
+          td, th, thead, tr {
+            display: block !important;
+          }
+        }
+      }
     }
   }
 }
