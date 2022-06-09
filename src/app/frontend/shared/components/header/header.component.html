@@ -7,57 +7,17 @@
         <span>Responsive Navigation</span>
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md>
-            <div class="top-header">
-                <div class="open-add align-self-center">
-                    <a mat-button href="https://bit.ly/sbup_mba8" target="_blank" class="btn admission-open">Admissions Open</a>
-                </div>
-                <div class="open-add mailBtn align-self-center">
-                    <a mat-button class="text-decoration-none" target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-envelope-o"
-                                aria-hidden="true"></i></span> alumni@sbup.edu.in
-                    </a>
-                </div>
-                <div class="open-add mailBtn align-self-center">
-                    <a mat-button class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
-                                aria-hidden="true"></i></span>www.sbup.edu.in</a>
-                </div>
-                <ng-container *ngIf="!currentUser">
-                    <div class="open-add align-self-center">
-                        <a mat-button class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
-                            <span class="header-icon pe-3"><i class="fa fa-user-o"
-                                    aria-hidden="true"></i></span> Login / Register</a>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="currentUser">
-                    <div class="align-self-center">
-                        <div class="dropdown">
-                            <a mat-button class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="./assets/Ellipse-19.png" class="userImg" alt="userImg"> <span class="header-icon"><i class="fa fa-angle-down ps-2"
-                                        aria-hidden="true"></i></span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View Profile</a></li>
-                                <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
-                                <li><a class="dropdown-item" routerLink="reset-password">Reset
-                                        Password</a>
-                                </li>
-                                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </ng-container>
-            </div>
-          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-          <!-- <a href="#" mat-button>Menu Item 1</a>
+          <a href="#" mat-button>Menu Item 1</a>
           <a href="#" mat-button>Menu Item 2</a>
           <a href="#" mat-button>Menu Item 3</a>
           <a href="#" mat-button>Menu Item 4</a>
           <a href="#" mat-button>Menu Item 5</a>
-          <a href="#" mat-button>Menu Item 6</a> -->
+          <a href="#" mat-button>Menu Item 6</a>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
   
-    <!-- <mat-sidenav-container fxFlexFill>
+    <mat-sidenav-container fxFlexFill>
       <mat-sidenav #sidenav>
         <mat-nav-list>
           <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
@@ -70,10 +30,10 @@
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
-    </mat-sidenav-container> -->
+    </mat-sidenav-container>
   </div>
 
-<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2" [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
+<!-- <div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2" [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
     <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
         <div class="row">
             <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
