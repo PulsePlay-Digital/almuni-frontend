@@ -1,61 +1,36 @@
-.edit-profile {
-  form {
-    .form-bg {
-      background-color: var(--form-bg);
-    }
-    .form-control {
-      font-size: var(--font-s-14);
-    }
-    .editIcon {
-      cursor: var(--cursor-pointer);
-      background: var(--btn-background);
-      text-transform: var(--text-upper);
-      font-size: var(--font-S-14);
-      color: var(--bs-white);
-      border: 2px solid var(--btn-background);
-    }
-    .editIcon:hover {
-      border: 2px solid var(--btn-background);
-      color: var(--bs-background);
-      background-color: var(--bs-white);
-    }
-  }
-  .choose_file {
-    position: var(--position-relative);
-    input[type="file"] {
-      height: var(--height-100);
-      width: 146px;
-      min-height: 146px;
-      position: var(--position-absolute);
-      cursor: var(--cursor-pointer);
-      z-index: var(--z-index-9999);
-      border-radius: var(--border-radius-50);
-      opacity: var(--opacity-none);
-    }
-    img {
-      height: 146px;
-      width: 146px;
-      min-height: 146px;
-      border: 3px solid var(--btn-background);
-      border-radius: var(--border-radius-50);
-      background: var(--bs-white);
-      object-fit: var(--object-cover);
-    }
-  }
+.choose_file {
+    position: relative;
+    color: rgb(95, 111, 201);
+    border: 1px solid #5f6fc9;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
 }
 
-@media (min-width: 300px) and (max-width: 574px) {
-  .edit-profile {
-    .choose_file {
-      input[type="file"] {
-        width: 120px;
-        min-height: 120px;
-      }
-      img {
-        height: 120px;
-        width: 120px;
-        min-height: 120px;
-      }
+.choose_file button {
+    width: 100%;
+    font-size: var(--font-S-14);
+}
+
+.choose_file input[type="file"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    .nav-item{
+        .nav-link {
+            font-size: var(--font-S-14);
+        }
     }
+}
+
+.tab_active {
+    color: orange;
   }
-} 

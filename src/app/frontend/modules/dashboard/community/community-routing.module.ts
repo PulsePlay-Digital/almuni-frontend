@@ -17,7 +17,7 @@ const routes: Routes = [
     data: {breadcrumb: {alias: 'Community'} },
     children: [
       { 
-        path: 'home', 
+        path: 'community-home', 
         component: CommunityPageComponent
       },
       { 

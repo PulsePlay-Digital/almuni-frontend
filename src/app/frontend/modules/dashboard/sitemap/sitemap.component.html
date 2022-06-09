@@ -1,148 +1,146 @@
-<div class="sitemap">
-    <div class="container  p-4">
-        <h4 class="main-heading text-uppercase text-center fs-2 fw-bolder">SITE MAP</h4>
-        <!-- ul sbs-sitemap start-->
-        <ul class="sbs-sitemap">
-            <!-- start row site-map -->
-            <div class="row py-4 site-map">
-                <!-- start home  -->
-                <div class="col-lg-3 col-md-6">
-                    <div id="rich-text">
-                        <h4><a routerLink="/#/" target="blank" title="Home" class="text-decoration-none">Home Page</a>
-                        </h4>
+<div class="commonTopPadding">
+    <app-users-banner [heading]="heading"></app-users-banner>
+    <div class="sitemap">
+        <div class="container p-xl-4 p-lg-4 p-md-4 p-sm-3 ">
+            <!-- ul sbs-sitemap start-->
+            <ul class="sbs-sitemap text-lg-start text-md-start text-sm-start text-center ps-xl-4 ps-lg-5 ps-md-5 ps-sm-4 p-0">
+                <!-- start row site-map -->
+                <div class="row py-4 site-map">
+                    <!-- start home  -->
+                    <div class="col-lg-3 col-md-6">
+                        <div id="rich-text">
+                            <h4><a routerLink="/#/" target="blank" title="Home" class="text-decoration-none">Home
+                                    Page</a>
+                            </h4>
+                        </div>
                     </div>
-                </div>
-                <!-- end home -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- know us start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/about-us/welcome-society" target="blank" title="Connect"
-                                class="text-decoration-none">Know Us</a></h4>
+                    <!-- end home -->
+                    <div class="col-lg-3 col-md-6">
+                        <!-- know us start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/about-us/welcome-society" target="blank" title="Connect" class="text-decoration-none">Know Us</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/about-us/founder">- Our
+                                    Founder</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/about-us/welcome-society">-
+                                    
+                                    SBUP</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/about-us/leadership-team" routerLinkActive="active-link">-
+                                        Leadership Team</a></li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/about-us/founder">- Our
-                                Founder</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/about-us/welcome-society">- Welcome to
-                                Si Balaji</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Common Purpose start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/common-purpose-culture/connect-vision" target="blank" title="Connect"
-                                class="text-decoration-none">Common Purpose</a>
-                        </h4>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Common Purpose start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/common-purpose-culture/connect-vision" target="blank" title="Connect" class="text-decoration-none">Common Purpose</a>
+                            </h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0">
+                                <a (click)="target('founderMsg')" class="text-black text-decoration-none" routerLink="/common-purpose-culture/connect-vision">
+                                        - The
+                                        Founder's Message </a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a (click)="target('connectVision')" class="text-black text-decoration-none" routerLink="/common-purpose-culture/connect-vision">
+                                        - SBUP Alumni Connect Vision </a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a (click)="target('strategy')" class="text-black text-decoration-none" routerLink="/common-purpose-culture/connect-vision">
+                                        - SBUP Alumni Connect Strategy Framework </a></li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/about-us/founder">- The Founder Message </a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Community start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/community/alumni-directory" target="blank" title="Connect"
-                                class="text-decoration-none">Community</a></h4>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Community start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/community/alumni-directory" target="blank" title="Connect" class="text-decoration-none">Community</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/community/alumni-directory">-
+                                    Alumni Directory</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/community/professional-club">-
+                                    Professional Club</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/community/industry-club">-
+                                    Industry Club</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="#">- Business Venture</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="#">- Start-up Corner</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/#">- Ask for General Info</a>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/community/alumni-directory">- Alumni Directory</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/community/professional-club">- Professional Club</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/community/industry-club">- Industry Club</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="#">- Business Venture</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="#">- Start-up Corner</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/#">- Ask for General Info</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Connect start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/connect/at-glance" target="blank" title="Connect"
-                                class="text-decoration-none">Connect</a></h4>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Connect start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/connect/at-glance" target="blank" title="Connect" class="text-decoration-none">Connect</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/connect/at-glance">- Event at a
+                                    Glance</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/connect/at-glance">
+                                        - Past Event</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/connect/at-glance">
+                                        - Upcoming Event</a></li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/connect/at-glance">- Event at a Glance</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Community start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/collaborate-contribute/mentorship" target="blank" title="Connect"
-                                class="text-decoration-none">Collaborate</a></h4>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Community start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/collaborate-contribute/mentorship" target="blank" title="Connect" class="text-decoration-none">Collaborate</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/collaborate-contribute/mentorship">- Mentorship</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/collaborate-contribute/careers">- Carreers and Jobs</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="collaborate-contribute/special-projects">- Special Projects</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="collaborate-contribute/engage-with-society">- Engage with Sri Balaji
+                                    University</a></li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/collaborate-contribute/mentorship">- Mentorship</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/collaborate-contribute/careers">- Carreers and Jobs</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="collaborate-contribute/special-projects">- Special Projects</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="collaborate-contribute/engage-with-society">- Engage with Sri Balaji
-                                University</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Celebrate start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/celebrate/featured-alumni" target="blank" title="Connect"
-                                class="text-decoration-none">Celebrate</a></h4>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Celebrate start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/celebrate/featured-alumni" target="blank" title="Connect" class="text-decoration-none">Celebrate</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/celebrate/featured-alumni">-
+                                    Featured Alumni</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/celebrate/alumni-journey">-
+                                    Celebrate Journey, <br>
+                                    <span class="ps-2"> Achievements & Passion</span>
+                                </a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/celebrate/gallery">-
+                                    Gallery</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/celebrate/magazine">- Corporate
+                                    Citizen Magzine
+                                </a> </li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/celebrate/news-update">- News
+                                    and Updates</a></li>
+                        </ul>
                     </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/celebrate/featured-alumni">- Featured Alumni</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/celebrate/alumni-journey">- Celebrate Journey, <br>
-                                <span class="ps-2"> Achievements & Passion</span>
-                            </a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/celebrate/gallery">- Gallery</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/celebrate/magazine">- Corporate Citizen Magzine
-                            </a> </li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/celebrate/news-update">- News and Updates</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- Celebrate start -->
-                    <div id="rich-text">
-                        <h4><a routerLink="/contact/key-contact" target="blank" title="Connect"
-                                class="text-decoration-none">Contact</a></h4>
-                    </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/contact/key-contact">- Key Contacts</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                            routerLink="/contact/social-links">- SBUP Alumni Club -Social<br>
-                                <span class="ps-2"> Channels</span>
-                            </a></li>
-                    </ul>
-                    <div id="rich-text">
-                        <h4><a routerLink="/community/alumni-directory" target="blank" title="Connect"
-                                class="text-decoration-none"><i class="fa fa-bars" aria-hidden="true"></i> (Other Links)</a></h4>
-                    </div>
-                    <ul class="list-group border-0 founder-messages">
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/#">- Connect</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/#">- Apply for Transcript</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/#">- Get Featured</a></li>
-                        <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none"
-                                routerLink="/#">- News</a></li>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Celebrate start -->
+                        <div id="rich-text">
+                            <h4><a routerLink="/contact/key-contact" target="blank" title="Connect" class="text-decoration-none">Contact</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/contact/key-contact">- Key
+                                    Contacts</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/contact/social-links">- SBUP
+                                    Alumni Club -Social<br>
+                                    <span class="ps-2"> Channels</span>
+                                </a></li>
+                        </ul>
+                        <div id="rich-text">
+                            <h4><a routerLink="/community/alumni-directory" target="blank" title="Connect" class="text-decoration-none">Other
+                                    Links</a></h4>
+                        </div>
+                        <ul class="list-group border-0 founder-messages">
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/#">- Connect</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/#">- Apply for Transcript</a>
+                            </li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/#">- Get Featured</a></li>
+                            <li class="list-group-item border-0 text-black p-0"><a class="text-black text-decoration-none" routerLink="/#">- News</a></li>
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </ul>
+            </ul>
+        </div>
     </div>
 </div>

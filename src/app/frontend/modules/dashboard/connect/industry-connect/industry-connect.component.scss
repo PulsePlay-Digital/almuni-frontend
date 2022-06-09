@@ -1,0 +1,34 @@
+.card {
+  .eventDate {
+    min-height: 180px;
+    max-height: 180px;
+    .eventPic {
+      min-height: 180px;
+      max-height: 180px;
+    }
+    .eventDummyPic {
+      min-height: 180px;
+      max-height: 180px;
+      border: 1px solid #ededed;
+    }
+  }
+  .description {
+    display: -webkit-box;
+    max-width: 100%;
+    height: 80px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.project-btn {
+  background: var(--btn-background);
+  border: 1px solid var(--btn-background);
+  color: var(--bs-white);
+  border-radius: var(--border-radius-2);
+  width: var(--width);
+}
+.project-btn:hover {
+  background: var(--bs-white);
+  color: var(--bs-background);
+}

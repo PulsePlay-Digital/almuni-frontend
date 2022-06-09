@@ -12,12 +12,12 @@
             border: 1px solid #ededed;
         }
     }
-    .description {
-        display: -webkit-box;
-        max-width: 100%;
-        height: 80px;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+}
+.description {
+    display: -webkit-box;
+    max-width: 100%;
+    height: 60px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./askfor-general.component.scss']
 })
 export class AskforGeneralComponent implements OnInit {
-
+  heading:string= "ASK FOR GENERAL INFO OR SUPPORT";
   constructor() { }
 
   ngOnInit(): void {

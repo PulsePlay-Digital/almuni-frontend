@@ -23,14 +23,17 @@ export class FeaturedAlumniComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllFeaturedAlumni();
   }
 
+  /**
+   * Function to get all featured alumni
+   */
   async getAllFeaturedAlumni() {
-    let  action: string = 'all-users';
+    this.loading = true;
+    let  action: string = 'all-featured';
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.user = res.data;
+      this.user = res?.data;
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

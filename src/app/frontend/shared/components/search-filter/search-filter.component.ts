@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { CountryService } from "src/app/frontend/services/country.service";
 import { UserService } from "src/app/frontend/services/user.service";
 import { Config } from "./../../../services/config";
 import { DataService } from "./../../../services/data.service";
@@ -15,12 +16,26 @@ export class SearchFilterComponent implements OnInit {
   getBatch: any;
   getFormData: any;
   userRole: any;
+  gender: any;
+  group: any;
+  countries: any;
+  profCategory: any;
+  primaryArea: any;
+  industry: any;
+  region: any;
 
   constructor(public fb: FormBuilder, 
     public dataService: DataService,
     private userService: UserService,
+    private countryService: CountryService,
     public config: Config) {
-      this.userRole = this.config.role();
+      this.userRole = this.config.role;
+      this.gender = this.config.gender;
+      this.group = this.config.bloodGroup;
+      this.profCategory = this.config.professionCategory;
+      this.primaryArea = this.config.functionArea;
+      this.industry = this.config.industryFocus;
+      this.region = this.config.region;
      }
   
 
@@ -29,6 +44,7 @@ export class SearchFilterComponent implements OnInit {
     this.onChangeValue();
     this.getAllInstitutes();
     this.getAllBatches();
+    this.loadCountries();
     this.filteruserData();
   }
 
@@ -48,6 +64,9 @@ export class SearchFilterComponent implements OnInit {
       mobile_number: [""],
       institute_id: [""],
       batchYear_id: [""],
+      gender: [''],
+      bloodGroup: [''],
+      professionalCategory:[''],
       is_verified: [""],
       current_company: [""],
       reg_date_from: [""],
@@ -77,6 +96,16 @@ export class SearchFilterComponent implements OnInit {
     );
   }
 
+  public loadCountries() {
+    this.countryService.getCountries().subscribe(data => {
+      this.countries = data;
+    });
+  }
+
+  public changeCountry(event: any) {
+    console.log(event.target.value);
+  }
+  
   /**
    * Function to get all batch year
    */

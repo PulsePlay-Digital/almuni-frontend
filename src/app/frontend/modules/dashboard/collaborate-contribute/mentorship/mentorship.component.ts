@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { environment } from './../../../../../../environments/environment';
 import { DataService } from './../../../../services/data.service';
 
@@ -16,7 +17,7 @@ export class MentorshipComponent implements OnInit {
   imgPath = environment.imgUrl;
   heading: string = "MENTORSHIP";
 
-  constructor(public dataService: DataService, public router: Router) {}
+  constructor(public dataService: DataService, public router: Router,public notify: TokenInterceptor) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -30,7 +31,19 @@ export class MentorshipComponent implements OnInit {
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res.data;
       this.loading = false;
-    });
+    },
+    (error) => {
+      if (error?.status == 401) {
+        this.notify.notificationService.openFailureSnackBar(
+          error?.error?.message
+        );
+        this.router.navigate(['/login']);
+      } else {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+      this.loading = false;
+    }
+    );
   }
   /**
    * Function to navigate on view detail page

@@ -26,31 +26,40 @@ export class FeaturedAlumniDetailsComponent implements OnInit {
     public notify: TokenInterceptor
   ) {
     this.arouter.queryParams.subscribe((res: any) => {
+      console.log(res);
       this.alumniId = res?.id;
-      this.descriptionHeading = res.heading;
-      this.type = res.type;
+      this.descriptionHeading = res?.heading;
+      this.type = res?.type;
     });
   }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getSingleAlumni();
   }
 
+  /**
+   * Function to get alumni by Id
+   */
   async getSingleAlumni() {
+    this.loading = true;
     let action: string = "single-featured";
     await this.dataService
       .getDataById(action, parseInt(this.alumniId))
-      .subscribe((res: any) => {
-        this.alumni_details = res?.data;
-        this.loading = false;
-      },
-      error => {
-        this.notify.notificationService.openFailureSnackBar(error);
-        this.loading = false;
-      });
+      .subscribe(
+        (res: any) => {
+          this.alumni_details = res?.data;
+          this.loading = false;
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        }
+      );
   }
 
+  /**
+   * Function to navigate on previous page
+   */
   back() {
     this.config.navigateBack();
   }

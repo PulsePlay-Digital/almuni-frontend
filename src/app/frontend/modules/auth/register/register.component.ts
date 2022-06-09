@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     private config: Config,
     public router: Router
   ) {
-    this.userRole = this.config.role();
+    this.userRole = this.config.role;
   }
 
   ngOnInit(): void {

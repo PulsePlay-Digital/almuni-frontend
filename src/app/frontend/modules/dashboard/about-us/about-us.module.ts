@@ -7,18 +7,22 @@ import { FounderComponent } from "./founder/founder.component";
 import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-social-society.component";
 import { BreadcrumbModule } from "xng-breadcrumb";
 import { MatIconModule } from "@angular/material/icon";
+import { ManagementTeamComponent } from "./management-team/management-team.component";
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
   declarations: [
     AboutUsComponent,
     FounderComponent,
     BalajiSocialSocietyComponent,
+    ManagementTeamComponent
   ],
   imports: [
     CommonModule,
     AboutUsRoutingModule,
     SharedModule,
     BreadcrumbModule,
-    MatIconModule
+    MatIconModule,
+    NgxPaginationModule
   ],
 })
 export class AboutUsModule {}

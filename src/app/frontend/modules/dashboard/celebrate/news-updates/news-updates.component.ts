@@ -32,8 +32,7 @@ export class NewsUpdatesComponent implements OnInit {
     let action: string = 'all-news';
     this.loading = true;
     await this.dataService.getData(action).pipe(takeUntil(this.destroy$)).subscribe((res: any) => {
-      this.allNewsUpdates = res.data;
-      console.log(this.allNewsUpdates)
+      this.allNewsUpdates = res?.data;
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

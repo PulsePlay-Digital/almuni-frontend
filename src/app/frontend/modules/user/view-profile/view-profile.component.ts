@@ -46,7 +46,7 @@ export class ViewProfileComponent implements OnInit {
       this.userId = res?.id;
     });
     this.token = this.authService.getToken();
-    this.gender = this.config.genderDt();
+    this.gender = this.config.gender;
   }
 
   async ngOnInit() {
@@ -147,9 +147,8 @@ export class ViewProfileComponent implements OnInit {
   }
 
   editUser(id: any) {
-    console.log(id)
     this.router.navigate(["/edit-profile"], {
-      queryParams: { id: id },
+      queryParams: { id: id }
     });
   }
 }

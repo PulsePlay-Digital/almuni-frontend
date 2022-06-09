@@ -1,0 +1,19 @@
+.card {
+    background: var(--card-bg);
+    .card-body {
+      height: 132px;
+    }
+    .alumni-pic {
+      min-height: 320px;
+      max-height: 320px;
+      background-color: var(--bs-white);
+      img {
+        min-height: 320px;
+        max-height: 320px;
+      }
+    }
+    .noImg {
+      min-height: 320px;
+      max-height: 320px;
+    }
+}

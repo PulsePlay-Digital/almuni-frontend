@@ -14,7 +14,35 @@ import { NotificationService } from './services/notification.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DataService } from './services/data.service';
+import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 
+
+const cookieConfig: NgcCookieConsentConfig = {
+  cookie: {
+    domain: "localhost"
+  },
+  position: "bottom",
+  theme: "classic",
+  palette: {
+    popup: {
+      background: "#000",
+      text: "#fff"
+    },
+    button: {
+      background: "#f1d600",
+      text: "#000000"
+    }
+  },
+  type: "info",
+  content: {
+    message: "This website uses cookies to ensure you get the best experience on our website.",
+    dismiss: "Got it!",
+    deny: "Refuse cookies",
+    link: "Learn more",
+    href: "https://cookiesandyou.com",
+    policy: "Cookie Policy"
+  }
+};
 
 @NgModule({
   declarations: [
@@ -29,9 +57,10 @@ import { DataService } from './services/data.service';
     SharedModule,
     UserModule,
     MatSnackBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgcCookieConsentModule.forRoot(cookieConfig)
   ],
-  providers: [
+  providers: [ 
     AuthService,
     NotificationService,
     TokenInterceptor,

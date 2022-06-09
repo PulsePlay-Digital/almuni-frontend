@@ -1,0 +1,131 @@
+<div class="row">
+    <div class="col-lg-12">
+        <form [formGroup]="educationForm">
+            <div class="card p-3 my-3">
+                <div class="row">
+                    <div class="col-lg-6 my-3">
+                        <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
+                        <input type="text" class="form-control" formControlName="degree"
+                            placeholder="Enter degree name">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
+                            Degree name is required.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 my-3">
+                        <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
+                        <input type="text" class="form-control" formControlName="instituteName"
+                            placeholder="Enter institute name">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
+                            Institute name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 my-3">
+                        <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
+                        <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing" class="form-control"
+                            bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
+                            Year of passing is required.
+                        </div>
+                    </div>
+                    <div class="col-lg-4 my-3">
+                        <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span> </label>
+                        <select class="form-select" formControlName="specialization">
+                            <option value="" selected>Select specialization</option>
+                            <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{ item.label
+                                }}</option>
+                        </select>
+                        <div class="text-danger mt-2"
+                            *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
+                            Specialization is required.
+                        </div>
+                    </div>
+                    <div class="col-lg-4 my-3">
+                        <label class="form-label fw-bold">Other specialization </label>
+                        <input type="text" class="form-control" formControlName="otherSpecialization"
+                            placeholder="Enter other specialization">
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngFor="let items of addItems().controls; let i=index" [formGroupName]="i">
+                <div class="card p-3 mb-3">
+                    <div class="row">
+                        <div class="col-lg-6 my-3">
+                            <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="degree"
+                                placeholder="Enter degree name">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
+                                Degree name is required.
+                            </div>
+                        </div>
+                        <div class="col-lg-6 my-3">
+                            <label class="form-label fw-bold">Name of institute <span
+                                    class="label-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="instituteName"
+                                placeholder="Enter institute name">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
+                                Institute name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 my-3">
+                            <label class="form-label fw-bold">Year of passing <span
+                                    class="label-danger">*</span></label>
+                            <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing"
+                                class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
+                                Year of passing is required.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 my-3">
+                            <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span>
+                            </label>
+                            <select class="form-select" formControlName="specialization">
+                                <option value="" selected>Select specialization</option>
+                                <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{
+                                    item.label }}</option>
+                            </select>
+                            <div class="text-danger mt-2"
+                                *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
+                                Specialization is required.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 my-3">
+                            <label class="form-label fw-bold">Other specialization </label>
+                            <input type="text" class="form-control" formControlName="otherSpecialization"
+                                placeholder="Enter other specialization">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <button type="button" (click)="removeItems(i)" class="bg-transparent border-0 closeBtn"
+                                aria-label="Close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 text-center">
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" (click)="addQuantity()" class="btn btn-success rounded me-2">Add
+                            Items</button>
+                        <button type="button" (click)="edit()" [disabled]="!educationForm.valid"
+                            class="btn btn-success rounded">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

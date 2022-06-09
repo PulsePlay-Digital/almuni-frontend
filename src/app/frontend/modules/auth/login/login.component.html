@@ -28,28 +28,28 @@
                         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ps-md-0 pe-md-0 py-xl-5 py-lg-5 py-md-4 login-form ">
                             <div class="row pt-5 justify-content-center m-0">
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
-                                    <input type="email" class="form-control rounded-0 fs-6 text-black p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" formControlName="email" placeholder="Enter Email Id">
-                                    <div class="invalidText fw-bold mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                    <input type="email" class="form-control rounded-0 fs-6 text-black p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2" formControlName="email" placeholder="Enter Email Id">
+                                    <div class="invalidText fw-bold mt-2 alert alert-danger p-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                                         Email is required.
                                     </div>
-                                    <div class="invalidText fw-bold mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                                    <div class="invalidText fw-bold mt-2 alert alert-danger p-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
                                         Email format is incorrect.
                                     </div>
                                 </div>
                                 <div class="mb-3 col-md-5 col-sm-6 col-lg-5 col-xl-5">
-                                    <input type="password" class="form-control rounded-0 fs-6 text-black p-xl-3 p-lg-3 p-md-3 p-sm-3 p-2" id="exampleInputPassword1" placeholder="Password" formControlName="password">
-                                    <div class="invalidText fw-bold mt-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
+                                    <input type="password" class="form-control rounded-0 fs-6 text-black p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2" id="exampleInputPassword1" placeholder="Password" formControlName="password">
+                                    <div class="invalidText fw-bold mt-2 alert alert-danger p-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
                                         Password is required.
                                     </div>
-                                    <div class="invalidText fw-bold mt-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
+                                    <div class="invalidText fw-bold mt-2 alert alert-danger p-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
                                         Password must be at least 5 characters long.
                                     </div>
-                                    <div class="invalidText fw-bold mt-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
+                                    <div class="invalidText fw-bold mt-2 alert alert-danger p-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
                                         Password can be max 10 characters long.
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center pt-4 pb-xl-5 pb-lg-4 pb-md-4 pb-sm-4 pb-4 m-0">
+                            <div class="row justify-content-center pt-4 pb-xl-5 pb-lg-4 pb-md-4 pb-sm-4 pb-4 m-0 mt-xl-3 mt-md-3 mt-sm-3">
                                 <div class="mb-3 col-md-4 col-sm-5 col-lg-4">
                                     <app-loader *ngIf="loading"></app-loader>
                                     <button type="submit" *ngIf="!loading" class="btn rounded-0 fw-bolder shadow  text-white btn-register" (click)="login()" [disabled]="!loginForm.valid">Log In</button>

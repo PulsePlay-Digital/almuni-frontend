@@ -6,24 +6,31 @@
         </div>
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
-            <div class="col-lg-4 my-2" *ngFor="let item of allAdmission">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.city }}</h5>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p><b>City</b> : &nbsp; {{ item?.city }} </p>
-                            </div>
-                            <div class="col-lg-12">
-                                <p><b>Location</b> : &nbsp; {{ item?.location }} </p>
-                            </div>
-                            <div class="col-lg-12">
-                                <p><b>Date & Time</b> : &nbsp; {{ item?.dateTime }} </p>
+            <ng-container *ngIf="allAdmission?.length > 0">
+                <div class="col-lg-4 my-2" *ngFor="let item of allAdmission">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.city }}</h5>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><b>City</b> : &nbsp; {{ item?.city }} </p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p><b>Location</b> : &nbsp; {{ item?.location }} </p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p><b>Date & Time</b> : &nbsp; {{ item?.dateTime }} </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </ng-container>
+            <ng-container *ngIf="allAdmission?.length == 0">
+                <div class="col-12 py-3 text-center fw-bold">
+                    <p class="fs-5">No data found!</p>
+                </div>
+            </ng-container>
         </ng-container>
     </div>
 </div>

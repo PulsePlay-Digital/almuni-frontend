@@ -14,10 +14,11 @@ import { Router } from "@angular/router";
 export class AtGlanceComponent implements OnInit {
   imgPath : any;
   loading: boolean = false;
-
+  p: number = 1;
   pastEvent: any;
   upcomingEvent: any;
   heading: string = "Events at a Glance";
+  currentUser: any;
 
   constructor(
     public dataService: DataService,
@@ -25,6 +26,11 @@ export class AtGlanceComponent implements OnInit {
     public router: Router
   ) {
     this.imgPath = environment.imgUrl;
+    if (localStorage.hasOwnProperty("currentUser")) {
+      this.currentUser = JSON.parse(
+        localStorage.getItem("currentUser") || "{}"
+      );
+    }
   }
 
   ngOnInit(): void {

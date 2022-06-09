@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { FounderComponent } from "./founder/founder.component";
 import { BalajiSocialSocietyComponent } from "./balaji-social-society/balaji-social-society.component";
 import { AboutUsComponent } from "./about-us.component";
+import { ManagementTeamComponent } from "./management-team/management-team.component";
 
 const routes: Routes = [
   {
@@ -14,6 +15,8 @@ const routes: Routes = [
       
       { path: 'balaji-social-society', component: BalajiSocialSocietyComponent,
       data: { breadcrumb: {alias: 'Balaji Social Society'} },  },
+      { path: 'leadership-team', component: ManagementTeamComponent,
+      data: { breadcrumb: {alias: 'Management Team'} },  },
       {
         path: '',
         redirectTo: 'founder-chancellor',

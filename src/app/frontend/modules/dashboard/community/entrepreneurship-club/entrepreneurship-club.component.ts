@@ -29,12 +29,13 @@ export class EntrepreneurshipClubComponent implements OnInit {
   async getAllEntrepreneurship() {
     let action: string = 'all-entrepreneur';
     await this.dataService.getData(action).subscribe((res: any) => {
-      if (res.status == 200) {
+      if (res?.status == 200) {
         this.entrepreneur = res?.data;
         this.loading = false;
       }
     },(error) => {
       this.notify.notificationService.openFailureSnackBar(error);
+      this.loading = false;
     });
   }
 

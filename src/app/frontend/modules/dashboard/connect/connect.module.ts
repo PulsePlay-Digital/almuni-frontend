@@ -11,13 +11,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ViewEventDetailComponent } from './view-event-detail/view-event-detail.component';
+import { HostFormComponent } from './host-form/host-form.component';
+import { EventsAtBalajiComponent } from './events-at-balaji/events-at-balaji.component';
+import { IndustryConnectComponent } from './industry-connect/industry-connect.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     ConnectComponent,
     AtGlanceComponent,
-    ViewEventDetailComponent
+    ViewEventDetailComponent,
+    HostFormComponent,
+    EventsAtBalajiComponent,
+    IndustryConnectComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +35,8 @@ import { ViewEventDetailComponent } from './view-event-detail/view-event-detail.
     MatTabsModule,
     MatCardModule,
     CKEditorModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxPaginationModule
   ]
 })
 export class ConnectModule { }
