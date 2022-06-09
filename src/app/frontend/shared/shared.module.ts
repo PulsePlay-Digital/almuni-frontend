@@ -23,6 +23,10 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
 import { ViewMapComponent } from './components/view-map/view-map.component';
 import { AgmCoreModule } from "@agm/core";
 import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
+import { MatListModule } from "@angular/material/list";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +54,10 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    FlexLayoutModule,
+
     ReactiveFormsModule,
     FormsModule,
     AgmCoreModule.forRoot({

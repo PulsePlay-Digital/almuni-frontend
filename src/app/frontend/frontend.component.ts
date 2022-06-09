@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frontend.component.scss']
 })
 export class FrontendComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
     
   }
-
 }

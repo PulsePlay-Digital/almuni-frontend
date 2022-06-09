@@ -1,9 +1,8 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, EventEmitter, Inject, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { DataService } from "./../../../services/data.service";
 import { AuthService } from "./../../../services/auth.service";
 import { fromEvent } from "rxjs";
-import { throttleTime } from "rxjs/operators";
 import { DOCUMENT } from "@angular/common";
 
 @Component({
