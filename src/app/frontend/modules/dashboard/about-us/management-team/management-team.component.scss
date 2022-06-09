@@ -1,5 +1,8 @@
 .card {
     background: var(--card-bg);
+    .card-header {
+      height: 80px;
+    }
     .card-body {
       height: 132px;
     }

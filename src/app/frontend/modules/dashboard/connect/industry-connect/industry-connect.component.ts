@@ -49,8 +49,8 @@ export class IndustryConnectComponent implements OnInit {
     this.industryForm = this.fb.group({
       author: [""],
       title: ["", Validators.required],
-      venue: ["", Validators.required],
-      description: ["", Validators.required],
+      venue: [""],
+      description: [""],
       date: ["", Validators.required],
       time: [""],
       eventHost: [""],

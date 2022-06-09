@@ -5,17 +5,17 @@
      <form class="example-form" [formGroup]="speakEventForm" >
         <div class="row">
             <div class="col-sm-6 col-md-6 my-2">
-                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name :</label>
+                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name </label>
                     <select class="form-select" aria-label="Default select example" formControlName="eventName">
-                    <option value="">Select Event</option>
+                    <option value="" selected>Select Event</option>
                     <option value="Local Meet & Greet">Yes</option>
                     <option value="Annual Reunion">No</option>
                     </select>
             </div>
             <div class="col-sm-6 col-md-6 my-2">
-                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category :</label>
+                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category </label>
                 <select class="form-select" aria-label="Default select example" formControlName="eventCategory" (change)="selectCategory($event)">
-                    <option value="">Select Category</option>
+                    <option value="" selected>Select Category</option>
                     <option value="workshop">Conduct a Workshop</option>
                     <option value="faculty">Be a visiting faculty</option>
                     <option value="speaker">Speaker</option>
@@ -25,39 +25,45 @@
         <ng-container *ngIf="workShopField">
             <div class="row">
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop :</label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop <span class="text-danger">*</span></label>
                     <input type="text" formControlName="topicWorkshop" class="form-control" id="formGroupExampleInput"
                     placeholder="Enter workshop topic here" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.topicWorkshop.touched || submitted) && f.topicWorkshop.errors?.required">
+                        Topic is required.
+                      </div>
                 </div>
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category :</label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category  <span class="text-danger">*</span> </label>
                     <input type="text" formControlName="academicCategory" class="form-control" id="formGroupExampleInput"
                     placeholder="Enter academic category" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.academicCategory.touched || submitted) && f.academicCategory.errors?.required">
+                        Academic category is required.
+                      </div>
                 </div>
             </div>
         </ng-container>
         <ng-container *ngIf="speakerFacultyFields">
             <div class="row">
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From :</label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" formControlName="dateFrom" id="formGroupExampleInput" />
-                    <div class="text-danger my-2" *ngIf="(f.dateFrom.touched || submitted) && f.dateFrom.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.dateFrom.touched || submitted) && f.dateFrom.errors?.required">
                         From date is required.
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To :</label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" formControlName="dateTo" id="formGroupExampleInput"/>
-                    <div class="text-danger my-2" *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
                         To date is required.
                     </div>
                 </div>
             </div>
            <div class="row">
                 <div class="col-sm-12 col-md-12 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event :</label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event <span class="text-danger">*</span></label>
                     <ckeditor formControlName="description"></ckeditor>
-                    <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                         Description is required.
                     </div>
                 </div>

@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <form [formGroup]="mentorForm">
             <div class="row">
-                <div class="col-lg-8 my-3">
+                <div class="col-lg-9 my-3">
                     <label class="form-label fw-bold">Willing to provide Mentorship to current batch students or Junior Alumni
                         <span class="label-danger">*</span>
                     </label>
@@ -11,14 +11,14 @@
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <div class="text-danger mt-2" *ngIf="(f.willing_provide.touched || submitted) && f.willing_provide.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.willing_provide.touched || submitted) && f.willing_provide.errors?.required">
                         Professional title is required.
                     </div>
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-3 my-3">
                     <label class="form-label fw-bold">Add skills <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="add_skills" placeholder="Enter last name">
-                    <div class="text-danger mt-2" *ngIf="(f.add_skills.touched || submitted) && f.add_skills.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.add_skills.touched || submitted) && f.add_skills.errors?.required">
                         Please add skills.
                     </div>
                 </div>

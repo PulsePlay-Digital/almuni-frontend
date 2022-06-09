@@ -44,18 +44,18 @@ export class HostFormComponent implements OnInit {
       author: [""],
       title: ["", Validators.required],
       venue: ["", Validators.required],
-      category: this.eventCategory,
+      category: [this.eventCategory, Validators.required],
       description: ["", Validators.required],
       date: ["", Validators.required],
       time: [""],
-      type: [""],
+      type: ["", Validators.required],
       eventHost: [""],
       eventAttend: [""],
-      cost: ["", Validators.required],
+      cost: [""],
       eventPageLink: [""],
       is_active: [""],
-      contactNumber: [""],
-      eventImage: ["", Validators.required],
+      contactNumber: ["", Validators.required],
+      eventImage: ["", Validators.required]
     });
   }
 

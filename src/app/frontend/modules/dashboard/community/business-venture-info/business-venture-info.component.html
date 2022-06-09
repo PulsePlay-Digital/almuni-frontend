@@ -10,7 +10,7 @@
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Name of the Company : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="company" id="inputName" placeholder="Enter company name" />
-                    <div class="text-danger my-2" *ngIf="(f.company.touched || submitted) && f.company.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.company.touched || submitted) && f.company.errors?.required">
                         Company is required.
                     </div>
                 </div>
@@ -25,21 +25,21 @@
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Alumni Batch : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="batch" id="inputName" placeholder="Enter Alumni Batch" />
-                    <div class="text-danger my-2" *ngIf="(f.batch.touched || submitted) && f.batch.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.batch.touched || submitted) && f.batch.errors?.required">
                         Batch is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Phone contact info : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="contact" id="inputName" placeholder="Enter Phone Contact info" />
-                    <div class="text-danger my-2" *ngIf="(f.contact.touched || submitted) && f.contact.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.contact.touched || submitted) && f.contact.errors?.required">
                         Contact is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Email contact info : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="email" id="inputName" placeholder="Enter Contact info" />
-                    <div class="text-danger my-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                         Email is required.
                     </div>
                     <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
@@ -68,14 +68,14 @@
                         <option>B2C</option>
                         <option>B2B2C</option>
                     </select>
-                    <div class="text-danger my-2" *ngIf="(f.customer.touched || submitted) && f.customer.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.customer.touched || submitted) && f.customer.errors?.required">
                         Primary customer is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Head Office Address : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="address" id="inputName" placeholder="Enter Head office address" />
-                    <div class="text-danger my-2" *ngIf="(f.address.touched || submitted) && f.address.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.address.touched || submitted) && f.address.errors?.required">
                         Address is required.
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Website : &nbsp;<span class="text-danger">*</span></label>
                     <input type="name" class="form-control" formControlName="website" id="inputName" placeholder="Enter Website" />
-                    <div class="text-danger my-2" *ngIf="(f.website.touched || submitted) && f.website.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.website.touched || submitted) && f.website.errors?.required">
                         Website link is required.
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                     <label for="inputEmail4" class="mb-1 fw-bold">Brief Products/Services Offered : &nbsp;<span
                             class="text-danger">*</span></label>
                     <ckeditor formControlName="description"></ckeditor>
-                    <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                         Description is required.
                     </div>
                 </div>

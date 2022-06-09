@@ -278,7 +278,7 @@
                     <label class=" form-label fw-bold">Permanent city <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="permanent_city"
                         placeholder="Enter permanent city">
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                         *ngIf="(f.permanent_city.touched || submitted) && f.permanent_city.errors?.required">
                         Permanent city is required.
                     </div>

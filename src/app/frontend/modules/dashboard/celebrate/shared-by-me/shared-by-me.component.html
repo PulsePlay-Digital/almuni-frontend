@@ -5,17 +5,17 @@
   <form class="example-form" [formGroup]="form">
     <div class="mb-3 row">
       <div class="col-sm-12 col-md-12">
-        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Write brief description :</label>
+        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Write brief description <span class="text-danger">*</span></label>
         <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
-        <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
           Description is required.
         </div>
       </div>
       <div class="col-sm-12 col-md-6 align-self-center">
-        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Upload picture :</label>
+        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Upload picture <span class="text-danger">*</span></label>
         <input type="file" class="form-control" formControlName="photo" id="formGroupLink"
           (change)="onUploadImage($event)" accept="image/*" />
-        <div class="text-danger my-2" *ngIf="(f.photo.touched || submitted) && f.photo.errors?.required">
+        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.photo.touched || submitted) && f.photo.errors?.required">
           Image is required.
         </div>
       </div>

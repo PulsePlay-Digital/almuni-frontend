@@ -7,7 +7,7 @@
                         <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="degree"
                             placeholder="Enter degree name">
-                        <div class="text-danger mt-2"
+                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                             *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
                             Degree name is required.
                         </div>
@@ -16,7 +16,7 @@
                         <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="instituteName"
                             placeholder="Enter institute name">
-                        <div class="text-danger mt-2"
+                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                             *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
                             Institute name is required.
                         </div>
@@ -28,7 +28,7 @@
                         <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
                         <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing" class="form-control"
                             bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                        <div class="text-danger mt-2"
+                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                             *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
                             Year of passing is required.
                         </div>
@@ -40,7 +40,7 @@
                             <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{ item.label
                                 }}</option>
                         </select>
-                        <div class="text-danger mt-2"
+                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                             *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
                             Specialization is required.
                         </div>
@@ -59,7 +59,7 @@
                             <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
                             <input type="text" class="form-control" formControlName="degree"
                                 placeholder="Enter degree name">
-                            <div class="text-danger mt-2"
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                                 *ngIf="(f.degree.touched || submitted) && f.degree.errors?.required">
                                 Degree name is required.
                             </div>
@@ -69,7 +69,7 @@
                                     class="label-danger">*</span></label>
                             <input type="text" class="form-control" formControlName="instituteName"
                                 placeholder="Enter institute name">
-                            <div class="text-danger mt-2"
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                                 *ngIf="(f.instituteName.touched || submitted) && f.instituteName.errors?.required">
                                 Institute name is required.
                             </div>
@@ -82,7 +82,7 @@
                                     class="label-danger">*</span></label>
                             <input type="text" placeholder="dd/mm/yyyy" formControlName="yearOfPassing"
                                 class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                            <div class="text-danger mt-2"
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                                 *ngIf="(f.yearOfPassing.touched || submitted) && f.yearOfPassing.errors?.required">
                                 Year of passing is required.
                             </div>
@@ -95,7 +95,7 @@
                                 <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{
                                     item.label }}</option>
                             </select>
-                            <div class="text-danger mt-2"
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                                 *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
                                 Specialization is required.
                             </div>

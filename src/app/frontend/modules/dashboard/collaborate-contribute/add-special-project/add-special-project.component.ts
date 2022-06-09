@@ -45,9 +45,9 @@ export class AddSpecialProjectComponent implements OnInit {
       timeDonation: [false],
       contactName: ['', Validators.required],
       code: [''],
-      mobileNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
-      link: ['', Validators.required],
+      mobileNumber: [''],
+      email: ['', [Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
+      link: [''],
       description: ['', Validators.required],
       is_active:['active']
     });

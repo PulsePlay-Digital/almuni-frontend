@@ -14,7 +14,7 @@
                     <label class="form-label fw-bold"> Add languages <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="add_language"
                         placeholder="Enter last name">
-                        <div class="text-danger mt-2" *ngIf="(f.add_language.touched || submitted) && f.add_language.errors?.required">
+                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.add_language.touched || submitted) && f.add_language.errors?.required">
                             Language is required.
                         </div>
                 </div>

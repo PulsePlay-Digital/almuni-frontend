@@ -30,7 +30,7 @@ export class SharedByMeComponent implements OnInit {
   buildForm() {
     this.form = this.fb.group({
       id: [''],
-      title: [''],
+      title: ['', Validators.required],
       description: ['', Validators.required],
       type: this.type,
       institute: [''],
