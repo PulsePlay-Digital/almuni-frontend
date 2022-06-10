@@ -13,6 +13,7 @@ import { CKEditorModule } from "ng2-ckeditor";
 import { BreadcrumbModule } from "xng-breadcrumb";
 import { BreadcrumbService } from "xng-breadcrumb";
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from "ngx-cookieconsent";
+import { SharedModule } from "./frontend/shared/shared.module";
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
     domain: 'localhost'// it is recommended to set your domain, for cookies to work properly
@@ -66,6 +67,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     ReactiveFormsModule,
     FrontendModule,
     CKEditorModule,
+    SharedModule,
     BreadcrumbModule,
     [NgcCookieConsentModule.forRoot(cookieConfig)],
   ],

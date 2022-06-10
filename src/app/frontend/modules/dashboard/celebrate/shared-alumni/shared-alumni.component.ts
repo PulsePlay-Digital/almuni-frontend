@@ -17,7 +17,8 @@ export class SharedAlumniComponent implements OnInit {
   loading: boolean = false;
   imgPath = environment.imgUrl;
   sharedData: any = [];
-
+  nameSearched: any;
+  
   constructor(
     public dataService: DataService,
     public router: Router

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://swadeshdigital.com/sbsAlumni/public/api",
-  imgUrl: "https://swadeshdigital.com/sbsAlumni/public/"
+  apiUrl: "https://swadeshdigital.com/sbsAlumni/api",
+  imgUrl: "https://swadeshdigital.com/sbsAlumni/"
   // apiUrl: "https://swadeshdigital.com/sbupAlumniAdmin",
   // imgUrl: "https://swadeshdigital.com/sbupAlumniAdmin/"
 };

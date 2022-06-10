@@ -37,17 +37,6 @@
                 </div>
             </div>
         </div>
-        <div class="search-filter p-4">
-            <form class="">
-                <div class="row">
-                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-                        <div class="form-outline">
-                            <input type="name" class="form-control" id="inputName" placeholder="Alumni name" />
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
     <app-shared-by-me *ngIf="isPosted" [title]="title" [type]="type"></app-shared-by-me>
     <app-shared-alumni *ngIf="isShared" [heading]="storyHeading" [alumniData]="alumniData"></app-shared-alumni>

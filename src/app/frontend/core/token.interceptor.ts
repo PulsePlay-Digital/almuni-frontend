@@ -33,6 +33,15 @@ export class TokenInterceptor implements HttpInterceptor {
           return event;
         }), catchError((error) => {
           console.log(error)
+          if (error?.status == 401) {
+            return throwError(error?.error?.message);
+          } else if (error?.status == 404) {
+            console.log(error);
+          } else if (error?.status == 0) {
+            console.log(error);
+          } else if (error?.status == 500) {
+            return throwError(error?.error?.message);
+          }
           return throwError(error);
         }));
   }

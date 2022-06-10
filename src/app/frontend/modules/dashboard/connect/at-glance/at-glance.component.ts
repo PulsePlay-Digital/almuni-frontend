@@ -5,6 +5,7 @@ import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 import { environment } from "./../../../../../../environments/environment";
 import { Router } from "@angular/router";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-at-glance",
@@ -12,6 +13,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./at-glance.component.scss"],
 })
 export class AtGlanceComponent implements OnInit {
+  filterForm: FormGroup | any;
   imgPath : any;
   loading: boolean = false;
   p: number = 1;
@@ -19,11 +21,16 @@ export class AtGlanceComponent implements OnInit {
   upcomingEvent: any;
   heading: string = "Events at a Glance";
   currentUser: any;
+  clubsTotal: any;
+  valueChange: any;
+  nameSearched: any;
+  valChange: any;
 
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor,
-    public router: Router
+    public router: Router,
+    private fb : FormBuilder
   ) {
     this.imgPath = environment.imgUrl;
     if (localStorage.hasOwnProperty("currentUser")) {
@@ -35,8 +42,16 @@ export class AtGlanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    this.buildFilterForm();
     this.getAllPastEvents();
     this.getAllUpcomingEvents();
+  }
+
+  buildFilterForm() {
+    this.filterForm = this.fb.group({
+      title: [''],
+      type: ['']
+    });
   }
   /**
    * Get all past event Data
@@ -59,6 +74,7 @@ export class AtGlanceComponent implements OnInit {
       .subscribe((res: any) => {
           if (res) {
             this.pastEvent = res;
+            this.clubsTotal = res?.length;
             this.loading = false;
           }
         },
@@ -97,5 +113,23 @@ export class AtGlanceComponent implements OnInit {
           this.loading = false;
         }
       );
+  }
+
+  onTypeChange(event:any) {
+    console.log(event)
+    this.valueChange = event;
+    if (this.valueChange) {
+      this.eventFillter();
+    }
+  }
+
+  async eventFillter() {
+    let action: any = {
+      action: "filter-event",
+      type: this.valueChange 
+    }
+    await this.dataService.getData(action).subscribe((result: any) => {
+      console.log(result);
+    })
   }
 }

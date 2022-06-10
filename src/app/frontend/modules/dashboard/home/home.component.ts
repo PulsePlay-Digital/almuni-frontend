@@ -271,19 +271,19 @@ export class HomeComponent implements OnInit {
    * @returns 
    */
   async subscribe() {
-    this.loading = true;
     this.submitted = true;
     let action: string = "newsletter";
     if (this.form.invalid) {
       return;
     } else {
-      console.log(this.form.value);
       await this.dataService.postData(action, this.form.value).subscribe(
         (res: any) => {
-          console.log(res);
           if (res?.status == 200) {
             this.notify.notificationService.openSuccessSnackBar(res?.message);
-            this.loading = false;
+            this.form.reset();
+          } else if(res?.status == 201) {
+            this.notify.notificationService.openFailureSnackBar(res?.message);
+            this.form.reset();
           }
         },
         (error) => {

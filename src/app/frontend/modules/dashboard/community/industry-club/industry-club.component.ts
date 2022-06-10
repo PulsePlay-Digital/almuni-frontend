@@ -48,13 +48,14 @@ export class IndustryClubComponent implements OnInit {
     })
   }
 
-  joinUnjoin() {
+  async joinUnjoin() {
     this.club = !this.club;
+    await this.dataService.postData()
   }
 
   joinClub() {
     this.router.navigate(["/community/start-club"], {
-      queryParams: { type: "industry" },
+      queryParams: { type: "industry" }
     });
   }
 }

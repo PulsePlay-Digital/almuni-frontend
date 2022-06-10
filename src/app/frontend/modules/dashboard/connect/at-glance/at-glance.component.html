@@ -5,12 +5,12 @@
             <mat-tab-group mat-align-tabs="start">
                 <mat-tab id="past-event" label="Past Events">
                     <div class="row m-0">
-                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
+                        <div
+                            class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
-                                    <div class="row"
-                                        *ngFor="let item of pastEvent | paginate: { itemsPerPage: 6, currentPage: p }">
+                                    <div class="row" *ngFor="let item of pastEvent | filterText: nameSearched">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                             <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
                                                 <div class="eventDate">
@@ -47,12 +47,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2"
-                                        *ngIf="pastEvent?.length > 0">
-                                        <div class="col text-center">
-                                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-                                        </div>
-                                    </div>
                                 </ng-container>
                                 <ng-container *ngIf="pastEvent?.length == 0">
                                     <div class="col-12 py-3 text-center fw-bold">
@@ -61,69 +55,100 @@
                                 </ng-container>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
+                        <div
+                            class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
-                                <form>
-                                    <input type="text" class="form-control shadow" placeholder="Search">
-                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-d-4 my-sm-3 my-3 ">Event
+                                <input type="text" class="form-control shadow" [(ngModel)]="nameSearched"
+                                    placeholder="Search">
+                                <form [formGroup]="filterForm">
+                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event
                                         Type
                                     </h6>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        <input id="all" value="null" name="type" class="form-check-input"
+                                        type="radio" formControlName="type"
+                                        (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="all">
                                             All
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault2">
-                                        <label class="form-check-label" for="flexRadioDefault2">
+                                        <input id="reunion" value="reunion" name="type" class="form-check-input"
+                                            type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="reunion">
                                             Annual Alumni Re-Union (0)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault3">
-                                        <label class="form-check-label" for="flexRadioDefault3">
+                                        <input id="drivenEvent" value="Alumni Driven Events" name="type" class="form-check-input"
+                                            type="radio" formControlName="type" 
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="drivenEvent">
                                             Alumni Driven Events (4)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault4">
-                                        <label class="form-check-label" for="flexRadioDefault4">
+                                        <input id="eventAtBalaji" value="eventAtBalaji" name="type" class="form-check-input"
+                                        type="radio" formControlName="type" 
+                                        (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="eventAtBalaji">
                                             Events At/By Sri Balaji <br> Society (24)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault5">
-                                        <label class="form-check-label" for="flexRadioDefault5">
+                                        <input id="industryProfessional" value="industryProfessional" name="type" class="form-check-input"
+                                        type="radio" formControlName="type" 
+                                        (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="industryProfessional">
                                             Industry/Professional <br> Events (0)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault6">
-                                        <label class="form-check-label" for="flexRadioDefault6">
+                                        <input id="annualReunion" value="Annual Reunion" name="type" class="form-check-input"
+                                        type="radio" formControlName="type" 
+                                        (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="annualReunion">
                                             Annual Reunion(5)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault7">
-                                        <label class="form-check-label" for="flexRadioDefault7">
+                                        <input id="localMeet" value="Local Meet & Greet" name="type" class="form-check-input"
+                                        type="radio" formControlName="type" 
+                                        (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="localMeet">
                                             Local Meet & Greet (2)
                                         </label>
                                     </div>
                                 </form>
+                                <!-- 
+                                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                    <div class="form-group row mx-1">
+                                      <div class="form-check">
+                                        <input id="username" class="form-check-input" type="radio" value="username" name="type"
+                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
+                                        <label for="username" class="form-check-label">
+                                          I want to change my User Name
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input id="password" class="form-check-input" type="radio" value="password" name="type"
+                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
+                                        <label for="password" class="form-check-label">I want to change my Password</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input id="both" class="form-check-input" type="radio" value="both" name="type"
+                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
+                                        <label for="both" class="form-check-label">I want to change both my User Name & Password </label>
+                                      </div>
+                                    </div> -->
+
                             </div>
                             <div class="sbs-alumni-events">
                                 <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI
                                     EVENTS SO FAR
                                 </h6>
-                                <p>Events Across Alumni<br> Clubs : 28</p>
+                                <p>Events Across Alumni Clubs : {{clubsTotal}}</p>
                                 <p>Event Participants : 17</p>
                             </div>
                         </div>
@@ -131,7 +156,8 @@
                 </mat-tab>
                 <mat-tab id="upcoming-event" label="Upcomming Events">
                     <div class="row m-0">
-                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
+                        <div
+                            class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
@@ -179,7 +205,8 @@
                                 </div>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
+                        <div
+                            class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
                                 <form>
                                     <input type="text" class="form-control shadow" placeholder="Search">

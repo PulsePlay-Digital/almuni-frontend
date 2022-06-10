@@ -42,7 +42,9 @@
       color: var(--btn-background);
     }
   }
-  
+  .search-filter {
+    background: var(--form-bg);
+}
   @media (min-width: 400px) and (max-width: 575px) {
     .card {
       .alumni-pic {
