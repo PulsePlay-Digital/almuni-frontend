@@ -36,6 +36,7 @@
     "ngx-bootstrap": "^7.1.0",
     "ngx-captcha": "^11.0.0",
     "ngx-cookieconsent": "^2.2.3",
+    "ngx-insta": "0.0.2",
     "ngx-owl-carousel-o": "^6.0.2",
     "ngx-pagination": "^5.1.1",
     "rxjs": "~6.6.0",

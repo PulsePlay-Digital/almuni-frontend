@@ -1,19 +1,23 @@
 <div class="commonTopPadding">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xl-12">
-        <div class="g-map">
-          <agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType' [mapDraggable]='mapDraggable'
-            [showDefaultInfoWindow]="true" [zoom]="1">
-            <agm-marker *ngFor="let marker of coordinates" [latitude]="marker.lat" [longitude]="marker.longi">
-              <agm-info-window #infoWindow>
-                {{ marker.label }}
-              </agm-info-window>
-            </agm-marker>
-          </agm-map>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3 px-3">
+                    <h4 class="main-heading text-uppercase fw-bolder mb-0">Alumni Around The World</h4>
+                    <button class="btn btn-sm back-button w-auto" (click)="back()">Back</button>
+                </div>
+            </div>
+            <div class="col-xl-12" style="display: block;height: 650px;">
+                <div class="g-map">
+                    <agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType' [mapDraggable]='mapDraggable' [showDefaultInfoWindow]="true" [zoom]="1">
+                        <agm-marker *ngFor="let marker of coordinates" [latitude]="marker.lat" [longitude]="marker.long">
+                            <agm-info-window #infoWindow>
+                                {{ marker.city }}
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-  </div>
 </div>

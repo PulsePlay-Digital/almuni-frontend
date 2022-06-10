@@ -63,7 +63,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ReactiveFormsModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDOOCCaDPxmU5SLeaq1X7R_LMFGnay-XOg'
+      apiKey: 'AIzaSyDnWjRnYN8Fm3rOkg0bts63Kt7KLFajbaM'
     })
   ],
   exports: [

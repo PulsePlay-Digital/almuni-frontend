@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   currentUser: any;
   form: FormGroup | any;
   submitted: boolean | undefined;
+  locationCounts: | any;
 
   homebannerOptions: OwlOptions = {
     loop: true,
@@ -142,6 +143,7 @@ export class HomeComponent implements OnInit {
     this.getAllGallery();
     this.getAllNews();
     this.getAllEvents();
+    this.getLocations();
   }
 
   buildForm() {
@@ -292,5 +294,17 @@ export class HomeComponent implements OnInit {
         }
       );
     }
+  }
+
+  async getLocations() {
+    let action: string = 'count-region';
+    await this.dataService.getLocaltionData(action).pipe(
+      map((res: any) => {
+          return res;
+      })
+    ).subscribe((result: any) => {
+      console.log(result)
+      this.locationCounts = result
+    })
   }
 }

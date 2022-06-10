@@ -1,7 +1,22 @@
 agm-map {
-  height: 100%;
+    height: 100%;
 }
+
 .g-map {
-  height: 100%;
-  padding: 20px;
+    height: 100%;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: var(--btn-background);
+    border-radius: var(--border-radius-2);
+    line-height: var(--line-height-1-8);
+    font-size: var(--font-S-16);
+    color: var(--bs-white);
+}
+
+.back-button:hover {
+    background-color: var(--bs-white);
+    border: 1px solid var(--btn-background);
+    color: var(--btn-background);
 }
