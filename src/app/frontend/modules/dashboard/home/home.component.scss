@@ -121,12 +121,14 @@
     height: var(--height-100);
     .text-description {
       cursor: pointer;
-      height: 288px;
-      text-overflow: ellipsis;
       width: 100%;
-      display: block;
       white-space: normal;
+      -webkit-line-clamp: 14;
+      text-overflow: ellipsis;
       overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
     }
   }
 
@@ -630,4 +632,3 @@
     background-position: top;
   }
 }
-
