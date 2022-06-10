@@ -71,10 +71,14 @@ export class DataService {
   }
 
   updateData(action: any, data: any) {
-    if (action?.action === 'update-user' || action?.action == 'profile-pic'){
-     return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
-   }
+    if (action?.action === 'update-user' || action?.action == 'profile-pic') {
+      return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
+    }
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+  }
+
+  getLocaltionData(action: any) {
+    return this.http.get(`${this.url}/${action}`);
   }
 
   public scrollSec() {

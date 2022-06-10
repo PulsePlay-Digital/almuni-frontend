@@ -65,7 +65,7 @@ import { FilterTextPipe } from "./pipes/filter-text.pipe";
     ReactiveFormsModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDOOCCaDPxmU5SLeaq1X7R_LMFGnay-XOg'
+      apiKey: 'AIzaSyDnWjRnYN8Fm3rOkg0bts63Kt7KLFajbaM'
     })
   ],
   exports: [
