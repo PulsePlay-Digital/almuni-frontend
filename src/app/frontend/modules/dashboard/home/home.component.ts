@@ -189,6 +189,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
@@ -213,6 +214,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
@@ -228,6 +230,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
