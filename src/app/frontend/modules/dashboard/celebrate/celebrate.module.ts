@@ -20,6 +20,7 @@ import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/
 import { NewsDetailComponent } from './news-updates/news-detail/news-detail.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { FilterTextPipe } from 'src/app/frontend/shared/pipes/filter-text.pipe';
 
 
 @NgModule({

@@ -52,7 +52,7 @@ export class SearchFilterComponent implements OnInit {
     this.searchForm = this.fb.group({
       first_name: [""],
       last_name:[""],
-      bloodGroop:[""],
+      blood_group:[""],
       city:[""],
       country:[""],
       state: [''],

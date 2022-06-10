@@ -1,9 +1,23 @@
 <div class="row mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-3 mb-0">
+    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
+        <div class="search-filter p-4">
+            <form class="">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                        <div class="form-outline">
+                            <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" 
+                            [ngModelOptions]="{standalone: true}" placeholder="Alumni name" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
         <ng-container *ngIf="sharedData?.length > 0">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
-                *ngFor="let item of sharedData | paginate: { itemsPerPage: 6, currentPage: p }">
+                *ngFor="let item of sharedData | filterText: nameSearched">
                 <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
                     <ng-container *ngIf="item?.photo != null">
                         <div class="alumni-pic">
@@ -15,8 +29,7 @@
                             alt="Alumni Picture" />
                     </ng-container>
                     <div class="card-header bg-transparent border-0 text-center pt-3">
-                        <h3 class="card-title fw-bold text-capitalize mb-0">{{ item?.title != null ? item?.title :
-                            'Divya'}}</h3>
+                        <h3 class="card-title fw-bold text-capitalize mb-0">{{ item?.title != null ? item?.title : 'N/A'}}</h3>
                     </div>
                     <div class="card-body text-center pb-0 pt-2">
                         <p class="card-text "><b>Course</b> : {{ item?.institute }}</p>
@@ -40,9 +53,4 @@
             </div>
         </ng-container>
     </ng-container>
-    <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2" *ngIf="sharedData?.length > 0">
-        <div class="col text-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
-    </div>
 </div>

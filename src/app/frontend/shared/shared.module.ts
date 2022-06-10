@@ -27,6 +27,7 @@ import { MatListModule } from "@angular/material/list";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { FilterTextPipe } from "./pipes/filter-text.pipe";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     NumbersOnlyDirective,
     ResetPasswordComponent,
     SearchFilterComponent,
+    FilterTextPipe,
     StripHtmlPipe,
     DialogEntrepreneurshipComponent,
     StartupCornerComponent,
@@ -74,6 +76,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ResetPasswordComponent,
     SearchFilterComponent,
     StripHtmlPipe,
+    FilterTextPipe,
     DialogEntrepreneurshipComponent,
     UsersBannerComponent,
     ViewMapComponent,

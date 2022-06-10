@@ -50,7 +50,11 @@ export class DataService {
     return this.http.get(`${this.url}/all-questions`);
   }
 
-  public getData(action?: string) {
+  public getData(action?: any) {
+    console.log(action)
+    if (action?.action == 'filter-event') {
+      return this.http.get(`${this.url}/${action?.action}`, action.type);  
+    }
     return this.http.get(`${this.url}/${action}`);
   }
 

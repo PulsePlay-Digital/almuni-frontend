@@ -1,8 +1,8 @@
-<div class="row p-3">
+<div class="row">
     <div class="col-lg-12">
         <form [formGroup]="basicInfoForm">
             <div class="row">
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">First name <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="first_name" placeholder="Enter first name">
                     <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
@@ -10,12 +10,12 @@
                         First name is required.
                     </div>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Middle name</label>
                     <input type="text" class="form-control" formControlName="middle_name"
                         placeholder="Enter middle name">
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Last name <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="last_name" placeholder="Enter last name">
                     <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
@@ -26,7 +26,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Institute <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="institute_id">
                         <option value="" selected>Choose your institute</option>
@@ -38,7 +38,7 @@
                         Institute name is required.
                     </div>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Batch year <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="batchYear_id">
                         <option value="" selected>Choose your batch</option>
@@ -49,7 +49,7 @@
                         Batch year is required.
                     </div>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Institute wise roll # </label>
                     <input type="text" class="form-control" formControlName="institute_wise_roll"
                         placeholder="Enter roll number">
@@ -57,7 +57,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Gender <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="gender">
                         <option value="" selected>Select gender</option>
@@ -68,7 +68,7 @@
                         Gender is required.
                     </div>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Marital status </label>
                     <select class="form-select" formControlName="marital_status">
                         <option value="" selected>Select marital status</option>
@@ -76,7 +76,7 @@
                             marital.status }}</option>
                     </select>
                 </div>
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Blood group </label>
                     <select class="form-select" formControlName="blood_group">
                         <option value="" selected>Select blood group</option>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 my-3">
+                <div class="col-lg-4 col-md-6 my-xl-3 my-lg-3 my-2">
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-3 col-3 pb-2 pe-2">
                             <label class=" form-label fw-bold">Code <span class="label-danger">*</span></label>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 my-3">
+                <div class="col-lg-4 col-md-6 my-xl-3 my-lg-3 my-2">
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-3 col-3 pb-2 pe-2">
                             <label class=" form-label fw-bold">Code </label>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 my-3">
+                <div class="col-lg-4 col-md-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold col-12"> Display mobile number to all</label>
                     <div class="col-12">
                         <div class="form-check form-check-inline">
@@ -146,7 +146,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6 my-3">
+                <div class="col-md-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Personal email Id <span class="label-danger">*</span></label>
                     <input type="email" class="form-control" formControlName="personal_email"
                         placeholder="Enter personal email">
@@ -159,7 +159,7 @@
                         Email format is incorrect.
                     </div>
                 </div>
-                <div class="col-md-6 my-3">
+                <div class="col-md-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Office email Id </label>
                     <input type="email" class="form-control" formControlName="office_email"
                         placeholder="Enter offical mail">
@@ -167,7 +167,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6 my-3">
+                <div class="col-md-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Birthdate <span class="label-danger">*</span></label>
                     <input type="text" placeholder="DD/MM/YYYY" formControlName="birth_date" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
@@ -176,7 +176,7 @@
                         Date of birth is required.
                     </div>
                 </div>
-                <div class="col-md-6 my-3">
+                <div class="col-md-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Anniversary date </label>
                     <input type="text" placeholder="DD/MM/YYYY" formControlName="anniversary_date" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
@@ -184,7 +184,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label for="exampleFormControlTextarea1" class=" form-label fw-bold">Current address <span
                             class="label-danger">*</span></label>
                     <textarea class="form-control" formControlName="current_address" id="exampleFormControlTextarea1"
@@ -194,32 +194,32 @@
                         Current address is required.
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-6 my-3">
+                <div class="col-md-3 col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Current country </label>
                     <select class="form-select" formControlName="current_country" (change)="changeCountry($event)">
                         <option value="" selected disabled>Select Country</option>
                         <option *ngFor="let row of countries; let i=index;" [value]="row.name">{{row.name}}</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-lg-6 my-3">
+                <div class="col-md-3 col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other current country </label>
                     <input type="text" class="form-control" formControlName="other_country" placeholder="Other country">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-3 my-3">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Current region </label>
                     <select class="form-select" formControlName="blood_group">
                         <option value="" selected disabled>Select region</option>
                         <option *ngFor="let item of region; let i=index;" [value]="item.label">{{ item.label }}</option>
                     </select>
                 </div>
-                <div class="col-md-3 my-3">
+                <div class="col-md-3 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other current region </label>
                     <input type="text" class="form-control" formControlName="other_region" placeholder="Other region">
                 </div>
-                <div class="col-lg-3 my-3">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Current state <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="current_state"
                         placeholder="Enter current state">
@@ -228,7 +228,7 @@
                         Current state is required.
                     </div>
                 </div>
-                <div class="col-lg-3 my-3">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Current city <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="current_city"
                         placeholder="Enter current city">
@@ -240,7 +240,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-7 my-3">
+                <div class="col-lg-7 my-xl-3 my-lg-3 my-2">
                     <label for="exampleFormControlTextarea1" class=" form-label fw-bold">Permanent address <span
                             class="label-danger">*</span></label>
                     <textarea class="form-control" formControlName="permanent_address" id="exampleFormControlTextarea1"
@@ -250,7 +250,7 @@
                         Permanent address is required.
                     </div>
                 </div>
-                <div class="col-lg-5 my-3">
+                <div class="col-lg-5 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Permanent country </label>
                     <select class="form-select" formControlName="permanent_country" (change)="changeCountry($event)">
                         <option value="" selected disabled>Select Country</option>
@@ -260,12 +260,12 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4 my-3">
+                <div class="col-md-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other Permanent country </label>
                     <input type="text" class="form-control" formControlName="other_permanentCountry"
                         placeholder="Other country">
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Permanent state <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="permanent_state"
                         placeholder="Enter permanent state">
@@ -274,7 +274,7 @@
                         Permanent state is required.
                     </div>
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Permanent city <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="permanent_city"
                         placeholder="Enter permanent city">
@@ -286,40 +286,40 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">LinkedIn profile id </label>
                     <input type="text" class="form-control" formControlName="linkedin_id"
                         placeholder="Enter linkdin id">
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Twitter id</label>
                     <input type="text" class="form-control" formControlName="twitter_id" placeholder="Enter Twitter id">
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Skype id </label>
                     <input type="text" class="form-control" formControlName="skype_id" placeholder="Enter Skype id">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Facebook id </label>
                     <input type="text" class="form-control" formControlName="facebook_id"
                         placeholder="Enter facebook id">
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Instagram id</label>
                     <input type="text" class="form-control" formControlName="instagram_id"
                         placeholder="Enter instagram id">
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">Council Member Designation</label>
                     <input type="text" class="form-control" formControlName="council_member_designation"
                         placeholder="Enter council member Designation">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-3 my-3 text-center">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2 text-center">
                     <button type="button" (click)="edit()" class="btn btn-success"
                         [disabled]="!basicInfoForm.valid">Update</button>
                 </div>
