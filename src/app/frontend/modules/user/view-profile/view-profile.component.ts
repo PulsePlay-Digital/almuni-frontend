@@ -46,7 +46,7 @@ export class ViewProfileComponent implements OnInit {
       this.userId = res?.id;
     });
     this.token = this.authService.getToken();
-    this.gender = this.config.gender;
+    this.gender = this.config?.gender;
   }
 
   async ngOnInit() {
@@ -61,7 +61,6 @@ export class ViewProfileComponent implements OnInit {
         .getUsersById(action, this.userId)
         .subscribe((res: any) => {
           this.user = res?.data;
-          console.log(this.user)
           this.form.patchValue({
             ...this.user
           });
@@ -101,13 +100,13 @@ export class ViewProfileComponent implements OnInit {
    * @param event
    */
   onUploadImage(event: any) {
-    this.profilePic = event.target.files[0];
+    this.profilePic = event?.target?.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
       let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event?.target?.files[0]);
       reader.onload = (_event) => {
-        this.image = _event.target?.result;
+        this.image = _event?.target?.result;
       };
     }
   }
@@ -125,7 +124,7 @@ export class ViewProfileComponent implements OnInit {
   async getAllBatches() {
     await this.dataService.getAllBatches().subscribe(
       (res: any) => {
-        this.getBatch = res.BatchYear;
+        this.getBatch = res?.BatchYear;
       },
       (error) => {
         console.log(error);
@@ -138,7 +137,7 @@ export class ViewProfileComponent implements OnInit {
   async getAllInstitutes() {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
-        this.getInstitutes = res.Institute;
+        this.getInstitutes = res?.Institute;
       },
       (error) => {
         console.log(error);
