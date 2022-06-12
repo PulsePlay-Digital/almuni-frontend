@@ -135,3 +135,14 @@ footer {
     }
   }
 }
+@media (min-width: 300px) and (max-width: 768px) {
+  .footer {
+    .links {
+      .social-links {
+        li {
+          padding: 0px !important;
+        }
+      }
+    }
+  }
+}

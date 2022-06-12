@@ -98,8 +98,7 @@
                             <label class=" form-label fw-bold">Mobile Number <span class="label-danger">*</span></label>
                             <input type="text" formControlName="mobile_number" appNumbersOnly class="form-control"
                                 placeholder="Enter Number">
-                        </div>
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
                             *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
                             Mobile number is required.
                         </div>
@@ -110,6 +109,7 @@
                         <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
                             *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
                             Maximum 10 number are allowed.
+                        </div>
                         </div>
                     </div>
                 </div>

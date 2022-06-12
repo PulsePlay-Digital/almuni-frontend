@@ -514,11 +514,11 @@
         }
       }
     }
-    .showUser{
-      .login-register{
+    .showUser {
+      .login-register {
         font-size: var(--font-S-16);
       }
-    } 
+    }
   }
 
   .fixedHeader {
@@ -595,18 +595,23 @@
   }
 }
 
-
 .menu-spacer {
   flex: 1 1 auto;
 }
 
-
-.text-toogle[aria-expanded=false] .text-expanded {
+.text-toogle[aria-expanded="false"] .text-expanded {
   display: none;
 }
-.text-toogle[aria-expanded=true] .text-collapsed {
+.text-toogle[aria-expanded="true"] .text-collapsed {
   display: none;
 }
-.text-toogle[aria-expanded=false] .text-expanded {
+.text-toogle[aria-expanded="false"] .text-expanded {
   font-size: 30px !important;
+}
+.text-toogle {
+  .closeExpandBtn {
+    font-size: 32px !important;
+    color: var(--btn-background);
+    transition: all .5s ease-in-out;
+  }
 }
