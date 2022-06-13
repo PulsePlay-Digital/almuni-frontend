@@ -55,7 +55,7 @@ export class IndustryClubComponent implements OnInit {
   async joinUnjoinClub(item: any) {
     // this.club = !this.club;
     console.log(item)
-    this.loading = true;
+    // this.loading = true;
     let params = {
       id: item.id,
       action: (item.join_club == 1) ? "unlike-club" : "like-club"
