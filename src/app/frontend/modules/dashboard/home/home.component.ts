@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   form: FormGroup | any;
   submitted: boolean | undefined;
   locationCounts: | any;
-
+  defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -286,7 +286,7 @@ export class HomeComponent implements OnInit {
           if (res?.status == 200) {
             this.notify.notificationService.openSuccessSnackBar(res?.message);
             this.form.reset();
-          } else if(res?.status == 201) {
+          } else if (res?.status == 201) {
             this.notify.notificationService.openFailureSnackBar(res?.message);
             this.form.reset();
           }
@@ -303,7 +303,7 @@ export class HomeComponent implements OnInit {
     let action: string = 'count-region';
     await this.dataService.getLocaltionData(action).pipe(
       map((res: any) => {
-          return res;
+        return res;
       })
     ).subscribe((result: any) => {
       console.log(result)

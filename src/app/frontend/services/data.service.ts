@@ -73,6 +73,10 @@ export class DataService {
     return this.http.post<any>(`${this.url}/${action}`, data);
   }
 
+  public postClubData(data?: any, userId?:any) {
+      return this.http.post<any>(`${this.url}/${data?.action}/${userId}`, data);
+  }
+
   updateData(action: any, data: any) {
     if (action?.action === 'update-user' || action?.action == 'profile-pic') {
       return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);

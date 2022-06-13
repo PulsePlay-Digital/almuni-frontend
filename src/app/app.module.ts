@@ -14,44 +14,72 @@ import { BreadcrumbModule } from "xng-breadcrumb";
 import { BreadcrumbService } from "xng-breadcrumb";
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from "ngx-cookieconsent";
 import { SharedModule } from "./frontend/shared/shared.module";
-const cookieConfig: NgcCookieConsentConfig = {
-  cookie: {
-    domain: 'localhost'// it is recommended to set your domain, for cookies to work properly
-  },
-  palette: {
-    popup: {
-      background: '#000'
-    },
-    button: {
-      background: '#f1d600'
-    }
-  },
-  theme: 'classic',
-  type: 'opt-out',
-  layout: 'my-custom-layout',
-  layouts: {
-    "my-custom-layout": '{{messagelink}}{{compliance}}'
-  },
-  elements: {
-    messagelink: `
-    <span id="cookieconsent:desc" class="cc-message">{{message}} 
-      <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>
-      <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> 
-      <a aria-label="learn more about our terms of service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank">{{tosLink}}</a>
-    </span>
-    `,
-  },
-  content: {
-    message: 'We use cookies to give you a better experience. By using our website you agree to',
+import {  TranslateModule, TranslateService, TranslateStore } from "@ngx-translate/core";
+// const cookieConfig: NgcCookieConsentConfig = {
+//   cookie: {
+//     domain: 'localhost'// it is recommended to set your domain, for cookies to work properly
+//   },
+//   palette: {
+//     popup: {
+//       background: '#000'
+//     },
+//     button: {
+//       background: '#f1d600'
+//     }
+//   },
+//   theme: 'classic',
+//   type: 'opt-out',
+//   layout: 'my-custom-layout',
+//   layouts: {
+//     "my-custom-layout": '{{messagelink}}{{compliance}}'
+//   },
+//   elements: {
+//     messagelink: `
+//     <span id="cookieconsent:desc" class="cc-message">{{message}} 
+//       <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>
+//       <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> 
+//       <a aria-label="learn more about our terms of service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank">{{tosLink}}</a>
+//     </span>
+//     `,
+//   },
+//   content: {
+//     message: 'We use cookies to give you a better experience. By using our website you agree to',
 
-    // cookiePolicyLink: 'Cookie Policy',
-    // cookiePolicyHref: 'https://cookie.com',
+//     // cookiePolicyLink: 'Cookie Policy',
+//     // cookiePolicyHref: 'https://cookie.com',
 
-    privacyPolicyLink: 'Privacy Policy',
-    privacyPolicyHref: 'https://www.sbup.edu.in/About/privacy_policy',
+//     privacyPolicyLink: 'Privacy Policy',
+//     privacyPolicyHref: 'https://www.sbup.edu.in/About/privacy_policy',
 
     // tosLink: 'Terms of Service',
     // tosHref: 'https://tos.com',
+  // }
+// };
+
+const cookieConfig: NgcCookieConsentConfig = {
+  cookie: {
+    domain: "localhost"
+  },
+  position: "bottom-left",
+  theme: "classic",
+  palette: {
+    popup: {
+      background: "#000",
+      text: "#fff"
+    },
+    button: {
+      background: "#f1d600",
+      text: "#000000"
+    }
+  },
+  type: "opt-out",
+  content: {
+    message: "We use cookies to give you a better experience. By using our website you agree to.",
+    dismiss: "Got it!",
+    deny: "Refuse cookies",
+    link: "Learn more",
+    href: "https://cookiesandyou.com",
+    policy: "Cookie Policy"
   }
 };
 @NgModule({
@@ -69,7 +97,8 @@ const cookieConfig: NgcCookieConsentConfig = {
     CKEditorModule,
     SharedModule,
     BreadcrumbModule,
-    [NgcCookieConsentModule.forRoot(cookieConfig)],
+    TranslateModule.forRoot(),
+    NgcCookieConsentModule.forRoot(cookieConfig)
   ],
   providers: [BreadcrumbService],
   bootstrap: [AppComponent],
