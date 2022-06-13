@@ -266,8 +266,7 @@ export class HomeComponent implements OnInit {
    */
   viewAlumniDetail(params: any) {
     this.router.navigate(["/celebrate/alumni-details"], {
-      queryParams: { ...params, type: "featured-alumni" },
-      skipLocationChange: true
+      queryParams: { ...params, type: "featured-alumni" }
     });
   }
 

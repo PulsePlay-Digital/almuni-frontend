@@ -128,7 +128,8 @@ export class AtGlanceComponent implements OnInit {
       action: "filter-event",
       type: this.valueChange 
     }
-    await this.dataService.getData(action).subscribe((result: any) => {
+    // let action:string = "filter-event" 
+    await this.dataService.postData(action, this.valueChange).subscribe((result: any) => {
       console.log(result);
     })
   }

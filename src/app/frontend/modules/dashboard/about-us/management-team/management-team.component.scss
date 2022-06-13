@@ -1,4 +1,9 @@
-.card {
+.founderPage {
+  .quotes {
+    color: #f38b07;
+    font-size: 20px;
+  }
+  .card {
     background: var(--card-bg);
     .card-header {
       height: 80px;
@@ -19,4 +24,5 @@
       min-height: 320px;
       max-height: 320px;
     }
+  }
 }

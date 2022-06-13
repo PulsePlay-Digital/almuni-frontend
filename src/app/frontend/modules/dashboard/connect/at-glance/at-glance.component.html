@@ -160,7 +160,7 @@
                             class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
-                                <ng-container *ngIf="pastEvent?.length > 0">
+                                <ng-container *ngIf="upcomingEvent?.length > 0">
                                     <div class="row"
                                         *ngFor="let item of upcomingEvent | paginate: { itemsPerPage: 6, currentPage: p }">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -195,6 +195,11 @@
                                                         aria-hidden="true"></i>&nbsp;More Info</a>
                                             </div>
                                         </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="upcomingEvent?.length == 0">
+                                    <div class="col-12 py-3 text-center fw-bold">
+                                        <p class="fs-5">No data found!</p>
                                     </div>
                                 </ng-container>
                                 <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2"

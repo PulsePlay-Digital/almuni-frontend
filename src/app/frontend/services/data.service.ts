@@ -51,13 +51,13 @@ export class DataService {
   }
 
   public getData(action?: any) {
-    console.log(action)
-    if (action?.action == 'filter-event') {
-      let params:any = {
-        type:action.type
-      }
-      return this.http.get(`${this.url}/${action?.action}?type=${action.type}`, params);  
-    }
+    // console.log(action)
+    // if (action?.action == 'filter-event') {
+    //   let params:any = {
+    //     type:action.type
+    //   }
+    //   return this.http.get(`${this.url}/${action?.action}?type=${action.type}`, params);  
+    // }
     return this.http.get(`${this.url}/${action}`);
   }
 
@@ -67,7 +67,7 @@ export class DataService {
 
   public postData(action?: any, data?: any) {
     if (action?.action === 'create-event' || action?.action === 'create-club'
-      || action?.action === 'create-journey') {
+      || action?.action === 'create-journey' || action?.action == 'filter-event') {
       return this.http.post<any>(`${this.url}/${action?.action}`, data);
     }
     return this.http.post<any>(`${this.url}/${action}`, data);
