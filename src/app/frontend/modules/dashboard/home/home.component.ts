@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: true,
+    dots: false,
     navSpeed: 700,
     autoplay: true,
     autoplayTimeout: 3000,
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 4000,
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
     mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    dots: true,
+    dots: false,
     autoplay: true,
     autoplayTimeout: 2500,
     navText: [
@@ -287,7 +287,6 @@ export class HomeComponent implements OnInit {
             this.form.reset();
           } else if (res?.status == 201) {
             this.notify.notificationService.openFailureSnackBar(res?.message);
-            this.form.reset();
           }
         },
         (error) => {

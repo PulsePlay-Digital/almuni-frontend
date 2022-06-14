@@ -13,7 +13,8 @@ import { DOCUMENT } from "@angular/common";
 export class HeaderComponent implements OnInit {
   currentUser: any;
   enableSticky: boolean | undefined;
-
+  sidePanel: any;
+  showFiller = false;
   constructor(
     public router: Router,
     private authService: AuthService,
@@ -29,10 +30,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     //Onscroll header shrink
-    fromEvent(window, 'scroll').subscribe((event: any) => {
+    fromEvent(window, "scroll").subscribe((event: any) => {
       let response: any = this.document.defaultView?.scrollY;
-      response > 100 ? this.enableSticky = true : this.enableSticky = false;
-    })
+      response > 100 ? (this.enableSticky = true) : (this.enableSticky = false);
+    });
   }
 
   /*** Logout */
@@ -40,11 +41,33 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     location.assign("/");
   }
+
   /**
    * Scroll target Section
    * @param sectionId
    */
   target(sectionId: any) {
     this.dataService.scrollSection.next(sectionId);
+  }
+
+  openNav() {
+    this.sidePanel = document.getElementById("mySidepanel") as HTMLElement;
+    this.sidePanel.style.width = "74%";
+  }
+
+  closeNav() {
+    this.sidePanel = document.getElementById("mySidepanel") as HTMLElement;
+    this.sidePanel.style.width = "0";
+  }
+
+  navigate(r:string, logged:boolean) {
+    console.log(r, logged)
+    this.router.navigate([r]);
+    switch ( logged ) {
+      case true:
+          break;
+      default: 
+          break;
+   }
   }
 }
