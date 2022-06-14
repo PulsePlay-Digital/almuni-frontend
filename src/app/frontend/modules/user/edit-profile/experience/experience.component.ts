@@ -47,7 +47,6 @@ export class ExperienceComponent implements OnInit {
   }
 
   removeItems(i: number) {
-    console.log(i);
     this.addItems().removeAt(i);
   }
 

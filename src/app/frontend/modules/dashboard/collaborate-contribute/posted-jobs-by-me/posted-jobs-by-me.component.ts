@@ -47,7 +47,6 @@ export class PostedJobsByMeComponent implements OnInit {
       is_active: status.is_active
     }
      await this.dataService.updateData(action, params).subscribe((res: any) => {
-      console.log(res)
      })
   }
 

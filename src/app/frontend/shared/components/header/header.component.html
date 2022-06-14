@@ -340,172 +340,185 @@
                     <!-- Desktop nav end-->
                     <!-- Mobile nav -->
                     <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-none d-xl-none d-lg-none d-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="main-heading text-uppercase fw-bolder mb-0">
-                                        <a class="navbar-brand smallLogo" routerLink="/home">
-                                            <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid "
-                                                alt="Shri Balaji Logo">
-                                        </a>
-                                    </h4>
-                                    <button class="btn btn-sm back-button w-auto fs-4" (click)="openNav()">☰</button>
+                        <nav class="navbar navbar-light bg-light bg-transparent moboSideNav">
+                            <a class="navbar-brand" routerLink="/home">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid"
+                                    alt="Shri Balaji Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                                aria-labelledby="offcanvasNavbarLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <ul class="navbar-nav justify-content-end flex-grow-1">
+                                        <li class="nav-item lh-lg">
+                                            <a class="nav-link lh-base" (click)="navigate('/home')"
+                                                routerLinkActive="active-link">Home</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/about-us/founder-chancellor')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Know us</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/founder-chancellor"
+                                                        routerLinkActive="active-link">Founder
+                                                        Chancellor</a></li>
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        routerLink="/about-us/balaji-social-society"
+                                                        routerLinkActive="active-link"> SBUP</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/leadership-team"
+                                                        routerLinkActive="active-link">Leadership Team</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/common-purpose-culture')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Common Purpose</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a (click)="target('founderMsg')" class="dropdown-item lh-base px-2"
+                                                        routerLinkActive="active-link"
+                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                        The
+                                                        Founder's Message </a></li>
+                                                <li><a (click)="target('connectVision')" class="dropdown-item lh-base px-2"
+                                                        routerLinkActive="active-link"
+                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                        SBUP Alumni Connect Vision </a></li>
+                                                <li><a (click)="target('strategy')" class="dropdown-item lh-base px-2"
+                                                        routerLinkActive="active-link"
+                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                        SBUP Alumni Connect Strategy Framework </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/community/alumni-directory')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Community</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}"
+                                                        routerLinkActive="active-link">Alumni
+                                                        Directory</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}"
+                                                        routerLinkActive="active-link">Professional
+                                                        Clubs</a></li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}"
+                                                        routerLinkActive="active-link">Industry
+                                                        Clubs</a></li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}"
+                                                        routerLinkActive="active-link">
+                                                        Business Ventures</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/connect/at-glance')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Connect</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/connect/at-glance')">
+                                                        Connect at glance</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/connect/at-glance')">
+                                                        Past Events</a></li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/connect/at-glance')">
+                                                        Upcoming Events</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/collaborate-contribute/mentorship')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Collaborate</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/collaborate-contribute/mentorship')">Mentorship</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/collaborate-contribute/careers')">Careers
+                                                        and Jobs</a></li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/collaborate-contribute/special-projects')">Special
+                                                        Projects</a></li>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
+                                                        (click)="navigate('/collaborate-contribute/engage-with-society')">Engage
+                                                        with SBUP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/celebrate')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Celebrate</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        (click)="navigate('/celebrate/featured-alumni')">Featured
+                                                        Alumni</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        (click)="navigate('/celebrate/alumni-journey')"
+                                                        routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}"
+                                                        routerLinkActive="active-link">Journey, Achievements &
+                                                        Passion</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/gallery')"
+                                                        routerLinkActive="active-link">
+                                                        Gallery </a></li>
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/magazine')"
+                                                        routerLinkActive="active-link">
+                                                        Corporate Citizen Magazine</a></li>
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        (click)="navigate('/celebrate/news-update')"
+                                                        routerLinkActive="active-link">
+                                                        News and Updates </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link d-flex justify-content-between" (click)="navigate('/contact')"
+                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>Contact</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        (click)="navigate('/contact/key-contact')">Key
+                                                        Contacts</a>
+                                                </li>
+                                                <li><a class="dropdown-item lh-base px-2"
+                                                        (click)="navigate('/contact/social-links')">SBUP
+                                                        Alumni
+                                                        Clubs – Social Channels</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div id="mySidepanel" class="sidepanel">
-                            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
-                            <ul class="navbar-nav moboSideNav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item lh-lg">
-                                    <a class="nav-link" (click)="navigate('/home')" routerLinkActive="active-link">Home</a>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a class="nav-link d-flex justify-content-between" href="#" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Know us</span> <span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a (click)="navigate('/about-us/founder-chancellor')" class="dropdown-item"
-                                                routerLinkActive="active-link">Founder
-                                                Chancellor</a></li>
-                                        <li><a (click)="navigate('/about-us/balaji-social-society')"  class="dropdown-item"
-                                                routerLinkActive="active-link"> SBUP</a>
-                                        </li>
-                                        <li><a (click)="navigate('/about-us/leadership-team')" class="dropdown-item"
-                                                routerLinkActive="active-link">Leadership Team</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a class="nav-link d-flex justify-content-between" href="#" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Common Purpose</span> <span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a routerLink="/common-purpose-culture/connect-vision" (click)="target('founderMsg')" class="dropdown-item"
-                                                routerLinkActive="active-link">
-                                                The
-                                                Founder's Message </a></li>
-                                        <li><a routerLink="/common-purpose-culture/connect-vision" (click)="target('connectVision')" class="dropdown-item"
-                                                routerLinkActive="active-link">
-                                                SBUP Alumni Connect Vision </a></li>
-                                        <li><a routerLink="/common-purpose-culture/connect-vision" (click)="target('strategy')" class="dropdown-item"
-                                                routerLinkActive="active-link">
-                                                SBUP Alumni Connect Strategy Framework </a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a (click)="navigate('/community-home')" class="nav-link d-flex justify-content-between" href="#" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Community</span><span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a (click)="navigate('/community/alumni-directory')" class="dropdown-item" routerLinkActive="active-link"
-                                                routerLinkActive="active-link">Alumni
-                                                Directory</a>
-                                        </li>
-                                        <li><a (click)="navigate('/community/professional-club')" class="dropdown-item" routerLinkActive="active-link"
-                                                routerLinkActive="active-link">Professional
-                                                Clubs</a></li>
-                                        <li><a (click)="navigate('/community/industry-club')" class="dropdown-item" routerLinkActive="active-link"
-                                                routerLinkActive="active-link">Industry
-                                                Clubs</a></li>
-                                        <li><a (click)="navigate('/community/entrepreneurship-club')" class="dropdown-item" routerLinkActive="active-link"
-                                                routerLinkActive="active-link">
-                                                Business Ventures</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a (click)="navigate('/connect/at-glance')"
-                                        class="nav-link d-flex justify-content-between" href="#" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Connect</span><span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a (click)="navigate('/connect/at-glance')" class="dropdown-item"
-                                                routerLinkActive="active-link">
-                                                Connect at glance</a>
-                                        </li>
-                                        <li><a (click)="navigate('/connect/at-glance')" class="dropdown-item"
-                                                routerLinkActive="active-link" routerLink="/connect/at-glance">
-                                                Past Events</a></li>
-                                        <li><a (click)="navigate('/connect/at-glance')" class="dropdown-item"
-                                                routerLinkActive="active-link">
-                                                Upcoming Events</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a (click)="navigate('/collaborate-contribute/collaborate')"
-                                        class="nav-link d-flex justify-content-between" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Collaborate</span><span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                (click)="navigate('/collaborate-contribute/mentorship')">Mentorship</a>
-                                        </li>
-                                        <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                (click)="navigate('/collaborate-contribute/careers')">Careers
-                                                and
-                                                Jobs</a></li>
-                                        <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                (click)="navigate('/collaborate-contribute/special-projects')">Special
-                                                Projects</a></li>
-                                        <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                (click)="navigate('/collaborate-contribute/engage-with-society')">Engage
-                                                with SBUP</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a class="nav-link d-flex justify-content-between" (click)="navigate('/celebrate')" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>Celebrate</span><span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" (click)="navigate('/celebrate/featured-alumni')">Featured
-                                                Alumni</a>
-                                        </li>
-                                        <li><a class="dropdown-item" (click)="navigate('/celebrate/alumni-journey')"
-                                                routerLinkActive="active-link">Journey, Achievements & Passion</a>
-                                        </li>
-                                        <li><a class="dropdown-item" (click)="navigate('/celebrate/gallery')"
-                                                routerLinkActive="active-link">
-                                                Gallery </a></li>
-                                        <li><a class="dropdown-item" (click)="navigate('/celebrate/magazine')"
-                                                routerLinkActive="active-link">
-                                                Corporate Citizen Magazine</a></li>
-                                        <li><a class="dropdown-item" (click)="navigate('/celebrate/news-update')"
-                                                routerLinkActive="active-link">
-                                                News and Updates </a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown lh-lg">
-                                    <a class="nav-link d-flex justify-content-between"
-                                        (click)="navigate('/contact')" routerLinkActive="active-link"
-                                        id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span>Contact</span><span><i class="fa fa-angle-down"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item"
-                                                (click)="navigate('/contact/key-contact')">Key
-                                                Contacts</a>
-                                        </li>
-                                        <li><a class="dropdown-item"
-                                                (click)="navigate('/contact/social-links')">SBUP
-                                                Alumni
-                                                Clubs – Social Channels</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                        </nav>
                     </div>
                     <!-- Mobile nav end-->
                 </div>

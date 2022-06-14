@@ -19,7 +19,6 @@ export class ClubDetailsComponent implements OnInit {
   constructor(public arouter: ActivatedRoute, 
     public dataService: DataService, public config: Config) {
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res)
       this.clubId = res.id;
       this.clubName = res.name;
     })

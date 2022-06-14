@@ -15,7 +15,6 @@ export class DialogEntrepreneurshipComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data)
   }
 
 }

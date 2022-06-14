@@ -61,6 +61,6 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate(r:string) {
-    this.router.navigate([r]);
+    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
   }
 }

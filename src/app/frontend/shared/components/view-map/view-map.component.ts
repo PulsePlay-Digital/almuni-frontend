@@ -37,7 +37,6 @@ export class ViewMapComponent implements OnInit {
           this.coordinates.push(city);
         }
       }
-      console.log(this.coordinates);
     })
   }
     /**

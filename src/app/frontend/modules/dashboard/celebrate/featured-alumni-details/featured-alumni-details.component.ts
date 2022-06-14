@@ -26,7 +26,6 @@ export class FeaturedAlumniDetailsComponent implements OnInit {
     public notify: TokenInterceptor
   ) {
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res);
       this.alumniId = res?.id;
       this.descriptionHeading = res?.heading;
       this.type = res?.type;
