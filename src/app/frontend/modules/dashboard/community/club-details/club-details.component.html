@@ -1,0 +1,61 @@
+<app-dashboard-banner [heading]="clubName"></app-dashboard-banner>
+<div class="container">
+    <app-loader *ngIf="loading"></app-loader>
+    <ng-container *ngIf="!loading">
+        <div class="row mt-xl-3 mt-lg-3 mt-md-3 mt-sm-3 mt-2 mb-2">
+            <div class="col text-end pt-2">
+                <button class="btn btn-sm back rounded" (click)="back()">
+          Back
+        </button>
+            </div>
+        </div>
+        <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-4">
+            <div class="t-comments-box">
+                <div class="comment-title">
+                    Comments
+                </div>
+                <div class="add-comment">
+                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <div class="comment-input">
+                        <input class="form-control form-control-sm" type="text" placeholder="Add a comment.." />
+                        <div class="comment-send"><i class="fa fa-telegram"></i></div>
+                    </div>
+                </div>
+                <div class="comment comment-level-1">
+                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <div>
+                        <div class="comment-label">
+                            <span class="comment-name">Uchiha Itachi</span>
+                            <span class="comment-time"> - 5 days ago</span>
+                        </div>
+                        <div class="comment-content">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+                        </div>
+
+                        <div class="comment-action">
+                            <span> <i class="fa fa-heart"></i> Like (0)</span>
+                            <span> <i class="fa fa-comment"></i> Comment (0)</span>
+                            <span> <i class="fa fa-reply"></i> Reply</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment comment-level-2">
+                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <div>
+                        <div class="comment-label">
+                            <span class="comment-name">Kris Oberlin🌙</span>
+                            <span class="comment-time"> - 5 days ago</span>
+                        </div>
+                        <div class="comment-content">
+                            Lorem Ipsum is simply dummy.
+                        </div>
+                        <div class="comment-action">
+                            <span> <i class="fa fa-heart"></i> Like (0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

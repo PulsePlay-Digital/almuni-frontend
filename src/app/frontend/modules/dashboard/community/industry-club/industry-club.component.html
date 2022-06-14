@@ -6,7 +6,7 @@
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="industry?.length > 0">
                     <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3" *ngFor="let item of industry">
-                        <div class="card border-0">
+                        <div class="card border-0" (click)="(item?.join_club == 1) ? clubDetails(item) : ''">
                             <div class="card-image rounded-bottom rounded-3">
                                 <img [src]="imgPath + item?.featured_image" class="card-img-top clubImg" alt="Digital Img">
                             </div>

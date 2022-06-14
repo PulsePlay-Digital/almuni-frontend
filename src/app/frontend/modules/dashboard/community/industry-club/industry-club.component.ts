@@ -20,10 +20,9 @@ export class IndustryClubComponent implements OnInit {
   constructor(
     public router: Router,
     public dataService: DataService,
-    public notify: TokenInterceptor) { 
-      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
-      console.log(this.currentUser);
-    }
+    public notify: TokenInterceptor) {
+    this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+  }
 
   ngOnInit(): void {
     this.getAllindustryClub();
@@ -53,22 +52,29 @@ export class IndustryClubComponent implements OnInit {
   }
 
   async joinUnjoinClub(item: any) {
-    // this.club = !this.club;
-    console.log(item)
-    // this.loading = true;
     let params = {
       id: item.id,
       action: (item.join_club == 1) ? "unlike-club" : "like-club"
     }
     await this.dataService.postClubData(params, this.currentUser.id)
       .subscribe((res: any) => {
-      this.getAllindustryClub();
+        this.getAllindustryClub();
         this.loading = false;
       },
         error => {
           this.notify.notificationService.openFailureSnackBar(error);
           this.loading = false;
         })
+  }
+
+  async clubDetails(item: any) {
+    console.log(item)
+    this.router.navigate(["/community/club-details"], {
+      queryParams: {
+        id: item.id,
+        name: item.name
+      }
+    });
   }
 
   joinClub() {

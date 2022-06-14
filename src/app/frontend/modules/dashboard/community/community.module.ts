@@ -18,6 +18,7 @@ import { AlumniDetailsComponent } from './alumni-details/alumni-details.componen
 import { MatIconModule } from '@angular/material/icon';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { CommunityPageComponent } from './community-page/community-page.component';
+import { ClubDetailsComponent } from './club-details/club-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CommunityPageComponent } from './community-page/community-page.componen
     EntrepreneurshipClubComponent,
     BusinessVentureInfoComponent,
     AlumniDetailsComponent,
-    CommunityPageComponent
+    CommunityPageComponent,
+    ClubDetailsComponent
   ],
   imports: [
     CommonModule,
