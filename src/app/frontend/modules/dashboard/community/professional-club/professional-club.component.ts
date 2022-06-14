@@ -69,7 +69,15 @@ export class ProfessionalClubComponent implements OnInit {
           this.loading = false;
         })
   }
-
+  async clubDetails(item: any) {
+    console.log(item)
+    this.router.navigate(["/community/club-details"], {
+      queryParams: {
+        id: item.id,
+        name: item.name
+      }
+    });
+  }
   joinClub() {
     this.router.navigate(["/community/start-club"], {
       queryParams: { type: "professional" },
