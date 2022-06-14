@@ -60,14 +60,7 @@ export class HeaderComponent implements OnInit {
     this.sidePanel.style.width = "0";
   }
 
-  navigate(r:string, logged:boolean) {
-    console.log(r, logged)
+  navigate(r:string) {
     this.router.navigate([r]);
-    switch ( logged ) {
-      case true:
-          break;
-      default: 
-          break;
-   }
   }
 }
