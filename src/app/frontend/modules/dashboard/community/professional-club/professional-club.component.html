@@ -5,18 +5,18 @@
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="professionalClub?.length > 0">
-                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3"
-                        *ngFor="let item of professionalClub">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3" *ngFor="let item of professionalClub">
                         <div class="card border-0">
-                            <div class="card-image rounded-bottom rounded-3">
-                                <img [src]="imgPath + item?.featured_image" class="card-img-top clubImg"
-                                    alt="Digital Img">
+                            <div (click)="(item?.join_club == 1) ? clubDetails(item) : '' " [ngClass]="(item?.join_club == 1) ? 'cursor-pointer' : ''">
+                                <div class="card-image rounded-bottom rounded-3">
+                                    <img [src]="imgPath + item?.featured_image" class="card-img-top clubImg" alt="Digital Img">
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text fw-bold pb-3 pt-3 lh-sm">{{item?.name}}</p>
+                                </div>
                             </div>
-                            <div class="card-body text-center">
-                                <p class="card-text fw-bold pb-3 pt-3 lh-sm">{{item?.name}}</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 text-center">
-                                <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> Join
+                            <div class="card-footer bg-transparent border-0 text-center" (click)="joinUnjoinClub(item)">
+                                <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> {{(item?.join_club == 1) ? 'Unjoin' : 'Join'}}
                                     Club</a>
                             </div>
                         </div>
@@ -34,8 +34,7 @@
                 <h6 class="new-club text-black fw-bolder pt-3 lh-base common_text"> Want to Start a New Club:
                     <br>Please submit your request for Club Formation by filling up this form.
                 </h6>
-                <h6 class="start-club fw-bolder lh-base common_text" (click)="joinClub()"> START A CLUB (Professional
-                    Focus)
+                <h6 class="start-club fw-bolder lh-base common_text" (click)="joinClub()"> START A CLUB (Professional Focus)
                 </h6>
             </div>
         </div>

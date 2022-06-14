@@ -1,122 +1,125 @@
 .professional-club {
-  .heading {
-    font-size: var(--font-S-30);
-    line-height: 43.88px;
-    color: var(--btn-background);
-  }
-  .card {
-    .card-image {
-      .clubImg {
-        height: 250px;
-      }
+    .heading {
+        font-size: var(--font-S-30);
+        line-height: 43.88px;
+        color: var(--btn-background);
     }
-    .card-body {
-      height: 80px;
-      display: var(--display-Flex);
-      align-items: var(--align-center);
-      justify-content: var(--justify-content-center);
-      .card-text {
-        color: #333;
-        font-size: var(--font-S-20);
-      }
+    .card {
+        .card-image {
+            .clubImg {
+                height: 250px;
+            }
+        }
+        .card-body {
+            height: 80px;
+            display: var(--display-Flex);
+            align-items: var(--align-center);
+            justify-content: var(--justify-content-center);
+            .card-text {
+                color: #333;
+                font-size: var(--font-S-20);
+            }
+        }
+        .card-button {
+            background-color: var(--btn-background);
+            border-radius: var(--border-radius-2);
+            line-height: var(--line-height-1-8);
+            font-size: var(--font-S-16);
+        }
+        .card-button:hover {
+            background-color: var(--bs-white);
+            border: 1px solid var(--btn-background);
+            color: var(--btn-background);
+        }
     }
-
-    .card-button {
-      background-color: var(--btn-background);
-      border-radius: var(--border-radius-2);
-      line-height: var(--line-height-1-8);
-      font-size: var(--font-S-16);
+    .common_text {
+        font-size: var(--font-S-22);
     }
-    .card-button:hover {
-      background-color: var(--bs-white);
-      border: 1px solid var(--btn-background);
-      color: var(--btn-background);
+    .start-club {
+        color: var(--btn-background);
+        cursor: var(--cursor-pointer);
     }
-  }
-  .common_text {
-    font-size: var(--font-S-22);
-  }
-  .start-club {
-    color: var(--btn-background);
-    cursor: var(--cursor-pointer);
-  }
+    .card.border-0 .cursor-pointer {
+        cursor: pointer;
+    }
 }
 
 @media (min-width: 300px) and (max-width: 575px) {
-  .professional-club {
-    .card {
-      .card-image {
-        .clubImg {
-          height: 200px;
+    .professional-club {
+        .card {
+            .card-image {
+                .clubImg {
+                    height: 200px;
+                }
+            }
+            .card-body {
+                .card-text {
+                    font-size: var(--font-S-16);
+                }
+            }
+            .card-button {
+                font-size: var(--font-S-14);
+            }
         }
-      }
-      .card-body {
-        .card-text {
-          font-size: var(--font-S-16);
+        .common_text {
+            font-size: var(--font-S-16);
         }
-      }
-      .card-button {
-        font-size: var(--font-S-14);
-      }
     }
-    .common_text {
-      font-size: var(--font-S-16);
-    }
-  }
 }
+
 @media (min-width: 400px) and (max-width: 575px) {
-  .professional-club {
-    .card {
-      .card-image {
-        width: 50%;
-        margin: auto;
-        .clubImg {
-          height: 200px;
+    .professional-club {
+        .card {
+            .card-image {
+                width: 50%;
+                margin: auto;
+                .clubImg {
+                    height: 200px;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 @media (min-width: 575px) and (max-width: 768px) {
-  .professional-club {
-    .card {
-      .card-image {
-        .clubImg {
-          height: 200px;
+    .professional-club {
+        .card {
+            .card-image {
+                .clubImg {
+                    height: 200px;
+                }
+            }
+            .card-body {
+                .card-text {
+                    font-size: var(--font-S-18);
+                }
+            }
+            .card-button {
+                font-size: var(--font-S-14);
+            }
         }
-      }
-      .card-body {
-        .card-text {
-          font-size: var(--font-S-18);
+        .common_text {
+            font-size: var(--font-S-18);
         }
-      }
-      .card-button {
-        font-size: var(--font-S-14);
-      }
     }
-    .common_text {
-      font-size: var(--font-S-18);
-    }
-  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .professional-club {
-    .card {
-      .card-image {
-        .clubImg {
-          height: 200px;
+    .professional-club {
+        .card {
+            .card-image {
+                .clubImg {
+                    height: 200px;
+                }
+            }
+            .card-body {
+                .card-text {
+                    font-size: var(--font-S-16);
+                }
+            }
         }
-      }
-      .card-body {
-        .card-text {
-          font-size: var(--font-S-16);
+        .common_text {
+            font-size: var(--font-S-20);
         }
-      }
     }
-    .common_text {
-      font-size: var(--font-S-20);
-    }
-  }
 }

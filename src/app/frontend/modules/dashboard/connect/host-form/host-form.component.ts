@@ -53,7 +53,7 @@ export class HostFormComponent implements OnInit {
       eventAttend: [""],
       cost: [""],
       eventPageLink: [""],
-      is_active: [""],
+      is_active: ["inactive"],
       contactNumber: ["", Validators.required],
       eventImage: ["", Validators.required]
     });

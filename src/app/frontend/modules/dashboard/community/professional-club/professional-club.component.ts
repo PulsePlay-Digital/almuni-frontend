@@ -16,12 +16,14 @@ export class ProfessionalClubComponent implements OnInit {
   professionalClub: any;
   loading:boolean | undefined;
   imgPath = environment.imgUrl;
-
+  currentUser;
   constructor(
     public router: Router,
     public dataService: DataService,
     public notify: TokenInterceptor
-  ) {}
+  ) {
+    this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+  }
 
   ngOnInit(): void {
     this.getAllProfessionalClub();
@@ -52,10 +54,30 @@ export class ProfessionalClubComponent implements OnInit {
         }
       );
   }
-  joinUnjoin(data: any) {
-    this.club = !this.club;
+  async joinUnjoinClub(item: any) {
+    let params = {
+      id: item.id,
+      action: (item.join_club == 1) ? "unlike-club" : "like-club"
+    }
+    await this.dataService.postClubData(params, this.currentUser.id)
+      .subscribe((res: any) => {
+      this.getAllProfessionalClub();
+        this.loading = false;
+      },
+        error => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        })
   }
-
+  async clubDetails(item: any) {
+    console.log(item)
+    this.router.navigate(["/community/club-details"], {
+      queryParams: {
+        id: item.id,
+        name: item.name
+      }
+    });
+  }
   joinClub() {
     this.router.navigate(["/community/start-club"], {
       queryParams: { type: "professional" },
