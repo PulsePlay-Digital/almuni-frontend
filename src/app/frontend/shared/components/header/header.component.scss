@@ -435,16 +435,14 @@
   .bigLogo {
     display: none;
   }
-  .header-nav {
-    .navbar {
-      .smallLogo {
-        display: block;
-        .mobileLogo {
-          // width: 184px;
-          height: 45px;
-        }
-      }
+  .smallLogo {
+    display: block;
+    .mobileLogo {
+      // width: 184px;
+      height: 45px;
     }
+  }
+  .header-nav {
     .topnav {
       .responsiveList {
         display: block;
@@ -612,6 +610,61 @@
   .closeExpandBtn {
     font-size: 32px !important;
     color: var(--btn-background);
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+/** Side Panel css **/
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 32px;
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    font-size: 52px;
+  }
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  .openbtn:hover {
+    background-color: #444;
+  }
+  .moboSideNav {
+    .dropdown-menu {
+      background-color: var(--bg-color);
+      width: 100%;
+    }
+    li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    li:last-child {
+      border: none;
+    }
   }
 }
