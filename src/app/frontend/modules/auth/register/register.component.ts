@@ -148,7 +148,6 @@ export class RegisterComponent implements OnInit {
         this.getBatch = res.BatchYear;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -162,7 +161,6 @@ export class RegisterComponent implements OnInit {
         this.getInstitutes = res.Institute;
       },
       (error) => {
-        console.log(error);
       }
     );
   }

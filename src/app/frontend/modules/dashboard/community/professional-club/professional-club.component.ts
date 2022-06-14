@@ -70,7 +70,6 @@ export class ProfessionalClubComponent implements OnInit {
         })
   }
   async clubDetails(item: any) {
-    console.log(item)
     this.router.navigate(["/community/club-details"], {
       queryParams: {
         id: item.id,

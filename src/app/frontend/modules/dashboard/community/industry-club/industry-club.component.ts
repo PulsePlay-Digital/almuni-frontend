@@ -68,7 +68,6 @@ export class IndustryClubComponent implements OnInit {
   }
 
   async clubDetails(item: any) {
-    console.log(item)
     this.router.navigate(["/community/club-details"], {
       queryParams: {
         id: item.id,

@@ -62,7 +62,6 @@ export class EducationComponent implements OnInit {
 
   edit() {
     this.submitted = true;
-    console.log(this.educationForm.value);
   }
 
 }

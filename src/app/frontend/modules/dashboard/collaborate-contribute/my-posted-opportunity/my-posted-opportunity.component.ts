@@ -44,7 +44,6 @@ export class MyPostedOpportunityComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.allOpportunity = res;
-      console.log(res)
       this.loading = false;
     },
     error => {

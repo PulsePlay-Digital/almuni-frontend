@@ -108,7 +108,6 @@ export class BasicInfoComponent implements OnInit {
    * @param event 
    */
   public changeCountry(event: any) {
-    console.log(event.target.value);
   }
 
   /**
@@ -138,7 +137,6 @@ export class BasicInfoComponent implements OnInit {
     if (this.basicInfoForm.invalid) {
       return;
     } else if (this.basicInfoForm.valid) {
-      console.log(this.basicInfoForm.value);
     }
   }
 

@@ -94,7 +94,6 @@ export class AddExpertiseComponent implements OnInit {
     } else {
       let action: string = 'create-expertise';
       await this.dataService.postData(action, this.addExpertiseForm.value).subscribe((res: any) => {
-        console.log(res);
         if(res.status == 200) {
           this.notify.notificationService.openSuccessSnackBar(res.message);
           this.router.navigate(['/collaborate-contribute/engage-with-society']);

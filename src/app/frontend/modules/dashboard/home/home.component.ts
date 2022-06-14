@@ -305,7 +305,6 @@ export class HomeComponent implements OnInit {
         return res;
       })
     ).subscribe((result: any) => {
-      console.log(result)
       this.locationCounts = result
     })
   }

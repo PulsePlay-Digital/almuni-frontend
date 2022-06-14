@@ -40,7 +40,6 @@ export class KeyContactComponent implements OnInit {
       this.loading = false;
     },
     error => {
-      console.log(error);
       this.notify.notificationService.openFailureSnackBar(error?.message);
       this.loading = false;
     }

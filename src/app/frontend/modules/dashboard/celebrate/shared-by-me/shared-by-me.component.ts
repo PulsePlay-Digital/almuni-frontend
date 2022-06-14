@@ -23,8 +23,6 @@ export class SharedByMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
-    console.log(this.title)
-    console.log(this.type)
   }
 
   buildForm() {
@@ -68,7 +66,6 @@ export class SharedByMeComponent implements OnInit {
       let action = {
         action: 'create-journey'
       }
-      console.log(this.form.value);
       let formData = new FormData();
       formData.append('photo', (this.file) ? this.file : '');
       formData.append('title', this.form.value.title); 

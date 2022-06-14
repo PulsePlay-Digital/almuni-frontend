@@ -82,7 +82,6 @@ export class AlumniApprovalFormComponent implements OnInit {
         this.getBatch = res.BatchYear;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -94,10 +93,8 @@ export class AlumniApprovalFormComponent implements OnInit {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
         this.getInstitutes = res.Institute;
-        console.log(this.getInstitutes)
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -111,7 +108,6 @@ export class AlumniApprovalFormComponent implements OnInit {
       return;
     } else {
       let params = this.approvalForm.value;
-     console.log(params)
     }
   }
 }

@@ -116,7 +116,6 @@ export class AtGlanceComponent implements OnInit {
   }
 
   onTypeChange(event:any) {
-    console.log(event)
     this.valueChange = event;
     if (this.valueChange) {
       this.eventFillter();
@@ -130,7 +129,6 @@ export class AtGlanceComponent implements OnInit {
     }
     // let action:string = "filter-event" 
     await this.dataService.postData(action, this.valueChange).subscribe((result: any) => {
-      console.log(result);
     })
   }
 }
