@@ -31,12 +31,11 @@ export class HomeComponent implements OnInit {
     items: 1,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: false,
+    pullDrag: true,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 2000,
     autoplay: true,
     autoplayTimeout: 3000,
-
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
