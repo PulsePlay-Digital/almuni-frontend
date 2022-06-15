@@ -1,5 +1,4 @@
-<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2"
-    [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
+<div class="header-nav d-lg-block d-xl-block d-md-block py-md-3 py-lg-3 py-xl-3 py-sm-2 py-2" [ngClass]="(enableSticky == true) ? 'stickyHeader' : 'fixedHeader'">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
@@ -12,21 +11,31 @@
             <div class="col-md-12 col-lg-9 col-xl-9 col-sm-12 col-12 align-self-center">
                 <div class="row">
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                        <div
-                            class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
+                        <div class="navbar navbar-expand-lg header-navbar upperNav navbar-light pb-xl-3 pb-lg-3 pb-md-2 pt-0">
                             <div class="top-header">
                                 <div class="open-add align-self-center">
-                                    <a href="https://bit.ly/sbup_mba8" target="_blank"
-                                        class="btn admission-open">Admissions Open</a>
+                                    <a href="https://bit.ly/sbup_mba8" target="_blank" class="btn admission-open">Admissions Open</a>
                                 </div>
                                 <div class="open-add mailBtn align-self-center">
                                     <a routerLink="/transcript" target="_blank" class="btn admission-open">Apply For
                                         Transcript</a>
                                 </div>
+                                <div class="open-add mailBtn align-self-center">
+                                    <a target="_blank" href="mailto:admissions@sbup.edu.in" class="text-decoration-none">
+                                        <span class="header-icon pe-3">
+                                            <i  aria-hidden="true" class="fa fa-envelope-o"></i></span> alumni@sbup.edu.in
+                                    </a>
+                                </div>
+                                <div class="open-add mailBtn align-self-center">
+                                    <a target="_blank" href="mailto:alumni@sbup.edu.in" class="text-decoration-none">
+                                        <span class="header-icon pe-3">
+                                            <i  aria-hidden="true" class="fa fa-globe"></i>
+                                        </span>www.sbup.edu.in
+                                    </a>
+                                </div>
                                 <ng-container *ngIf="!currentUser">
                                     <div class="open-add align-self-center">
-                                        <a class="btn login-register p-0" routerLink="/login"
-                                            routerLinkActive="active-link">
+                                        <a class="btn login-register p-0" routerLink="/login" routerLinkActive="active-link">
                                             <span class="header-icon pe-3"><i class="fa fa-user-o"
                                                     aria-hidden="true"></i></span> Login / Register</a>
                                     </div>
@@ -34,17 +43,13 @@
                                 <ng-container *ngIf="currentUser">
                                     <div class="align-self-center">
                                         <div class="dropdown">
-                                            <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="./assets/Ellipse-19.png" class="userImg" alt="userImg"> <span
-                                                    class="header-icon"><i class="fa fa-angle-down ps-2"
+                                            <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="./assets/Ellipse-19.png" class="userImg" alt="userImg"> <span class="header-icon"><i class="fa fa-angle-down ps-2"
                                                         aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <li><a class="dropdown-item" routerLink="view-profile"
-                                                        [queryParams]="{id: currentUser?.id}">View Profile</a></li>
-                                                <li><a class="dropdown-item" routerLink="edit-profile"
-                                                        [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
+                                                <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View Profile</a></li>
+                                                <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit Profile</a></li>
                                                 <li><a class="dropdown-item" routerLink="reset-password">Reset
                                                         Password</a>
                                                 </li>
@@ -58,158 +63,106 @@
                     </div>
                     <hr class="mb-0">
                     <!-- Desktop nav end-->
-                    <div
-                        class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-block d-xl-block d-lg-block d-none">
+                    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-block d-xl-block d-lg-block d-none">
                         <nav class="navbar topnav navbar-expand-lg navbar-light pt-xl-3 pt-lg-3 pt-md-2 pb-0">
                             <a class="navbar-brand smallLogo" routerLink="/home">
-                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid "
-                                    alt="Shri Balaji Logo">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid " alt="Shri Balaji Logo">
                             </a>
-                            <button class="fa-burger fs-4 mobile-toggle border-0 text-toogle" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                                aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                                aria-label="Toggle navigation">
+                            <button class="fa-burger fs-4 mobile-toggle border-0 text-toogle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="text-collapsed">☰</span>
                                 <span class="text-expanded closeExpandBtn">x</span></button>
                             <div class="collapse navbar-collapse" id="navbarToggler">
-                                <ul
-                                    class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav align-items-xl-center align-items-lg-center">
+                                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll main-nav align-items-xl-center align-items-lg-center">
                                     <li class="nav-item">
                                         <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">
+                                        <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">
                                             Know
                                             Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor"
-                                                    routerLinkActive="active-link">Founder
+                                            <li><a class="dropdown-item" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">Founder
                                                     Chancellor</a></li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society"
-                                                    routerLinkActive="active-link"> SBUP</a>
+                                            <li><a class="dropdown-item" routerLink="/about-us/balaji-social-society" routerLinkActive="active-link"> SBUP</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="/about-us/leadership-team"
-                                                    routerLinkActive="active-link">Leadership Team</a>
+                                            <li><a class="dropdown-item" routerLink="/about-us/leadership-team" routerLinkActive="active-link">Leadership Team</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                            aria-expanded="false" routerLink="/common-purpose-culture"
-                                            routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
+                                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/common-purpose-culture" routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
-                                            <li><a (click)="target('founderMsg')" class="dropdown-item"
-                                                    routerLinkActive="active-link"
-                                                    routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('founderMsg')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     The
                                                     Founder's Message </a></li>
-                                            <li><a (click)="target('connectVision')" class="dropdown-item"
-                                                    routerLinkActive="active-link"
-                                                    routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('connectVision')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     SBUP Alumni Connect Vision </a></li>
-                                            <li><a (click)="target('strategy')" class="dropdown-item"
-                                                    routerLinkActive="active-link"
-                                                    routerLink="/common-purpose-culture/connect-vision">
+                                            <li><a (click)="target('strategy')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                     SBUP Alumni Connect Strategy Framework </a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                            routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/community/community-home']}}"
-                                            routerLinkActive="active-link">Community
+                                        <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/community/community-home']}}" routerLinkActive="active-link">Community
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}"
-                                                    routerLinkActive="active-link">Alumni
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}" routerLinkActive="active-link">Alumni
                                                     Directory</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}"
-                                                    routerLinkActive="active-link">Professional
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}" routerLinkActive="active-link">Professional
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}"
-                                                    routerLinkActive="active-link">Industry
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}" routerLinkActive="active-link">Industry
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}"
-                                                    routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}" routerLinkActive="active-link">
                                                     Business Ventures</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown"
-                                            aria-expanded="false" routerLink="/connect/at-glance"
-                                            routerLinkActive="active-link">Connect
+                                        <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/connect/at-glance" routerLinkActive="active-link">Connect
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['login']}}">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['login']}}">
                                                     Connect at glance</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="/connect/at-glance">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="/connect/at-glance">
                                                     Past Events</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="/connect/at-glance">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="/connect/at-glance">
                                                     Upcoming Events</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                            routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/collaborate-contribute/collaborate']}}"
-                                            routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
+                                        <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/collaborate-contribute/collaborate']}}" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['login']}}">Mentorship</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['login']}}">Careers
                                                     and
                                                     Jobs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['login']}}">Special
                                                     Projects</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link"
-                                                    routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}">Engage
                                                     with SBUP</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown"
-                                            aria-expanded="false" routerLink="/celebrate"
-                                            routerLinkActive="active-link">Celebrate
+                                        <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/celebrate" routerLinkActive="active-link">Celebrate
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
-                                            <li><a class="dropdown-item"
-                                                    routerLink="/celebrate/featured-alumni">Featured Alumni</a>
+                                            <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured Alumni</a>
                                             </li>
-                                            <li><a class="dropdown-item"
-                                                    routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}"
-                                                    routerLinkActive="active-link">Journey, Achievements & Passion</a>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}" routerLinkActive="active-link">Journey, Achievements & Passion</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="/celebrate/gallery"
-                                                    routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLink="/celebrate/gallery" routerLinkActive="active-link">
                                                     Gallery </a></li>
-                                            <li><a class="dropdown-item" routerLink="/celebrate/magazine"
-                                                    routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLink="/celebrate/magazine" routerLinkActive="active-link">
                                                     Corporate Citizen Magazine</a></li>
-                                            <li><a class="dropdown-item" routerLink="/celebrate/news-update"
-                                                    routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLink="/celebrate/news-update" routerLinkActive="active-link">
                                                     News and Updates </a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown"
-                                            aria-expanded="false" routerLink="/contact"
-                                            routerLinkActive="active-link">Contact
+                                        <a class="nav-link" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/contact" routerLinkActive="active-link">Contact
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton6">
                                             <li><a class="dropdown-item" routerLink="/contact/key-contact">Key
@@ -222,8 +175,7 @@
                                     </li>
                                     <div class="responsiveList">
                                         <li class="nav-item">
-                                            <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false"
-                                                routerLink="/transcript" routerLinkActive="active-link">Apply For
+                                            <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/transcript" routerLinkActive="active-link">Apply For
                                                 Transcript</a>
                                         </li>
                                     </div>
@@ -231,39 +183,29 @@
                                         <div class="row m-0 my-2">
                                             <div class="col-md-6 col-sm-8 col-8 ps-0 responsiveList align-self-center">
                                                 <div class="open-add mailBtn align-self-center">
-                                                    <a class="text-decoration-none" target="_blank"
-                                                        href="mailto:admissions@sbup.edu.in"> <span
-                                                            class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                    <a class="text-decoration-none" target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-envelope-o"
                                                                 aria-hidden="true"></i></span> alumni@sbup.edu.in
                                                     </a>
                                                 </div>
                                                 <div class="open-add mailBtn align-self-center">
-                                                    <a class=" text-decoration-none" target="_blank"
-                                                        href="mailto:alumni@sbup.edu.in"> <span
-                                                            class="header-icon pe-3"><i class="fa fa-globe"
+                                                    <a class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
                                                                 aria-hidden="true"></i></span>www.sbup.edu.in</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-4 col-4 text-end d-xl-none d-lg-none">
-                                                <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2"
-                                                    [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                                <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                                     <div class="dropdown">
-                                                        <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <img src="./assets/Ellipse-19.png" class="w-50"
-                                                                alt="ellipse img"> <span class="header-icon"><i
+                                                        <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <img src="./assets/Ellipse-19.png" class="w-50" alt="ellipse img"> <span class="header-icon"><i
                                                                     class="fa fa-angle-down ps-2"
                                                                     aria-hidden="true"></i></span>
                                                         </a>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                            <li><a class="dropdown-item" routerLink="view-profile"
-                                                                    [queryParams]="{id: currentUser?.id}">View
+                                                            <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View
                                                                     Profile</a></li>
-                                                            <li><a class="dropdown-item" routerLink="edit-profile"
-                                                                    [queryParams]="{id: currentUser?.id}">Edit
+                                                            <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit
                                                                     Profile</a></li>
-                                                            <li><a class="dropdown-item"
-                                                                    routerLink="reset-password">Reset
+                                                            <li><a class="dropdown-item" routerLink="reset-password">Reset
                                                                     Password</a>
                                                             </li>
                                                             <li><a class="dropdown-item" (click)="logout()">Logout</a>
@@ -273,25 +215,19 @@
                                                 </div>
                                             </div>
                                             <div class="d-xl-block d-lg-block d-md-none d-none">
-                                                <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2"
-                                                    [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
+                                                <div class="align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start my-xl-0 my-lg-0 my-2" [ngClass]="(enableSticky == true) ? 'showUser' : 'hideUser'">
                                                     <div class="dropdown">
-                                                        <a class="btn border-0 p-0" role="button" id="dropdownMenuLink"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <img src="./assets/Ellipse-19.png" class="w-50"
-                                                                alt="ellipse img"> <span class="header-icon"><i
+                                                        <a class="btn border-0 p-0" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <img src="./assets/Ellipse-19.png" class="w-50" alt="ellipse img"> <span class="header-icon"><i
                                                                     class="fa fa-angle-down ps-2"
                                                                     aria-hidden="true"></i></span>
                                                         </a>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                            <li><a class="dropdown-item" routerLink="view-profile"
-                                                                    [queryParams]="{id: currentUser?.id}">View
+                                                            <li><a class="dropdown-item" routerLink="view-profile" [queryParams]="{id: currentUser?.id}">View
                                                                     Profile</a></li>
-                                                            <li><a class="dropdown-item" routerLink="edit-profile"
-                                                                    [queryParams]="{id: currentUser?.id}">Edit
+                                                            <li><a class="dropdown-item" routerLink="edit-profile" [queryParams]="{id: currentUser?.id}">Edit
                                                                     Profile</a></li>
-                                                            <li><a class="dropdown-item"
-                                                                    routerLink="reset-password">Reset
+                                                            <li><a class="dropdown-item" routerLink="reset-password">Reset
                                                                     Password</a>
                                                             </li>
                                                             <li><a class="dropdown-item" (click)="logout()">Logout</a>
@@ -306,31 +242,23 @@
                                         <div class="row m-0 my-2">
                                             <div class="col-md-6 col-sm-8 col-8 ps-0 responsiveList">
                                                 <div class="open-add mailBtn align-self-center">
-                                                    <a class="text-decoration-none" target="_blank"
-                                                        href="mailto:admissions@sbup.edu.in"> <span
-                                                            class="header-icon pe-3"><i class="fa fa-envelope-o"
+                                                    <a class="text-decoration-none" target="_blank" href="mailto:admissions@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-envelope-o"
                                                                 aria-hidden="true"></i></span> alumni@sbup.edu.in
                                                     </a>
                                                 </div>
                                                 <div class="open-add mailBtn align-self-center">
-                                                    <a class=" text-decoration-none" target="_blank"
-                                                        href="mailto:alumni@sbup.edu.in"> <span
-                                                            class="header-icon pe-3"><i class="fa fa-globe"
+                                                    <a class=" text-decoration-none" target="_blank" href="mailto:alumni@sbup.edu.in"> <span class="header-icon pe-3"><i class="fa fa-globe"
                                                                 aria-hidden="true"></i></span>www.sbup.edu.in</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-4 col-4 text-end d-xl-none d-lg-none d-block">
-                                                <div
-                                                    class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start">
-                                                    <a class="btn login-register p-0 nav-link " routerLink="/login"
-                                                        routerLinkActive="active-link">Log In</a>
+                                                <div class="open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start">
+                                                    <a class="btn login-register p-0 nav-link " routerLink="/login" routerLinkActive="active-link">Log In</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class=" d-xl-block d-lg-block d-none open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start">
-                                            <a class="btn login-register p-0 nav-link" routerLink="/login"
-                                                routerLinkActive="active-link">Log In</a>
+                                        <div class=" d-xl-block d-lg-block d-none open-add align-self-xl-center align-self-lg-center align-self-md-start align-self-sm-start align-self-start">
+                                            <a class="btn login-register p-0 nav-link" routerLink="/login" routerLinkActive="active-link">Log In</a>
                                         </div>
                                     </ng-container>
                                 </ul>
@@ -342,175 +270,121 @@
                     <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-none d-xl-none d-lg-none d-block">
                         <nav class="navbar navbar-light bg-light bg-transparent moboSideNav">
                             <a class="navbar-brand" routerLink="/home">
-                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid"
-                                    alt="Shri Balaji Logo">
+                                <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid" alt="Shri Balaji Logo">
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                                aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                                 <div class="offcanvas-header">
                                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav justify-content-end flex-grow-1">
                                         <li class="nav-item lh-lg">
-                                            <a class="nav-link lh-base" (click)="navigate('/home')"
-                                                routerLinkActive="active-link">Home</a>
+                                            <a class="nav-link lh-base" (click)="navigate('/home')" routerLinkActive="active-link">Home</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/about-us/founder-chancellor')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/about-us/founder-chancellor')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Know us</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/founder-chancellor"
-                                                        routerLinkActive="active-link">Founder
+                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">Founder
                                                         Chancellor</a></li>
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        routerLink="/about-us/balaji-social-society"
-                                                        routerLinkActive="active-link"> SBUP</a>
+                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/balaji-social-society" routerLinkActive="active-link"> SBUP</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/leadership-team"
-                                                        routerLinkActive="active-link">Leadership Team</a>
+                                                <li><a class="dropdown-item lh-base px-2" routerLink="/about-us/leadership-team" routerLinkActive="active-link">Leadership Team</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/common-purpose-culture')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/common-purpose-culture')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Common Purpose</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a (click)="target('founderMsg')" class="dropdown-item lh-base px-2"
-                                                        routerLinkActive="active-link"
-                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                <li><a (click)="target('founderMsg')" class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                         The
                                                         Founder's Message </a></li>
-                                                <li><a (click)="target('connectVision')" class="dropdown-item lh-base px-2"
-                                                        routerLinkActive="active-link"
-                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                <li><a (click)="target('connectVision')" class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                         SBUP Alumni Connect Vision </a></li>
-                                                <li><a (click)="target('strategy')" class="dropdown-item lh-base px-2"
-                                                        routerLinkActive="active-link"
-                                                        routerLink="/common-purpose-culture/connect-vision">
+                                                <li><a (click)="target('strategy')" class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
                                                         SBUP Alumni Connect Strategy Framework </a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/community/alumni-directory')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/community/alumni-directory')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Community</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}"
-                                                        routerLinkActive="active-link">Alumni
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['login']}}" routerLinkActive="active-link">Alumni
                                                         Directory</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}"
-                                                        routerLinkActive="active-link">Professional
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}" routerLinkActive="active-link">Professional
                                                         Clubs</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}"
-                                                        routerLinkActive="active-link">Industry
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['login']}}" routerLinkActive="active-link">Industry
                                                         Clubs</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}"
-                                                        routerLinkActive="active-link">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['login']}}" routerLinkActive="active-link">
                                                         Business Ventures</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/connect/at-glance')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/connect/at-glance')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Connect</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/connect/at-glance')">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/connect/at-glance')">
                                                         Connect at glance</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/connect/at-glance')">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/connect/at-glance')">
                                                         Past Events</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/connect/at-glance')">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/connect/at-glance')">
                                                         Upcoming Events</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/collaborate-contribute/mentorship')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/collaborate-contribute/mentorship')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Collaborate</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/collaborate-contribute/mentorship')">Mentorship</a>
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/collaborate-contribute/mentorship')">Mentorship</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/collaborate-contribute/careers')">Careers
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/collaborate-contribute/careers')">Careers
                                                         and Jobs</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/collaborate-contribute/special-projects')">Special
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/collaborate-contribute/special-projects')">Special
                                                         Projects</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link"
-                                                        (click)="navigate('/collaborate-contribute/engage-with-society')">Engage
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" (click)="navigate('/collaborate-contribute/engage-with-society')">Engage
                                                         with SBUP</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/celebrate')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/celebrate')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Celebrate</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        (click)="navigate('/celebrate/featured-alumni')">Featured
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/featured-alumni')">Featured
                                                         Alumni</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        (click)="navigate('/celebrate/alumni-journey')"
-                                                        routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}"
-                                                        routerLinkActive="active-link">Journey, Achievements &
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['login']}}" routerLinkActive="active-link">Journey, Achievements &
                                                         Passion</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/gallery')"
-                                                        routerLinkActive="active-link">
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/gallery')" routerLinkActive="active-link">
                                                         Gallery </a></li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/magazine')"
-                                                        routerLinkActive="active-link">
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/magazine')" routerLinkActive="active-link">
                                                         Corporate Citizen Magazine</a></li>
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        (click)="navigate('/celebrate/news-update')"
-                                                        routerLinkActive="active-link">
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/news-update')" routerLinkActive="active-link">
                                                         News and Updates </a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link d-flex justify-content-between" (click)="navigate('/contact')"
-                                                id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
+                                            <a class="nav-link d-flex justify-content-between" (click)="navigate('/contact')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <span>Contact</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        (click)="navigate('/contact/key-contact')">Key
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/contact/key-contact')">Key
                                                         Contacts</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2"
-                                                        (click)="navigate('/contact/social-links')">SBUP
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/contact/social-links')">SBUP
                                                         Alumni
                                                         Clubs – Social Channels</a></li>
                                             </ul>
