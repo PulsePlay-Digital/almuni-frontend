@@ -56,7 +56,7 @@ export class BasicInfoComponent implements OnInit {
       mobile_code: ['', Validators.required],
       mobile_number: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       landline_code: [''],
-      landline_number: ['', [Validators.minLength(10), Validators.maxLength(10)]],
+      landline_number: [''],
       city: ['', Validators.required],
       showMobile: [this.showOpt, Validators.required],
       country: ['', Validators.required],

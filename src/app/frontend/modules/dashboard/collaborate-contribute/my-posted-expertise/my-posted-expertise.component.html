@@ -2,24 +2,39 @@
   <div class="d-flex align-items-center justify-content-between my-4">
     <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Offer Expertise</h4>
   </div>
+
+  <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
+    <div class="search-filter p-4">
+        <form class="">
+            <div class="row">
+                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                    <div class="form-outline">
+                        <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" 
+                        [ngModelOptions]="{standalone: true}" placeholder="Alumni name" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
   <app-loader *ngIf="loading"></app-loader>
   <ng-container *ngIf="!loading">
     <ng-container *ngIf="allExpertise.length > 0">
-      <div class="col-lg-4 col-md-6 my-2" *ngFor="let item of allExpertise">
+      <div class="col-lg-4 col-md-6 my-2 mb-3" *ngFor="let item of allExpertise | filterText: nameSearched">
         <div class="card card-bg shadow border-0">
           <div class="card-body">
-            <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.author }}</h5>
+            <!-- <h5 class="card-title fs-4 main-heading text-capitalize">{{ item?.author }}</h5> -->
             <div class="row">
               <div class="col-lg-12">
-                <p><b>Job ID</b>: &nbsp; {{ item?.id }} </p>
+                <p><b>Heading</b>: &nbsp; <b>Participate at a event</b> </p>
               </div>
-              <div class="col-lg-12">
-                <p><b>Job Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium'}} </p>
-              </div>
-              <div class="col-lg-12">
+              <div class="col-lg-12" *ngIf="item?.eventName">
                 <p><b>Event Name</b>: &nbsp; {{ item?.eventName }} </p>
               </div>
-              <div class="col-lg-12" *ngIf="item?.type == 'seminar'">
+              <div class="col-lg-12" *ngIf="item?.dateTime">
+                <p><b>Event Date & Time</b>: &nbsp; {{ item?.dateTime}} </p>
+              </div>
+              <!-- <div class="col-lg-12" *ngIf="item?.type == 'seminar'">
                 <p><b>Type</b>: &nbsp; Speak at National Seminar </p>
               </div>
               <div class="col-lg-12" *ngIf="item?.type == 'faculty'">
@@ -27,15 +42,12 @@
               </div>
               <div class="col-lg-12" *ngIf="item?.type == 'workshops'">
                 <p><b>Type</b>: &nbsp; Offer expertise to conduct Workshops </p>
-              </div>
-              <div class="col-lg-6">
+              </div> -->
+              <div class="col-lg-6" *ngIf="item?.participationType">
                 <p><b>Participation Type</b>: &nbsp; {{ item?.participationType }} </p>
               </div>
               <div class="col-lg-12">
-                <p><b>Workshop</b>: &nbsp; {{ item?.workshopTopic }} </p>
-              </div>
-              <div class="col-lg-12">
-                <p><b>Venue</b>: &nbsp; {{ item?.venue }} </p>
+                <p><b>Posted Date</b>: &nbsp; {{ item?.created_at | date:'medium' }} </p>
               </div>
               <div class="col-lg-12">
                 <p><b>Description</b>: &nbsp; </p>

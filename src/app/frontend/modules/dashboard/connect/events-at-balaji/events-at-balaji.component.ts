@@ -89,6 +89,7 @@ export class EventsAtBalajiComponent implements OnInit {
           (res: any) => {
             if (res?.status == 200) {
               this.notify.notificationService.openSuccessSnackBar(res?.message);
+              location.reload();
             }
           },
           (error) => {
