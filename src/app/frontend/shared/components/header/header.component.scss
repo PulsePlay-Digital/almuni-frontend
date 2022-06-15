@@ -229,6 +229,10 @@
     }
 }
 
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 // medai query//
 @media (min-width: 300px) and (max-width: 574px) {
     .header-nav {
