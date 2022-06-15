@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Config } from 'src/app/frontend/services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
@@ -19,7 +20,8 @@ export class AddSpecialProjectComponent implements OnInit {
   constructor( public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor,
-    public config: Config
+    public config: Config,
+    public router: Router
     ) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -72,6 +74,7 @@ export class AddSpecialProjectComponent implements OnInit {
       await this.dataService.postData(action, this.editSpecialForm.value).subscribe((res: any) => {
         if (res?.status === 200) {
           this.notify.notificationService.openSuccessSnackBar(res?.message);
+          this.router.navigate(['/collaborate-contribute/special-projects']);
         }
       }, error => {
           this.notify.notificationService.openFailureSnackBar(error);

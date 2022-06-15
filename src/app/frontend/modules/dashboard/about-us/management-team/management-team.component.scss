@@ -26,3 +26,39 @@
     }
   }
 }
+
+@media screen and (max-width: 574px) and (min-width: 300px) {
+  .founderPage {
+    .quotes {
+      font-size: 16px;
+    }
+  }
+}
+// @media screen and (max-width: 768px) and (min-width: 575px) {
+//   .founderPage {
+//     .card {
+//       .alumni-pic {
+//         min-height: 242px;
+//         max-height: 242px;
+//         img {
+//           min-height: 242px;
+//           max-height: 242px;
+//         }
+//       }
+//     }
+//   }
+// }
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .founderPage {
+    .card {
+      .alumni-pic {
+        min-height: 270px;
+        max-height: 270px;
+        img {
+          min-height: 270px;
+          max-height: 270px;
+        }
+      }
+    }
+  }
+}

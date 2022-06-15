@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import * as moment from "moment";
-import { map } from "rxjs/operators";
 import { environment } from "./../../../../../../environments/environment";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
@@ -136,6 +134,7 @@ export class IndustryConnectComponent implements OnInit {
         (res: any) => {
           if (res?.status == 200) {
             this.notify.notificationService.openSuccessSnackBar(res?.message);
+            location.reload();
           }
         },
         (error) => {

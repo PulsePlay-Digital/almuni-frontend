@@ -13,6 +13,8 @@ export class FilterTextPipe implements PipeTransform {
     return items.filter((item: any) => {
       if (item?.hasOwnProperty("title")) {
         return item?.title?.toLowerCase().includes(searchText);
+      } else if (item?.hasOwnProperty('eventName')) {
+        return item?.eventName?.toLowerCase().includes(searchText);
       }
     });
   }

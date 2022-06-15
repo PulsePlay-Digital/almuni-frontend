@@ -1,6 +1,9 @@
 .special-projects {
   .project-box {
     background: var(--card-bg);
+    .posted {
+      height: 50px;
+    }
   }
   .number {
     color: var(--btn-background);
