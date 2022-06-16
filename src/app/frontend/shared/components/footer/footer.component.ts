@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/frontend/services/data.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { DataService } from 'src/app/frontend/services/data.service';
 })
 export class FooterComponent implements OnInit {
   currentUser;
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService,
+    private router: Router) {
     if (localStorage.hasOwnProperty("currentUser")) {
       this.currentUser = JSON.parse(
         localStorage.getItem("currentUser") || "{}"
@@ -25,4 +27,6 @@ export class FooterComponent implements OnInit {
    target(sectionId: any) {
     this.dataService.scrollSection.next(sectionId);
   }
+
+
 }

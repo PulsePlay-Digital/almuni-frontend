@@ -302,4 +302,7 @@ export class HomeComponent implements OnInit {
       this.locationCounts = result
     })
   }
+  navigate(r:string) {
+    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
+  }
 }

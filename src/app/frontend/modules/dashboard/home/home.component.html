@@ -387,17 +387,17 @@
                         <div class="boxUL">
                             <ul>
                                 <li>
-                                    <a routerLink="/collaborate-contribute/mentorship"><span
+                                    <a (click)="navigate('/collaborate-contribute/mentorship')"><span
                                             class="text">Mentorship</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
                                 </li>
                                 <li>
-                                    <a routerLink="{{(currentUser) ? ['/community/professional-club'] : ['login']}}"><span class="text">Exclusive
+                                    <a (click)="navigate('/community/professional-club')"><span class="text">Exclusive
                                             resources</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
                                 </li>
                                 <li>
-                                    <a routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['login']}}"><span
+                                    <a (click)="navigate('/collaborate-contribute/engage-with-society')"><span
                                             class="text">Contribute
                                             back </span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
