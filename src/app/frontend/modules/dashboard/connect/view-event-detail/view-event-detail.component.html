@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col collaborate-image  text-center">
-                <img src="./assets/connectImg/detail.png" class="collab-img img-fluid mb-2"
+                <img [src]="imgPath + event_detail?.eventImage" class="collab-img img-fluid mb-2"
                     alt="Event Detail Image">
             </div>
         </div>
@@ -108,18 +108,6 @@
                 <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
                     <div class="col-md-3 ps-lg-0">
                         <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Description:</span>
-                        </p>
-                    </div>
-                    <div class="col-md-9 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                            {{ event_detail?.description | stripHtml }}
-                        </p>
-                    </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
                             <span class="fw-bold">Event Time:</span>
                         </p>
                     </div>
@@ -166,6 +154,18 @@
                         </p>
                        
                     </div>
+                </div>
+            </div>
+            <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
+                <div class="col-md-3 ps-lg-0">
+                    <p class="text-capitalize fs-6 mb-0">
+                        <span class="fw-bold">Description:</span>
+                    </p>
+                </div>
+                <div class="col-md-9 ps-lg-0">
+                    <p class="text-capitalize fs-6 text-lg-start mb-0">
+                        {{ event_detail?.description | stripHtml }}
+                    </p>
                 </div>
             </div>
             <div class="row">

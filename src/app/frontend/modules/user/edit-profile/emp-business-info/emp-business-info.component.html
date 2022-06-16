@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
-        <form [formGroup]="empBuisnessForm">
+        <app-loader *ngIf="loading"></app-loader>
+        <form [formGroup]="empBuisnessForm" *ngIf="!loading">
             <div class="row">
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class=" form-label fw-bold">If employee, professional title </label>

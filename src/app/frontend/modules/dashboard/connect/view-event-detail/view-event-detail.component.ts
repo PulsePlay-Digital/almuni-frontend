@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { environment } from "src/environments/environment";
 import { Config } from "./../../../../services/config";
 
 @Component({
@@ -10,6 +11,7 @@ import { Config } from "./../../../../services/config";
 export class ViewEventDetailComponent implements OnInit {
   event_detail: any;
   heading: string= "EVENT DETAIL INFORMATION";
+  imgPath = environment.imgUrl;
 
   constructor(public arouter: ActivatedRoute, public config: Config) {
     //Get query params

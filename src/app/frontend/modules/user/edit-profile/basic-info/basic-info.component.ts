@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Config } from './../../../../services/config';
-import { CountryService } from './../../../../services/country.service';
-import { DataService } from './../../../../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { Config } from "./../../../../services/config";
+import { CountryService } from "./../../../../services/country.service";
+import { DataService } from "./../../../../services/data.service";
 
 @Component({
-  selector: 'app-basic-info',
-  templateUrl: './basic-info.component.html',
-  styleUrls: ['./basic-info.component.scss']
+  selector: "app-basic-info",
+  templateUrl: "./basic-info.component.html",
+  styleUrls: ["./basic-info.component.scss"],
 })
 export class BasicInfoComponent implements OnInit {
   basicInfoForm: FormGroup | any;
@@ -20,69 +21,100 @@ export class BasicInfoComponent implements OnInit {
   submitted: boolean = false;
   showOpt: boolean = false;
   region: any;
+  currentUser: any;
+  loading: boolean = false;
+
   constructor(
     public fb: FormBuilder,
     public countryService: CountryService,
     public dataService: DataService,
-    private config: Config
-  ) { 
-    this.gender = this.config.gender;
-    this.maritalStatus = this.config.maritalStatus;
-    this.bloodGroup = this.config.bloodGroup;
-    this.region = this.config.region;
+    private config: Config,
+    private notify: TokenInterceptor
+  ) {
+    this.gender = this.config?.gender;
+    this.maritalStatus = this.config?.maritalStatus;
+    this.bloodGroup = this.config?.bloodGroup;
+    this.region = this.config?.region;
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.buildForm();
     this.loadCountries();
     this.getAllBatches();
     this.getAllInstitutes();
+    this.loading = true;
+    let action: string = "all-profileUsers";
+    await this.dataService
+      .getDataById(action, this.currentUser?.id)
+      .subscribe((res: any) => {
+        this.currentUser = res?.Users;
+        setTimeout(() => {
+          this.basicInfoForm.patchValue({
+            ...res?.Users
+          });
+        }, 800);
+        this.loading = false;
+      });
   }
 
   /**
    * Build form data
    */
-   buildForm() {
+  buildForm() {
     this.basicInfoForm = this.fb.group({
-      first_name: ['', Validators.required],
-      middle_name: [''],
-      last_name: ['', Validators.required],
-      institute_id: ['', Validators.required],
-      batchYear_id: ['', Validators.required],
-      institute_wise_roll: [''],
-      gender: ['', Validators.required],
-      marital_status: [''],
-      blood_group: ['', Validators.required],
-      mobile_code: ['', Validators.required],
-      mobile_number: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      landline_code: [''],
-      landline_number: [''],
-      city: ['', Validators.required],
-      showMobile: [this.showOpt, Validators.required],
-      country: ['', Validators.required],
-      country_code: ['', Validators.required],
-      personal_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      office_email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      birth_date: ['', Validators.required],
-      anniversary_date: ['', Validators.required],
-      current_address: ['', Validators.required],
-      current_country: ['', Validators.required],
-      other_country: [''],
-      current_region: ['', Validators.required],
-      other_region: [''],
-      current_state: ['', Validators.required],
-      current_city: ['', Validators.required],
-      permanent_address: ['', Validators.required],
-      permanent_country: ['', Validators.required],
-      other_permanentCountry: [''],
-      permanent_state: ['', Validators.required],
-      permanent_city: ['', Validators.required],
-      linkedin_id: ['', Validators.required],
-      twitter_id: ['', Validators.required],
-      skype_id: ['', Validators.required],
-      facebook_id: ['', Validators.required],
-      instagram_id: ['', Validators.required],
-      council_member_designation: ['', Validators.required],
+      id: [this.currentUser?.id],
+      first_name: ["", Validators.required],
+      middle_name: [""],
+      last_name: ["", Validators.required],
+      institute_id: ["", Validators.required],
+      batchYear_id: ["", Validators.required],
+      Institute_wise_roll: [""],
+      gender: ["", Validators.required],
+      marital_status: [""],
+      blood_group: [""],
+      code: [""],
+      mobile_number: [
+        "",
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+        ],
+      ],
+      phone_code: [""],
+      phone_number: [""],
+      display_mobile: [this.showOpt],
+      email: [
+        "",
+        [
+          Validators.required,
+          Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
+        ],
+      ],
+      office_email: [""],
+      birth_date: ["", Validators.required],
+      anniversary_date: [""],
+      current_address: ["", Validators.required],
+      country: [""],
+      other_current_country: [""],
+      current_region: [""],
+      other_current_region: [""],
+      current_state: ["", Validators.required],
+      current_city: ["", Validators.required],
+      permanent_address: ["", Validators.required],
+      permanent_country: [""],
+      other_permanent_country: [""],
+      permanent_state: ["", Validators.required],
+      permanent_city: ["", Validators.required],
+      linkedin_id: [""],
+      twitter_id: [""],
+      skype_id: [""],
+      facebook_id: [""],
+      instagram_id: [""],
+      council_member_designation: [""],
       role: [0]
     });
   }
@@ -98,46 +130,64 @@ export class BasicInfoComponent implements OnInit {
    * Get all countries
    */
   public loadCountries() {
-    this.countryService.getCountries().subscribe(data => {
+    this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
     });
   }
 
   /**
    * Function to change country
-   * @param event 
+   * @param event
    */
-  public changeCountry(event: any) {
-  }
+  public changeCountry(event: any) {}
 
   /**
    * Function to get all institutes
    */
   async getAllInstitutes() {
-    await this.dataService.getAllInstitutes().subscribe((res: any) => {
-      this.getInstitutes = res.Institute;
-    }, error => {
-      console.log(error)
-    });
+    await this.dataService.getAllInstitutes().subscribe(
+      (res: any) => {
+        this.getInstitutes = res.Institute;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   /**
    * Function to get all Batches
    */
   async getAllBatches() {
-    await this.dataService.getAllBatches().subscribe((res: any) => {
-      this.getBatch = res?.BatchYear;
-    }, error => {
-      console.log(error)
-    });
+    await this.dataService.getAllBatches().subscribe(
+      (res: any) => {
+        this.getBatch = res?.BatchYear;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-  edit() {
+  async edit() {
     this.submitted = true;
     if (this.basicInfoForm.invalid) {
       return;
     } else if (this.basicInfoForm.valid) {
+      this.loading = true;
+      let action: string = "update-user";
+      await this.dataService
+        .updateData(action, this.basicInfoForm.value)
+        .subscribe(
+          (res: any) => {
+            this.notify.notificationService.openSuccessSnackBar(res?.message);
+            this.loading = false;
+          },
+          (error) => {
+            this.notify.notificationService.openFailureSnackBar(error);
+            this.loading = false;
+          }
+        );
     }
   }
-
 }

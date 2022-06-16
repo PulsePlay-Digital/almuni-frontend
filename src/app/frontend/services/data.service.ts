@@ -78,8 +78,13 @@ export class DataService {
   }
 
   updateData(action: any, data: any) {
+    console.log(action, data)
     if (action?.action === 'update-user' || action?.action == 'profile-pic') {
       return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
+    } 
+    else if(action == 'update-education' || action == 'update-employment' 
+    || action == 'update-experience' || action == 'update-mentorship' || action == 'update-other') {
+      return this.http.put(`${this.url}/${action}/${data?.id}`, data);
     }
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }
