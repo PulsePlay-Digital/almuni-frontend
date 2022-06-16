@@ -6,7 +6,6 @@ export const environment = {
   production: false,
   apiUrl: "https://swadeshdigital.com/sbsAlumni/api",
   imgUrl: "https://swadeshdigital.com/sbsAlumni/public/",
-  lazyLoadImage: 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif'
   // apiUrl: "https://swadeshdigital.com/sbupAlumniAdmin",
   // imgUrl: "https://swadeshdigital.com/sbupAlumniAdmin/"
 };

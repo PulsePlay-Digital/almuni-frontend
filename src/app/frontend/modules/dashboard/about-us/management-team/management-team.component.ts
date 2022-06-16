@@ -14,7 +14,7 @@ export class ManagementTeamComponent implements OnInit {
   loading: boolean = true;
   p: number = 1;
   heading: string= "LEADERSHIP TEAM";
-  lazyLoadImage = environment.lazyLoadImage;
+  lazyLoadImage = './assets/loading.gif';
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor

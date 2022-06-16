@@ -73,7 +73,7 @@
                                     <div class="storyDescription p-lg-5 p-md-5 p-sm-5 p-4">
                                         <div class="users mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
                                             <div class="user-logo">
-                                                <img class="userImg" [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + stories?.picture" alt="user img" />
+                                                <img class="userImg" [src]="imgPath + stories?.picture" alt="user img" />
                                             </div>
                                             <div class="username">
                                                 <h3 class="fw-bold">{{ stories?.alumni_name }}</h3>
@@ -310,7 +310,7 @@
                         <ng-template carouselSlide *ngFor="let data of gallery">
                             <div class="gallaryImg">
                                 <a href="">
-                                    <img class="mb-3" [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + data.file" alt="Gallery Images">
+                                    <img class="mb-3" [src]="imgPath + data.file" alt="Gallery Images">
                                 </a>
                             </div>
                         </ng-template>

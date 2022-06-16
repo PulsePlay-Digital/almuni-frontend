@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
   form: FormGroup | any;
   submitted: boolean | undefined;
   locationCounts: | any;
-  defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -120,7 +119,7 @@ export class HomeComponent implements OnInit {
       },
     },
   };
-  lazyLoadImage = environment.lazyLoadImage;
+  lazyLoadImage = './assets/loading.gif';
   constructor(
     public router: Router,
     public config: Config,
