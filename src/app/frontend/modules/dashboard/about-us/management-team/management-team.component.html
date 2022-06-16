@@ -31,11 +31,11 @@
                 <app-loader *ngIf="loading"></app-loader>
                 <ng-container *ngIf="teamData?.length > 0">
                     <div class="row mb-3" *ngIf="!loading">
-                        <div class="col-xl-4 col-lg-4 col-md-6  my-2" *ngFor="let team of teamData | paginate: { itemsPerPage: 9, currentPage: p }">
+                        <div class="col-xl-4 col-lg-4 col-md-6  my-2" *ngFor="let team of teamData | paginate: { itemsPerPage: 16, currentPage: p }">
                             <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
                                 <ng-container *ngIf="team?.image != null">
                                     <div class="alumni-pic">
-                                        <img [src]="imgPath + team?.image" class="card-img-top" alt="Alumni Picture" />
+                                        <img [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + team?.image" class="card-img-top" alt="Alumni Picture" />
                                     </div>
                                 </ng-container>
                                 <ng-container *ngIf="team?.image == null">

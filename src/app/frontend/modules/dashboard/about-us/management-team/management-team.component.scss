@@ -1,39 +1,41 @@
 .founderPage {
-  .quotes {
-    color: #f38b07;
-    font-size: 20px;
-  }
-  .card {
-    background: var(--card-bg);
-    .card-header {
-      height: 80px;
+    .quotes {
+        color: #f38b07;
+        font-size: 20px;
     }
-    .card-body {
-      height: 132px;
+    .card {
+        background: var(--card-bg);
+        .card-header {
+            height: 80px;
+        }
+        .card-body {
+            height: 132px;
+        }
+        .alumni-pic {
+            min-height: 320px;
+            max-height: 320px;
+            background-color: var(--bs-white);
+            img {
+                min-height: 320px;
+                max-height: 320px;
+                object-fit: cover;
+            }
+        }
+        .noImg {
+            min-height: 320px;
+            max-height: 320px;
+        }
     }
-    .alumni-pic {
-      min-height: 320px;
-      max-height: 320px;
-      background-color: var(--bs-white);
-      img {
-        min-height: 320px;
-        max-height: 320px;
-      }
-    }
-    .noImg {
-      min-height: 320px;
-      max-height: 320px;
-    }
-  }
 }
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
-  .founderPage {
-    .quotes {
-      font-size: 16px;
+    .founderPage {
+        .quotes {
+            font-size: 16px;
+        }
     }
-  }
 }
+
 // @media screen and (max-width: 768px) and (min-width: 575px) {
 //   .founderPage {
 //     .card {
@@ -49,16 +51,16 @@
 //   }
 // }
 @media screen and (max-width: 992px) and (min-width: 768px) {
-  .founderPage {
-    .card {
-      .alumni-pic {
-        min-height: 270px;
-        max-height: 270px;
-        img {
-          min-height: 270px;
-          max-height: 270px;
+    .founderPage {
+        .card {
+            .alumni-pic {
+                min-height: 270px;
+                max-height: 270px;
+                img {
+                    min-height: 270px;
+                    max-height: 270px;
+                }
+            }
         }
-      }
     }
-  }
 }

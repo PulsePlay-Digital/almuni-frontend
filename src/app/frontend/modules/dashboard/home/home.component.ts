@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
       },
     },
   };
-
+  lazyLoadImage = environment.lazyLoadImage;
   constructor(
     public router: Router,
     public config: Config,
