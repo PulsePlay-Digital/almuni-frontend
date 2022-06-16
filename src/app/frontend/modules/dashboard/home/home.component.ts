@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
       },
     },
   };
-
+  lazyLoadImage = environment.lazyLoadImage;
   constructor(
     public router: Router,
     public config: Config,
@@ -301,5 +301,8 @@ export class HomeComponent implements OnInit {
     ).subscribe((result: any) => {
       this.locationCounts = result
     })
+  }
+  navigate(r:string) {
+    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
   }
 }

@@ -6,7 +6,7 @@
             <ng-template carouselSlide *ngFor="let banner of homeBanner">
                 <ng-container>
                     <div class="homebannerImg">
-                        <img [src]="imgPath + banner?.file" alt="banner img">
+                        <img [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + banner?.file" alt="banner img">
                     </div>
                 </ng-container>
             </ng-template>
@@ -39,9 +39,7 @@
                             </div>
                             <div class="col-lg-12 py-xl-3 py-lg-3 py-md-2 py-sm-2 py-2">
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                                 </p>
                             </div>
                             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-4 col-6">
@@ -75,14 +73,12 @@
                                     <div class="storyDescription p-lg-5 p-md-5 p-sm-5 p-4">
                                         <div class="users mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
                                             <div class="user-logo">
-                                                <img class="userImg" [src]="imgPath + stories?.picture"
-                                                    alt="user img" />
+                                                <img class="userImg" [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + stories?.picture" alt="user img" />
                                             </div>
                                             <div class="username">
                                                 <h3 class="fw-bold">{{ stories?.alumni_name }}</h3>
                                             </div>
-                                            <p class="quotes mb-0"><img src="./assets/home/quotes.png"
-                                                    alt="alumni img" />
+                                            <p class="quotes mb-0"><img src="./assets/home/quotes.png" alt="alumni img" />
                                             </p>
                                         </div>
                                         <div class="row">
@@ -123,18 +119,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="row justify-content-lg-end justify-content-md-end justify-content-sm-start m-0">
-                                            <div
-                                                class="col-xl-12 col-lg-6 col-md-6 col-sm-6 ps-sm-1 pe-md-0 pe-lg-0 mt-xl-0 mt-lg-0 mt-sm-2 mt-md-0 mt-2 text-xl-end text-lg-end text-md-end text-start">
+                                        <div class="row justify-content-lg-end justify-content-md-end justify-content-sm-start m-0">
+                                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 ps-sm-1 pe-md-0 pe-lg-0 mt-xl-0 mt-lg-0 mt-sm-2 mt-md-0 mt-2 text-xl-end text-lg-end text-md-end text-start">
                                                 <ng-container *ngIf="currentUser">
-                                                    <a (click)="viewAlumniDetail(stories)"
-                                                        class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
+                                                    <a (click)="viewAlumniDetail(stories)" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
                                                         More</a>
                                                 </ng-container>
                                                 <ng-container *ngIf="!currentUser">
-                                                    <a routerLink="/login"
-                                                        class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
+                                                    <a routerLink="/login" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">read
                                                         More</a>
                                                 </ng-container>
                                             </div>
@@ -161,8 +153,7 @@
         <div class="container">
             <div class="row my-xl-4 my-lg-4 my-md-4 my-sm-4 my-3">
                 <div class="col-lg-12">
-                    <h4
-                        class="main-heading mb-0 fw-bold text-uppercase text-lg-start text-md-start text-sm-start text-center">
+                    <h4 class="main-heading mb-0 fw-bold text-uppercase text-lg-start text-md-start text-sm-start text-center">
                         Purpose</h4>
                 </div>
             </div>
@@ -174,8 +165,7 @@
                             <img class="content-image" src="./assets/association03.png" alt="association img" />
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
-                                    There are many variations of passages of Lorem Ipsum available the majority have
-                                    suffered
+                                    There are many variations of passages of Lorem Ipsum available the majority have suffered
                                 </p>
                                 <a>View Details</a>
                             </div>
@@ -190,8 +180,7 @@
                             <img class="content-image" src="./assets/association04.png" alt="association img" />
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                                 </p>
                                 <a>View Details</a>
                             </div>
@@ -206,15 +195,13 @@
                             <img class="content-image" src="./assets/association01.png" alt="association img" />
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                                 </p>
                                 <a>View Details</a>
                             </div>
                         </a>
                     </div>
-                    <h5 class="associate-text my-3" routerLink="/collaborate-contribute/engage-with-society">Engage &
-                        Support
+                    <h5 class="associate-text my-3" routerLink="/collaborate-contribute/engage-with-society">Engage & Support
                     </h5>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 my-lg-3 my-md-3 my-sm-3 my-2">
@@ -224,15 +211,13 @@
                             <img class="content-image" src="./assets/association02.png" alt="association img" />
                             <div class="content-details fadeIn-bottom">
                                 <p class="content-title">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                                 </p>
                                 <a>View Details</a>
                             </div>
                         </a>
                     </div>
-                    <h5 class="associate-text my-3" routerLink="/collaborate-contribute/mentorship">Learn (LifeLong &
-                        Grow)
+                    <h5 class="associate-text my-3" routerLink="/collaborate-contribute/mentorship">Learn (LifeLong & Grow)
                     </h5>
                 </div>
             </div>
@@ -299,10 +284,8 @@
                                     <p class="text-center fs-6 fw-bolder text-capitalize">Asia (Excluding India)</p>
                                 </div>
                             </div>
-                            <div
-                                class="col-xl-7 col-lg-8 col-md-6 col-sm-6 col-6 my-2 pe-xl-0 pe-lg-3 text-lg-end text-md-center text-center">
-                                <a routerLink="/view-map"
-                                    class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
+                            <div class="col-xl-7 col-lg-8 col-md-6 col-sm-6 col-6 my-2 pe-xl-0 pe-lg-3 text-lg-end text-md-center text-center">
+                                <a routerLink="/view-map" class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6">View
                                     Map</a>
                             </div>
                         </div>
@@ -327,7 +310,7 @@
                         <ng-template carouselSlide *ngFor="let data of gallery">
                             <div class="gallaryImg">
                                 <a href="">
-                                    <img class="mb-3" [src]="imgPath + data.file" alt="Gallery Images">
+                                    <img class="mb-3" [defaultImage]="lazyLoadImage" [lazyLoad]="imgPath + data.file" alt="Gallery Images">
                                 </a>
                             </div>
                         </ng-template>
@@ -335,8 +318,7 @@
                 </div>
                 <div class="row justify-content-center pt-2">
                     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 text-center mt-2">
-                        <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                            routerLink="/celebrate/gallery">View More</a>
+                        <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6" routerLink="/celebrate/gallery">View More</a>
                     </div>
                 </div>
             </div>
@@ -360,8 +342,7 @@
             </div>
             <div class="row justify-content-center pb-xl-4 pb-lg-4 pb-md-4 pb-sm-3 pb-2">
                 <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 text-center mt-2 mt-lg-3 mt-md-3 mt-sm-3">
-                    <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6"
-                        href="https://www.instagram.com/sbsalumniglobal/" target="_blank">Follow on instagram</a>
+                    <a class="btn btn-lg btn-md common_buttons rounded-0 text-white shadow text-uppercase fs-6" href="https://www.instagram.com/sbsalumniglobal/" target="_blank">Follow on instagram</a>
                 </div>
             </div>
         </div>
@@ -376,18 +357,15 @@
                 <div class="col-xl-5 col-lg-6 col-md-7">
                     <form [formGroup]="form">
                         <div class="input-group">
-                            <input type="email" class="form-control" formControlName="email" placeholder="EMAIL ADDRESS"
-                                aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            <input type="email" class="form-control" formControlName="email" placeholder="EMAIL ADDRESS" aria-label="Recipient's username" aria-describedby="button-addon2" />
                             <button class="btn common_buttons text-white" id="button-addon2" (click)="subscribe()">
                                 Subscribe now
                             </button>
                         </div>
-                        <div class="invalidText fw-bold alert alert-danger p-2 mt-2"
-                            *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                        <div class="invalidText fw-bold alert alert-danger p-2 mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                             Email is required.
                         </div>
-                        <div class="invalidText fw-bold alert alert-danger p-2 mt-2"
-                            *ngIf="f.email.dirty && f.email.errors?.pattern">
+                        <div class="invalidText fw-bold alert alert-danger p-2 mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
                             Email format is incorrect.
                         </div>
                     </form>
@@ -405,20 +383,21 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="boxUL">
                             <ul>
                                 <li>
-                                    <a routerLink="/collaborate-contribute/mentorship"><span
+                                    <a (click)="navigate('/collaborate-contribute/mentorship')"><span
                                             class="text">Mentorship</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
                                 </li>
                                 <li>
-                                    <a routerLink="/community/professional-club"><span class="text">Exclusive
+                                    <a (click)="navigate('/community/professional-club')"><span class="text">Exclusive
                                             resources</span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
                                 </li>
                                 <li>
-                                    <a routerLink="/collaborate-contribute/engage-with-society"><span
+                                    <a (click)="navigate('/collaborate-contribute/engage-with-society')"><span
                                             class="text">Contribute
                                             back </span>
                                         <span class="icon"><img src="./assets/box-arrow.png" alt="box img" /></span></a>
@@ -443,8 +422,7 @@
                             <ul *ngIf="!loading">
                                 <ng-container *ngIf="allNews?.length > 0">
                                     <li *ngFor="let news of allNews">
-                                        <a routerLink="/celebrate/news-detail" [queryParams]="news"
-                                            [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
+                                        <a routerLink="/celebrate/news-detail" [queryParams]="news" [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
                                             <span class="icon"><img src="./assets/box-arrow.png"
                                                     alt="box img" /></span></a>
                                     </li>

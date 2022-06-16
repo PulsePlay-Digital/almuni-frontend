@@ -4,6 +4,7 @@ import { DataService } from "./../../../services/data.service";
 import { AuthService } from "./../../../services/auth.service";
 import { fromEvent } from "rxjs";
 import { DOCUMENT } from "@angular/common";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-header",
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
   enableSticky: boolean | undefined;
   sidePanel: any;
   showFiller = false;
+  imgPath = environment.imgUrl;
   constructor(
     public router: Router,
     private authService: AuthService,
