@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   currentUser: any;
   form: FormGroup | any;
   submitted: boolean | undefined;
-  locationCounts: | any;
+  locationCounts: any;
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
     ],
-    nav: true
+    nav: true,
   };
 
   customOptions: OwlOptions = {
@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit {
     navSpeed: 1500,
     autoplay: true,
     autoplayTimeout: 4000,
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -106,20 +108,20 @@ export class HomeComponent implements OnInit {
       },
       400: {
         items: 1,
-        stagePadding: 0
+        stagePadding: 0,
       },
       768: {
-        items: 1
+        items: 1,
       },
       1191: {
-        items: 1
+        items: 1,
       },
       1450: {
-        items: 1
+        items: 1,
       },
     },
   };
-  lazyLoadImage = './assets/loading.gif';
+  lazyLoadImage = "./assets/loading.gif";
   constructor(
     public router: Router,
     public config: Config,
@@ -157,18 +159,21 @@ export class HomeComponent implements OnInit {
   }
   async getBanner() {
     this.loading = true;
-    let action: string = 'all-gallery';
-    await this.dataService.getData(action).pipe(
-      map((res: any) => {
-        return res?.data?.filter((item: any) => {
-          if (item?.type == 'Home main banner') {
-            return item;
-          }
-        });
-      })
-    ).subscribe((result: any) => {
-      this.homeBanner = result;
-    })
+    let action: string = "all-gallery";
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res?.data?.filter((item: any) => {
+            if (item?.type == "Home main banner") {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe((result: any) => {
+        this.homeBanner = result;
+      });
   }
 
   /**
@@ -260,13 +265,13 @@ export class HomeComponent implements OnInit {
    */
   viewAlumniDetail(params: any) {
     this.router.navigate(["/celebrate/alumni-details"], {
-      queryParams: { ...params, type: "featured-alumni" }
+      queryParams: { ...params, type: "featured-alumni" },
     });
   }
 
   /**
    * Function to subscribe on newsletter
-   * @returns 
+   * @returns
    */
   async subscribe() {
     this.submitted = true;
@@ -292,16 +297,21 @@ export class HomeComponent implements OnInit {
   }
 
   async getLocations() {
-    let action: string = 'count-region';
-    await this.dataService.getLocaltionData(action).pipe(
-      map((res: any) => {
-        return res;
-      })
-    ).subscribe((result: any) => {
-      this.locationCounts = result
-    })
+    let action: string = "count-region";
+    await this.dataService
+      .getLocaltionData(action)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      )
+      .subscribe((result: any) => {
+        this.locationCounts = result;
+      });
   }
-  navigate(r:string) {
-    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
+  navigate(r: string) {
+    this.currentUser
+      ? this.router.navigate([r])
+      : this.router.navigate(["/login"]);
   }
 }

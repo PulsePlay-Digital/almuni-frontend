@@ -27,7 +27,7 @@ export class BasicInfoComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public countryService: CountryService,
-    public dataService: DataService,
+    private dataService: DataService,
     private config: Config,
     private notify: TokenInterceptor
   ) {
@@ -147,7 +147,7 @@ export class BasicInfoComponent implements OnInit {
   async getAllInstitutes() {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
-        this.getInstitutes = res.Institute;
+        this.getInstitutes = res?.Institute;
       },
       (error) => {
         console.log(error);

@@ -1,7 +1,7 @@
 <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
 <div class="container">
     <div class="mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-2">
-        <div class="row">
+        <div class="row m-0">
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="allMagazine?.length > 0">

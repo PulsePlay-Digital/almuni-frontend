@@ -9,6 +9,7 @@ export class SpeacialProjectsComponent implements OnInit {
 
   searchData: boolean = true;
   heading: string = "SPECIAL PROJECTS";
+  projectPosted:boolean = false;
 
   constructor(
   ) { }
@@ -21,5 +22,11 @@ export class SpeacialProjectsComponent implements OnInit {
    */
   search() {
     this.searchData = !this.searchData;
+    this.projectPosted = false;
+  }
+  showSpecialProject() {
+    console.log(this.projectPosted)
+    this.projectPosted = !this.projectPosted;
+    this.searchData = false;
   }
 }

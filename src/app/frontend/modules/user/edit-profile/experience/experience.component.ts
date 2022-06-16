@@ -46,7 +46,7 @@ export class ExperienceComponent implements OnInit {
    */
   buildform() {
     this.experienceForm = this.fb.group({
-      user_id: [this.experienceId],
+      id: [this.experienceId?.id],
       company_name: [""],
       job_title: [""],
       start_date: [""],

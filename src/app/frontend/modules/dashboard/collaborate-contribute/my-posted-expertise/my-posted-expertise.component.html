@@ -1,22 +1,22 @@
-<div class="row my-xl-4 my-lg-4 my-md-4 my-sm-4 mb-3 mt-0">
+<div class="row my-xl-4 my-lg-4 my-md-4 my-sm-4 mb-3 mt-0 m-0">
   <div class="d-flex align-items-center justify-content-between my-4">
     <h4 class="main-heading text-uppercase fw-bolder mb-0">My posted Offer Expertise</h4>
   </div>
 
   <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
     <div class="search-filter p-4">
-        <form class="">
-            <div class="row">
-                <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
-                    <div class="form-outline">
-                        <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" 
-                        [ngModelOptions]="{standalone: true}" placeholder="Alumni name" />
-                    </div>
-                </div>
+      <form class="">
+        <div class="row">
+          <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+            <div class="form-outline">
+              <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched"
+                [ngModelOptions]="{standalone: true}" placeholder="Alumni name" />
             </div>
-        </form>
+          </div>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
   <app-loader *ngIf="loading"></app-loader>
   <ng-container *ngIf="!loading">
     <ng-container *ngIf="allExpertise.length > 0">

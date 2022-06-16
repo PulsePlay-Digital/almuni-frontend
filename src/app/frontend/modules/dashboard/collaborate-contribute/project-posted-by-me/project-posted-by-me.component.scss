@@ -1,0 +1,31 @@
+.posted-job {
+    .card {
+      background: var(--card-bg);
+      .card-title {
+        height: 60px;
+      }
+      .card-body {
+        height: 250px;
+        overflow-y: auto;    
+      }
+    }
+  }
+  .project-btn {
+    background: var(--btn-background);
+    border: 1px solid var(--btn-background);
+    color: var(--bs-white);
+    border-radius: var(--border-radius-2);
+    width: var(--width);
+  }
+  .project-btn:hover {
+    background: var(--bs-white);
+    color: var(--bs-background);
+  }
+
+  @media (min-width: 300px) and (max-width: 575px) {
+    .card {
+        .card-body {
+          height: 198px;    
+        }
+      }
+  }
