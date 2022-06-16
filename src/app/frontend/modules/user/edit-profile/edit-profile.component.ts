@@ -12,7 +12,7 @@ import { environment } from "./../../../../../environments/environment";
 export class EditProfileComponent implements OnInit {
   profileForm: FormGroup | any;
   profilePic: any;
-  image: any;
+  image: any='';
   submitted: boolean | undefined;
   currentUser: any;
   action: any;
@@ -73,7 +73,6 @@ export class EditProfileComponent implements OnInit {
   async getCurrentUser() {
     let action: string = "find-user";
     await this.dataService.getDataById(action, this.currentUser.id).subscribe((res: any) => {
-      console.log(res)
       localStorage.setItem("currentUser", JSON.stringify(res?.data));
     })
   }

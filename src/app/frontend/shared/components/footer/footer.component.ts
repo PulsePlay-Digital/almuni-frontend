@@ -7,8 +7,14 @@ import { DataService } from 'src/app/frontend/services/data.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor(private dataService: DataService) { }
+  currentUser;
+  constructor(private dataService: DataService) {
+    if (localStorage.hasOwnProperty("currentUser")) {
+      this.currentUser = JSON.parse(
+        localStorage.getItem("currentUser") || "{}"
+      );
+    }
+   }
 
   ngOnInit(): void {
   }

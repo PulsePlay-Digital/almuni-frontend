@@ -18,7 +18,7 @@ export class NotificationService {
   openSuccessSnackBar(message: string, action: string = 'Ok') {
     this.snackBar.open(message, action, {
       duration: 3000,
-      panelClass: ['green-snackbar'],
+      panelClass: ['#419BD6'],
       verticalPosition: 'top',
       horizontalPosition: 'end'
     });
