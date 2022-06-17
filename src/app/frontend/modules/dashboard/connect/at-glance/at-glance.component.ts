@@ -14,7 +14,8 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 })
 export class AtGlanceComponent implements OnInit {
   filterForm: FormGroup | any;
-  imgPath : any;
+  upcomingFilterForm: FormGroup | any;
+  imgPath: any;
   loading: boolean = false;
   p: number = 1;
   pastEvent: any;
@@ -31,7 +32,7 @@ export class AtGlanceComponent implements OnInit {
     public dataService: DataService,
     public notify: TokenInterceptor,
     public router: Router,
-    private fb : FormBuilder
+    private fb: FormBuilder
   ) {
     this.imgPath = environment.imgUrl;
     if (localStorage.hasOwnProperty("currentUser")) {
@@ -44,20 +45,28 @@ export class AtGlanceComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.buildFilterForm();
+    this.buildUpcomingFilterForm();
     this.getAllPastEvents();
     this.getAllUpcomingEvents();
   }
 
   buildFilterForm() {
     this.filterForm = this.fb.group({
-      title: [''],
-      type: ['']
+      title: [""],
+      type: [""],
+    });
+  }
+
+  buildUpcomingFilterForm() {
+    this.upcomingFilterForm = this.fb.group({
+      title: [""],
+      type: [""],
     });
   }
   /**
    * Get all past event Data
    */
-   async getAllPastEvents() {
+  async getAllPastEvents() {
     let action: string = "all-event";
     await this.dataService
       .getData(action)
@@ -72,7 +81,8 @@ export class AtGlanceComponent implements OnInit {
           });
         })
       )
-      .subscribe((res: any) => {
+      .subscribe(
+        (res: any) => {
           if (res) {
             this.pastEvent = res;
             this.clubsTotal = res?.length;
@@ -81,7 +91,7 @@ export class AtGlanceComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openFailureSnackBar(error);
-          this.loading = false
+          this.loading = false;
         }
       );
   }
@@ -103,7 +113,8 @@ export class AtGlanceComponent implements OnInit {
           });
         })
       )
-      .subscribe((res: any) => {
+      .subscribe(
+        (res: any) => {
           if (res) {
             this.upcomingEvent = res;
             this.loading = false;
@@ -116,7 +127,7 @@ export class AtGlanceComponent implements OnInit {
       );
   }
 
-  onTypeChange(event:any) {
+  onTypeChange(event: any) {
     this.valueChange = event;
     if (this.valueChange) {
       this.eventFillter();
@@ -127,12 +138,22 @@ export class AtGlanceComponent implements OnInit {
     this.loading = true;
     let action: string = "filter-event";
     let params: any = {
-      type: this.valueChange 
+      type: this.valueChange
+    };
+    if (this.filterForm) {
+      await this.dataService
+        .postData(action, params)
+        .subscribe((result: any) => {
+          this.pastEvent = result?.data;
+          this.loading = false;
+        });
+    } else if (this.upcomingFilterForm) {
+      await this.dataService
+        .postData(action, params)
+        .subscribe((result: any) => {
+          this.upcomingEvent = result?.data;
+          this.loading = false;
+        });
     }
-    await this.dataService.postData(action, params).subscribe((result: any) => {
-      console.log(result);
-      this.pastEvent = result?.data;
-      this.loading = false;
-    })
   }
 }
