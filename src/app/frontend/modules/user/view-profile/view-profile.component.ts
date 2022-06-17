@@ -88,9 +88,7 @@ export class ViewProfileComponent implements OnInit {
     await this.dataService
       .getDataById(action, this.currentUser?.id)
       .subscribe((res: any) => {
-        console.log(res)
         this.profileData = res;
-        console.log(this.profileData)
       });
   }
 }
