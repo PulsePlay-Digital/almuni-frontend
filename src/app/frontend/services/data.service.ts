@@ -51,13 +51,6 @@ export class DataService {
   }
 
   public getData(action?: any) {
-    // console.log(action)
-    // if (action?.action == 'filter-event') {
-    //   let params:any = {
-    //     type:action.type
-    //   }
-    //   return this.http.get(`${this.url}/${action?.action}?type=${action.type}`, params);  
-    // }
     return this.http.get(`${this.url}/${action}`);
   }
 

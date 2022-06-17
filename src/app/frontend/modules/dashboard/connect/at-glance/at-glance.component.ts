@@ -23,7 +23,8 @@ export class AtGlanceComponent implements OnInit {
   currentUser: any;
   clubsTotal: any;
   valueChange: any;
-  nameSearched: any;
+  pastNameSearched: any;
+  upcomingNameSearched: any;
   valChange: any;
 
   constructor(
@@ -123,12 +124,15 @@ export class AtGlanceComponent implements OnInit {
   }
 
   async eventFillter() {
-    let action: any = {
-      action: "filter-event",
+    this.loading = true;
+    let action: string = "filter-event";
+    let params: any = {
       type: this.valueChange 
     }
-    // let action:string = "filter-event" 
-    await this.dataService.postData(action, this.valueChange).subscribe((result: any) => {
+    await this.dataService.postData(action, params).subscribe((result: any) => {
+      console.log(result);
+      this.pastEvent = result;
+      this.loading = false;
     })
   }
 }

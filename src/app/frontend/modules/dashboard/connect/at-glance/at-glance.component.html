@@ -9,7 +9,7 @@
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
-                                    <div class="row" *ngFor="let item of pastEvent | filterText: nameSearched">
+                                    <div class="row" *ngFor="let item of pastEvent | filterText: pastNameSearched">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                             <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
                                                 <div class="eventDate">
@@ -50,12 +50,12 @@
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
-                                <input type="text" class="form-control shadow" [(ngModel)]="nameSearched" placeholder="Search">
+                                <input type="text" class="form-control shadow" [(ngModel)]="pastNameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search">
                                 <form [formGroup]="filterForm">
                                     <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event Type
                                     </h6>
                                     <div class="form-check">
-                                        <input id="all" value="null" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="all" value="" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="all">
                                             All
                                         </label>
@@ -97,28 +97,6 @@
                                         </label>
                                     </div>
                                 </form>
-                                <!-- 
-                                <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                                    <div class="form-group row mx-1">
-                                      <div class="form-check">
-                                        <input id="username" class="form-check-input" type="radio" value="username" name="type"
-                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
-                                        <label for="username" class="form-check-label">
-                                          I want to change my User Name
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input id="password" class="form-check-input" type="radio" value="password" name="type"
-                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
-                                        <label for="password" class="form-check-label">I want to change my Password</label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input id="both" class="form-check-input" type="radio" value="both" name="type"
-                                          (ngModelChange)="onTypeChange($event)" [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
-                                        <label for="both" class="form-check-label">I want to change both my User Name & Password </label>
-                                      </div>
-                                    </div> -->
-
                             </div>
                             <div class="sbs-alumni-events">
                                 <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI EVENTS SO FAR
@@ -136,7 +114,7 @@
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="upcomingEvent?.length > 0">
                                     <div class="row"
-                                        *ngFor="let item of upcomingEvent | paginate: { itemsPerPage: 6, currentPage: p }">
+                                        *ngFor="let item of upcomingEvent | filterText: upcomingNameSearched">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                             <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
                                                 <div class="eventDate">
@@ -171,18 +149,12 @@
                                         <p class="fs-5">No data found!</p>
                                     </div>
                                 </ng-container>
-                                <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2"
-                                    *ngIf="upcomingEvent?.length > 0">
-                                    <div class="col text-center">
-                                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-                                    </div>
-                                </div>
                             </ng-container>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
                                 <form>
-                                    <input type="text" class="form-control shadow" placeholder="Search">
+                                    <input type="text" class="form-control shadow" [(ngModel)]="upcomingNameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search">
                                     <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-d-4 my-sm-3 my-3 ">Event Type
                                     </h6>
                                     <div class="form-check">
