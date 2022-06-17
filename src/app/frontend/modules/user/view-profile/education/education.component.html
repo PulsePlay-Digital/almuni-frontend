@@ -1,25 +1,18 @@
 <div class="row">
     <div class="col-lg-12">
         <app-loader *ngIf="loading"></app-loader>
-        <form [formGroup]="educationForm" *ngIf="!loading" [ngClass]="type == 'view-profile' ? 'no-pointer' : 'pointer'">
+        <form [formGroup]="educationForm" *ngIf="!loading"
+            >
             <div class="row">
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="degree_name"
-                        placeholder="Enter degree name">
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                        *ngIf="(f.degree_name.touched || submitted) && f.degree_name.errors?.required">
-                        Degree name is required.
-                    </div>
+                        placeholder="Enter degree name" readonly>
                 </div>
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="institute_name"
-                        placeholder="Enter institute name">
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                        *ngIf="(f.institute_name.touched || submitted) && f.institute_name.errors?.required">
-                        Institute name is required.
-                    </div>
+                        placeholder="Enter institute name" readonly>
                 </div>
             </div>
 
@@ -28,28 +21,22 @@
                     <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
                     <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="passing_year" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
-                    <input type="date" placeholder="DD/MM/YYYY" formControlName="passing_year" class="form-control">
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                        *ngIf="(f.passing_year.touched || submitted) && f.passing_year.errors?.required">
-                        Year of passing is required.
-                    </div>
+                    <input type="date" placeholder="DD/MM/YYYY" formControlName="passing_year" class="form-control"
+                        readonly>
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span> </label>
                     <select class="form-select" formControlName="specialization">
-                        <option value="" selected>Select specialization</option>
-                        <option *ngFor="let item of specialization; let i=index;" [value]="item?.label">{{ item?.label
+                        <option value="" selected disabled>Select specialization</option>
+                        <option disabled *ngFor="let item of specialization; let i=index;" [value]="item?.label">{{
+                            item?.label
                             }}</option>
                     </select>
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                        *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
-                        Specialization is required.
-                    </div>
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other specialization </label>
                     <input type="text" class="form-control" formControlName="other_specialization"
-                        placeholder="Enter other specialization">
+                        placeholder="Enter other specialization" readonly>
                 </div>
             </div>
             <ng-container *ngFor="let items of addItems().controls; let i=index" [formGroupName]="i">
@@ -57,20 +44,12 @@
                     <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="degree_name"
-                            placeholder="Enter degree name">
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                            *ngIf="(f.degree_name.touched || submitted) && f.degree_name.errors?.required">
-                            Degree name is required.
-                        </div>
+                            placeholder="Enter degree name" readonly>
                     </div>
                     <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="institute_name"
-                            placeholder="Enter institute name">
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                            *ngIf="(f.institute_name.touched || submitted) && f.institute_name.errors?.required">
-                            Institute name is required.
-                        </div>
+                            placeholder="Enter institute name" readonly>
                     </div>
                 </div>
 
@@ -78,29 +57,21 @@
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
                         <input type="text" placeholder="dd/mm/yyyy" formControlName="passing_year" class="form-control"
-                            bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                            *ngIf="(f.passing_year.touched || submitted) && f.passing_year.errors?.required">
-                            Year of passing is required.
-                        </div>
+                            readonly>
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span>
                         </label>
                         <select class="form-select" formControlName="specialization">
-                            <option value="" selected>Select specialization</option>
-                            <option *ngFor="let item of specialization; let i=index;" [value]="item.label">{{
+                            <option value="" disabled selected>Select specialization</option>
+                            <option disabled *ngFor="let item of specialization; let i=index;" [value]="item.label">{{
                                 item.label }}</option>
                         </select>
-                        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
-                            *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
-                            Specialization is required.
-                        </div>
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Other specialization </label>
                         <input type="text" class="form-control" formControlName="other_specialization"
-                            placeholder="Enter other specialization">
+                            placeholder="Enter other specialization" readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -115,15 +86,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 text-center">
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <ng-container *ngIf="type !== 'view-profile'">
-                            <button type="button" (click)="addQuantity()" class="btn btn-success rounded me-2">Add
-                                Items</button>
-                            <button type="button" (click)="edit()" [disabled]="!educationForm.valid"
-                                class="btn btn-success rounded">Update</button>
-                        </ng-container>
-                        <ng-container *ngIf="type == 'view-profile'">
-                            <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>
-                        </ng-container>
+                        <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>
                     </div>
                 </div>
             </div>
