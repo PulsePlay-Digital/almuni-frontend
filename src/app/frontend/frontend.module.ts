@@ -35,7 +35,7 @@ import { DataService } from './services/data.service';
     NotificationService,
     TokenInterceptor,
     DataService,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     UserService
   ]
 })

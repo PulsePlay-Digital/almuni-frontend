@@ -28,7 +28,7 @@ export class SharedByMeComponent implements OnInit {
   buildForm() {
     this.form = this.fb.group({
       id: [''],
-      title: [''],
+      title: ['', Validators.required],
       description: ['', Validators.required],
       type: this.type,
       institute: [''],
@@ -75,8 +75,8 @@ export class SharedByMeComponent implements OnInit {
       
       await this.dataService.postData(action, formData).subscribe((res: any) => {
         if(res.status == 200) {
-          location.reload();
           this.notify.notificationService.openSuccessSnackBar(res.message);
+          location.reload();
         }
       }, error => {
         this.notify.notificationService.openSuccessSnackBar(error);

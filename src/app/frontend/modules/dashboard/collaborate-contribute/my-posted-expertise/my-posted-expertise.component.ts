@@ -29,8 +29,7 @@ export class MyPostedExpertiseComponent implements OnInit {
     this.getAllExpertise();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
-    let mname = this.currentUser?.middle_name;
-    this.author = fname  + ((mname == null) ? '' : ' ' + mname ) + ' ' + lname;
+    this.author = fname  + ' ' + lname;
   }
 
   /**
