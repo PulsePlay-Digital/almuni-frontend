@@ -39,7 +39,6 @@ export class TokenInterceptor implements HttpInterceptor {
           console.log(error)
           if (error?.error?.message == 'Unauthenticated.') {
             this.authService.logout();
-            // this.router.navigate(['login']);
             location.assign('login');
           }else if (error?.status == 404) {
             return throwError(error?.error?.message);
