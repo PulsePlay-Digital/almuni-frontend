@@ -10,7 +10,7 @@ import { Config } from './../../../../services/config';
   styleUrls: ['./education.component.scss']
 })
 export class EducationComponent implements OnInit {
-  @Input() type: any;
+  @Input() profileData: any;
   educationForm: FormGroup | any;
   specialization: any;
   submitted: boolean | undefined;
@@ -31,21 +31,14 @@ export class EducationComponent implements OnInit {
   }
 
   async ngOnInit() {
-    console.log(this.type)
     this.buildform();
     this.loading = true;
-    let action: string = "all-profileUsers";
-    await this.dataService
-      .getDataById(action, this.currentUser?.id)
-      .subscribe((res: any) => {
-        this.eduId = res?.Education;
-        setTimeout(() => {
-          this.educationForm.patchValue({
-            ...res?.Education
-          });
-        }, 800);
-        this.loading = false;
+    setTimeout(() => {
+      this.educationForm.patchValue({
+        ...this.profileData?.Education
       });
+      this.loading = false;
+    }, 2000);
   }
 
   /**
@@ -91,21 +84,7 @@ export class EducationComponent implements OnInit {
   }
 
   async edit() {
-    this.submitted = true;
-    if(this.educationForm.invalid) {
-      return;
-    } else if(this.educationForm.valid) {
-      this.loading = true;
-      let action: string = "update-education";
-      await this.dataService.updateData(action, this.educationForm.value).subscribe((res: any) => {
-        this.notify.notificationService.openSuccessSnackBar(res?.message);
-        this.loading = false;
-      },
-      error => {
-        this.notify.notificationService.openFailureSnackBar(error);
-        this.loading = false;
-      })
-    }
+   
   }
 
 }

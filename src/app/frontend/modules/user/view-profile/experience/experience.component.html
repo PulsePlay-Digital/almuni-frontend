@@ -6,15 +6,15 @@
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Company name </label>
                     <input type="text" class="form-control" formControlName="company_name"
-                        placeholder="Enter company name">
+                        placeholder="Enter company name" readonly>
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Job title </label>
-                    <input type="text" class="form-control" formControlName="job_title" placeholder="Enter job title">
+                    <input type="text" class="form-control" formControlName="job_title" placeholder="Enter job title" readonly>
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Start date </label>
-                    <input type="date" placeholder="DD/MM/YYYY" formControlName="start_date" class="form-control">
+                    <input type="date" placeholder="DD/MM/YYYY" formControlName="start_date" class="form-control" readonly>
                     <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="start_date" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
                 </div>
@@ -23,14 +23,14 @@
             <div class="row">
                 <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">End date </label>
-                    <input type="date" placeholder="DD/MM/YYYY" formControlName="end_date" class="form-control">
+                    <input type="date" placeholder="DD/MM/YYYY" formControlName="end_date" class="form-control" readonly>
                     <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="end_date" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
                 </div>
                 <div
                     class="col-lg-3 my-xl-3 my-lg-3 my-2 d-flex align-items-center justify-content-xl-center justify-content-lg-center">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" formControlName="current_working" value="0" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" formControlName="current_working" value="0" id="flexCheckDefault" readonly>
                         <label class="form-check-label" for="flexCheckDefault">
                             Current working
                         </label>
@@ -39,7 +39,7 @@
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label for="exampleFormControlTextarea1" class="form-label fw-bold">High level summary </label>
                     <textarea class="form-control" formControlName="summary" id="exampleFormControlTextarea1"
-                        rows="2"></textarea>
+                        rows="2" readonly></textarea>
                 </div>
             </div>
             <ng-container *ngFor="let items of addItems().controls; let i=index" [formGroupName]="i">
@@ -47,16 +47,16 @@
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Company name </label>
                         <input type="text" class="form-control" formControlName="company_name"
-                            placeholder="Enter company name">
+                            placeholder="Enter company name" readonly>
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Job title </label>
                         <input type="text" class="form-control" formControlName="job_title"
-                            placeholder="Enter job title">
+                            placeholder="Enter job title" readonly>
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Start date </label>
-                        <input type="date" placeholder="DD/MM/YYYY" formControlName="start_date" class="form-control">
+                        <input type="date" placeholder="DD/MM/YYYY" formControlName="start_date" class="form-control" readonly>
                         <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="start_date" class="form-control"
                             bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
                     </div>
@@ -65,13 +65,13 @@
                 <div class="row">
                     <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">End date </label>
-                        <input type="date" placeholder="DD/MM/YYYY" formControlName="end_date" class="form-control">
+                        <input type="date" placeholder="DD/MM/YYYY" formControlName="end_date" class="form-control" readonly>
                         <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="end_date" class="form-control"
                             bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
                     </div>
                     <div class="col-lg-3 my-xl-3 my-lg-3 my-2 d-flex align-items-center justify-content-xl-center justify-content-lg-center">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" formControlName="current_working" id="flexCheckDefault1">
+                            <input class="form-check-input" type="checkbox" value="" formControlName="current_working" id="flexCheckDefault1" readonly>
                             <label class="form-check-label" for="flexCheckDefault1">
                                 Current working
                             </label>
@@ -81,7 +81,7 @@
                         <label for="exampleFormControlTextarea1" class="form-label fw-bold">High level summary
                         </label>
                         <textarea class="form-control" formControlName="summary" id="exampleFormControlTextarea1"
-                            rows="2"></textarea>
+                            rows="2" readonly></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -96,9 +96,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 text-center">
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" (click)="addQuantity()" class="btn btn-success rounded me-2">Add
-                            Items</button>
-                        <button type="button" (click)="edit()" class="btn btn-success rounded">Update</button>
+                        <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>
                     </div>
                 </div>
             </div>

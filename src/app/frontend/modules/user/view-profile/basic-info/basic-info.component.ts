@@ -13,6 +13,7 @@ import { DataService } from "./../../../../services/data.service";
   styleUrls: ["./basic-info.component.scss"],
 })
 export class BasicInfoComponent implements OnInit {
+  @Input() profileData: any;
   basicInfoForm: FormGroup | any;
   getInstitutes: any;
   getBatch: any;
@@ -31,7 +32,6 @@ export class BasicInfoComponent implements OnInit {
     public countryService: CountryService,
     private dataService: DataService,
     private config: Config,
-    private notify: TokenInterceptor,
     public arouter: ActivatedRoute
   ) {
     this.gender = this.config?.gender;
@@ -39,7 +39,9 @@ export class BasicInfoComponent implements OnInit {
     this.bloodGroup = this.config?.bloodGroup;
     this.region = this.config?.region;
     if (localStorage) {
-      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+      this.currentUser = JSON?.parse(
+        localStorage?.getItem("currentUser") || ""
+      );
     }
   }
 
@@ -49,22 +51,13 @@ export class BasicInfoComponent implements OnInit {
     this.getAllBatches();
     this.getAllInstitutes();
     this.loading = true;
-    let action: string = "all-profileUsers";
-    await this.dataService
-      .getDataById(action, this.currentUser?.id)
-      .subscribe((res: any) => {
-        this.currentUser = res?.Users;
-        let b_date = moment(res?.birth_date).format('DD/MM/YYYY');
-        let a_date = moment(res?.anniversary_date).format('DD/MM/YYYY');
-        setTimeout(() => {
-          this.basicInfoForm.patchValue({ 
-            birth_date: b_date,
-            anniversary_date: a_date,
-            ...res?.Users
-          });
-        }, 800);
-        this.loading = false;
+    setTimeout(() => {
+      this.basicInfoForm.patchValue({
+        ...this.profileData?.Users
       });
+      this.loading = false;
+    }, 2000);
+  
   }
 
   /**
@@ -122,7 +115,7 @@ export class BasicInfoComponent implements OnInit {
       facebook_id: [""],
       instagram_id: [""],
       council_member_designation: [""],
-      role: [0]
+      role: [0],
     });
   }
 
@@ -176,25 +169,5 @@ export class BasicInfoComponent implements OnInit {
     );
   }
 
-  async edit() {
-    this.submitted = true;
-    if (this.basicInfoForm.invalid) {
-      return;
-    } else if (this.basicInfoForm.valid) {
-      this.loading = true;
-      let action: string = "update-user";
-      await this.dataService
-        .updateData(action, this.basicInfoForm.value)
-        .subscribe(
-          (res: any) => {
-            this.notify.notificationService.openSuccessSnackBar(res?.message);
-            this.loading = false;
-          },
-          (error) => {
-            this.notify.notificationService.openFailureSnackBar(error);
-            this.loading = false;
-          }
-        );
-    }
-  }
+  async edit() {}
 }

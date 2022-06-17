@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { TokenInterceptor } from "./../../../core/token.interceptor";
 import { DataService } from "./../../../services/data.service";
 import { environment } from "./../../../../../environments/environment";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-edit-profile",
@@ -17,21 +18,26 @@ export class EditProfileComponent implements OnInit {
   currentUser: any;
   action: any;
   imgPath = environment.imgUrl;
+  type: any;
   constructor(
     public dataService: DataService,
     public fb: FormBuilder,
-    private notify: TokenInterceptor
+    private notify: TokenInterceptor,
+    private arouter: ActivatedRoute
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
         localStorage?.getItem("currentUser") || ""
       );
     }
+    this.arouter.queryParams.subscribe((res: any) => {
+      this.type = res?.type;
+    });
   }
 
   ngOnInit(): void {
     this.buildForm();
-  }
+  }   
 
   buildForm() {
     this.profileForm = this.fb.group({

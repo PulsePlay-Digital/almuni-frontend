@@ -116,10 +116,10 @@
             font-size: var(--font-S-14);
         }
         .nav-link:hover {
-            color: var(--nav-color);
+            color: var(--bg-color);
         }
         .nav-link.active-link {
-            color: var(--nav-color);
+            color: var(--bg-color);
         }
         .nav-link i {
             padding-left: var(--pad-2);
