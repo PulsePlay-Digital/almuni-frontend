@@ -131,7 +131,7 @@ export class AtGlanceComponent implements OnInit {
     }
     await this.dataService.postData(action, params).subscribe((result: any) => {
       console.log(result);
-      this.pastEvent = result;
+      this.pastEvent = result?.data;
       this.loading = false;
     })
   }
