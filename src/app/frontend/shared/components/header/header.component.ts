@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { DataService } from "./../../../services/data.service";
 import { AuthService } from "./../../../services/auth.service";
@@ -12,6 +12,7 @@ import { environment } from "src/environments/environment";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('navbarNav', { static: false }) navbarNav: ElementRef | undefined;
   currentUser: any;
   enableSticky: boolean | undefined;
   sidePanel: any;
@@ -58,6 +59,7 @@ export class HeaderComponent implements OnInit {
   }
 
   closeNav() {
+    console.log('kk')
     this.sidePanel = document.getElementById("mySidepanel") as HTMLElement;
     this.sidePanel.style.width = "0";
   }
