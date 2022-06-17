@@ -35,6 +35,8 @@ export class HomeComponent implements OnInit {
     navSpeed: 2000,
     autoplay: true,
     autoplayTimeout: 3000,
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -94,6 +96,8 @@ export class HomeComponent implements OnInit {
     dots: false,
     autoplay: true,
     autoplayTimeout: 2500,
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
