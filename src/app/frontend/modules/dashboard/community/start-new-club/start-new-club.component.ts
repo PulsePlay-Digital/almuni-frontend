@@ -41,7 +41,8 @@ export class StartNewClubComponent implements OnInit {
       name: ['', Validators.required],
       description: ['', Validators.required],
       clubImage: ['', Validators.required],
-      type: this.type
+      type: this.type,
+      status: ['unapproved']
     })
   }
 

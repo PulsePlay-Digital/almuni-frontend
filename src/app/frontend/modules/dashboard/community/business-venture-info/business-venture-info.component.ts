@@ -56,7 +56,8 @@ export class BusinessVentureInfoComponent implements OnInit {
       locations:[''],
       hiring:[false],
       placement:[false],
-      is_active:['active']
+      is_active:['active'],
+      status: ['unapproved']
     });
   }
 

@@ -27,7 +27,6 @@ export class MyPostedOpportunityComponent implements OnInit {
     this.getAllOpportunity();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
-    let mname = this.currentUser?.middle_name;
     this.author = fname  + ' ' + lname;
   }
 

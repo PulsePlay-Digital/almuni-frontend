@@ -53,7 +53,8 @@ export class AddExpertiseComponent implements OnInit {
       dateTime: [''],
       dateFrom: [''],
       dateTo: [''],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      status: ['unapproved']
     })
   }
 

@@ -53,7 +53,8 @@ export class AddOpportunityComponent implements OnInit {
       specialization: [''],
       stipend: [''],
       packageOffer: [''],
-      description: ['']
+      description: [''],
+      status: ['unapproved']
     })
   }
 

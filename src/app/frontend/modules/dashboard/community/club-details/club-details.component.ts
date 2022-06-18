@@ -19,8 +19,8 @@ export class ClubDetailsComponent implements OnInit {
   constructor(public arouter: ActivatedRoute, 
     public dataService: DataService, public config: Config) {
     this.arouter.queryParams.subscribe((res: any) => {
-      this.clubId = res.id;
-      this.clubName = res.name;
+      this.clubId = res?.id;
+      this.clubName = res?.name;
     })
    }
 
