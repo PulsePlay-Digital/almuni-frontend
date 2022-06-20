@@ -23,7 +23,8 @@ export class RegisterComponent implements OnInit {
   profilePic:any;
   image:any;
   userRole: any;
-  bannerHeaading: string = "new alumni registration"
+  bannerHeaading: string = "new alumni registration";
+  region: any;
 
   constructor(
     public fb: FormBuilder,
@@ -34,7 +35,8 @@ export class RegisterComponent implements OnInit {
     private config: Config,
     public router: Router
   ) {
-    this.userRole = this.config.role;
+    this.userRole = this.config?.role;
+    this.region = this.config?.region;
   }
 
   ngOnInit(): void {
@@ -66,6 +68,9 @@ export class RegisterComponent implements OnInit {
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
         profile_pic:[""],
+        address: [""],
+        status: ['unapproved'],
+        role: ["0"]
         // recaptcha: [""]
       },  
       {

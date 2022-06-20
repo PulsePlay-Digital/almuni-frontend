@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
+import { TokenInterceptor } from './../../../../core/token.interceptor';
+import { UserService } from './../../../../services/user.service';
 import { environment } from './../../../../../../environments/environment';
 import { DataService } from './../../../../services/data.service';
 
@@ -16,8 +17,21 @@ export class MentorshipComponent implements OnInit {
   loading: boolean = false;
   imgPath = environment.imgUrl;
   heading: string = "MENTORSHIP";
+  pageType: string = "mentorship";
 
-  constructor(public dataService: DataService, public router: Router,public notify: TokenInterceptor) {}
+  constructor(
+    private dataService: DataService,
+    private userService: UserService,
+    private router: Router,
+    private notify: TokenInterceptor) {
+      this.userService.filteredData.subscribe((res: any) => {
+        this.loading = true;
+        setTimeout(() => {
+          this.user = res?.data;
+        }, 1000);
+        this.loading = false;
+      });
+    }
 
   ngOnInit(): void {
     this.loading = true;
@@ -29,7 +43,7 @@ export class MentorshipComponent implements OnInit {
   async getAllAlumniUser() {
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.user = res.data;
+      this.user = res?.data;
       this.loading = false;
     },
     (error) => {

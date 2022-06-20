@@ -20,9 +20,9 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" placeholder="Select institute name" formControlName="institute_id">
+          <select class="form-select" placeholder="Select institute name" formControlName="institute_name">
             <option value="">Choose your institute</option>
-            <option [value]="institute.id" *ngFor="let institute of getInstitutes">
+            <option [value]="institute?.institute_name" *ngFor="let institute of getInstitutes; let i=index">
               {{ institute?.institute_name }}
             </option>
           </select>
@@ -30,9 +30,9 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select placeholder="Select Year" class="form-select" formControlName="batchYear_id">
+          <select placeholder="Select Year" class="form-select" formControlName="batch">
             <option value="" selected>Choose your batch</option>
-            <option [value]="batch.id" *ngFor="let batch of getBatch">
+            <option [value]="batch?.batch" *ngFor="let batch of getBatch; let i=index">
               {{ batch.batch }}
             </option>
           </select>
@@ -42,16 +42,16 @@
         <div class="form-outline mb-3">
           <select class="form-select" formControlName="gender">
             <option value="" selected>Select gender</option>
-            <option *ngFor="let item of gender; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of gender; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
           </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="bloodGroup">
+          <select class="form-select" formControlName="blood_group">
             <option value="" selected>Select blood group</option>
-            <option *ngFor="let item of group; let i=index;" [value]="item.group">{{ item.group
+            <option *ngFor="let item of group; let i=index;" [value]="item?.group">{{ item?.group
               }}</option>
           </select>
         </div>
@@ -68,7 +68,7 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="state" id="inputEmail" placeholder="State" />
+          <input type="text" class="form-control" formControlName="current_state" id="inputEmail" placeholder="State" />
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
@@ -79,60 +79,60 @@
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="professionalCategory">
+          <select class="form-select" formControlName="professional_category">
             <option value="" selected>Select professional category</option>
             <option value=""> All</option>
-            <option *ngFor="let item of profCategory; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of profCategory; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
           </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="professionalCategory">
+          <select class="form-select" formControlName="primary_function_area">
             <option value="" selected>Primary functinal area</option>
             <option value="All"> All</option>
-            <option *ngFor="let item of primaryArea; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of primaryArea; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
           </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="professionalCategory">
+          <select class="form-select" formControlName="secondary_function_area">
             <option value="" selected> Secondary Function Area</option>
             <option value="All"> All</option>
-            <option *ngFor="let item of primaryArea; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of primaryArea; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
           </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="professionalCategory">
+          <select class="form-select" formControlName="primary_industry_focus">
             <option value="" selected> Primary industry</option>
             <option value="All"> All</option>
-            <option *ngFor="let item of industry; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of industry; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
             </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="secondaryIndusrty">
+          <select class="form-select" formControlName="secondary_industry_focus">
             <option value="" selected>Secondary industry</option>
             <option value="All"> All</option>
-            <option *ngFor="let item of industry; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of industry; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
             </select>
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <select class="form-select" formControlName="secondaryIndusrty">
+          <select class="form-select" formControlName="current_region">
             <option value="" selected>Select current region</option>
             <option value="All"> All</option>
-            <option *ngFor="let item of region; let i=index;" [value]="item.label">{{ item.label
+            <option *ngFor="let item of region; let i=index;" [value]="item?.label">{{ item?.label
               }}</option>
             </select>
         </div>
@@ -140,19 +140,19 @@
 
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="country" id="inputEmail"
+          <input type="text" class="form-control" formControlName="other_industry_focus" id="inputEmail"
             placeholder="Other industry focus" />
         </div>
       </div>
       <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
         <div class="form-outline mb-3">
-          <input type="text" class="form-control" formControlName="country" id="inputEmail" placeholder="Company" />
+          <input type="text" class="form-control" formControlName="current_company" id="inputEmail" placeholder="Company" />
         </div>
       </div>
     </div>
     <div class="row justify-content-center pt-lg-3 pt-md-3 pt-sm-3 pt-2">
       <div class="col-md-4 text-center ">
-        <a class="btn search-btn btn-lg btn-md btn-sm shadow">Search
+        <a class="btn search-btn btn-lg btn-md btn-sm shadow" (click)="searchData()">Search
         </a>
       </div>
     </div>

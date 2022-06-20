@@ -1,7 +1,7 @@
 <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
 <div class="container">
     <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-0">
-        <app-search-filter></app-search-filter>
+        <app-search-filter [pageType]="pageType"></app-search-filter>
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
             <ng-container *ngIf="user?.length > 0">

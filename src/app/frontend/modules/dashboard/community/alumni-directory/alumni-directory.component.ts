@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { AuthService } from "src/app/frontend/services/auth.service";
-import { environment } from "src/environments/environment";
+import { environment } from "./../../../../../../environments/environment";
 import { BreadcrumbService } from "xng-breadcrumb";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
+import { UserService } from "./../../../../services/user.service";
 
 @Component({
   selector: "app-alumni-directory",
@@ -17,21 +17,30 @@ export class AlumniDirectoryComponent implements OnInit {
   loading: boolean = false;
   imgPath = environment.imgUrl;
   heading: string = "Alumni Directory";
+  pageType: string = "alumni-directory";
   constructor(
     public dataService: DataService,
     private breadcrumbService: BreadcrumbService,
     public router: Router,
     private notify: TokenInterceptor,
-    private authService: AuthService
-  ) {}
+    private userService: UserService
+  ) {
+    this.userService.filteredData.subscribe((res: any) => {
+      this.loading = true;
+      setTimeout(() => {
+        this.user = res?.data;
+      }, 1000);
+      this.loading = false;
+    });
+  }
 
   ngOnInit(): void {
     this.breadcrumbService.set("@ChildTwo", "alumni-directory");
-    this.loading = true;
     this.getAllAlumniUser();
   }
   /**  Function to get all alumni user */
   async getAllAlumniUser() {
+    this.loading = true;
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe(
       (res: any) => {

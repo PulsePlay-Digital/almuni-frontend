@@ -76,8 +76,8 @@
                                                 class="form-select p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0 rounded-0"
                                                 formControlName="institute_id">
                                                 <option value="" selected>Choose your Institute</option>
-                                                <option [value]="institute.id" *ngFor="let institute of getInstitutes">
-                                                    {{ institute.institute_name }}
+                                                <option [value]="institute?.institute_name" *ngFor="let institute of getInstitutes; let i=index;">
+                                                    {{ institute?.institute_name }}
                                                 </option>
                                             </select>
                                             <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
@@ -90,8 +90,8 @@
                                                 class="form-select rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0"
                                                 formControlName="batchYear_id">
                                                 <option value="" selected>Choose your batch</option>
-                                                <option [value]="batch.id" *ngFor="let batch of getBatch">
-                                                    {{ batch.batch }}
+                                                <option [value]="batch?.batch" *ngFor="let batch of getBatch; let i=index;">
+                                                    {{ batch?.batch }}
                                                 </option>
                                             </select>
                                             <div class="invalidText text-start mt-2 fw-bold alert alert-danger p-2"
@@ -113,8 +113,8 @@
                                                 class="form-select p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0 rounded-0"
                                                 formControlName="country" (change)="changeCountry($event)">
                                                 <option value="" selected>Country</option>
-                                                <option *ngFor="let row of countries" [value]="row.name">
-                                                    {{ row.name }}
+                                                <option *ngFor="let row of countries; let i=index;" [value]="row?.name">
+                                                    {{ row?.name }}
                                                 </option>
                                             </select>
                                             <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
@@ -123,10 +123,11 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-md-6 my-2">
-                                            <input type="text"
-                                                class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
-                                                formControlName="current_region"
-                                                placeholder="Select Country / Region" />
+                                            <select class="form-select p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2 border-0 rounded-0" formControlName="current_region">
+                                                <option value="" selected disabled>Select region</option>
+                                                <option *ngFor="let item of region; let i=index;" [value]="item?.label">{{ item?.label }}
+                                                </option>
+                                            </select>
                                             <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
                                                 *ngIf="(f.current_region.touched || submitted) && f.current_region.errors?.required">
                                                 Country region is required.
@@ -152,10 +153,9 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-md-6 my-2">
-                                            <input type="text" placeholder="DD/MM/YYYY (DOB)"
+                                            <input type="date" placeholder="DOB"
                                                 class="form-control border-0 rounded-0 p-xl-2 p-lg-2 p-md-2 p-sm-2 p-2"
-                                                formControlName="birth_date" bsDatepicker
-                                                [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" />
+                                                formControlName="birth_date" />
                                             <div class="invalidText text-start fw-bold mt-2 alert alert-danger p-2"
                                                 *ngIf="(f.birth_date.touched || submitted) && f.birth_date.errors?.required">
                                                 Date of birth is required.

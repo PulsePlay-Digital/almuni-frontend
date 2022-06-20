@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { CountryService } from "src/app/frontend/services/country.service";
-import { UserService } from "src/app/frontend/services/user.service";
+import { CountryService } from "./../../../services/country.service";
+import { UserService } from "./../../../services/user.service";
 import { Config } from "./../../../services/config";
 import { DataService } from "./../../../services/data.service";
 
@@ -11,6 +11,7 @@ import { DataService } from "./../../../services/data.service";
   styleUrls: ["./search-filter.component.scss"],
 })
 export class SearchFilterComponent implements OnInit {
+  @Input() pageType: any;
   searchForm: FormGroup | any;
   getInstitutes: any;
   getBatch: any;
@@ -42,45 +43,41 @@ export class SearchFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
-    this.onChangeValue();
     this.getAllInstitutes();
     this.getAllBatches();
     this.loadCountries();
-    this.filteruserData();
   }
 
   buildForm() {
     this.searchForm = this.fb.group({
       first_name: [""],
       last_name: [""],
-      blood_group: [""],
-      city: [""],
-      country: [""],
-      state: [""],
-      primaryArea: [""],
-      secondaryArea: [""],
-      primaryIndustry: [""],
-      secondaryIndusrty: [""],
       email: [""],
-      mobile_number: [""],
-      institute_id: [""],
-      batchYear_id: [""],
+      institute_name: [""],
+      batch: [""],
       gender: [""],
-      bloodGroup: [""],
-      professionalCategory: [""],
-      is_verified: [""],
+      blood_group: [""],
+      country: [""],
+      city: [""],
+      current_state: [""],
+      professional_category: [""],
+      primary_function_area: [""],
+      secondary_function_area: [""],
+      primary_industry_focus: [""],
+      secondary_industry_focus: [""],
+      current_region: [""],
+      other_industry_focus:[""],
       current_company: [""],
-      reg_date_from: [""],
-      reg_date_to: [""],
-      otherRegion: [""]
+      mobile_number: [""],
+      type: this.pageType
     });
   }
 
-  onChangeValue() {
-    this.searchForm.valueChanges.subscribe((x: any) => {
-      this.filteruserData();
-    });
-  }
+  // onChangeValue() {
+  //   this.searchForm.valueChanges.subscribe((x: any) => {
+  //     this.filteruserData();
+  //   });
+  // }
 
   /**
    * Function to get all Institute
@@ -123,11 +120,11 @@ export class SearchFilterComponent implements OnInit {
   /**
    * User search filter
    */
-  async filteruserData() {
+  async searchData() {
     await this.userService
       .filterUsers(this.searchForm.value)
       .subscribe((res: any) => {
-        // this.userService.filteredData.next(res);
+        this.userService.filteredData.next(res);
       });
   }
 }

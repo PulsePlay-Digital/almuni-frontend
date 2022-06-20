@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogEntrepreneurshipComponent } from './../../../../shared/components/dialog-entrepreneurship/dialog-entrepreneurship.component';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
+import { UserService } from './../../../../services/user.service';
 
 @Component({
   selector: 'app-entrepreneurship-club',
@@ -13,13 +14,23 @@ export class EntrepreneurshipClubComponent implements OnInit {
   entrepreneur: any;
   p: number = 1;
   loading : boolean = false;
-  heading: string = "BUSINESS VENTURE / START UP DETAIL INFO"
+  heading: string = "BUSINESS VENTURE / START UP DETAIL INFO";
+  pageType: string = "entrepreneurship-club";
 
   constructor(
     public dataService: DataService, 
     public notify: TokenInterceptor,
-    public dialog: MatDialog
-    ) { }
+    public dialog: MatDialog,
+    private userService: UserService
+    ) { 
+      this.userService.filteredData.subscribe((res: any) => {
+        this.loading = true;
+        setTimeout(() => {
+          this.entrepreneur = res?.data;
+        }, 1000);
+        this.loading = false;
+      });
+    }
 
   ngOnInit(): void {
     this.loading = true;
