@@ -17,6 +17,7 @@ export class ProfessionalClubComponent implements OnInit {
   loading:boolean | undefined;
   imgPath = environment.imgUrl;
   currentUser;
+  lazyLoadImage = "./assets/loading.gif";
   constructor(
     public router: Router,
     public dataService: DataService,
