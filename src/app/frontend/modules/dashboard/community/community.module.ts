@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { CommunityPageComponent } from './community-page/community-page.component';
 import { ClubDetailsComponent } from './club-details/club-details.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ClubDetailsComponent } from './club-details/club-details.component';
     CKEditorModule,
     MatDialogModule,
     BreadcrumbModule,
-    MatIconModule
+    MatIconModule,
+    LazyLoadImageModule
   ]
 })
 export class CommunityModule { }
