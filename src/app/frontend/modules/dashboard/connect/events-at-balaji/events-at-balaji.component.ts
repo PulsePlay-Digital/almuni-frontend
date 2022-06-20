@@ -45,6 +45,7 @@ export class EventsAtBalajiComponent implements OnInit {
       dateFrom: ["", Validators.required],
       dateTo: ["", Validators.required],
       description: ["", Validators.required],
+      status: ['unapproved']
     });
   }
 

@@ -126,6 +126,9 @@ export class HomeComponent implements OnInit {
     },
   };
   lazyLoadImage = "./assets/loading.gif";
+  successAlert: boolean | undefined;
+  warningAlert: boolean | undefined;
+  showAlert: any;
   constructor(
     public router: Router,
     public config: Config,
@@ -286,10 +289,17 @@ export class HomeComponent implements OnInit {
       await this.dataService.postData(action, this.form.value).subscribe(
         (res: any) => {
           if (res?.status == 200) {
-            this.notify.notificationService.openSuccessSnackBar(res?.message);
-            this.form.reset();
+            this.successAlert = true;
+            this.showAlert = res?.message;
+            setTimeout(() => {
+              this.successAlert = false
+            }, 2500);
           } else if (res?.status == 201) {
-            this.notify.notificationService.openFailureSnackBar(res?.message);
+            this.warningAlert = true;
+            this.showAlert = res?.message;
+            setTimeout(() => {
+              this.warningAlert = false
+            }, 2500);
           }
         },
         (error) => {

@@ -56,7 +56,8 @@ export class HostFormComponent implements OnInit {
       eventPageLink: [""],
       is_active: ["inactive"],
       contactNumber: ["", Validators.required],
-      eventImage: ["", Validators.required]
+      eventImage: ["", Validators.required],
+      status: ['unapproved']
     });
   }
 

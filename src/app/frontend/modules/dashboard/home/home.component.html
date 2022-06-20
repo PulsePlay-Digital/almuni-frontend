@@ -362,6 +362,12 @@
                                 Subscribe now
                             </button>
                         </div>
+                        <div class="invalidText fw-bold alert alert-success p-2 mt-2 fade show" *ngIf="successAlert">
+                            {{showAlert}}
+                        </div>
+                        <div class="invalidText fw-bold alert alert-warning p-2 mt-2 fade show" *ngIf="warningAlert">
+                            {{showAlert}}
+                        </div>
                         <div class="invalidText fw-bold alert alert-danger p-2 mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                             Email is required.
                         </div>

@@ -5,7 +5,8 @@
             <mat-tab-group mat-align-tabs="start">
                 <mat-tab id="past-event" label="Past Events">
                     <div class="row m-0">
-                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
+                        <div
+                            class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="pastEvent?.length > 0">
@@ -14,7 +15,8 @@
                                             <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
                                                 <div class="eventDate">
                                                     <ng-container *ngIf="item?.eventImage !== null">
-                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
+                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage"
+                                                            alt="Event pic">
                                                     </ng-container>
                                                     <ng-container *ngIf="item?.eventImage == null">
                                                         <img class="img-fluid eventDummyPic" alt="Event pic">
@@ -23,18 +25,23 @@
 
                                                 <div class="event-date">
                                                     <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
-                                                    <p class="fs-6 fw-bold text-white text-center mb-1"><i class="fa fa-calendar" aria-hidden="true"></i></p>
+                                                    <p class="fs-6 fw-bold text-white text-center mb-1"><i
+                                                            class="fa fa-calendar" aria-hidden="true"></i></p>
                                                     <p class="fs-6 fw-bold text-white text-center">2019</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
+                                        <div
+                                            class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
                                             <h6 class="fs-6 fw-bold">Alumni Club Name:</h6>
                                             <p class="connect-event-description">{{ item?.title }}</p>
                                             <h6 class="fs-6 fw-bold">Description:</h6>
-                                            <p class="connect-event-description description"> {{ item?.description | stripHtml }}</p>
+                                            <p class="connect-event-description description"> {{ item?.description |
+                                                stripHtml }}</p>
                                             <div class="more-btn ">
-                                                <a routerLink="{{(currentUser) ? ['/connect/event-detail'] : ['/login']}}" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                <a routerLink="{{(currentUser) ? ['/connect/event-detail'] : ['/login']}}"
+                                                    [queryParams]="item" class="fw-bold text-decoration-none"
+                                                    href="#"><i class="fa fa-plus"
                                                         aria-hidden="true"></i>&nbsp;{{currentUser ?
                                                     'More Info' : 'Login for more information'}}</a>
                                             </div>
@@ -48,50 +55,65 @@
                                 </ng-container>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
+                        <div
+                            class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
-                                <input type="text" class="form-control shadow" [(ngModel)]="pastNameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search">
+                                <input type="text" class="form-control shadow" [(ngModel)]="pastNameSearched"
+                                    [ngModelOptions]="{standalone: true}" placeholder="Search">
                                 <form [formGroup]="filterForm">
-                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event Type
+                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event
+                                        Type
                                     </h6>
                                     <div class="form-check">
-                                        <input id="all" value=" " name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="all" value=" " name="type" class="form-check-input" type="radio"
+                                            formControlName="type" (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="all">
                                             All
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="reunion" value="reunion" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="reunion" value="reunion" name="type" class="form-check-input"
+                                            type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="reunion">
                                             Annual Alumni Re-Union (0)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="drivenEvent" value="Alumni Driven Events" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="drivenEvent" value="Alumni Driven Events" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="drivenEvent">
                                             Alumni Driven Events (4)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="eventAtBalaji" value="eventAtBalaji" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="eventAtBalaji" value="eventAtBalaji" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="eventAtBalaji">
                                             Events At/By SBUP (24)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="industryProfessional" value="industryProfessional" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="industryProfessional" value="industryProfessional" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="industryProfessional">
                                             Industry/Professional <br> Events (0)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="annualReunion" value="Annual Reunion" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="annualReunion" value="Annual Reunion" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="annualReunion">
                                             Annual Reunion(5)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="localMeet" value="Local Meet & Greet" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <input id="localMeet" value="Local Meet & Greet" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
                                         <label class="form-check-label" for="localMeet">
                                             Local Meet & Greet (2)
                                         </label>
@@ -99,7 +121,8 @@
                                 </form>
                             </div>
                             <div class="sbs-alumni-events">
-                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI EVENTS SO FAR
+                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI
+                                    EVENTS SO FAR
                                 </h6>
                                 <p>Events Across Alumni Clubs : {{clubsTotal}}</p>
                                 <p>Event Participants : 17</p>
@@ -109,7 +132,8 @@
                 </mat-tab>
                 <mat-tab id="upcoming-event" label="Upcomming Events">
                     <div class="row m-0">
-                        <div class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
+                        <div
+                            class="col-xl-9 col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 my-3">
                             <app-loader *ngIf="loading"></app-loader>
                             <ng-container *ngIf="!loading">
                                 <ng-container *ngIf="upcomingEvent?.length > 0">
@@ -119,7 +143,8 @@
                                             <div class="club-image my-xl-4 my-lg-4 my-md-4 my-sm-3">
                                                 <div class="eventDate">
                                                     <ng-container *ngIf="item?.eventImage !== null">
-                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage" alt="Event pic">
+                                                        <img class="img-fluid" [src]="imgPath + item?.eventImage"
+                                                            alt="Event pic">
                                                     </ng-container>
                                                     <ng-container *ngIf="item?.eventImage == null">
                                                         <img class="img-fluid eventDummyPic" alt="Event pic">
@@ -127,18 +152,22 @@
                                                 </div>
                                                 <div class="event-date">
                                                     <p class="fs-6 fw-bold text-white text-center mb-1">12 Oct</p>
-                                                    <p class="fs-6 fw-bold text-white text-center mb-1"><i class="fa fa-calendar" aria-hidden="true"></i></p>
+                                                    <p class="fs-6 fw-bold text-white text-center mb-1"><i
+                                                            class="fa fa-calendar" aria-hidden="true"></i></p>
                                                     <p class="fs-6 fw-bold text-white text-center">2019</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
+                                        <div
+                                            class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-xl-5 px-lg-5 px-md-3 px-sm-1 py-4">
                                             <h6 class="fs-6 fw-bold">Alumni Club Name:</h6>
                                             <p class="connect-event-description">{{ item?.title }}</p>
                                             <h6 class="fs-6 fw-bold">Description:</h6>
-                                            <p class="connect-event-description description"> {{ item?.description | stripHtml }}</p>
+                                            <p class="connect-event-description description"> {{ item?.description |
+                                                stripHtml }}</p>
                                             <div class="more-btn ">
-                                                <a routerLink="/connect/event-detail" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                <a routerLink="/connect/event-detail" [queryParams]="item"
+                                                    class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                         aria-hidden="true"></i>&nbsp;More Info</a>
                                             </div>
                                         </div>
@@ -151,58 +180,74 @@
                                 </ng-container>
                             </ng-container>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
+                        <div
+                            class="col-xl-3 col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 my-3">
                             <div class="search-bar mt-xl-4 mt-lg-4 mt-md-3 mt-sm-1">
-                                    <input type="text" class="form-control shadow" [(ngModel)]="upcomingNameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search">
-                                    <form [formGroup]="upcomingFilterForm">
-                                        <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event Type
-                                        </h6>
-                                        <div class="form-check">
-                                            <input id="all" value=" " name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="all">
-                                                All
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="reunion" value="reunion" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="reunion">
-                                                Annual Alumni Re-Union (0)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="drivenEvent" value="Alumni Driven Events" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="drivenEvent">
-                                                Alumni Driven Events (4)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="eventAtBalaji" value="eventAtBalaji" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="eventAtBalaji">
-                                                Events At/By SBUP (24)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="industryProfessional" value="industryProfessional" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="industryProfessional">
-                                                Industry/Professional <br> Events (0)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="annualReunion" value="Annual Reunion" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="annualReunion">
-                                                Annual Reunion(5)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input id="localMeet" value="Local Meet & Greet" name="type" class="form-check-input" type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
-                                            <label class="form-check-label" for="localMeet">
-                                                Local Meet & Greet (2)
-                                            </label>
-                                        </div>
-                                    </form>
+                                <input type="text" class="form-control shadow" [(ngModel)]="upcomingNameSearched"
+                                    [ngModelOptions]="{standalone: true}" placeholder="Search">
+                                <form [formGroup]="upcomingFilterForm">
+                                    <h6 class="fs-6 fw-bold text-capitalize my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">Event
+                                        Type
+                                    </h6>
+                                    <div class="form-check">
+                                        <input id="all" value=" " name="type" class="form-check-input" type="radio"
+                                            formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="all">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="reunion" value="reunion" name="type" class="form-check-input"
+                                            type="radio" formControlName="type" (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="reunion">
+                                            Annual Alumni Re-Union (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="drivenEvent" value="Alumni Driven Events" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="drivenEvent">
+                                            Alumni Driven Events (4)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="eventAtBalaji" value="eventAtBalaji" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="eventAtBalaji">
+                                            Events At/By SBUP (24)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="industryProfessional" value="industryProfessional" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="industryProfessional">
+                                            Industry/Professional <br> Events (0)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="annualReunion" value="Annual Reunion" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="annualReunion">
+                                            Annual Reunion(5)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="localMeet" value="Local Meet & Greet" name="type"
+                                            class="form-check-input" type="radio" formControlName="type"
+                                            (ngModelChange)="onTypeChange($event)">
+                                        <label class="form-check-label" for="localMeet">
+                                            Local Meet & Greet (2)
+                                        </label>
+                                    </div>
+                                </form>
                             </div>
                             <div class="sbs-alumni-events">
-                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI EVENTS SO FAR
+                                <h6 class="fs-6 fw-bold text-uppercase my-xl-5 my-lg-5 my-d-4 my-sm-3 ">SBS ALUMNI
+                                    EVENTS SO FAR
                                 </h6>
                                 <p>Events Across Alumni<br> Clubs : 28</p>
                                 <p>Event Participants : 17</p>

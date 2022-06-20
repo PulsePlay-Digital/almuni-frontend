@@ -36,8 +36,7 @@ export class IndustryConnectComponent implements OnInit {
     this.buildForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
-    let mname = this.currentUser?.middle_name;
-    this.author = fname + (mname == null ? "" : " " + mname) + " " + lname;
+    this.author = fname + " " + lname;
   }
 
   /**
@@ -68,6 +67,7 @@ export class IndustryConnectComponent implements OnInit {
       emailSubmittedBy: [""],
       companiesParticipating: [""],
       category: ["alumni"],
+      status: ['unapproved']
     });
   }
 

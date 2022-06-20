@@ -22,7 +22,7 @@ export class ViewDetailsComponent implements OnInit {
     private config: Config,
     public _location: Location) {
     this.arouter.queryParams.subscribe((res: any) => {
-      this.alumniId = res.id;
+      this.alumniId = res?.id;
     })
    }
 

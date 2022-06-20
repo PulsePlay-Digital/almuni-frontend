@@ -24,20 +24,21 @@ export class SearchFilterComponent implements OnInit {
   industry: any;
   region: any;
 
-  constructor(public fb: FormBuilder, 
-    public dataService: DataService,
+  constructor(
+    private fb: FormBuilder,
+    private dataService: DataService,
     private userService: UserService,
     private countryService: CountryService,
-    public config: Config) {
-      this.userRole = this.config.role;
-      this.gender = this.config.gender;
-      this.group = this.config.bloodGroup;
-      this.profCategory = this.config.professionCategory;
-      this.primaryArea = this.config.functionArea;
-      this.industry = this.config.industryFocus;
-      this.region = this.config.region;
-     }
-  
+    private config: Config
+  ) {
+    this.userRole = this.config?.role;
+    this.gender = this.config?.gender;
+    this.group = this.config?.bloodGroup;
+    this.profCategory = this.config?.professionCategory;
+    this.primaryArea = this.config?.functionArea;
+    this.industry = this.config?.industryFocus;
+    this.region = this.config?.region;
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -51,34 +52,33 @@ export class SearchFilterComponent implements OnInit {
   buildForm() {
     this.searchForm = this.fb.group({
       first_name: [""],
-      last_name:[""],
-      blood_group:[""],
-      city:[""],
-      country:[""],
-      state: [''],
-      primaryArea:[""],
-      secondaryArea:[""],
-      primaryIndustry:[""],
-      secondaryIndusrty:[""],
+      last_name: [""],
+      blood_group: [""],
+      city: [""],
+      country: [""],
+      state: [""],
+      primaryArea: [""],
+      secondaryArea: [""],
+      primaryIndustry: [""],
+      secondaryIndusrty: [""],
       email: [""],
       mobile_number: [""],
       institute_id: [""],
       batchYear_id: [""],
-      gender: [''],
-      bloodGroup: [''],
-      professionalCategory:[''],
+      gender: [""],
+      bloodGroup: [""],
+      professionalCategory: [""],
       is_verified: [""],
       current_company: [""],
       reg_date_from: [""],
       reg_date_to: [""],
-      otherRegion:[""],
-      role:['']  
-      });
+      otherRegion: [""]
+    });
   }
 
   onChangeValue() {
     this.searchForm.valueChanges.subscribe((x: any) => {
-      this.filteruserData()
+      this.filteruserData();
     });
   }
 
@@ -97,7 +97,7 @@ export class SearchFilterComponent implements OnInit {
   }
 
   public loadCountries() {
-    this.countryService.getCountries().subscribe(data => {
+    this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
     });
   }
@@ -105,7 +105,7 @@ export class SearchFilterComponent implements OnInit {
   public changeCountry(event: any) {
     console.log(event.target.value);
   }
-  
+
   /**
    * Function to get all batch year
    */
@@ -124,8 +124,10 @@ export class SearchFilterComponent implements OnInit {
    * User search filter
    */
   async filteruserData() {
-    await this.userService.filterUsers(this.searchForm.value).subscribe((res: any) => {
-      // this.userService.filteredData.next(res);
-    })
+    await this.userService
+      .filterUsers(this.searchForm.value)
+      .subscribe((res: any) => {
+        // this.userService.filteredData.next(res);
+      });
   }
 }

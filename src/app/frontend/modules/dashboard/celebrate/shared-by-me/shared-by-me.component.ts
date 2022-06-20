@@ -32,7 +32,8 @@ export class SharedByMeComponent implements OnInit {
       description: ['', Validators.required],
       type: this.type,
       institute: [''],
-      photo: ['', Validators.required]
+      photo: ['', Validators.required],
+      status: ['unapproved']
     });
   }
 
