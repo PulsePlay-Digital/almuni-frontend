@@ -36,7 +36,7 @@
                                             <p class="connect-event-description description"> {{ item?.description | stripHtml }}</p>
 
                                             <div class="more-btn ">
-                                                <a routerLink="{{(currentUser) ? ['/connect/event-detail'] : ['/login']}}" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
+                                                <a routerLink="{{(currentUser) ? ['/connect/event-detail'] : ['#/login']}}" [queryParams]="item" class="fw-bold text-decoration-none" href="#"><i class="fa fa-plus"
                                                         aria-hidden="true"></i>&nbsp;{{currentUser ?
                                                     'More Info' : 'Login for more information'}}</a>
                                             </div>

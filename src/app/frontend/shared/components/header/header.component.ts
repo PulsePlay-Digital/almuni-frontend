@@ -65,7 +65,7 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate(r:string) {
-    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
+    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['#/login']); 
   }
 
   editProfile() {

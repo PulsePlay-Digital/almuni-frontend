@@ -52,7 +52,7 @@ export class AlumniDirectoryComponent implements OnInit {
           this.notify.notificationService.openFailureSnackBar(
             error?.error?.message
           );
-          this.router.navigate(['/login']);
+          this.router.navigate(['#/login']);
         } else {
           this.notify.notificationService.openFailureSnackBar(error);
         }
