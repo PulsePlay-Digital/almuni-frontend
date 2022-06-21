@@ -16,6 +16,7 @@ export class AlumniJourneyComponent implements OnInit {
   type: string = 'journey';
   alumniData: any;
   heading: string = "ALUMNI JOURNEY";
+  allJourneyCount: any;
   
   constructor(
     public dataService: DataService
@@ -23,6 +24,7 @@ export class AlumniJourneyComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllJourney();
+    this.countAllJourney();
   }
 
   showViewShared() {
@@ -52,5 +54,20 @@ export class AlumniJourneyComponent implements OnInit {
       .subscribe((result: any) => {
         this.alumniData = result;
       });
+  }
+
+  async countAllJourney() {
+    let action: string = "count-project";
+    await this.dataService.getData(action, ).subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res?.status == 200) {
+          this.allJourneyCount = res?.data;
+        }
+      },
+      (error) => {
+        // this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
 }
