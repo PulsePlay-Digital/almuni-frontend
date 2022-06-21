@@ -27,6 +27,7 @@ export class AtGlanceComponent implements OnInit {
   pastNameSearched: any;
   upcomingNameSearched: any;
   valChange: any;
+  allEventTypeCount: any;
 
   constructor(
     public dataService: DataService,
@@ -48,6 +49,7 @@ export class AtGlanceComponent implements OnInit {
     this.buildUpcomingFilterForm();
     this.getAllPastEvents();
     this.getAllUpcomingEvents();
+    this.eventTypeCount();
   }
 
   buildFilterForm() {
@@ -138,7 +140,7 @@ export class AtGlanceComponent implements OnInit {
     this.loading = true;
     let action: string = "filter-event";
     let params: any = {
-      type: this.valueChange
+      type: this.valueChange,
     };
     if (this.filterForm) {
       await this.dataService
@@ -155,5 +157,19 @@ export class AtGlanceComponent implements OnInit {
           this.loading = false;
         });
     }
+  }
+
+  async eventTypeCount() {
+    let action: string = "count-eventType";
+    await this.dataService.getData(action).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.allEventTypeCount = res;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
 }

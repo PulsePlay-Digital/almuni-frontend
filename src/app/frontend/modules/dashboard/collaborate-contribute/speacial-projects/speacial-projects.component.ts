@@ -59,10 +59,9 @@ export class SpeacialProjectsComponent implements OnInit {
   }
 
   async countAllUserProject() {
-    let action: string = "count-UserProject";
+    let action: string = "count-userProject";
     await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allUserProjectCount = res?.data;
         }

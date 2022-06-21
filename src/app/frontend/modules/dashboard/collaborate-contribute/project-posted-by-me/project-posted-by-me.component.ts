@@ -35,7 +35,7 @@ export class ProjectPostedByMeComponent implements OnInit {
     await this.dataService.getData(action).pipe(
       map((item:any) => {
         return item?.data.filter((res:any) => {
-          return res?.author === this.author;
+          return res?.user_id == this.currentUser?.id
         })
       })
     ).subscribe((res: any) => {

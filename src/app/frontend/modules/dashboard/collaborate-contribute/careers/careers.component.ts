@@ -11,11 +11,18 @@ export class CareersComponent implements OnInit {
   searchData: boolean = true;
   heading: string = "CAREERS AND JOBS";
   allJobsCount: any;
-  constructor(private dataService: DataService,
-    private notify: TokenInterceptor) {}
+  currentUser: any;
+  allJobsByMe: any;
+  constructor(
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) {
+    this.currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
+  }
 
   ngOnInit(): void {
     this.countAllJobs();
+    this.countAllJobsByMe();
   }
 
   search() {
@@ -26,9 +33,23 @@ export class CareersComponent implements OnInit {
     let action: string = "count-jobs";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allJobsCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
+
+  async countAllJobsByMe() {
+    let action: string = "count-userJobs";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res?.status == 200) {
+          this.allJobsByMe = res?.data;
         }
       },
       (error) => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -17,14 +18,22 @@ export class AlumniJourneyComponent implements OnInit {
   alumniData: any;
   heading: string = "ALUMNI JOURNEY";
   allJourneyCount: any;
+  allUserJourneyCount: any;
+  currentUser: any;
   
   constructor(
-    public dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) { 
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+  }
 
   ngOnInit(): void {
     this.getAllJourney();
     this.countAllJourney();
+    this.countAllUserJourney();
   }
 
   showViewShared() {
@@ -60,13 +69,28 @@ export class AlumniJourneyComponent implements OnInit {
     let action: string = "count-project";
     await this.dataService.getData(action, ).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allJourneyCount = res?.data;
         }
       },
       (error) => {
-        // this.notify.notificationService.openFailureSnackBar(error);
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
+
+
+  async countAllUserJourney() {
+    let action: string = "count-userJourney";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res?.status == 200) {
+          this.allUserJourneyCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }

@@ -39,7 +39,7 @@ export class MyPostedExpertiseComponent implements OnInit {
     let action: string = "all-expertise";
     await this.dataService.getData(action).pipe(
       map((item: any) => {
-        return item?.data.filter((res: any) => res?.author === this.author
+        return item?.data.filter((res: any) => res?.user_id == this.currentUser?.id
         )
       })
     ).subscribe((res: any) => {

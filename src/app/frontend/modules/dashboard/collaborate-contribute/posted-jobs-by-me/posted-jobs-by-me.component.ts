@@ -37,7 +37,7 @@ export class PostedJobsByMeComponent implements OnInit {
     let action: string = 'all-jobs';
     await this.dataService.getData(action).pipe(
       map(((item: any) => {
-        return item?.data.filter((result: any) => result?.author === this.author )
+        return item?.data.filter((result: any) => result?.user_id == this.currentUser?.id )
       }))
     ).subscribe(jobs => {
       this.postedJobsByMe = jobs;
