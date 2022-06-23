@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   form: FormGroup | any;
   submitted: boolean | undefined;
   locationCounts: any;
+
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
@@ -96,8 +97,6 @@ export class HomeComponent implements OnInit {
     dots: false,
     autoplay: true,
     autoplayTimeout: 2500,
-    animateIn: "fadeIn",
-    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -129,6 +128,7 @@ export class HomeComponent implements OnInit {
   successAlert: boolean | undefined;
   warningAlert: boolean | undefined;
   showAlert: any;
+  
   constructor(
     public router: Router,
     public config: Config,
