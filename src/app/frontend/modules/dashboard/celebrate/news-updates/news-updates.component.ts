@@ -17,7 +17,6 @@ export class NewsUpdatesComponent implements OnInit {
   loading: boolean = false;
   p: number = 1;
   destroy$: Subject<boolean> = new Subject<boolean>();
-  heading: string= "NEWS & UPDATES";
   constructor(private dataService: DataService,
     public notify: TokenInterceptor
   ) { }

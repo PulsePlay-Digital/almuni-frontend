@@ -16,7 +16,6 @@ export class AlumniJourneyComponent implements OnInit {
   storyHeading: string = "My Story";
   type: string = 'journey';
   alumniData: any;
-  heading: string = "ALUMNI JOURNEY";
   allJourneyCount: any;
   allUserJourneyCount: any;
   currentUser: any;

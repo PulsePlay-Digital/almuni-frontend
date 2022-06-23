@@ -14,7 +14,6 @@ export class EntrepreneurshipClubComponent implements OnInit {
   entrepreneur: any;
   p: number = 1;
   loading : boolean = false;
-  heading: string = "BUSINESS VENTURE / START UP DETAIL INFO";
   pageType: string = "entrepreneurship-club";
 
   constructor(

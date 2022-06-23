@@ -186,9 +186,9 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      let params = this.registerForm.value;
+      let params = this.registerForm?.value;
       await this.authService.register(params).subscribe((res: any) => {
-        this.notify.notificationService.openSuccessSnackBar(res.message);
+        this.notify.notificationService.openSuccessSnackBar(res?.message);
         this.router.navigate(['#/login']);
       },error => {
         this.notify.notificationService.openFailureSnackBar(error);

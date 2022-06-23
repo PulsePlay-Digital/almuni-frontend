@@ -20,7 +20,6 @@ export class AtGlanceComponent implements OnInit {
   p: number = 1;
   pastEvent: any;
   upcomingEvent: any;
-  heading: string = "Events at a Glance";
   currentUser: any;
   clubsTotal: any;
   valueChange: any;

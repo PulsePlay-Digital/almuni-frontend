@@ -7,6 +7,9 @@
         background: var(--card-bg);
         .card-header {
             height: 80px;
+            .card-title {
+                color: var(--bg-color);
+            }
         }
         .card-body {
             height: 132px;

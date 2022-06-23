@@ -39,7 +39,7 @@ export class TokenInterceptor implements HttpInterceptor {
           console.log(error)
           if (error?.error?.message == 'Unauthenticated.') {
             this.authService.logout();
-            location.assign('login');
+            location.assign('#/login');
           }else if (error?.status == 404) {
             return throwError(error?.error?.message);
           } else if (error?.status == 0) {
@@ -49,7 +49,7 @@ export class TokenInterceptor implements HttpInterceptor {
           }
           else if (error?.status == 401) {
             this.authService.logout();
-            location.assign('login');
+            location.assign('#/login');
             // return throwError(error?.error?.message);
           }
           

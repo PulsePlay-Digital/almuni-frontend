@@ -8,7 +8,6 @@ import { DataService } from "./../../../../services/data.service";
   styleUrls: ["./gallery.component.scss"],
 })
 export class GalleryComponent implements OnInit {
-  heading: string = "CLASS WISE PICTURE";
   loading:boolean = false;
   allGallery: any;
   constructor(

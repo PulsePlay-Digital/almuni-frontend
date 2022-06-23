@@ -1,4 +1,3 @@
-import { ViewportScroller } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "./../../../../services/data.service";
 
@@ -8,7 +7,6 @@ import { DataService } from "./../../../../services/data.service";
   styleUrls: ["./alumni-connect-vision.component.scss"],
 })
 export class AlumniConnectVisionComponent implements OnInit {
-  heading: string = "COMMON PURPOSE";
 
   constructor(
     public dataService: DataService
