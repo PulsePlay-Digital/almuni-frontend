@@ -16,7 +16,6 @@ export class AlumniDirectoryComponent implements OnInit {
   p: number = 1;
   loading: boolean = false;
   imgPath = environment.imgUrl;
-  heading: string = "Alumni Directory";
   pageType: string = "alumni-directory";
   constructor(
     public dataService: DataService,

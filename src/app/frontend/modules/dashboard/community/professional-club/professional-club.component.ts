@@ -12,7 +12,6 @@ import { DataService } from "./../../../../services/data.service";
 })
 export class ProfessionalClubComponent implements OnInit {
   club: boolean = false;
-  heading: string = "professional club";
   professionalClub: any;
   loading:boolean | undefined;
   imgPath = environment.imgUrl;

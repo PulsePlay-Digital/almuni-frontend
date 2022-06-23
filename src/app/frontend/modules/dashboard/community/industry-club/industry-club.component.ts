@@ -12,7 +12,6 @@ import { DataService } from "./../../../../services/data.service";
 })
 export class IndustryClubComponent implements OnInit {
   club: boolean = false;
-  heading: string = "industry club";
   industry: any;
   loading: boolean | undefined;
   imgPath = environment.imgUrl;

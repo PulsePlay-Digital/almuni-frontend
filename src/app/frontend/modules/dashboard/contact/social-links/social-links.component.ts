@@ -10,7 +10,6 @@ import { DataService } from './../../../../services/data.service';
 export class SocialLinksComponent implements OnInit {
   loading: boolean = false;
   socialData: any;
-  heading: string= "SRI BALAJI UNIVERSITY ALUMNI CLUBS - SOCIAL CHANNELS";
   constructor(
     public dataService: DataService
   ) {}

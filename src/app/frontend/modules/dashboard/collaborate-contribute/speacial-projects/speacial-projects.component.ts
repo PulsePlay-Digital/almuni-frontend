@@ -10,7 +10,6 @@ import { DataService } from './../../../../services/data.service';
 export class SpeacialProjectsComponent implements OnInit {
 
   searchData: boolean = true;
-  heading: string = "SPECIAL PROJECTS";
   projectPosted:boolean = false;
   allProjectCount: any;
   allUserProjectCount: any;

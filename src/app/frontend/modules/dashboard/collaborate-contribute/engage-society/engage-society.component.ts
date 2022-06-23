@@ -10,7 +10,6 @@ import { DataService } from './../../../../services/data.service';
 export class EngageSocietyComponent implements OnInit {
   postedOpportunity: boolean = false;
   postedExpertise: boolean = false;
-  heading: string = "ENGAGE WITH SRI BALAJI UNIVERSITY";
   allEvent: any;
   allExpertise: any;
   allOpportunity: any;

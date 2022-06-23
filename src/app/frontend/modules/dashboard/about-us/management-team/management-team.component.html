@@ -30,8 +30,8 @@
                 </div>
                 <app-loader *ngIf="loading"></app-loader>
                 <ng-container *ngIf="teamData?.length > 0">
-                    <div class="row mb-3" *ngIf="!loading">
-                        <div class="col-xl-4 col-lg-4 col-md-6  my-2" *ngFor="let team of teamData | paginate: { itemsPerPage: 9, currentPage: p }">
+                    <div class="row mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3" *ngIf="!loading">
+                        <div class="col-xl-4 col-lg-4 col-md-6 my-2" *ngFor="let team of teamData; let i=index;">
                             <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
                                 <ng-container *ngIf="team?.image != null">
                                     <div class="alumni-pic">
@@ -49,11 +49,6 @@
                                     <p class="card-text mb-2">{{team?.institute_name}}</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center my-xl-4 my-lg-4 my-md-3 my-sm-3 my-2" *ngIf="teamData?.length > 0">
-                        <div class="col text-center">
-                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </div>
                     </div>
                 </ng-container>

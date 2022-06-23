@@ -1,126 +1,175 @@
 .card {
-    background: var(--card-bg);
-    .card-title {
+  background: var(--card-bg);
+  .card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-body {
+    height: 78px;
+    .designation {
       display: -webkit-box;
-      -webkit-line-clamp: 1;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .card-body {
-      height: 78px;
-      .designation {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-    .alumni-pic {
-      min-height: 210px;
-      max-height: 210px;
-      background-color: var(--bs-white);
-      img {
-        min-height: 210px;
-        max-height: 210px;
-        object-fit: var(--object-cover);
-      }
-    }
-    .card-btn {
-      background: var(--btn-background);
-      color: var(--bs-white);
-      line-height: var(--line-height-1-8);
-      width: 30%;
-    }
-    .noImg {
+  }
+  .alumni-pic {
+    min-height: 210px;
+    max-height: 210px;
+    background-color: var(--bs-white);
+    img {
       min-height: 210px;
       max-height: 210px;
       object-fit: var(--object-cover);
     }
-    .view-btn {
-      background: var(--btn-background);
-      color: var(--bs-white);
-      border: 1px solid var(--btn-background);
-      line-height: var(--line-height-1-8);
-    }
-    .view-btn:hover {
-      background: var(--bs-white);
-      color: var(--btn-background);
+  }
+  .card-btn {
+    background: var(--btn-background);
+    color: var(--bs-white);
+    line-height: var(--line-height-1-8);
+    width: 30%;
+  }
+  .noImg {
+    min-height: 210px;
+    max-height: 210px;
+    object-fit: var(--object-cover);
+  }
+  .view-btn {
+    background: var(--btn-background);
+    color: var(--bs-white);
+    border: 1px solid var(--btn-background);
+    line-height: var(--line-height-1-8);
+  }
+  .view-btn:hover {
+    background: var(--bs-white);
+    color: var(--btn-background);
+  }
+}
+
+.bannerImg {
+  background: url("./../../../../../../assets/celebrate/celebrate_banner.jpg");
+  background-repeat: var(--background-no-repeat);
+  height: 250px;
+  background-size: 100% 100%;
+  position: var(--position-relative);
+  .layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: var(--position-absolute);
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height-100);
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+  }
+  h3 {
+    letter-spacing: var(--letter-space-1);
+    font-family: var(--family);
+    font-size: var(--font-S-32);
+  }
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .bannerImg {
+    background-size: cover;
+    background-position-x: center;
+    height: 150px;
+    h3 {
+      font-size: var(--font-S-18);
     }
   }
-  
-  @media (min-width: 400px) and (max-width: 575px) {
-    .card {
-      .alumni-pic {
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+  .card {
+    .alumni-pic {
+      min-height: 150px;
+      max-height: 150px;
+      width: 50%;
+      margin: auto;
+      img {
         min-height: 150px;
         max-height: 150px;
-        width: 50%;
-        margin: auto;
-        img {
-          min-height: 150px;
-          max-height: 150px;
-        }
-      }
-      .noImg {
-        min-height: 150px;
-        max-height: 150px;
       }
     }
+    .noImg {
+      min-height: 150px;
+      max-height: 150px;
+    }
   }
-  
-  @media (min-width: 575px) and (max-width: 768px) {
-    .card {
-      .alumni-pic {
-        min-height: 140px;
-        max-height: 140px;
-        img {
-          min-height: 140px;
-          max-height: 140px;
-        }
-      }
-      .noImg {
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  .card {
+    .alumni-pic {
+      min-height: 140px;
+      max-height: 140px;
+      img {
         min-height: 140px;
         max-height: 140px;
       }
     }
+    .noImg {
+      min-height: 140px;
+      max-height: 140px;
+    }
   }
-  @media (min-width: 768px) and (max-width: 991px) {
-    .card {
-      .alumni-pic {
+  .bannerImg {
+    height: 180px;
+    h3 {
+      font-size: var(--font-S-22);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .card {
+    .alumni-pic {
+      min-height: 160px;
+      max-height: 160px;
+      img {
         min-height: 160px;
         max-height: 160px;
-        img {
-          min-height: 160px;
-          max-height: 160px;
-        }
-      }
-      .noImg {
-        min-height: 160px;
-        max-height: 160px;
       }
     }
-  }
-  @media (min-width: 992px) and (max-width: 1200px) {
-    .bannerImg {
-      h3 {
-        font-size: var(--font-S-30);
-      }
+    .noImg {
+      min-height: 160px;
+      max-height: 160px;
     }
   }
-  @media (min-width: 1200px) {
-    .card {
-      .alumni-pic {
+  .bannerImg {
+    height: 200px;
+    h3 {
+      font-size: var(--font-S-26);
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bannerImg {
+    h3 {
+      font-size: var(--font-S-30);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    .alumni-pic {
+      min-height: 300px;
+      max-height: 300px;
+      img {
         min-height: 300px;
         max-height: 300px;
-        img {
-          min-height: 300px;
-          max-height: 300px;
-        }
-      }
-      .noImg {
-        min-height: 300px;
-        max-height: 300px;
       }
     }
+    .noImg {
+      min-height: 300px;
+      max-height: 300px;
+    }
   }
+}

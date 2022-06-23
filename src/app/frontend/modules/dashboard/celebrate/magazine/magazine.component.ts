@@ -10,7 +10,6 @@ import { environment } from "./../../../../../../environments/environment";
   styleUrls: ["./magazine.component.scss"],
 })
 export class MagazineComponent implements OnInit {
-  heading: string = "CORPORATE CITIZEN MAGAZINE";
   allMagazine: any;
   loading: boolean = false;
   imgPath = environment.imgUrl;

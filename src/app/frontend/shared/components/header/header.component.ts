@@ -65,14 +65,11 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate(r:string) {
-    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['#/login']); 
+    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
   }
 
   editProfile() {
-    // console.log(params)
     this.router.navigate([ '/edit-profile' ], { queryParams: { key: 'test'} });
-    // this.router.navigate(["/edit-profile"],{
-    //   queryParams: { type: params }})
   }
 }
 
