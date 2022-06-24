@@ -10,17 +10,18 @@
     </div>
 </div>
 <div class="container">
-    <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
+    <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3 m-0">
         <!-- <div class="col-lg-12 text-center">
             <h3 class="main-heading text-uppercase mb-0 fw-bold">BUSINESS VENTURE / START UP DETAIL INFO</h3>
         </div> -->
+        <app-search-filter></app-search-filter>
     </div>
-    <app-search-filter></app-search-filter>
+    
     <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 m-0">
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
             <ng-container *ngIf="entrepreneur?.length > 0">
-                <div class="col-lg-4 col-md-6 col-sm-6 my-2 px-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="col-lg-4 col-md-6 col-sm-6 my-2 px-xl-2 px-lg-2 px-md-2 px-sm-2" *ngFor="let item of entrepreneur | paginate: { itemsPerPage: 6, currentPage: p }">
                     <div class="card py-xl-3 py-lg-3 py-md-3 py-sm-2 py-2">
                         <div class="card-body text-xl-start text-lg-start text-md-start p-xl-3 p-lg-3 p-md-3 p-sm-2 p-2">
                             <p *ngIf="item?.company" class="mb-2"><strong>Company Name:</strong> &nbsp; {{ item?.company}}

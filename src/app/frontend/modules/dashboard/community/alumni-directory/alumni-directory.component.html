@@ -10,12 +10,15 @@
     </div>
 </div>
 <div class="container">
-    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-0">
+    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-4 m-0">
         <app-search-filter [pageType]="pageType"></app-search-filter>
+    </div>
+    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-0 m-0">
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
             <ng-container *ngIf="user?.length > 0">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
+                    *ngFor="let item of user | paginate: { itemsPerPage: 9, currentPage: p }">
                     <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
                         <ng-container *ngIf="item?.profile_pic != null">
                             <div class="alumni-pic">
@@ -23,18 +26,22 @@
                             </div>
                         </ng-container>
                         <ng-container *ngIf="item?.profile_pic == null">
-                            <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg" alt="Alumni Picture" />
+                            <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg"
+                                alt="Alumni Picture" />
                         </ng-container>
                         <div class="card-header bg-transparent border-0 text-center pt-3">
-                            <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.first_name}} {{item?.last_name}}</h3>
+                            <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.first_name}} {{item?.last_name}}
+                            </h3>
                         </div>
                         <div class="card-body text-center pb-0 pt-2">
                             <p class="card-text mb-2">({{item?.batch}})</p>
-                            <p *ngIf="item?.current_designation != null" class="card-text mb-2 designation">{{item?.current_designation}}
+                            <p *ngIf="item?.current_designation != null" class="card-text mb-2 designation">
+                                {{item?.current_designation}}
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-0 text-center">
-                            <a (click)="viewDetail(item.id)" class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize ">
+                            <a (click)="viewDetail(item.id)"
+                                class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize ">
                                 <i class="fa fa-link"></i>&nbsp;View more</a>
                         </div>
                     </div>
