@@ -11,7 +11,6 @@ import { Config } from "./../../../../services/config";
 })
 export class ViewEventDetailComponent implements OnInit {
   event_detail: any;
-  heading: string= "EVENT DETAIL INFORMATION";
   imgPath = environment.imgUrl;
   currentUser: any;
 
