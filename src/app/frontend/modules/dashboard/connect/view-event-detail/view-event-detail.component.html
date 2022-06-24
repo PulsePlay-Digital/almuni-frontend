@@ -1,7 +1,7 @@
 <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
 <div class="view-event">
     <div class="container">
-        <div class="row justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
+        <div class="row justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3 m-0">
             <div class="col-xxl-9 col-xl-10 col-lg-12 col-md-12">
                 <div class="d-flex align-items-center justify-content-between my-lg-4 my-md-4 my-sm-3 my-2">
                     <h4 class="main-heading text-uppercase fw-bolder mb-0">EVENT DETAIL INFORMATION</h4>
@@ -9,184 +9,115 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row m-0">
             <div class="col collaborate-image  text-center">
                 <img [src]="imgPath + event_detail?.eventImage" class="collab-img img-fluid mb-2"
                     alt="Event Detail Image">
             </div>
         </div>
-        <div class="row justify-content-center my-xl-4 my-lg-4 my-md-4 my-sm-3 my-3">
+        <div class="row justify-content-center my-xl-4 my-lg-4 my-md-4 my-sm-3 my-3 m-0">
             <div class="col-lg-3 col-md-4 col-sm-6 more-btn my-xl-3 my-lg-3 my-md-3 my-sm-3 my-2 text-center">
-                <a (click)="attendHost()"
-                    class="btn view-btn lh-lg fs-6 fw-bold ">I
+                <a (click)="attendHost()" class="btn view-btn lh-lg fs-6 fw-bold ">I
                     will
                     attend</a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 more-btn my-xl-3 my-lg-3 my-md-3 my-sm-3 my-2 text-center">
-                <a (click)="attendHost()"
-                    class="btn view-btn lh-lg justify-content-around fs-6 fw-bold ">I
+                <a (click)="attendHost()" class="btn view-btn lh-lg justify-content-around fs-6 fw-bold ">I
                     will volunteer</a>
             </div>
         </div>
-        <div class="row justify-content-center mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
-            <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5">
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Name:</span>
+        <div class="row justify-content-center m-0">
+            <div class="col-xxl-9 col-xl-10 col-lg-12 col-md-12">
+                <div class="row">
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Name: </span> {{event_detail?.title}}
                         </p>
                     </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0 text-lg-start">
-                            {{event_detail?.title}}
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Type : </span> {{event_detail?.type}}
                         </p>
                     </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Type:</span>
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Date : </span> {{ event_detail?.date | date: 'mediumDate'}}
                         </p>
                     </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                            {{event_detail?.type}}
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Venue : </span> {{event_detail?.venue}}
                         </p>
                     </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Date:</span>
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Facebook event page Link : </span> <a
+                                href="https://www.facebook.com/events/236654928n6755230/"
+                                class="fb-event text-decoration-none">
+                                {{ event_detail?.eventPageLink }}
+                            </a>
                         </p>
                     </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                            {{ event_detail?.date | date: 'mediumDate'}}
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Category : </span> {{event_detail?.category ==
+                            'alumniDrivenEvent' ? 'Alumni Driven Event' : 'Alumni Reunion'}}
                         </p>
                     </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0 ">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Venue:</span>
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Time : </span> {{event_detail?.time}}
                         </p>
                     </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                          {{ event_detail?.venue }}
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Contact person number : </span> {{ event_detail?.contactNumber}}
                         </p>
                     </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-12 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Facebook event page Link:</span>
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Cost per person : </span> {{ event_detail?.cost }}
                         </p>
                     </div>
-                    <div class="col-md-12 ps-lg-0 pt-2">
-                        <a href="https://www.facebook.com/events/236654928n6755230/"
-                            class="fb-event text-decoration-none">
-                            {{ event_detail?.eventPageLink }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5">
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-4 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Category:</span>
+                    <div class="col-sm-6 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-0">
+                            <span class="fw-bold">Event Hosted By : </span> {{ event_detail?.eventHost }}
                         </p>
                     </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0 text-lg-start">
-                            {{event_detail?.category == 'alumniDrivenEvent' ? 'Alumni Driven Event' : 'Alumni Reunion'}}
+                    <div class="col-sm-12 my-2">
+                        <p class="text-capitalize lh-base fs-6 mb-2">
+                            <span class="fw-bold">Description : </span>
                         </p>
-                    </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-3 ps-lg-0">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Time:</span>
-                        </p>
-                    </div>
-                    <div class="col-md-9 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                            {{event_detail?.time}}
-                        </p>
-                    </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-6 ps-lg-0 ">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Contact person number:</span>
-                        </p>
-                    </div>
-                    <div class="col-md-6 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                           {{ event_detail?.contactNumber}}
-                        </p>
-                    </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-5 ps-lg-0 ">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Cost per person:</span>
-                        </p>
-                    </div>
-                    <div class="col-md-7 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                           {{ event_detail?.cost }}
-                        </p>
-                       
-                    </div>
-                </div>
-                <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                    <div class="col-md-4 ps-lg-0 ">
-                        <p class="text-capitalize fs-6 mb-0">
-                            <span class="fw-bold">Event Hosted By:</span>
-                        </p>
-                    </div>
-                    <div class="col-md-8 ps-lg-0">
-                        <p class="text-capitalize fs-6 text-lg-start mb-0">
-                          {{ event_detail?.eventHost }}
-                        </p>
-                       
+                        <span class="descriptionText">{{ event_detail?.description | stripHtml }}</span>
                     </div>
                 </div>
             </div>
-            <div class="row py-xl-3 py-lg-3 py-md-3 py-2">
-                <div class="col-md-3 ps-lg-0">
-                    <p class="text-capitalize fs-6 mb-0">
-                        <span class="fw-bold">Description:</span>
-                    </p>
-                </div>
-                <div class="col-md-9 ps-lg-0">
-                    <p class="text-capitalize fs-6 text-lg-start mb-0">
-                        {{ event_detail?.description | stripHtml }}
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 my-xl-4 my-lg-4 my-md-4 my-sm-3 my-2 text-center">
-                    <h4 class="main-heading text-uppercase fw-bolder mb-0">Comment</h4>
-                </div>
-            </div>
-            <div class="your-idea my-1 rounded">
-                <div class="row ">
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12 align-self-center text-center">
-                        <img src="./assets/connectImg/idea.png" class="img-fluid p-4" alt="Your Idea Image">
+        </div>
+        <div class="row mb-xl-5 mb-lg-5 mb-md-5 mb-sm-4 mb-4 m-0">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 my-xl-4 my-lg-4 my-md-4 my-sm-3 my-2 text-center">
+                        <h4 class="main-heading text-uppercase fw-bolder mb-0">Comment</h4>
                     </div>
-                    <div
-                        class="col-xl-8 col-lg-8 col-md-6 col-sm-6 col-12 align-self-center share-idea px-xl-1 px-lg-1 px-md-1 px-sm-1 px-5">
-                        <input type="text" class="form-control commentField bg-transparent text-white rounded-0 border-top-0 border-end-0 border-start-0 border-dark p-0 pb-2" placeholder="What's on your mind, Name?">
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12 more-btn align-self-center text-center">
-                        <button
-                            class="btn view-btn lh-lg fw-bold align-self-center my-3 px-xl-5 px-lg-5 px-md-4 py-2 px-sm-3 px-5">Post</button>
+                </div>
+                <div class="your-idea my-1 rounded">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12 align-self-center text-center">
+                            <img src="./assets/connectImg/idea.png" class="img-fluid p-4" alt="Your Idea Image">
+                        </div>
+                        <div
+                            class="col-xl-8 col-lg-8 col-md-6 col-sm-6 col-12 align-self-center share-idea px-xl-1 px-lg-1 px-md-1 px-sm-1 px-5">
+                            <input type="text"
+                                class="form-control commentField bg-transparent text-white rounded-0 border-top-0 border-end-0 border-start-0 border-dark p-0 pb-2"
+                                placeholder="What's on your mind, Name?">
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-9 more-btn align-self-center text-center">
+                            <button
+                                class="btn view-btn lh-lg fw-bold align-self-center my-3 px-xl-5 px-lg-5 px-md-4 py-2 px-sm-3 px-5">Post</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
