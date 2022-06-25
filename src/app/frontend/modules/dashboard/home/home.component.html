@@ -428,7 +428,7 @@
                             <ul *ngIf="!loading">
                                 <ng-container *ngIf="allNews?.length > 0">
                                     <li *ngFor="let news of allNews">
-                                        <a routerLink="/celebrate/news-detail" [queryParams]="news" [skipLocationChange]="true"><span class="text">{{news?.title}}</span>
+                                        <a (click)="navigateToDetail('/celebrate/news-detail',news)" matTooltip="{{news?.title}}" matTooltipClass="news-tooltip-color"><span class="text">{{news?.title}}</span>
                                             <span class="icon"><img src="./assets/box-arrow.png"
                                                     alt="box img" /></span></a>
                                     </li>
@@ -458,7 +458,7 @@
                             <ul *ngIf="!loading">
                                 <ng-container *ngIf="allEvents?.length > 0">
                                     <li *ngFor="let event of allEvents">
-                                        <a routerLink="/connect/event-detail" [queryParams]="event"><span
+                                        <a (click)="navigateToDetail('/connect/event-detail',event)" matTooltip="{{event?.title}}" matTooltipClass="news-tooltip-color"><span
                                                 class="text">{{event.date | date: 'd MMM, y' }}</span>
                                             <span class="icon"><img src="./assets/box-arrow.png"
                                                     alt="box img" /></span></a>

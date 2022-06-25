@@ -10,10 +10,7 @@
 }
 
 .common_buttons:hover {
-    background: #fff;
-    border-color: var(--footer-bg);
-    color: var(--footer-bg) !important;
-    border: 2px solid;
+    background-color: var(--btn-hover);
     transition: all 0.2s;
 }
 
@@ -63,9 +60,7 @@
             line-height: 2.5;
         }
         .join-event:hover {
-            background-color: var(--bs-white);
-            color: var(--btn-background);
-            border-color: var(--btn-background);
+            background-color: var(--btn-hover);
         }
     }
     p {

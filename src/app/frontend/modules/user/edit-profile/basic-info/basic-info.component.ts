@@ -82,7 +82,7 @@ export class BasicInfoComponent implements OnInit {
       gender: ["", Validators.required],
       marital_status: [""],
       blood_group: [""],
-      code: [""],
+      code: ["", Validators.required],
       mobile_number: [
         "",
         [
