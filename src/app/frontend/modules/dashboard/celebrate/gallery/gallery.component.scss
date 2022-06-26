@@ -19,14 +19,21 @@
 }
 a {
     color: #fff;
-    background: #E34A3B;
-    border-color: #E34A3B;
+    background: var(--btn-background);
+    border-color: var(--btn-background);
     padding: 6px;
     margin: 10px;
     border-width: 0px;
 }
+a:hover {
+  background: var(--btn-hover);
+}
 iframe.founderVideo {
     height: 500px;
+}
+
+.vidSubHeading {
+  color: var(--btn-background);
 }
 
 .bannerImg {

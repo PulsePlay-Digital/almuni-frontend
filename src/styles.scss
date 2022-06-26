@@ -47,6 +47,9 @@ body {
     color: #fff;
 }
 
+.news-tooltip-color {
+    background: var(--bg-color);
+}
 .green-snackbar {
     background: rgb(2, 192, 72);
     color: #fff;
@@ -100,16 +103,15 @@ body {
         .owl-prev {
             background-color: transparent !important;
             i {
-                color: #b9b9b9;
                 font-size: 24px;
-                color: #b9b9b9 !important;
+                color: #fff !important;
             }
         }
         .owl-next {
             background-color: transparent !important;
             i {
                 font-size: 24px;
-                color: #b9b9b9 !important;
+                color: #fff !important;
             }
         }
     }

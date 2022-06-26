@@ -96,6 +96,10 @@
                         <div class="col-lg-3 col-md-4 col-sm-3 col-3 pb-2 pe-2">
                             <label class=" form-label fw-bold">Code <span class="label-danger">*</span></label>
                             <input type="text" formControlName="code" class="form-control px-1" placeholder="Code">
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
+                            *ngIf="(f.code.touched || submitted) && f.code.errors?.required">
+                            Code is required.
+                        </div>
                         </div>
                         <div class="col-lg-9 col-md-8 col-sm-9 col-9">
                             <label class=" form-label fw-bold">Mobile Number <span class="label-danger">*</span></label>

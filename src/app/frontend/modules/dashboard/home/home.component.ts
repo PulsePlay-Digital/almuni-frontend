@@ -310,6 +310,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /**
+   * Function to get location
+   */
   async getLocations() {
     let action: string = "count-region";
     await this.dataService
@@ -323,9 +326,19 @@ export class HomeComponent implements OnInit {
         this.locationCounts = result;
       });
   }
+
   navigate(r: string) {
     this.currentUser
       ? this.router.navigate([r])
       : this.router.navigate(["/login"]);
+  }
+
+  /**
+   * Function to navigate on detail page
+   * @param url 
+   * @param params 
+   */
+  navigateToDetail(url: string, params: any) {
+    this.router.navigate([url], { queryParams:  params })
   }
 }
