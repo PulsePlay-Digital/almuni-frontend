@@ -62,8 +62,11 @@ body {
 }
 
 .warning-snackbar {
-    background: #ffc107;
-    color: #fff;
+    background: #fff3cd;
+    color: #333;
+    .mat-simple-snackbar-action button {
+        color: #333;
+    }
 }
 
 .main-heading {
