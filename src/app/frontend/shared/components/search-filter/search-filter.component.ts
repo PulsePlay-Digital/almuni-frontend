@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 import { CountryService } from "./../../../services/country.service";
 import { UserService } from "./../../../services/user.service";
 import { Config } from "./../../../services/config";
 import { DataService } from "./../../../services/data.service";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 
 @Component({
   selector: "app-search-filter",
@@ -24,13 +25,14 @@ export class SearchFilterComponent implements OnInit {
   primaryArea: any;
   industry: any;
   region: any;
-
+  resetForm: boolean = false;
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
     private userService: UserService,
     private countryService: CountryService,
-    private config: Config
+    private config: Config,
+    public notify: TokenInterceptor
   ) {
     this.userRole = this.config?.role;
     this.gender = this.config?.gender;
@@ -66,10 +68,10 @@ export class SearchFilterComponent implements OnInit {
       primary_industry_focus: [""],
       secondary_industry_focus: [""],
       current_region: [""],
-      other_industry_focus:[""],
+      other_industry_focus: [""],
       current_company: [""],
       mobile_number: [""],
-      type: this.pageType
+      type: [""]
     });
   }
 
@@ -121,10 +123,27 @@ export class SearchFilterComponent implements OnInit {
    * User search filter
    */
   async searchData() {
-    await this.userService
-      .filterUsers(this.searchForm.value)
-      .subscribe((res: any) => {
-        this.userService.filteredData.next(res);
-      });
+    let isValue = Object.keys(this.searchForm.value).some(value => !!this.searchForm.value[value])
+    if (!isValue) {
+      this.resetForm = false;
+      this.notify.notificationService.openWarningSnackBar(
+        "At least one should be selected"
+      );
+
+    } else {
+      this.resetForm = true;
+      this.searchForm.get('type').setValue(this.pageType);
+      console.log(this.searchForm.value)
+      await this.userService
+        .filterUsers(this.searchForm.value)
+        .subscribe((res: any) => {
+          this.userService.filteredData.next(res);
+        });
+    }
+  }
+
+  //Reset form and show all data in result
+  formReset() {
+    this.searchForm.reset(this.searchForm.value);
   }
 }
