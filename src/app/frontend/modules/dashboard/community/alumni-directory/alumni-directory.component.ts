@@ -28,7 +28,7 @@ export class AlumniDirectoryComponent implements OnInit {
       this.loading = true;
       setTimeout(() => {
         this.user = res?.data;
-      }, 1000);
+      }, 1500);
       this.loading = false;
     });
   }
@@ -36,6 +36,16 @@ export class AlumniDirectoryComponent implements OnInit {
   ngOnInit(): void {
     this.breadcrumbService.set("@ChildTwo", "alumni-directory");
     this.getAllAlumniUser();
+    this.dataService.resetForm.subscribe((res: any) => {
+      this.loading = true;
+      if (res == "resetFilter") {
+        this.loading = res;
+        setTimeout(() => {
+          this.getAllAlumniUser();
+          this.loading = false;
+        }, 1500);
+      }
+    });
   }
   /**  Function to get all alumni user */
   async getAllAlumniUser() {

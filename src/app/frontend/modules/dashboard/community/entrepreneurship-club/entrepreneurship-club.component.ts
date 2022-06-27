@@ -32,11 +32,21 @@ export class EntrepreneurshipClubComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllEntrepreneurship();
+    this.dataService.resetForm.subscribe((res: any) => {
+      this.loading = true;
+      if (res == "resetFilter") {
+        this.loading = res;
+        setTimeout(() => {
+          this.getAllEntrepreneurship();
+          this.loading = false;
+        }, 1500);
+      }
+    });
   }
 
   async getAllEntrepreneurship() {
+    this.loading = true;
     let action: string = 'all-entrepreneur';
     await this.dataService.getData(action).subscribe((res: any) => {
       if (res?.status == 200) {

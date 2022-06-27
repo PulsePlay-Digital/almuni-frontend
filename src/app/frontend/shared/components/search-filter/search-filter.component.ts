@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+} from "@angular/forms";
 import { CountryService } from "./../../../services/country.service";
 import { UserService } from "./../../../services/user.service";
 import { Config } from "./../../../services/config";
@@ -71,7 +77,7 @@ export class SearchFilterComponent implements OnInit {
       other_industry_focus: [""],
       current_company: [""],
       mobile_number: [""],
-      type: [""]
+      type: [""],
     });
   }
 
@@ -123,17 +129,18 @@ export class SearchFilterComponent implements OnInit {
    * User search filter
    */
   async searchData() {
-    let isValue = Object.keys(this.searchForm.value).some(value => !!this.searchForm.value[value])
+    let isValue = Object.keys(this.searchForm.value).some(
+      (value) => !!this.searchForm.value[value]
+    );
+
     if (!isValue) {
       this.resetForm = false;
       this.notify.notificationService.openWarningSnackBar(
         "At least one should be selected"
       );
-
     } else {
       this.resetForm = true;
-      this.searchForm.get('type').setValue(this.pageType);
-      console.log(this.searchForm.value)
+      this.searchForm.get("type").setValue(this.pageType);
       await this.userService
         .filterUsers(this.searchForm.value)
         .subscribe((res: any) => {
@@ -144,6 +151,11 @@ export class SearchFilterComponent implements OnInit {
 
   //Reset form and show all data in result
   formReset() {
-    this.searchForm.reset(this.searchForm.value);
+    this.dataService.resetForm.next("resetFilter");
+    this.searchForm.reset(
+    this.buildForm()
+    );
+    
+    this.resetForm = false;
   }
 }

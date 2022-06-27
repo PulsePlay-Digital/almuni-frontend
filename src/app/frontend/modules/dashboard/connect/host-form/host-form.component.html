@@ -1,22 +1,25 @@
 <div class="d-flex align-items-center justify-content-between my-xl-4 my-lg-4 my-md-4 my-sm-4 my-3">
-    <h1 class="h3 mb-0 main-heading text-center">Event</h1>
+    <h1 class="h3 mb-0 main-heading text-center fw-bold">Event</h1>
 </div>
 
 <form class="example-form" [formGroup]="addEventForm">
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="staticEmail" class="col-form-label fw-bold">Event
-        Name <span class="text-danger">*</span></label>
+                Name <span class="text-danger">*</span></label>
             <input type="text" formControlName="title" class="form-control" placeholder="Enter name here">
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
                 Event name is required.
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
             <label for="staticEmail" class="col-form-label fw-bold">Event
-        Venue <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" formControlName="venue" id="formGroupExampleInput" placeholder="Enter event venue" />
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.venue.touched || submitted) && f.venue.errors?.required">
+                Venue <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="venue" id="formGroupExampleInput"
+                placeholder="Enter event venue" />
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.venue.touched || submitted) && f.venue.errors?.required">
                 Venue is required.
             </div>
         </div>
@@ -24,27 +27,29 @@
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Category <span class="text-danger">*</span></label>
+                Category <span class="text-danger">*</span></label>
             <select class="form-select" aria-label="Default select example" formControlName="category">
-        <option value="null" selected>Select Category</option>
-        <option value="alumniDrivenEvent">Alumni Driven Event</option>
-        <option value="alumniReunion">Annual Alumni Re-Union</option>
+                <option value="null" selected>Select Category</option>
+                <option value="alumniDrivenEvent">Alumni Driven Event</option>
+                <option value="alumniReunion">Annual Alumni Re-Union</option>
 
-        <!-- <option [value]="eventCategory">{{ eventCategory == "alumniReunion" ? 'Annual Alumni Re-Union' : 'Alumni Driven Event'  }}</option> -->
-      </select>
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.category.touched || submitted) && f.category.errors?.required">
+                <!-- <option [value]="eventCategory">{{ eventCategory == "alumniReunion" ? 'Annual Alumni Re-Union' : 'Alumni Driven Event'  }}</option> -->
+            </select>
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.category.touched || submitted) && f.category.errors?.required">
                 Event category is required.
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Type <span class="text-danger">*</span></label>
+                Type <span class="text-danger">*</span></label>
             <select class="form-select" aria-label="Default select example" formControlName="type">
-        <option value="" selected>Select Type</option>
-        <option value="Local Meet & Greet">Local Meet & Greet</option>
-        <option value="Annual Reunion">Annual Reunion</option>
-      </select>
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.type.touched || submitted) && f.type.errors?.required">
+                <option value="" selected>Select Type</option>
+                <option value="Local Meet & Greet">Local Meet & Greet</option>
+                <option value="Annual Reunion">Annual Reunion</option>
+            </select>
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.type.touched || submitted) && f.type.errors?.required">
                 Event type is required.
             </div>
         </div>
@@ -53,16 +58,18 @@
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Hosted By </label>
-            <input type="text" class="form-control" formControlName="eventHost" id="formGroupExampleInput" placeholder="Enter event hosted by" />
+                Hosted By </label>
+            <input type="text" class="form-control" formControlName="eventHost" id="formGroupExampleInput"
+                placeholder="Enter event hosted by" />
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-sm-12 col-md-12">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Description <span
-          class="text-danger">*</span></label>
+                    class="text-danger">*</span></label>
             <ckeditor formControlName="description"></ckeditor>
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                 Description is required.
             </div>
         </div>
@@ -71,51 +78,61 @@
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Date <span class="text-danger">*</span></label>
-            <input type="date" class="form-control" formControlName="date" id="formGroupExampleInput" placeholder="Enter date" />
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.date.touched || submitted) && f.date.errors?.required">
+                Date <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" formControlName="date" id="formGroupExampleInput"
+                placeholder="Enter date" />
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.date.touched || submitted) && f.date.errors?.required">
                 Date is required.
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Time</label>
-            <input type="time" class="form-control" formControlName="time" id="formGroupExampleInput" placeholder="Enter time" />
+                Time</label>
+            <input type="time" class="form-control" formControlName="time" id="formGroupExampleInput"
+                placeholder="Enter time" />
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Cost per person</label>
-            <input type="text" class="form-control" formControlName="cost" id="formGroupExampleInput" placeholder="Enter cost per person" />
+            <input type="text" class="form-control" appNumbersOnly formControlName="cost" id="formGroupExampleInput"
+                placeholder="Enter cost per person" />
         </div>
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">FB event page link</label>
-            <input type="text" class="form-control" formControlName="eventPageLink" id="formGroupExampleInput" placeholder="Enter FB page link" />
+            <input type="text" class="form-control" formControlName="eventPageLink" id="formGroupExampleInput"
+                placeholder="Enter FB page link" />
         </div>
     </div>
     <div class="mb-3 row">
-        <!-- <div class="col-sm-6 col-md-6">
-      <label for="formGroupExampleInput" class="col-form-label fw-bold ">Status</label>
-      <select class="form-select" aria-label="Default select example" formControlName="is_active">
-        <option value="active">Active</option>
-        <option value="inactive">Inactive</option>
-      </select>
-    </div> -->
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Contact
-        person number <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" formControlName="contactNumber" id="formGroupExampleInput" placeholder="Enter contact person number" />
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.required">
+                person number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" appNumbersOnly formControlName="contactNumber"
+                id="formGroupExampleInput" placeholder="Enter contact person number" />
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.required">
                 Contact number is required.
+            </div>
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
+                *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.minlength">
+                Minimum 10 number are allowed.
+            </div>
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
+                *ngIf="(f.contactNumber.touched || submitted) && f.contactNumber.errors?.maxlength">
+                Maximum 10 number are allowed.
             </div>
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-sm-6 col-md-6">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event
-        Image <span class="text-danger">*</span></label>
-            <input type="file" class="form-control" formControlName="eventImage" id="formGroupLink" (change)="onUploadImage($event)" accept="image/*" />
-            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.eventImage.touched || submitted) && f.eventImage.errors?.required">
+                Image <span class="text-danger">*</span></label>
+            <input type="file" class="form-control" formControlName="eventImage" id="formGroupLink"
+                (change)="onUploadImage($event)" accept="image/*" />
+            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                *ngIf="(f.eventImage.touched || submitted) && f.eventImage.errors?.required">
                 Event image is required.
             </div>
             <ng-container *ngIf="image !== undefined">
@@ -126,7 +143,8 @@
     <div class="row justify-content-center">
         <div class="col-lg-4 text-center">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button class="btn btn-md project-btn lh-base" (click)="submit()" [disabled]="!addEventForm.valid">Submit</button>
+                <button class="btn btn-md project-btn lh-base" (click)="submit()"
+                    [disabled]="!addEventForm.valid">Submit</button>
             </div>
         </div>
     </div>

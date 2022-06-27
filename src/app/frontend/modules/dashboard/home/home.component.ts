@@ -339,6 +339,6 @@ export class HomeComponent implements OnInit {
    * @param params 
    */
   navigateToDetail(url: string, params: any) {
-    this.router.navigate([url], { queryParams:  params })
+    this.router.navigate([url], { queryParams:  params, skipLocationChange: true })
   }
 }

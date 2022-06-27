@@ -11,6 +11,8 @@ export class DataService {
   url: any;
   public scrollSection = new Subject<any>();
 
+  public resetForm = new Subject<any>();
+
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
@@ -88,5 +90,9 @@ export class DataService {
 
   public scrollSec() {
     this.scrollSection.next();
+  }
+
+  public resetFormData() {
+    this.resetForm.next();
   }
 }

@@ -42,9 +42,13 @@ export class BasicInfoComponent implements OnInit {
       );
     }
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res);
-      // this.newsDetail = res;
-    })
+      let data: any = res;
+      console.log(data);
+    });
+    // this.arouter.queryParams.subscribe((res: any) => {
+    //   console.log(res);
+    //   this.newsDetail = res;
+    // })
   }
 
   async ngOnInit() {

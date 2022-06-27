@@ -1,6 +1,6 @@
 <div class="col-lg-12">
   <div class="d-flex align-items-center justify-content-between my-xl-4 my-lg-4 my-md-4 my-sm-4 my-3">
-    <h1 class="h3 mb-0 main-heading text-center">Event</h1>
+    <h1 class="h3 mb-0 main-heading text-center fw-bold">Event</h1>
   </div>
 
   <form class="example-form" [formGroup]="industryForm">
@@ -11,7 +11,8 @@
       </div>
       <div class="col-sm-6 col-md-6 my-2">
         <label for="staticEmail" class="col-form-label fw-bold">Submitted by phone number</label>
-        <input type="text" formControlName="numberSubmittedBy" class="form-control" placeholder="Enter number here">
+        <input type="text" formControlName="numberSubmittedBy" appNumbersOnly class="form-control"
+          placeholder="Enter number here">
       </div>
     </div>
     <div class="row">
@@ -22,7 +23,7 @@
       <div class="col-sm-6 col-md-6 my-2">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Are you attending</label>
         <select class="form-select" aria-label="Default select example" formControlName="attending">
-          <option selected>Select attending</option>
+          <option value="" selected>Select attending</option>
           <option value="Local Meet & Greet">Yes</option>
           <option value="Annual Reunion">No</option>
           <option value="Annual Reunion">Undecided</option>
@@ -81,10 +82,12 @@
           placeholder="Enter country" />
       </div>
       <div class="col-sm-6 col-md-6 my-2">
-        <label for="formGroupExampleInput" class="col-form-label fw-bold">Cost per head <span class="text-danger">*</span></label>
-        <input type="number" class="form-control" formControlName="cost" id="formGroupExampleInput"
+        <label for="formGroupExampleInput" class="col-form-label fw-bold">Cost per head <span
+            class="text-danger">*</span></label>
+        <input type="text" class="form-control" appNumbersOnly formControlName="cost" id="formGroupExampleInput"
           placeholder="Enter cost per head" />
-        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.cost.touched || submitted) && f.cost.errors?.required">
+        <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+          *ngIf="(f.cost.touched || submitted) && f.cost.errors?.required">
           Cost is required.
         </div>
       </div>
@@ -112,8 +115,8 @@
       <div class="col-sm-6 col-md-6 my-2">
         <label for="formGroupExampleInput" class="col-form-label fw-bold">Event contact person
           phone</label>
-        <input type="text" class="form-control" formControlName="contactNumber" id="formGroupExampleInput"
-          placeholder="Enter phone" />
+        <input type="text" class="form-control" appNumbersOnly formControlName="contactNumber"
+          id="formGroupExampleInput" placeholder="Enter phone" />
       </div>
     </div>
     <div class="row">

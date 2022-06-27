@@ -85,6 +85,7 @@ export class AtGlanceComponent implements OnInit {
       .subscribe(
         (res: any) => {
           if (res) {
+            console.log(res?.date)
             this.pastEvent = res;
             this.clubsTotal = res?.length;
             this.loading = false;
@@ -170,5 +171,15 @@ export class AtGlanceComponent implements OnInit {
         this.notify.notificationService.openFailureSnackBar(error);
       }
     );
+  }
+
+  /**
+   * Function to navigate on event detail
+   * @param params 
+   */
+  viewEventDetail(params: any) {
+    this.router.navigate((this.currentUser) ? ['/connect/event-detail'] : ['/login'], {
+      queryParams: params , skipLocationChange: true
+    });
   }
 }

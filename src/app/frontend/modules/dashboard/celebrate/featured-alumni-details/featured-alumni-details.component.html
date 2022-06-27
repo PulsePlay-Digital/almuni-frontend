@@ -1,13 +1,13 @@
 <ng-container *ngIf="type == 'featured-alumni'">
     <app-dashboard-banner [heading]="heading"></app-dashboard-banner>
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col text-end mt-2">
                 <button class="btn btn-sm view-btn lh-base" (click)="back()">
-          Back
-        </button>
+                    Back
+                </button>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-lg-12">
                 <app-loader *ngIf="loading"></app-loader>
@@ -16,18 +16,20 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                                 <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <img class="img-fluid mb-3" [src]="imgPath + alumni_details?.picture" alt="event pic" />
+                                    <div class="col-lg-3 col-md-4">
+                                        <img class="img-fluid alumniPic mb-3 w-100" [src]="imgPath + alumni_details?.picture"
+                                            alt="event pic" />
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-9 col-md-8 align-self-center">
                                         <p class="mt-3 mb-2">
-                                            <strong>Name :</strong> &nbsp; {{ alumni_details?.name }}
+                                            <strong>Name :</strong> &nbsp; {{ alumni_details?.alumni_name }}
                                         </p>
                                         <p class="mb-2">
-                                            <strong>Batch :</strong> &nbsp;{{ alumni_details?.batch }}
+                                            <strong>Batch :</strong> &nbsp;{{ alumni_details?.batch_year }}
                                         </p>
                                         <p class="mb-2">
-                                            <strong>Current Designation :</strong> &nbsp;{{ alumni_details?.designation }}
+                                            <strong>Current Designation :</strong> &nbsp;{{ alumni_details?.designation
+                                            }}
                                         </p>
                                         <p class="mb-2" *ngIf="alumni_details?.firm">
                                             <strong>Current Firm :</strong> &nbsp;{{ alumni_details?.firm }}
@@ -61,9 +63,6 @@
             <h4 class="main-heading text-uppercase fw-bolder mb-0">
                 CELEBRATE ACHIEVEMENTS & PASSION
             </h4>
-            <button class="btn btn-md btn-primary rounded" (click)="back()">
-        Back
-      </button>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -86,8 +85,11 @@
                                     <b>{{ descriptionHeading }}</b>
                                 </p>
                                 <p class="lh-2">
-                                    Meet Anurag Tyagi.<br /> Family Man. Loving Son. Husband. Father. Brother. Friend. Farm Owner. Adventurer at Heart. Connected to the Earth. Eyes set on the Stars. Sought after keynote speaker & a mover & shaker in the
-                                    highly specialized Corporate Real Estate sector. Currently serving as Vice President and Head - Real Estate at Morgan Stanley.
+                                    Meet Anurag Tyagi.<br /> Family Man. Loving Son. Husband. Father. Brother. Friend.
+                                    Farm Owner. Adventurer at Heart. Connected to the Earth. Eyes set on the Stars.
+                                    Sought after keynote speaker & a mover & shaker in the
+                                    highly specialized Corporate Real Estate sector. Currently serving as Vice President
+                                    and Head - Real Estate at Morgan Stanley.
                                 </p>
                             </div>
                         </div>

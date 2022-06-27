@@ -33,13 +33,23 @@ export class MentorshipComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllAlumniUser();
+    this.dataService.resetForm.subscribe((res: any) => {
+      this.loading = true;
+      if (res == "resetFilter") {
+        this.loading = res;
+        setTimeout(() => {
+          this.getAllAlumniUser();
+          this.loading = false;
+        }, 1500);
+      }
+    });
   }
   /**
    * Function to get all alumni user
    */
   async getAllAlumniUser() {
+    this.loading = true;
     let action: string = "all-users";
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res?.data;

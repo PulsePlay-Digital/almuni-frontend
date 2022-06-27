@@ -11,10 +11,12 @@ import { Config } from "./../../../../services/config";
 })
 export class ViewEventDetailComponent implements OnInit {
   event_detail: any;
-  imgPath = environment.imgUrl;
+  imgPath = environment?.imgUrl;
   currentUser: any;
 
-  constructor(public arouter: ActivatedRoute, public config: Config,
+  constructor(
+    private arouter: ActivatedRoute,
+    public config: Config,
     private dataService: DataService) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -26,11 +28,6 @@ export class ViewEventDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  /*** Function to navigate on previous page */
-  back() {
-    this.config.navigateBack();
-  }
 
   async attendHost() {
     let action: string = "create-eventHost";

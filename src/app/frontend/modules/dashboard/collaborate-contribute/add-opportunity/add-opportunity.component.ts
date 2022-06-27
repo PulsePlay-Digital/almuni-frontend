@@ -105,12 +105,6 @@ export class AddOpportunityComponent implements OnInit {
     }
   }
 
-  /**
-   * Function to redirect previous page 
-   */
-   back() {
-    this.config.navigateBack();
-  }
     /**
    * Function to redirect previous page 
    */
