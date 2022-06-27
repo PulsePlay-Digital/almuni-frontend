@@ -56,12 +56,13 @@ export class ProfessionalClubComponent implements OnInit {
   }
   async joinUnjoinClub(item: any) {
     let params = {
-      id: item.id,
-      action: (item.join_club == 1) ? "unlike-club" : "like-club"
+      id: item?.id,
+      action: (item?.join_club == 1) ? "unlike-club" : "like-club"
     }
-    await this.dataService.postClubData(params, this.currentUser.id)
+    await this.dataService.postClubData(params, this.currentUser?.id)
       .subscribe((res: any) => {
       this.getAllProfessionalClub();
+      this.notify.notificationService.openSuccessSnackBar(res?.message);
         this.loading = false;
       },
         error => {
@@ -72,8 +73,8 @@ export class ProfessionalClubComponent implements OnInit {
   async clubDetails(item: any) {
     this.router.navigate(["/community/club-details"], {
       queryParams: {
-        id: item.id,
-        name: item.name
+        id: item?.id,
+        name: item?.name
       }
     });
   }

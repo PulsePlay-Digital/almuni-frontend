@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import * as moment from "moment";
-import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { Config } from "./../../../../services/config";
 import { CountryService } from "./../../../../services/country.service";
 import { DataService } from "./../../../../services/data.service";
@@ -43,6 +41,10 @@ export class BasicInfoComponent implements OnInit {
         localStorage?.getItem("currentUser") || ""
       );
     }
+    this.arouter.queryParams.subscribe((res: any) => {
+      console.log(res);
+      // this.newsDetail = res;
+    })
   }
 
   async ngOnInit() {

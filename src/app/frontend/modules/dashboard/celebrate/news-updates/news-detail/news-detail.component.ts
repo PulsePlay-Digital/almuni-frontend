@@ -26,7 +26,7 @@ export class NewsDetailComponent implements OnInit {
     ) {
       this.arouter.queryParams.subscribe((res: any) => {
         this.newsDetail = res;
-      })
+      });
      }
 
   ngOnInit(): void {

@@ -26,11 +26,11 @@
       border-radius: var(--border-radius-2);
       line-height: var(--line-height-1-8);
       font-size: var(--font-S-16);
+      border: 0;
     }
     .card-button:hover {
-      background-color: var(--bs-white);
-      border: 1px solid var(--btn-background);
-      color: var(--btn-background);
+      background-color: var(--btn-hover);
+      color: var(--bs-white);
     }
   }
   .common_text {
@@ -42,6 +42,13 @@
   }
   .card.border-0 .cursor-pointer {
     cursor: pointer;
+  }
+  .card.border-0 .cursor-pointer {
+    .card-body{
+      p {
+        color: var(--btn-background);
+      }
+    }
   }
 }
 
