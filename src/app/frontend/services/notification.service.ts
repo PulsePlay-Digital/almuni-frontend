@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogAlertBoxComponent } from '../shared/components/dialog-alert-box/dialog-alert-box.component';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NotificationService {
 
   constructor(
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   /**
@@ -44,6 +47,13 @@ export class NotificationService {
       panelClass: ['warning-snackbar'],
       verticalPosition: 'top',
       horizontalPosition: 'end'
+    });
+  }
+
+  openSuccessAlert(message: string, action: string = "Close") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      data: { message: message, action: action }
     });
   }
 }

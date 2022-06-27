@@ -18,7 +18,8 @@
                     <img src="./assets/users/profile-pic.png" alt="userPic" />
                     <div class="comment-input">
                         <form [formGroup]="commentForm">
-                            <input class="form-control form-control-sm" formControlName="body" type="text" placeholder="Add a comment.." />
+                            <input class="form-control form-control-sm 
+                            py-3" formControlName="body" type="text" placeholder="Add a comment.." />
                             <div class="comment-send" (click)="onClickComment()"><i class="fa fa-telegram"></i></div>
                         </form>
                     </div>

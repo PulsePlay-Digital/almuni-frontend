@@ -5,6 +5,7 @@ import { Config } from '../../../../services/config';
 import { environment } from '../../../../../../environments/environment';
 import { DataService } from '../../../../services/data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 
 @Component({
   selector: 'app-club-details',
@@ -21,7 +22,10 @@ export class ClubDetailsComponent implements OnInit {
   currentUser: any;
 
   constructor(public arouter: ActivatedRoute, 
-    public dataService: DataService, public config: Config, private fb: FormBuilder) {
+    private dataService: DataService,
+    public config: Config,
+    private fb: FormBuilder,
+    private notify: TokenInterceptor) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
       }
@@ -34,8 +38,11 @@ export class ClubDetailsComponent implements OnInit {
   ngOnInit(): void {
     // this.loading = true;
     this.buildForm();
+    this.getAllComment();
   }
-
+/**
+ * Function to build form data
+ */
   buildForm() {
     this.commentForm = this.fb.group({
       user_id:[''],
@@ -45,22 +52,37 @@ export class ClubDetailsComponent implements OnInit {
   }
 
   /**
-   * Function to redirect previous page
+   * Function to Comment post
    */
-  back() {
-    this.config.navigateBack();
-  }
-
   async onClickComment() {
     console.log(this.commentForm.value);
+
     let action: string = "comment";
     let params: any = {
       user_id: JSON.stringify(this.currentUser?.id),
       club_post_id: this.clubId,
-      body: this.commentForm.value.body
+      body: this.commentForm?.value?.body
     }
+   
     await this.dataService.postData(action, params).subscribe((res: any) => {
       console.log(res);
+      if(res?.status == 200) {
+        // this.notify.notificationService.openSuccessSnackBar(res?.message);
+        this.notify.notificationService.openSuccessAlert(res?.message);
+      }
+    },
+    error => {
+      this.notify.notificationService.openFailureSnackBar(error);
     });
+  }
+
+  /**
+   * Function to get all comment data
+   */
+  async getAllComment() {
+   let action: string = "all-clubPost";
+    await this.dataService.getData(action).subscribe((res: any) => {
+      console.log(res)
+    })
   }
 }

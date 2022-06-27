@@ -28,6 +28,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FilterTextPipe } from "./pipes/filter-text.pipe";
+import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-alert-box.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FilterTextPipe } from "./pipes/filter-text.pipe";
     UsersBannerComponent,
     ViewMapComponent,
     DashboardBannerComponent,
+    DialogAlertBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -61,6 +63,7 @@ import { FilterTextPipe } from "./pipes/filter-text.pipe";
     MatListModule,
     FlexLayoutModule,
     MatExpansionModule,
+    MatDialogModule,
 
     ReactiveFormsModule,
     FormsModule,
@@ -80,7 +83,8 @@ import { FilterTextPipe } from "./pipes/filter-text.pipe";
     DialogEntrepreneurshipComponent,
     UsersBannerComponent,
     ViewMapComponent,
-    DashboardBannerComponent
+    DashboardBannerComponent,
+    DialogAlertBoxComponent
   ]
 })
 export class SharedModule {}
