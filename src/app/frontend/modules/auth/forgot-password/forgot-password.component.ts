@@ -60,7 +60,7 @@ export class ForgotPasswordComponent implements OnInit {
         .forgotPassword(this.forgotPassForm.value)
         .toPromise();
       if (data?.status === 200) {
-        this.router.navigate(["#/login"]);
+        this.router.navigate(["login"]);
       }
     }
   }

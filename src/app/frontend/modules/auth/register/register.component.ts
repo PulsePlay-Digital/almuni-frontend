@@ -189,7 +189,7 @@ export class RegisterComponent implements OnInit {
       let params = this.registerForm?.value;
       await this.authService.register(params).subscribe((res: any) => {
         this.notify.notificationService.openSuccessSnackBar(res?.message);
-        this.router.navigate(['#/login']);
+        this.router.navigate(['login']);
       },error => {
         this.notify.notificationService.openFailureSnackBar(error);
       })
