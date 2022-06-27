@@ -53,12 +53,13 @@ export class IndustryClubComponent implements OnInit {
 
   async joinUnjoinClub(item: any) {
     let params = {
-      id: item.id,
-      action: (item.join_club == 1) ? "unlike-club" : "like-club"
+      id: item?.id,
+      action: (item?.join_club == 1) ? "unlike-club" : "like-club"
     }
-    await this.dataService.postClubData(params, this.currentUser.id)
+    await this.dataService.postClubData(params, this.currentUser?.id)
       .subscribe((res: any) => {
         this.getAllindustryClub();
+        this.notify.notificationService.openSuccessSnackBar(res?.message);
         this.loading = false;
       },
         error => {

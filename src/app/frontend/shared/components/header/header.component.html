@@ -90,7 +90,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/common-purpose-culture" routerLinkActive="active-link">Common Purpose <i class="fa fa-angle-down"
+                                        <a class="nav-link" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active-link" routerLink="/common-purpose-culture">Common Purpose <i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton1">
                                             <li><a (click)="target('founderMsg')" class="dropdown-item" routerLinkActive="active-link" routerLink="/common-purpose-culture/connect-vision">
@@ -106,14 +106,14 @@
                                         <a class="nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/community/community-home']}}" routerLinkActive="active-link">Community
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['#/login']}}" routerLinkActive="active-link">Alumni
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/login']}}" routerLinkActive="active-link">Alumni
                                                     Directory</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['#/login']}}" routerLinkActive="active-link">Professional
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['/login']}}" routerLinkActive="active-link">Professional
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['#/login']}}" routerLinkActive="active-link">Industry
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['/login']}}" routerLinkActive="active-link">Industry
                                                     Clubs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['#/login']}}" routerLinkActive="active-link">
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['/login']}}" routerLinkActive="active-link">
                                                     Business Ventures</a></li>
                                         </ul>
                                     </li>
@@ -121,7 +121,7 @@
                                         <a class="nav-link" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/connect/at-glance" routerLinkActive="active-link">Connect
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['#/login']}}">
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['/login']}}">
                                                     Connect at glance</a>
                                             </li>
                                             <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="/connect/at-glance">
@@ -134,14 +134,14 @@
                                         <a class="nav-link" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/collaborate-contribute/collaborate']}}" routerLinkActive="active-link"> Collaborate<i class="fa fa-angle-down"
                                                 aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton4">
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['#/login']}}">Mentorship</a>
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/login']}}">Mentorship</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['#/login']}}">Careers
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['/login']}}">Careers
                                                     and
                                                     Jobs</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['#/login']}}">Special
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['/login']}}">Special
                                                     Projects</a></li>
-                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['#/login']}}">Engage
+                                            <li><a class="dropdown-item" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['/login']}}">Engage
                                                     with SBUP</a></li>
                                         </ul>
                                     </li>
@@ -149,9 +149,9 @@
                                         <a class="nav-link" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/celebrate" routerLinkActive="active-link">Celebrate
                                             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
-                                            <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni">Featured Alumni</a>
+                                            <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni" routerLinkActive="active-link">Featured Alumni</a>
                                             </li>
-                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['#/login']}}" routerLinkActive="active-link">Journey, Achievements & Passion</a>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">Journey, Achievements & Passion</a>
                                             </li>
                                             <li><a class="dropdown-item" routerLink="/celebrate/gallery" routerLinkActive="active-link">
                                                     Gallery </a></li>
@@ -317,14 +317,14 @@
                                                 <span>Community</span> <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             </a>
                                             <ul class="dropdown-menu border-0 py-0" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['#/login']}}" routerLinkActive="active-link">Alumni
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/login']}}" routerLinkActive="active-link">Alumni
                                                         Directory</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['#/login']}}" routerLinkActive="active-link">Professional
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['/login']}}" routerLinkActive="active-link">Professional
                                                         Clubs</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['#/login']}}" routerLinkActive="active-link">Industry
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['/login']}}" routerLinkActive="active-link">Industry
                                                         Clubs</a></li>
-                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['#/login']}}" routerLinkActive="active-link">
+                                                <li><a class="dropdown-item lh-base px-2" routerLinkActive="active-link" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['/login']}}" routerLinkActive="active-link">
                                                         Business Ventures</a></li>
                                             </ul>
                                         </li>
@@ -365,7 +365,7 @@
                                                 <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/featured-alumni')">Featured
                                                         Alumni</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['#/login']}}" routerLinkActive="active-link">Journey, Achievements &
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">Journey, Achievements &
                                                         Passion</a>
                                                 </li>
                                                 <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/gallery')" routerLinkActive="active-link">
