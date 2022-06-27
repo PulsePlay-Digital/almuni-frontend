@@ -15,14 +15,16 @@
                     Comments
                 </div>
                 <div class="add-comment">
-                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <img src="./assets/users/profile-pic.png" alt="userPic" />
                     <div class="comment-input">
-                        <input class="form-control form-control-sm" type="text" placeholder="Add a comment.." />
-                        <div class="comment-send"><i class="fa fa-telegram"></i></div>
+                        <form [formGroup]="commentForm">
+                            <input class="form-control form-control-sm" formControlName="body" type="text" placeholder="Add a comment.." />
+                            <div class="comment-send" (click)="onClickComment()"><i class="fa fa-telegram"></i></div>
+                        </form>
                     </div>
                 </div>
                 <div class="comment comment-level-1">
-                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <img src="./assets/users/profile-pic.png" alt="usersPic" />
                     <div>
                         <div class="comment-label">
                             <span class="comment-name">Uchiha Itachi</span>
@@ -41,7 +43,7 @@
                     </div>
                 </div>
                 <div class="comment comment-level-2">
-                    <img src="../../../../../../assets/users/profile-pic.png" alt="" />
+                    <img src="./assets/users/profile-pic.png" alt="usersPic" />
                     <div>
                         <div class="comment-label">
                             <span class="comment-name">Kris Oberlin🌙</span>
