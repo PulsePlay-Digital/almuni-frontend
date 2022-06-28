@@ -1,10 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
-  ValidationErrors,
-  ValidatorFn,
 } from "@angular/forms";
 import { CountryService } from "./../../../services/country.service";
 import { UserService } from "./../../../services/user.service";

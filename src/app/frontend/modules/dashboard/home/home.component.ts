@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
     center: true,
-    stagePadding: 200,
+    stagePadding: 150,
     responsive: {
       0: {
         items: 1,

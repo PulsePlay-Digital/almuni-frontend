@@ -107,10 +107,13 @@ export class ClubDetailsComponent implements OnInit {
    * Function to reply on comment
    * @param params
    */
-  async replyOnComment(params: any) {
-    console.log(this.divToScroll);
-    const docu = this.divToScroll.nativeElement.value;
-    console.log(docu);
+  async replyOnComment(params: any, uniqueID: string) {
+    var elmnt:any = document.getElementById(uniqueID); // let if use typescript
+    elmnt.focus();
+    elmnt.scrollIntoView(); // this will scroll elem to the top
+    window.scrollTo(0, 0); // this will scroll page to the top
+    // const docu = this.divToScroll.nativeElement.value;
+    // console.log(docu);
     // this.divToScroll = window.scroll(0, 0);
     let action: string = "comment";
     let param: any = {
