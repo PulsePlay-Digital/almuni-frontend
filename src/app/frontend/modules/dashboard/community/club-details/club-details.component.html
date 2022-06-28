@@ -10,9 +10,9 @@
                 <div class="add-comment">
                     <img src="./assets/users/profile-pic.png" alt="userPic" />
                     <div class="comment-input">
-                        <form [formGroup]="commentForm" #divToScroll>
+                        <form [formGroup]="commentForm">
                             <input class="form-control form-control-sm 
-                            py-3" formControlName="body" type="text" placeholder="Add a comment.." />
+                            py-3" id="replyScroll" formControlName="body" type="text" placeholder="Add a comment.." />
                             <div class="comment-send" (click)="onClickComment()"><i class="fa fa-telegram"></i></div>
                         </form>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="comment-action">
                             <span> <i class="fa fa-heart"></i> Like (0)</span>
                             <span> <i class="fa fa-comment"></i> Comment (0)</span>
-                            <span class="replyBtn" (click)="replyOnComment(comment)"> <i class="fa fa-reply"></i>
+                            <span class="replyBtn" (click)="replyOnComment(comment, 'replyScroll')"> <i class="fa fa-reply"></i>
                                 Reply</span>
                         </div>
                     </div>
