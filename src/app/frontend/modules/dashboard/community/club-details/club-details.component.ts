@@ -12,7 +12,6 @@ import { TokenInterceptor } from "./../../../../core/token.interceptor";
   styleUrls: ["./club-details.component.scss"],
 })
 export class ClubDetailsComponent implements OnInit {
-  @ViewChild("divToScroll") divToScroll: ElementRef | any;
   clubId: any;
   clubName: any;
   userDetail: any;
@@ -112,9 +111,6 @@ export class ClubDetailsComponent implements OnInit {
     elmnt.focus();
     elmnt.scrollIntoView(); // this will scroll elem to the top
     window.scrollTo(0, 0); // this will scroll page to the top
-    // const docu = this.divToScroll.nativeElement.value;
-    // console.log(docu);
-    // this.divToScroll = window.scroll(0, 0);
     let action: string = "comment";
     let param: any = {
       id: params?.id,

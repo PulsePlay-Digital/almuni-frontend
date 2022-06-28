@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { DataService } from "./../../../../services/data.service";
 import { environment } from "./../../../../../../environments/environment";
 import { Config } from "./../../../../services/config";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
 
 @Component({
   selector: "app-view-event-detail",
@@ -17,7 +18,8 @@ export class ViewEventDetailComponent implements OnInit {
   constructor(
     private arouter: ActivatedRoute,
     public config: Config,
-    private dataService: DataService) {
+    private dataService: DataService,
+    private notify: TokenInterceptor) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
       }
@@ -36,7 +38,10 @@ export class ViewEventDetailComponent implements OnInit {
       attend:0
     } 
     await this.dataService.postData(action, params).subscribe((res: any) => {
-      console.log(res);
+      this.notify.notificationService.openSuccessSnackBar(res?.message);
+    },
+    error => {
+      this.notify.notificationService.openFailureSnackBar(error);
     })
   }
 }
