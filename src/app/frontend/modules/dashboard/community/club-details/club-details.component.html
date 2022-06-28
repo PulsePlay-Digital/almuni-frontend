@@ -2,13 +2,6 @@
 <div class="container">
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-        <!-- <div class="row mt-xl-3 mt-lg-3 mt-md-3 mt-sm-3 mt-2 mb-2">
-            <div class="col text-end pt-2">
-                <button class="btn btn-sm back rounded" (click)="back()">
-                    Back
-                </button>
-            </div>
-        </div> -->
         <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-4">
             <div class="t-comments-box">
                 <div class="comment-title">
@@ -17,29 +10,34 @@
                 <div class="add-comment">
                     <img src="./assets/users/profile-pic.png" alt="userPic" />
                     <div class="comment-input">
-                        <form [formGroup]="commentForm">
+                        <form [formGroup]="commentForm" #divToScroll>
                             <input class="form-control form-control-sm 
                             py-3" formControlName="body" type="text" placeholder="Add a comment.." />
                             <div class="comment-send" (click)="onClickComment()"><i class="fa fa-telegram"></i></div>
                         </form>
                     </div>
                 </div>
-                <div class="comment comment-level-1">
-                    <img src="./assets/users/profile-pic.png" alt="usersPic" />
+                <div class="comment comment-level-1" *ngFor="let comment of allComment; let i=index;">
+                    <ng-container *ngIf="comment?.profile_pic == undefined">
+                        <img src="./assets/users/profile-pic.png" alt="usersPic" />
+                    </ng-container>
+                    <ng-container *ngIf="comment?.profile_pic !== undefined">
+                        <img [src]="imgPath + comment?.profile_pic" alt="userPic">
+                    </ng-container>
                     <div>
                         <div class="comment-label">
-                            <span class="comment-name">Uchiha Itachi</span>
-                            <span class="comment-time"> - 5 days ago</span>
+                            <span class="comment-name">{{comment?.first_name}} {{comment?.last_name}}</span>
+                            <span class="comment-time ps-2"> {{ comment?.created_at | dateAsAgo}}</span>
                         </div>
                         <div class="comment-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-
+                            {{comment?.body}}
                         </div>
 
                         <div class="comment-action">
                             <span> <i class="fa fa-heart"></i> Like (0)</span>
                             <span> <i class="fa fa-comment"></i> Comment (0)</span>
-                            <span> <i class="fa fa-reply"></i> Reply</span>
+                            <span class="replyBtn" (click)="replyOnComment(comment)"> <i class="fa fa-reply"></i>
+                                Reply</span>
                         </div>
                     </div>
                 </div>

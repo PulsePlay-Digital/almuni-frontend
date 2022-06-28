@@ -29,6 +29,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FilterTextPipe } from "./pipes/filter-text.pipe";
 import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-alert-box.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-al
     ViewMapComponent,
     DashboardBannerComponent,
     DialogAlertBoxComponent,
+    DateAgoPipe
   ],
   imports: [
     CommonModule,
@@ -80,6 +82,7 @@ import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-al
     SearchFilterComponent,
     StripHtmlPipe,
     FilterTextPipe,
+    DateAgoPipe,
     DialogEntrepreneurshipComponent,
     UsersBannerComponent,
     ViewMapComponent,
