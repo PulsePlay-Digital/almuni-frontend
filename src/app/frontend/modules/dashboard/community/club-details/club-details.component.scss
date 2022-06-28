@@ -8,7 +8,8 @@
         border-bottom: 1px solid #C3CCD3;
         margin-top: .25rem;
         margin-bottom: 1rem;
-        max-width: 400px;
+        max-width: 100%;
+        text-align: center;
     }
     img {
         width: 50px;
@@ -18,6 +19,7 @@
     }
     .add-comment {
         display: flex;
+        justify-content: center;
         .comment-input {
             position: relative;
             width: 100%;
@@ -55,6 +57,7 @@
         display: flex;
         font-size: 0.8rem;
         margin-top: 1rem;
+        justify-content: center;
         .comment-label {
             line-height: 1;
             .comment-name {
