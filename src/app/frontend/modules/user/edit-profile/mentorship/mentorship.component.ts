@@ -54,6 +54,7 @@ export class MentorshipComponent implements OnInit {
   buildform() {
     this.mentorForm = this.fb.group({
       id: [this.mentorId?.id],
+      user_id: [this.currentUser?.id],
       Willing_to_provide_Mentorship: ["", Validators.required],
       add_skills: ["", Validators.required],
       primary_function_area: [""],
