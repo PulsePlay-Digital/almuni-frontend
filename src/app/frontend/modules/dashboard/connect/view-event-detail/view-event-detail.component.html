@@ -90,7 +90,8 @@
                         <p class="text-capitalize lh-base fs-6 mb-2">
                             <span class="fw-bold">Description : </span>
                         </p>
-                        <span class="descriptionText text-break">{{ event_detail?.description | stripHtml }}</span>
+                        <!-- <span class="descriptionText text-break">{{ event_detail?.description | stripHtml }}</span> -->
+                        <div class="descriptionText text-break" [innerHtml]="event_detail?.description"></div>
                     </div>
                 </div>
             </div>
