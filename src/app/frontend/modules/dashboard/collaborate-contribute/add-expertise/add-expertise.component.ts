@@ -103,7 +103,6 @@ export class AddExpertiseComponent implements OnInit {
    */
   changeType(e: any) {
     let event = e?.target?.value;
-    console.log(event);
     if (event == "seminar") {
       this.seminarFields = true;
       this.facultyFields = false;
