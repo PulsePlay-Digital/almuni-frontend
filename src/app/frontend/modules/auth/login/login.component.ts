@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     public fb: FormBuilder,
     public router: Router,
     public notify: TokenInterceptor
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
             this.notify.notificationService.openSuccessAlert(
               "Login Successfully"
             );
-            this.router.navigateByUrl("/home").then((res) =>{
+            this.router.navigateByUrl("/home").then((res) => {
               location.reload();
             });
           } else if (res?.status == 401) {
