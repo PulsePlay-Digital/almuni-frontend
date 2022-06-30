@@ -71,23 +71,29 @@ export class LoginComponent implements OnInit {
     } else {
       await this.authService.login(this.loginForm.value).subscribe(
         (res: any) => {
+          console.log(res)
           if (res?.status == 200) {
             localStorage.setItem("currentUser", JSON.stringify(res?.user));
             localStorage.setItem("token", JSON.stringify(res?.access_token));
             this.loading = false;
-            this.notify.notificationService.openSuccessSnackBar(
+            this.notify.notificationService.openSuccessAlert(
               "Login Successfully"
             );
             this.router.navigateByUrl("/home").then((res) =>{
               location.reload();
             });
           } else if (res?.status == 401) {
-            this.notify.notificationService.openFailureSnackBar(res?.message);
+            this.notify.notificationService.openWarningAlert(
+              res?.message
+            );
+            // this.notify.notificationService.openFailureSnackBar(res?.message);
             this.loading = false;
           }
         },
         (error) => {
-          this.notify.notificationService.openFailureSnackBar(error);
+          this.notify.notificationService.openErrorAlert(
+            error.error?.message
+          );
           this.loading = false;
         }
       );

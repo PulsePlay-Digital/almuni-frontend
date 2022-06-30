@@ -132,7 +132,7 @@ export class SearchFilterComponent implements OnInit {
 
     if (!isValue) {
       this.resetForm = false;
-      this.notify.notificationService.openWarningSnackBar(
+      this.notify.notificationService.openWarningAlert(
         "At least one should be selected"
       );
     } else {

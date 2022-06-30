@@ -50,6 +50,7 @@ body {
 .news-tooltip-color {
     background: var(--bg-color);
 }
+
 .green-snackbar {
     background: rgb(2, 192, 72);
     color: #fff;
@@ -257,6 +258,26 @@ img.ng-lazyloading {
     position: absolute;
     top: 50%;
     left: 3%;
+}
+
+.alert-warning .mat-dialog-container {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    font-weight: bold;
+}
+
+.alert-error .mat-dialog-container {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    font-weight: bold;
+}
+
+.alert-success .mat-dialog-container {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }
 
 @media screen and (max-width: 574px) and (min-width: 300px) {
