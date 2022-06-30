@@ -53,6 +53,22 @@ export class NotificationService {
   openSuccessAlert(message: string, action: string = "Close") {
     const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
       width: '250px',
+      panelClass: 'alert-success',
+      data: { message: message, action: action }
+    });
+  }
+  openWarningAlert(message: string, action: string = "Close") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      panelClass: 'alert-warning',
+      data: { message: message, action: action },
+     
+    });
+  }
+  openErrorAlert(message: string, action: string = "Close") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      panelClass: 'alert-error',
       data: { message: message, action: action }
     });
   }
