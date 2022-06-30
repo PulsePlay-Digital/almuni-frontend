@@ -24,12 +24,12 @@ export class EngageSocietyComponent implements OnInit {
   }
 
   viewOpportunity() {
-    this.postedOpportunity = !this.postedOpportunity;
+    this.postedOpportunity = true;
     this.postedExpertise = false;
   }
 
   viewExpertise() {
-    this.postedExpertise = !this.postedExpertise;
+    this.postedExpertise = true;
     this.postedOpportunity = false
   }
 

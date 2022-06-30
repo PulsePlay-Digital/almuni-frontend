@@ -33,12 +33,11 @@ export class SpeacialProjectsComponent implements OnInit {
    * Function to show/hide search data
    */
   search() {
-    this.searchData = !this.searchData;
+    this.searchData = true;
     this.projectPosted = false;
   }
   showSpecialProject() {
-    console.log(this.projectPosted)
-    this.projectPosted = !this.projectPosted;
+    this.projectPosted = true;
     this.searchData = false;
   }
 

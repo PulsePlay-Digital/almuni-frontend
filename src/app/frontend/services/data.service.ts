@@ -78,8 +78,10 @@ export class DataService {
       return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
     } 
     else if(action == 'update-education' || action == 'update-employment' 
-    || action == 'update-experience' || action == 'update-mentorship' || action == 'update-other') {
+    || action == 'update-experience' || action == 'update-other') {
       return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+    } else if (action == 'update-mentorship') {
+      return this.http.post<any>(`${this.url}/${action}`, data);
     }
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
   }

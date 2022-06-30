@@ -26,7 +26,7 @@ export class CareersComponent implements OnInit {
   }
 
   search() {
-    this.searchData = !this.searchData;
+    this.searchData = true;
   }
 
   async countAllJobs() {
