@@ -56,6 +56,20 @@
       font-size: var(--font-S-18);
     }
   }
+  .news-content {
+    .news-discription {
+      p{
+        text-align: justify !important;
+      }
+      table {
+        tbody{
+           tr {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 574px) and (max-width: 767px) {
@@ -63,6 +77,21 @@
     height: 180px;
     h3 {
       font-size: var(--font-S-22);
+    }
+  }
+  .news-content {
+    .news-discription {
+      p{
+        text-align: justify;
+        overflow-wrap: break-word;
+      }
+      table {
+        tbody{
+           tr {
+            display: block !important;
+          }
+        }
+      }
     }
   }
 }
@@ -85,19 +114,4 @@
 }
 
 // NEWS & UPDATES END
-// RESPONSIVE CSS START
-@media (min-width: 300px) and (max-width: 575px) {
-  .news-content {
-    .news-discription {
-      text-align: justify;
-      overflow-wrap: break-word;
-      table {
-        tbody{
-          td, th, thead, tr {
-            display: block !important;
-          }
-        }
-      }
-    }
-  }
-}
+

@@ -1,80 +1,124 @@
 <div class="col-lg-12">
     <div class="d-flex align-items-center justify-content-between my-xl-4 my-lg-4 my-md-4 my-sm-4 my-3">
         <h1 class="h3 mb-0 main-heading text-center">Event</h1>
-      </div>
-     <form class="example-form" [formGroup]="speakEventForm" >
-        <div class="row">
-            <div class="col-sm-6 col-md-6 my-2">
-                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name </label>
-                    <select class="form-select" aria-label="Default select example" formControlName="eventName">
-                    <option value="" selected>Select Event</option>
-                    <option value="Local Meet & Greet">Yes</option>
-                    <option value="Annual Reunion">No</option>
-                    </select>
-            </div>
-            <div class="col-sm-6 col-md-6 my-2">
-                <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category </label>
-                <select class="form-select" aria-label="Default select example" formControlName="eventCategory" (change)="selectCategory($event)">
-                    <option value="" selected>Select Category</option>
-                    <option value="workshop">Conduct a Workshop</option>
-                    <option value="faculty">Be a visiting faculty</option>
-                    <option value="speaker">Speaker</option>
-                </select>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 my-2">
+            <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category </label>
+            <select class="form-select" aria-label="Default select example" (change)="selectCategory($event)">
+                <option value="" selected>Select Category</option>
+                <option value="workshop">Conduct a Workshop</option>
+                <option value="faculty">Be a visiting faculty</option>
+                <option value="speaker">Speaker</option>
+            </select>
         </div>
-        <ng-container *ngIf="workShopField">
+    </div>
+    <ng-container *ngIf="workShopField">
+        <form class="example-form" [formGroup]="workshopForm">
             <div class="row">
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop <span class="text-danger">*</span></label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Topic of the Workshop <span
+                            class="text-danger">*</span></label>
                     <input type="text" formControlName="topicWorkshop" class="form-control" id="formGroupExampleInput"
-                    placeholder="Enter workshop topic here" />
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.topicWorkshop.touched || submitted) && f.topicWorkshop.errors?.required">
+                        placeholder="Enter workshop topic here" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.topicWorkshop.touched || submitted) && f.topicWorkshop.errors?.required">
                         Topic is required.
-                      </div>
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category  <span class="text-danger">*</span> </label>
-                    <input type="text" formControlName="academicCategory" class="form-control" id="formGroupExampleInput"
-                    placeholder="Enter academic category" />
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.academicCategory.touched || submitted) && f.academicCategory.errors?.required">
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Academic Category <span
+                            class="text-danger">*</span> </label>
+                    <input type="text" formControlName="academicCategory" class="form-control"
+                        id="formGroupExampleInput" placeholder="Enter academic category" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.academicCategory.touched || submitted) && f.academicCategory.errors?.required">
                         Academic category is required.
-                      </div>
+                    </div>
                 </div>
             </div>
-        </ng-container>
-        <ng-container *ngIf="speakerFacultyFields">
             <div class="row">
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From <span class="text-danger">*</span></label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From <span
+                            class="text-danger">*</span></label>
                     <input type="date" class="form-control" formControlName="dateFrom" id="formGroupExampleInput" />
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.dateFrom.touched || submitted) && f.dateFrom.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.dateFrom.touched || submitted) && f.dateFrom.errors?.required">
                         From date is required.
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" formControlName="dateTo" id="formGroupExampleInput"/>
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To <span
+                            class="text-danger">*</span></label>
+                    <input type="date" class="form-control" formControlName="dateTo" id="formGroupExampleInput" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
                         To date is required.
                     </div>
                 </div>
             </div>
-           <div class="row">
+            <div class="row">
                 <div class="col-sm-12 col-md-12 my-2">
-                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event <span class="text-danger">*</span></label>
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event <span
+                            class="text-danger">*</span></label>
                     <ckeditor formControlName="description"></ckeditor>
-                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                         Description is required.
                     </div>
                 </div>
             </div>
-        </ng-container>
-        <div class="row justify-content-center">
-          <div class="col-lg-4 text-center mt-3">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button class="btn btn-md project-btn" (click)="submit()" [disabled]="!speakEventForm.valid">Submit</button>
-              </div>
-          </div>
-        </div>
-      </form>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 text-center mt-3">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-md project-btn" (click)="addWorkshop()"
+                            [disabled]="!workshopForm.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ng-container>
+    <ng-container *ngIf="speakerFacultyFields">
+        <form class="example-form" [formGroup]="facultyForm">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 my-2">
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date From <span
+                            class="text-danger">*</span></label>
+                    <input type="date" class="form-control" formControlName="dateFrom" id="formGroupExampleInput" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(s.dateFrom.touched || submitted) && s.dateFrom.errors?.required">
+                        From date is required.
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 my-2">
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Date To <span
+                            class="text-danger">*</span></label>
+                    <input type="date" class="form-control" formControlName="dateTo" id="formGroupExampleInput" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(s.dateTo.touched || submitted) && s.dateTo.errors?.required">
+                        To date is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 my-2">
+                    <label for="formGroupExampleInput" class="col-form-label fw-bold">Description of event <span
+                            class="text-danger">*</span></label>
+                    <ckeditor formControlName="description"></ckeditor>
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(s.description.touched || submitted) && s.description.errors?.required">
+                        Description is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 text-center mt-3">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-md project-btn" (click)="addFaculty()"
+                            [disabled]="!facultyForm.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ng-container>
 </div>

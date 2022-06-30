@@ -30,7 +30,7 @@
                     <p class="news-discription fs-6 text-capitalize">Created On: {{newsDetail?.created_at | date}}</p>
                     <p class="news-discription fs-6 text-capitalize">Author: {{newsDetail?.author}}</p>
                     <h6 class="news-discription fs-5 fw-bolder text-capitalize"> News Detail Description:</h6>
-                    <div class="news-discription fs-6 text-capitalize" [innerHtml]="newsDetail?.description">
+                    <div class="news-discription text-break fs-6 text-capitalize" [innerHtml]="newsDetail?.description">
                     </div>
                 </div>
             </div>
