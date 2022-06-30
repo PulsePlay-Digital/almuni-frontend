@@ -62,7 +62,6 @@ export class ClubDetailsComponent implements OnInit {
    * Function to Comment post
    */
   async onClickComment() {
-    console.log(this.commentForm.value);
     let action: string = "comment";
     let params: any = {
       user_id: JSON.stringify(this.currentUser?.id),
@@ -72,7 +71,6 @@ export class ClubDetailsComponent implements OnInit {
 
     await this.dataService.postData(action, params).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.notify.notificationService.openSuccessSnackBar(res?.message);
           // this.notify.notificationService.openSuccessAlert(res?.message);
@@ -119,7 +117,6 @@ export class ClubDetailsComponent implements OnInit {
       body: this.commentForm?.value?.body,
     };
     // await this.dataService.postData(action, param).subscribe((res: any) => {
-    //   console.log(res);
 
     // });
   }

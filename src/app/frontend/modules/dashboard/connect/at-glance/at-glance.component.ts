@@ -85,7 +85,6 @@ export class AtGlanceComponent implements OnInit {
       .subscribe(
         (res: any) => {
           if (res) {
-            console.log(res?.date)
             this.pastEvent = res;
             this.clubsTotal = res?.length;
             this.loading = false;

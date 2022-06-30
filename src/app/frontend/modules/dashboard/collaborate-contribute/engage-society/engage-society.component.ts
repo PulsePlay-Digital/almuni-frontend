@@ -37,7 +37,6 @@ export class EngageSocietyComponent implements OnInit {
     let action: string = "count-expertise";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allExpertise = res?.data;
         }
@@ -52,7 +51,6 @@ export class EngageSocietyComponent implements OnInit {
     let action: string = "count-opportunity";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allOpportunity = res?.data;
         }

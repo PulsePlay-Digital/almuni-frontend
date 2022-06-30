@@ -71,7 +71,6 @@ export class LoginComponent implements OnInit {
     } else {
       await this.authService.login(this.loginForm.value).subscribe(
         (res: any) => {
-          console.log(res)
           if (res?.status == 200) {
             localStorage.setItem("currentUser", JSON.stringify(res?.user));
             localStorage.setItem("token", JSON.stringify(res?.access_token));

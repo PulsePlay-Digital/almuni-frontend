@@ -36,14 +36,12 @@ export class TokenInterceptor implements HttpInterceptor {
           }
           return event;
         }), catchError((error) => {
-          console.log(error)
           if (error?.error?.message == 'Unauthenticated.' &&  error.error.message != 'Invalid email and password.') {
             this.authService.logout();
             location.assign('login');
           }else if (error?.status == 404) {
             return throwError(error?.error?.message);
           } else if (error?.status == 0) {
-            console.log(error);
           } else if (error?.status == 500) {
             return throwError(error?.error?.message);
           }

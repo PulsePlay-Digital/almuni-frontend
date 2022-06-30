@@ -83,7 +83,6 @@ export class AlumniJourneyComponent implements OnInit {
     let action: string = "count-userJourney";
     await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allUserJourneyCount = res?.data;
         }

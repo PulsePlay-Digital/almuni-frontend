@@ -59,7 +59,6 @@ export class HeaderComponent implements OnInit {
   }
 
   closeNav() {
-    console.log('kk')
     this.sidePanel = document.getElementById("mySidepanel") as HTMLElement;
     this.sidePanel.style.width = "0";
   }

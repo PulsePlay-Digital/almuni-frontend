@@ -45,7 +45,6 @@ export class SpeacialProjectsComponent implements OnInit {
     let action: string = "count-project";
     await this.dataService.getData(action, ).subscribe(
       (res: any) => {
-        console.log(res);
         if (res?.status == 200) {
           this.allProjectCount = res?.data;
         }

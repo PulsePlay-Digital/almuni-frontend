@@ -40,7 +40,6 @@ loading: boolean = false;
       project_owner_id: item?.user_id
     }
     await this.dataService.postData(action, params).subscribe((res: any) => {
-      console.log(res);
     });
   }
 }

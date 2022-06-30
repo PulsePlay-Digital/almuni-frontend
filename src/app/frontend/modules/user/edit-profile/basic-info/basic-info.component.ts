@@ -157,7 +157,6 @@ export class BasicInfoComponent implements OnInit {
         this.getInstitutes = res?.Institute;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -171,7 +170,6 @@ export class BasicInfoComponent implements OnInit {
         this.getBatch = res?.BatchYear;
       },
       (error) => {
-        console.log(error);
       }
     );
   }

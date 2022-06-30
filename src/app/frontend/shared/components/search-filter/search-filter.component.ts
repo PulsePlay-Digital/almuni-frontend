@@ -93,7 +93,6 @@ export class SearchFilterComponent implements OnInit {
         this.getInstitutes = res.Institute;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -105,7 +104,6 @@ export class SearchFilterComponent implements OnInit {
   }
 
   public changeCountry(event: any) {
-    console.log(event.target.value);
   }
 
   /**
@@ -117,7 +115,6 @@ export class SearchFilterComponent implements OnInit {
         this.getBatch = res.BatchYear;
       },
       (error) => {
-        console.log(error);
       }
     );
   }

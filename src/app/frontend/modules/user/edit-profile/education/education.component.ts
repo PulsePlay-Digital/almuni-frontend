@@ -31,7 +31,6 @@ export class EducationComponent implements OnInit {
   }
 
   async ngOnInit() {
-    console.log(this.type)
     this.buildform();
     this.loading = true;
     let action: string = "all-profileUsers";

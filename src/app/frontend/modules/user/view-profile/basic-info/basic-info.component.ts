@@ -43,10 +43,8 @@ export class BasicInfoComponent implements OnInit {
     }
     this.arouter.queryParams.subscribe((res: any) => {
       let data: any = res;
-      console.log(data);
     });
     // this.arouter.queryParams.subscribe((res: any) => {
-    //   console.log(res);
     //   this.newsDetail = res;
     // })
   }
@@ -156,7 +154,6 @@ export class BasicInfoComponent implements OnInit {
         this.getInstitutes = res?.Institute;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
@@ -170,7 +167,6 @@ export class BasicInfoComponent implements OnInit {
         this.getBatch = res?.BatchYear;
       },
       (error) => {
-        console.log(error);
       }
     );
   }
