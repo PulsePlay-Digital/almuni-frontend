@@ -36,12 +36,12 @@ export class AlumniJourneyComponent implements OnInit {
   }
 
   showViewShared() {
-    this.isPosted = !this.isPosted;
+    this.isPosted = true;
     this.isShared = false;
   }
 
   showSeekDetail() {
-    this.isShared = !this.isShared;
+    this.isShared = true;
     this.isPosted = false;
   }
 
