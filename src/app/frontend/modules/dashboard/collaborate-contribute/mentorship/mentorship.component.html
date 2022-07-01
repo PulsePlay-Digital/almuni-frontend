@@ -25,10 +25,9 @@
             <div class="description my-xl-4">
                 <p class="fw-bold">Mentorship program is one of the ways to pay it forward.</p>
                 <ul class="px-3">
-                    <li class="lh-lg"> Become a Mentor: Want to share your expertise, contribute, give back and support
-                        junior Alumni and/or students at the Institute.</li>
-                    <li class="lh-lg">Connect with a Mentor: To seek career counselling, tips and benefit from
-                        experience.</li>
+                    <li class="lh-lg"> Become a Mentor: Want to share your expertise, contribute, give back and support junior Alumni and/or students at the Institute.</li>
+                    <li class="lh-lg">Connect with a Mentor: To seek career counselling, tips and benefit from experience.
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,18 +39,17 @@
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
             <ng-container *ngIf="user?.length > 0">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
-                    *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
                     <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
-                        <ng-container *ngIf="item?.profile_pic != null">
-                            <div class="itemPic">
-                                <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="user Picture" />
-                            </div>
-                        </ng-container>
+                        <!-- <ng-container *ngIf="item?.profile_pic != null"> -->
+                        <div class="itemPic">
+                            <img [src]="(item?.profile_pic) ? imgPath + item?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " class="card-img-top" alt="user Picture" />
+                        </div>
+                        <!-- </ng-container>
                         <ng-container *ngIf="item?.profile_pic == null">
                             <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg"
                                 alt="Alumni Picture" />
-                        </ng-container>
+                        </ng-container> -->
                         <div class="card-header bg-transparent border-0 text-center pt-3">
                             <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.first_name}} {{item?.last_name}}
                             </h3>
@@ -63,8 +61,7 @@
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-0 text-center">
-                            <a (click)="viewDetail(item.id)"
-                                class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize">
+                            <a (click)="viewDetail(item.id)" class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize">
                                 <i class="fa fa-link"></i>&nbsp;View more</a>
                         </div>
                     </div>
@@ -76,8 +73,7 @@
                 </div>
             </ng-container>
         </ng-container>
-        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-4 mt-sm-3 mt-3 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-2 mb-2"
-            *ngIf="user?.length > 0">
+        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-4 mt-sm-3 mt-3 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-2 mb-2" *ngIf="user?.length > 0">
             <div class="col text-center">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>

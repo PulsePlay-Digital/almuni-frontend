@@ -13,14 +13,21 @@ export class EngageSocietyComponent implements OnInit {
   allEvent: any;
   allExpertise: any;
   allOpportunity: any;
+  availableEventCount: any;
+  currentUser: any;
   constructor(
     private dataService: DataService,
     private notify: TokenInterceptor
-  ) { }
+  ) {
+    this.currentUser = JSON?.parse(
+      localStorage?.getItem("currentUser") || ""
+    );
+  }
 
   ngOnInit(): void {
     this.countAllExpertise();
     this.countAllOpportunity();
+    this.countAvailableEvent();
   }
 
   viewOpportunity() {
@@ -34,8 +41,9 @@ export class EngageSocietyComponent implements OnInit {
   }
 
   async countAllExpertise() {
-    let action: string = "count-expertise";
-    await this.dataService.getData(action).subscribe(
+    let action: string = "count-expertiseById";
+    let id: any = this.currentUser.id;
+    await this.dataService.getDataById(action, id).subscribe(
       (res: any) => {
         if (res?.status == 200) {
           this.allExpertise = res?.data;
@@ -48,11 +56,25 @@ export class EngageSocietyComponent implements OnInit {
   }
 
   async countAllOpportunity() {
-    let action: string = "count-opportunity";
-    await this.dataService.getData(action).subscribe(
+    let action: string = "count-opportunityById";
+    let id: any = this.currentUser.id;
+    await this.dataService.getDataById(action, id).subscribe(
       (res: any) => {
         if (res?.status == 200) {
           this.allOpportunity = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
+  async countAvailableEvent() {
+    let action: string = "count-admission";
+    await this.dataService.getData(action).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.availableEventCount = res?.data;
         }
       },
       (error) => {
