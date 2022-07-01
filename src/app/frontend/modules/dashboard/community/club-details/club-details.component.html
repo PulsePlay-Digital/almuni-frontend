@@ -42,7 +42,11 @@
                     </div>
                     <div class="col-md-10 comment-details">
                         <h4 class="startup-name">{{comment?.first_name}} {{comment?.last_name}}</h4>
-                        <p class="startup-description">{{comment?.body}}</p>
+                        <p class="startup-description">{{comment?.body}}
+                            <br>
+                            <span class="comment-time">{{comment?.created_at | date}}</span>
+                        </p>
+
                         <p class="startup-comment"> <span class="icon"><i class="fa fa-heart"
                                     aria-hidden="true"></i>
                                 10</span><span class="user-reply px-4" (click)="replyOnComment(comment, 'replyScroll')">
