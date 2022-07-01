@@ -151,14 +151,7 @@
                                         <ul class="dropdown-menu trick_top" aria-labelledby="dropdownMenuButton5">
                                             <li><a class="dropdown-item" routerLink="/celebrate/featured-alumni" routerLinkActive="active-link">Featured Alumni</a>
                                             </li>
-                                            <li><a class="dropdown-item " (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                                Journey</a>
-                                            </li>
-                                            <li><a class="dropdown-item" (click)="navigate('/celebrate/alumni-achievement')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                                Achievements</a>
-                                            </li>
-                                            <li><a class="dropdown-item" (click)="navigate('/celebrate/alumni-passion')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                               Passion</a>
+                                            <li><a class="dropdown-item" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">Journey, Achievements & Passion</a>
                                             </li>
                                             <li><a class="dropdown-item" routerLink="/celebrate/gallery" routerLinkActive="active-link">
                                                     Gallery </a></li>
@@ -372,14 +365,8 @@
                                                 <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/featured-alumni')">Featured
                                                         Alumni</a>
                                                 </li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                                    Journey</a>
-                                                </li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                                    Achievements</a>
-                                                </li>
-                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">
-                                                   Passion</a>
+                                                <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/alumni-journey')" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}" routerLinkActive="active-link">Journey, Achievements &
+                                                        Passion</a>
                                                 </li>
                                                 <li><a class="dropdown-item lh-base px-2" (click)="navigate('/celebrate/gallery')" routerLinkActive="active-link">
                                                         Gallery </a></li>
