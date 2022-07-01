@@ -12,6 +12,7 @@ export class AlumniJourneyComponent implements OnInit {
 
   isPosted: boolean = false;
   isShared: boolean = true;
+  journeyByMe: boolean = false;
   title: string =  'Post a Story';
   storyHeading: string = "My Story";
   type: string = 'journey';
@@ -38,10 +39,18 @@ export class AlumniJourneyComponent implements OnInit {
   showViewShared() {
     this.isPosted = true;
     this.isShared = false;
+    this.journeyByMe = false;
   }
 
   showSeekDetail() {
     this.isShared = true;
+    this.isPosted = false;
+    this.journeyByMe = false;
+  }
+
+  sharedJourneyByMe() {
+    this.journeyByMe = true;
+    this.isShared = false;
     this.isPosted = false;
   }
 
@@ -65,7 +74,7 @@ export class AlumniJourneyComponent implements OnInit {
   }
 
   async countAllJourney() {
-    let action: string = "count-project";
+    let action: string = "count-journey";
     await this.dataService.getData(action, ).subscribe(
       (res: any) => {
         if (res?.status == 200) {

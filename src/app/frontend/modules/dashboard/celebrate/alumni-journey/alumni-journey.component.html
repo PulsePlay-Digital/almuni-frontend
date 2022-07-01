@@ -12,21 +12,22 @@
 <div class="container">
     <div class="alumni-journey">
         <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-4 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
-
         </div>
         <div class="row justify-content-center mb-3 m-0">
             <div class="col-lg-4 col-md-12 my-lg-2 my-md-3 my-sm-3 my-2">
-                <img src="./assets/celebrate/celebrate.png" class="img-fluid w-100" alt="celebrate img">
+                <img src="./assets/celebrate/celebrate.png" class="img-fluid w-100 projectImg" alt="celebrate img">
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 my-2 text-center">
                 <div class="card p-xl-3 p-lg-2 p-md-2 p-sm-2 p-2">
                     <div class="card-body px-lg-0 px-md-0 px-sm-0 px-0 text-center">
                         <h5 class="card-title fs-6 fw-bold lh-1">Shared Journey By Me</h5>
                         <p class="card-text text-center fs-2 fw-bold py-4 pt-5">{{ allUserJourneyCount }}</p>
-                        <div class="row justify-content-center m-0 py-2">
-                            <div class="col-md-7 col-lg-11 col-xl-9 col-sm-9 col-8">
-                                <a (click)="showViewShared()" class="btn btn-md project-btn fs-6 lh-base">Share
-                                    Journey</a>
+                        <div class="row justify-content-between m-0 py-2">
+                            <div class="col-md-6 col-lg-5 col-xl-5 col-sm-6 col-6">
+                                <a (click)="showViewShared()" class="btn btn-md project-btn fs-6 lh-base">Add</a>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-5 col-sm-6 col-6">
+                                <a (click)="sharedJourneyByMe()" class="btn project-btn fs-6 lh-base">View</a>
                             </div>
                         </div>
                     </div>
@@ -48,6 +49,7 @@
             </div>
         </div>
     </div>
-    <app-shared-by-me *ngIf="isPosted" [title]="title" [type]="type"></app-shared-by-me>
+    <app-shared-by-me *ngIf="isPosted" [title]="title"  [type]="type"></app-shared-by-me>
+    <app-shared-journey-by-me *ngIf="journeyByMe" [heading]="storyHeading"></app-shared-journey-by-me>
     <app-shared-alumni *ngIf="isShared" [heading]="storyHeading" [alumniData]="alumniData"></app-shared-alumni>
 </div>

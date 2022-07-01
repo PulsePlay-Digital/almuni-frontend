@@ -15,11 +15,16 @@ export class SharedByMeComponent implements OnInit {
   file: any;
   image: any;
   submitted: boolean = false;
+  currentUser: any;
   constructor(
     public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor
-  ) { }
+  ) { 
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -31,7 +36,7 @@ export class SharedByMeComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       type: this.type,
-      institute: [''],
+      institute: ['', Validators.required],
       photo: ['', Validators.required],
       status: ['unapproved']
     });
@@ -68,11 +73,12 @@ export class SharedByMeComponent implements OnInit {
         action: 'create-journey'
       }
       let formData = new FormData();
+      formData.append('user_id', this.currentUser?.id);  
       formData.append('photo', (this.file) ? this.file : '');
-      formData.append('title', this.form.value.title); 
-      formData.append('type', this.form.value.type); 
-      formData.append('institute', this.form.value.institute); 
-      formData.append('description', this.form.value.description);  
+      formData.append('title', this.form?.value?.title); 
+      formData.append('type', this.form?.value?.type); 
+      formData.append('institute', this.form?.value?.institute); 
+      formData.append('description', this.form?.value?.description);  
       
       await this.dataService.postData(action, formData).subscribe((res: any) => {
         if(res.status == 200) {

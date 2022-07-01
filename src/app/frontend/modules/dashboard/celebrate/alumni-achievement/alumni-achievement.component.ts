@@ -9,26 +9,41 @@ import { DataService } from "./../../../../services/data.service";
 })
 export class AlumniAchievementComponent implements OnInit {
   shareAchievement: boolean = false;
-  seeAchievement: boolean = true;
+  seeAchievement: boolean = false;
+  viewAchievement: boolean = true;
   title: string = "Post a Achievement";
   heading: string = "My Achievement";
   type: string = "achievement";
   alumniData: any;
+  allAchievementCount: number | undefined;
+  currentUser: any;
 
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+  }
 
   ngOnInit(): void {
     this.getAllAchivement();
   }
 
-  showViewShared() {
-    this.shareAchievement = !this.shareAchievement;
+  sharedAchievementByMe() {
+    this.shareAchievement = true;
     this.seeAchievement = false;
+    this.viewAchievement = false;
   }
 
-  showSeekDetail() {
-    this.seeAchievement = !this.seeAchievement;
+  seeAchievementByMe() {
     this.shareAchievement = false;
+    this.seeAchievement = true;
+    this.viewAchievement = false;
+  }
+
+  seeAllAchievement() {
+    this.shareAchievement = false;
+    this.seeAchievement = false;
+    this.viewAchievement = true;
   }
 
 /**
@@ -46,7 +61,9 @@ export class AlumniAchievementComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
+        this.allAchievementCount = result?.length;
         this.alumniData = result;
       });
   }
+
 }

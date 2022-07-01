@@ -34,6 +34,6 @@ export class SharedAlumniComponent implements OnInit {
   }
 
   viewDetail(params: any) {
-    this.router.navigate(['/celebrate/journey-detail'], { queryParams: { id: params, type: this.heading } });
+    this.router.navigate(['/celebrate/detail-page'], { queryParams: { id: params, type: this.heading } });
   }
 }

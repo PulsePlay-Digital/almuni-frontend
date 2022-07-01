@@ -15,9 +15,9 @@
     </div>
     <app-loader *ngIf="loading"></app-loader>
     <ng-container *ngIf="!loading">
-        <ng-container *ngIf="sharedData?.length > 0">
+        <ng-container *ngIf="passionData?.length > 0">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2"
-                *ngFor="let item of sharedData | filterText: nameSearched">
+                *ngFor="let item of passionData | filterText: nameSearched">
                 <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
                     <ng-container *ngIf="item?.photo != null">
                         <div class="alumni-pic">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="sharedData?.length == 0">
+        <ng-container *ngIf="passionData?.length == 0">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">

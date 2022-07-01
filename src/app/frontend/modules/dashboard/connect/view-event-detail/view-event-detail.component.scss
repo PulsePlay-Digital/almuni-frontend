@@ -27,6 +27,8 @@
   }
   .descriptionText{
     text-align: justify;
+    height: 220px;
+    overflow-y: auto;
   }
   .collab-img {
     min-height: 180px;

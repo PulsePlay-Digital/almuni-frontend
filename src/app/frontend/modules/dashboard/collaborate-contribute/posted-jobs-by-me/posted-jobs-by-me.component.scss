@@ -9,6 +9,11 @@
     background-color: green;
     text-shadow: 1px 1px green;
   }
+  .description{
+    min-height: 76px;
+    max-height: 240px;
+    overflow-y: auto;
+  }
 }
 .project-btn {
   background: var(--btn-background);
