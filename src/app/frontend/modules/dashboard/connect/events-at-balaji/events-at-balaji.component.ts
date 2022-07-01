@@ -46,7 +46,7 @@ export class EventsAtBalajiComponent implements OnInit {
       topicWorkshop: ["", Validators.required],
       academicCategory: ["", Validators.required],
       dateFrom: ["", Validators.required],
-      dateTo: ["", ],
+      dateTo: ["", Validators.required],
       description: ["", Validators.required],
     });
   }
@@ -55,7 +55,7 @@ export class EventsAtBalajiComponent implements OnInit {
     this.facultyForm = this.fb.group({
       eventCategory: [this.onChangeEvent == "faculty" ? "faculty" : "speaker"],
       dateFrom: ["", Validators.required],
-      dateTo: ["",],
+      dateTo: ["", Validators.required],
       description: ["", Validators.required],
     },
     { validator: this.dateLessThan('dateFrom', 'dateTo') }
@@ -69,13 +69,13 @@ export class EventsAtBalajiComponent implements OnInit {
       }
       let f = group.controls[from];
       let t = group.controls[to];
-      let startTime = moment(
+      let startDate = moment(
         moment(f.value).format('YYYY-MM-DD')
       );
-      let endTime = moment(
+      let endDate = moment(
         moment(t.value).format('YYYY-MM-DD')
       );
-      if (startTime.isSameOrBefore(endTime)) {
+      if (startDate.isSameOrBefore(endDate)) {
         return {};
       } else {
         return {
