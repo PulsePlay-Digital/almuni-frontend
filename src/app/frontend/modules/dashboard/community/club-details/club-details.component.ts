@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Config } from "../../../../services/config";
 import { environment } from "../../../../../../environments/environment";
 import { DataService } from "../../../../services/data.service";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 
 @Component({
@@ -27,7 +27,8 @@ export class ClubDetailsComponent implements OnInit {
     private dataService: DataService,
     public config: Config,
     private fb: FormBuilder,
-    private notify: TokenInterceptor
+    private notify: TokenInterceptor,
+    private router: Router
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
@@ -54,7 +55,7 @@ export class ClubDetailsComponent implements OnInit {
     this.commentForm = this.fb.group({
       user_id: [""],
       club_post_id: [""],
-      body: [""],
+      body: ["", Validators.required],
     });
   }
 
@@ -121,4 +122,11 @@ export class ClubDetailsComponent implements OnInit {
     // });
   }
 
+  viewProfile(item?:any) {
+    this.router.navigate(["/view-profile/basic-info"], {
+      queryParams: {
+        id: item?.user_id,
+      }
+    });
+  }
 }

@@ -19,6 +19,7 @@ export class ViewProfileComponent implements OnInit {
   action: any;
   imgPath = environment.imgUrl;
   profileData: any;
+  userId:any;
   constructor(
     public dataService: DataService,
     public fb: FormBuilder,
@@ -30,6 +31,10 @@ export class ViewProfileComponent implements OnInit {
         localStorage?.getItem("currentUser") || ""
       );
     }
+    this.arouter.queryParams.subscribe((res: any) => {
+      console.log(res)
+      this.userId = res.id;
+    });
   }
 
   ngOnInit(): void {
@@ -77,7 +82,7 @@ export class ViewProfileComponent implements OnInit {
   async getCurrentUser() {
     let action: string = "find-user";
     await this.dataService
-      .getDataById(action, this.currentUser?.id)
+      .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
       .subscribe((res: any) => {
         localStorage.setItem("currentUser", JSON.stringify(res?.data));
       });
@@ -86,7 +91,7 @@ export class ViewProfileComponent implements OnInit {
   async getAllProfileData() {
     let action: string = "all-profileUsers";
     await this.dataService
-      .getDataById(action, this.currentUser?.id)
+      .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
       .subscribe((res: any) => {
         this.profileData = res;
       });
