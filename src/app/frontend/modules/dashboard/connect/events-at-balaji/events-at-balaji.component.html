@@ -4,6 +4,13 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-6 my-2">
+            <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Name </label>
+            <select class="form-select" aria-label="Default select example" (change)="selectEvent($event)">
+                <option value=" " selected>Select Event</option>
+                <option *ngFor="let event of upcomingEvent; let i=index;" [value]="event?.id">{{ event?.title }}</option>
+            </select>
+        </div>
+        <div class="col-sm-6 col-md-6 my-2" *ngIf="showCategory">
             <label for="formGroupExampleInput" class="col-form-label fw-bold">Event Category </label>
             <select class="form-select" aria-label="Default select example" (change)="selectCategory($event)">
                 <option value="" selected>Select Category</option>

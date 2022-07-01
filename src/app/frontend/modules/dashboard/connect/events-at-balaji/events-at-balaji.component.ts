@@ -4,6 +4,7 @@ import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { environment } from "./../../../../../../environments/environment";
 import { DataService } from "./../../../../services/data.service";
 import * as moment from "moment";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-events-at-balaji",
@@ -19,7 +20,10 @@ export class EventsAtBalajiComponent implements OnInit {
   workShopField: boolean = false;
   speakerFacultyFields: boolean = false;
   submitted: boolean = false;
-  onChangeEvent: any;
+  onChangeCategory: any;
+  upcomingEvent: any;
+  selectedEvent: any;
+  showCategory: boolean | undefined;
 
   constructor(
     public fb: FormBuilder,
@@ -33,6 +37,7 @@ export class EventsAtBalajiComponent implements OnInit {
     this.loading = true;
     this.buildWorkshopForm();
     this.buildFacultyForm();
+    this.getAllUpcomingEvents();
   }
 
   /**
@@ -40,8 +45,7 @@ export class EventsAtBalajiComponent implements OnInit {
    */
   buildWorkshopForm() {
     this.workshopForm = this.fb.group({
-      // event_id: [3],
-      // eventName: [""],
+      event_id: [this.selectedEvent, Validators.required],
       eventCategory: ["workshop"],
       topicWorkshop: ["", Validators.required],
       academicCategory: ["", Validators.required],
@@ -53,7 +57,8 @@ export class EventsAtBalajiComponent implements OnInit {
 
   buildFacultyForm() {
     this.facultyForm = this.fb.group({
-      eventCategory: [this.onChangeEvent == "faculty" ? "faculty" : "speaker"],
+      event_id: [this.selectedEvent, Validators.required],
+      eventCategory: [this.onChangeCategory == "faculty" ? "faculty" : "speaker"],
       dateFrom: ["", Validators.required],
       dateTo: ["", Validators.required],
       description: ["", Validators.required],
@@ -100,8 +105,7 @@ export class EventsAtBalajiComponent implements OnInit {
    */
   selectCategory(e: any) {
     let event = e?.target?.value;
-    this.onChangeEvent = event;
-    console.log(this.onChangeEvent);
+    this.onChangeCategory = event;
     if (event == "workshop") {
       this.workShopField = true;
       this.speakerFacultyFields = false;
@@ -115,6 +119,51 @@ export class EventsAtBalajiComponent implements OnInit {
       this.speakerFacultyFields = false;
       this.buildWorkshopForm();
       this.buildFacultyForm();
+    }
+  }
+
+  /**
+   * Get all upcoming events list
+   */
+  async getAllUpcomingEvents() {
+    let action: string = "all-event";
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res.data.filter((item: any) => {
+            let commingDate = item?.date;
+            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
+            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe(
+        (res: any) => {
+          if (res) {
+            this.upcomingEvent = res;
+            this.loading = false;
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        }
+      );
+  }
+
+  /**
+   * Function to select an event
+   * @param event 
+   */
+  selectEvent(event: any) {
+    this.selectedEvent = event?.target?.value;
+    this.selectedEvent !== " " ? this.showCategory = true : this.showCategory = false
+    if (this.showCategory == false) {
+      this.workShopField = false;
+      this.speakerFacultyFields = false;
     }
   }
 
