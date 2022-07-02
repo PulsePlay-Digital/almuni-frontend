@@ -21,7 +21,8 @@ export class ClubDetailsComponent implements OnInit {
   currentUser: any;
   allComment: any;
   allUser: any;
-
+  isReply: boolean = false;
+  parentId:any='';
   constructor(
     public arouter: ActivatedRoute,
     private dataService: DataService,
@@ -106,24 +107,63 @@ export class ClubDetailsComponent implements OnInit {
    * Function to reply on comment
    * @param params
    */
-  async replyOnComment(params: any, uniqueID: string) {
-    var elmnt:any = document.getElementById(uniqueID); // let if use typescript
+  async reply(params: any, uniqueID: string) {
+    this.isReply = true;
+    var elmnt: any = document.getElementById(uniqueID); // let if use typescript
     elmnt.focus();
     elmnt.scrollIntoView(); // this will scroll elem to the top
     window.scrollTo(0, 0); // this will scroll page to the top
+   this.parentId = params.id;
+  }
+  /**
+    * Function to reply on comment
+    * @param params
+    */
+  async replyOnComment() {
     let action: string = "comment";
-    let param: any = {
-      id: params?.id,
+    let params: any = {
       user_id: JSON.stringify(this.currentUser?.id),
       club_post_id: this.clubId,
       body: this.commentForm?.value?.body,
+      parent_id:this.parentId
     };
-    // await this.dataService.postData(action, param).subscribe((res: any) => {
 
-    // });
+    await this.dataService.postData(action, params).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.commentForm.reset();
+          this.getAllComment();
+          this.notify.notificationService.openSuccessSnackBar(res?.message);
+          // this.notify.notificationService.openSuccessAlert(res?.message);
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
+  /**
+    * Function like / unlike comment
+    * @param params
+    */
+  async likeUnlikeClub(item: any) {
+    let params = {
+      is_liked: item?.id,
+      action: 'like-comment'
+    }
+    await this.dataService.postClubData(params, this.currentUser?.id)
+      .subscribe((res: any) => {
+        this.getAllComment();
+        this.notify.notificationService.openSuccessSnackBar(res?.message);
+        this.loading = false;
+      },
+        error => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        })
   }
 
-  viewProfile(item?:any) {
+  viewProfile(item?: any) {
     this.router.navigate(["/view-profile/basic-info"], {
       queryParams: {
         id: item?.user_id,

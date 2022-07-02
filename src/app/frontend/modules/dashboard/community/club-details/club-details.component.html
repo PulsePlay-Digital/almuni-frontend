@@ -30,30 +30,48 @@
                         <hr class="text-white"> -->
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12">
-                        <div class="startup-post" (click)="onClickComment()">
+                        <div class="startup-post" (click)="onClickComment()" *ngIf="!isReply">
+                            <button class="startup-btn text-white border-0" [disabled]="commentForm.invalid">Post</button>
+                        </div>
+                        <div class="startup-post" (click)="replyOnComment()" *ngIf="isReply">
                             <button class="startup-btn text-white border-0" [disabled]="commentForm.invalid">Post</button>
                         </div>
                     </div>
                 </div>
                 <div class="row my-1 py-2" *ngFor="let comment of allComment; let i=index;">
-                    <div class="col-md-2 text-center">
-                        <!-- routerLink="/view-profile" [queryParams]="{id: comment?.user_id}" -->
+                    <!-- <div class="col-md-2 text-center">
                         <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="comments">
-                    </div>
-                    <div class="col-md-10 comment-details">
+                    </div> -->
+                    <div class="col-md-12 comment-details">
+                        <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
                         <h4 class="startup-name">{{comment?.first_name}} {{comment?.last_name}}</h4>
                         <p class="startup-description">{{comment?.body}}
                             <br>
                             <span class="comment-time">{{comment?.created_at | date}}</span>
                         </p>
 
-                        <p class="startup-comment"> <span class="icon"><i class="fa fa-heart"
+                        <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i class="fa fa-heart"
                                     aria-hidden="true"></i>
-                                10</span><span class="user-reply px-4" (click)="replyOnComment(comment, 'replyScroll')">
+                                10</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
                                 Reply </span>
                             <span> <i class="fa fa-comment"></i> Comment (0)</span>
                         </p>
+                        <div class="col-md-12 reply">
+                            <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
+                            <h4 class="startup-name">{{comment?.first_name}} {{comment?.last_name}}</h4>
+                            <p class="startup-description">{{comment?.body}}
+                                <br>
+                                <span class="comment-time">{{comment?.created_at | date}}</span>
+                            </p>
 
+                            <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i class="fa fa-heart"
+                                        aria-hidden="true"></i>
+                                    10</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
+                                    Reply </span>
+                                <span> <i class="fa fa-comment"></i> Comment (0)</span>
+                            </p>
+
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="comment comment-level-1" *ngFor="let comment of allComment; let i=index;">
