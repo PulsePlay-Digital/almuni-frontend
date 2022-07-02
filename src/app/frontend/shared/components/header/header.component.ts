@@ -63,12 +63,16 @@ export class HeaderComponent implements OnInit {
     this.sidePanel.style.width = "0";
   }
 
-  navigate(r:string) {
-    this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']); 
+  navigate(r: string) {
+    if (r == 'past' || r == 'upcomming') {
+      this.router.navigate([ '/connect/at-glance' ], { queryParams: { tab: r}, skipLocationChange: true  });
+    } else {
+      this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']);
+    }
   }
 
   editProfile() {
-    this.router.navigate([ '/edit-profile' ], { queryParams: { key: 'test'} });
+    this.router.navigate(['/edit-profile'], { queryParams: { key: 'test' } });
   }
 }
 

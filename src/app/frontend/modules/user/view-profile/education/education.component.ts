@@ -17,13 +17,13 @@ export class EducationComponent implements OnInit {
   currentUser: any;
   loading: boolean = false;
   eduId: any;
-
+  isCurrentUser: boolean = false;
   constructor(
     private fb: FormBuilder,
     private config: Config,
     private dataService: DataService,
     private notify: TokenInterceptor
-    ) {
+  ) {
     this.specialization = this.config?.specialization;
     if (localStorage) {
       this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -34,6 +34,11 @@ export class EducationComponent implements OnInit {
     this.buildform();
     this.loading = true;
     setTimeout(() => {
+      if (this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser = true;
+      } else {
+        this.isCurrentUser = false;
+      }
       this.educationForm.patchValue({
         ...this.profileData?.Education
       });
@@ -68,7 +73,7 @@ export class EducationComponent implements OnInit {
     return this.fb.group({
       id: [this.eduId?.id],
       degree_name: ["", Validators.required],
-      institute_name: ["",Validators.required],
+      institute_name: ["", Validators.required],
       passing_year: ["", Validators.required],
       specialization: ["", Validators.required],
       other_specialization: [""]
@@ -84,7 +89,7 @@ export class EducationComponent implements OnInit {
   }
 
   async edit() {
-   
+
   }
 
 }

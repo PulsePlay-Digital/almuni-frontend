@@ -39,4 +39,11 @@ export class FooterComponent implements OnInit {
         this.visitorCout = res?.total;
       });
   }
+  navigate(r: string) {
+    if (r == 'past' || r == 'upcomming') {
+      this.router.navigate([ '/connect/at-glance' ], { queryParams: { tab: r}, skipLocationChange: true  });
+    } else {
+      this.currentUser ? this.router.navigate([r]) : this.router.navigate(['/login']);
+    }
+  }
 }

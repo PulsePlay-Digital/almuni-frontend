@@ -18,7 +18,7 @@ export class MentorshipComponent implements OnInit {
   currentUser: any;
   loading: boolean = false;
   mentorId: any;
-
+isCurrentUser:boolean=false;
   constructor(
     public fb: FormBuilder,
     private config: Config,
@@ -36,6 +36,11 @@ export class MentorshipComponent implements OnInit {
     this.buildform();
     this.loading = true;
     setTimeout(() => {
+      if(this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser =true;
+      }else {
+        this.isCurrentUser=false;
+      }
       this.mentorForm.patchValue({
         ...this.profileData?.Mentorship
       });

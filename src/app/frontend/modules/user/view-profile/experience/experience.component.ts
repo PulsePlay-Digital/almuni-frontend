@@ -14,7 +14,7 @@ export class ExperienceComponent implements OnInit {
   currentUser: any;
   loading: boolean = false;
   experienceId: any;
-
+isCurrentUser:boolean=false;
   constructor(
     public fb: FormBuilder,
     private dataService: DataService,
@@ -28,6 +28,11 @@ export class ExperienceComponent implements OnInit {
     this.buildform();
     this.loading = true;
     setTimeout(() => {
+      if(this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser =true;
+      }else {
+        this.isCurrentUser=false;
+      }
       this.experienceForm.patchValue({
         ...this.profileData?.WorkExperience
       });

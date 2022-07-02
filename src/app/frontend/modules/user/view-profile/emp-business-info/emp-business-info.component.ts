@@ -17,7 +17,7 @@ export class EmpBusinessInfoComponent implements OnInit {
   currentUser: any;
   loading: boolean = false;
   empId: any;
-
+isCurrentUser:boolean=false;
   constructor(
     public fb: FormBuilder,
     public config: Config,
@@ -35,6 +35,11 @@ export class EmpBusinessInfoComponent implements OnInit {
     this.professionCategory = this.config?.professionCategory;
     this.loading = true;
     setTimeout(() => {
+      if(this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser =true;
+      }else {
+        this.isCurrentUser=false;
+      }
       this.empBuisnessForm.patchValue({
         ...this.profileData?.Employment
       });

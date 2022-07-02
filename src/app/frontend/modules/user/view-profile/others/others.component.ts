@@ -18,7 +18,7 @@ export class OthersComponent implements OnInit {
   currentUser: any;
   loading: boolean = false;
   otherId: any;
-
+isCurrentUser:boolean=false;
   constructor(
     public fb: FormBuilder,
     public config: Config,
@@ -38,6 +38,11 @@ export class OthersComponent implements OnInit {
     this.buildForm();
     this.loading = true;
     setTimeout(() => {
+      if(this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser =true;
+      }else {
+        this.isCurrentUser=false;
+      }
       this.othersForm.patchValue({
         ...this.profileData?.Other,
       });

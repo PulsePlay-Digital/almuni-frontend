@@ -94,6 +94,7 @@ export class ViewProfileComponent implements OnInit {
       .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
       .subscribe((res: any) => {
         this.profileData = res;
+        console.log(this.profileData)
       });
   }
 }

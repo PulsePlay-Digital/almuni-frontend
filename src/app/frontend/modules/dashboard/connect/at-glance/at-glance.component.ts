@@ -4,8 +4,9 @@ import { map } from "rxjs/operators";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 import { environment } from "./../../../../../../environments/environment";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { MatTabChangeEvent } from "@angular/material/tabs";
 
 @Component({
   selector: "app-at-glance",
@@ -27,12 +28,13 @@ export class AtGlanceComponent implements OnInit {
   upcomingNameSearched: any;
   valChange: any;
   allEventTypeCount: any;
-
+  selectedTabValue: any;
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor,
     public router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private arouter: ActivatedRoute
   ) {
     this.imgPath = environment.imgUrl;
     if (localStorage.hasOwnProperty("currentUser")) {
@@ -40,6 +42,15 @@ export class AtGlanceComponent implements OnInit {
         localStorage.getItem("currentUser") || "{}"
       );
     }
+    this.arouter.queryParams.subscribe((res: any) => {
+      console.log(res)
+      if (res.tab == 'past') {
+        this.selectedTabValue = 0;
+      } else if (res.tab == 'upcomming') {
+        this.selectedTabValue = 1;
+      }
+    })
+
   }
 
   ngOnInit(): void {
@@ -171,14 +182,13 @@ export class AtGlanceComponent implements OnInit {
       }
     );
   }
-
   /**
    * Function to navigate on event detail
    * @param params 
    */
   viewEventDetail(params: any) {
     this.router.navigate((this.currentUser) ? ['/connect/event-detail'] : ['/login'], {
-      queryParams: params , skipLocationChange: true
+      queryParams: params, skipLocationChange: true
     });
   }
 }

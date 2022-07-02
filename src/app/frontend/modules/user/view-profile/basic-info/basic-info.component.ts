@@ -24,7 +24,7 @@ export class BasicInfoComponent implements OnInit {
   region: any;
   currentUser: any;
   loading: boolean = false;
-
+  isCurrentUser: boolean = false;
   constructor(
     public fb: FormBuilder,
     public countryService: CountryService,
@@ -41,6 +41,7 @@ export class BasicInfoComponent implements OnInit {
         localStorage?.getItem("currentUser") || ""
       );
     }
+  
     this.arouter.queryParams.subscribe((res: any) => {
       let data: any = res;
     });
@@ -56,12 +57,17 @@ export class BasicInfoComponent implements OnInit {
     this.getAllInstitutes();
     this.loading = true;
     setTimeout(() => {
+      if(this.profileData.Users.id == this.currentUser.id) {
+        this.isCurrentUser =true;
+      }else {
+        this.isCurrentUser=false;
+      }
       this.basicInfoForm.patchValue({
         ...this.profileData?.Users
       });
       this.loading = false;
     }, 2000);
-  
+
   }
 
   /**
@@ -143,7 +149,7 @@ export class BasicInfoComponent implements OnInit {
    * Function to change country
    * @param event
    */
-  public changeCountry(event: any) {}
+  public changeCountry(event: any) { }
 
   /**
    * Function to get all institutes
@@ -171,5 +177,5 @@ export class BasicInfoComponent implements OnInit {
     );
   }
 
-  async edit() {}
+  async edit() { }
 }

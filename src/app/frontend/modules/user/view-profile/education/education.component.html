@@ -1,18 +1,15 @@
 <div class="row">
     <div class="col-lg-12">
         <app-loader *ngIf="loading"></app-loader>
-        <form [formGroup]="educationForm" *ngIf="!loading"
-            >
+        <form [formGroup]="educationForm" *ngIf="!loading">
             <div class="row">
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="degree_name"
-                        placeholder="Enter degree name" readonly>
+                    <input type="text" class="form-control" formControlName="degree_name" placeholder="Enter degree name" readonly>
                 </div>
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="institute_name"
-                        placeholder="Enter institute name" readonly>
+                    <input type="text" class="form-control" formControlName="institute_name" placeholder="Enter institute name" readonly>
                 </div>
             </div>
 
@@ -21,8 +18,7 @@
                     <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
                     <!-- <input type="text" placeholder="dd/mm/yyyy" formControlName="passing_year" class="form-control"
                         bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"> -->
-                    <input type="date" placeholder="DD/MM/YYYY" formControlName="passing_year" class="form-control"
-                        readonly>
+                    <input type="date" placeholder="DD/MM/YYYY" formControlName="passing_year" class="form-control" readonly>
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span> </label>
@@ -35,29 +31,25 @@
                 </div>
                 <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other specialization </label>
-                    <input type="text" class="form-control" formControlName="other_specialization"
-                        placeholder="Enter other specialization" readonly>
+                    <input type="text" class="form-control" formControlName="other_specialization" placeholder="Enter other specialization" readonly>
                 </div>
             </div>
             <ng-container *ngFor="let items of addItems().controls; let i=index" [formGroupName]="i">
                 <div class="row">
                     <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Name of degree <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="degree_name"
-                            placeholder="Enter degree name" readonly>
+                        <input type="text" class="form-control" formControlName="degree_name" placeholder="Enter degree name" readonly>
                     </div>
                     <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Name of institute <span class="label-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="institute_name"
-                            placeholder="Enter institute name" readonly>
+                        <input type="text" class="form-control" formControlName="institute_name" placeholder="Enter institute name" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Year of passing <span class="label-danger">*</span></label>
-                        <input type="text" placeholder="dd/mm/yyyy" formControlName="passing_year" class="form-control"
-                            readonly>
+                        <input type="text" placeholder="dd/mm/yyyy" formControlName="passing_year" class="form-control" readonly>
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Specialisation <span class="label-danger">*</span>
@@ -70,20 +62,18 @@
                     </div>
                     <div class="col-lg-4 my-xl-3 my-lg-3 my-2">
                         <label class="form-label fw-bold">Other specialization </label>
-                        <input type="text" class="form-control" formControlName="other_specialization"
-                            placeholder="Enter other specialization" readonly>
+                        <input type="text" class="form-control" formControlName="other_specialization" placeholder="Enter other specialization" readonly>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                        <button type="button" (click)="removeItems(i)" class="bg-transparent border-0 closeBtn"
-                            aria-label="Close">
+                        <button type="button" (click)="removeItems(i)" class="bg-transparent border-0 closeBtn" aria-label="Close">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </ng-container>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" *ngIf="isCurrentUser">
                 <div class="col-lg-4 text-center">
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>

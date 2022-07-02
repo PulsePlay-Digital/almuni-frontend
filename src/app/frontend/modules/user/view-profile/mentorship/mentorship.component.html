@@ -16,8 +16,7 @@
                 </div>
                 <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Add skills <span class="label-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="add_skills" placeholder="Enter last name"
-                        readonly>
+                    <input type="text" class="form-control" formControlName="add_skills" placeholder="Enter last name" readonly>
 
                 </div>
             </div>
@@ -44,8 +43,7 @@
             <div class="row">
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other function area </label>
-                    <input type="text" class="form-control" formControlName="other_function_area"
-                        placeholder="Enter last name" readonly>
+                    <input type="text" class="form-control" formControlName="other_function_area" placeholder="Enter last name" readonly>
                 </div>
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Primary industry focus </label>
@@ -68,12 +66,11 @@
                 </div>
                 <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other industry focus </label>
-                    <input type="text" class="form-control" formControlName="other_industry_focus"
-                        placeholder="Enter last name" readonly>
+                    <input type="text" class="form-control" formControlName="other_industry_focus" placeholder="Enter last name" readonly>
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" *ngIf="isCurrentUser">
                 <div class="col-lg-3 my-xl-3 my-lg-3 my-2 text-center">
                     <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>
                 </div>

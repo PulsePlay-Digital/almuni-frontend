@@ -74,8 +74,13 @@ export class AlumniDirectoryComponent implements OnInit {
    * @param params
    */
   viewDetail(id: any) {
-    this.router.navigate(["/community/alumni-details"], {
-      queryParams: { id: id },
+    this.router.navigate(["/view-profile/basic-info"], {
+      queryParams: {
+        id: id,
+      }
     });
+    // this.router.navigate(["/community/alumni-details"], {
+    //   queryParams: { id: id },
+    // });
   }
 }
