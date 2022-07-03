@@ -20,7 +20,7 @@ body {
 body {
     margin: 0;
     letter-spacing: 1px;
-    font-family: Montserrat !important;
+    font-family: var(--family) !important;
 }
 
 ::placeholder {
@@ -44,9 +44,11 @@ body {
 }
 
 .mat-simple-snackbar-action {
-    color: #fff;
+    color: var(--bs-white);
 }
-
+.mat-tab-label .mat-tab-label-content {
+    font-family: var(--family)
+}
 .news-tooltip-color {
     background: var(--bg-color);
 }

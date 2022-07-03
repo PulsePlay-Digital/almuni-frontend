@@ -55,7 +55,6 @@
         .join-event {
             background-color: var(--btn-background);
             color: var(--bs-white);
-            font-family: var(--family);
             border-radius: 2px;
             line-height: 2.5;
         }
@@ -233,6 +232,7 @@
         text-align: var(--text-C);
         color: var(--bg-color);
         cursor: var(--cursor-pointer);
+        font-family: var(--family);
     }
     .content {
         position: relative;

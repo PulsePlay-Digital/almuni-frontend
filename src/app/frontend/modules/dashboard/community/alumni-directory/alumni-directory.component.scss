@@ -1,5 +1,8 @@
 .card {
   background: var(--card-bg);
+  .card-title {
+    font-family: var(--family);
+  }
   .card-body {
     height: 78px;
     .designation {

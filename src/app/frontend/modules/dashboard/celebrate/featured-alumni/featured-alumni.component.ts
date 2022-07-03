@@ -34,7 +34,7 @@ export class FeaturedAlumniComponent implements OnInit {
     let  action: string = 'all-featured';
     await this.dataService.getData(action).subscribe((res: any) => {
       this.user = res?.data;
-      this.loading = false;
+      this.loading = true;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);
       this.loading = false;

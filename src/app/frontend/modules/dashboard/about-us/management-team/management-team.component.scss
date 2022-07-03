@@ -2,6 +2,7 @@
     .quotes {
         color: #f38b07;
         font-size: 20px;
+        font-family: 'Montserrat';
     }
     .card {
         background: var(--card-bg);
@@ -9,6 +10,7 @@
             height: 80px;
             .card-title {
                 color: var(--bg-color);
+                font-family: 'Montserrat';
             }
         }
         .card-body {

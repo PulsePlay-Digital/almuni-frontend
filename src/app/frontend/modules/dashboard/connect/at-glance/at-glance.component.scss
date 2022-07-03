@@ -22,12 +22,21 @@
 .contentSection {
   h6 {
     color: var(--bg-color);
+    font-family: var(--family);
+  }
+  p{
+    font-family: var(--family);
   }
   .more-btn {
     a{ 
       cursor: pointer;
+      font-family: var(--family);
     }
   }
+}
+
+form ,h6, .sbs-alumni-events{
+  font-family: var(--family);
 }
 
 .description {
@@ -37,6 +46,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-family: var(--family);
 }
 
 .bannerImg {
