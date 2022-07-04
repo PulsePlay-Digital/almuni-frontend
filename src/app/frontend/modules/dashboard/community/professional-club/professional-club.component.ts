@@ -62,11 +62,11 @@ export class ProfessionalClubComponent implements OnInit {
     await this.dataService.postClubData(params, this.currentUser?.id)
       .subscribe((res: any) => {
       this.getAllProfessionalClub();
-      this.notify.notificationService.openSuccessSnackBar(res?.message);
+      this.notify.notificationService.openSuccessAlert(res?.message);
         this.loading = false;
       },
         error => {
-          this.notify.notificationService.openFailureSnackBar(error);
+          this.notify.notificationService.openErrorAlert(error);
           this.loading = false;
         })
   }

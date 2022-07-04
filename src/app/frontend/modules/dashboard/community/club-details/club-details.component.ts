@@ -23,6 +23,7 @@ export class ClubDetailsComponent implements OnInit {
   allUser: any;
   isReply: boolean = false;
   parentId:any='';
+  likedComment:any;
   constructor(
     public arouter: ActivatedRoute,
     private dataService: DataService,

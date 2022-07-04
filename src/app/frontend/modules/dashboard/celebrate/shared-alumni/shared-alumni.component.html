@@ -1,12 +1,11 @@
 <div class="row mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-3 mb-3 m-0">
-    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
+    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3" *ngIf="sharedData?.length > 0">
         <div class="search-filter p-4">
             <form class="">
                 <div class="row">
                     <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
                         <div class="form-outline">
-                            <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" 
-                            [ngModelOptions]="{standalone: true}" placeholder="Search by name" />
+                            <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search by name" />
                         </div>
                     </div>
                 </div>

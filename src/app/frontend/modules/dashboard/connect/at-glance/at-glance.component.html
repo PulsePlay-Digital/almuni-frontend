@@ -46,7 +46,7 @@
                                             <p class="connect-event-description">{{ item?.title }}<br>
                                             </p>
                                             <h6 class="fs-5 fw-bold">Description :</h6>
-                                            <p class="connect-event-description description"> {{ item?.description | stripHtml }}</p>
+                                            <p class="connect-event-description description" [innerHtml]="item?.description"></p>
 
                                             <div class="more-btn ">
                                                 <a (click)="viewEventDetail(item)" class="fw-bold text-decoration-none"><i class="fa fa-plus"
@@ -149,7 +149,7 @@
                                             <h6 class="fs-6 fw-bold">Alumni Club Name:</h6>
                                             <p class="connect-event-description">{{ item?.title }}</p>
                                             <h6 class="fs-6 fw-bold">Description:</h6>
-                                            <p class="connect-event-description description"> {{ item?.description | stripHtml }}</p>
+                                            <p class="connect-event-description description" [innerHtml]="item?.description"></p>
                                             <div class="more-btn ">
                                                 <a (click)="viewEventDetail(item)" class="fw-bold text-decoration-none"><i class="fa fa-plus"
                                                         aria-hidden="true"></i>&nbsp;More Info</a>

@@ -32,7 +32,7 @@ export class NotificationService {
    * @param message 
    * @param action 
    */
-  openFailureSnackBar(message: string, action: string = 'Close') {
+  openFailureSnackBar(message: string, action: string = 'Ok') {
     this.snackBar.open(message, action, {
       duration: 3000,
       panelClass: ['red-snackbar'],
@@ -50,14 +50,14 @@ export class NotificationService {
     });
   }
 
-  openSuccessAlert(message: string, action: string = "Close") {
+  openSuccessAlert(message: string, action: string = "Ok") {
     const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
       width: '250px',
       panelClass: 'alert-success',
       data: { message: message, action: action }
     });
   }
-  openWarningAlert(message: string, action: string = "Close") {
+  openWarningAlert(message: string, action: string = "Ok") {
     const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
       width: '250px',
       panelClass: 'alert-warning',
@@ -65,7 +65,7 @@ export class NotificationService {
      
     });
   }
-  openErrorAlert(message: string, action: string = "Close") {
+  openErrorAlert(message: string, action: string = "Ok") {
     const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
       width: '250px',
       panelClass: 'alert-error',

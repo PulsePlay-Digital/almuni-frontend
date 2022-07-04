@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
   getInstitutes: any;
   submitted: boolean = false;
   siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt";
-  profilePic:any;
-  image:any;
+  profilePic: any;
+  image: any;
   userRole: any;
   bannerHeaading: string = "new alumni registration";
   region: any;
@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
         current_region: ["", Validators.required],
         country: ["", Validators.required],
         code: ["", Validators.required],
-        mobile_number: ["",[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10),Validators.maxLength(10)]],
+        mobile_number: ["", [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
         birth_date: ["", Validators.required],
         email: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
         current_company: ["", Validators.required],
@@ -67,12 +67,12 @@ export class RegisterComponent implements OnInit {
         password_confirmation: ["", Validators.required],
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
-        profile_pic:[""],
+        profile_pic: [""],
         address: [""],
         status: ['unapproved'],
         role: ["0"]
         // recaptcha: [""]
-      },  
+      },
       {
         validators: this.passwordMatch("password", "password_confirmation"),
       }
@@ -98,7 +98,7 @@ export class RegisterComponent implements OnInit {
    * Function to upload Image
    * @param event 
    */
-   onUploadImage(event: any) {
+  onUploadImage(event: any) {
     this.profilePic = event.target.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
@@ -115,11 +115,11 @@ export class RegisterComponent implements OnInit {
    * @param event
    */
   public changeCountry(event: any) {
-    this.countries.filter((res: any) => { 
+    this.countries.filter((res: any) => {
       if (res.name == event.target.value) {
         this.registerForm.controls["code"].setValue(res.code);
       }
-    }); 
+    });
   }
 
   /**
@@ -190,7 +190,7 @@ export class RegisterComponent implements OnInit {
       await this.authService.register(params).subscribe((res: any) => {
         this.notify.notificationService.openSuccessSnackBar(res?.message);
         this.router.navigate(['login']);
-      },error => {
+      }, error => {
         this.notify.notificationService.openFailureSnackBar(error);
       })
     }

@@ -52,7 +52,7 @@
 
                         <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i class="fa fa-heart"
                                     aria-hidden="true"></i>
-                                10</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
+                                {{comment?.like}}</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
                                 Reply </span>
                             <span> <i class="fa fa-comment"></i> Comment (0)</span>
                         </p>
