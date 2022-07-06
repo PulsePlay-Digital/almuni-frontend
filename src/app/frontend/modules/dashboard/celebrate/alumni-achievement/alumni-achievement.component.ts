@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { map, filter } from "rxjs/operators";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 
 @Component({
@@ -17,8 +18,12 @@ export class AlumniAchievementComponent implements OnInit {
   alumniData: any;
   allAchievementCount: number | undefined;
   currentUser: any;
+  allUserAchievementCount: any;
 
-  constructor(public dataService: DataService) {
+  constructor(
+    private dataService: DataService,
+    private notify: TokenInterceptor
+    ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
     }
@@ -26,6 +31,7 @@ export class AlumniAchievementComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllAchivement();
+    this.countAllUserAchievement();
   }
 
   sharedAchievementByMe() {
@@ -66,4 +72,17 @@ export class AlumniAchievementComponent implements OnInit {
       });
   }
 
+  async countAllUserAchievement() {
+    let action: string = "count-userAchievement";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.allUserAchievementCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
 }

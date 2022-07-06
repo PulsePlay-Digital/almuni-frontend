@@ -30,7 +30,6 @@ export class SharedAchievementByMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllJourney();
-    console.log(this.heading)
   }
 
   /**
@@ -49,7 +48,6 @@ export class SharedAchievementByMeComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
-        console.log(result)
         this.achievementData = result;
         this.loading = false;
       },

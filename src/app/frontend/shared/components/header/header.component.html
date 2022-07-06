@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-12 col-lg-3 col-xl-3 col-sm-8 col-8 d-flex align-self-center">
                 <div class="open-add align-self-center bigLogo">
-                    <a class="navbar-brand" routerLink="home">
-                        <img src="./assets/SBU logo.png" class="logo img-fluid " alt=" Shri Balaji Logo">
+                    <a class="navbar-brand" routerLink="/">
+                        <img src="./assets/SBU logo.png" class="logo img-fluid" alt="Shri Balaji Logo">
                     </a>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     <!-- Desktop nav end-->
                     <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-block d-xl-block d-lg-block d-none">
                         <nav class="navbar topnav navbar-expand-lg navbar-light pt-xl-3 pt-lg-3 pt-md-2 pb-0">
-                            <a class="navbar-brand smallLogo" routerLink="/home">
+                            <a class="navbar-brand smallLogo" routerLink="/">
                                 <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid " alt="Shri Balaji Logo">
                             </a>
                             <button class="fa-burger fs-4 mobile-toggle border-0 text-toogle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,7 @@
                             <div class="collapse navbar-collapse" id="navbarToggler">
                                 <ul class="navbar-nav mx-auto my-2 my-lg-0 justify-content-xl-end justify-content-lg-end navbar-nav-scroll main-nav align-items-xl-center align-items-lg-center">
                                     <li class="nav-item">
-                                        <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
+                                        <a class="nav-link" routerLink="/" routerLinkActive="active-link">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link " id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/about-us/founder-chancellor" routerLinkActive="active-link">
@@ -273,7 +273,7 @@
                     <!-- Mobile nav -->
                     <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12 d-xxl-none d-xl-none d-lg-none d-block">
                         <nav class="navbar navbar-light bg-light bg-transparent moboSideNav">
-                            <a class="navbar-brand" routerLink="/home">
+                            <a class="navbar-brand" routerLink="/">
                                 <img src="./assets/mobile-logo-sri-balaji.png" class="mobileLogo img-fluid" alt="Shri Balaji Logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -287,7 +287,7 @@
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav justify-content-end flex-grow-1">
                                         <li class="nav-item lh-lg">
-                                            <a class="nav-link lh-base" (click)="navigate('/home')" routerLinkActive="active-link">Home</a>
+                                            <a class="nav-link lh-base" (click)="navigate('/')" routerLinkActive="active-link">Home</a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link lh-base d-flex justify-content-between" (click)="navigate('/about-us/founder-chancellor')" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

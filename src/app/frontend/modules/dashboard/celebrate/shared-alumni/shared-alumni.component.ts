@@ -20,8 +20,8 @@ export class SharedAlumniComponent implements OnInit {
   nameSearched: any;
   
   constructor(
-    public dataService: DataService,
-    public router: Router
+    private dataService: DataService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {

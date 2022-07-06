@@ -22,7 +22,9 @@ body {
     letter-spacing: 1px;
     font-family: var(--family) !important;
 }
-
+h2,h3,h4,h5,h6 {
+    font-family: var(--family) !important;
+}
 ::placeholder {
     font-size: 14px;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -16,13 +17,21 @@ export class AlumniPassionComponent implements OnInit {
   type: string = 'passion';
   alumniData: any;
   allPassionCount: number | undefined;
+  allUserPassionCount: any;
+  currentUser: any;
 
   constructor(
-    public dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+   }
 
   ngOnInit(): void {
     this.getAllPassion();
+    this.countAllUserPassion();
   }
 
   addPassion() {
@@ -58,6 +67,20 @@ export class AlumniPassionComponent implements OnInit {
         this.allPassionCount = result?.length;
         this.alumniData = result;
       });
+  }
+
+  async countAllUserPassion() {
+    let action: string = "count-userPassion";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.allUserPassionCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
 
 }

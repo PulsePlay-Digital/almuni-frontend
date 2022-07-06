@@ -3,6 +3,7 @@ import {
   NgcCookieConsentConfig,
   NgcCookieConsentService,
 } from "ngx-cookieconsent";
+import { TokenInterceptor } from "./frontend/core/token.interceptor";
 import { DataService } from "./frontend/services/data.service";
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent {
   title = "sbs-almuni";
   constructor(
     private ccService: NgcCookieConsentService,
-    private dataService: DataService
+    private dataService: DataService,
+    private notify: TokenInterceptor
   ) {}
   isShow: boolean | undefined;
   positionToShow = 100;
@@ -45,7 +47,9 @@ export class AppComponent {
     this.ccService.init(this.ccService.getConfig()); // update config with translated messages
     // });
     let action: string = "create-visitor";
-    await this.dataService.getData(action).subscribe((count: any) => {});
+    await this.dataService.getData(action).subscribe((count: any) => {}, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
+    });
   }
 
   @HostListener("window:scroll")

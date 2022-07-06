@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
     data: { breadcrumb: { skip: true } },
   },
   {
-    path: '**', redirectTo: '/home'
+    path: '**', redirectTo: '/'
   }
 ];
 

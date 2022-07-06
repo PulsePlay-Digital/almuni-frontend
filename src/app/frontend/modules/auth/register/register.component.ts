@@ -69,6 +69,7 @@ export class RegisterComponent implements OnInit {
         security_answers: ["", Validators.required],
         profile_pic: [""],
         address: [""],
+        Willing_to_provide_Mentorship: ["", Validators.required],
         status: ['unapproved'],
         role: ["0"]
         // recaptcha: [""]
@@ -149,7 +150,7 @@ export class RegisterComponent implements OnInit {
   async getAllBatches() {
     await this.dataService.getAllBatches().subscribe(
       (res: any) => {
-        this.getBatch = res.BatchYear;
+        this.getBatch = res?.BatchYear;
       },
       (error) => {
       }

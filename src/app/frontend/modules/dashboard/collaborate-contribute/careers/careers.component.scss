@@ -7,6 +7,9 @@
   .project-box {
     background: var(--card-bg);
     height: 244px;
+    h4, h2{
+      font-family: var(--family);
+    }
   }
   .projectImg {
     height: 244px;

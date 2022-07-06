@@ -39,7 +39,7 @@ const routes: Routes = [
       { path: 'view-details', component: ViewDetailsComponent  },
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '',
         pathMatch: 'full'
       },
     ]
