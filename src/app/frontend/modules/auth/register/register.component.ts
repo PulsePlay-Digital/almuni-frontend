@@ -28,10 +28,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public countryService: CountryService,
-    public dataService: DataService,
-    public authService: AuthService,
-    public notify: TokenInterceptor,
+    private countryService: CountryService,
+    private dataService: DataService,
+    private authService: AuthService,
+    private notify: TokenInterceptor,
     private config: Config,
     public router: Router
   ) {
@@ -93,6 +93,8 @@ export class RegisterComponent implements OnInit {
   public loadCountries() {
     this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
+    }, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
     });
   }
   /**
@@ -100,13 +102,13 @@ export class RegisterComponent implements OnInit {
    * @param event 
    */
   onUploadImage(event: any) {
-    this.profilePic = event.target.files[0];
+    this.profilePic = event?.target?.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
       let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event?.target?.files[0]);
       reader.onload = (_event) => {
-        this.image = _event.target?.result;
+        this.image = _event?.target?.result;
       }
     }
   }
@@ -117,8 +119,8 @@ export class RegisterComponent implements OnInit {
    */
   public changeCountry(event: any) {
     this.countries.filter((res: any) => {
-      if (res.name == event.target.value) {
-        this.registerForm.controls["code"].setValue(res.code);
+      if (res?.name == event?.target?.value) {
+        this.registerForm.controls["code"].setValue(res?.code);
       }
     });
   }
@@ -151,8 +153,8 @@ export class RegisterComponent implements OnInit {
     await this.dataService.getAllBatches().subscribe(
       (res: any) => {
         this.getBatch = res?.BatchYear;
-      },
-      (error) => {
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -163,9 +165,9 @@ export class RegisterComponent implements OnInit {
   async getAllInstitutes() {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
-        this.getInstitutes = res.Institute;
-      },
-      (error) => {
+        this.getInstitutes = res?.Institute;
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -175,8 +177,11 @@ export class RegisterComponent implements OnInit {
    */
   async getAllQuestions() {
     await this.dataService.getAllQuestions().subscribe((res: any) => {
-      this.questions = res.data;
-    });
+      this.questions = res?.data;
+    }, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
+    }
+    );
   }
 
   /**
