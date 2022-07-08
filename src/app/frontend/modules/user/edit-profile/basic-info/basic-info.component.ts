@@ -88,7 +88,7 @@ export class BasicInfoComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(10),
-          Validators.maxLength(10),
+          Validators.maxLength(16),
         ],
       ],
       phone_code: [""],

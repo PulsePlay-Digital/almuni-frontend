@@ -13,6 +13,7 @@ import { NewsUpdatesComponent } from './news-updates/news-updates.component';
 import { ViewJourneyDetailComponent } from './view-journey-detail/view-journey-detail.component';
 import { SharedJourneyByMeComponent } from './shared-journey-by-me/shared-journey-by-me.component';
 import { SharedPassionByMeComponent } from './shared-passion-by-me/shared-passion-by-me.component';
+import { GetFeaturedComponent } from './get-featured/get-featured.component';
 
 const routes: Routes = [
   { path: 'celebrate', component: CelebrateComponent,
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'news-update', component: NewsUpdatesComponent },
     { path: 'news-detail', component: NewsDetailComponent },
     { path: 'detail-page', component: ViewJourneyDetailComponent },
+    { path: 'get-featured', component: GetFeaturedComponent },
     {
       path: '',
       redirectTo: 'featured-alumni',

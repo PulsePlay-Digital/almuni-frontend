@@ -32,6 +32,9 @@ export class ManagementTeamComponent implements OnInit {
     await this.dataService.getData(action).subscribe((res: any) => {
       if(res?.status == 200) {
         this.teamData = res?.data;
+        this.teamData.sort((a: any, b: any) => {
+          return a?.order - b?.order;
+        });
         this.loading = false;
       }
     },error => {

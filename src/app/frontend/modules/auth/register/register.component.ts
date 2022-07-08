@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
+import { TokenInterceptor } from "./../../../core/token.interceptor";
 import { AuthService } from "./../../../../frontend/services/auth.service";
 import { Config } from "./../../../../frontend/services/config";
 import { CountryService } from "./../../../../frontend/services/country.service";
@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
         current_region: ["", Validators.required],
         country: ["", Validators.required],
         code: ["", Validators.required],
-        mobile_number: ["", [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
+        mobile_number: ["", [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(16)]],
         birth_date: ["", Validators.required],
         email: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
         current_company: ["", Validators.required],
