@@ -25,6 +25,7 @@ import { SharedJourneyByMeComponent } from './shared-journey-by-me/shared-journe
 import { SharedAchievementByMeComponent } from './shared-achievement-by-me/shared-achievement-by-me.component';
 import { SharedPassionByMeComponent } from './shared-passion-by-me/shared-passion-by-me.component';
 import { GetFeaturedComponent } from './get-featured/get-featured.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { GetFeaturedComponent } from './get-featured/get-featured.component';
     MatTabsModule,
     MatIconModule,
     MatListModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxStarRatingModule
   ]
 })
 export class CelebrateModule { }

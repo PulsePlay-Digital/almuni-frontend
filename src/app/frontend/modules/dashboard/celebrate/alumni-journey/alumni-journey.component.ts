@@ -32,7 +32,6 @@ export class AlumniJourneyComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllJourney();
-    this.countAllJourney();
     this.countAllUserJourney();
   }
 
@@ -69,30 +68,16 @@ export class AlumniJourneyComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
+        this.allJourneyCount = result?.length;
         this.alumniData = result;
       });
   }
-
-  async countAllJourney() {
-    let action: string = "count-journey";
-    await this.dataService.getData(action, ).subscribe(
-      (res: any) => {
-        if (res?.status == 200) {
-          this.allJourneyCount = res?.data;
-        }
-      },
-      (error) => {
-        this.notify.notificationService.openFailureSnackBar(error);
-      }
-    );
-  }
-
 
   async countAllUserJourney() {
     let action: string = "count-userJourney";
     await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
       (res: any) => {
-        if (res?.status == 200) {
+        if (res) {
           this.allUserJourneyCount = res?.data;
         }
       },

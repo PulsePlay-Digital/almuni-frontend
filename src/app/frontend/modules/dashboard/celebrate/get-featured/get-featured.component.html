@@ -2,58 +2,357 @@
     <div class="container">
         <div class="row my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
             <div class="col-12 text-center">
-                <form >
+                <app-loader *ngIf="loading"></app-loader>
+                <form *ngIf="!loading" [formGroup]="getFeatruedForm">
                     <div class="row">
                         <div class="col-md-6 my-2">
                             <div class="form-floating mb-3">
-                                <input type="email" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
-                                <label class="custom-label" for="floatingInput">Email</label>
+                                <input type="email" formControlName="email" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Email <span class="text-danger fs-6">*</span></label>
                             </div>
-                            <!-- <div class="text-danger" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.email.touched || submitted) && f.email?.errors?.required">
                                 Email is required.
                             </div>
-                            <div class="text-danger" *ngIf="f.email.dirty && f.email.errors?.pattern">
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
                                 Email format is incorrect.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="form-floating mb-3">
-                                <input type="email" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
-                                <label class="custom-label" for="floatingInput">Your Full Name</label>
+                                <input type="text" formControlName="full_name" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Your Full Name <span class="text-danger fs-6">*</span></label>
                             </div>
-                            <!-- <div class="text-danger" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                                Email is required.
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.full_name.touched || submitted) && f.full_name.errors?.required">
+                                Full Name is required.
                             </div>
-                            <div class="text-danger" *ngIf="f.email.dirty && f.email.errors?.pattern">
-                                Email format is incorrect.
-                            </div> -->
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="form-floating">
-                                <select class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
-                                  <option selected>Open this select menu</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
+                                <select formControlName="institute_id" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="" selected>Choose your Institute</option>
+                                    <option [value]="institute?.id" *ngFor="let institute of getInstitutes; let i=index;">
+                                        {{ institute?.institute_name }}
+                                    </option>
                                 </select>
-                                <label for="floatingSelect">Your Institute</label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.institute_id.touched || submitted) && f.institute_id.errors?.required">
+                                    Institute is required.
+                                </div>
+                                <label for="floatingSelect">Your Institute <span class="text-danger fs-6">*</span></label>
                               </div>
                         </div>
-                        <!-- <div class="col-md-12 my-2">
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="batchYear_id" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="" selected>Choose your batch</option>
+                                    <option [value]="batch?.id" *ngFor="let batch of getBatch; let i=index;">
+                                        {{ batch?.batch }}
+                                    </option>
+                                </select>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.batchYear_id.touched || submitted) && f.batchYear_id.errors?.required">
+                                    Batch is required.
+                                </div>
+                                <label for="floatingSelect">Batch Year <span class="text-danger fs-6">*</span></label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
                             <div class="form-floating mb-3">
-                                <input type="password" class="custom-form form-control" id="floatingInput" formControlName="password" placeholder="name@example.com">
-                                <label class="custom-label" for="floatingInput">Password</label>
+                                <input type="email" formControlName="personal_email" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Personal Email 2 (optional)</label>
                             </div>
-                            <div class="text-danger" *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
-                                Password is required.
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="email" formControlName="office_email" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Office Email <span class="text-danger fs-6">*</span></label>
                             </div>
-                            <div class="text-danger" *ngIf="(f.password.touched || submitted) && f.password.errors?.minlength">
-                                Password must be at least 5 characters long.
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.office_email.touched || submitted) && f.office_email.errors?.required">
+                                Office Email is required.
                             </div>
-                            <div class="text-danger mt-2" *ngIf="(f.password.touched || submitted) && f.password.errors?.maxlength">
-                                Password can be max 10 characters long.
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="f.office_email.dirty && f.office_email.errors?.pattern">
+                                Office Email format is incorrect.
                             </div>
-                        </div> -->
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" appNumbersOnly formControlName="mobile_number" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Mobile number <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.required">
+                                Mobile number is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="gender" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                  <option value="" selected>Choose gender</option>
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                </select>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.gender.touched || submitted) && f.gender.errors?.required">
+                                    Gender is required.
+                                </div>
+                                <label for="floatingSelect">Gender <span class="text-danger fs-6">*</span></label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="employed_entrepreneur" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                  <option value="" selected>Choose Employed / Entrepreneur</option>
+                                  <option value="employed">Employed</option>
+                                  <option value="entrepreneur">Entrepreneur</option>
+                                  <option value="other">Other</option>
+                                </select>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.employed_entrepreneur.touched || submitted) && f.employed_entrepreneur.errors?.required">
+                                    Employed / Entrepreneur is required.
+                                </div>
+                                <label for="floatingSelect">Employed / Entrepreneur <span class="text-danger fs-6">*</span></label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="current_company" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Current company name <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.current_company.touched || submitted) && f.current_company.errors?.required">
+                                     Company is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="current_designation" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Current designation <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.current_designation.touched || submitted) && f.current_designation.errors?.required">
+                                    Current designation is required.
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="current_location" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Current Location <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.current_location.touched || submitted) && f.current_location.errors?.required">
+                                    Current location is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="email" formControlName="alternate_profession" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">If not in your current profession, I would be a <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.alternate_profession.touched || submitted) && f.alternate_profession.errors?.required">
+                                    Current profession is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="native_city" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput"> Native City, State or Your City, State before joining Institute <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.native_city.touched || submitted) && f.native_city.errors?.required">
+                                    Native city is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="first_job" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Your first job / gig / business even as a young kid prior to joining Institute <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.first_job.touched || submitted) && f.first_job.errors?.required">
+                                Native city is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="first_salary" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Your first salary in Rs. per month even prior to Institute <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.first_salary.touched || submitted) && f.first_salary.errors?.required">
+                                First salary is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="favourite_book_author" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Favourite Book and Author Name <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.favourite_book_author.touched || submitted) && f.favourite_book_author.errors?.required">
+                                Favourite book author is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="personal_hero" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Your Personal Hero in Life and/or Profession <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.personal_hero.touched || submitted) && f.personal_hero.errors?.required">
+                                    Personal hero is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="first_hear" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                  <option value="" selected>Choose an option</option>
+                                  <option value="friends">Friends</option>
+                                  <option value="family_Relatives">Family / Relatives</option>
+                                  <option value="newspaper">Newspaper Advertisement</option>
+                                  <option value="digital">Digital Ad</option>
+                                  <option value="other">Other</option>
+                                </select>
+                                <label for="floatingSelect">How did you first hear about the Institute <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.first_hear.touched || submitted) && f.first_hear.errors?.required">
+                                    First hear about institute is required.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="marital_status" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="" selected>Choose your Option</option>
+                                    <option [value]="item?.status" *ngFor="let item of marStatus; let i=index;">
+                                        {{ item?.status }}
+                                    </option>
+                                </select>
+                                <label for="floatingSelect">Marital Status <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.marital_status.touched || submitted) && f.marital_status.errors?.required">
+                                    Marital status is required.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="campus_placement" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                  <option value="" selected>Choose an option</option>
+                                  <option value="yes">Yes</option>
+                                  <option value="no">No</option>
+                                  <option value="other">Other</option>
+                                </select>
+                                <label for="floatingSelect">Where you placed from Campus <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.campus_placement.touched || submitted) && f.campus_placement.errors?.required">
+                                    Campus placed is required.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="placement_location" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">If you were placed from Campus, please share company name and location <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.placement_location.touched || submitted) && f.placement_location.errors?.required">
+                                Shared your campus or company location is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="if_married_sbup" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="" selected>Choose an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="floatingSelect">If married, Spouse from SBUP <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.if_married_sbup.touched || submitted) && f.if_married_sbup.errors?.required">
+                                    If married, spouse from sbup is required.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="spouse_details" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">If Spouse is from SBUP, Please specify Full name, SBUP Institute and Batch Year. If not, please mention not applicable <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.spouse_details.touched || submitted) && f.spouse_details.errors?.required">
+                                Spouse detail is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="life_lessons" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Life long lessons you learnt from the Institute <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.life_lessons.touched || submitted) && f.life_lessons.errors?.required">
+                                Life long lessons you learnt is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_memories" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput"> Please share your memories about The Honorable Founder Chancellor, Prof. Col. A. Balasubramaian / Bala Sir <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.share_memories.touched || submitted) && f.share_memories.errors?.required">
+                                Share memory is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_current_students" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Please share your message with current students. Tips for success <span class="text-danger fs-6">*</span></label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.share_current_students.touched || submitted) && f.share_current_students.errors?.required">
+                                Share message is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_future_students" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput"> Please share your message with future MBA candidates, applicants applying at Institute</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_message_alumni" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Please share your message with your batchmates and SBUP Alumni community
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating">
+                                <select formControlName="willing_to_provide_mentorship" class="form-select shadow-none border-0 rounded-0 border-bottom" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="" selected>Choose an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                <label for="floatingSelect">Would be willing to be a mentor to junior students and alumni <span class="text-danger fs-6">*</span></label>
+                                <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.willing_to_provide_mentorship.touched || submitted) && f.willing_to_provide_mentorship.errors?.required">
+                                    Willing to be a mentor is required.
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_hidden_talents" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput"> Please share your hidden talent (E.g. Dancing, Singing, Sportsperson, etc)
+                                </label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.share_hidden_talents.touched || submitted) && f.share_hidden_talents.errors?.required">
+                                Share your hide talent is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="share_social_media" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" placeholder="name@example.com">
+                                <label class="custom-label" for="floatingInput">Please share you social media (LinkedIn, Facebook, Instagram, Twitter) handles so you can be tagged on Institute's official posts where we will feature your profile </label>
+                            </div>
+                            <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2" *ngIf="(f.share_hidden_talents.touched || submitted) && f.share_hidden_talents.errors?.required">
+                                Share your social media is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="form-floating mb-3">
+                                <input type="file" (change)="onUploadImage($event)" class="border-0 shadow-none rounded-0 border-bottom custom-form form-control" id="floatingInput" accept="image/*" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2 d-flex justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center">
+                            <ngx-star-rating formControlName="overall_rating" [id]="'rating'"></ngx-star-rating>
+                        </div>
+                        <div class="row pt-4 m-0 justify-content-center">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 text-center my-2">
+                                <button (click)="submitForm()" [disabled]="getFeatruedForm.invalid" class="btn shadow project-btn">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </form>
             </div>
