@@ -77,7 +77,6 @@ export class ClubDetailsComponent implements OnInit {
         if (res?.status == 200) {
           this.commentForm.reset();
           this.notify.notificationService.openSuccessSnackBar(res?.message);
-          // this.notify.notificationService.openSuccessAlert(res?.message);
         }
       },
       (error) => {

@@ -39,7 +39,8 @@ export class AddSpecialProjectComponent implements OnInit {
 
   buildSpecialForm() {
     this.editSpecialForm = this.fb.group({
-      id: [this.projectId],
+      id: [''],
+      user_id: [this.projectId],
       author: [this.author],
       title: ['', Validators.required],
       charityName: ['', Validators.required],
@@ -51,7 +52,7 @@ export class AddSpecialProjectComponent implements OnInit {
       email: ['', [Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
       link: [''],
       description: ['', Validators.required],
-      is_active:['active'],
+      is_active:['inActive'],
       status: ['unapproved']
     });
   }

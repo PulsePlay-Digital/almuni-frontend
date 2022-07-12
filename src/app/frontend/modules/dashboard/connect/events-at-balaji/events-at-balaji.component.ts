@@ -52,7 +52,8 @@ export class EventsAtBalajiComponent implements OnInit {
       dateFrom: ["", Validators.required],
       dateTo: ["", Validators.required],
       description: ["", Validators.required],
-    });
+    }, { validator: this.dateLessThan('dateFrom', 'dateTo') }
+    );
   }
 
   buildFacultyForm() {
@@ -84,7 +85,7 @@ export class EventsAtBalajiComponent implements OnInit {
         return {};
       } else {
         return {
-          dates: 'Date from should be less than Date to'
+          dates: 'From date should be less than To date'
         };
       }
     };

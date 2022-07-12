@@ -17,24 +17,28 @@
                         </form>
                     </div>
                 </div> -->
-                <div class="row start-up-background px-3 py-4 mt-3 mb-xl-5 mb-lg- mb-md-5 mb-sm-4 mb-3 justify-content-center align-items-center">
+                <div
+                    class="row start-up-background px-3 py-4 mt-3 mb-xl-5 mb-lg- mb-md-5 mb-sm-4 mb-3 justify-content-center align-items-center">
                     <div class="col-md-4 col-lg-3 col-xl-2 col-sm-12">
                         <img src="./assets/unsplash_Zz5LQe-VSMY.png" alt="splash img" class="comments">
                     </div>
                     <div class="col-md-8 col-lg-7 col-xl-8 col-sm-12">
                         <form [formGroup]="commentForm">
                             <input class="form-control form-control-sm 
-                            py-3" id="replyScroll" formControlName="body" type="text" placeholder="What's on your mind, Name" />
+                            py-3" id="replyScroll" formControlName="body" type="text"
+                                placeholder="What's on your mind, Name" />
                         </form>
                         <!-- <h4 class="startup-comment text-white pt-4">What's on your mind, Name?</h4>
                         <hr class="text-white"> -->
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12">
                         <div class="startup-post" (click)="onClickComment()" *ngIf="!isReply">
-                            <button class="startup-btn text-white border-0" [disabled]="commentForm.invalid">Post</button>
+                            <button class="startup-btn text-white border-0"
+                                [disabled]="commentForm.invalid">Post</button>
                         </div>
                         <div class="startup-post" (click)="replyOnComment()" *ngIf="isReply">
-                            <button class="startup-btn text-white border-0" [disabled]="commentForm.invalid">Post</button>
+                            <button class="startup-btn text-white border-0"
+                                [disabled]="commentForm.invalid">Post</button>
                         </div>
                     </div>
                 </div>
@@ -43,29 +47,32 @@
                         <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="comments">
                     </div> -->
                     <div class="col-md-12 comment-details">
-                        <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
+                        <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' "
+                            (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
                         <h4 class="startup-name">{{comment?.first_name}} {{comment?.last_name}}</h4>
                         <p class="startup-description">{{comment?.body}}
                             <br>
                             <span class="comment-time">{{comment?.created_at | date}}</span>
                         </p>
 
-                        <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i class="fa fa-heart"
-                                    aria-hidden="true"></i>
-                                {{comment?.like}}</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
+                        <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i
+                                    class="fa fa-heart" aria-hidden="true"></i>
+                                {{comment?.like}}</span><span class="user-reply px-4"
+                                (click)="reply(comment, 'replyScroll')">
                                 Reply </span>
                             <span> <i class="fa fa-comment"></i> Comment (0)</span>
                         </p>
-                        <div class="col-md-12 reply">
-                            <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
+                        <div class="col-md-12 reply ps-5 pt-3">
+                            <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' "
+                                (click)="viewProfile(comment)" alt="userPic" class="float-start comments">
                             <h4 class="startup-name">{{comment?.first_name}} {{comment?.last_name}}</h4>
                             <p class="startup-description">{{comment?.body}}
                                 <br>
                                 <span class="comment-time">{{comment?.created_at | date}}</span>
                             </p>
 
-                            <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i class="fa fa-heart"
-                                        aria-hidden="true"></i>
+                            <p class="startup-comment"> <span class="icon" (click)="likeUnlikeClub(comment)"><i
+                                        class="fa fa-heart" aria-hidden="true"></i>
                                     10</span><span class="user-reply px-4" (click)="reply(comment, 'replyScroll')">
                                     Reply </span>
                                 <span> <i class="fa fa-comment"></i> Comment (0)</span>
@@ -74,40 +81,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="comment comment-level-1" *ngFor="let comment of allComment; let i=index;">
-                    <img [src]="(comment?.profile_pic) ? imgPath + comment?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " alt="userPic">
-                    <div>
-                        <div class="comment-label">
-                            <span class="comment-name">{{comment?.first_name}} {{comment?.last_name}}</span>
-                            <span class="comment-time ps-2"> {{ comment?.created_at | dateAsAgo}}</span>
-                        </div>
-                        <div class="comment-content">
-                            {{comment?.body}}
-                        </div>
-
-                        <div class="comment-action">
-                            <span> <i class="fa fa-heart"></i> Like (0)</span>
-                            <span> <i class="fa fa-comment"></i> Comment (0)</span>
-                            <span class="replyBtn" (click)="replyOnComment(comment, 'replyScroll')"> <i class="fa fa-reply"></i>
-                                Reply</span>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="comment comment-level-2">
-                    <img src="./assets/users/profile-pic.png" alt="usersPic" />
-                    <div>
-                        <div class="comment-label">
-                            <span class="comment-name">Kris Oberlin🌙</span>
-                            <span class="comment-time"> - 5 days ago</span>
-                        </div>
-                        <div class="comment-content">
-                            Lorem Ipsum is simply dummy.
-                        </div>
-                        <div class="comment-action">
-                            <span> <i class="fa fa-heart"></i> Like (0)</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </ng-container>
