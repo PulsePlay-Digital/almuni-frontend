@@ -1,0 +1,13 @@
+.project-btn {
+    background: var(--btn-background);
+    border: 1px solid var(--btn-background);
+    color: var(--bs-white);
+    border-radius: var(--border-radius-2);
+    width: var(--width);
+    line-height: 2;
+  }
+  .project-btn:hover {
+    background: var(--bs-white);
+    color: var(--bs-background);
+  }
+

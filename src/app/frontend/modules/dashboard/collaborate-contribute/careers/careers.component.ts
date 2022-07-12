@@ -33,9 +33,7 @@ export class CareersComponent implements OnInit {
     let action: string = "count-jobs";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        if (res?.status == 200) {
-          this.allJobsCount = res?.data;
-        }
+        this.allJobsCount = res?.data;
       },
       (error) => {
         this.notify.notificationService.openFailureSnackBar(error);
@@ -47,9 +45,7 @@ export class CareersComponent implements OnInit {
     let action: string = "count-userJobs";
     await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
       (res: any) => {
-        if (res?.status == 200) {
-          this.allJobsByMe = res?.data;
-        }
+        this.allJobsByMe = res?.data;
       },
       (error) => {
         this.notify.notificationService.openFailureSnackBar(error);

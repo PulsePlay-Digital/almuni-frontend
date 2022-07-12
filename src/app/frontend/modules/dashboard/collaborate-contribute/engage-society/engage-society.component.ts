@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenInterceptor } from './../../../../core/token.interceptor';
-import { DataService } from './../../../../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { DataService } from "./../../../../services/data.service";
 
 @Component({
-  selector: 'app-engage-society',
-  templateUrl: './engage-society.component.html',
-  styleUrls: ['./engage-society.component.scss']
+  selector: "app-engage-society",
+  templateUrl: "./engage-society.component.html",
+  styleUrls: ["./engage-society.component.scss"],
 })
 export class EngageSocietyComponent implements OnInit {
   postedOpportunity: boolean = false;
@@ -19,9 +19,7 @@ export class EngageSocietyComponent implements OnInit {
     private dataService: DataService,
     private notify: TokenInterceptor
   ) {
-    this.currentUser = JSON?.parse(
-      localStorage?.getItem("currentUser") || ""
-    );
+    this.currentUser = JSON?.parse(localStorage?.getItem("currentUser") || "");
   }
 
   ngOnInit(): void {
@@ -37,7 +35,7 @@ export class EngageSocietyComponent implements OnInit {
 
   viewExpertise() {
     this.postedExpertise = true;
-    this.postedOpportunity = false
+    this.postedOpportunity = false;
   }
 
   async countAllExpertise() {
@@ -60,9 +58,7 @@ export class EngageSocietyComponent implements OnInit {
     let id: any = this.currentUser.id;
     await this.dataService.getDataById(action, id).subscribe(
       (res: any) => {
-        if (res?.status == 200) {
-          this.allOpportunity = res?.data;
-        }
+        this.allOpportunity = res?.data;
       },
       (error) => {
         this.notify.notificationService.openFailureSnackBar(error);
@@ -73,9 +69,7 @@ export class EngageSocietyComponent implements OnInit {
     let action: string = "count-admission";
     await this.dataService.getData(action).subscribe(
       (res: any) => {
-        if (res?.status == 200) {
-          this.availableEventCount = res?.data;
-        }
+        this.availableEventCount = res?.data;
       },
       (error) => {
         this.notify.notificationService.openFailureSnackBar(error);
