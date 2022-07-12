@@ -7,6 +7,7 @@ import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TokenInterceptor } from "./../../../core/token.interceptor";
+import * as moment from "moment";
 
 @Component({
   selector: "app-home",
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   homeBanner: any;
   alumni: any;
   loading: boolean = false;
-  imgPath = environment.imgUrl;
+  imgPath = environment?.imgUrl;
   allNews: any;
   allEvents: any;
   currentUser: any;
@@ -128,6 +129,7 @@ export class HomeComponent implements OnInit {
   successAlert: boolean | undefined;
   warningAlert: boolean | undefined;
   showAlert: any;
+  upcomingEvent: any;
   
   constructor(
     public router: Router,
@@ -258,6 +260,13 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (result: any) => {
           this.allEvents = result;
+          result?.filter((res: any) => {
+            let commingDate = res?.date;
+            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
+            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+              this.upcomingEvent = res;
+            }
+          })
           this.loading = false;
         },
         (error) => {
@@ -333,6 +342,11 @@ export class HomeComponent implements OnInit {
       : this.router.navigate(["/login"]);
   }
 
+  viewEventDetail(params: any) {
+    this.router.navigate((this.currentUser) ? ['/connect/event-detail'] : ['/login'], {
+      queryParams: params, skipLocationChange: true
+    });
+  }
   /**
    * Function to navigate on detail page
    * @param url 

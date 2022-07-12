@@ -48,7 +48,6 @@ export class SharedPassionByMeComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
-        console.log(result)
         this.passionData = result;
         this.loading = false;
       },

@@ -43,10 +43,9 @@ export class AtGlanceComponent implements OnInit {
       );
     }
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res)
-      if (res.tab == 'past') {
+      if (res?.tab == 'past') {
         this.selectedTabValue = 0;
-      } else if (res.tab == 'upcomming') {
+      } else if (res?.tab == 'upcomming') {
         this.selectedTabValue = 1;
       }
     })

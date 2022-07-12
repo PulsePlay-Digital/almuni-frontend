@@ -45,8 +45,10 @@
                 Type <span class="text-danger">*</span></label>
             <select class="form-select" aria-label="Default select example" formControlName="type">
                 <option value="" selected>Select Type</option>
-                <option value="Local Meet & Greet">Local Meet & Greet</option>
+                <option value="Alumni Driven Events">Alumni Driven Events</option>
                 <option value="Annual Reunion">Annual Reunion</option>
+                <option value="Industry/Professional">Industry/Professional</option>
+                <option value="Local Meet & Greet">Local Meet & Greet</option>
             </select>
             <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
                 *ngIf="(f.type.touched || submitted) && f.type.errors?.required">

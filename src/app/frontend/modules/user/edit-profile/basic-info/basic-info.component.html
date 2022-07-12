@@ -31,7 +31,7 @@
                     <label class=" form-label fw-bold">Institute <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="institute_id">
                         <option value="" selected>Choose your institute</option>
-                        <option [value]="institute.id" *ngFor="let institute of getInstitutes; let i=index;">
+                        <option [value]="institute?.id" *ngFor="let institute of getInstitutes; let i=index;">
                             {{institute.institute_name}}</option>
                     </select>
                     <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
@@ -43,7 +43,7 @@
                     <label class=" form-label fw-bold">Batch year <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="batchYear_id">
                         <option value="" selected>Choose your batch</option>
-                        <option [value]="batch.id" *ngFor="let batch of getBatch; let i=index;">{{batch.batch}}
+                        <option [value]="batch?.id" *ngFor="let batch of getBatch; let i=index;">{{batch.batch}}
                         </option>
                     </select>
                     <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
@@ -63,7 +63,7 @@
                     <label class=" form-label fw-bold">Gender <span class="label-danger">*</span></label>
                     <select class="form-select" formControlName="gender">
                         <option value="" selected>Select gender</option>
-                        <option *ngFor="let gen of gender; let i=index;" [value]="gen.label">{{ gen?.label }}
+                        <option *ngFor="let gen of gender; let i=index;" [value]="gen?.label">{{ gen?.label }}
                         </option>
                     </select>
                     <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
@@ -75,7 +75,7 @@
                     <label class=" form-label fw-bold">Marital status </label>
                     <select class="form-select" formControlName="marital_status">
                         <option value="" selected>Select marital status</option>
-                        <option *ngFor="let marital of maritalStatus; let i=index;" [value]="marital.status">{{
+                        <option *ngFor="let marital of maritalStatus; let i=index;" [value]="marital?.status">{{
                             marital?.status }}</option>
                     </select>
                 </div>
@@ -83,7 +83,7 @@
                     <label class=" form-label fw-bold">Blood group </label>
                     <select class="form-select" formControlName="blood_group">
                         <option value="" selected>Select blood group</option>
-                        <option *ngFor="let group of bloodGroup; let i=index;" [value]="group.group">{{ group?.group
+                        <option *ngFor="let group of bloodGroup; let i=index;" [value]="group?.group">{{ group?.group
                             }}
                         </option>
                     </select>
@@ -115,7 +115,7 @@
                             </div>
                             <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2 m-0"
                                 *ngIf="(f.mobile_number.touched || submitted) && f.mobile_number.errors?.maxlength">
-                                Maximum 10 number are allowed.
+                                Maximum 16 number are allowed.
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                     <label class="form-label fw-bold">Current country </label>
                     <select class="form-select" formControlName="country" (change)="changeCountry($event)">
                         <option value="" selected disabled>Select Country</option>
-                        <option *ngFor="let row of countries; let i=index;" [value]="row.name">{{row?.name}}
+                        <option *ngFor="let row of countries; let i=index;" [value]="row?.name">{{row?.name}}
                         </option>
                     </select>
                 </div>
@@ -222,7 +222,7 @@
                     <label class=" form-label fw-bold">Current region </label>
                     <select class="form-select" formControlName="current_region">
                         <option value="" selected disabled>Select region</option>
-                        <option *ngFor="let item of region; let i=index;" [value]="item.label">{{ item.label }}
+                        <option *ngFor="let item of region; let i=index;" [value]="item?.label">{{ item.label }}
                         </option>
                     </select>
                 </div>
@@ -266,7 +266,7 @@
                     <label class=" form-label fw-bold">Permanent country </label>
                     <select class="form-select" formControlName="permanent_country" (change)="changeCountry($event)">
                         <option value="" selected disabled>Select Country</option>
-                        <option *ngFor="let row of countries; let i=index;" [value]="row.name">{{row.name}}</option>
+                        <option *ngFor="let row of countries; let i=index;" [value]="row?.name">{{row.name}}</option>
                     </select>
                 </div>
             </div>

@@ -48,7 +48,6 @@ export class SharedJourneyByMeComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
-        console.log(result)
         this.alumniData = result;
         this.loading = false;
       },

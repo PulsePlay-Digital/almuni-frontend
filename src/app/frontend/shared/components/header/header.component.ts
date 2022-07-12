@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   /*** Logout */
   logout() {
     this.authService.logout();
-    location.assign("/");
+    location.assign("/home");
   }
 
   /**

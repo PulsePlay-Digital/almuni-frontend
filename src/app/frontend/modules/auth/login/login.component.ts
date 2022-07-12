@@ -91,7 +91,7 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           this.notify.notificationService.openErrorAlert(
-            error.error?.message
+            error?.error?.message
           );
           this.loading = false;
         }

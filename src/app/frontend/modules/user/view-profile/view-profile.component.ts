@@ -32,8 +32,7 @@ export class ViewProfileComponent implements OnInit {
       );
     }
     this.arouter.queryParams.subscribe((res: any) => {
-      console.log(res)
-      this.userId = res.id;
+      this.userId = res?.id;
     });
   }
 
@@ -49,13 +48,13 @@ export class ViewProfileComponent implements OnInit {
   }
 
   async onUploadImage(event: any) {
-    this.profilePic = event.target.files[0];
+    this.profilePic = event?.target?.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
       let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event?.target?.files[0]);
       reader.onload = (_event) => {
-        this.image = _event.target?.result;
+        this.image = _event?.target?.result;
       };
       this.action = {
         action: "profile-pic",
@@ -85,6 +84,8 @@ export class ViewProfileComponent implements OnInit {
       .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
       .subscribe((res: any) => {
         localStorage.setItem("currentUser", JSON.stringify(res?.data));
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       });
   }
 
@@ -94,7 +95,8 @@ export class ViewProfileComponent implements OnInit {
       .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
       .subscribe((res: any) => {
         this.profileData = res;
-        console.log(this.profileData)
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       });
   }
 }

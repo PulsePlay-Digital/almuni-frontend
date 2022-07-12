@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit {
     this.loading = true;
     let  action: string = 'all-gallery';
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.allGallery = res.data;
+      this.allGallery = res?.data;
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

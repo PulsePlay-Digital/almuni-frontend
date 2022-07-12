@@ -79,8 +79,5 @@ export class AlumniDirectoryComponent implements OnInit {
         id: id,
       }
     });
-    // this.router.navigate(["/community/alumni-details"], {
-    //   queryParams: { id: id },
-    // });
   }
 }

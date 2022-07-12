@@ -63,7 +63,7 @@ export class AlumniJourneyComponent implements OnInit {
       .getData(action)
       .pipe(
         map((res: any) => {
-          return res.Journey.filter((item: any) => {
+          return res?.Journey.filter((item: any) => {
             return item?.type == "journey";
           });
         })
