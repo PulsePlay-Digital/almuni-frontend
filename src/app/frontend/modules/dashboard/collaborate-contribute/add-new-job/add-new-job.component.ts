@@ -42,7 +42,8 @@ export class AddNewJobComponent implements OnInit {
  */
   buildForm() {
     this.addJobForm = this.fb.group({
-      id: [this.authorId],
+      id: [''],
+      user_id: [this.authorId],
       author: [this.author],
       title: ['', Validators.required],
       companyName: ['', Validators.required],

@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Config } from "./../../../../services/config";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
+import * as moment from "moment";
 
 @Component({
   selector: "app-add-expertise",
@@ -67,7 +68,8 @@ export class AddExpertiseComponent implements OnInit {
       dateFrom: ["", Validators.required],
       dateTo: ["", Validators.required],
       description: ["", Validators.required],
-    });
+    },
+    { validator: this.dateLessThan('dateFrom', 'dateTo') });
   }
 
   buildWorkshopForm() {
@@ -78,7 +80,8 @@ export class AddExpertiseComponent implements OnInit {
       dateFrom: ["", Validators.required],
       dateTo: ["", Validators.required],
       description: ["", Validators.required],
-    });
+    },
+    { validator: this.dateLessThan('dateFrom', 'dateTo') });
   }
   /**
    * Get all form controls
@@ -126,6 +129,29 @@ export class AddExpertiseComponent implements OnInit {
       this.buildFacultyForm();
       this.buildWorkshopForm();
     }
+  }
+
+  dateLessThan(from: string, to: string) {
+    return (group: FormGroup): { [key: string]: any } => {
+      if (group.controls[to].value === '') {
+        return {};
+      }
+      let f = group.controls[from];
+      let t = group.controls[to];
+      let startDate = moment(
+        moment(f.value).format('YYYY-MM-DD')
+      );
+      let endDate = moment(
+        moment(t.value).format('YYYY-MM-DD')
+      );
+      if (startDate.isSameOrBefore(endDate)) {
+        return {};
+      } else {
+        return {
+          dates: 'From date should be less than To date'
+        };
+      }
+    };
   }
 
   /**

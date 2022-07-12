@@ -62,6 +62,8 @@
                         *ngIf="(f.dateTo.touched || submitted) && f.dateTo.errors?.required">
                         To date is required.
                     </div>
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="workshopForm.hasError('dates') && workshopForm.get('dateTo').value !== ''">
+                        From date must be less than to date</div>
                 </div>
             </div>
             <div class="row">
@@ -105,6 +107,8 @@
                         *ngIf="(s.dateTo.touched || submitted) && s.dateTo.errors?.required">
                         To date is required.
                     </div>
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="facultyForm.hasError('dates') && facultyForm.get('dateTo').value !== ''">
+                        From date must be less than to date</div>
                 </div>
             </div>
             <div class="row">
