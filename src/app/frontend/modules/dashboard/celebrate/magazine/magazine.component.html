@@ -15,27 +15,36 @@
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="allMagazine?.length > 0">
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 my-2" *ngFor="let item of allMagazine | paginate: { itemsPerPage: 6, currentPage: p }">
-                        <div class="card text-center">
-                            <div class="card-body">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 my-xl-3 my-lg-3 my-md-3 my-sm-3 my-2"
+                        *ngFor="let item of allMagazine | paginate: { itemsPerPage: 6, currentPage: p }">
+                        <div class="card text-center border-0">
+                            <div class="card-body p-0">
                                 <ng-container *ngIf="item?.file != null">
-                                    <img [src]="imgPath + item?.file" class="img-fluid w-100 mb-3 magazineImg" alt="magazine img" />
+                                    <img [src]="imgPath + item?.file" class="img-fluid w-100 magazineImg"
+                                        alt="magazine img" />
                                 </ng-container>
                                 <ng-container *ngIf="item?.file == null">
-                                    <img class="img-fluid w-100 mb-3 noImg" alt="magazine img">
+                                    <img class="img-fluid w-100 noImg" alt="magazine img">
                                 </ng-container>
-                                <div class="row row justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-sm-start justify-content-center">
+                            </div>
+                            <div
+                                class="card-footer p-xl-4 p-lg-4 p-md-4 p-md-3 p-sm-3 p-3 bg-transparent border-0 text-center text-xl-start text-lg-start text-md-start text-sm-start text-start pb-xl-3 pb-lg-3 pb-md-3 pb-sm-3 pb-3">
+                                <div
+                                    class="row justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-sm-start justify-content-center">
                                     <div class="col-lg-5 col-sm-5 col-4 text-lg-start text-sm-start">
-                                        <a target="_blank" [href]="item?.link" class="btn btn-md view-btn lh-base mt-2 text-decoration-none text-uppercase rounded-0">Read</a>
+                                        <a target="_blank" [href]="item?.link"
+                                            class="btn btn-md view-btn lh-lg text-decoration-none text-uppercase rounded-0">Read</a>
                                     </div>
                                     <div class="col-lg-7 col-sm-7 col-7 text-lg-end text-sm-end">
-                                        <a target="_blank" href="https://corporatecitizen.in/" class="btn btn-md view-btn lh-base mt-2  text-decoration-none text-uppercase rounded-0">Subscribe</a>
+                                        <a target="_blank" href="https://corporatecitizen.in/"
+                                            class="btn btn-md view-btn lh-lg text-decoration-none text-uppercase rounded-0">Subscribe</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-4 mb-0" *ngIf="allMagazine?.length > 0">
+                    <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-4 mb-0"
+                        *ngIf="allMagazine?.length > 0">
                         <div class="col text-center">
                             <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </div>
