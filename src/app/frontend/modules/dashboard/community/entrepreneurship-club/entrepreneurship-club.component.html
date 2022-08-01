@@ -34,7 +34,7 @@
                             </p>
                             <p *ngIf="item?.email" class="mb-2"><strong>Email id:</strong> &nbsp;{{ item?.email}}</p>
                         </div>
-                        <div class="card-footer bg-transparent  text-center border-0">
+                        <div class="card-footer bg-transparent text-start border-0">
                             <a (click)="onReadData(item)" class="btn btn-lg btn-md btn-sm view-btn text-capitalize">
                                 <i class="fa fa-link"></i>&nbsp;Read More</a>
                         </div>
@@ -52,9 +52,13 @@
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
-        <div class="justify-content-center mb-xl-5 mb-lg-4 mb-md-4 mb-sm-4 mb-4">
-            <div class="col text-center">
-                <h6 class="start-club fs-5 fw-bold lh-base" routerLink="/community/venture-info"> Share your Business Venture / Start-Up Information </h6>
+        <div class="row">
+            <div class="col-12">
+                <h6 class="fs-5 mb-3">Share your Business Venture / Start-Up Information</h6>
+            </div>
+            <div class="col-xl-3 col-lg-3 mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
+                <a routerLink="/community/venture-info" class="btn btn-lg btn-md btn-sm view-btn text-capitalize enterBtn">
+                    Enter here</a>
             </div>
         </div>
     </div>

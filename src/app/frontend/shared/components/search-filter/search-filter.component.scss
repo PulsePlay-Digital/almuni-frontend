@@ -1,5 +1,5 @@
 .search-filter {
-  background: var(--form-bg);
+  background: var(--search-bg);
     form {
         .form-group{
             label {
@@ -8,8 +8,8 @@
         }
     }
     .search-btn{
-      background-color: var(--btn-background);
-      border: 1px solid var(--btn-background);
+      background-color: #0D0D0D;
+      border: 1px solid #585050;
       color: var(--bs-white);
       font-weight: var(--font-B-600);
       width: 40%;
@@ -17,7 +17,7 @@
     }
     .search-btn:hover {
       background: var(--bs-white);
-      color: var(--btn-background);
+      color: #333333;
     }
 }
 

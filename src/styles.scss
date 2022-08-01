@@ -288,7 +288,11 @@ img.ng-lazyloading {
     background-color: #d4edda;
     border-color: #c3e6cb;
 }
-
+@media screen and (max-width: 400px) and (min-width:300px) {
+    p{
+        text-align: justify;
+    }
+}
 @media screen and (max-width: 574px) and (min-width: 300px) {
     .gallary {
         .owl-nav {
