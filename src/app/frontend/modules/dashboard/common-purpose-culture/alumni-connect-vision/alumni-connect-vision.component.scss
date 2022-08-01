@@ -2,7 +2,7 @@
   #founderMsg {
     .founderVideo {
       width: 100%;
-      height: 380px;
+      height: 400px;
     }
   }
   .connectVision {
@@ -59,7 +59,43 @@
       cursor: pointer;
     }
   }
+  .bannerImg {
+    background: url("./../../../../../../assets/common-purpose/commonPurpose_banner.jpg");
+    background-repeat: var(--background-no-repeat);
+    height: 250px;
+    background-size: 100% 100%;
+    position: var(--position-relative);
+    .layer {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: var(--position-absolute);
+      top: 0;
+      left: 0;
+      width: var(--width);
+      height: var(--height-100);
+      display: var(--display-Flex);
+      align-items: var(--align-center);
+    }
+    h3 {
+      letter-spacing: var(--letter-space-1);
+      font-family: var(--family);
+      font-size: var(--font-S-32);
+    }
+  }
 }
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .commonPurposePage {
+    .bannerImg {
+      background-size: cover;
+      background-position-x: center;
+      height: 150px;
+      h3 {
+        font-size: var(--font-S-18);
+      }
+    }
+  }
+}
+
 @media (min-width: 300px) and (max-width: 400px) {
   .commonPurposePage {
     #founderMsg {
@@ -77,6 +113,7 @@
     }
   }
 }
+
 @media (min-width: 400px) and (max-width: 574px) {
   .commonPurposePage {
     #founderMsg {
@@ -94,6 +131,7 @@
     }
   }
 }
+
 @media (min-width: 575px) and (max-width: 767px) {
   .commonPurposePage {
     #founderMsg {
@@ -109,8 +147,15 @@
         }
       }
     }
+    .bannerImg {
+      height: 180px;
+      h3 {
+        font-size: var(--font-S-22);
+      }
+    }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .commonPurposePage {
     #founderMsg {
@@ -118,8 +163,15 @@
         height: 350px;
       }
     }
+    .bannerImg {
+      height: 200px;
+      h3 {
+        font-size: var(--font-S-26);
+      }
+    }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1100px) {
   .commonPurposePage {
     #founderMsg {
@@ -129,12 +181,20 @@
     }
   }
 }
+
 @media (min-width: 1100px) and (max-width: 1200px) {
   .commonPurposePage {
     #founderMsg {
       .founderVideo {
         height: 380px;
       }
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bannerImg {
+    h3 {
+      font-size: var(--font-S-30);
     }
   }
 }

@@ -1,0 +1,130 @@
+.t-comments-box {
+    padding: 0.5rem;
+    .start-up-background {
+        background-color: var(--form-bg);
+    }
+    .startup-btn {
+        width: 100%;
+        line-height: 48px;
+        background-color: #011898;
+    }
+    .seemore-btn {
+        color: #011898;
+    }
+    .comment-title {
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #263843;
+        border-bottom: 1px solid #c3ccd3;
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    img.comments {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    span.comment-time {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    p.startup-description {
+        padding-left: 56px;
+        white-space: pre-line;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+    }
+    p.startup-comment {
+        padding-left: 56px;
+    }
+    .comment-details {
+        border-bottom: 1px solid #ddd;
+    }
+    span.user-reply {
+        cursor: pointer;
+    }
+    .add-comment {
+        display: flex;
+        justify-content: center;
+        .comment-input {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            input {
+                height: 100%;
+                width: 100%;
+                padding-right: 2.5rem;
+                &::placeholder {
+                    color: #c3ccd3;
+                }
+            }
+            .comment-send {
+                font-size: 1.5rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                width: 35px;
+                height: 100%;
+                border-radius: 0.2rem;
+                color: #ffcc80;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                right: 0;
+                &:hover {
+                    color: #ff9800;
+                }
+            }
+        }
+    }
+    .comment {
+        display: flex;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        justify-content: center;
+        .comment-label {
+            line-height: 1;
+            .comment-name {
+                font-weight: 500;
+                font-size: 0.85rem;
+                color: #292929;
+            }
+            .comment-time {
+                font-weight: 100;
+                color: #768791;
+            }
+        }
+        .comment-content {
+            color: #768791;
+            margin-top: 0.1rem;
+        }
+        .comment-action {
+            color: #c3ccd3;
+            line-height: 1.2;
+            span {
+                margin-right: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+    .comment-level-2 {
+        margin-left: calc(50px + 1rem);
+    }
+    .comment-level-3 {
+        margin-left: calc((50px + 1rem) * 2);
+    }
+}
+
+.back {
+    background: var(--btn-background);
+    color: var(--bs-white);
+}

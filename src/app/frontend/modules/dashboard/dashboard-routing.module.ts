@@ -56,6 +56,10 @@ const routes: Routes = [
     path: '', 
     loadChildren: () => import('./common-purpose-culture/common-purpose-culture.module').then(m => m.CommonPurposeCultureModule)
   },
+  { 
+    path: '', 
+    loadChildren: () => import('./learning/learning.module').then(m => m.LearningModule)
+  },
   {
     path: 'transcript',
     component: TranscriptComponent

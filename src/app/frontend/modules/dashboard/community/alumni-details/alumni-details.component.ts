@@ -36,7 +36,6 @@ export class AlumniDetailsComponent implements OnInit {
     await this.dataService.getDataById(action, this.alumniId).subscribe((res: any) => {
       this.userDetail = res.data;
       this.loading = false;
-      console.log(this.userDetail)
     })
   }
 

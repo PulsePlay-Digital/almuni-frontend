@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { map, filter } from "rxjs/operators";
+import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
 
 @Component({
@@ -9,26 +10,46 @@ import { DataService } from "./../../../../services/data.service";
 })
 export class AlumniAchievementComponent implements OnInit {
   shareAchievement: boolean = false;
-  seeAchievement: boolean = true;
+  seeAchievement: boolean = false;
+  viewAchievement: boolean = true;
   title: string = "Post a Achievement";
   heading: string = "My Achievement";
   type: string = "achievement";
   alumniData: any;
+  allAchievementCount: number | undefined;
+  currentUser: any;
+  allUserAchievementCount: any;
 
-  constructor(public dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private notify: TokenInterceptor
+    ) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+  }
 
   ngOnInit(): void {
     this.getAllAchivement();
+    this.countAllUserAchievement();
   }
 
-  showViewShared() {
-    this.shareAchievement = !this.shareAchievement;
+  sharedAchievementByMe() {
+    this.shareAchievement = true;
     this.seeAchievement = false;
+    this.viewAchievement = false;
   }
 
-  showSeekDetail() {
-    this.seeAchievement = !this.seeAchievement;
+  seeAchievementByMe() {
     this.shareAchievement = false;
+    this.seeAchievement = true;
+    this.viewAchievement = false;
+  }
+
+  seeAllAchievement() {
+    this.shareAchievement = false;
+    this.seeAchievement = false;
+    this.viewAchievement = true;
   }
 
 /**
@@ -46,7 +67,22 @@ export class AlumniAchievementComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
+        this.allAchievementCount = result?.length;
         this.alumniData = result;
       });
+  }
+
+  async countAllUserAchievement() {
+    let action: string = "count-userAchievement";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.allUserAchievementCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
 }

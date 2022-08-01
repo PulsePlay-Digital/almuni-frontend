@@ -1,26 +1,51 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Config } from 'src/app/frontend/services/config';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { Config } from "./../../../../services/config";
+import { DataService } from "./../../../../services/data.service";
 
 @Component({
-  selector: 'app-mentorship',
-  templateUrl: './mentorship.component.html',
-  styleUrls: ['./mentorship.component.scss']
+  selector: "app-mentorship",
+  templateUrl: "./mentorship.component.html",
+  styleUrls: ["./mentorship.component.scss"],
 })
 export class MentorshipComponent implements OnInit {
   mentorForm: FormGroup | any;
   submitted: boolean = false;
   functionArea: any;
   industryFocus: any;
+  currentUser: any;
+  loading: boolean = false;
+  mentorId: any;
 
-  constructor(public fb: FormBuilder,
-    public config: Config) {
-    this.functionArea = this.config.functionArea;
-    this.industryFocus = this.config.industryFocus;
+  constructor(
+    public fb: FormBuilder,
+    private config: Config,
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) {
+    this.functionArea = this.config?.functionArea;
+    this.industryFocus = this.config?.industryFocus;
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.buildform();
+    this.loading = true;
+    let action :string = "all-profileUsers";
+    await this.dataService
+    .getDataById(action, this.currentUser?.id)
+    .subscribe((res: any) => {
+      this.mentorId = res?.Mentorship;
+      setTimeout(() => {
+        this.mentorForm.patchValue({
+          ...res?.Mentorship
+        });
+      }, 800);
+      this.loading = false;
+    });
   }
 
   /**
@@ -28,14 +53,16 @@ export class MentorshipComponent implements OnInit {
    */
   buildform() {
     this.mentorForm = this.fb.group({
-      willing_provide: ["", Validators.required],
+      id: [this.mentorId?.id],
+      user_id: [this.currentUser?.id],
+      Willing_to_provide_Mentorship: ["", Validators.required],
       add_skills: ["", Validators.required],
-      primary_area: [""],
-      secondary_area: [""],
-      other_area: [""],
-      primary_industry: [""],
-      secondary_industry: [""],
-      other_industry: [""],
+      primary_function_area: [""],
+      secondary_function_area: [""],
+      other_function_area: [""],
+      primary_industry_focus: [""],
+      secondary_industry_focus: [""],
+      other_industry_focus: [""],
     });
   }
 
@@ -46,7 +73,23 @@ export class MentorshipComponent implements OnInit {
     return this.mentorForm.controls;
   }
 
-  edit() {
+  async edit() {
     this.submitted = true;
+    if (this.mentorForm.invalid) {
+      return;
+    } else if (this.mentorForm.valid) {
+      this.loading = true;
+      let action: string = "update-mentorship";
+      await this.dataService.updateData(action, this.mentorForm.value).subscribe(
+        (res: any) => {
+          this.notify.notificationService.openSuccessSnackBar(res?.message);
+          this.loading = false;
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+          this.loading = false;
+        }
+      );
+    }
   }
 }

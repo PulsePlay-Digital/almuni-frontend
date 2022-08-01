@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogAlertBoxComponent } from '../shared/components/dialog-alert-box/dialog-alert-box.component';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NotificationService {
 
   constructor(
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   /**
@@ -18,7 +21,7 @@ export class NotificationService {
   openSuccessSnackBar(message: string, action: string = 'Ok') {
     this.snackBar.open(message, action, {
       duration: 3000,
-      panelClass: ['green-snackbar'],
+      panelClass: ['#419BD6'],
       verticalPosition: 'top',
       horizontalPosition: 'end'
     });
@@ -29,7 +32,7 @@ export class NotificationService {
    * @param message 
    * @param action 
    */
-  openFailureSnackBar(message: string, action: string = 'Close') {
+  openFailureSnackBar(message: string, action: string = 'Ok') {
     this.snackBar.open(message, action, {
       duration: 3000,
       panelClass: ['red-snackbar'],
@@ -44,6 +47,29 @@ export class NotificationService {
       panelClass: ['warning-snackbar'],
       verticalPosition: 'top',
       horizontalPosition: 'end'
+    });
+  }
+
+  openSuccessAlert(message: string, action: string = "Ok") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      panelClass: 'alert-success',
+      data: { message: message, action: action }
+    });
+  }
+  openWarningAlert(message: string, action: string = "Ok") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      panelClass: 'alert-warning',
+      data: { message: message, action: action },
+     
+    });
+  }
+  openErrorAlert(message: string, action: string = "Ok") {
+    const dialogRef = this.dialog.open(DialogAlertBoxComponent, {
+      width: '250px',
+      panelClass: 'alert-error',
+      data: { message: message, action: action }
     });
   }
 }

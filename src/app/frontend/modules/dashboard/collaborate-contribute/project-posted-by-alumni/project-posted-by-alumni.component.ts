@@ -9,10 +9,15 @@ import { DataService } from './../../../../services/data.service';
 export class ProjectPostedByAlumniComponent implements OnInit {
 specialProjectByAlumni: any;
 loading: boolean = false;
+  currentUser: any;
 
   constructor(
     public dataService: DataService
-    ) { }
+    ) { 
+      if (localStorage) {
+        this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+      }
+    }
 
   ngOnInit(): void {
     this.loading = true;
@@ -25,5 +30,16 @@ loading: boolean = false;
       this.specialProjectByAlumni = result.data;
       this.loading = false;
     })
+  }
+
+  async requestSent(item: any) {
+    let action: string = "create-projectRequest";
+    let params = {
+      user_id: this.currentUser?.id,
+      project_id: item?.id,
+      project_owner_id: item?.user_id
+    }
+    await this.dataService.postData(action, params).subscribe((res: any) => {
+    });
   }
 }

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+      <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
+        <h4 class="main-heading text-uppercase fw-bold mb-0">Special Project Posted by Me</h4>
+        <!-- <button class="btn btn-sm project-btn lh-base w-auto" (click)="back()">Back</button> -->
+      </div>
+    </div>
+    <div class="posted-job">
+      <div class="row mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
+        <app-loader *ngIf="loading"></app-loader>
+        <ng-container *ngIf="!loading">
+          <ng-container *ngIf="specialProject?.length > 0">
+            <div class="col-lg-4 col-md-6 col-sm-12 my-2" *ngFor="let item of specialProject">
+              <div class="card">
+                  <div class="card-title pt-2 px-3">
+                    <h5 class="fs-4 main-heading text-capitalize lh-sm mb-1">{{ item?.title }}</h5>
+                  </div>
+                <div class="card-body pt-1">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <p><b>Charity/Initiative Name</b>: &nbsp; {{ item?.charityName }} </p>
+                    </div>
+                    <div class="col-lg-12">
+                      <p><b>Monetary donations accepted</b>: &nbsp; {{ item?.monetaryDonation }}</p>
+                    </div>
+                    <div class="col-lg-12">
+                      <p><b>Time/effort donations invited</b>: &nbsp; {{ item?.timeDonation }} </p>
+                    </div>
+                    <div class="col-lg-12">
+                      <p><b>Contact person name</b>: &nbsp; {{ item?.contactName }} </p>
+                    </div>
+                    <div class="col-lg-12" *ngIf="item?.email != null">
+                        <p><b>Email id</b>: &nbsp; {{ item?.email }} </p>
+                      </div>
+                      <div class="col-lg-12" *ngIf="item?.link != null">
+                        <p><b>Social Media Link</b>: &nbsp; {{ item?.link }} </p>
+                      </div>
+                      <div class="col-lg-12">
+                        <p><b>Brief description about the project</b>: &nbsp;</p>
+                        <p>{{ item?.description | stripHtml }} </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="specialProject?.length == 0">
+            <div class="col-12 py-3 text-center fw-bold">
+              <p class="fs-5">No data found!</p>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>

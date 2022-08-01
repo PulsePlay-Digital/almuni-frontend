@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-loader *ngIf="loading"></app-loader>
+        <form [formGroup]="mentorForm" *ngIf="!loading">
+            <div class="row">
+                <div class="col-lg-9 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Willing to provide Mentorship to current batch students or Junior
+                        Alumni
+                        <span class="label-danger">*</span>
+                    </label>
+                    <select class="form-select" formControlName="Willing_to_provide_Mentorship">
+                        <option value="" disabled selected>Choose mentorship</option>
+                        <option disabled value="0">Yes</option>
+                        <option disabled value="1">No</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Add skills <span class="label-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="add_skills" placeholder="Enter last name"
+                        readonly>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Primary function area </label>
+                    <select class="form-select" formControlName="primary_function_area">
+                        <option disabled value="" selected>Select primary area</option>
+                        <option disabled *ngFor="let item of functionArea; let i=index;" [value]="item?.label">{{
+                            item?.label }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Secondary function area </label>
+                    <select class="form-select" formControlName="secondary_function_area">
+                        <option disabled value="" selected>Select secondary area</option>
+                        <option disabled *ngFor="let item of functionArea; let i=index;" [value]="item?.label">{{
+                            item?.label }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Other function area </label>
+                    <input type="text" class="form-control" formControlName="other_function_area"
+                        placeholder="Enter last name" readonly>
+                </div>
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Primary industry focus </label>
+                    <select class="form-select" formControlName="primary_industry_focus">
+                        <option disabled value="" selected>Select primary industry focus</option>
+                        <option disabled *ngFor="let item of industryFocus; let i=index;" [value]="item?.label">{{
+                            item?.label }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Secondary industry focus </label>
+                    <select class="form-select" formControlName="secondary_industry_focus">
+                        <option disabled value="" selected>Select secondary industry focus</option>
+                        <option disabled *ngFor="let item of industryFocus; let i=index;" [value]="item?.label">{{
+                            item?.label }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Other industry focus </label>
+                    <input type="text" class="form-control" formControlName="other_industry_focus"
+                        placeholder="Enter last name" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Mentee </label>
+                    <ul>
+                        <li>UserName: </li>
+                        <li>Email: </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" *ngIf="isCurrentUser">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2 text-center">
+                    <button type="button" routerLink="/edit-profile" class="btn btn-success">Edit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

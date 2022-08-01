@@ -9,11 +9,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProfileModule } from './edit-profile/edit-profile.module';
+import { ViewProfileModule } from './view-profile/view-profile.module';
 
 
 @NgModule({
   declarations: [
-    ViewProfileComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +23,7 @@ import { EditProfileModule } from './edit-profile/edit-profile.module';
     ReactiveFormsModule,
     RouterModule,
     EditProfileModule,
+    ViewProfileModule,
     MatExpansionModule,
     BsDatepickerModule.forRoot()
   ]

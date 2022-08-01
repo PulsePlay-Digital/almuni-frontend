@@ -1,22 +1,32 @@
 .transcript {
-  .table {
-    thead {
-      vertical-align: middle;
+    .table {
+        thead {
+            vertical-align: middle;
+        }
+        th,
+        td {
+            // height: 118px;
+        }
+        td {
+            padding: 20px 15px;
+        }
     }
-    th,
-    td {
-      height: 118px;
+    .btnDownload {
+        background: var(--form-bg);
+        border: 3px solid var(--form-bg);
+        font-size: 1rem !important;
     }
-    td {
-      padding: 20px 15px;
+    .btnDownload:hover {
+        background-color: var(--bs-white);
+        color: var(--form-bg);
     }
-  }
-  .btnDownload {
-    background: var(--form-bg);
-    border: 3px solid var(--form-bg);
-  }
-  .btnDownload:hover {
-      background-color: var(--bs-white);
-      color: var(--form-bg);
-  }
+}
+
+p {
+    margin: 0 0 12px;
+    text-align: justify;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.8rem;
 }

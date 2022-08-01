@@ -1,40 +1,41 @@
-<div class="row p-3">
+<div class="row">
     <div class="col-lg-12">
-        <form [formGroup]="mentorForm">
+        <app-loader *ngIf="loading"></app-loader>
+        <form [formGroup]="mentorForm" *ngIf="!loading">
             <div class="row">
-                <div class="col-lg-8 my-3">
+                <div class="col-lg-9 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Willing to provide Mentorship to current batch students or Junior Alumni
                         <span class="label-danger">*</span>
                     </label>
-                    <select class="form-select" formControlName="willing_provide">
-                        <option value="" selected disabled>Choose mentorship</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                    <select class="form-select" formControlName="Willing_to_provide_Mentorship">
+                        <option value="" selected>Choose mentorship</option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
                     </select>
-                    <div class="text-danger mt-2" *ngIf="(f.willing_provide.touched || submitted) && f.willing_provide.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.Willing_to_provide_Mentorship.touched || submitted) && f.Willing_to_provide_Mentorship.errors?.required">
                         Professional title is required.
                     </div>
                 </div>
-                <div class="col-lg-4 my-3">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Add skills <span class="label-danger">*</span></label>
                     <input type="text" class="form-control" formControlName="add_skills" placeholder="Enter last name">
-                    <div class="text-danger mt-2" *ngIf="(f.add_skills.touched || submitted) && f.add_skills.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2" *ngIf="(f.add_skills.touched || submitted) && f.add_skills.errors?.required">
                         Please add skills.
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Primary function area </label>
-                    <select class="form-select" formControlName="primary_area">
+                    <select class="form-select" formControlName="primary_function_area">
                         <option value="" selected>Select primary area</option>
                         <option *ngFor="let item of functionArea; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
                 </div>
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Secondary function area </label>
-                    <select class="form-select" formControlName="secondary_area">
+                    <select class="form-select" formControlName="secondary_function_area">
                         <option value="" selected>Select secondary area</option>
                         <option *ngFor="let item of functionArea; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
@@ -42,13 +43,13 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other function area </label>
-                    <input type="text" class="form-control" formControlName="other_area" placeholder="Enter last name">
+                    <input type="text" class="form-control" formControlName="other_function_area" placeholder="Enter last name">
                 </div>
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Primary industry focus </label>
-                    <select class="form-select" formControlName="primary_industry">
+                    <select class="form-select" formControlName="primary_industry_focus">
                         <option value="" selected>Select primary industry focus</option>
                         <option *ngFor="let item of industryFocus; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
@@ -56,22 +57,31 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Secondary industry focus </label>
-                    <select class="form-select" formControlName="secondary_industry">
+                    <select class="form-select" formControlName="secondary_industry_focus">
                         <option value="" selected>Select secondary industry focus</option>
                         <option *ngFor="let item of industryFocus; let i=index;" [value]="item?.label">{{ item?.label }}</option>
                     </select>
                 </div>
-                <div class="col-lg-6 my-3">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
                     <label class="form-label fw-bold">Other industry focus </label>
-                    <input type="text" class="form-control" formControlName="other_industry"
+                    <input type="text" class="form-control" formControlName="other_industry_focus"
                         placeholder="Enter last name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 my-xl-3 my-lg-3 my-2">
+                    <label class="form-label fw-bold">Mentee </label>
+                    <ul>
+                        <li>UserName: </li>
+                        <li>Email: </li>
+                    </ul>
                 </div>
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-lg-3 my-3 text-center">
+                <div class="col-lg-3 my-xl-3 my-lg-3 my-2 text-center">
                     <button type="button" (click)="edit()" [disabled]="!mentorForm.valid" class="btn btn-success">Update</button>
                 </div>
             </div>

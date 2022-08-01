@@ -18,7 +18,7 @@ export class NewsDetailComponent implements OnInit {
   loading: boolean = false;
   p: number = 1;
   destroy$: Subject<boolean> = new Subject<boolean>();
-  heading: string= "NEWS & UPDATES";
+  
   constructor(
     public dataService: DataService,
     public notify: TokenInterceptor,
@@ -26,7 +26,7 @@ export class NewsDetailComponent implements OnInit {
     ) {
       this.arouter.queryParams.subscribe((res: any) => {
         this.newsDetail = res;
-      })
+      });
      }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlumniDetailsComponent } from './alumni-details/alumni-details.component';
 import { AlumniDirectoryComponent } from './alumni-directory/alumni-directory.component';
 import { BusinessVentureInfoComponent } from './business-venture-info/business-venture-info.component';
+import { ClubDetailsComponent } from './club-details/club-details.component';
 import { CommunityPageComponent } from './community-page/community-page.component';
 import { CommunityComponent } from './community.component';
 import { EntrepreneurshipClubComponent } from './entrepreneurship-club/entrepreneurship-club.component';
@@ -54,9 +55,13 @@ const routes: Routes = [
         path: 'alumni-details', 
         component: AlumniDetailsComponent
       },
+      { 
+        path: 'club-details', 
+        component: ClubDetailsComponent
+      },
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '',
         pathMatch: 'full'
       },
     ],

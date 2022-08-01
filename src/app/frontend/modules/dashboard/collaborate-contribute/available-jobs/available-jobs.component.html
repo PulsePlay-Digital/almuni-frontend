@@ -1,58 +1,58 @@
 <div class="container">
-  <div class="available-job">
-    <div class="row mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
-      <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
-        <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
-        <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button>
-      </div>
-      <app-loader *ngIf="loading"></app-loader>
-      <ng-container *ngIf="!loading">
-        <ng-container *ngIf="allJobs?.length > 0">
-          <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2"
-            *ngFor="let item of allJobs | paginate: { itemsPerPage: 6, currentPage: p }">
-            <div class="job-section py-lg-4 py-md-4 py-sm-3 py-3 px-lg-4 px-md-4 px-sm-3 px-3">
-              <h6 class="job-heading fs-5 fw-bold text-capitalize mb-lg-4 mb-md-4 mb-sm-3 mb-3">{{ item?.title
-                }}
-              </h6>
-              <div class="row justify-content-lg-center">
-                <div class="col-12">
-                  <div class="content">
-                    <p><strong>Job ID</strong> : &nbsp;{{item?.id}}</p>
-                    <p><strong>Job Posted</strong> : &nbsp;{{ item?.author }}</p>
-                    <p><strong>Contact</strong> : &nbsp;{{ item?.contactNumber }}</p>
-                    <p><strong>Contact person</strong> : &nbsp;{{ item?.contactPerson }}</p>
-                    <p><strong>Email id</strong> : &nbsp;{{ item?.email }}</p>
-                    <p><strong>Location</strong> : &nbsp;{{ item?.location }}</p>
-                    <p><strong>City</strong> : &nbsp;{{ item?.city }}</p>
-                    <p><strong>Company Name</strong> : &nbsp;{{ item?.companyName }}</p>
-                    <p><strong>Salary</strong> : &nbsp;{{ item?.salary }}</p>
-                    <p><strong>Work experience</strong> : &nbsp;{{ item?.workExperience }}</p>
-                    <p><strong>Skill possessed</strong> : &nbsp;{{ item?.skillsRequired }}</p>
-                    <p><strong>Company website</strong> : &nbsp;<a href="{{item?.website }}">{{ item?.website }} </a>
-                    </p>
-                    <p><strong>Description of job</strong> : &nbsp;{{ item?.description | stripHtml }}</p>
-                  </div>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-md-4 col-xl-4 col-lg-5 pt-4 col-6">
-                    <a class="btn shadow project-btn" href="{{item?.website }}" target="_blank">Apply</a>
-                  </div>
-                </div>
-              </div>
+    <div class="available-job">
+        <div class="row">
+            <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
+                <h4 class="main-heading text-uppercase fw-bolder mb-0">Available Jobs</h4>
+                <!-- <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button> -->
             </div>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="allJobs?.length == 0">
-          <div class="col-12 py-3 text-center fw-bold">
-            <p class="fs-5">No data found!</p>
-          </div>
-        </ng-container>
-      </ng-container>
-      <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2" *ngIf="allJobs?.length > 0">
-        <div class="col text-center">
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <app-loader *ngIf="loading"></app-loader>
+            <ng-container *ngIf="!loading">
+                <ng-container *ngIf="allJobs?.length > 0">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2" *ngFor="let item of allJobs | paginate: { itemsPerPage: 6, currentPage: p }">
+                        <div class="job-section py-lg-4 py-md-4 py-sm-3 py-3 px-lg-4 px-md-4 px-sm-3 px-3">
+                            <h6 class="job-heading fs-5 fw-bold text-capitalize lg-base my-1">{{ item?.title }}
+                            </h6>
+                            <div class="row justify-content-lg-center">
+                                <div class="col-12">
+                                    <div class="content">
+                                        <p><strong>Job ID</strong> : &nbsp;{{item?.id}}</p>
+                                        <p><strong>Job Posted</strong> : &nbsp;{{ item?.author }}</p>
+                                        <p><strong>Contact</strong> : &nbsp;{{ item?.contactNumber }}</p>
+                                        <p><strong>Contact person</strong> : &nbsp;{{ item?.contactPerson }}</p>
+                                        <p><strong>Email id</strong> : &nbsp;{{ item?.email }}</p>
+                                        <p><strong>Location</strong> : &nbsp;{{ item?.location }}</p>
+                                        <p><strong>City</strong> : &nbsp;{{ item?.city }}</p>
+                                        <p><strong>Company Name</strong> : &nbsp;{{ item?.companyName }}</p>
+                                        <p><strong>Salary</strong> : &nbsp;{{ item?.salary }}</p>
+                                        <p><strong>Work experience</strong> : &nbsp;{{ item?.workExperience }}</p>
+                                        <p><strong>Skill possessed</strong> : &nbsp;{{ item?.skillsRequired }}</p>
+                                        <p><strong>Company website</strong> : &nbsp;<a href="{{item?.website }}">{{ item?.website }} </a>
+                                        </p>
+                                        <p><strong>Description of job</strong> : </p>&nbsp;
+                                        <div [innerHtml]="item?.description"></div>
+
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 col-xl-4 col-lg-5 pt-4 col-6">
+                                        <a class="btn shadow project-btn" href="{{item?.website }}" target="_blank">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="allJobs?.length == 0">
+                    <div class="col-12 py-3 text-center fw-bold">
+                        <p class="fs-5">No data found!</p>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-4 mt-sm-4 mt-3 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-3 mb-3" *ngIf="allJobs?.length > 0">
+                <div class="col text-center">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

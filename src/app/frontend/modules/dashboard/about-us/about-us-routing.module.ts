@@ -14,7 +14,7 @@ const routes: Routes = [
       data: { breadcrumb: {alias: 'Founder Chancellor'} },  },
       
       { path: 'balaji-social-society', component: BalajiSocialSocietyComponent,
-      data: { breadcrumb: {alias: 'Balaji Social Society'} },  },
+      data: { breadcrumb: {alias: 'SBUP'} },  },
       { path: 'leadership-team', component: ManagementTeamComponent,
       data: { breadcrumb: {alias: 'Management Team'} },  },
       {

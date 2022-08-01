@@ -1,3 +1,8 @@
+.news-content {
+  h6{
+    color: var(--bg-color);
+  }
+}
 .news-discription {
   a {
     color: var(--btn-black) !important;
@@ -12,20 +17,101 @@
   .title {
     cursor: pointer;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: normal;
   }
 }
 
-// NEWS & UPDATES END
-// RESPONSIVE CSS START
+.bannerImg {
+  background: url("./../../../../../../assets/celebrate/celebrate_banner.jpg");
+  background-repeat: var(--background-no-repeat);
+  height: 250px;
+  background-size: 100% 100%;
+  position: var(--position-relative);
+  .layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: var(--position-absolute);
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height-100);
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+  }
+  h3 {
+    letter-spacing: var(--letter-space-1);
+    font-family: var(--family);
+    font-size: var(--font-S-32);
+  }
+}
+
 @media (min-width: 300px) and (max-width: 575px) {
+  .bannerImg {
+    background-size: cover;
+    background-position-x: center;
+    height: 150px;
+    h3 {
+      font-size: var(--font-S-18);
+    }
+  }
   .news-content {
     .news-discription {
-      text-align: justify;
-      overflow-wrap: break-word;
+      p{
+        text-align: justify !important;
+      }
+      table {
+        tbody{
+           tr {
+            display: block !important;
+          }
+        }
+      }
     }
   }
 }
+
+@media (min-width: 574px) and (max-width: 767px) {
+  .bannerImg {
+    height: 180px;
+    h3 {
+      font-size: var(--font-S-22);
+    }
+  }
+  .news-content {
+    .news-discription {
+      p{
+        text-align: justify;
+        overflow-wrap: break-word;
+      }
+      table {
+        tbody{
+           tr {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .bannerImg {
+    height: 200px;
+    h3 {
+      font-size: var(--font-S-26);
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bannerImg {
+    h3 {
+      font-size: var(--font-S-30);
+    }
+  }
+}
+
+// NEWS & UPDATES END
+

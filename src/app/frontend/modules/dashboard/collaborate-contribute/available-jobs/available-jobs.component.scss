@@ -4,6 +4,7 @@
   }
   .job-heading {
     color: var(--btn-background);
+    height: 52px;
   }
   .card {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -19,6 +20,12 @@
   .content {
     height: 225px;
     overflow-y: auto;
+    p{
+      word-break: break-all;
+      a{
+        word-break: break-all;
+      }
+    }
   }
 }
 .project-btn {

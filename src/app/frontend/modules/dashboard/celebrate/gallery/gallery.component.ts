@@ -8,7 +8,6 @@ import { DataService } from "./../../../../services/data.service";
   styleUrls: ["./gallery.component.scss"],
 })
 export class GalleryComponent implements OnInit {
-  heading: string = "CLASS WISE PICTURE";
   loading:boolean = false;
   allGallery: any;
   constructor(
@@ -24,7 +23,7 @@ export class GalleryComponent implements OnInit {
     this.loading = true;
     let  action: string = 'all-gallery';
     await this.dataService.getData(action).subscribe((res: any) => {
-      this.allGallery = res.data;
+      this.allGallery = res?.data;
       this.loading = false;
     }, error => {
       this.notify.notificationService.openFailureSnackBar(error);

@@ -1,145 +1,149 @@
 <div class="container">
     <div class="mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-4">
-        <div class="row">
+        <div class="row m-0">
             <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3">
                 <h4 class="main-heading text-uppercase fw-bolder mb-0">Special Project</h4>
-                <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button>
+                <!-- <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button> -->
             </div>
         </div>
-        <div class="special-project p-3">
-            <form class="example-form" [formGroup]="editSpecialForm">
-                <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Special Project ID
-                            :</label>
-                        <input type="text" formControlName="id" [(ngModel)]="projectId" readonly
-                            class="form-control py-2">
-                    </div>
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name :</label>
-                        <input type="text" formControlName="author" [(ngModel)]="author" readonly
-                            class="form-control py-2">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Project Name :</label>
-                        <input type="text" formControlName="title" placeholder="Enter Project name"
-                            class="form-control py-2">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
-                            Project name is required.
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Charity/Initiative Name
-                            :</label>
-                        <input type="text" class="form-control py-2" formControlName="charityName"
-                            placeholder="Enter Charity/Initiative name">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.charityName.touched || submitted) && f.charityName.errors?.required">
-                            Charity/Initiative name is required.
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
-                        <div class="form-group">
-                            <label class="mr-3 form-label col-12 fw-bold" for="inputRadio">Monetary donations accepted
-                                :</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" formControlName="monetaryDonation" type="radio"
-                                    name="monetaryDonation" id="monetary" value="true">
-                                <label class="form-check-label" for="monetary">Yes</label>
+        <div class="row m-0">
+            <div class="col-12">
+                <div class="special-project p-3">
+                    <form class="example-form" [formGroup]="editSpecialForm">
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Special Project ID
+                                </label>
+                                <input type="text" formControlName="id" [(ngModel)]="projectId" readonly
+                                    class="form-control py-2">
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" formControlName="monetaryDonation" type="radio"
-                                    name="monetaryDonation" id="monetary1" value="false">
-                                <label class="form-check-label" for="monetary1">No</label>
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name </label>
+                                <input type="text" formControlName="author" [(ngModel)]="author" readonly
+                                    class="form-control py-2">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6">
-                        <div class="form-group">
-                            <label class="mr-3 form-label col-12 fw-bold" for="inputRadio">Time/effort donations invited
-                                :</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" formControlName="timeDonation" type="radio"
-                                    name="timeDonation" id="donation" value="true">
-                                <label class="form-check-label" for="donation">Yes</label>
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Project Name <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" formControlName="title" placeholder="Enter Project name"
+                                    class="form-control py-2">
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                    *ngIf="(f.title.touched || submitted) && f.title.errors?.required">
+                                    Project name is required.
+                                </div>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" formControlName="timeDonation" type="radio"
-                                    name="timeDonation" id="donation1" value="false">
-                                <label class="form-check-label" for="donation1">No</label>
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Charity / Initiative
+                                    Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control py-2" formControlName="charityName"
+                                    placeholder="Enter Charity/Initiative name">
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                    *ngIf="(f.charityName.touched || submitted) && f.charityName.errors?.required">
+                                    Charity/Initiative name is required.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Contact Person name
-                            :</label>
-                        <input type="text" formControlName="contactName" placeholder="Enter Contact Person name"
-                            class="form-control py-2">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.contactName.touched || submitted) && f.contactName.errors?.required">
-                            Contact person name is required.
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 col-md-6">
+                                <div class="form-group">
+                                    <label class="mr-3 form-label col-12 fw-bold" for="inputRadio">Monetary donations
+                                        accepted
+                                    </label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" formControlName="monetaryDonation" type="radio"
+                                            name="monetaryDonation" id="monetary" value="true">
+                                        <label class="form-check-label" for="monetary">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" formControlName="monetaryDonation" type="radio"
+                                            name="monetaryDonation" id="monetary1" value="false">
+                                        <label class="form-check-label" for="monetary1">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-10 col-md-6">
+                                <div class="form-group">
+                                    <label class="mr-3 form-label col-12 fw-bold" for="inputRadio">Time / effort donations
+                                        invited
+                                    </label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" formControlName="timeDonation" type="radio"
+                                            name="timeDonation" id="donation" value="true">
+                                        <label class="form-check-label" for="donation">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" formControlName="timeDonation" type="radio"
+                                            name="timeDonation" id="donation1" value="false">
+                                        <label class="form-check-label" for="donation1">No</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Contact mobile numbe
-                            :</label>
-                        <input type="text" class="form-control py-2" formControlName="mobileNumber"
-                            placeholder="Enter contact number">
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.mobileNumber.touched || submitted) && f.mobileNumber.errors?.required">
-                            Contact number is required.
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Contact Person
+                                    name
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" formControlName="contactName" placeholder="Enter Contact Person name"
+                                    class="form-control py-2">
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                    *ngIf="(f.contactName.touched || submitted) && f.contactName.errors?.required">
+                                    Contact person name is required.
+                                </div>
+                            </div>
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Contact mobile
+                                    number
+                                </label>
+                                <input type="text" class="form-control py-2" appNumbersOnly formControlName="mobileNumber"
+                                    placeholder="Enter contact number">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Email Id :</label>
-                        <input type="email" formControlName="email" class="form-control py-2" id="formGroupEmail"
-                            placeholder="Enter Email" />
-                        <div class="text-danger mt-2"
-                            *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                            Email is required.
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Email Id </label>
+                                <input type="email" formControlName="email" class="form-control py-2"
+                                    id="formGroupEmail" placeholder="Enter Email" />
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                    *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                    Email is required.
+                                </div>
+                                <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                    *ngIf="(f.email.touched || submitted) && f.email.errors?.pattern">
+                                    Email format is incorrect.
+                                </div>
+                            </div>
+                            <div class="col-sm-10 col-md-6">
+                                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Social Link
+                                </label>
+                                <input type="text" formControlName="link" class="form-control py-2"
+                                    id="formGroupSocialLink" placeholder="Enter Social Link" />
+                            </div>
                         </div>
-                        <div class="text-danger mt-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.pattern">
-                            Email format is incorrect.
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6">
-                        <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Social Link :</label>
-                        <input type="text" formControlName="link" class="form-control py-2" id="formGroupSocialLink"
-                            placeholder="Enter Social Link" />
-                        <div class="text-danger mt-2" *ngIf="(f.link.touched || submitted) && f.link.errors?.required">
-                            Link is required.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Brief description about the
-                        project
-                        :</label>
-                    <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
-                    <div class="text-danger mt-2"
-                        *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
-                        Description is required.
-                    </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label fw-bold">Brief description about
+                                the
+                                project <span class="text-danger">*</span></label>
+                            <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
+                            <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                                *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                                Description is required.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn project-btn btn-md lh-lg w-auto" (click)="submit()"
+                                    [disabled]="!editSpecialForm.valid">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <button class="btn project-btn btn-md lh-lg w-auto" (click)="submit()"
-                            [disabled]="!editSpecialForm.valid">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

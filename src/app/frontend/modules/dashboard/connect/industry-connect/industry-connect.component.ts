@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import * as moment from "moment";
-import { map } from "rxjs/operators";
 import { environment } from "./../../../../../../environments/environment";
 import { TokenInterceptor } from "./../../../../core/token.interceptor";
 import { DataService } from "./../../../../services/data.service";
@@ -38,8 +36,7 @@ export class IndustryConnectComponent implements OnInit {
     this.buildForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
-    let mname = this.currentUser?.middle_name;
-    this.author = fname + (mname == null ? "" : " " + mname) + " " + lname;
+    this.author = fname + " " + lname;
   }
 
   /**
@@ -49,8 +46,8 @@ export class IndustryConnectComponent implements OnInit {
     this.industryForm = this.fb.group({
       author: [""],
       title: ["", Validators.required],
-      venue: ["", Validators.required],
-      description: ["", Validators.required],
+      venue: [""],
+      description: [""],
       date: ["", Validators.required],
       time: [""],
       eventHost: [""],
@@ -70,6 +67,7 @@ export class IndustryConnectComponent implements OnInit {
       emailSubmittedBy: [""],
       companiesParticipating: [""],
       category: ["alumni"],
+      status: ['unapproved']
     });
   }
 
@@ -136,6 +134,7 @@ export class IndustryConnectComponent implements OnInit {
         (res: any) => {
           if (res?.status == 200) {
             this.notify.notificationService.openSuccessSnackBar(res?.message);
+            location.reload();
           }
         },
         (error) => {

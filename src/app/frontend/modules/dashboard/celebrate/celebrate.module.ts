@@ -16,10 +16,16 @@ import { SharedModule } from './../../../shared/shared.module';
 import { NewsUpdatesComponent } from './news-updates/news-updates.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ViewJourneyDetailComponent } from './shared-alumni/view-journey-detail/view-journey-detail.component';
+import { ViewJourneyDetailComponent } from './view-journey-detail/view-journey-detail.component';
 import { NewsDetailComponent } from './news-updates/news-detail/news-detail.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { FilterTextPipe } from 'src/app/frontend/shared/pipes/filter-text.pipe';
+import { SharedJourneyByMeComponent } from './shared-journey-by-me/shared-journey-by-me.component';
+import { SharedAchievementByMeComponent } from './shared-achievement-by-me/shared-achievement-by-me.component';
+import { SharedPassionByMeComponent } from './shared-passion-by-me/shared-passion-by-me.component';
+import { GetFeaturedComponent } from './get-featured/get-featured.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 
 @NgModule({
@@ -35,7 +41,11 @@ import { MatIconModule } from '@angular/material/icon';
     MagazineComponent,
     NewsUpdatesComponent,
     ViewJourneyDetailComponent,
-    NewsDetailComponent
+    NewsDetailComponent,
+    SharedJourneyByMeComponent,
+    SharedAchievementByMeComponent,
+    SharedPassionByMeComponent,
+    GetFeaturedComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +57,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatIconModule,
     MatListModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxStarRatingModule
   ]
 })
 export class CelebrateModule { }

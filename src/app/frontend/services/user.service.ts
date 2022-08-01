@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from './../../../environments/environment';
 
@@ -10,6 +10,7 @@ import { environment } from './../../../environments/environment';
 export class UserService {
   url: any;
   token: any;
+  public filteredData = new Subject<any>();
 
   constructor(
     public http: HttpClient
@@ -25,7 +26,7 @@ export class UserService {
       // Server-side errors
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    // window.alert(errorMessage);
     return throwError(errorMessage);
   }
   /**
@@ -55,5 +56,9 @@ export class UserService {
    */
     public filterUsers(data: any) {
       return this.http.post(`${this.url}/filter`, data);
+    }
+    
+    public sendFilteredData() {
+      this.filteredData.next();
     }
 }

@@ -1,10 +1,20 @@
-<app-users-banner [heading]="heading"></app-users-banner>
+<div class="bannerImg">
+    <div class="layer">
+        <div class="container">
+            <div class="row m-0 justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <h3 class="text-white fw-bold mb-0 lh-sm text-uppercase">SRI BALAJI UNIVERSITY ALUMNI CLUBS - SOCIAL CHANNELS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- SOCIAL CONATINER -->
 <div class="container my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
-    <div class="row">
-        <div class="col-lg-8 col-md-12 ">
+    <div class="row m-0">
+        <div class="col-lg-8 col-md-12">
             <app-loader *ngIf="loading"></app-loader>
-            <ul class="social-channels" *ngIf="!loading">
+            <ul class="social-channels p-0" *ngIf="!loading">
                 <ng-container *ngIf="socialData?.length > 0">
                     <li class="social-links fs-5" *ngFor="let social of socialData">
                         <a href="{{ social?.link }}" class="text-decoration-none" target="_blank">{{ social?.title }}</a>

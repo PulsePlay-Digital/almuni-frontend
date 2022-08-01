@@ -17,10 +17,11 @@ export class SharedAlumniComponent implements OnInit {
   loading: boolean = false;
   imgPath = environment.imgUrl;
   sharedData: any = [];
-
+  nameSearched: any;
+  
   constructor(
-    public dataService: DataService,
-    public router: Router
+    private dataService: DataService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +34,6 @@ export class SharedAlumniComponent implements OnInit {
   }
 
   viewDetail(params: any) {
-    this.router.navigate(['/celebrate/journey-detail'], { queryParams: { id: params, type: this.heading } });
+    this.router.navigate(['/celebrate/detail-page'], { queryParams: { id: params, type: this.heading } });
   }
 }

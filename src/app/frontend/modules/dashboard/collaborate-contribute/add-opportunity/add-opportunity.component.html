@@ -1,106 +1,240 @@
 <div class="container">
-  <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3 ">
-    <h4 class="main-heading text-uppercase fw-bolder mb-0">Add Opportunity</h4>
-    <button class="btn btn-sm project-btn w-auto" (click)="back()">Back</button>
+  <div class="row m-0">
+    <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-4 my-sm-3 my-3 ">
+      <h4 class="main-heading text-uppercase fw-bolder mb-0">Add Opportunity</h4>
+    </div>
   </div>
-  <div class="opportunity p-xl-4 p-lg-4 p-md-4 p-sm-3 p-3 mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
-    <form class="example-form" [formGroup]="addExpertiseForm">
-      <div class="mb-3 row">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Job Id :</label>
-          <input type="text" formControlName="author" [(ngModel)]="author" readonly class="form-control">
+  <div class="row m-0">
+    <div class="col-12">
+      <div class="opportunity p-xl-4 p-lg-4 p-md-4 p-sm-3 p-3 mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
+        <div class="mb-3 row">
+          <div class="col-sm-12 col-md-6">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Name :</label>
+            <input type="text" [(ngModel)]="author" class="form-control" readonly>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0" for="inputAddress2">Select list
+              :</label>
+            <select class="form-control form-select" (change)="changeType($event)">
+              <option value=" " selected>Select one</option>
+              <option value="internship">Share Internship opportunities</option>
+              <option value="campusPlacement">Share Campus Placement Opportunities</option>
+              <option value="corporate">Share Corporate Interface Program</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="mb-3 row">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0" for="inputAddress2">Select list
-            :</label>
-          <select class="form-control" formControlName="type" (change)="changeType($event)">
-            <option value="" selected disabled hidden>Select one</option>
-            <option value="internship">Share Internship opportunities</option>
-            <option value="campusPlacement">Share Campus Placement Opportunities</option>
-            <option value="corporate">Share Corporate Interface Program</option>
-          </select>
-        </div>
-      </div>
-      <div class="mb-3 row" *ngIf="internshipFields">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions for Internship
-            :</label>
-          <input type="number" formControlName="positionsForInternship" class="form-control"
-            placeholder="Enter number of positions here">
-        </div>
-      </div>
-      <div class="mb-3 row" *ngIf="placementFields">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions looking to Hire
-            :</label>
-          <input type="number" formControlName="positionsLookingToHire" class="form-control"
-            placeholder="Enter number of positions looking to hire">
-        </div>
-      </div>
+        <ng-container *ngIf="internshipFields">
+          <form class="example-form" [formGroup]="addInternalshipForm">
+            <div class="mb-3 row">
+              <div class="col-sm-12 col-md-6">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions for Internship
+                  : <span class="text-danger">*</span></label>
+                <input type="text" appNumbersOnly formControlName="positionsForInternship" class="form-control"
+                  placeholder="Enter number of positions here">
+                <div class="invalidText fw-bold mt-2 alert alert-danger p-2"
+                  *ngIf="(f.positionsForInternship.touched || submitted) && f.positionsForInternship.errors?.required">
+                  Number of positions is required.
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0"> Specialization : <span
+                    class="text-danger">*</span></label>
+                <input type="text" formControlName="specialization" class="form-control"
+                  placeholder="Enter specialization here">
+                <div class="invalidText fw-bold mt-2 alert alert-danger p-2"
+                  *ngIf="(f.specialization.touched || submitted) && f.specialization.errors?.required">
+                  Specialization is required.
+                </div>
+              </div>
+            </div>
 
-      <div class="mb-3 row" *ngIf="internshipFields">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0"> Specialization :</label>
-          <input type="text" formControlName="specialization" class="form-control"
-            placeholder="Enter specialization here">
-        </div>
-      </div>
-      <div class="row mb-3" *ngIf="internshipFields">
-        <div class="form-group">
-          <label class="me-3 form-label fw-bold" for="inputRadio">Stipend Paid : </label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary"
-              value="true">
-            <label class="form-check-label" for="monetary">Yes</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary1"
-              value="false">
-            <label class="form-check-label" for="monetary1">No</label>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-3" *ngIf="placementFields">
-        <div class="form-group">
-          <label class="me-3 form-label fw-bold" for="inputRadio">Hiring Experienced Professionals Only : </label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
-              name="hiringExperienceProf" id="profession" value="true">
-            <label class="form-check-label" for="profession">Yes</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
-              name="hiringExperienceProf" id="profession1" value="false">
-            <label class="form-check-label" for="profession1">No</label>
-          </div>
-        </div>
-      </div>
+            <div class="row mb-3">
+              <div class="form-group">
+                <label class="me-3 form-label fw-bold" for="inputRadio">Stipend Paid : </label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary"
+                    value="true">
+                  <label class="form-check-label" for="monetary">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary1"
+                    value="false">
+                  <label class="form-check-label" for="monetary1">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-4 text-center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button class="btn btn-md project-btn me-2" (click)="addInternship()"
+                    [disabled]="!addInternalshipForm.valid">
+                    Submit
+                  </button>
+                  <button class="btn btn-md project-btn" (click)="navigateBack()">Back</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ng-container>
+        <ng-container *ngIf="placementFields">
+          <form class="example-form" [formGroup]="addPlacementForm">
+            <div class="mb-3 row">
+              <div class="col-sm-12 col-md-6">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions looking to Hire
+                  : <span class="text-danger">*</span></label>
+                <input type="number" formControlName="positionsLookingToHire" class="form-control"
+                  placeholder="Enter number of positions looking to hire">
+                <div class="invalidText fw-bold mt-2 alert alert-danger p-2"
+                  *ngIf="(p.positionsLookingToHire.touched || submitted) && p.positionsLookingToHire.errors?.required">
+                  Number of positions is required.
+                </div>
+              </div>
+              <div class="col-sm-10 col-md-6">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Package Offer :</label>
+                <input type="text" formControlName="packageOffer" class="form-control"
+                  placeholder="Enter package offer here">
+              </div>
+            </div>
 
-      <div class="mb-3 row" *ngIf="placementFields">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Package Offer :</label>
-          <input type="text" formControlName="packageOffer" class="form-control" placeholder="Enter package offer here">
-        </div>
-      </div>
-      <div class="mb-3 row" *ngIf="placementFields">
-        <div class="col-sm-10 col-md-12">
-          <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Description :</label>
-          <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
-        </div>
-      </div>
+            <div class="row mb-3">
+              <div class="col-sm-12 col-lg-6 align-self-center">
+                <div class="form-group">
+                  <label class="me-3 form-label fw-bold" for="inputRadio">Hiring Experienced Professionals Only :
+                  </label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
+                      name="hiringExperienceProf" id="profession" value="true">
+                    <label class="form-check-label" for="profession">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
+                      name="hiringExperienceProf" id="profession1" value="false">
+                    <label class="form-check-label" for="profession1">No</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0"> Specialization :<span
+                  class="text-danger">*</span></label>
+                <input type="text" formControlName="specialization" class="form-control"
+                  placeholder="Enter specialization here">
+                  <div class="invalidText fw-bold mt-2 alert alert-danger p-2"
+                  *ngIf="(p.specialization.touched || submitted) && p.specialization.errors?.required">
+                    Specialization is required.
+                </div>
+              </div>
+            </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-4 text-center">
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="btn btn-md project-btn me-2" (click)="addExpertise()" [disabled]="!addExpertiseForm.valid">
-              Submit
-            </button>
-            <button class="btn btn-md project-btn" (click)="navigateBack()">Back</button>
+            <div class="mb-3 row">
+              <div class="col-sm-10 col-md-12">
+                <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Description :<span
+                    class="text-danger">*</span></label>
+                <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
+                <div class="invalidText fw-bold mt-2 alert alert-danger p-2"
+                  *ngIf="(p.description.touched || submitted) && p.description.errors?.required">
+                  Description is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-4 text-center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button class="btn btn-md project-btn me-2" (click)="addPlacement()"
+                    [disabled]="!addPlacementForm.valid">
+                    Submit
+                  </button>
+                  <button class="btn btn-md project-btn" (click)="navigateBack()">Back</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ng-container>
+        <ng-container *ngIf="corporateField">
+          <form class="example-form" [formGroup]="addCorporateForm">
+          <!-- <div class="mb-3 row" *ngIf="internshipFields">
+            <div class="col-sm-12 col-md-12">
+              <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions for Internship
+                :</label>
+              <input type="number" formControlName="positionsForInternship" class="form-control"
+                placeholder="Enter number of positions here">
+            </div>
           </div>
-        </div>
+          <div class="mb-3 row" *ngIf="placementFields">
+            <div class="col-sm-12 col-md-12">
+              <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">No. of positions looking to Hire
+                :</label>
+              <input type="number" formControlName="positionsLookingToHire" class="form-control"
+                placeholder="Enter number of positions looking to hire">
+            </div>
+          </div>
+
+          <div class="mb-3 row" *ngIf="internshipFields">
+            <div class="col-sm-12 col-md-12">
+              <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0"> Specialization :</label>
+              <input type="text" formControlName="specialization" class="form-control"
+                placeholder="Enter specialization here">
+            </div>
+          </div>
+          <div class="row mb-3" *ngIf="internshipFields">
+            <div class="form-group">
+              <label class="me-3 form-label fw-bold" for="inputRadio">Stipend Paid : </label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary"
+                  value="true">
+                <label class="form-check-label" for="monetary">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="stipend" type="radio" name="stipend" id="monetary1"
+                  value="false">
+                <label class="form-check-label" for="monetary1">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3" *ngIf="placementFields">
+            <div class="form-group">
+              <label class="me-3 form-label fw-bold" for="inputRadio">Hiring Experienced Professionals Only : </label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
+                  name="hiringExperienceProf" id="profession" value="true">
+                <label class="form-check-label" for="profession">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="hiringExperienceProf"
+                  name="hiringExperienceProf" id="profession1" value="false">
+                <label class="form-check-label" for="profession1">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3 row" *ngIf="placementFields">
+            <div class="col-sm-10 col-md-12">
+              <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Package Offer :</label>
+              <input type="text" formControlName="packageOffer" class="form-control"
+                placeholder="Enter package offer here">
+            </div>
+          </div>
+          <div class="mb-3 row" *ngIf="placementFields">
+            <div class="col-sm-10 col-md-12">
+              <label class="col-form-label fw-bold pr-lg-0 pr-md-0 pr-xl-0 pr-sm-0">Description :</label>
+              <ckeditor formControlName="description" placeholder="Enter Description"></ckeditor>
+            </div>
+          </div> -->
+
+          <div class="row justify-content-center">
+            <div class="col-lg-4 text-center">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="btn btn-md project-btn me-2" (click)="addCorporate()"
+                  [disabled]="!addCorporateForm.valid">
+                  Submit
+                </button>
+                <button class="btn btn-md project-btn" (click)="navigateBack()">Back</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        </ng-container>
       </div>
-    </form>
+    </div>
   </div>
 </div>

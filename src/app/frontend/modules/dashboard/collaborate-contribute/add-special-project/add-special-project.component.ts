@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Config } from 'src/app/frontend/services/config';
 import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
@@ -19,7 +20,8 @@ export class AddSpecialProjectComponent implements OnInit {
   constructor( public fb: FormBuilder,
     public dataService: DataService,
     public notify: TokenInterceptor,
-    public config: Config
+    public config: Config,
+    public router: Router
     ) {
       if (localStorage) {
         this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
@@ -37,7 +39,8 @@ export class AddSpecialProjectComponent implements OnInit {
 
   buildSpecialForm() {
     this.editSpecialForm = this.fb.group({
-      id: [this.projectId],
+      id: [''],
+      user_id: [this.projectId],
       author: [this.author],
       title: ['', Validators.required],
       charityName: ['', Validators.required],
@@ -45,11 +48,12 @@ export class AddSpecialProjectComponent implements OnInit {
       timeDonation: [false],
       contactName: ['', Validators.required],
       code: [''],
-      mobileNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
-      link: ['', Validators.required],
+      mobileNumber: [''],
+      email: ['', [Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
+      link: [''],
       description: ['', Validators.required],
-      is_active:['active']
+      is_active:['inActive'],
+      status: ['unapproved']
     });
   }
 
@@ -72,6 +76,7 @@ export class AddSpecialProjectComponent implements OnInit {
       await this.dataService.postData(action, this.editSpecialForm.value).subscribe((res: any) => {
         if (res?.status === 200) {
           this.notify.notificationService.openSuccessSnackBar(res?.message);
+          this.router.navigate(['/collaborate-contribute/special-projects']);
         }
       }, error => {
           this.notify.notificationService.openFailureSnackBar(error);

@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Config } from './../../../../services/config';
-import { TokenInterceptor } from './../../../../core/token.interceptor';
-import { DataService } from './../../../../services/data.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { Config } from "./../../../../services/config";
+import { TokenInterceptor } from "./../../../../core/token.interceptor";
+import { DataService } from "./../../../../services/data.service";
+import * as moment from "moment";
 
 @Component({
-  selector: 'app-add-expertise',
-  templateUrl: './add-expertise.component.html',
-  styleUrls: ['./add-expertise.component.scss']
+  selector: "app-add-expertise",
+  templateUrl: "./add-expertise.component.html",
+  styleUrls: ["./add-expertise.component.scss"],
 })
 export class AddExpertiseComponent implements OnInit {
-  addExpertiseForm : FormGroup | any;
+  addSeminarForm: FormGroup | any;
+  addFacultyForm: FormGroup | any;
+  addWorkshopForm: FormGroup | any;
   currentUser: any;
   author: any;
   workShopField: boolean = false;
@@ -20,91 +23,211 @@ export class AddExpertiseComponent implements OnInit {
   submitted: boolean = false;
 
   constructor(
-    public fb: FormBuilder,
+    private fb: FormBuilder,
     public config: Config,
-    public dataService: DataService,
-    public notify: TokenInterceptor,
-    public router: Router
-  ) { 
+    private dataService: DataService,
+    private notify: TokenInterceptor,
+    private router: Router
+  ) {
     if (localStorage) {
-      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+      this.currentUser = JSON?.parse(
+        localStorage?.getItem("currentUser") || ""
+      );
     }
   }
 
   ngOnInit(): void {
-    this.buildForm();
+    this.buildSeminarForm();
+    this.buildFacultyForm();
+    this.buildWorkshopForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
     let mname = this.currentUser?.middle_name;
-    this.author = fname  + ((mname == null) ? '' : ' ' + mname ) + ' ' + lname;
+    this.author = fname + (mname == null ? "" : " " + mname) + " " + lname;
   }
 
-  /**
-   * Build form data
-   */
-  buildForm() {
-    this.addExpertiseForm = this.fb.group({
+  buildSeminarForm() {
+    this.addSeminarForm = this.fb.group({
+      user_id: [this.currentUser?.id],
       author: [this.author],
-      type: ['', Validators.required],
-      eventName: [''],
-      workshopTopic: [''],
-      participationType: [''],
-      academicCategory: [''],
-      dateTime: [''],
-      dateFrom: [''],
-      dateTo: [''],
-      description: ['', Validators.required]
-    })
+      type: ["seminar"],
+      eventName: ["", Validators.required],
+      participationType: ["", Validators.required],
+      dateTime: ["", Validators.required],
+      description: ["", Validators.required],
+    });
   }
 
+  buildFacultyForm() {
+    this.addFacultyForm = this.fb.group({
+      user_id: [this.currentUser?.id],
+      author: [this.author],
+      type: ["faculty"],
+      workshopTopic: ["", Validators.required],
+      academicCategory: ["", Validators.required],
+      dateFrom: ["", Validators.required],
+      dateTo: ["", Validators.required],
+      description: ["", Validators.required],
+    },
+    { validator: this.dateLessThan('dateFrom', 'dateTo') });
+  }
+
+  buildWorkshopForm() {
+    this.addWorkshopForm = this.fb.group({
+      user_id: [this.currentUser?.id],
+      author: [this.author],
+      type: ["workshops"],
+      dateFrom: ["", Validators.required],
+      dateTo: ["", Validators.required],
+      description: ["", Validators.required],
+    },
+    { validator: this.dateLessThan('dateFrom', 'dateTo') });
+  }
   /**
    * Get all form controls
    */
-  get f() { return this.addExpertiseForm.controls; }
+  get f() {
+    return this.addFacultyForm.controls;
+  }
+
+  get s() {
+    return this.addSeminarForm.controls;
+  }
+
+  get w() {
+    return this.addWorkshopForm.controls;
+  }
+
+  // get s() { return this.addSeminarForm.controls; }
 
   /**
    * Change select data
-   * @param e 
+   * @param e
    */
   changeType(e: any) {
     let event = e?.target?.value;
-    if (event == 'seminar') {
+    if (event == "seminar") {
       this.seminarFields = true;
       this.facultyFields = false;
       this.workShopField = false;
-    } else if(event == 'faculty') {
+      this.buildSeminarForm();
+    } else if (event == "faculty") {
       this.seminarFields = false;
       this.facultyFields = true;
       this.workShopField = false;
-    } else if (event == 'workshops'){
+      this.buildFacultyForm();
+    } else if (event == "workshops") {
       this.seminarFields = false;
       this.facultyFields = false;
       this.workShopField = true;
+      this.buildWorkshopForm();
+    } else if (event == " ") {
+      this.seminarFields = false;
+      this.facultyFields = false;
+      this.workShopField = false;
+      this.buildSeminarForm();
+      this.buildFacultyForm();
+      this.buildWorkshopForm();
     }
+  }
+
+  dateLessThan(from: string, to: string) {
+    return (group: FormGroup): { [key: string]: any } => {
+      if (group.controls[to].value === '') {
+        return {};
+      }
+      let f = group.controls[from];
+      let t = group.controls[to];
+      let startDate = moment(
+        moment(f.value).format('YYYY-MM-DD')
+      );
+      let endDate = moment(
+        moment(t.value).format('YYYY-MM-DD')
+      );
+      if (startDate.isSameOrBefore(endDate)) {
+        return {};
+      } else {
+        return {
+          dates: 'From date should be less than To date'
+        };
+      }
+    };
   }
 
   /**
    * Function to Add Expertise
-   * @returns 
+   * @returns
    */
-  async addExpertise() {
+  async addSeminar() {
     this.submitted = true;
-    if (this.addExpertiseForm.invalid){
+    if (this.addSeminarForm.invalid) {
       return;
     } else {
-      let action: string = 'create-expertise';
-      await this.dataService.postData(action, this.addExpertiseForm.value).subscribe((res: any) => {
-        console.log(res);
-        if(res.status == 200) {
-          this.notify.notificationService.openSuccessSnackBar(res.message);
-          this.router.navigate(['/collaborate-contribute/engage-with-society']);
-        }
-      },error => {
-        this.notify.notificationService.openFailureSnackBar(error);
-      })
+      let action: string = "create-expertise";
+      await this.dataService
+        .postData(action, this.addSeminarForm?.value)
+        .subscribe(
+          (res: any) => {
+            if (res?.status == 200) {
+              this.notify.notificationService.openSuccessSnackBar(res?.message);
+              this.router.navigate([
+                "/collaborate-contribute/engage-with-society",
+              ]);
+            }
+          },
+          (error) => {
+            this.notify.notificationService.openFailureSnackBar(error);
+          }
+        );
     }
   }
 
+  async addFaculty() {
+    this.submitted = true;
+    if (this.addFacultyForm.invalid) {
+      return;
+    } else {
+      let action: string = "create-expertise";
+      await this.dataService
+        .postData(action, this.addFacultyForm?.value)
+        .subscribe(
+          (res: any) => {
+            if (res?.status == 200) {
+              this.notify.notificationService.openSuccessSnackBar(res?.message);
+              this.router.navigate([
+                "/collaborate-contribute/engage-with-society",
+              ]);
+            }
+          },
+          (error) => {
+            this.notify.notificationService.openFailureSnackBar(error);
+          }
+        );
+    }
+  }
+  async addWorkshop() {
+    this.submitted = true;
+    if (this.addWorkshopForm.invalid) {
+      return;
+    } else {
+      let action: string = "create-expertise";
+      await this.dataService
+        .postData(action, this.addWorkshopForm.value)
+        .subscribe(
+          (res: any) => {
+            if (res?.status == 200) {
+              this.notify.notificationService.openSuccessSnackBar(res?.message);
+              this.router.navigate([
+                "/collaborate-contribute/engage-with-society",
+              ]);
+            }
+          },
+          (error) => {
+            this.notify.notificationService.openFailureSnackBar(error);
+          }
+        );
+    }
+  }
   /**
    * Function to redirect previous page
    */

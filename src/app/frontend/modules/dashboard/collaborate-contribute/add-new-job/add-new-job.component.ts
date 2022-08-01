@@ -42,7 +42,8 @@ export class AddNewJobComponent implements OnInit {
  */
   buildForm() {
     this.addJobForm = this.fb.group({
-      id: [this.authorId],
+      id: [''],
+      user_id: [this.authorId],
       author: [this.author],
       title: ['', Validators.required],
       companyName: ['', Validators.required],
@@ -50,15 +51,16 @@ export class AddNewJobComponent implements OnInit {
       city: ['', Validators.required],
       salary: ['', Validators.required],
       fresherApply: [false],
-      workExperience: ['', Validators.required],
-      skillsRequired: ['', Validators.required],
-      qualification: ['', Validators.required],
+      workExperience: [''],
+      skillsRequired: [''],
+      qualification: [''],
       contactPerson: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      email: ['', [Validators.required,  Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
+      contactNumber: [''],
+      email: ['', [ Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
       description: ['', Validators.required],
       is_active: ['open'],
-      type: 'alumni'
+      type: 'alumni',
+      status: ['unapproved']
     })
   }
 /**

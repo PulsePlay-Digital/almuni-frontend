@@ -23,6 +23,14 @@ import { UsersBannerComponent } from './components/users-banner/users-banner.com
 import { ViewMapComponent } from './components/view-map/view-map.component';
 import { AgmCoreModule } from "@agm/core";
 import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
+import { MatListModule } from "@angular/material/list";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { FilterTextPipe } from "./pipes/filter-text.pipe";
+import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-alert-box.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +40,7 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     NumbersOnlyDirective,
     ResetPasswordComponent,
     SearchFilterComponent,
+    FilterTextPipe,
     StripHtmlPipe,
     DialogEntrepreneurshipComponent,
     StartupCornerComponent,
@@ -39,6 +48,8 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     UsersBannerComponent,
     ViewMapComponent,
     DashboardBannerComponent,
+    DialogAlertBoxComponent,
+    DateAgoPipe
   ],
   imports: [
     CommonModule,
@@ -50,10 +61,16 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    FlexLayoutModule,
+    MatExpansionModule,
+    MatDialogModule,
+
     ReactiveFormsModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDOOCCaDPxmU5SLeaq1X7R_LMFGnay-XOg'
+      apiKey: 'AIzaSyDnWjRnYN8Fm3rOkg0bts63Kt7KLFajbaM'
     })
   ],
   exports: [
@@ -64,10 +81,13 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     ResetPasswordComponent,
     SearchFilterComponent,
     StripHtmlPipe,
+    FilterTextPipe,
+    DateAgoPipe,
     DialogEntrepreneurshipComponent,
     UsersBannerComponent,
     ViewMapComponent,
-    DashboardBannerComponent
+    DashboardBannerComponent,
+    DialogAlertBoxComponent
   ]
 })
 export class SharedModule {}

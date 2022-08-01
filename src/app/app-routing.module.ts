@@ -10,15 +10,15 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./frontend/frontend.module').then(m => m.FrontendModule),
-    data: {breadcrumb: { skip: true }},
+    data: { breadcrumb: { skip: true } },
   },
   {
-    path: '**', redirectTo: '/home'
+    path: '**', redirectTo: '/'
   }
 ];
 
 @NgModule({
-  imports:  [RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })],
+  imports: [RouterModule.forRoot(routes, { useHash: false, scrollPositionRestoration: 'top' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,12 +1,22 @@
-<app-dashboard-banner [heading]="heading"></app-dashboard-banner>
+<div class="bannerImg">
+    <div class="layer">
+        <div class="container">
+            <div class="row m-0 justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <h3 class="text-white fw-bold mb-0 lh-sm text-uppercase">MENTORSHIP</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <!-- <div class="row mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-1 mt-xl-5 mt-lg-5 mt-md-4 mt-sm-4 mt-3">
         <div class="col-lg-12 text-center">
             <h3 class="main-heading text-uppercase fw-bold mb-0">Mentorship</h3>
         </div>
     </div> -->
-    <div class="row">
-        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
+    <div class="row m-0">
+        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3 mt-4">
             <div class="img">
                 <img src="./assets/collaborate/homeMentorship.png" alt="mentorship img" class="img-fluid">
             </div>
@@ -16,26 +26,30 @@
                 <p class="fw-bold">Mentorship program is one of the ways to pay it forward.</p>
                 <ul class="px-3">
                     <li class="lh-lg"> Become a Mentor: Want to share your expertise, contribute, give back and support junior Alumni and/or students at the Institute.</li>
-                    <li class="lh-lg">Connect with a Mentor: To seek career counselling, tips and benefit from experience.</li>
+                    <li class="lh-lg">Connect with a Mentor: To seek career counselling, tips and benefit from experience.
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <app-search-filter></app-search-filter>
-    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-0">
+    <div class="row m-0">
+        <app-search-filter></app-search-filter>
+    </div>
+    <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-3 mb-0 m-0">
         <app-loader *ngIf="loading"></app-loader>
         <ng-container *ngIf="!loading">
             <ng-container *ngIf="user?.length > 0">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of user | paginate: { itemsPerPage: 6, currentPage: p }">
                     <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
-                        <ng-container *ngIf="item?.profile_pic != null">
-                            <div class="itemPic">
-                                <img [src]="imgPath + item?.profile_pic" class="card-img-top" alt="user Picture" />
-                            </div>
-                        </ng-container>
+                        <!-- <ng-container *ngIf="item?.profile_pic != null"> -->
+                        <div class="itemPic">
+                            <img [src]="(item?.profile_pic) ? imgPath + item?.profile_pic : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " class="card-img-top" alt="user Picture" />
+                        </div>
+                        <!-- </ng-container>
                         <ng-container *ngIf="item?.profile_pic == null">
-                            <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg" alt="Alumni Picture" />
-                        </ng-container>
+                            <img [src]="imgPath + item?.profile_pic" class="card-img-top img-thumbnail noImg"
+                                alt="Alumni Picture" />
+                        </ng-container> -->
                         <div class="card-header bg-transparent border-0 text-center pt-3">
                             <h3 class="card-title fw-bold text-capitalize mb-0">{{item?.first_name}} {{item?.last_name}}
                             </h3>
@@ -59,9 +73,10 @@
                 </div>
             </ng-container>
         </ng-container>
-        <div class="row justify-content-center mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-3 mb-2" *ngIf="user?.length > 0">
+        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-4 mt-sm-3 mt-3 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-2 mb-2" *ngIf="user?.length > 0">
             <div class="col text-center">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>
+</div>

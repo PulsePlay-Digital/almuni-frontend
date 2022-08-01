@@ -1,3 +1,10 @@
 .card-bg{
   background: var(--card-bg);
 }
+.card-body {
+  height: 250px;
+  overflow-y: auto;
+}
+.search-filter {
+  background: var(--form-bg);
+}

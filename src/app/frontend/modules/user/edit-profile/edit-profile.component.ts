@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { TokenInterceptor } from "./../../../core/token.interceptor";
 import { DataService } from "./../../../services/data.service";
 import { environment } from "./../../../../../environments/environment";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-edit-profile",
@@ -12,26 +13,31 @@ import { environment } from "./../../../../../environments/environment";
 export class EditProfileComponent implements OnInit {
   profileForm: FormGroup | any;
   profilePic: any;
-  image: any;
+  image: any='';
   submitted: boolean | undefined;
   currentUser: any;
   action: any;
   imgPath = environment.imgUrl;
+  type: any;
   constructor(
     public dataService: DataService,
     public fb: FormBuilder,
-    private notify: TokenInterceptor
+    private notify: TokenInterceptor,
+    private arouter: ActivatedRoute
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
         localStorage?.getItem("currentUser") || ""
       );
     }
+    this.arouter.queryParams.subscribe((res: any) => {
+      this.type = res?.type;
+    });
   }
 
   ngOnInit(): void {
     this.buildForm();
-  }
+  }   
 
   buildForm() {
     this.profileForm = this.fb.group({
@@ -59,6 +65,8 @@ export class EditProfileComponent implements OnInit {
         (res: any) => {
           if (res.status === 200) {
             this.notify.notificationService.openSuccessSnackBar(res?.message);
+            this.getCurrentUser();
+            location.reload();
           }
         },
         (error) => {
@@ -66,5 +74,12 @@ export class EditProfileComponent implements OnInit {
         }
       );
     }
+  }
+
+  async getCurrentUser() {
+    let action: string = "find-user";
+    await this.dataService.getDataById(action, this.currentUser.id).subscribe((res: any) => {
+      localStorage.setItem("currentUser", JSON.stringify(res?.data));
+    })
   }
 }

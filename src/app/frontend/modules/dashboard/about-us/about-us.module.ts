@@ -9,6 +9,7 @@ import { BreadcrumbModule } from "xng-breadcrumb";
 import { MatIconModule } from "@angular/material/icon";
 import { ManagementTeamComponent } from "./management-team/management-team.component";
 import { NgxPaginationModule } from "ngx-pagination";
+import { LazyLoadImageModule } from "ng-lazyload-image";
 @NgModule({
   declarations: [
     AboutUsComponent,
@@ -22,7 +23,8 @@ import { NgxPaginationModule } from "ngx-pagination";
     SharedModule,
     BreadcrumbModule,
     MatIconModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LazyLoadImageModule
   ],
 })
 export class AboutUsModule {}

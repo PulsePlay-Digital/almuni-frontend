@@ -15,6 +15,8 @@ import {MatCardModule} from '@angular/material/card';
 import { ConnectModule } from './connect/connect.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranscriptComponent } from './transcript/transcript.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { TranscriptComponent } from './transcript/transcript.component';
     ConnectModule,
     CarouselModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    LazyLoadImageModule,
+    MatTooltipModule
   ]
 })
 export class DashboardModule { }

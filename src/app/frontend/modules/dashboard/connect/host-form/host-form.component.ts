@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from 'src/app/frontend/services/data.service';
 
@@ -21,7 +22,8 @@ export class HostFormComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public dataService: DataService,
-    public notify: TokenInterceptor
+    public notify: TokenInterceptor,
+    public router: Router
   ) {
     if (localStorage) {
       this.currentUser = JSON?.parse(
@@ -31,7 +33,6 @@ export class HostFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.eventCategory)
     this.buildForm();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
@@ -44,18 +45,19 @@ export class HostFormComponent implements OnInit {
       author: [""],
       title: ["", Validators.required],
       venue: ["", Validators.required],
-      category: this.eventCategory,
+      category: [this.eventCategory, Validators.required],
+      type: ["", Validators.required],
       description: ["", Validators.required],
       date: ["", Validators.required],
       time: [""],
-      type: [""],
       eventHost: [""],
       eventAttend: [""],
-      cost: ["", Validators.required],
+      cost: [""],
       eventPageLink: [""],
-      is_active: [""],
-      contactNumber: [""],
+      is_active: ["inactive"],
+      contactNumber: ["", [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       eventImage: ["", Validators.required],
+      status: ['unapproved']
     });
   }
 
@@ -101,6 +103,7 @@ export class HostFormComponent implements OnInit {
       await this.dataService.postData(action, formData).subscribe((res: any) => {
         if (res?.status == 200) {
           this.notify.notificationService.openSuccessSnackBar(res?.message);
+          location.reload();
         }
       }, error => {
         this.notify.notificationService.openFailureSnackBar(error);;

@@ -1,45 +1,61 @@
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
-        <h4 class="main-heading text-uppercase fw-bold mb-0">Share your Business Venture / Start-Up Information</h4>
-        <button class="btn btn-sm btn-info rounded" (click)="back()">Back</button>
+    <div class="row m-0">
+        <div class="d-flex align-items-center justify-content-between my-xl-5 my-lg-5 my-md-5 my-sm-4 my-4">
+            <h4 class="main-heading text-uppercase fw-bold mb-0">Share your Business Venture / Start-Up Information</h4>
+            <!-- <button class="btn btn-sm btn-info rounded" (click)="back()">Back</button> -->
+        </div>
     </div>
 
-    <div class="row mb-4">
+    <div class="row mb-3">
         <form class="" [formGroup]="editEntreprenForm">
-            <div class="row">
+            <div class="row m-0">
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Name of the Company : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="company" id="inputName" placeholder="Enter company name" />
-                    <div class="text-danger my-2" *ngIf="(f.company.touched || submitted) && f.company.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Name of the Company : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="company" id="inputName"
+                        placeholder="Enter company name" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.company.touched || submitted) && f.company.errors?.required">
                         Company is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Alumni Founder/Owner :</label>
-                    <input type="name" class="form-control" formControlName="owner" id="inputName" placeholder="Enter Alumni Founder/Owner" />
+                    <input type="name" class="form-control" formControlName="owner" id="inputName"
+                        placeholder="Enter Alumni Founder/Owner" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Alumni Course :</label>
-                    <input type="name" class="form-control" formControlName="course" id="inputName" placeholder="Enter Alumni course" />
+                    <input type="name" class="form-control" formControlName="course" id="inputName"
+                        placeholder="Enter Alumni course" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Alumni Batch : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="batch" id="inputName" placeholder="Enter Alumni Batch" />
-                    <div class="text-danger my-2" *ngIf="(f.batch.touched || submitted) && f.batch.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Alumni Batch : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="batch" id="inputName"
+                        placeholder="Enter Alumni Batch" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.batch.touched || submitted) && f.batch.errors?.required">
                         Batch is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Phone contact info : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="contact" id="inputName" placeholder="Enter Phone Contact info" />
-                    <div class="text-danger my-2" *ngIf="(f.contact.touched || submitted) && f.contact.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Phone contact info : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="contact" id="inputName"
+                        placeholder="Enter Phone Contact info" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.contact.touched || submitted) && f.contact.errors?.required">
                         Contact is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Email contact info : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="email" id="inputName" placeholder="Enter Contact info" />
-                    <div class="text-danger my-2" *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Email contact info : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="email" id="inputName"
+                        placeholder="Enter Contact info" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
                         Email is required.
                     </div>
                     <div class="text-danger mt-2" *ngIf="f.email.dirty && f.email.errors?.pattern">
@@ -48,15 +64,18 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Type of Ownership :</label>
-                    <input type="name" class="form-control" formControlName="type" id="inputName" placeholder="Enter type of Ownership" />
+                    <input type="name" class="form-control" formControlName="type" id="inputName"
+                        placeholder="Enter type of Ownership" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputemail" class="mb-1 fw-bold">Date Founded :</label>
-                    <input type="date" class="form-control" id="inputRegisteredDate" formControlName="date_founded" placeholder="DD/MM/YYYY" />
+                    <input type="date" class="form-control" id="inputRegisteredDate" formControlName="date_founded"
+                        placeholder="DD/MM/YYYY" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Primary Industry :</label>
-                    <input type="name" class="form-control" formControlName="industry" id="inputName" placeholder="Enter Primary Industry" />
+                    <input type="name" class="form-control" formControlName="industry" id="inputName"
+                        placeholder="Enter Primary Industry" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputAddress2" class="mb-1 fw-bold">Primary Customers Served : &nbsp;<span
@@ -68,121 +87,149 @@
                         <option>B2C</option>
                         <option>B2B2C</option>
                     </select>
-                    <div class="text-danger my-2" *ngIf="(f.customer.touched || submitted) && f.customer.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.customer.touched || submitted) && f.customer.errors?.required">
                         Primary customer is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Head Office Address : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="address" id="inputName" placeholder="Enter Head office address" />
-                    <div class="text-danger my-2" *ngIf="(f.address.touched || submitted) && f.address.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Head Office Address : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="address" id="inputName"
+                        placeholder="Enter Head office address" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.address.touched || submitted) && f.address.errors?.required">
                         Address is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Country :</label>
-                    <input type="name" class="form-control" formControlName="country" id="inputName" placeholder="Enter Country" />
+                    <input type="name" class="form-control" formControlName="country" id="inputName"
+                        placeholder="Enter Country" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">State :</label>
-                    <input type="name" class="form-control" formControlName="state" id="inputName" placeholder="Enter State" />
+                    <input type="name" class="form-control" formControlName="state" id="inputName"
+                        placeholder="Enter State" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">City :</label>
-                    <input type="name" class="form-control" formControlName="city" id="inputName" placeholder="Enter City" />
+                    <input type="name" class="form-control" formControlName="city" id="inputName"
+                        placeholder="Enter City" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label class="me-2 mb-1 fw-bold" for="inputRadio">Funding Sought :</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" formControlName="funding" name="funding" id="sought1" value="yes" [(ngModel)]="selectedStatus" (change)="onChange(selectedStatus)">
+                        <input class="form-check-input" type="radio" formControlName="funding" name="funding"
+                            id="sought1" value="yes" [(ngModel)]="selectedStatus" (change)="onChange(selectedStatus)">
                         <label class="form-check-label" for="sought1">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" formControlName="funding" name="funding" id="sought2" value="no" [(ngModel)]="selectedStatus" (change)="onChange(selectedStatus)">
+                        <input class="form-check-input" type="radio" formControlName="funding" name="funding"
+                            id="sought2" value="no" [(ngModel)]="selectedStatus" (change)="onChange(selectedStatus)">
                         <label class="form-check-label" for="sought2">No</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" formControlName="funding" name="funding" id="sought3" value="notDecided" [(ngModel)]="selectedStatus" (change)="onChange(selectedStatus)">
+                        <input class="form-check-input" type="radio" formControlName="funding" name="funding"
+                            id="sought3" value="notDecided" [(ngModel)]="selectedStatus"
+                            (change)="onChange(selectedStatus)">
                         <label class="form-check-label" for="sought3">Not decided</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label class="me-2 mb-1 fw-bold" for="inputRadio">Provide Internships :</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="internship" formControlName="internship" id="intern1" value="true">
+                        <input class="form-check-input" type="radio" name="internship" formControlName="internship"
+                            id="intern1" value="true">
                         <label class="form-check-label" for="intern1">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="internship" formControlName="internship" id="intern2" value="false">
+                        <input class="form-check-input" type="radio" name="internship" formControlName="internship"
+                            id="intern2" value="false">
                         <label class="form-check-label" for="intern2">No</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="inputEmail4" class="mb-1 fw-bold">Website : &nbsp;<span class="text-danger">*</span></label>
-                    <input type="name" class="form-control" formControlName="website" id="inputName" placeholder="Enter Website" />
-                    <div class="text-danger my-2" *ngIf="(f.website.touched || submitted) && f.website.errors?.required">
+                    <label for="inputEmail4" class="mb-1 fw-bold">Website : &nbsp;<span
+                            class="text-danger">*</span></label>
+                    <input type="name" class="form-control" formControlName="website" id="inputName"
+                        placeholder="Enter Website" />
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.website.touched || submitted) && f.website.errors?.required">
                         Website link is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Facebook page :</label>
-                    <input type="name" class="form-control" formControlName="facebook" id="inputName" placeholder="Enter Facebook Page address" />
+                    <input type="name" class="form-control" formControlName="facebook" id="inputName"
+                        placeholder="Enter Facebook Page address" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">LinkedIn page :</label>
-                    <input type="name" class="form-control" formControlName="linkedin" id="inputName" placeholder="Enter LinkedIn Page address" />
+                    <input type="name" class="form-control" formControlName="linkedin" id="inputName"
+                        placeholder="Enter LinkedIn Page address" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Business Operation Hours :</label>
-                    <input type="number" class="form-control" formControlName="hours" id="inputName" placeholder="Enter Business operation hours" />
+                    <input type="number" class="form-control" formControlName="hours" id="inputName"
+                        placeholder="Enter Business operation hours" />
                 </div>
                 <div class="form-group col-md-12 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Brief Products/Services Offered : &nbsp;<span
                             class="text-danger">*</span></label>
                     <ckeditor formControlName="description"></ckeditor>
-                    <div class="text-danger my-2" *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
+                    <div class="invalidText fw-bold mt-2 m-0 alert alert-danger p-2"
+                        *ngIf="(f.description.touched || submitted) && f.description.errors?.required">
                         Description is required.
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">International Operations :</label>
-                    <input type="name" class="form-control" formControlName="international_operations" id="inputName" placeholder="Enter international operations" />
+                    <input type="name" class="form-control" formControlName="international_operations" id="inputName"
+                        placeholder="Enter international operations" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">No. of Employees :</label>
-                    <input type="number" class="form-control" formControlName="employee_no" id="inputName" placeholder="Enter number of Employees" />
+                    <input type="number" class="form-control" formControlName="employee_no" id="inputName"
+                        placeholder="Enter number of Employees" />
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label class="me-2 mb-1 fw-bold" for="inputRadio">Hiring :</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="hiring" formControlName="hiring" id="hiring1" value="true">
+                        <input class="form-check-input" type="radio" name="hiring" formControlName="hiring" id="hiring1"
+                            value="true">
                         <label class="form-check-label" for="hiring1">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="hiring" value="false" formControlName="hiring" id="hiring2">
+                        <input class="form-check-input" type="radio" name="hiring" value="false"
+                            formControlName="hiring" id="hiring2">
                         <label class="form-check-label" for="hiring2">No</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label class="me-2 mb-1 fw-bold" for="inputRadio">Participate in Campus Placement :</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="placement" formControlName="placement" id="placement1" value="true">
+                        <input class="form-check-input" type="radio" name="placement" formControlName="placement"
+                            id="placement1" value="true">
                         <label class="form-check-label" for="placement1">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="placement" formControlName="placement" id="placement2" value="false">
+                        <input class="form-check-input" type="radio" name="placement" formControlName="placement"
+                            id="placement2" value="false">
                         <label class="form-check-label" for="placement2">No</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="inputEmail4" class="mb-1 fw-bold">Locations Served :</label>
-                    <input type="name" class="form-control" formControlName="locations" id="inputName" placeholder="Enter Location" />
+                    <input type="name" class="form-control" formControlName="locations" id="inputName"
+                        placeholder="Enter Location" />
                 </div>
             </div>
             <div class="row justify-content-center my-3">
                 <div class="col-lg-4 text-center">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button class="btn btn-md btn-info me-2 rounded" (click)="add()" [disabled]="!editEntreprenForm.valid">Submit</button>
+                        <button class="btn btn-md btn-info me-2 rounded" (click)="add()"
+                            [disabled]="!editEntreprenForm.valid">Submit</button>
                         <button class="btn btn-md btn-info rounded" (click)="back()">Back</button>
                     </div>
                 </div>

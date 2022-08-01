@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -10,27 +11,45 @@ import { DataService } from './../../../../services/data.service';
 export class AlumniPassionComponent implements OnInit {
   isPassion: boolean = false;
   isShared: boolean = true;
+  passionByMe: boolean = false;
   title: string =  'Post a Passion';
   heading: string = "My Passion";
   type: string = 'passion';
   alumniData: any;
+  allPassionCount: number | undefined;
+  allUserPassionCount: any;
+  currentUser: any;
 
   constructor(
-    public dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) {
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+   }
 
   ngOnInit(): void {
     this.getAllPassion();
+    this.countAllUserPassion();
   }
 
-  showViewShared() {
-    this.isPassion = !this.isPassion;
+  addPassion() {
+    this.isPassion = true;
     this.isShared = false;
+    this.passionByMe = false;
   }
 
-  showSeekDetail() {
-    this.isShared = !this.isShared;
+  seeAllPassion() {
+    this.isShared = true;
     this.isPassion = false;
+    this.passionByMe = false;
+  }
+
+  viewPassionByMe() {
+    this.isShared = false;
+    this.isPassion = false;
+    this.passionByMe = true;
   }
 
   async getAllPassion() {
@@ -45,7 +64,23 @@ export class AlumniPassionComponent implements OnInit {
         })
       )
       .subscribe((result: any) => {
+        this.allPassionCount = result?.length;
         this.alumniData = result;
       });
   }
+
+  async countAllUserPassion() {
+    let action: string = "count-userPassion";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        if (res?.status == 200) {
+          this.allUserPassionCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
+  }
+
 }

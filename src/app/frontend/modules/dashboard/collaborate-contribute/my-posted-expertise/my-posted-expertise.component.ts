@@ -13,6 +13,8 @@ export class MyPostedExpertiseComponent implements OnInit {
   currentUser: any;
   author: any;
   loading: boolean = false;
+  nameSearched: any;
+  
   constructor(
     public dataService: DataService,
     public config: Config
@@ -27,8 +29,7 @@ export class MyPostedExpertiseComponent implements OnInit {
     this.getAllExpertise();
     let fname = this.currentUser?.first_name;
     let lname = this.currentUser?.last_name;
-    let mname = this.currentUser?.middle_name;
-    this.author = fname  + ((mname == null) ? '' : ' ' + mname ) + ' ' + lname;
+    this.author = fname  + ' ' + lname;
   }
 
   /**
@@ -38,12 +39,11 @@ export class MyPostedExpertiseComponent implements OnInit {
     let action: string = "all-expertise";
     await this.dataService.getData(action).pipe(
       map((item: any) => {
-        return item.data.filter((res: any) => res.author === this.author
+        return item?.data.filter((res: any) => res?.user_id == this.currentUser?.id
         )
       })
     ).subscribe((res: any) => {
       this.allExpertise = res;
-      console.log(res)
       this.loading = false;
     })
   }

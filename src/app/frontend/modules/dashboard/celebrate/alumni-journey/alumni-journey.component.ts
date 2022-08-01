@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { TokenInterceptor } from 'src/app/frontend/core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -11,27 +12,44 @@ export class AlumniJourneyComponent implements OnInit {
 
   isPosted: boolean = false;
   isShared: boolean = true;
+  journeyByMe: boolean = false;
   title: string =  'Post a Story';
   storyHeading: string = "My Story";
   type: string = 'journey';
   alumniData: any;
-  heading: string = "ALUMNI JOURNEY";
+  allJourneyCount: any;
+  allUserJourneyCount: any;
+  currentUser: any;
   
   constructor(
-    public dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private notify: TokenInterceptor
+  ) { 
+    if (localStorage) {
+      this.currentUser = JSON?.parse(localStorage?.getItem('currentUser') || '');
+    }
+  }
 
   ngOnInit(): void {
     this.getAllJourney();
+    this.countAllUserJourney();
   }
 
   showViewShared() {
-    this.isPosted = !this.isPosted;
+    this.isPosted = true;
     this.isShared = false;
+    this.journeyByMe = false;
   }
 
   showSeekDetail() {
-    this.isShared = !this.isShared;
+    this.isShared = true;
+    this.isPosted = false;
+    this.journeyByMe = false;
+  }
+
+  sharedJourneyByMe() {
+    this.journeyByMe = true;
+    this.isShared = false;
     this.isPosted = false;
   }
 
@@ -44,13 +62,28 @@ export class AlumniJourneyComponent implements OnInit {
       .getData(action)
       .pipe(
         map((res: any) => {
-          return res.Journey.filter((item: any) => {
+          return res?.Journey.filter((item: any) => {
             return item?.type == "journey";
           });
         })
       )
       .subscribe((result: any) => {
+        this.allJourneyCount = result?.length;
         this.alumniData = result;
       });
+  }
+
+  async countAllUserJourney() {
+    let action: string = "count-userJourney";
+    await this.dataService.getDataById(action, this.currentUser?.id).subscribe(
+      (res: any) => {
+        if (res) {
+          this.allUserJourneyCount = res?.data;
+        }
+      },
+      (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      }
+    );
   }
 }

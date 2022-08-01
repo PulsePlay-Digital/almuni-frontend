@@ -13,6 +13,8 @@ export class PostedJobsByMeComponent implements OnInit {
   currentUser: any;
   postedJobsByMe: any;
   loading: boolean = false;
+  author: any;
+  p: number = 1;
 
   constructor(
     public config: Config,
@@ -25,6 +27,9 @@ export class PostedJobsByMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    let fname = this.currentUser?.first_name;
+    let lname = this.currentUser?.last_name;
+    this.author = fname  +' ' + lname;
     this.getAllJobsPosted();
   }
 
@@ -32,7 +37,7 @@ export class PostedJobsByMeComponent implements OnInit {
     let action: string = 'all-jobs';
     await this.dataService.getData(action).pipe(
       map(((item: any) => {
-        return item.data.filter((result: any) => result.id === this.currentUser.id )
+        return item?.data.filter((result: any) => result?.user_id == this.currentUser?.id )
       }))
     ).subscribe(jobs => {
       this.postedJobsByMe = jobs;
@@ -47,7 +52,6 @@ export class PostedJobsByMeComponent implements OnInit {
       is_active: status.is_active
     }
      await this.dataService.updateData(action, params).subscribe((res: any) => {
-      console.log(res)
      })
   }
 

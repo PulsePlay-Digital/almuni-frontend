@@ -1,9 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col text-end mt-2">
-            <button class="btn btn-sm view-btn" (click)="back()">
-                Back
-            </button>
         </div>
     </div>
     <div class="text-center my-4">
@@ -25,13 +22,8 @@
                                         {{ journeyData?.title }}
                                     </p>
                                     <p class="mb-2">
-                                        <strong>Course :</strong> &nbsp;{{
+                                        <strong>Institute :</strong> &nbsp;{{
                                         journeyData?.institute
-                                        }}
-                                    </p>
-                                    <p class="mb-2" *ngIf="journeyData?.batch_year != null">
-                                        <strong>Batch :</strong> &nbsp;{{
-                                        journeyData?.batch_year
                                         }}
                                     </p>
                                 </div>

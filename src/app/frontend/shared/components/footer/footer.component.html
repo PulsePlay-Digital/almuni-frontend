@@ -1,10 +1,10 @@
 <footer>
     <div class="footer py-xl-5 py-lg-5 py-md-4 py-sm-4 py-3 text-xl-start text-lg-start text-md-start text-sm-start text-center">
-        <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-3 my-xl-3 my-lg-3 my-md-3 my-sm-2 my-2">
                     <div class="address_description py-xl-3 py-lg-3 py-md-3 py-sm-3 py-2">
-                        <a routerLink="/home">
+                        <a routerLink="/">
                             <img src="./assets/logo.webp" class="mb-2" alt="footer-logo">
                         </a>
                         <div class="links_heading">
@@ -23,10 +23,14 @@
                                 </div>
                                 <ul class="mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                                     <li>
-                                        <a class="ref" routerLink="/about-us/founder-chancellor">Our Founder Chancellor</a>
+                                        <a class="ref" routerLink="/about-us/founder-chancellor">Our Founder
+                                            Chancellor</a>
                                     </li>
                                     <li>
                                         <a class="ref" routerLink="/about-us/balaji-social-society">SBUP</a>
+                                    </li>
+                                    <li>
+                                        <a class="ref" routerLink="/about-us/leadership-team">Leadership team</a>
                                     </li>
                                     <li>
                                         <a class="ref" routerLink="/sitemap">Sitemap</a>
@@ -41,8 +45,13 @@
                                 </div>
                                 <ul class="mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                                     <li>
-                                        <a class="ref" routerLink="/common-purpose-culture/connect-vision">The Founder's Message</a>
+                                        <a class="ref" routerLink="/common-purpose-culture/connect-vision">The Founder's
+                                            Message</a>
                                     </li>
+                                    <li><a (click)="target('connectVision')" class="ref" routerLink="/common-purpose-culture/connect-vision">
+                                        SBUP Alumni Connect Vision </a></li>
+                                    <li><a (click)="target('strategy')" class="ref" routerLink="/common-purpose-culture/connect-vision">
+                                        SBUP Alumni Connect Strategy Framework </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -53,17 +62,17 @@
                                 </div>
                                 <ul class="mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                                     <li>
-                                        <a class="ref" routerLink="/collaborate-contribute/mentorship">Mentorship</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/collaborate-contribute/mentorship'] : ['/login']}}">Mentorship</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/collaborate-contribute/careers">Careers and Jobs</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/collaborate-contribute/careers'] : ['/login']}}">Careers and Jobs</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/collaborate-contribute/special-projects">Special
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/collaborate-contribute/special-projects'] : ['/login']}}">Special
                                             Projects</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/collaborate-contribute/engage-with-society">Engage
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/collaborate-contribute/engage-with-society'] : ['/login']}}">Engage
                                             with SBUP</a>
                                     </li>
                                 </ul>
@@ -80,10 +89,16 @@
                                             Alumni</a>
                                     </li>
                                     <li>
-                                        <a class="ref" class="ref" routerLink="/celebrate/alumni-journey">Celebrate Journey, Achievements & Passion</a>
+                                        <a class="ref" class="ref" routerLink="{{(currentUser) ? ['/celebrate/alumni-journey'] : ['/login']}}">Journey</a>
                                     </li>
                                     <li>
-                                        <a class="ref" class="ref" routerLink="/celebrate/gallery">Gallary</a>
+                                        <a class="ref" class="ref" routerLink="{{(currentUser) ? ['/celebrate/alumni-achievement'] : ['/login']}}">Achievements</a>
+                                    </li>
+                                    <li>
+                                        <a class="ref" class="ref" routerLink="{{(currentUser) ? ['/celebrate/alumni-passion'] : ['/login']}}">Passion</a>
+                                    </li>
+                                    <li>
+                                        <a class="ref" class="ref" routerLink="/celebrate/gallery">Gallery</a>
                                     </li>
                                     <li>
                                         <a class="ref" class="ref" routerLink="/celebrate/magazine">Corporate Citizen
@@ -103,16 +118,17 @@
                                 </div>
                                 <ul class="mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                                     <li>
-                                        <a class="ref" routerLink="/community/alumni-directory">Alumni Directory</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/community/alumni-directory'] : ['/login']}}">Alumni Directory</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/community/professional-club">Professional Club</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/community/professional-club'] : ['/login']}}">Professional Clubs</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/community/industry-club">Industry Club</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/community/industry-club'] : ['/login']}}">Industry Clubs</a>
                                     </li>
                                     <li>
-                                        <a class="ref" routerLink="/community/entrepreneurship-club">Business Venture</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/community/entrepreneurship-club'] : ['/login']}}">Business
+                                            Venture</a>
                                     </li>
                                     <li>
                                         <a class="ref" routerLink="/startup-corner">Start-up Corner</a>
@@ -130,7 +146,13 @@
                                 </div>
                                 <ul class="mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                                     <li>
-                                        <a class="ref" routerLink="/connect/at-glance">Event at a Glance</a>
+                                        <a class="ref" routerLink="{{(currentUser) ? ['/connect/at-glance'] : ['/login']}}">Event at a Glance</a>
+                                    </li>
+                                    <li>
+                                        <a class="ref" (click)="navigate('past')">Past Events</a>
+                                    </li>
+                                    <li>
+                                        <a class="ref" (click)="navigate('upcomming')">Upcoming Events</a>
                                     </li>
                                 </ul>
                             </div>
@@ -150,49 +172,54 @@
                             <li>
                                 <a class="ref" routerLink="/contact/social-links">SBUP Alumni Club-Social Channels</a>
                             </li>
-                            <li class="my-3">
-                                <p class="mb-4 lh-lg">Phone <a href="tel:+91-20-6674 1235/36">+91-20-6674 1235/36</a>, <a href="tel:3063 1235/36">3063 1235/36</a><br>Telefax <a href="fax:+91-20-6674 1234/3063 1234">+91-20-6674 1234/3063 1234</a>
+                            <li class="my-xl-4 my-lg-4 my-md-3 my-sm-3 my-2">
+                                <p class="mb-4 lh-lg">Phone <a href="tel:+91-20-6674 1235/36">+91-20-6674 1235/36</a>,
+                                    <br><a href="tel:3063 1235/36">3063 1235/36</a><br>Telefax <a href="fax:+91-20-6674 1234/3063 1234">+91-20-6674 1234/<br>3063 1234</a>
                                 </p>
                                 <p class="mb-0 footer-mail"><a href="mailto:admissions@sbup.edu.in">admissions@sbup.edu.in</a>
                                 </p>
                                 <p class="footer-mail"><a href="https://www.sbup.edu.in/">www.sbup.edu.in</a></p>
                             </li>
+                            <div class="open-add mailBtn align-self-center footer-btn">
+                                <a routerLink="/transcript" class="btn admission-open">Apply For
+                                    Transcript</a>
+                            </div>
                             <li>
                                 <!-- Social links -->
                                 <ul class="social-links my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3 px-1">
-                                    <li class="me-2 blog">
-                                        <a href="https://blog.sbup.edu.in/" target="_blank">
-                                            <i class="fa fa-rss" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="me-2 insta">
-                                        <a href="https://www.instagram.com/sbup.official/" target="_blank">
-                                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="me-2 youtube">
-                                        <a href="https://www.youtube.com/c/SriBalajiUniversityPune" target="_blank">
-                                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="me-2 mail">
-                                        <a href="mailto:sribalajisocietyalumniglobal@gmail.com">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="me-2 linkdin">
+                                    <li class="me-xl-2 me-lg-2 me-md-2 linkdin">
                                         <a href="https://www.linkedin.com/school/renowned-educational-institution/" target="_blank">
                                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li class="me-2 facebook">
+                                    <li class="me-xl-2 me-lg-2 me-md-2 facebook">
                                         <a href="https://www.facebook.com/sbup.official/" target="_blank">
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li class="me-2 twitter">
+                                    <li class="me-xl-2 me-lg-2 me-md-2 insta">
+                                        <a href="https://www.instagram.com/sbup.official/" target="_blank">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-xl-2 me-lg-2 me-md-2 twitter">
                                         <a href="https://twitter.com/sbupune" target="_blank">
                                             <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-xl-2 me-lg-2 me-md-2 youtube">
+                                        <a href="https://www.youtube.com/c/SriBalajiUniversityPune" target="_blank">
+                                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-xl-2 me-lg-2 me-md-2 mail">
+                                        <a href="mailto:sribalajisocietyalumniglobal@gmail.com">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-xl-2 me-lg-2 me-md-2 blog">
+                                        <a href="https://blog.sbup.edu.in/" target="_blank">
+                                            <i class="fa fa-rss" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -207,17 +234,18 @@
     </div>
     <!-- Copy Right Section -->
     <div class="copyright-section">
-        <div class="container-fluid px-xl-5 px-lg-2 px-sm-2 px-md-2 px-2">
+        <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-4 col-md-12 text-lg-start text-md-start text-sm-start text-center lh-base">
                     <p>&copy;1999-2022 <a class="text-decoration-none visitors" href="https://www.sbup.edu.in/">SBUP</a> | All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-5 col-md-12 text-lg-start text-md-start text-sm-start text-center lh-base">
-                    <p><a class="text-decoration-none text-white" href="https://pulseplaydigital.com/">Website designed and developed by
+                    <p><a class="text-decoration-none text-white" href="https://pulseplaydigital.com/">Website designed
+                            and developed by
                             <span class="visitors link">PulsePlay Digital</span></a><br>with <span class="heart">&hearts;</span> from Dharamshala, Himachal Pradesh, India</p>
                 </div>
-                <div class="col-lg-3 col-md-12 text-lg-start text-md-start text-sm-start text-center lh-base">
-                    <p>Website Visit counter<br><span class="visitors"> 467987</span> Visitors</p>
+                <div class="col-lg-3 col-md-12 text-lg-end text-md-start text-sm-start text-center lh-base">
+                    <p>Website Visit counter<br><span class="visitors"> {{ visitorCout }}</span> Visitors</p>
                 </div>
             </div>
         </div>

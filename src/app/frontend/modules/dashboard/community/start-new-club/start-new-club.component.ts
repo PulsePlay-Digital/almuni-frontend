@@ -41,7 +41,8 @@ export class StartNewClubComponent implements OnInit {
       name: ['', Validators.required],
       description: ['', Validators.required],
       clubImage: ['', Validators.required],
-      type: this.type
+      type: this.type,
+      status: ['unapproved']
     })
   }
 
@@ -67,7 +68,6 @@ export class StartNewClubComponent implements OnInit {
       let action = {
         action: 'create-club'
       }
-      console.log(this.addClubForm.value)
       let formData = new FormData();
       formData.append('clubImage', (this.profilePic) ? this.profilePic : '');
       formData.append('name', this.addClubForm.value.name);

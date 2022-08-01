@@ -7,6 +7,7 @@ import { environment } from "./../../../../../environments/environment";
 import { map } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TokenInterceptor } from "./../../../core/token.interceptor";
+import * as moment from "moment";
 
 @Component({
   selector: "app-home",
@@ -18,24 +19,26 @@ export class HomeComponent implements OnInit {
   homeBanner: any;
   alumni: any;
   loading: boolean = false;
-  imgPath = environment.imgUrl;
+  imgPath = environment?.imgUrl;
   allNews: any;
   allEvents: any;
   currentUser: any;
   form: FormGroup | any;
   submitted: boolean | undefined;
+  locationCounts: any;
 
   homebannerOptions: OwlOptions = {
     loop: true,
     items: 1,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
+    touchDrag: true,
+    pullDrag: true,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 2000,
     autoplay: true,
     autoplayTimeout: 3000,
-
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -47,12 +50,14 @@ export class HomeComponent implements OnInit {
     loop: true,
     items: 1,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
+    touchDrag: true,
+    pullDrag: true,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 1500,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 4000,
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
     navText: [
       '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
       '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -88,9 +93,9 @@ export class HomeComponent implements OnInit {
     loop: true,
     items: 1,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
     autoplay: true,
     autoplayTimeout: 2500,
     navText: [
@@ -99,7 +104,7 @@ export class HomeComponent implements OnInit {
     ],
     nav: true,
     center: true,
-    stagePadding: 200,
+    stagePadding: 150,
     responsive: {
       0: {
         items: 1,
@@ -108,23 +113,24 @@ export class HomeComponent implements OnInit {
       400: {
         items: 1,
         stagePadding: 0,
-        nav: false,
       },
       768: {
         items: 1,
-        nav: true,
       },
       1191: {
         items: 1,
-        nav: true,
       },
       1450: {
         items: 1,
-        nav: true,
       },
     },
   };
-
+  lazyLoadImage = "./assets/loading.gif";
+  successAlert: boolean | undefined;
+  warningAlert: boolean | undefined;
+  showAlert: any;
+  upcomingEvent: any;
+  
   constructor(
     public router: Router,
     public config: Config,
@@ -142,6 +148,7 @@ export class HomeComponent implements OnInit {
     this.getAllGallery();
     this.getAllNews();
     this.getAllEvents();
+    this.getLocations();
   }
 
   buildForm() {
@@ -161,18 +168,21 @@ export class HomeComponent implements OnInit {
   }
   async getBanner() {
     this.loading = true;
-    let action: string = 'all-gallery';
-    await this.dataService.getData(action).pipe(
-      map((res: any) => {
-        return res?.data?.filter((item: any) => {
-          if (item?.type == 'Home main banner') {
-            return item;
-          }
-        });
-      })
-    ).subscribe((result: any) => {
-      this.homeBanner = result;
-    })
+    let action: string = "all-gallery";
+    await this.dataService
+      .getData(action)
+      .pipe(
+        map((res: any) => {
+          return res?.data?.filter((item: any) => {
+            if (item?.type == "Home main banner") {
+              return item;
+            }
+          });
+        })
+      )
+      .subscribe((result: any) => {
+        this.homeBanner = result;
+      });
   }
 
   /**
@@ -187,6 +197,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
@@ -211,6 +222,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
@@ -226,6 +238,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
+        this.notify.notificationService.openFailureSnackBar(error);
         this.loading = false;
       }
     );
@@ -247,6 +260,13 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (result: any) => {
           this.allEvents = result;
+          result?.filter((res: any) => {
+            let commingDate = res?.date;
+            let currentDate = moment(moment.now()).format("YYYY-MM-DD");
+            if (moment(currentDate).isSameOrBefore(commingDate) == true) {
+              this.upcomingEvent = res;
+            }
+          })
           this.loading = false;
         },
         (error) => {
@@ -262,28 +282,33 @@ export class HomeComponent implements OnInit {
   viewAlumniDetail(params: any) {
     this.router.navigate(["/celebrate/alumni-details"], {
       queryParams: { ...params, type: "featured-alumni" },
-      skipLocationChange: true
     });
   }
 
   /**
    * Function to subscribe on newsletter
-   * @returns 
+   * @returns
    */
   async subscribe() {
-    this.loading = true;
     this.submitted = true;
     let action: string = "newsletter";
     if (this.form.invalid) {
       return;
     } else {
-      console.log(this.form.value);
       await this.dataService.postData(action, this.form.value).subscribe(
         (res: any) => {
-          console.log(res);
           if (res?.status == 200) {
-            this.notify.notificationService.openSuccessSnackBar(res?.message);
-            this.loading = false;
+            this.successAlert = true;
+            this.showAlert = res?.message;
+            setTimeout(() => {
+              this.successAlert = false
+            }, 2500);
+          } else if (res?.status == 201) {
+            this.warningAlert = true;
+            this.showAlert = res?.message;
+            setTimeout(() => {
+              this.warningAlert = false
+            }, 2500);
           }
         },
         (error) => {
@@ -292,5 +317,42 @@ export class HomeComponent implements OnInit {
         }
       );
     }
+  }
+
+  /**
+   * Function to get location
+   */
+  async getLocations() {
+    let action: string = "count-region";
+    await this.dataService
+      .getLocaltionData(action)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      )
+      .subscribe((result: any) => {
+        this.locationCounts = result;
+      });
+  }
+
+  navigate(r: string) {
+    this.currentUser
+      ? this.router.navigate([r])
+      : this.router.navigate(["/login"]);
+  }
+
+  viewEventDetail(params: any) {
+    this.router.navigate((this.currentUser) ? ['/connect/event-detail'] : ['/login'], {
+      queryParams: params, skipLocationChange: true
+    });
+  }
+  /**
+   * Function to navigate on detail page
+   * @param url 
+   * @param params 
+   */
+  navigateToDetail(url: string, params: any) {
+    this.router.navigate([url], { queryParams:  params, skipLocationChange: true })
   }
 }

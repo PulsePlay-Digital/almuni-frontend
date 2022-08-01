@@ -1,13 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import * as moment from "moment";
-import { CountryService } from "./../../../services/country.service";
 import { DataService } from "./../../../services/data.service";
-import { AuthService } from "./../../../services/auth.service";
-import { UserService } from "./../../../services/user.service";
-import { Config } from "./../../../services/config";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { environment } from "./../../../../../environments/environment";
+import { TokenInterceptor } from "./../../../core/token.interceptor";
 
 @Component({
   selector: "app-view-profile",
@@ -15,140 +11,92 @@ import { environment } from "./../../../../../environments/environment";
   styleUrls: ["./view-profile.component.scss"],
 })
 export class ViewProfileComponent implements OnInit {
-  form: FormGroup | any;
-  token: any;
-  user: any;
-  countries: any;
-  getBatch: any;
-  getInstitutes: any;
-  heading: string = "GENERAL INFORMATION";
-  gender: any;
-  userId: any;
-  loading: boolean = false;
+  profileForm: FormGroup | any;
   profilePic: any;
-  image: any;
+  image: any = "";
+  submitted: boolean | undefined;
+  currentUser: any;
+  action: any;
   imgPath = environment.imgUrl;
+  profileData: any;
+  userId:any;
   constructor(
-    public fb: FormBuilder,
-    private authService: AuthService,
-    public userService: UserService,
-    public countryService: CountryService,
     public dataService: DataService,
-    public config: Config,
-    public arouter: ActivatedRoute,
-    public router: Router
+    public fb: FormBuilder,
+    private notify: TokenInterceptor,
+    private arouter: ActivatedRoute
   ) {
-    // Get Queryparams
+    if (localStorage) {
+      this.currentUser = JSON?.parse(
+        localStorage?.getItem("currentUser") || ""
+      );
+    }
     this.arouter.queryParams.subscribe((res: any) => {
-      if (res?.type == 'featuredAlumni') {
-        this.user = res;
-      }
       this.userId = res?.id;
     });
-    this.token = this.authService.getToken();
-    this.gender = this.config.gender;
   }
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.buildForm();
-    this.loadCountries();
-    this.getAllBatches();
-    this.getAllInstitutes();
-    if (this.userId !== null) {
-      this.loading = true;
-      let action: string = "find-user";
-      await this.userService
-        .getUsersById(action, this.userId)
-        .subscribe((res: any) => {
-          this.user = res?.data;
-          console.log(this.user)
-          this.form.patchValue({
-            ...this.user
-          });
-          this.loading = false;
-        });
-    } 
+    this.getAllProfileData();
   }
 
   buildForm() {
-    this.form = this.fb.group({
+    this.profileForm = this.fb.group({
       profile_pic: [""],
-      first_name: [""],
-      last_name: [""],
-      institute_name: [""],
-      institute_roll_no: [""],
-      batch: [""],
-      gender: [""],
-      office_email: [""],
-      current_address: [""],
-      country: [""],
-      current_region: [""],
-      current_state: [""],
-      city: [""],
-      permanent_address: [""],
-      permanent_country: [""],
-      linkedin_id: [""],
-      twitter_id: [""],
-      skype_id: [""],
-      facebook_id: [""],
-      instagram_id: [""],
-      council_member_designation: [""],
     });
   }
 
-  /**
-   * Function to upload image
-   * @param event
-   */
-  onUploadImage(event: any) {
-    this.profilePic = event.target.files[0];
+  async onUploadImage(event: any) {
+    this.profilePic = event?.target?.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
       let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event?.target?.files[0]);
       reader.onload = (_event) => {
-        this.image = _event.target?.result;
+        this.image = _event?.target?.result;
       };
+      this.action = {
+        action: "profile-pic",
+        id: parseInt(this.currentUser?.id),
+      };
+
+      let formData = new FormData();
+      formData.append("profile_pic", this.profilePic ? this.profilePic : "");
+      await this.dataService.updateData(this.action, formData).subscribe(
+        (res: any) => {
+          if (res.status === 200) {
+            this.notify.notificationService.openSuccessSnackBar(res?.message);
+            this.getCurrentUser();
+            location.reload();
+          }
+        },
+        (error) => {
+          this.notify.notificationService.openFailureSnackBar(error);
+        }
+      );
     }
   }
-  /**
-   * Function to get all countries
-   */
-  public loadCountries() {
-    this.countryService.getCountries().subscribe((data) => {
-      this.countries = data;
-    });
-  }
-  /**
-   * Function to get all Batches
-   */
-  async getAllBatches() {
-    await this.dataService.getAllBatches().subscribe(
-      (res: any) => {
-        this.getBatch = res.BatchYear;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-  /**
-   * Function to get all institutes
-   */
-  async getAllInstitutes() {
-    await this.dataService.getAllInstitutes().subscribe(
-      (res: any) => {
-        this.getInstitutes = res.Institute;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+
+  async getCurrentUser() {
+    let action: string = "find-user";
+    await this.dataService
+      .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
+      .subscribe((res: any) => {
+        localStorage.setItem("currentUser", JSON.stringify(res?.data));
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      });
   }
 
-  editUser(id: any) {
-    this.router.navigate(["/edit-profile"], {
-      queryParams: { id: id }
-    });
+  async getAllProfileData() {
+    let action: string = "all-profileUsers";
+    await this.dataService
+      .getDataById(action, (this.userId) ? this.userId : this.currentUser?.id)
+      .subscribe((res: any) => {
+        this.profileData = res;
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
+      });
   }
 }

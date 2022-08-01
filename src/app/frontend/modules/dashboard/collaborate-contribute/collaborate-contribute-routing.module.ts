@@ -15,6 +15,7 @@ import { AddOpportunityComponent } from './add-opportunity/add-opportunity.compo
 import { AvailableEventComponent } from './available-event/available-event.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { CollaboratePageComponent } from './collaborate-page/collaborate-page.component';
+import { ProjectPostedByMeComponent } from './project-posted-by-me/project-posted-by-me.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'available-jobs', component: AvailableJobsComponent  },
       { path: 'add-special-project', component: AddSpecialProjectComponent  },
       { path: 'posted-jobs-by-me', component: PostedJobsByMeComponent  },
+      { path: 'posted-project-by-me', component: ProjectPostedByMeComponent  },
       { path: 'project-by-alumni', component: ProjectPostedByAlumniComponent  },
       { path: 'engage-with-society', component: EngageSocietyComponent  },
       { path: 'add-expertise', component: AddExpertiseComponent  },
@@ -37,7 +39,7 @@ const routes: Routes = [
       { path: 'view-details', component: ViewDetailsComponent  },
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '',
         pathMatch: 'full'
       },
     ]

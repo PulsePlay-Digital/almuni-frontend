@@ -8,6 +8,7 @@
     .card-image {
       .clubImg {
         height: 250px;
+        object-fit: cover;
       }
     }
     .card-body {
@@ -20,28 +21,60 @@
         font-size: var(--font-S-20);
       }
     }
-   
     .card-button {
       background-color: var(--btn-background);
       border-radius: var(--border-radius-2);
       line-height: var(--line-height-1-8);
       font-size: var(--font-S-16);
+      border: 0;
     }
-    .card-button:hover{
-      background-color: var(--bs-white);
-      border: 1px solid var(--btn-background);
-      color: var(--btn-background);
+    .card-button:hover {
+      background-color: var(--btn-hover);
+      color: var(--bs-white);
     }
   }
   .common_text {
     font-size: var(--font-S-22);
+    font-family: var(--family);
   }
   .start-club {
     color: var(--btn-background);
     cursor: var(--cursor-pointer);
   }
+  .card.border-0 .cursor-pointer {
+    cursor: pointer;
+    color: var(--btn-background);
+  }
+  .card.border-0 .cursor-pointer {
+    .card-body{
+      p {
+        color: var(--btn-background);
+      }
+    }
+  }
 }
-
+.bannerImg {
+  background: url("./../../../../../../assets/community/SBUP_Alumni_community.jpg");
+  background-repeat: var(--background-no-repeat);
+  height: 250px;
+  background-size: 100% 100%;
+  position: var(--position-relative);
+  .layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: var(--position-absolute);
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height-100);
+    display: var(--display-Flex);
+    align-items: var(--align-center);
+  }
+  h3 {
+    letter-spacing: var(--letter-space-1);
+    font-family: var(--family);
+    font-size: var(--font-S-32);
+  }
+}
 
 @media (min-width: 300px) and (max-width: 575px) {
   .industry-club {
@@ -64,7 +97,16 @@
       font-size: var(--font-S-16);
     }
   }
+  .bannerImg {
+    background-size: cover;
+    background-position-x: center;
+    height: 150px;
+    h3 {
+      font-size: var(--font-S-18);
+    }
+  }
 }
+
 @media (min-width: 400px) and (max-width: 575px) {
   .industry-club {
     .card {
@@ -100,6 +142,12 @@
       font-size: var(--font-S-18);
     }
   }
+  .bannerImg {
+    height: 180px;
+    h3 {
+      font-size: var(--font-S-22);
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -118,6 +166,20 @@
     }
     .common_text {
       font-size: var(--font-S-20);
+    }
+  }
+  .bannerImg {
+    height: 200px;
+    h3 {
+      font-size: var(--font-S-26);
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bannerImg {
+    h3 {
+      font-size: var(--font-S-30);
     }
   }
 }

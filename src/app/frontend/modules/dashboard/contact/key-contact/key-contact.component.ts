@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { TokenInterceptor } from './../../../../core/token.interceptor';
 import { DataService } from './../../../../services/data.service';
 
 @Component({
@@ -10,13 +11,12 @@ import { DataService } from './../../../../services/data.service';
 export class KeyContactComponent implements OnInit {
   keyData: any;
   loading: boolean = false;
-  heading: string = "CONTACT US";
   constructor(
-    public dataService: DataService
+    public dataService: DataService,
+    public notify: TokenInterceptor
   ) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getAllKeyContacts();
   }
 
@@ -24,6 +24,7 @@ export class KeyContactComponent implements OnInit {
    * Get all key contacts
    */
   async getAllKeyContacts() {
+    this.loading = true;
     let action: string = 'all-contact';
     await this.dataService.getData(action).pipe(
       map((res:any) => {
@@ -36,6 +37,11 @@ export class KeyContactComponent implements OnInit {
     ).subscribe((data: any) => {
       this.keyData = data;
       this.loading = false;
-    })
+    },
+    error => {
+      this.notify.notificationService.openFailureSnackBar(error?.message);
+      this.loading = false;
+    }
+    )
   }
 }

@@ -1,0 +1,19 @@
+::placeholder {
+  font-size: var(--font-S-13);
+}
+select {
+  font-size: var(--font-S-13);
+  color: #777777;
+  padding: 8.2px 0.75rem;
+}
+
+.pointer {
+  input,select,textarea {
+    pointer-events: auto;
+  }
+}
+.no-pointer {
+  input,select,textarea {
+    pointer-events: none;
+  }
+}

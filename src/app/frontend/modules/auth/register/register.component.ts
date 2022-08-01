@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { TokenInterceptor } from "src/app/frontend/core/token.interceptor";
+import { TokenInterceptor } from "./../../../core/token.interceptor";
 import { AuthService } from "./../../../../frontend/services/auth.service";
 import { Config } from "./../../../../frontend/services/config";
 import { CountryService } from "./../../../../frontend/services/country.service";
@@ -20,21 +20,23 @@ export class RegisterComponent implements OnInit {
   getInstitutes: any;
   submitted: boolean = false;
   siteKey = "6LcX9pEdAAAAAOKoswl3Wl3bV6sGBeuk7SdGRkQt";
-  profilePic:any;
-  image:any;
+  profilePic: any;
+  image: any;
   userRole: any;
-  bannerHeaading: string = "new alumni registration"
+  bannerHeaading: string = "new alumni registration";
+  region: any;
 
   constructor(
     public fb: FormBuilder,
-    public countryService: CountryService,
-    public dataService: DataService,
-    public authService: AuthService,
-    public notify: TokenInterceptor,
+    private countryService: CountryService,
+    private dataService: DataService,
+    private authService: AuthService,
+    private notify: TokenInterceptor,
     private config: Config,
     public router: Router
   ) {
-    this.userRole = this.config.role;
+    this.userRole = this.config?.role;
+    this.region = this.config?.region;
   }
 
   ngOnInit(): void {
@@ -56,7 +58,7 @@ export class RegisterComponent implements OnInit {
         current_region: ["", Validators.required],
         country: ["", Validators.required],
         code: ["", Validators.required],
-        mobile_number: ["",[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10),Validators.maxLength(10)]],
+        mobile_number: ["", [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(16)]],
         birth_date: ["", Validators.required],
         email: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
         current_company: ["", Validators.required],
@@ -65,10 +67,13 @@ export class RegisterComponent implements OnInit {
         password_confirmation: ["", Validators.required],
         securityQuestions_id: ["", Validators.required],
         security_answers: ["", Validators.required],
-        profile_pic:[""],
-        recaptcha: [""],
-        role: ["", Validators.required]
-      },  
+        profile_pic: [""],
+        address: [""],
+        Willing_to_provide_Mentorship: ["", Validators.required],
+        status: ['unapproved'],
+        role: ["0"]
+        // recaptcha: [""]
+      },
       {
         validators: this.passwordMatch("password", "password_confirmation"),
       }
@@ -88,20 +93,22 @@ export class RegisterComponent implements OnInit {
   public loadCountries() {
     this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
+    }, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
     });
   }
   /**
    * Function to upload Image
    * @param event 
    */
-   onUploadImage(event: any) {
-    this.profilePic = event.target.files[0];
+  onUploadImage(event: any) {
+    this.profilePic = event?.target?.files[0];
     if (event?.target?.files && event?.target?.files[0]) {
       this.profilePic = event?.target?.files[0];
       let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event?.target?.files[0]);
       reader.onload = (_event) => {
-        this.image = _event.target?.result;
+        this.image = _event?.target?.result;
       }
     }
   }
@@ -111,11 +118,11 @@ export class RegisterComponent implements OnInit {
    * @param event
    */
   public changeCountry(event: any) {
-    this.countries.filter((res: any) => { 
-      if (res.name == event.target.value) {
-        this.registerForm.controls["code"].setValue(res.code);
+    this.countries.filter((res: any) => {
+      if (res?.name == event?.target?.value) {
+        this.registerForm.controls["code"].setValue(res?.code);
       }
-    }); 
+    });
   }
 
   /**
@@ -145,10 +152,9 @@ export class RegisterComponent implements OnInit {
   async getAllBatches() {
     await this.dataService.getAllBatches().subscribe(
       (res: any) => {
-        this.getBatch = res.BatchYear;
-      },
-      (error) => {
-        console.log(error);
+        this.getBatch = res?.BatchYear;
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -159,10 +165,9 @@ export class RegisterComponent implements OnInit {
   async getAllInstitutes() {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
-        this.getInstitutes = res.Institute;
-      },
-      (error) => {
-        console.log(error);
+        this.getInstitutes = res?.Institute;
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -172,8 +177,11 @@ export class RegisterComponent implements OnInit {
    */
   async getAllQuestions() {
     await this.dataService.getAllQuestions().subscribe((res: any) => {
-      this.questions = res.data;
-    });
+      this.questions = res?.data;
+    }, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
+    }
+    );
   }
 
   /**
@@ -184,11 +192,11 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      let params = this.registerForm.value;
+      let params = this.registerForm?.value;
       await this.authService.register(params).subscribe((res: any) => {
-        this.notify.notificationService.openSuccessSnackBar(res.message);
-        this.router.navigate(['/login']);
-      },error => {
+        this.notify.notificationService.openSuccessSnackBar(res?.message);
+        this.router.navigate(['login']);
+      }, error => {
         this.notify.notificationService.openFailureSnackBar(error);
       })
     }

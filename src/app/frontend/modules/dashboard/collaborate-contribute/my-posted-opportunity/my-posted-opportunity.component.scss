@@ -1,3 +1,7 @@
 .card-bg{
     background: var(--card-bg);
   }
+  .card-body {
+    height: 190px;
+    overflow-y: auto;
+  }

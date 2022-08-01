@@ -1,21 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: 'view-profile',
-    // canActivate: [AuthGuard],
-    component: ViewProfileComponent
+    path: "view-profile",
+    loadChildren: () =>
+      import("./view-profile/view-profile.module").then(
+        (m) => m.ViewProfileModule
+      ),
   },
   {
-    path:'edit-profile',
-    loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule)
-  }
+    path: "edit-profile",
+    loadChildren: () =>
+      import("./edit-profile/edit-profile.module").then(
+        (m) => m.EditProfileModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}

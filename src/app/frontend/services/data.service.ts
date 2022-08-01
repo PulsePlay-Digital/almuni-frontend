@@ -11,6 +11,8 @@ export class DataService {
   url: any;
   public scrollSection = new Subject<any>();
 
+  public resetForm = new Subject<any>();
+
   constructor(public http: HttpClient) {
     this.url = environment.apiUrl;
   }
@@ -50,7 +52,7 @@ export class DataService {
     return this.http.get(`${this.url}/all-questions`);
   }
 
-  public getData(action?: string) {
+  public getData(action?: any) {
     return this.http.get(`${this.url}/${action}`);
   }
 
@@ -60,20 +62,38 @@ export class DataService {
 
   public postData(action?: any, data?: any) {
     if (action?.action === 'create-event' || action?.action === 'create-club'
-      || action?.action === 'create-journey') {
+      || action?.action === 'create-journey' || action?.action == 'filter-event' || action?.action == 'create-getFeatured') {
       return this.http.post<any>(`${this.url}/${action?.action}`, data);
     }
     return this.http.post<any>(`${this.url}/${action}`, data);
   }
 
+  public postClubData(data?: any, userId?:any) {
+      return this.http.post<any>(`${this.url}/${data?.action}/${userId}`, data);
+  }
+
   updateData(action: any, data: any) {
-    if (action?.action === 'update-user' || action?.action == 'profile-pic'){
-     return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
-   }
+    if (action?.action === 'update-user' || action?.action == 'profile-pic') {
+      return this.http.post(`${this.url}/${action?.action}/${action?.id}`, data);
+    } 
+    else if(action == 'update-education' || action == 'update-employment' 
+    || action == 'update-experience' || action == 'update-other') {
+      return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+    } else if (action == 'update-mentorship') {
+      return this.http.post<any>(`${this.url}/${action}`, data);
+    }
     return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+  }
+
+  getLocaltionData(action: any) {
+    return this.http.get(`${this.url}/${action}`);
   }
 
   public scrollSec() {
     this.scrollSection.next();
+  }
+
+  public resetFormData() {
+    this.resetForm.next();
   }
 }

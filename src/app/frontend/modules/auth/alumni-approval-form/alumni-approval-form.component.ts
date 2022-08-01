@@ -68,6 +68,8 @@ export class AlumniApprovalFormComponent implements OnInit {
   public loadCountries() {
     this.countryService.getCountries().subscribe((data) => {
       this.countries = data;
+    }, error => {
+      this.notify.notificationService.openFailureSnackBar(error);
     });
   }
 
@@ -80,9 +82,8 @@ export class AlumniApprovalFormComponent implements OnInit {
     await this.dataService.getAllBatches().subscribe(
       (res: any) => {
         this.getBatch = res.BatchYear;
-      },
-      (error) => {
-        console.log(error);
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -94,10 +95,8 @@ export class AlumniApprovalFormComponent implements OnInit {
     await this.dataService.getAllInstitutes().subscribe(
       (res: any) => {
         this.getInstitutes = res.Institute;
-        console.log(this.getInstitutes)
-      },
-      (error) => {
-        console.log(error);
+      }, error => {
+        this.notify.notificationService.openFailureSnackBar(error);
       }
     );
   }
@@ -111,7 +110,6 @@ export class AlumniApprovalFormComponent implements OnInit {
       return;
     } else {
       let params = this.approvalForm.value;
-     console.log(params)
     }
   }
 }
