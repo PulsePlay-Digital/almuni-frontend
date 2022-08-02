@@ -1,11 +1,11 @@
 <div class="row mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-3 mb-3 m-0">
     <div class="col-12 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3" *ngIf="sharedData?.length > 0">
-        <div class="search-filter p-4">
+        <div class="search-filter py-3 px-0">
             <form class="">
                 <div class="row">
-                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                    <div class="col-lg-8 col-xl-8 col-md-8 col-sm-12">
                         <div class="form-outline">
-                            <input type="name" class="form-control" id="inputName" [(ngModel)]="nameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search by name" />
+                            <input type="name" class="form-control py-3" id="inputName" [(ngModel)]="nameSearched" [ngModelOptions]="{standalone: true}" placeholder="Search by name" />
                         </div>
                     </div>
                 </div>
@@ -16,18 +16,18 @@
     <ng-container *ngIf="!loading">
         <ng-container *ngIf="sharedData?.length > 0">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 my-2" *ngFor="let item of sharedData | filterText: nameSearched">
-                <div class="card p-xl-4 p-lg-4 p-md-3 p-sm-3 p-3">
+                <div class="card">
                     <div class="alumni-pic">
                         <img [src]="(item?.photo) ? imgPath + item?.photo : './assets/SBUP_Alumni_Dummy_Image_600x400.png' " class="card-img-top" alt="Alumni Picture" />
                     </div>
-                    <div class="card-header bg-transparent border-0 text-center pt-3">
+                    <div class="card-header bg-transparent border-0 text-xl-start text-lg-start text-md-start text-sm-start text-center pt-3">
                         <h3 class="card-title fw-bold text-capitalize mb-0">{{ item?.title != null ? item?.title : 'N/A'}}</h3>
                     </div>
-                    <div class="card-body text-center pb-0 pt-2">
+                    <div class="card-body text-xl-start text-lg-start text-md-start text-sm-start text-center pb-0 pt-2">
                         <p class="card-text "><b>Institute</b> : {{ item?.institute }}</p>
                     </div>
-                    <div class="card-footer bg-transparent border-0 text-center">
-                        <a (click)="viewDetail(item.id)" class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize ">
+                    <div class="card-footer bg-transparent border-0 text-xl-start text-lg-start text-md-start text-sm-start text-center">
+                        <a (click)="viewDetail(item.id)" class="btn btn-lg btn-xl btn-md btn-sm view-btn text-capitalize mb-3">
                             <i class="fa fa-link"></i>&nbsp;View more</a>
                     </div>
                 </div>

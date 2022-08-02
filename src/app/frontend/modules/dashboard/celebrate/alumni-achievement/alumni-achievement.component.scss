@@ -6,11 +6,23 @@
     .card-text{
         color: #011898;
     }
+    .card-title{
+      background-color: var(--card-title-bg);
+      padding: 25px;
+
+    }
+    .card-body{
+      padding: 0px;
+    }
     .share-btn{
         background-color: #011898;
     }
     .projectImg {
       height: 244px;
+    }
+    .projectHeading {
+      background-color: #3DA4D9;
+      height: 87px;  
     }
 }
 .project-btn {
@@ -22,7 +34,7 @@
   }
   .project-btn:hover {
     background: var(--bs-white);
-    color: var(--bs-background);
+    color: var(--btn-background);
   }
 
   .bannerImg {

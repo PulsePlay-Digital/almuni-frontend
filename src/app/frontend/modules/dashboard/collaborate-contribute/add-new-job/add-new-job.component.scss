@@ -1,22 +1,24 @@
-.post-job{
-    background: var(--card-bg);
+.btn-info {
+  background: var(--btn-background);
+  border: 1px solid var(--btn-background);
+  color: var(--bs-white);
+  border-radius: var(--border-radius-2);
 }
-.btn-info{
-    background: var(--btn-background);
-    border: 1px solid var(--btn-background);
-    color: var(--bs-white);
-    border-radius: var(--border-radius-2);
-}
-.btn-info:hover{
-    background: var(--bs-white);
-    color: var(--bs-background);
+.btn-info:hover {
+  background: var(--bs-white);
+  color: var(--btn-background);
 }
 
 ::placeholder {
-    font-size: var(--font-S-13)
-  }
+  font-size: var(--font-S-13);
+}
 select {
-    font-size: var(--font-S-13);
-    color: #777777;
-    padding: 8.2px 0.75rem;
+  font-size: var(--font-S-13);
+  color: #777777;
+  padding: 8.2px 0.75rem;
+}
+input,
+select {
+  color: #333333;
+  background-color: #d9d9d9;
 }

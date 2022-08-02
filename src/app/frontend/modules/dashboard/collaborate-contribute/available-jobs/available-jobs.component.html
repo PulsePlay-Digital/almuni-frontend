@@ -10,7 +10,7 @@
                 <ng-container *ngIf="allJobs?.length > 0">
                     <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 my-2" *ngFor="let item of allJobs | paginate: { itemsPerPage: 6, currentPage: p }">
                         <div class="job-section py-lg-4 py-md-4 py-sm-3 py-3 px-lg-4 px-md-4 px-sm-3 px-3">
-                            <h6 class="job-heading fs-5 fw-bold text-capitalize lg-base my-1">{{ item?.title }}
+                            <h6 class="job-heading fs-5 fw-bold text-capitalize lh-sm my-1 text-dark">{{ item?.title }}
                             </h6>
                             <div class="row justify-content-lg-center">
                                 <div class="col-12">
@@ -33,8 +33,8 @@
 
                                     </div>
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 col-xl-4 col-lg-5 pt-4 col-6">
+                                <div class="row">
+                                    <div class="col-md-4 col-xl-4 col-lg-5 pt-4 col-6 ps-xl-0 ps-lg-0 ps-md-0 ps-sm-0">
                                         <a class="btn shadow project-btn" href="{{item?.website }}" target="_blank">Apply</a>
                                     </div>
                                 </div>

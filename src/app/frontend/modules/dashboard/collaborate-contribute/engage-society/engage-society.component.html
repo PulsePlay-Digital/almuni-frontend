@@ -1,4 +1,4 @@
-<div class="bannerImg">
+<!-- <div class="bannerImg">
     <div class="layer">
         <div class="container">
             <div class="row m-0 justify-content-center">
@@ -8,8 +8,14 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<app-common-banner></app-common-banner>
 <div class="container">
+    <div class="row mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-1 mt-xl-5 mt-lg-5 mt-md-4 mt-sm-4 mt-3 m-0">
+        <div class="col-lg-12">
+            <h3 class="main-heading text-uppercase fw-bold mb-0">ENGAGE WITH SRI BALAJI UNIVERSITY</h3>
+        </div>
+    </div>
     <div class="engage-society mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4 mb-3">
         <div class="row m-0">
             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
@@ -17,7 +23,7 @@
                     <img src="./assets/collaborate/homeEngage.png" alt="career img" class="img-fluid">
                 </div>
             </div>
-            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 ps-xl-5 ps-lg-5 my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
+            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 ps-xl-5 ps-lg-5 my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3 align-self-center">
                 <div class="description my-xl-2">
                     <ul class="px-3">
                         <li class="lh-lg"> As a visiting faculty</li>
@@ -34,10 +40,13 @@
 
         <div class="row justify-content-center m-0">
             <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2">
-                <div class="project-box my-3 py-3 px-2">
-                    <h4 class="posted text-black fw-bold text-center fs-5">Available Event</h4>
-                    <h2 class="number fw-bold text-center mt-5 fs-2">{{availableEventCount}}</h2>
-                    <div class="row justify-content-center m-0 py-2">
+                <div class="project-box my-3">
+                    <div class="projectHeading d-flex align-items-center justify-content-center">
+                        <h4 class="posted text-black fw-bold fs-5 mb-0 text-white px-2">Available Event  &nbsp;{{ availableEventCount }}</h4>
+                    </div>
+                    <!-- <h4 class="posted text-black fw-bold text-center fs-5">Available Event</h4>
+                    <h2 class="number fw-bold text-center mt-5 fs-2">{{availableEventCount}}</h2> -->
+                    <div class="row justify-content-center m-0 py-2 mt-5">
                         <div class="col-md-9 col-lg-7 col-xl-6 col-sm-8 col-7">
                             <a routerLink="/collaborate-contribute/available-event" class="btn project-btn fs-6 lh-base">View Event</a>
                         </div>
@@ -46,10 +55,13 @@
 
             </div>
             <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2">
-                <div class="project-box my-3 py-3 px-2">
-                    <h4 class="posted text-black fw-bold text-center fs-5">Offer Expertise</h4>
-                    <h2 class="number fw-bold text-center mt-5 fs-2">{{ allExpertise }}</h2>
-                    <div class="row justify-content-between m-0 py-2">
+                <div class="project-box my-3">
+                    <div class="projectHeading d-flex align-items-center justify-content-center">
+                        <h4 class="posted text-black fw-bold fs-5 mb-0 text-white px-2">Offer Expertise  &nbsp;{{ allExpertise }}</h4>
+                    </div>
+                    <!-- <h4 class="posted text-black fw-bold text-center fs-5">Offer Expertise</h4>
+                    <h2 class="number fw-bold text-center mt-5 fs-2">{{ allExpertise }}</h2> -->
+                    <div class="row justify-content-between m-0 py-2 px-3 mt-5">
                         <div class="col-md-6 col-lg-5 col-xl-5 col-sm-6 col-6">
                             <a routerLink="/collaborate-contribute/add-expertise" class="btn btn-md project-btn fs-6 lh-base">Add</a>
                         </div>
@@ -60,10 +72,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 order-xl-2 order-lg-2 order-md-2 order-sm-3 order-3">
-                <div class="project-box my-3 py-3 px-2">
-                    <h4 class="posted text-black fw-bold text-center text-capitalize fs-5">Share jobs / Internships Opportunities</h4>
-                    <h2 class="number fw-bold text-center mt-5 fs-2">{{ allOpportunity }}</h2>
-                    <div class="row justify-content-between m-0 py-2">
+                <div class="project-box my-3">
+                    <div class="projectHeading d-flex align-items-center justify-content-center">
+                        <h4 class="posted text-black fw-bold fs-5 mb-0 text-white px-2">Share jobs / Internships Opportunities  &nbsp;{{ allOpportunity }}</h4>
+                    </div>
+                    <!-- <h4 class="posted text-black fw-bold text-center text-capitalize fs-5">Share jobs / Internships Opportunities</h4>
+                    <h2 class="number fw-bold text-center mt-5 fs-2">{{ allOpportunity }}</h2> -->
+                    <div class="row justify-content-between m-0 py-2 mt-5 px-3">
                         <div class="col-md-6 col-lg-5 col-xl-5 col-sm-6 col-6">
                             <a routerLink="/collaborate-contribute/add-opportunity" class="btn btn-md project-btn fs-6 lh-base">Add</a>
                         </div>

@@ -1,4 +1,4 @@
-<div class="bannerImg">
+<!-- <div class="bannerImg">
     <div class="layer">
         <div class="container">
             <div class="row m-0 justify-content-center">
@@ -8,22 +8,28 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<app-common-banner></app-common-banner>
 <div class="container">
-    <div class="alumni-journey">
-        <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-4 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
-
+    <div class="row mb-xl-3 mb-lg-3 mb-md-3 mb-sm-2 mb-1 mt-xl-5 mt-lg-5 mt-md-4 mt-sm-4 mt-3 m-0">
+        <div class="col-lg-12">
+            <h3 class="main-heading text-uppercase fw-bold mb-0">Alumni achievement</h3>
         </div>
+    </div>
+    <div class="alumni-journey">
         <div class="row justify-content-center mb-3 m-0">
             <div class="col-lg-4 col-md-12 my-lg-2 my-md-3 my-sm-3 my-2">
                 <img src="./assets/celebrate/celebrate.png" class="img-fluid w-100 projectImg" alt="celebrate img">
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 my-2 text-center">
-                <div class="card p-xl-3 p-lg-2 p-md-2 p-sm-2 p-2">
-                    <div class="card-body px-lg-0 px-md-0 px-sm-0 px-0 text-center">
-                        <h5 class="card-title fs-6 fw-bold lh-1">Shared Achievement By Me</h5>
-                        <p class="card-text text-center fs-2 fw-bold py-4 pt-5">{{allUserAchievementCount}}</p>
-                        <div class="row justify-content-between m-0 py-2">
+                <div class="card">
+                    <div class="card-body p-0 text-center">
+                        <div class="projectHeading d-flex align-items-center justify-content-center">
+                            <h4 class="posted text-black fw-bold fs-5 mb-0 text-white px-2">Shared Achievement By Me  &nbsp;{{ allUserAchievementCount }}</h4>
+                        </div>
+                        <!-- <h5 class="card-title fs-6 fw-bold lh-1">Shared Achievement By Me</h5>
+                        <p class="card-text text-center fs-2 fw-bold py-4 pt-5">{{allUserAchievementCount}}</p> -->
+                        <div class="row justify-content-between m-0 py-2 px-3 mt-5">
                             <div class="col-md-6 col-lg-5 col-xl-5 col-sm-6 col-6">
                                 <a (click)="sharedAchievementByMe()" class="btn btn-md project-btn fs-6 lh-base">Add</a>
                             </div>
@@ -35,12 +41,15 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 my-2 text-center">
-                <div class="card p-xl-3 p-lg-2 p-md-2 p-sm-2 p-2">
-                    <div class="card-body px-lg-0 px-md-0 px-sm-0 px-0 text-center">
-                        <h5 class="card-title fs-6 fw-bold lh-1">Shared Achievement By Alumni</h5>
-                        <p class="card-text text-center fs-2 fw-bold py-4 pt-5">{{allAchievementCount}}</p>
-                        <div class="row justify-content-center m-0 py-2">
-                            <div class="col-md-7 col-lg-11 col-xl-9 col-sm-9 col-8">
+                <div class="card">
+                    <div class="card-body p-0 text-center">
+                        <div class="projectHeading d-flex align-items-center justify-content-center">
+                            <h4 class="posted text-black fw-bold fs-5 mb-0 text-white px-2">Shared Achievement By Alumni  &nbsp;{{ allAchievementCount }}</h4>
+                        </div>
+                        <!-- <h5 class="card-title fs-6 fw-bold lh-1">Shared Achievement By Alumni</h5>
+                        <p class="card-text text-center fs-2 fw-bold py-4 pt-5">{{allAchievementCount}}</p> -->
+                        <div class="row justify-content-center m-0 py-2 mt-5">
+                            <div class="col-md-8 col-lg-9 col-xl-7 col-sm-11 col-7">
                                 <a  (click)="seeAllAchievement()" class="btn btn-md project-btn fs-6 lh-base">View
                                     Achievement</a>
                             </div>
