@@ -15,18 +15,22 @@
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="professionalClub?.length > 0">
-                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3" *ngFor="let item of professionalClub">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 mb-xl-5 mb-lg-3 mb-md-3 mb-3"
+                        *ngFor="let item of professionalClub">
                         <div class="card border-0">
-                            <div (click)="(item?.join_club == 1) ? clubDetails(item) : '' " [ngClass]="(item?.join_club == 1) ? 'cursor-pointer' : ''">
+                            <div (click)="(item?.join_club == 1) ? clubDetails(item) : '' "
+                                [ngClass]="(item?.join_club == 1) ? 'cursor-pointer' : ''">
                                 <div class="card-image rounded-bottom rounded-3">
-                                    <img [src]="imgPath + item?.clubImage" class="card-img-top clubImg" alt="Digital Img">
+                                    <img [src]="imgPath + item?.clubImage" class="card-img-top clubImg"
+                                        alt="Digital Img">
                                 </div>
                                 <div class="card-body text-center">
                                     <p class="card-text fw-bold pb-3 pt-3 lh-sm">{{item?.name}}</p>
                                 </div>
                             </div>
                             <div class="card-footer bg-transparent border-0 text-center" (click)="joinUnjoinClub(item)">
-                                <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1"> {{(item?.join_club == 1) ? 'Unjoin' : 'Join'}}
+                                <a class="btn btn-primary card-button px-4 btn-xl btn-lg btn-md btn-sm py-1">
+                                    {{(item?.join_club == 1) ? 'Unjoin' : 'Join'}}
                                     Club</a>
                             </div>
                         </div>
@@ -39,13 +43,16 @@
                 </ng-container>
             </ng-container>
         </div>
-        <div class="row justify-content-center mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3">
-            <div class="col-lg-8 text-center">
-                <h6 class="new-club text-black fw-bolder pt-3 lh-base common_text"> Want to Start a New Club:
-                    <br>Please submit your request for Club Formation by filling up this form.
-                </h6>
-                <h6 class="start-club fw-bolder lh-base common_text" (click)="joinClub()"> START A CLUB (Professional Focus)
-                </h6>
+        <div class="row mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-3">
+            <div class="col-12 text-xl-start text-lg-start text-md-start text-sm-start text-center">
+                <h6 class="fs-5 mb-4 text-dark">Want to Start a New Club:Please submit your request for Club Formation by filling
+                    up this form.</h6>
+            </div>
+            <div class="col-xl-3 col-lg-3 mb-xl-5 mb-lg-5 mb-md-4 mb-sm-4 mb-3 text-xl-start text-lg-start text-md-start text-sm-start text-center">
+                <a (click)="joinClub()"
+                    class="btn btn-lg btn-md btn-sm view-btn text-capitalize enterBtn mb-3">
+                    Start A Club</a>
+                <p class="text-xl-start text-lg-start text-md-start text-sm-start text-center">(Professional Club)</p>
             </div>
         </div>
     </div>

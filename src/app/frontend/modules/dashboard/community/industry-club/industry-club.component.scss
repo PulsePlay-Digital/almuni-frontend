@@ -53,6 +53,20 @@
     }
   }
 }
+.enterBtn{
+  width: 132px;
+  color: var(--bs-white);
+  background-color: var(--btn-background);
+  border-radius: var(--border-radius-2);
+  line-height: var(--line-height-2);
+  font-size: var(--font-S-16);
+  border: 1px solid var(--btn-background);
+}
+.enterBtn:hover {
+  background-color: var(--bs-white);
+  border-color: var(--btn-background);
+  color: var(--btn-background);
+}
 .bannerImg {
   background: url("./../../../../../../assets/community/SBUP_Alumni_community.jpg");
   background-repeat: var(--background-no-repeat);

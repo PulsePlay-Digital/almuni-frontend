@@ -5,23 +5,26 @@
     min-height: 192px;
     overflow: var(--overflow-H);
   }
-  .view-btn {
-    background: var(--btn-background);
-    color: var(--bs-white);
-    border: 1px solid var(--btn-background);
-    line-height: var(--line-height-1-8);
-  }
-  .view-btn:hover {
-    background: var(--bs-white);
-    color: var(--btn-background);
-  }
+}
+.view-btn {
+  background: var(--btn-background);
+  color: var(--bs-white);
+  border: 1px solid var(--btn-background);
+  line-height: var(--line-height-1-8);
+}
+.view-btn:hover {
+  background: var(--bs-white);
+  color: var(--btn-background);
 }
 .start-club {
   color: var(--btn-background);
   cursor: var(--cursor-pointer);
   font-family: var(--family);
 }
-
+.enterBtn{
+  width: 132px;
+  line-height: 2;
+}
 .bannerImg {
   background: url("./../../../../../../assets/community/SBUP_Alumni_community.jpg");
   background-repeat: var(--background-no-repeat);

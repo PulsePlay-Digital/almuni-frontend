@@ -65,7 +65,6 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     MatListModule,
     FlexLayoutModule,
     MatExpansionModule,
-    MatDialogModule,
 
     ReactiveFormsModule,
     FormsModule,

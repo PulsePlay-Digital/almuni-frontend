@@ -589,6 +589,9 @@
     min-height: 500px;
     background-size: 100% 100%;
     background-position: top;
+    .owl-nav {
+      display: none  !important;
+    }
   }
   .meetSection {
     .meet-content {
@@ -664,5 +667,6 @@
   .homeBanner {
     min-height: 460px;
     background-position: top;
+    
   }
 }
