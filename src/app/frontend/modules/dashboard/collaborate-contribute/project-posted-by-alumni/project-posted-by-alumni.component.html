@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-header border-0">
             <h5 class="card-title mb-0 text-white text-capitalize">
-              <p class="mb-0 main-heading fs-5 fw-bold lh-base">{{ item?.title }} </p>
+              <p class="mb-0 main-heading fs-5 fw-bold lh-base text-dark">{{ item?.title }} </p>
             </h5>
           </div>
           <div class="card-body">
@@ -41,8 +41,8 @@
 
             </div>
           </div>
-          <div class="card-footer border-0 text-end">
-            <a class="btn project-btn text-uppercase mt-1 w-auto" (click)="requestSent(item)">Request sent</a>
+          <div class="card-footer border-0">
+            <a class="btn project-btn text-capitalize mt-1 w-auto fs-6" (click)="requestSent(item)">Request sent</a>
           </div>
         </div>
       </div>

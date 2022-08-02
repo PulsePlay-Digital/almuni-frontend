@@ -1,6 +1,3 @@
-.expertise {
-  background: var(--card-bg);
-}
 .project-btn {
   background: var(--btn-background);
   border: 1px solid var(--btn-background);
@@ -10,13 +7,16 @@
 }
 .project-btn:hover {
   background: var(--bs-white);
-  color: var(--bs-background);
+  color: var(--btn-background);
 }
 ::placeholder {
   font-size: var(--font-S-13);
 }
 select {
   font-size: var(--font-S-13);
-  color: #777777;
   padding: 8.2px 0.75rem;
+}
+input, select{
+  color: #333333;
+  background-color: #D9D9D9;
 }

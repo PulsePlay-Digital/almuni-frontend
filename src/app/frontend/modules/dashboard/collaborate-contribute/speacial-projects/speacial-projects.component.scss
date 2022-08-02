@@ -2,8 +2,9 @@
   .project-box {
     background: var(--card-bg);
     height: 244px;
-    .posted {
-      height: 50px;
+    .projectHeading {
+      background-color: #3DA4D9;
+      height: 87px;  
     }
   }
   .projectImg{
@@ -28,7 +29,7 @@
 }
 .project-btn:hover {
   background: var(--bs-white);
-  color: var(--bs-background);
+  color: var(--btn-background);
 }
 
 .bannerImg {
