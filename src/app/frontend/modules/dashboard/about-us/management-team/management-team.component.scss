@@ -1,21 +1,20 @@
 .founderPage {
     .quotes {
-        color: #f38b07;
+        color: var(--btn-background);
         font-size: 20px;
         font-family: 'Montserrat';
     }
     .card {
-        background: var(--card-bg);
         .card-header {
-            height: 80px;
+            height: 66px;
             .card-title {
                 color: var(--bg-color);
                 font-family: 'Montserrat';
             }
         }
-        .card-body {
-            height: 132px;
-        }
+        // .card-body {
+        //     height: 110px;
+        // }
         .alumni-pic {
             min-height: 320px;
             max-height: 320px;
@@ -31,7 +30,9 @@
         }
     }
 }
-
+.leamLead {
+    background: var(--card-bg);
+}
 @media screen and (max-width: 574px) and (min-width: 300px) {
     .founderPage {
         .quotes {
