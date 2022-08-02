@@ -74,6 +74,7 @@
     --display-Flex: flex;
     --family: Montserrat;
     --font-style-normal:normal;
+    --font-color: #011898;
     --font-S-6: 6px;
     --font-s-8: 8px;
     --font-S-12: 12px;
@@ -126,6 +127,8 @@
     --line-height-3: 3;
     --line-height-28:28px;
     --line-height-17:17px;
+    --line-height-24:24px;
+    --line-height-43: 43px;
     --list-S-none: none;
     --letter-space-2: 2px;
     --letter-space-1-5: 1.5px;

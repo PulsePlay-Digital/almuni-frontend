@@ -3,6 +3,9 @@
   min-height: 220px;
   .card-heading {
     color: var(--card-heading);
+    font-size: var(--font-S-20);
+    font-weight: var(--font-B-600);
+    line-height: var(--line-height-24);
   }
 }
 
