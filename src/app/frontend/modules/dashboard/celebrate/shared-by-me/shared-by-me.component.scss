@@ -1,5 +1,4 @@
-.shared{
-    background: var(--card-bg);
+.shared {
     .view-btn {
         background: var(--btn-background);
         color: var(--bs-white);
@@ -11,4 +10,9 @@
         background: var(--bs-white);
         color: var(--btn-background);
       }
+}
+input,
+select {
+  color: #333333;
+  background-color: #d9d9d9;
 }

@@ -30,6 +30,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { FilterTextPipe } from "./pipes/filter-text.pipe";
 import { DialogAlertBoxComponent } from './components/dialog-alert-box/dialog-alert-box.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { CommonBannerComponent } from './components/common-banner/common-banner.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     ViewMapComponent,
     DashboardBannerComponent,
     DialogAlertBoxComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    CommonBannerComponent
   ],
   imports: [
     CommonModule,
@@ -86,7 +88,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     UsersBannerComponent,
     ViewMapComponent,
     DashboardBannerComponent,
-    DialogAlertBoxComponent
+    DialogAlertBoxComponent,
+    CommonBannerComponent
   ]
 })
 export class SharedModule {}

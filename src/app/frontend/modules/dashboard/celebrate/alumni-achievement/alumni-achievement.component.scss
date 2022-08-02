@@ -20,6 +20,10 @@
     .projectImg {
       height: 244px;
     }
+    .projectHeading {
+      background-color: #3DA4D9;
+      height: 87px;  
+    }
 }
 .project-btn {
     background: var(--btn-background);
@@ -30,7 +34,7 @@
   }
   .project-btn:hover {
     background: var(--bs-white);
-    color: var(--bs-background);
+    color: var(--btn-background);
   }
 
   .bannerImg {
