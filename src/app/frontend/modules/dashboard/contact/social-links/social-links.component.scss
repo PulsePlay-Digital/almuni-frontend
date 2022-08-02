@@ -1,4 +1,27 @@
   // SOCIAL CHANNELS CSS START
+  .main-heading{
+    font-size: var(--font-S-36);
+    font-weight: var(--font-B-700);
+    line-height: var(--line-height-43);
+    color: var(--font-color);
+  }
+  .social-data{
+    display: flex;
+    align-items: center;
+background: var(--card-bg-1);
+  }
+  .social-heading{
+font-size: var( --font-S-20);
+font-weight: var(--font-B-400);
+line-height: var(--line-height-24);
+color: var(--font-color);
+  }
+  .social-text{
+    font-weight: var(--font-B-600);
+    font-size: var( --font-S-20);
+    line-height: var(--line-height-24);
+    color: var(--font-color-1);
+  }
   .social-channels {
       .social-links {
           list-style: none;
