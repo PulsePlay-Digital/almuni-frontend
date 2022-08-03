@@ -92,10 +92,11 @@ ngx-star-rating {
 }
 
 .main-heading {
-    font-size: var(--font-S-24) !important;
+    font-size: var(--font-S-36) !important;
     line-height: 43.88px !important;
     color: var(--bg-color);
     font-family: var(--family) !important;
+    font-weight: 700px !important;
 }
 
 .sub-heading {
@@ -104,7 +105,19 @@ ngx-star-rating {
     color: #fea641;
     font-family: Montserrat !important;
 }
-
+.text-name {
+    color:var( --font-color-2);
+    font-size: var(--font-S-16);
+    line-height: var(--line-height-30);
+    text-align: justify;
+    font-weight: var(--font-B-400);
+  }
+  .text-para {
+    font-size: var(--font-S-16);
+    line-height: var(--line-height-32);
+    text-align: justify;
+    font-weight: var(--font-B-400);
+  }
 .commonTopPadding {
     padding-top: 150px;
 }

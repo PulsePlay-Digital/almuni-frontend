@@ -32,10 +32,36 @@
       color: #f65c8b;
     }
     .text-name {
-      color: #fea641;
+      color:var( --font-color-2);
+      font-size: var(--font-S-16);
+      line-height: var(--line-height-30);
+      text-align: justify;
+      font-weight: var(--font-B-400);
     }
-    p {
-      text-align: var(--text-J);
+    .text-para {
+      font-size: var(--font-S-16);
+      line-height: var(--line-height-32);
+      text-align: justify;
+      font-weight: var(--font-B-400);
+    }
+    .knowmore-text{
+      color: var(--font-color-2);
+      font-size: var(--font-S-32);
+      line-height:var(--line-height-38);
+      font-weight: var(--font-B-700);
+      
+    }
+    .card{
+      background: rgba(40, 155, 214, 0.3);
+   
+    }
+    .read-btn{
+       background: var(--btn-background-1);
+     
+    }
+    .card-body{
+      min-height: 500px;
+      height: 100%;
     }
   }
 }
