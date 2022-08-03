@@ -11,13 +11,46 @@
 </div>
 <div class="container">
     <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4 mt-4 m-0 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-3 mb-3">
-        <div class="col-lg-9 col-md-8 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2">
+        <div class="col-lg-3 col-md-4 order-xl-1 order-lg-2 order-md-2 order-sm-1 order-1 mb-4">
+            <div class="text-center">
+                <h4 class="main-heading text-uppercase fw-bolder"> ALL NEWS </h4>
+            </div>
+            <app-loader *ngIf="loading"></app-loader>
+            <ng-container *ngIf="!loading">
+                <div class="allNews">
+                    <mat-list>
+                        <ng-container *ngIf="allNewsUpdates?.length > 0">
+                            <mat-list-item *ngFor="let news of allNewsUpdates">
+                                <mat-icon mat-list-icon>feed</mat-icon>
+                                <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
+                                <div mat-line>
+                                    <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail" [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
+                              <br> <br>
+                                </div>
+                              
+                            </mat-list-item>
+                        </ng-container>
+                        <ng-container *ngIf="allNewsUpdates?.length == 0">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        No data found!
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </mat-list>
+                    
+                </div>
+            </ng-container>
+        </div>
+        <div class="col-lg-9 col-md-8 order-xl-1 order-lg-2 order-md-1 order-sm-2 order-2">
             <app-loader *ngIf="loading"></app-loader>
             <ng-container *ngIf="!loading">
                 <ng-container *ngIf="allNewsUpdates?.length > 0">
                     <div *ngFor="let news of allNewsUpdates | paginate: { itemsPerPage: 1, currentPage: p }">
                         <div class="py-3 text-lg-start text-md-start text-sm-center text-center">
-                            <img class="img-fluid" [src]="(news?.newsImage) ? imgPath + news?.newsImage : './assets/celebrate/balaji-university.png'" alt="news photo">
+                            <img class="img-fluid" [src]="(news?.newsImage) ? imgPath + news?.newsImage : './assets/celebrate/balasir.png'" alt="news photo">
                         </div>
                         <div class="news-content pt-3">
                             <h6 class="news-discription fs-5 fw-bolder text-capitalize">News Title:</h6>
@@ -44,34 +77,5 @@
                 </ng-container>
             </ng-container>
         </div>
-        <div class="col-lg-3 col-md-4 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 mb-4">
-            <div class="text-center">
-                <h4 class="main-heading text-uppercase fw-bolder"> ALL NEWS </h4>
-            </div>
-            <app-loader *ngIf="loading"></app-loader>
-            <ng-container *ngIf="!loading">
-                <div class="allNews">
-                    <mat-list>
-                        <ng-container *ngIf="allNewsUpdates?.length > 0">
-                            <mat-list-item *ngFor="let news of allNewsUpdates">
-                                <mat-icon mat-list-icon>feed</mat-icon>
-                                <div mat-line> <small class="text-muted">{{news.created_at | date}}</small> </div>
-                                <div mat-line>
-                                    <h6 class="title fs-6 text-capitalize my-2" routerLink="/celebrate/news-detail" [skipLocationChange]="true" [queryParams]="news"> {{news?.title}}</h6>
-                                </div>
-                            </mat-list-item>
-                        </ng-container>
-                        <ng-container *ngIf="allNewsUpdates?.length == 0">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        No data found!
-                                    </div>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </mat-list>
-                </div>
-            </ng-container>
-        </div>
+       
     </div>
