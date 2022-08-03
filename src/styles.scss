@@ -22,9 +22,15 @@ body {
     letter-spacing: 1px;
     font-family: var(--family) !important;
 }
-h2,h3,h4,h5,h6 {
+
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--family) !important;
 }
+
 ::placeholder {
     font-size: 14px;
 }
@@ -48,18 +54,21 @@ h2,h3,h4,h5,h6 {
 .mat-simple-snackbar-action {
     color: var(--bs-white);
 }
+
 .mat-tab-label .mat-tab-label-content {
     font-family: var(--family)
 }
+
 .news-tooltip-color {
     background: var(--bg-color);
 }
 
 ngx-star-rating {
-      input.star:checked ~ label.star:before {
+    input.star:checked~label.star:before {
         color: green !important;
-      }
+    }
 }
+
 .green-snackbar {
     background: rgb(2, 192, 72);
     color: #fff;
@@ -83,7 +92,7 @@ ngx-star-rating {
 }
 
 .main-heading {
-    font-size: var(--font-S-32) !important;
+    font-size: var(--font-S-24) !important;
     line-height: 43.88px !important;
     color: var(--bg-color);
     font-family: var(--family) !important;
@@ -288,11 +297,13 @@ img.ng-lazyloading {
     background-color: #d4edda;
     border-color: #c3e6cb;
 }
+
 @media screen and (max-width: 400px) and (min-width:300px) {
-    p{
+    p {
         text-align: justify;
     }
 }
+
 @media screen and (max-width: 574px) and (min-width: 300px) {
     .gallary {
         .owl-nav {
