@@ -1,15 +1,26 @@
 .founderPage {
   .know-us-section {
     .small-heading {
-      color: #f65c8b;
+      color: var(--font-color-2);
       font-size: var(--font-S-18);
+      font-size: var(--font-S-24);
+      line-height: var(--line-height-28);
+      font-weight: var(--font-B-600);
     }
     .text-name {
-      color: #fea641;
+      color:var( --font-color);
+      font-size: var(--font-S-16);
+      line-height: var(--line-height-30);
+      text-align: justify;
+      font-weight: var(--font-B-400);
     }
     .text-para {
-      text-align: var(--text-J);
+      font-size: var(--font-S-16);
+      line-height: var(--line-height-32);
+      text-align: justify;
+      font-weight: var(--font-B-400);
     }
+    
     .founderVideo {
       p {
         color: var(--btn-background);
@@ -21,6 +32,9 @@
     }
     .text-blue {
       color: var(--btn-background);
+    }
+    .knowmore-text{
+      
     }
   }
 }
